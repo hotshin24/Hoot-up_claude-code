@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+/* ==========================================================================
+   HOOT UP — Design Tokens
+   Figma: Front page - pc (2:4177)
+   Figma 변수 이름 → CSS 커스텀 프로퍼티로 1:1 매핑
+   ========================================================================== */
+
+:root {
+  /* ----------------------------------------------------------------------
+     Color — Brand
+     ---------------------------------------------------------------------- */
+  --color-brand-darker: #0703ab;
+  --color-brand-base: #1667fa;
+  --color-brand-light: #9896fd;
+  --color-brand-lighter: #e2e1ff;
+  --color-brand-secondary: #f8fc49;
+  --color-brand-accent: #49fca6;
+
+  /* ----------------------------------------------------------------------
+     Color — Neutral
+     ---------------------------------------------------------------------- */
+  --color-neutral-darker: #0f172a;
+  --color-neutral-dark: #1e293b;
+  --color-neutral-base: #475569;
+  --color-neutral-light: #93a2b7;
+  --color-neutral-lighter: #ebeff4;
+  --color-neutral-lightest: #f7f9fb;
+  --color-neutral-white: #ffffff;
+
+  /* ----------------------------------------------------------------------
+     Color — Status
+     ---------------------------------------------------------------------- */
+  --color-danger-base: #ed2040;
+  --color-danger-dark: #cb102d;
+  --color-danger-lighter: #fde3e7;
+  --color-warning-base: #ffd912;
+
+  /* ----------------------------------------------------------------------
+     Color — Semantic aliases
+     ---------------------------------------------------------------------- */
+  --color-text-strong: var(--color-neutral-darker);
+  --color-text-base: var(--color-neutral-base);
+  --color-text-muted: var(--color-neutral-light);
+  --color-text-inverse: var(--color-neutral-white);
+  --color-surface-page: var(--color-neutral-white);
+  --color-surface-subtle: var(--color-neutral-lightest);
+  --color-surface-muted: var(--color-neutral-lighter);
+  --color-surface-inverse: var(--color-neutral-darker);
+  --color-border-subtle: var(--color-neutral-lighter);
+  --color-border-inverse: rgb(255 255 255 / 0.1);
+  --color-focus-ring: var(--color-brand-base);
+
+  /* ----------------------------------------------------------------------
+     Gradient
+     ---------------------------------------------------------------------- */
+  --gradient-hero: linear-gradient(90deg, #4f7bfe 0%, #2948ff 100%);
+  --gradient-promo: linear-gradient(225.16deg, #1667fa 2.61%, #0d3d94 98.79%);
+  --gradient-countdown: linear-gradient(119.13deg, #fbc8d4 17.1%, #9795f0 83.61%);
+
+  /* ----------------------------------------------------------------------
+     Typography — Family
+     ---------------------------------------------------------------------- */
+  --font-display: "Raleway", "Spoqa Han Sans Neo", sans-serif;
+  --font-body: "Spoqa Han Sans Neo", "Noto Sans KR", -apple-system, sans-serif;
+  --font-alt: "Noto Sans KR", "Spoqa Han Sans Neo", sans-serif;
+
+  /* ----------------------------------------------------------------------
+     Typography — Weight
+     ---------------------------------------------------------------------- */
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* ----------------------------------------------------------------------
+     Typography — Scale (size / line-height 쌍)
+     spoqa/* 토큰
+     ---------------------------------------------------------------------- */
+  --text-display-size: 74px;
+  --text-display-leading: 1.1;
+
+  --text-h1-size: 48px;
+  --text-h1-leading: 1.1;
+
+  --text-h2-size: 36px;
+  --text-h2-leading: 42px;
+
+  --text-h3-size: 28px;
+  --text-h3-leading: 36px;
+
+  --text-h4-size: 24px;
+  --text-h4-leading: 30px;
+
+  --text-h5-size: 20px;
+  --text-h5-leading: 26px;
+
+  --text-body-size: 16px;
+  --text-body-leading: 22px;
+
+  --text-body-sm-size: 14px;
+  --text-body-sm-leading: 20px;
+
+  --text-caption-size: 12px;
+  --text-caption-leading: 18px;
+
+  /* 숫자 강조용 (히어로 할인율 / 카운트다운) */
+  --text-numeric-xl-size: 140px;
+  --text-numeric-lg-size: 96px;
+
+  /* ----------------------------------------------------------------------
+     Spacing — 4px 기반 스케일
+     ---------------------------------------------------------------------- */
+  --space-3xs: 4px;
+  --space-2xs: 5px;
+  --space-xs: 10px;
+  --space-sm: 15px;
+  --space-md: 20px;
+  --space-lg: 25px;
+  --space-xl: 30px;
+  --space-2xl: 40px;
+  --space-3xl: 45px;
+  --space-4xl: 60px;
+  --space-5xl: 85px;
+
+  /* 컴포넌트 전용 간격 (디자인 고유값) */
+  --space-card-gap: 20px;
+  --space-card-row-gap: 27px;
+  --space-category-gap: 28px;
+  --space-hero-gap: 77px;
+  --space-magazine-gap: 17px;
+  --space-desk-col-gap: 24px;
+
+  /* ----------------------------------------------------------------------
+     Radius
+     ---------------------------------------------------------------------- */
+  --radius-sm: 5px;
+  --radius-md: 20px;
+  --radius-pill: 30px;
+  --radius-circle: 50%;
+
+  /* ----------------------------------------------------------------------
+     Elevation
+     ---------------------------------------------------------------------- */
+  --shadow-card: 0 0 10px rgb(0 0 0 / 0.1);
+  --shadow-button: 0 0 5px rgb(0 0 0 / 0.1);
+
+  /* ----------------------------------------------------------------------
+     Layout
+     1920px 캔버스 기준: 380px + 1160px + 380px = 1920px
+     그보다 좁은 뷰포트에서는 --layout-gutter-min 으로 축소된다.
+     ---------------------------------------------------------------------- */
+  --layout-container: 1160px;
+  --layout-gutter: 380px;
+  --layout-gutter-min: 20px;
+
+  /* 컴포넌트 고정 치수 */
+  --size-icon-sm: 14px;
+  --size-icon-md: 16px;
+  --size-icon-lg: 20px;
+  --size-icon-xl: 24px;
+  --size-avatar-sm: 30px;
+  --size-carousel-btn: 25px;
+
+  /* ----------------------------------------------------------------------
+     Motion
+     ---------------------------------------------------------------------- */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --easing-standard: cubic-bezier(0.2, 0, 0.2, 1);
+}

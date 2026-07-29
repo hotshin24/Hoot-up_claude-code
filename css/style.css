@@ -1,0 +1,1546 @@
+@charset "utf-8";
+
+/* ==========================================================================
+   HOOT UP — Front page (PC)
+   Figma: Front page - pc (2:4177)
+
+   레이아웃은 전부 flex / grid 로 구성한다.
+   좌표 기반 position:absolute 는 사용하지 않으며, 겹치는 장식 요소는
+   grid 스택(같은 셀에 배치) 또는 background-image 로 처리한다.
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-surface-page);
+  color: var(--color-text-strong);
+  font-family: var(--font-body);
+  font-size: var(--text-body-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-body-leading);
+  word-break: keep-all;
+}
+
+h1, h2, h3, h4, p, figure, dl, dd, address {
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+input {
+  font: inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+del, ins {
+  text-decoration: none;
+}
+
+hr {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid currentColor;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   2. Utilities
+   ========================================================================== */
+
+/* 스크린 리더 전용 텍스트 */
+.a11y-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  display: block;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.skip-link:focus {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: var(--space-xs) var(--space-md);
+  overflow: visible;
+  clip-path: none;
+  background-color: var(--color-brand-base);
+  color: var(--color-text-inverse);
+  font-weight: var(--font-weight-bold);
+}
+
+/*
+  공통 컨테이너
+  1920px 캔버스에서 좌우 여백 380px + 본문 1160px = 1920px 가 된다.
+  더 좁은 뷰포트에서는 최소 여백(--layout-gutter-min)까지 자연스럽게 줄어든다.
+*/
+.l-container {
+  width: min(
+    var(--layout-container),
+    100% - var(--layout-gutter-min) * 2
+  );
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   3. Icon (CSS mask — SVG 원본이 currentColor 기반이라 색상을 상속시킨다)
+   ========================================================================== */
+
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: var(--icon-size, 16px);
+  height: var(--icon-size, 16px);
+  background-color: currentColor;
+  -webkit-mask: var(--icon-image) no-repeat center / contain;
+  mask: var(--icon-image) no-repeat center / contain;
+}
+
+.icon--search        { --icon-image: url("../svg/search.svg"); }
+.icon--cart          { --icon-image: url("../svg/cart3.svg"); }
+.icon--bell          { --icon-image: url("../svg/bell.svg"); }
+.icon--list          { --icon-image: url("../svg/list.svg"); }
+.icon--calendar      { --icon-image: url("../svg/calendar.svg"); }
+.icon--cash          { --icon-image: url("../svg/cash-stack.svg"); }
+.icon--camera        { --icon-image: url("../svg/camera.svg"); }
+.icon--easel         { --icon-image: url("../svg/easel.svg"); }
+.icon--heart-pulse   { --icon-image: url("../svg/heart-pulse.svg"); }
+.icon--more          { --icon-image: url("../svg/three-dots.svg"); }
+.icon--heart         { --icon-image: url("../svg/heart-fill.svg"); }
+.icon--arrow-right   { --icon-image: url("../svg/arrow-right.svg"); }
+.icon--chevron-left  { --icon-image: url("../svg/chevron-left.svg"); }
+.icon--chevron-right { --icon-image: url("../svg/chevron-right.svg"); }
+.icon--comment       { --icon-image: url("../svg/chat-left-quote.svg"); }
+
+/* ==========================================================================
+   4. Button
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-body-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-leading);
+  transition: background-color var(--duration-base) var(--easing-standard),
+              color var(--duration-base) var(--easing-standard);
+  --icon-size: var(--size-icon-lg);
+}
+
+.btn--solid {
+  padding: var(--space-xs) var(--space-3xl);
+  background-color: var(--color-brand-base);
+  box-shadow: var(--shadow-button);
+  color: var(--color-text-inverse);
+}
+
+.btn--solid:hover {
+  background-color: var(--color-brand-darker);
+}
+
+.btn--outline {
+  padding: var(--space-xs) var(--space-3xl);
+  border: 1px solid var(--color-brand-base);
+  color: var(--color-brand-base);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-brand-base);
+  color: var(--color-text-inverse);
+}
+
+.btn--sm {
+  padding: var(--space-2xs) var(--space-2xl);
+  font-weight: var(--font-weight-regular);
+}
+
+/* ==========================================================================
+   5. Section head (컬렉션 · 섹션 공통 헤더)
+   ========================================================================== */
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-block: 12px;
+}
+
+.section-head__title {
+  font-size: var(--text-h4-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h4-leading);
+  color: var(--color-text-strong);
+}
+
+.section-head__brand {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.1;
+  color: var(--color-brand-base);
+}
+
+.section-head__more {
+  flex-shrink: 0;
+  color: var(--color-text-base);
+  line-height: var(--text-body-leading);
+}
+
+.section-head__more:hover {
+  text-decoration: underline;
+}
+
+/* 배경 밴드가 있는 변형 (매거진 · 데스크) */
+.section-head--banded {
+  padding: 11px var(--space-xs);
+  background-color: var(--color-surface-muted);
+}
+
+/* ==========================================================================
+   6. Site header
+   ========================================================================== */
+
+.site-header {
+  background-color: var(--color-surface-page);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- 상단 유틸리티 줄 --- */
+.site-header__utility {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  min-height: 75px;
+  padding-block: 10px 9px;
+}
+
+.site-header__logo img {
+  width: 138px;
+  height: 32px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* --- 검색 --- */
+.search {
+  display: flex;
+  flex: 0 1 520px;
+  align-items: center;
+  gap: var(--space-xs);
+  height: 40px;
+  padding-inline: 22px 16px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-subtle);
+}
+
+.search:focus-within {
+  border-color: var(--color-brand-base);
+}
+
+.search__input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text-strong);
+  font-family: var(--font-alt);
+  font-size: var(--text-body-size);
+  line-height: 1.6;
+}
+
+.search__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.search__input:focus {
+  outline: none;
+}
+
+.search__submit {
+  display: flex;
+  color: var(--color-text-muted);
+  --icon-size: var(--size-icon-lg);
+}
+
+/* --- 사용자 메뉴 --- */
+.user-menu {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* 아이콘과 알림 배지를 같은 그리드 셀에 겹쳐 놓는다 (좌표 지정 없음) */
+.user-menu__link {
+  display: grid;
+  color: var(--color-neutral-darker);
+  --icon-size: var(--size-icon-xl);
+}
+
+.user-menu__link > * {
+  grid-area: 1 / 1;
+}
+
+.user-menu__badge {
+  justify-self: end;
+  align-self: start;
+  min-width: 16px;
+  height: 16px;
+  margin: -5px -8px 0 0;
+  padding-inline: var(--space-3xs);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-danger-dark);
+  color: var(--color-text-inverse);
+  font-family: var(--font-display);
+  font-size: var(--text-caption-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: 16px;
+  text-align: center;
+}
+
+.user-menu__profile img {
+  width: var(--size-avatar-sm);
+  height: var(--size-avatar-sm);
+  border-radius: var(--radius-circle);
+  object-fit: cover;
+}
+
+/* --- 글로벌 내비게이션 --- */
+.gnb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 50px;
+}
+
+.gnb__toggle {
+  display: flex;
+  color: var(--color-neutral-darker);
+  --icon-size: var(--size-icon-xl);
+}
+
+.gnb__list {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gnb__link {
+  display: block;
+  padding: var(--space-2xs) var(--space-xs);
+  color: var(--color-neutral-darker);
+  line-height: var(--text-body-leading);
+}
+
+.gnb__link:hover {
+  color: var(--color-brand-base);
+}
+
+/* ==========================================================================
+   7. Hero — LEVEL UP WEEK
+   ========================================================================== */
+
+.hero {
+  padding-block: 61px 60px;
+  background-image: var(--gradient-hero);
+  color: var(--color-text-inverse);
+}
+
+.hero__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-hero-gap);
+}
+
+.hero__copy {
+  display: flex;
+  flex: 0 1 650px;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: var(--text-h5-size);
+  line-height: 1.1;
+}
+
+.hero__brand {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-extrabold);
+}
+
+.hero__brand-accent {
+  font-style: normal;
+  color: var(--color-brand-secondary);
+}
+
+.hero__title {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-family: var(--font-display);
+  font-size: var(--text-display-size);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--text-display-leading);
+}
+
+.hero__title-text {
+  white-space: nowrap;
+}
+
+.hero__title-accent {
+  font-style: normal;
+  color: var(--color-brand-secondary);
+}
+
+.hero__rocket {
+  width: 46px;
+  height: 115px;
+}
+
+.hero__subtitle {
+  font-size: 32px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+}
+
+.hero__description {
+  color: var(--color-brand-lighter);
+  line-height: var(--text-body-leading);
+}
+
+.hero__description strong {
+  font-weight: var(--font-weight-bold);
+}
+
+.hero__offer {
+  display: flex;
+  flex: 0 0 433px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 35px;
+}
+
+.hero__discount {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: var(--size-icon-md);
+}
+
+.hero__discount-label {
+  color: var(--color-brand-lighter);
+  font-size: var(--text-h5-size);
+  font-weight: var(--font-weight-bold);
+  line-height: 28px;
+  text-align: right;
+}
+
+.hero__discount-rate {
+  font-family: var(--font-display);
+  font-size: var(--text-numeric-xl-size);
+  font-weight: var(--font-weight-black);
+  line-height: 1.1;
+  color: var(--color-brand-secondary);
+}
+
+.hero__discount-unit {
+  font-size: 32px;
+  font-style: normal;
+}
+
+.hero__package {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 290px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-brand-accent);
+  color: #000;
+  font-size: var(--text-h5-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h5-leading);
+}
+
+.hero__package-rate {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================================================
+   8. Category — 카테고리 바로가기
+   ========================================================================== */
+
+.category {
+  padding-block: 62px;
+  background-color: var(--color-neutral-darker);
+}
+
+.category__list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--space-category-gap);
+}
+
+.category__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  height: 118px;
+  padding: var(--size-icon-md) var(--space-xs);
+  border: 1px solid var(--color-border-inverse);
+  border-radius: var(--radius-md);
+  background-color: var(--color-neutral-dark);
+  box-shadow: var(--shadow-card);
+  transition: background-color var(--duration-base) var(--easing-standard);
+}
+
+.category__link:hover {
+  background-color: var(--color-brand-base);
+}
+
+.category__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-brand-lighter);
+  color: var(--color-neutral-dark);
+  --icon-size: var(--size-icon-xl);
+}
+
+.category__label {
+  color: var(--color-brand-lighter);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-leading);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   9. Collections — 포커스 클래스
+   ========================================================================== */
+
+.collections {
+  display: flex;
+  flex-direction: column;
+  gap: 95px;
+  padding-block: var(--space-5xl);
+}
+
+.collection__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/*
+  캐러셀: 좌우 버튼이 컨테이너 밖으로 35px 씩 나온다.
+  음수 마진으로 폭을 넓히고, 남는 폭을 목록이 그대로 1160px 로 채운다.
+*/
+.collection__carousel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-inline: -35px;
+}
+
+.carousel-btn {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-carousel-btn);
+  height: var(--size-carousel-btn);
+  color: var(--color-neutral-light);
+  --icon-size: var(--size-carousel-btn);
+}
+
+.carousel-btn:hover {
+  color: var(--color-brand-base);
+}
+
+.course-list {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-card-gap);
+  min-width: 0;
+}
+
+/* ==========================================================================
+   10. Course card
+   ========================================================================== */
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/*
+  썸네일: 이미지 · 찜 버튼 · 할인 뱃지를 같은 그리드 셀에 겹쳐 놓는다.
+  좌표(absolute) 대신 justify-self / align-self / margin 으로 위치를 잡는다.
+*/
+.course-card__thumb {
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-page);
+}
+
+.course-card__thumb > * {
+  grid-area: 1 / 1;
+}
+
+.course-card__image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.course-card__wish {
+  justify-self: end;
+  align-self: start;
+  display: flex;
+  margin: var(--space-md) var(--space-md) 0 0;
+  color: var(--color-neutral-white);
+  --icon-size: var(--size-icon-md);
+}
+
+.course-card__wish[aria-pressed="true"] {
+  color: var(--color-danger-base);
+}
+
+.course-card__badge {
+  justify-self: end;
+  align-self: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 69px;
+  height: 22px;
+  margin-top: 120px;
+  padding-inline: var(--space-2xs);
+  border-start-start-radius: var(--radius-sm);
+  border-end-start-radius: var(--radius-sm);
+  background-color: var(--color-danger-base);
+  color: var(--color-text-inverse);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+}
+
+.course-card__body {
+  display: flex;
+  gap: var(--space-xs);
+  align-items: flex-start;
+}
+
+.course-card__avatar {
+  flex-shrink: 0;
+  width: var(--size-avatar-sm);
+  height: var(--size-avatar-sm);
+  border-radius: var(--radius-circle);
+  object-fit: cover;
+}
+
+.course-card__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  min-width: 0;
+}
+
+.course-card__title {
+  font-size: var(--text-body-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-leading);
+  color: var(--color-text-strong);
+}
+
+.course-card__link:hover {
+  text-decoration: underline;
+}
+
+.course-card__meta {
+  color: var(--color-text-muted);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-leading);
+}
+
+.course-card__price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2xs);
+  line-height: var(--text-body-leading);
+}
+
+.course-card__rate {
+  color: var(--color-danger-base);
+}
+
+.course-card__price-before {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.course-card__arrow {
+  color: var(--color-text-base);
+  --icon-size: var(--size-icon-md);
+}
+
+.course-card__price-after {
+  color: var(--color-text-strong);
+}
+
+.course-card__rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2xs);
+  color: var(--color-text-base);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+}
+
+.course-card__stars {
+  width: 70px;
+  height: 14px;
+}
+
+.course-card__sep {
+  color: var(--color-text-base);
+}
+
+/* --- 가로형 변형 (차트 목록) --- */
+.course-card--horizontal {
+  flex-direction: row;
+  gap: var(--space-sm);
+}
+
+.course-card--horizontal .course-card__thumb {
+  flex-shrink: 0;
+  width: 130px;
+}
+
+.course-card--horizontal .course-card__image {
+  height: 105px;
+}
+
+/* ==========================================================================
+   11. Chart — HOOT UP 차트 (구독 배너 + 인기 강의)
+   ========================================================================== */
+
+.chart {
+  padding-block: var(--space-5xl);
+  background-color: var(--color-surface-subtle);
+}
+
+.chart__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.chart__body {
+  display: grid;
+  grid-template-columns: 370px minmax(0, 1fr);
+  gap: var(--space-card-gap);
+}
+
+.chart__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-card-row-gap) var(--space-card-gap);
+  align-content: start;
+}
+
+/* --- 구독 신청 배너 --- */
+.promo {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2xl);
+  border-radius: var(--radius-md);
+  background-color: var(--color-brand-base);
+  /* 장식용 일러스트는 배경으로 얹어 레이아웃에 영향을 주지 않는다 */
+  background-image: url("../assets/banner/illust-privacy.png"), var(--gradient-promo);
+  background-repeat: no-repeat;
+  background-position: right -15px top 30px, center;
+  background-size: 150px 150px, cover;
+  color: var(--color-text-inverse);
+}
+
+.promo__logo {
+  width: 92px;
+  height: 19px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.promo__tagline {
+  align-self: flex-start;
+  margin-top: var(--space-xl);
+  padding: 3px var(--space-lg);
+  border-radius: var(--radius-md);
+  background-color: var(--color-brand-secondary);
+  color: var(--color-text-base);
+  font-size: var(--text-caption-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-caption-leading);
+}
+
+.promo__title {
+  margin-top: var(--space-md);
+  font-size: var(--text-h3-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h3-leading);
+}
+
+.promo__title-accent {
+  font-style: normal;
+  color: var(--color-brand-secondary);
+}
+
+.promo__offer {
+  display: flex;
+  gap: var(--space-2xs);
+  margin-top: var(--space-sm);
+  color: var(--color-brand-lighter);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+}
+
+.promo__offer strong {
+  font-weight: var(--font-weight-bold);
+}
+
+.promo__cta {
+  margin-top: 42px;
+}
+
+/* ==========================================================================
+   12. Countdown banner
+   ========================================================================== */
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+  padding-block: var(--space-5xl);
+  background-image: url("../assets/banner/night-sky.jpg"), var(--gradient-countdown);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.countdown__clock {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.countdown__digits {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+/*
+  플립 시계 눈금(가운데 선 + 좌우 홈)은 배경 레이어로 그린다.
+*/
+.countdown__digit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 120px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-neutral-dark);
+  background-image:
+    linear-gradient(var(--color-neutral-light), var(--color-neutral-light)),
+    linear-gradient(var(--color-neutral-light), var(--color-neutral-light)),
+    linear-gradient(var(--color-neutral-lighter), var(--color-neutral-lighter));
+  background-repeat: no-repeat;
+  background-position: left center, right center, center;
+  background-size: 5px 15px, 5px 15px, 80px 3px;
+  color: var(--color-text-inverse);
+  font-size: var(--text-numeric-lg-size);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+}
+
+.countdown__label {
+  color: var(--color-text-inverse);
+  font-family: var(--font-display);
+  font-size: var(--text-h5-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.1;
+}
+
+/* 반투명 카드: 배경 레이어를 그리드 셀에 겹쳐 깔고 내용은 그 위에 얹는다 */
+.countdown__card {
+  display: grid;
+  grid-template-columns: auto 490px auto;
+  align-items: center;
+  gap: 50px;
+  padding: var(--space-4xl);
+  border-radius: var(--radius-md);
+}
+
+/*
+  반투명 패널: 배경 레이어와 내용이 같은 행을 공유하도록 위치를 명시한다.
+  (Figma 의 hard-light 블렌드를 브라우저에서 동일하게 보이도록 반투명으로 치환)
+*/
+.countdown__card::before {
+  content: "";
+  grid-area: 1 / 1 / 2 / 4;
+  align-self: stretch;
+  margin: calc(var(--space-4xl) * -1);
+  border-radius: inherit;
+  background-color: color-mix(in srgb, var(--color-neutral-lighter) 90%, transparent);
+}
+
+.countdown__rate {
+  grid-area: 1 / 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--space-xs);
+  color: var(--color-brand-darker);
+  font-family: var(--font-display);
+  font-size: var(--text-numeric-lg-size);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+}
+
+.countdown__rate-label {
+  font-size: var(--text-h4-size);
+}
+
+.countdown__copy {
+  grid-area: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown__title {
+  display: flex;
+  align-items: center;
+  gap: 39px;
+  color: var(--color-brand-base);
+  font-family: var(--font-display);
+  font-size: var(--text-h1-size);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--text-h1-leading);
+}
+
+.countdown__rocket {
+  width: 40px;
+  height: 94px;
+}
+
+.countdown__lead {
+  color: var(--color-text-base);
+  font-size: var(--text-h3-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h3-leading);
+  text-align: center;
+}
+
+.countdown__lead strong {
+  color: var(--color-text-strong);
+}
+
+.countdown__description {
+  margin-top: 58px;
+  color: var(--color-text-base);
+  line-height: var(--text-body-leading);
+  text-align: center;
+}
+
+.countdown__description strong {
+  font-weight: var(--font-weight-bold);
+}
+
+.countdown__package {
+  grid-area: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+
+.countdown__illust {
+  width: 200px;
+  height: 200px;
+}
+
+.countdown__package-text {
+  color: var(--color-text-base);
+  font-size: var(--text-h5-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h5-leading);
+  text-align: center;
+}
+
+/* ==========================================================================
+   13. Magazine — 블로그 카드
+   ========================================================================== */
+
+.magazine {
+  padding-block: var(--space-5xl);
+}
+
+.magazine__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.magazine__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-magazine-gap);
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.blog-card__thumb {
+  overflow: hidden;
+  margin-bottom: var(--space-xs);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-page);
+}
+
+.blog-card__image {
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+}
+
+.blog-card__category {
+  color: var(--color-danger-base);
+  line-height: var(--text-body-leading);
+}
+
+.blog-card__title {
+  font-size: var(--text-body-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-leading);
+  color: var(--color-text-strong);
+}
+
+.blog-card__link:hover {
+  text-decoration: underline;
+}
+
+.blog-card__excerpt {
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+}
+
+.blog-card__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-2xs);
+}
+
+.blog-card__avatar {
+  flex-shrink: 0;
+  width: var(--size-avatar-sm);
+  height: var(--size-avatar-sm);
+  border-radius: var(--radius-circle);
+  object-fit: cover;
+}
+
+.blog-card__byline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  min-width: 0;
+}
+
+.blog-card__author {
+  color: var(--color-text-strong);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+}
+
+.blog-card__stats {
+  display: flex;
+  gap: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-leading);
+}
+
+.blog-card__stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  --icon-size: var(--size-icon-sm);
+}
+
+/* ==========================================================================
+   14. Slogan
+   ========================================================================== */
+
+.slogan {
+  padding-block: var(--space-3xl);
+  background-color: var(--color-danger-lighter);
+}
+
+.slogan__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.slogan__title {
+  color: var(--color-neutral-dark);
+  font-size: var(--text-h2-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h2-leading);
+}
+
+.slogan__brand {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.1;
+  color: var(--color-brand-base);
+}
+
+.slogan__description {
+  color: var(--color-text-base);
+  line-height: var(--text-body-leading);
+}
+
+/* ==========================================================================
+   15. Desk — 뉴스
+   ========================================================================== */
+
+.desk {
+  padding-block: var(--space-5xl);
+}
+
+.desk__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.desk__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg) var(--space-desk-col-gap);
+}
+
+.desk__more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
+.news-card {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: stretch;
+}
+
+.news-card__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  min-width: 0;
+}
+
+.news-card__category {
+  color: var(--color-brand-base);
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-sm-leading);
+}
+
+.news-card__title {
+  font-size: var(--text-body-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-leading);
+  color: var(--color-text-strong);
+}
+
+.news-card__link:hover {
+  text-decoration: underline;
+}
+
+.news-card__excerpt {
+  color: var(--color-text-muted);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-leading);
+}
+
+.news-card__byline {
+  margin-top: auto;
+  color: var(--color-neutral-dark);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+}
+
+.news-card__thumb {
+  flex-shrink: 0;
+  overflow: hidden;
+  width: 130px;
+  height: 113px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-page);
+}
+
+.news-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   16. Site footer
+   ========================================================================== */
+
+.site-footer {
+  padding-block: var(--space-3xl);
+  background-color: var(--color-surface-inverse);
+  color: var(--color-brand-lighter);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+}
+
+.site-footer__top {
+  display: flex;
+  gap: 96px;
+  align-items: flex-start;
+}
+
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.site-footer__logo {
+  width: 160px;
+  height: 40px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.site-footer__slogan {
+  color: var(--color-brand-light);
+  line-height: var(--text-body-leading);
+}
+
+.site-footer__nav {
+  display: flex;
+  gap: 76px;
+}
+
+.link-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  width: 153px;
+}
+
+.link-group__title {
+  padding: var(--space-xs);
+  color: var(--color-brand-accent);
+  font-size: var(--text-h5-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h5-leading);
+  white-space: nowrap;
+}
+
+.link-group__link {
+  display: block;
+  padding: var(--space-2xs) var(--space-xs);
+  color: var(--color-brand-lighter);
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-leading);
+}
+
+.link-group__link:hover {
+  color: var(--color-brand-accent);
+}
+
+.site-footer__rule {
+  border-top-color: var(--color-neutral-base);
+}
+
+.site-footer__contact {
+  display: flex;
+  gap: 200px;
+  align-items: center;
+}
+
+.contact-desk {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 223px;
+}
+
+.contact-desk__title {
+  color: var(--color-brand-accent);
+  font-size: var(--text-h5-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h5-leading);
+}
+
+.contact-desk__tel {
+  color: var(--color-text-inverse);
+  font-size: var(--text-h3-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h3-leading);
+}
+
+.contact-desk__hours {
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+}
+
+.contact-mail {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-mail__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.contact-mail__label {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-leading);
+}
+
+.contact-mail__value {
+  margin: 0;
+  color: var(--color-text-inverse);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-leading);
+}
+
+.contact-mail__value a:hover {
+  text-decoration: underline;
+}
+
+.site-footer__legal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 861px;
+  max-width: 100%;
+}
+
+.policy__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.policy__link {
+  display: block;
+  padding: var(--space-xs);
+  color: var(--color-brand-lighter);
+  line-height: var(--text-body-leading);
+}
+
+.policy__link:hover {
+  color: var(--color-brand-accent);
+}
+
+.company {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+}
+
+.company__line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+}
+
+.site-footer__copyright {
+  margin-top: var(--space-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.site-footer__copyright small {
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+}
+
+/* ==========================================================================
+   17. 1920px 미만 대응 (레이아웃이 깨지지 않도록 최소한의 축소만)
+   ========================================================================== */
+
+@media (max-width: 1279px) {
+  /* 컨테이너 밖으로 나가던 캐러셀 버튼을 안쪽으로 들인다 */
+  .collection__carousel {
+    margin-inline: 0;
+  }
+
+  .hero__inner {
+    flex-wrap: wrap;
+    gap: var(--space-2xl);
+  }
+
+  .hero__offer {
+    flex-basis: auto;
+  }
+
+  .chart__body {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown__card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: var(--space-2xl);
+  }
+
+  .site-footer__top,
+  .site-footer__contact {
+    flex-wrap: wrap;
+    gap: var(--space-2xl);
+  }
+
+  .site-footer__nav {
+    flex-wrap: wrap;
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 1023px) {
+  .category__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .course-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .magazine__list,
+  .desk__list,
+  .chart__list {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown__clock {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
