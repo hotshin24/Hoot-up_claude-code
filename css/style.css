@@ -166,6 +166,7 @@ hr {
 .icon--chevron-left  { --icon-image: url("../svg/chevron-left.svg"); }
 .icon--chevron-right { --icon-image: url("../svg/chevron-right.svg"); }
 .icon--comment       { --icon-image: url("../svg/chat-left-quote.svg"); }
+.icon--caret-down     { --icon-image: url("../svg/caret-down-fill.svg"); }
 
 /* ==========================================================================
    4. Button
@@ -1772,5 +1773,193 @@ hr {
   .countdown__clock {
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   19. Category page (개발·IT 등 카테고리 상세)
+   ========================================================================== */
+
+.category__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  padding-block: var(--space-xl) var(--space-5xl);
+}
+
+/* --- 카테고리 배너 (브랜드 톤 그라디언트) --- */
+.category-banner {
+  display: flex;
+  align-items: center;
+  min-height: 122px;
+  padding: var(--space-xl) 43px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-neutral-darker);
+  background-image:
+    radial-gradient(circle at 82% 15%, rgb(72 252 166 / 0.22), transparent 45%),
+    radial-gradient(circle at 12% 85%, rgb(237 32 64 / 0.18), transparent 45%),
+    linear-gradient(115deg, #0f172a 0%, #1e293b 45%, var(--color-brand-base) 135%);
+}
+
+.category-banner__title {
+  color: var(--color-text-inverse);
+  font-size: var(--text-h2-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h2-leading);
+}
+
+/* --- 세부 카테고리 --- */
+.subcat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.subcat__title {
+  font-size: var(--text-h3-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h3-leading);
+  color: var(--color-text-strong);
+}
+
+.subcat__divider {
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+/* --- 칩(필터 버튼) --- */
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xs) var(--size-icon-md);
+  border: 1px solid var(--color-neutral-base);
+  border-radius: var(--radius-pill);
+  background-color: transparent;
+  color: var(--color-neutral-base);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-standard),
+              border-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard);
+}
+
+.chip:hover {
+  border-color: var(--color-brand-base);
+  color: var(--color-brand-base);
+}
+
+.chip--active {
+  background-color: var(--color-brand-base);
+  border-color: var(--color-brand-base);
+  color: var(--color-text-inverse);
+}
+
+.chip--active:hover {
+  background-color: var(--color-brand-darker);
+  border-color: var(--color-brand-darker);
+  color: var(--color-text-inverse);
+}
+
+.chip--brand {
+  border-color: var(--color-brand-base);
+  color: var(--color-brand-base);
+}
+
+/* --- 필터바 --- */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.filter-sort {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 12px 20px;
+  border: 1px solid var(--color-neutral-base);
+  border-radius: 8px;
+  color: var(--color-neutral-base);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
+  --icon-size: var(--size-icon-md);
+  cursor: pointer;
+}
+
+.filter-sort:hover {
+  border-color: var(--color-brand-base);
+  color: var(--color-brand-base);
+}
+
+/* --- 강의 그리드 --- */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3xl) var(--space-card-gap);
+}
+
+/* --- 페이지네이션 --- */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.pager__arrow,
+.pager__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-base);
+  --icon-size: var(--size-icon-md);
+}
+
+.pager__num {
+  padding-inline: var(--space-xs);
+  line-height: var(--text-body-leading);
+}
+
+.pager__num:hover {
+  color: var(--color-brand-base);
+}
+
+.pager__num--active {
+  background-color: var(--color-brand-base);
+  color: var(--color-text-inverse);
+}
+
+.pager__arrow:hover {
+  color: var(--color-brand-base);
+}
+
+.pager__arrow[aria-disabled="true"] {
+  color: var(--color-neutral-light);
+  pointer-events: none;
+}
+
+/* 좁은 화면 대응 */
+@media (max-width: 1023px) {
+  .course-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .course-grid {
+    grid-template-columns: 1fr;
   }
 }
