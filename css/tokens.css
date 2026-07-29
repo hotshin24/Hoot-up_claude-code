@@ -62,8 +62,8 @@
      Typography — Family
      ---------------------------------------------------------------------- */
   --font-display: "Raleway", "Spoqa Han Sans Neo", sans-serif;
-  --font-body: "Spoqa Han Sans Neo", "Noto Sans KR", -apple-system, sans-serif;
-  --font-alt: "Noto Sans KR", "Spoqa Han Sans Neo", sans-serif;
+  --font-body: "Spoqa Han Sans Neo", "Raleway", -apple-system, sans-serif;
+  --font-alt: "Raleway", "Spoqa Han Sans Neo", sans-serif;
 
   /* ----------------------------------------------------------------------
      Typography — Weight
