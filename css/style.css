@@ -1780,14 +1780,14 @@ hr {
    19. Category page (개발·IT 등 카테고리 상세)
    ========================================================================== */
 
-.category__inner {
+.category-page__inner {
   display: flex;
   flex-direction: column;
   gap: var(--space-2xl);
   padding-block: var(--space-xl) var(--space-5xl);
 }
 
-/* --- 카테고리 배너 (브랜드 톤 그라디언트) --- */
+/* --- 카테고리 배너 (Figma 배너 이미지 + 가독성용 딤) --- */
 .category-banner {
   display: flex;
   align-items: center;
@@ -1797,9 +1797,11 @@ hr {
   overflow: hidden;
   background-color: var(--color-neutral-darker);
   background-image:
-    radial-gradient(circle at 82% 15%, rgb(72 252 166 / 0.22), transparent 45%),
-    radial-gradient(circle at 12% 85%, rgb(237 32 64 / 0.18), transparent 45%),
-    linear-gradient(115deg, #0f172a 0%, #1e293b 45%, var(--color-brand-base) 135%);
+    linear-gradient(90deg, rgb(15 23 42 / 0.55), rgb(15 23 42 / 0.1)),
+    url("../assets/category/dev-it-banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .category-banner__title {
