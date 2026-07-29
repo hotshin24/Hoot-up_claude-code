@@ -61,11 +61,11 @@
     </div>
 
     <nav class="gnb" aria-label="주요 메뉴">
-      <button class="gnb__toggle" type="button" aria-expanded="false" aria-controls="gnb-list" aria-label="전체 메뉴 열기">
+      <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega" aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
         <span class="icon icon--list"></span>
       </button>
       <ul class="gnb__list" id="gnb-list">
-        <li class="gnb__item"><a class="gnb__link" href="/categories">전체 카테고리</a></li>
+        <li class="gnb__item"><a class="gnb__link" href="/categories" data-nav-toggle aria-expanded="false" aria-controls="category-mega" aria-haspopup="true">전체 카테고리</a></li>
         <li class="gnb__item"><a class="gnb__link" href="/best">베스트 클래스</a></li>
         <li class="gnb__item"><a class="gnb__link" href="/events">이벤트</a></li>
         <li class="gnb__item"><a class="gnb__link" href="/new">새로운 클래스</a></li>
@@ -75,6 +75,178 @@
     </nav>
 
   </div>
+
+  <!-- ====================================================================
+       전체 카테고리 메가 메뉴 (햄버거 · '전체 카테고리' 트리거로 펼침)
+       ==================================================================== -->
+  <div class="mega" id="category-mega" aria-hidden="true">
+    <div class="mega__inner l-container">
+      <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
+        <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it"
+                aria-selected="true" aria-controls="megapanel-dev-it" tabindex="0">
+          <span class="mega-cat__emoji" aria-hidden="true">💻</span>
+          <span class="mega-cat__name">개발 &amp; IT</span>
+          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-career-money"
+                aria-selected="false" aria-controls="megapanel-career-money" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">💼</span>
+          <span class="mega-cat__name">커리어 &amp; 머니</span>
+          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-design-creative"
+                aria-selected="false" aria-controls="megapanel-design-creative" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">✏️</span>
+          <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
+          <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-photo-video"
+                aria-selected="false" aria-controls="megapanel-photo-video" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">📷</span>
+          <span class="mega-cat__name">사진 &amp; 영상</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust"
+                aria-selected="false" aria-controls="megapanel-drawing-illust" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">🎨</span>
+          <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness"
+                aria-selected="false" aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">🧘</span>
+          <span class="mega-cat__name">운동 &amp; 마음챙김</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade"
+                aria-selected="false" aria-controls="megapanel-craft-handmade" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">🧶</span>
+          <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking"
+                aria-selected="false" aria-controls="megapanel-cooking-baking" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">🍳</span>
+          <span class="mega-cat__name">요리 &amp; 베이킹</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="mega__subs">
+        <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
+          <a class="mega-sub__title" href="/categories/dev-it">
+            개발 &amp; IT 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="/categories/dev-it/1">웹 퍼블리싱</a></li>
+            <li><a class="mega-sub__link" href="/categories/dev-it/2">프론트엔드</a></li>
+            <li><a class="mega-sub__link" href="/categories/dev-it/3">백엔드 &amp; 서버</a></li>
+            <li><a class="mega-sub__link" href="/categories/dev-it/4">모바일 &amp; 앱 개발</a></li>
+            <li><a class="mega-sub__link" href="/categories/dev-it/5">데이터 &amp; AI</a></li>
+            <li><a class="mega-sub__link" href="/categories/dev-it/6">AI 개발 도구</a></li>
+            <li><a class="mega-sub__link" href="/categories/dev-it/7">노코드 &amp; 자동화</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money" hidden>
+          <a class="mega-sub__title" href="/categories/career-money">
+            커리어 &amp; 머니 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="/categories/career-money/1">직무 역량 &amp; 일잘러</a></li>
+            <li><a class="mega-sub__link" href="/categories/career-money/2">취업 &amp; 이직</a></li>
+            <li><a class="mega-sub__link" href="/categories/career-money/3">마케팅 &amp; 브랜딩</a></li>
+            <li><a class="mega-sub__link" href="/categories/career-money/4">사이드프로젝트 &amp; N잡</a></li>
+            <li><a class="mega-sub__link" href="/categories/career-money/5">재테크 &amp; 투자</a></li>
+            <li><a class="mega-sub__link" href="/categories/career-money/6">절세 &amp; 머니 관리</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative" hidden>
+          <a class="mega-sub__title" href="/categories/design-creative">
+            디자인 &amp; 크리에이티브 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="/categories/design-creative/1">UX/UI 디자인</a></li>
+            <li><a class="mega-sub__link" href="/categories/design-creative/2">그래픽 디자인</a></li>
+            <li><a class="mega-sub__link" href="/categories/design-creative/3">브랜딩 &amp; 로고</a></li>
+            <li><a class="mega-sub__link" href="/categories/design-creative/4">3D &amp; 모션 디자인</a></li>
+            <li><a class="mega-sub__link" href="/categories/design-creative/5">일러스트 &amp; 디지털아트</a></li>
+            <li><a class="mega-sub__link" href="/categories/design-creative/6">크리에이티브 입문</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
+          <a class="mega-sub__title" href="/categories/photo-video">
+            사진 &amp; 영상 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="/categories/photo-video/1">사진 촬영</a></li>
+            <li><a class="mega-sub__link" href="/categories/photo-video/2">영상 촬영</a></li>
+            <li><a class="mega-sub__link" href="/categories/photo-video/3">편집 &amp; 후보정</a></li>
+            <li><a class="mega-sub__link" href="/categories/photo-video/4">모션 &amp; 크리에이티브</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust" hidden>
+          <a class="mega-sub__title" href="/categories/drawing-illust">
+            드로잉 &amp; 일러스트 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="/categories/drawing-illust/1">디지털 드로잉</a></li>
+            <li><a class="mega-sub__link" href="/categories/drawing-illust/2">손그림 &amp; 회화</a></li>
+            <li><a class="mega-sub__link" href="/categories/drawing-illust/3">캐릭터 &amp; 웹툰</a></li>
+            <li><a class="mega-sub__link" href="/categories/drawing-illust/4">캘리그라피 &amp; 레터링</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness" aria-labelledby="megacat-fitness-mindfulness" hidden>
+          <a class="mega-sub__title" href="/categories/fitness-mindfulness">
+            운동 &amp; 마음챙김 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="/categories/fitness-mindfulness/1">홈트 &amp; 근력</a></li>
+            <li><a class="mega-sub__link" href="/categories/fitness-mindfulness/2">요가 &amp; 필라테스</a></li>
+            <li><a class="mega-sub__link" href="/categories/fitness-mindfulness/3">러닝 &amp; 유산소</a></li>
+            <li><a class="mega-sub__link" href="/categories/fitness-mindfulness/4">명상 &amp; 마음챙김</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade" hidden>
+          <a class="mega-sub__title" href="/categories/craft-handmade">
+            공예 &amp; 핸드메이드 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="/categories/craft-handmade/1">가죽 &amp; 패브릭 공예</a></li>
+            <li><a class="mega-sub__link" href="/categories/craft-handmade/2">도예 &amp; 점토</a></li>
+            <li><a class="mega-sub__link" href="/categories/craft-handmade/3">캔들 &amp; 플라워</a></li>
+            <li><a class="mega-sub__link" href="/categories/craft-handmade/4">주얼리 &amp; 데코 소품</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking" hidden>
+          <a class="mega-sub__title" href="/categories/cooking-baking">
+            요리 &amp; 베이킹 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="/categories/cooking-baking/1">집밥 &amp; 한 끼 요리</a></li>
+            <li><a class="mega-sub__link" href="/categories/cooking-baking/2">베이킹 &amp; 디저트</a></li>
+            <li><a class="mega-sub__link" href="/categories/cooking-baking/3">홈카페 &amp; 음료</a></li>
+            <li><a class="mega-sub__link" href="/categories/cooking-baking/4">세계요리 &amp; 비건</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mega-backdrop" hidden></div>
 </header>
 
 
@@ -1308,5 +1480,7 @@
   </div>
 </footer>
 
+
+<script src="js/nav.js" defer></script>
 </body>
 </html>
