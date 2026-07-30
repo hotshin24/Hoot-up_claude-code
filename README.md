@@ -20,7 +20,7 @@ HOOT UP은 **동일한 Figma 원본을 두 개의 AI 파이프라인에 태워, 
 | 파이프라인 | Figma → Claude Code → GitHub Pages | Figma → v0 → Cursor → Vercel |
 | 학습 상태 | 학습 완료 범위 | 학습 중인 범위 |
 | 목적 | 학습 내용 심화 + **AI 산출물 검수 역량 검증** | 미학습 스택 **학습 병행** |
-| 저장소 | 현재 위치 | ⚠️ 링크 추가 |
+| 저장소 | 현재 위치 | https://github.com/reviewelio24-coder/hootup-v0 |
 
 두 갈래를 나눈 기준은 **내가 검수할 수 있는 범위인가**입니다.
 
