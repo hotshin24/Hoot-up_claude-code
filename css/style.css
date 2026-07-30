@@ -1830,6 +1830,15 @@ hr {
   background-size: cover;
 }
 
+/* 이미지 없이 브랜드 그라디언트로 채우는 배너 (베스트 클래스 등) */
+.category-banner.category-banner--plain {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-neutral-darker),
+    var(--color-brand-base)
+  );
+}
+
 .category-banner__title {
   color: var(--color-text-inverse);
   font-size: var(--text-h2-size);
