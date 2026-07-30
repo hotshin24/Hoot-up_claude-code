@@ -1962,16 +1962,18 @@ hr {
 }
 
 .pager__num:hover {
-  color: var(--color-brand-base);
+  background-color: var(--color-neutral-dark);
+  color: var(--color-neutral-white);
 }
 
 .pager__num--active {
-  background-color: var(--color-brand-base);
+  background-color: var(--color-neutral-dark);
   color: var(--color-text-inverse);
 }
 
 .pager__arrow:hover {
-  color: var(--color-brand-base);
+  background-color: var(--color-neutral-dark);
+  color: var(--color-neutral-white);
 }
 
 .pager__arrow[aria-disabled="true"] {
