@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>도예 &amp; 점토 강의 · 공예·핸드메이드 — HOOT UP</title>
-  <meta name="description" content="HOOT UP 공예·핸드메이드 도예 & 점토 강의 — 핸드빌딩 도예, 물레 도자기, 점토 공예 소품 강의 모음.">
+  <title>공예·핸드메이드 이벤트 할인 강의 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 공예 & 핸드메이드 강의 — 가죽·패브릭 공예, 도예·점토, 캔들·플라워, 주얼리·데코 소품 강의 모음.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -257,9 +257,9 @@
     <h2 class="subcat__title" id="subcat-title">세부 카테고리</h2>
     <nav aria-label="공예·핸드메이드 세부 카테고리">
       <ul class="chip-list">
-      <li><a class="chip" href="category-craft-handmade-1.html">전체</a></li>
+      <li><a class="chip chip--active" href="category-craft-handmade-1.html">전체</a></li>
       <li><a class="chip" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
-      <li><a class="chip chip--active" href="category-craft-handmade-pottery.html" aria-current="page">도예 &amp; 점토</a></li>
+      <li><a class="chip" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
       <li><a class="chip" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
       <li><a class="chip" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
       </ul>
@@ -267,123 +267,240 @@
     <hr class="subcat__divider">
   </section>
 
+  <div class="filter-bar">
+    <button class="filter-sort" type="button" aria-haspopup="listbox" aria-expanded="false">
+      인기순
+      <span class="icon icon--caret-down" aria-hidden="true"></span>
+    </button>
+    <ul class="chip-list filter-bar__chips">
+      <li><a class="chip" href="category-craft-handmade-earlybird.html">얼리버드 할인</a></li>
+      <li><a class="chip chip--brand" href="category-craft-handmade-event.html" aria-current="page">이벤트 할인</a></li>
+    </ul>
+  </div>
 
   <ul class="course-grid">
-      <li class="course-grid__item">
-        <article class="course-card">
-          <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="/courses/handbuilding" tabindex="-1"><img class="course-card__image" src="assets/course/cr-handbuilding.png"
-                 alt="손으로 그릇을 빚는 핸드빌딩 이미지" loading="lazy"></a>
-            <div class="course-card__flags">
-              <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
+        <li class="course-grid__item">
+          <article class="course-card">
+            <figure class="course-card__thumb">
+              <a class="course-card__thumb-link" href="/courses/leather-wallet" tabindex="-1"><img class="course-card__image" src="assets/course/cr-leather-wallet.png"
+                   alt="가죽 카드지갑을 만드는 이미지" loading="lazy"></a>
+              <div class="course-card__flags">
+                <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
+                <span class="course-card__flag course-card__flag--best">BEST</span>
+              </div>
+              <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
+                <span class="icon icon--heart"></span>
+              </button>
+              <span class="course-card__badge">35% 할인</span>
+            </figure>
+            <div class="course-card__body">
+              <img class="course-card__avatar" src="assets/avatar/cr-moru.png"
+                   alt="지식 공유자 레더공방 모루" loading="lazy">
+              <div class="course-card__info">
+                <h3 class="course-card__title">
+                  <a class="course-card__link" href="/courses/leather-wallet">손끝에서 완성되는 첫 가죽 카드지갑 만들기</a>
+                </h3>
+                <p class="course-card__meta">레더공방 모루・30강・6시간</p>
+                <p class="course-card__price">
+                  <span class="course-card__rate">35%</span>
+                  <del class="course-card__price-before">99,000원</del>
+                  <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
+                  <ins class="course-card__price-after">64,350원</ins>
+                </p>
+                <p class="course-card__rating">
+                  <img class="course-card__stars" src="assets/brand/stars-48.svg" alt="" loading="lazy">
+                  <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.8</span>
+                  <span class="course-card__sep" aria-hidden="true">|</span>
+                  <span class="course-card__students">2,340명 수강</span>
+                </p>
+              </div>
             </div>
-            <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
-              <span class="icon icon--heart"></span>
-            </button>
-            <span class="course-card__badge">30% 할인</span>
-          </figure>
-          <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/cr-dowon.png"
-                 alt="지식 공유자 흙내음 도원" loading="lazy">
-            <div class="course-card__info">
-              <h3 class="course-card__title">
-                <a class="course-card__link" href="/courses/handbuilding">손으로 빚는 나만의 그릇, 핸드빌딩 도예</a>
-              </h3>
-              <p class="course-card__meta">흙내음 도원・34강・7시간 30분</p>
-              <p class="course-card__price">
-                <span class="course-card__rate">30%</span>
-                <del class="course-card__price-before">110,000원</del>
-                <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
-                <ins class="course-card__price-after">77,000원</ins>
-              </p>
-              <p class="course-card__rating">
-                <img class="course-card__stars" src="assets/brand/stars-48.svg" alt="" loading="lazy">
-                <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.8</span>
-                <span class="course-card__sep" aria-hidden="true">|</span>
-                <span class="course-card__students">2,010명 수강</span>
-              </p>
+          </article>
+        </li>
+        <li class="course-grid__item">
+          <article class="course-card">
+            <figure class="course-card__thumb">
+              <a class="course-card__thumb-link" href="/courses/embroidery" tabindex="-1"><img class="course-card__image" src="assets/course/cr-embroidery.png"
+                   alt="전통 자수를 놓는 이미지" loading="lazy"></a>
+              <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
+                <span class="icon icon--heart"></span>
+              </button>
+              <span class="course-card__badge">25% 할인</span>
+            </figure>
+            <div class="course-card__body">
+              <img class="course-card__avatar" src="assets/avatar/cr-linen.png"
+                   alt="지식 공유자 자수공방 린넨" loading="lazy">
+              <div class="course-card__info">
+                <h3 class="course-card__title">
+                  <a class="course-card__link" href="/courses/embroidery">전통 기법으로 한 땀 한 땀, 일상 자수 입문</a>
+                </h3>
+                <p class="course-card__meta">자수공방 린넨・28강・5시간 30분</p>
+                <p class="course-card__price">
+                  <span class="course-card__rate">25%</span>
+                  <del class="course-card__price-before">77,000원</del>
+                  <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
+                  <ins class="course-card__price-after">57,750원</ins>
+                </p>
+                <p class="course-card__rating">
+                  <img class="course-card__stars" src="assets/brand/stars-46.svg" alt="" loading="lazy">
+                  <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.6</span>
+                  <span class="course-card__sep" aria-hidden="true">|</span>
+                  <span class="course-card__students">1,320명 수강</span>
+                </p>
+              </div>
             </div>
-          </div>
-        </article>
-      </li>
-      <li class="course-grid__item">
-        <article class="course-card">
-          <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="/courses/pottery" tabindex="-1"><img class="course-card__image" src="assets/course/cr-pottery.png"
-                 alt="물레로 도자기를 빚는 이미지" loading="lazy"></a>
-            <div class="course-card__flags">
-              <span class="course-card__flag course-card__flag--new">NEW</span>
+          </article>
+        </li>
+        <li class="course-grid__item">
+          <article class="course-card">
+            <figure class="course-card__thumb">
+              <a class="course-card__thumb-link" href="/courses/clay" tabindex="-1"><img class="course-card__image" src="assets/course/cr-clay.png"
+                   alt="점토 공예 소품을 만드는 이미지" loading="lazy"></a>
+              <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
+                <span class="icon icon--heart"></span>
+              </button>
+              <span class="course-card__badge">20% 할인</span>
+            </figure>
+            <div class="course-card__body">
+              <img class="course-card__avatar" src="assets/avatar/cr-sera.png"
+                   alt="지식 공유자 조물조물 새라" loading="lazy">
+              <div class="course-card__info">
+                <h3 class="course-card__title">
+                  <a class="course-card__link" href="/courses/clay">집에서 시작하는 점토 공예 소품 만들기 클래스</a>
+                </h3>
+                <p class="course-card__meta">조물조물 새라・26강・5시간</p>
+                <p class="course-card__price">
+                  <span class="course-card__rate">20%</span>
+                  <del class="course-card__price-before">77,000원</del>
+                  <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
+                  <ins class="course-card__price-after">61,600원</ins>
+                </p>
+                <p class="course-card__rating">
+                  <img class="course-card__stars" src="assets/brand/stars-46.svg" alt="" loading="lazy">
+                  <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.6</span>
+                  <span class="course-card__sep" aria-hidden="true">|</span>
+                  <span class="course-card__students">1,180명 수강</span>
+                </p>
+              </div>
             </div>
-            <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
-              <span class="icon icon--heart"></span>
-            </button>
-            <span class="course-card__badge">30% 할인</span>
-          </figure>
-          <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/cr-dowon.png"
-                 alt="지식 공유자 흙내음 도원" loading="lazy">
-            <div class="course-card__info">
-              <h3 class="course-card__title">
-                <a class="course-card__link" href="/courses/pottery">물레로 빚는 첫 나만의 도자기, 라이프 도예</a>
-              </h3>
-              <p class="course-card__meta">흙내음 도원・38강・8시간</p>
-              <p class="course-card__price">
-                <span class="course-card__rate">30%</span>
-                <del class="course-card__price-before">121,000원</del>
-                <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
-                <ins class="course-card__price-after">84,700원</ins>
-              </p>
-              <p class="course-card__rating">
-                <img class="course-card__stars" src="assets/brand/stars-47.svg" alt="" loading="lazy">
-                <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.7</span>
-                <span class="course-card__sep" aria-hidden="true">|</span>
-                <span class="course-card__students">1,560명 수강</span>
-              </p>
+          </article>
+        </li>
+        <li class="course-grid__item">
+          <article class="course-card">
+            <figure class="course-card__thumb">
+              <a class="course-card__thumb-link" href="/courses/candle" tabindex="-1"><img class="course-card__image" src="assets/course/cr-candle.png"
+                   alt="소이캔들과 디퓨저를 만드는 이미지" loading="lazy"></a>
+              <div class="course-card__flags">
+                <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
+                <span class="course-card__flag course-card__flag--best">BEST</span>
+              </div>
+              <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
+                <span class="icon icon--heart"></span>
+              </button>
+              <span class="course-card__badge">35% 할인</span>
+            </figure>
+            <div class="course-card__body">
+              <img class="course-card__avatar" src="assets/avatar/cr-scentlab.png"
+                   alt="지식 공유자 센트랩" loading="lazy">
+              <div class="course-card__info">
+                <h3 class="course-card__title">
+                  <a class="course-card__link" href="/courses/candle">향으로 채우는 소이캔들 &amp; 디퓨저 만들기 클래스</a>
+                </h3>
+                <p class="course-card__meta">센트랩・32강・6시간</p>
+                <p class="course-card__price">
+                  <span class="course-card__rate">35%</span>
+                  <del class="course-card__price-before">88,000원</del>
+                  <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
+                  <ins class="course-card__price-after">57,200원</ins>
+                </p>
+                <p class="course-card__rating">
+                  <img class="course-card__stars" src="assets/brand/stars-48.svg" alt="" loading="lazy">
+                  <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.8</span>
+                  <span class="course-card__sep" aria-hidden="true">|</span>
+                  <span class="course-card__students">2,560명 수강</span>
+                </p>
+              </div>
             </div>
-          </div>
-        </article>
-      </li>
-      <li class="course-grid__item">
-        <article class="course-card">
-          <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="/courses/clay" tabindex="-1"><img class="course-card__image" src="assets/course/cr-clay.png"
-                 alt="점토 공예 소품을 만드는 이미지" loading="lazy"></a>
-            <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
-              <span class="icon icon--heart"></span>
-            </button>
-            <span class="course-card__badge">20% 할인</span>
-          </figure>
-          <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/cr-sera.png"
-                 alt="지식 공유자 조물조물 새라" loading="lazy">
-            <div class="course-card__info">
-              <h3 class="course-card__title">
-                <a class="course-card__link" href="/courses/clay">집에서 시작하는 점토 공예 소품 만들기 클래스</a>
-              </h3>
-              <p class="course-card__meta">조물조물 새라・26강・5시간</p>
-              <p class="course-card__price">
-                <span class="course-card__rate">20%</span>
-                <del class="course-card__price-before">77,000원</del>
-                <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
-                <ins class="course-card__price-after">61,600원</ins>
-              </p>
-              <p class="course-card__rating">
-                <img class="course-card__stars" src="assets/brand/stars-46.svg" alt="" loading="lazy">
-                <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.6</span>
-                <span class="course-card__sep" aria-hidden="true">|</span>
-                <span class="course-card__students">1,180명 수강</span>
-              </p>
+          </article>
+        </li>
+        <li class="course-grid__item">
+          <article class="course-card">
+            <figure class="course-card__thumb">
+              <a class="course-card__thumb-link" href="/courses/freshflower" tabindex="-1"><img class="course-card__image" src="assets/course/cr-freshflower.png"
+                   alt="아이와 생화 플라워를 만드는 이미지" loading="lazy"></a>
+              <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
+                <span class="icon icon--heart"></span>
+              </button>
+              <span class="course-card__badge">20% 할인</span>
+            </figure>
+            <div class="course-card__body">
+              <img class="course-card__avatar" src="assets/avatar/cr-hari.png"
+                   alt="지식 공유자 플로리스트 하리" loading="lazy">
+              <div class="course-card__info">
+                <h3 class="course-card__title">
+                  <a class="course-card__link" href="/courses/freshflower">아이들과 집에서 만드는 생화 플라워 클래스</a>
+                </h3>
+                <p class="course-card__meta">플로리스트 하리・28강・5시간 30분</p>
+                <p class="course-card__price">
+                  <span class="course-card__rate">20%</span>
+                  <del class="course-card__price-before">88,000원</del>
+                  <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
+                  <ins class="course-card__price-after">70,400원</ins>
+                </p>
+                <p class="course-card__rating">
+                  <img class="course-card__stars" src="assets/brand/stars-46.svg" alt="" loading="lazy">
+                  <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.6</span>
+                  <span class="course-card__sep" aria-hidden="true">|</span>
+                  <span class="course-card__students">1,340명 수강</span>
+                </p>
+              </div>
             </div>
-          </div>
-        </article>
-      </li>
+          </article>
+        </li>
+        <li class="course-grid__item">
+          <article class="course-card">
+            <figure class="course-card__thumb">
+              <a class="course-card__thumb-link" href="/courses/resin" tabindex="-1"><img class="course-card__image" src="assets/course/cr-resin.png"
+                   alt="투명한 레진 공예 작품 이미지" loading="lazy"></a>
+              <div class="course-card__flags">
+                <span class="course-card__flag course-card__flag--new">NEW</span>
+              </div>
+              <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
+                <span class="icon icon--heart"></span>
+              </button>
+              <span class="course-card__badge">25% 할인</span>
+            </figure>
+            <div class="course-card__body">
+              <img class="course-card__avatar" src="assets/avatar/cr-doi.png"
+                   alt="지식 공유자 말랑레진 도이" loading="lazy">
+              <div class="course-card__info">
+                <h3 class="course-card__title">
+                  <a class="course-card__link" href="/courses/resin">눈부시도록 투명하게 빛나는 레진 공예 입문반</a>
+                </h3>
+                <p class="course-card__meta">말랑레진 도이・30강・6시간</p>
+                <p class="course-card__price">
+                  <span class="course-card__rate">25%</span>
+                  <del class="course-card__price-before">88,000원</del>
+                  <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
+                  <ins class="course-card__price-after">66,000원</ins>
+                </p>
+                <p class="course-card__rating">
+                  <img class="course-card__stars" src="assets/brand/stars-47.svg" alt="" loading="lazy">
+                  <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.7</span>
+                  <span class="course-card__sep" aria-hidden="true">|</span>
+                  <span class="course-card__students">1,880명 수강</span>
+                </p>
+              </div>
+            </div>
+          </article>
+        </li>
   </ul>
 
   <nav class="pager" aria-label="강의 목록 페이지">
     <a class="pager__arrow" href="#" aria-label="이전 페이지" aria-disabled="true">
       <span class="icon icon--chevron-left"></span>
     </a>
-    <a class="pager__num pager__num--active" href="category-craft-handmade-pottery.html" aria-current="page">1</a>
+    <a class="pager__num pager__num--active" href="category-craft-handmade-event.html" aria-current="page">1</a>
     <a class="pager__arrow" href="#" aria-label="다음 페이지" aria-disabled="true">
       <span class="icon icon--chevron-right"></span>
     </a>
