@@ -926,6 +926,9 @@ hr {
 .course-card__wish {
   justify-self: end;
   align-self: start;
+  /* 확대되는 이미지(transform=새 스택 컨텍스트) 위에 항상 표시 */
+  position: relative;
+  z-index: 1;
   display: flex;
   margin: var(--space-md) var(--space-md) 0 0;
   color: var(--color-neutral-white);
@@ -939,6 +942,9 @@ hr {
 .course-card__badge {
   justify-self: end;
   align-self: start;
+  /* 확대되는 이미지 위에 항상 표시 (하트 아이콘과 동일하게 제자리 고정) */
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
