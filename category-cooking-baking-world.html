@@ -247,120 +247,118 @@
 </header>
 
 
-<main id="main" class="category-page">
-  <div class="l-container category-page__inner">
+<main id="main" class="category-page l-container category-page__inner">
 
-    <div class="category-banner" style="--category-banner-image: url('../assets/category/cooking-banner.jpg');">
-      <h1 class="category-banner__title">요리・베이킹</h1>
-    </div>
-
-    <section class="subcat" aria-labelledby="subcat-title">
-      <h2 class="subcat__title" id="subcat-title">세부 카테고리</h2>
-      <nav aria-label="요리·베이킹 세부 카테고리">
-        <ul class="chip-list">
-        <li><a class="chip" href="category-cooking-baking-1.html">전체</a></li>
-        <li><a class="chip" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
-        <li><a class="chip" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
-        <li><a class="chip" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
-        <li><a class="chip chip--active" href="category-cooking-baking-world.html" aria-current="page">세계요리 &amp; 비건</a></li>
-        </ul>
-      </nav>
-      <hr class="subcat__divider">
-    </section>
-
-    <div class="filter-bar">
-      <button class="filter-sort" type="button" aria-haspopup="listbox" aria-expanded="false">
-        인기순
-        <span class="icon icon--caret-down" aria-hidden="true"></span>
-      </button>
-      <ul class="chip-list filter-bar__chips">
-        <li><button class="chip chip--brand" type="button" aria-pressed="true">얼리버드 할인</button></li>
-        <li><button class="chip" type="button" aria-pressed="false">이벤트 할인</button></li>
-      </ul>
-    </div>
-
-    <ul class="course-grid">
-        <li class="course-grid__item">
-          <article class="course-card">
-            <figure class="course-card__thumb">
-              <a class="course-card__thumb-link" href="/courses/world-cuisine" tabindex="-1"><img class="course-card__image" src="assets/course/ck-world-cuisine.png"
-                   alt="세계 가정식 요리 이미지" loading="lazy"></a>
-              <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
-                <span class="icon icon--heart"></span>
-              </button>
-              <span class="course-card__badge">30% 할인</span>
-            </figure>
-            <div class="course-card__body">
-              <img class="course-card__avatar" src="assets/avatar/ck-yuna.png"
-                   alt="지식 공유자 글로벌키친 유나" loading="lazy">
-              <div class="course-card__info">
-                <h3 class="course-card__title">
-                  <a class="course-card__link" href="/courses/world-cuisine">집에서 만드는 세계 가정식 미식 여행</a>
-                </h3>
-                <p class="course-card__meta">글로벌키친 유나・42강・8시간 30분</p>
-                <p class="course-card__price">
-                  <span class="course-card__rate">30%</span>
-                  <del class="course-card__price-before">99,000원</del>
-                  <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
-                  <ins class="course-card__price-after">69,300원</ins>
-                </p>
-                <p class="course-card__rating">
-                  <img class="course-card__stars" src="assets/brand/stars-47.svg" alt="" loading="lazy">
-                  <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.7</span>
-                  <span class="course-card__sep" aria-hidden="true">|</span>
-                  <span class="course-card__students">1,940명 수강</span>
-                </p>
-              </div>
-            </div>
-          </article>
-        </li>
-        <li class="course-grid__item">
-          <article class="course-card">
-            <figure class="course-card__thumb">
-              <a class="course-card__thumb-link" href="/courses/vegan" tabindex="-1"><img class="course-card__image" src="assets/course/ck-vegan.png"
-                   alt="지중해식 비건 한 끼 이미지" loading="lazy"></a>
-              <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
-                <span class="icon icon--heart"></span>
-              </button>
-              <span class="course-card__badge">25% 할인</span>
-            </figure>
-            <div class="course-card__body">
-              <img class="course-card__avatar" src="assets/avatar/ck-bori.png"
-                   alt="지식 공유자 채식테이블 보리" loading="lazy">
-              <div class="course-card__info">
-                <h3 class="course-card__title">
-                  <a class="course-card__link" href="/courses/vegan">지중해식으로 건강하게 즐기는 비건 한 끼</a>
-                </h3>
-                <p class="course-card__meta">채식테이블 보리・34강・7시간</p>
-                <p class="course-card__price">
-                  <span class="course-card__rate">25%</span>
-                  <del class="course-card__price-before">88,000원</del>
-                  <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
-                  <ins class="course-card__price-after">66,000원</ins>
-                </p>
-                <p class="course-card__rating">
-                  <img class="course-card__stars" src="assets/brand/stars-46.svg" alt="" loading="lazy">
-                  <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.6</span>
-                  <span class="course-card__sep" aria-hidden="true">|</span>
-                  <span class="course-card__students">1,670명 수강</span>
-                </p>
-              </div>
-            </div>
-          </article>
-        </li>
-    </ul>
-
-    <nav class="pager" aria-label="강의 목록 페이지">
-      <a class="pager__arrow" href="#" aria-label="이전 페이지" aria-disabled="true">
-        <span class="icon icon--chevron-left"></span>
-      </a>
-      <a class="pager__num pager__num--active" href="category-cooking-baking-world.html" aria-current="page">1</a>
-      <a class="pager__arrow" href="#" aria-label="다음 페이지" aria-disabled="true">
-        <span class="icon icon--chevron-right"></span>
-      </a>
-    </nav>
-
+  <div class="category-banner" style="--category-banner-image: url('../assets/category/cooking-banner.jpg');">
+    <h1 class="category-banner__title">요리・베이킹</h1>
   </div>
+
+  <section class="subcat" aria-labelledby="subcat-title">
+    <h2 class="subcat__title" id="subcat-title">세부 카테고리</h2>
+    <nav aria-label="요리·베이킹 세부 카테고리">
+      <ul class="chip-list">
+      <li><a class="chip" href="category-cooking-baking-1.html">전체</a></li>
+      <li><a class="chip" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
+      <li><a class="chip" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
+      <li><a class="chip" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
+      <li><a class="chip chip--active" href="category-cooking-baking-world.html" aria-current="page">세계요리 &amp; 비건</a></li>
+      </ul>
+    </nav>
+    <hr class="subcat__divider">
+  </section>
+
+  <div class="filter-bar">
+    <button class="filter-sort" type="button" aria-haspopup="listbox" aria-expanded="false">
+      인기순
+      <span class="icon icon--caret-down" aria-hidden="true"></span>
+    </button>
+    <ul class="chip-list filter-bar__chips">
+      <li><button class="chip chip--brand" type="button" aria-pressed="true">얼리버드 할인</button></li>
+      <li><button class="chip" type="button" aria-pressed="false">이벤트 할인</button></li>
+    </ul>
+  </div>
+
+  <ul class="course-grid">
+      <li class="course-grid__item">
+        <article class="course-card">
+          <figure class="course-card__thumb">
+            <a class="course-card__thumb-link" href="/courses/world-cuisine" tabindex="-1"><img class="course-card__image" src="assets/course/ck-world-cuisine.png"
+                 alt="세계 가정식 요리 이미지" loading="lazy"></a>
+            <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
+              <span class="icon icon--heart"></span>
+            </button>
+            <span class="course-card__badge">30% 할인</span>
+          </figure>
+          <div class="course-card__body">
+            <img class="course-card__avatar" src="assets/avatar/ck-yuna.png"
+                 alt="지식 공유자 글로벌키친 유나" loading="lazy">
+            <div class="course-card__info">
+              <h3 class="course-card__title">
+                <a class="course-card__link" href="/courses/world-cuisine">집에서 만드는 세계 가정식 미식 여행</a>
+              </h3>
+              <p class="course-card__meta">글로벌키친 유나・42강・8시간 30분</p>
+              <p class="course-card__price">
+                <span class="course-card__rate">30%</span>
+                <del class="course-card__price-before">99,000원</del>
+                <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
+                <ins class="course-card__price-after">69,300원</ins>
+              </p>
+              <p class="course-card__rating">
+                <img class="course-card__stars" src="assets/brand/stars-47.svg" alt="" loading="lazy">
+                <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.7</span>
+                <span class="course-card__sep" aria-hidden="true">|</span>
+                <span class="course-card__students">1,940명 수강</span>
+              </p>
+            </div>
+          </div>
+        </article>
+      </li>
+      <li class="course-grid__item">
+        <article class="course-card">
+          <figure class="course-card__thumb">
+            <a class="course-card__thumb-link" href="/courses/vegan" tabindex="-1"><img class="course-card__image" src="assets/course/ck-vegan.png"
+                 alt="지중해식 비건 한 끼 이미지" loading="lazy"></a>
+            <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
+              <span class="icon icon--heart"></span>
+            </button>
+            <span class="course-card__badge">25% 할인</span>
+          </figure>
+          <div class="course-card__body">
+            <img class="course-card__avatar" src="assets/avatar/ck-bori.png"
+                 alt="지식 공유자 채식테이블 보리" loading="lazy">
+            <div class="course-card__info">
+              <h3 class="course-card__title">
+                <a class="course-card__link" href="/courses/vegan">지중해식으로 건강하게 즐기는 비건 한 끼</a>
+              </h3>
+              <p class="course-card__meta">채식테이블 보리・34강・7시간</p>
+              <p class="course-card__price">
+                <span class="course-card__rate">25%</span>
+                <del class="course-card__price-before">88,000원</del>
+                <span class="icon icon--arrow-right course-card__arrow" aria-hidden="true"></span>
+                <ins class="course-card__price-after">66,000원</ins>
+              </p>
+              <p class="course-card__rating">
+                <img class="course-card__stars" src="assets/brand/stars-46.svg" alt="" loading="lazy">
+                <span class="course-card__score"><span class="a11y-hidden">평점 5점 만점에 </span>4.6</span>
+                <span class="course-card__sep" aria-hidden="true">|</span>
+                <span class="course-card__students">1,670명 수강</span>
+              </p>
+            </div>
+          </div>
+        </article>
+      </li>
+  </ul>
+
+  <nav class="pager" aria-label="강의 목록 페이지">
+    <a class="pager__arrow" href="#" aria-label="이전 페이지" aria-disabled="true">
+      <span class="icon icon--chevron-left"></span>
+    </a>
+    <a class="pager__num pager__num--active" href="category-cooking-baking-world.html" aria-current="page">1</a>
+    <a class="pager__arrow" href="#" aria-label="다음 페이지" aria-disabled="true">
+      <span class="icon icon--chevron-right"></span>
+    </a>
+  </nav>
+
 </main>
 
 
