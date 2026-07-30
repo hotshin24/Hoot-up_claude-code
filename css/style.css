@@ -990,7 +990,7 @@ hr {
 }
 
 .course-card__link:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .course-card__meta {
