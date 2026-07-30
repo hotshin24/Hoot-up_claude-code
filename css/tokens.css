@@ -36,6 +36,10 @@
   --color-danger-lighter: #fde3e7;
   --color-warning-base: #ffd912;
 
+  /* 카드 플래그 배지 색상 (NEW=브랜드블루 재사용 / BEST=골드 / 시그니처=바이올렛) */
+  --color-flag-best: #f59e0b;
+  --color-flag-signature: #7c3aed;
+
   /* ----------------------------------------------------------------------
      Color — Semantic aliases
      ---------------------------------------------------------------------- */

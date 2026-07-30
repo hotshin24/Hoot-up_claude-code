@@ -960,23 +960,44 @@ hr {
   line-height: var(--text-body-sm-leading);
 }
 
-/* 신규 강의 표시 배지 — 썸네일 좌측 상단 (확대 이미지 위 고정) */
-.course-card__new-badge {
+/* 카드 플래그 배지(NEW/BEST/시그니처) — 썸네일 좌측 상단, 여러 개면 세로 스택 */
+.course-card__flags {
   justify-self: start;
   align-self: start;
+  /* 확대되는 이미지 위에 항상 표시 */
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2xs);
+  margin: var(--space-md) 0 0 var(--space-md);
+}
+
+.course-card__flag {
   display: inline-flex;
   align-items: center;
-  margin: var(--space-md) 0 0 var(--space-md);
   padding: 2px var(--space-2xs);
   border-radius: var(--radius-sm);
-  background-color: var(--color-brand-base);
-  color: var(--color-neutral-white);
   font-size: var(--text-body-sm-size);
   line-height: var(--text-body-sm-leading);
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.04em;
+}
+
+.course-card__flag--new {
+  background-color: var(--color-brand-base);
+  color: var(--color-neutral-white);
+}
+
+.course-card__flag--best {
+  background-color: var(--color-flag-best);
+  color: var(--color-neutral-darker);
+}
+
+.course-card__flag--signature {
+  background-color: var(--color-flag-signature);
+  color: var(--color-neutral-white);
 }
 
 .course-card__body {
