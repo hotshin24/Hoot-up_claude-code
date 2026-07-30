@@ -960,6 +960,25 @@ hr {
   line-height: var(--text-body-sm-leading);
 }
 
+/* 신규 강의 표시 배지 — 썸네일 좌측 상단 (확대 이미지 위 고정) */
+.course-card__new-badge {
+  justify-self: start;
+  align-self: start;
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  margin: var(--space-md) 0 0 var(--space-md);
+  padding: 2px var(--space-2xs);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-brand-base);
+  color: var(--color-neutral-white);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.04em;
+}
+
 .course-card__body {
   display: flex;
   gap: var(--space-xs);
