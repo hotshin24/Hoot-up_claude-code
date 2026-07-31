@@ -4241,7 +4241,7 @@ hr {
 /* 뉴스 카테고리 페이저는 분류별(코스) 카테고리 페이지와 동일한 공용 .pager 컴포넌트 사용.
    .desk-page 안의 페이저 여백만 맞추고, `.desk-page a { color: inherit }`(0,1,1)가
    활성 번호의 흰색을 덮으므로 명시도를 높여 화이트로 고정한다. */
-.desk-page .pager { padding: 44px 0 8px; }
+.desk-page .pager { padding: 44px 0 8px; flex-wrap: wrap; row-gap: var(--space-sm); }
 .desk-page a.pager__num--active { color: var(--color-text-inverse); }
 
 @media (max-width: 900px) {
