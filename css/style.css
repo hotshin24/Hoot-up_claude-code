@@ -4107,3 +4107,159 @@ hr {
 @media (prefers-reduced-motion: reduce) {
   .desk-actionbtn, .desk-tag-chip, .desk-promo__btn { transition: none; }
 }
+
+
+/* ==========================================================================
+   HOOT UP DESK — 뉴스 카테고리 (desk-<section>.html)  · 라이트(신문) 테마
+   Figma: new category (191:12657)  · .desk-page 래퍼/토큰·.desk-artbar 재사용
+   ========================================================================== */
+/* ---------- 카테고리 헤더 ---------- */
+.desk-cathead {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  padding: 32px 0 19px;
+  border-bottom: 3px solid var(--desk-ink);
+  flex-wrap: wrap;
+}
+.desk-cathead__title {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-black);
+  font-size: clamp(36px, 5vw, 48px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--desk-ink);
+}
+.desk-cathead__desc { flex: 1 1 auto; min-width: 0; font-size: 14.5px; line-height: 1.7; color: var(--desk-strong); }
+.desk-cathead__desc b { color: var(--desk-accent); font-weight: var(--font-weight-bold); }
+.desk-cathead__sort { display: flex; gap: 14px; flex-shrink: 0; }
+.desk-cathead__sortlink { font-size: 13px; color: var(--desk-muted); }
+.desk-cathead__sortlink:hover { color: var(--desk-ink); }
+.desk-cathead__sortlink--active { color: var(--desk-ink); font-weight: var(--font-weight-bold); }
+
+/* ---------- 2단 (필터 + 목록) ---------- */
+.desk-catwrap {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 44px;
+  padding-top: 28px;
+}
+
+/* ---------- 좌측 필터 ---------- */
+.desk-filter { display: flex; flex-direction: column; gap: 26px; align-self: start; }
+.desk-filter__title {
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgb(0 0 0 / 0.2);
+  font-weight: var(--font-weight-bold);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--desk-ink);
+  margin-bottom: 8px;
+}
+.desk-filter__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: 9px 0 10px;
+  border-bottom: 1px solid rgb(0 0 0 / 0.08);
+  font-size: 14px;
+  color: var(--desk-strong);
+}
+.desk-filter__count { color: var(--desk-muted); }
+.desk-filter__row:hover .desk-filter__name { color: var(--desk-accent); }
+.desk-filter__row--active .desk-filter__name,
+.desk-filter__row--active .desk-filter__count { color: var(--desk-accent); font-weight: var(--font-weight-bold); }
+
+.desk-period { display: flex; flex-wrap: wrap; gap: 6px; }
+.desk-period__chip {
+  display: inline-flex;
+  padding: 7px 13px;
+  border: 1px solid rgb(0 0 0 / 0.18);
+  font-size: 12.5px;
+  color: var(--desk-strong);
+  transition: border-color var(--duration-base) var(--easing-standard), color var(--duration-base) var(--easing-standard);
+}
+.desk-period__chip:hover { border-color: var(--desk-ink); color: var(--desk-ink); }
+.desk-period__chip--active { background-color: var(--desk-ink); border-color: var(--desk-ink); color: var(--color-neutral-white); }
+.desk-period__chip--active:hover { color: var(--color-neutral-white); }
+
+.desk-filter__reporter {
+  display: block;
+  padding: 9px 0 10px;
+  border-bottom: 1px solid rgb(0 0 0 / 0.08);
+  font-size: 14px;
+  color: var(--desk-strong);
+}
+.desk-filter__reporter:hover { color: var(--desk-accent); }
+.desk-filter__group ul > li:last-child .desk-filter__row,
+.desk-filter__group ul > li:last-child .desk-filter__reporter { border-bottom: 0; }
+
+/* ---------- 기사 목록 ---------- */
+.desk-newsgroup { margin-bottom: 4px; }
+.desk-newsgroup__date {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--desk-ink);
+  font-weight: var(--font-weight-bold);
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  color: var(--desk-ink);
+  margin-top: 27px;
+}
+.desk-newsfeat {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 24px 0 21px;
+  border-bottom: 1px solid var(--desk-line-soft);
+}
+.desk-newsfeat__body { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 7px; }
+.desk-newsfeat__title { font-weight: var(--font-weight-bold); font-size: 26px; line-height: 1.32; letter-spacing: -0.03em; color: var(--desk-ink); }
+.desk-newsfeat:hover .desk-newsfeat__title { color: var(--desk-accent); }
+.desk-newsfeat__excerpt { font-size: 14.5px; line-height: 1.75; color: var(--desk-strong); }
+.desk-newsfeat__byline { margin-top: 2px; font-size: 12.5px; color: var(--desk-muted); }
+.desk-newsfeat__thumb { flex-shrink: 0; width: 200px; height: 126px; overflow: hidden; }
+.desk-newsfeat__thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+.desk-newsrow {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 14px 0 16px;
+  border-bottom: 1px solid var(--desk-line-soft);
+}
+.desk-newsrow__title { font-weight: var(--font-weight-bold); font-size: 17px; line-height: 1.45; color: var(--desk-ink); }
+.desk-newsrow:hover .desk-newsrow__title { color: var(--desk-accent); }
+.desk-newsrow__byline { font-size: 12.5px; color: var(--desk-muted); }
+
+/* ---------- 페이저 ---------- */
+.desk-newspager { display: flex; justify-content: center; padding: 44px 0 8px; }
+.desk-newspager__list { display: flex; align-items: center; gap: 6px; }
+.desk-newspager__num, .desk-newspager__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 33px;
+  height: 37px;
+  padding: 0 6px;
+  font-size: 14px;
+  color: var(--desk-strong);
+  transition: background-color var(--duration-base) var(--easing-standard), color var(--duration-base) var(--easing-standard);
+}
+.desk-newspager__num:hover, .desk-newspager__arrow:hover { background-color: rgb(0 0 0 / 0.05); color: var(--desk-ink); }
+.desk-newspager__num--active { background-color: var(--desk-ink); color: var(--color-neutral-white); font-weight: var(--font-weight-bold); }
+.desk-newspager__num--active:hover { background-color: var(--desk-ink); color: var(--color-neutral-white); }
+.desk-newspager__arrow[aria-disabled="true"] { color: rgb(0 0 0 / 0.25); pointer-events: none; }
+.desk-newspager__arrow .icon { --icon-size: 16px; }
+
+@media (max-width: 900px) {
+  .desk-catwrap { grid-template-columns: 1fr; gap: 32px; }
+  .desk-filter { flex-direction: row; flex-wrap: wrap; gap: 24px 40px; }
+}
+@media (max-width: 620px) {
+  .desk-newsfeat { flex-direction: column-reverse; }
+  .desk-newsfeat__thumb { width: 100%; height: 200px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .desk-period__chip, .desk-newspager__num, .desk-newspager__arrow { transition: none; }
+}
