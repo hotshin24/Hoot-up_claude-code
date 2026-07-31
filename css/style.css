@@ -1411,6 +1411,17 @@ hr {
   width: 100%;
   height: 225px;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* 강의 카드와 동일: 호버 시 이미지만 확대(썸네일 overflow:hidden으로 고정) */
+.blog-card__thumb:hover .blog-card__image {
+  transform: scale(1.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-card__image { transition: none; }
+  .blog-card__thumb:hover .blog-card__image { transform: none; }
 }
 
 .blog-card__category {
@@ -1615,6 +1626,17 @@ hr {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* 강의 카드와 동일: 호버 시 이미지만 확대(썸네일 overflow:hidden으로 고정) */
+.news-card__thumb:hover .news-card__image {
+  transform: scale(1.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-card__image { transition: none; }
+  .news-card__thumb:hover .news-card__image { transform: none; }
 }
 
 /* ==========================================================================
