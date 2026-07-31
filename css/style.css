@@ -3526,6 +3526,7 @@ hr {
 .mentor-featured__media { flex-shrink: 0; width: 380px; height: 220px; border-radius: 6px; overflow: hidden; }
 .mentor-featured__media img { width: 100%; height: 100%; object-fit: cover; }
 
+.mentor-posts { padding-bottom: 100px; }
 .mentor-posts__grid { padding: 32px 0 36px; }
 
 /* ---------- 글 목록 (Component 6) ---------- */
