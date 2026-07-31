@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>제로부터 완성하는 반응형 웹 퍼블리싱 마스터 클래스 · 강의 소개 — HOOT UP</title>
+  <meta name="description" content="HTML 0줄에서 포트폴리오까지, 30일. 52강 전부 라이브 코딩·실습형으로 배우는 반응형 웹 퍼블리싱 마스터 클래스. 멘토 코드랩 현우, 평점 4.9, 평생 소장 강의.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&amp;display=swap">
+  <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<header class="site-header">
+  <div class="site-header__inner l-container">
+
+    <div class="site-header__utility">
+      <a class="site-header__logo" href="index.html">
+        <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
+      </a>
+
+      <form class="search" action="/search" method="get" role="search">
+        <label class="a11y-hidden" for="search-keyword">강의 검색</label>
+        <input class="search__input" id="search-keyword" type="search" name="keyword" placeholder="어떤 강의를 찾으시나요?" autocomplete="off">
+        <button class="search__submit" type="submit" aria-label="검색">
+          <span class="icon icon--search"></span>
+        </button>
+      </form>
+
+      <ul class="user-menu">
+        <li class="user-menu__item">
+          <a class="user-menu__link" href="/cart">
+            <span class="icon icon--cart"></span>
+            <span class="a11y-hidden">장바구니</span>
+            <span class="user-menu__badge">2<span class="a11y-hidden">개 담김</span></span>
+          </a>
+        </li>
+        <li class="user-menu__item">
+          <a class="user-menu__link" href="/notifications">
+            <span class="icon icon--bell"></span>
+            <span class="a11y-hidden">알림</span>
+            <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
+          </a>
+        </li>
+        <li class="user-menu__item">
+          <a class="user-menu__profile" href="/mypage">
+            <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <nav class="gnb" aria-label="주요 메뉴">
+      <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega" aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
+        <span class="icon icon--list"></span>
+      </button>
+      <ul class="gnb__list" id="gnb-list">
+        <li class="gnb__item"><a class="gnb__link" href="/categories" data-nav-toggle aria-expanded="false" aria-controls="category-mega" aria-haspopup="true">전체 카테고리</a></li>
+        <li class="gnb__item"><a class="gnb__link" href="best.html">베스트 클래스</a></li>
+        <li class="gnb__item"><a class="gnb__link" href="event-1.html">이벤트 할인</a></li>
+        <li class="gnb__item"><a class="gnb__link" href="new.html">새로운 클래스</a></li>
+        <li class="gnb__item"><a class="gnb__link" href="earlybird-1.html">얼리버드 할인</a></li>
+        <li class="gnb__item"><a class="gnb__link" href="signature.html">시그니쳐 클래스</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <!-- ====================================================================
+       전체 카테고리 메가 메뉴 (햄버거 · '전체 카테고리' 트리거로 펼침)
+       ==================================================================== -->
+  <div class="mega" id="category-mega" aria-hidden="true">
+    <div class="mega__inner l-container">
+      <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
+        <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it"
+                aria-selected="true" aria-controls="megapanel-dev-it" tabindex="0">
+          <span class="mega-cat__emoji" aria-hidden="true">💻</span>
+          <span class="mega-cat__name">개발 &amp; IT</span>
+          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-career-money"
+                aria-selected="false" aria-controls="megapanel-career-money" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">💼</span>
+          <span class="mega-cat__name">커리어 &amp; 머니</span>
+          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-design-creative"
+                aria-selected="false" aria-controls="megapanel-design-creative" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">✏️</span>
+          <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
+          <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-photo-video"
+                aria-selected="false" aria-controls="megapanel-photo-video" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">📷</span>
+          <span class="mega-cat__name">사진 &amp; 영상</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust"
+                aria-selected="false" aria-controls="megapanel-drawing-illust" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">🎨</span>
+          <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness"
+                aria-selected="false" aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">🧘</span>
+          <span class="mega-cat__name">운동 &amp; 마음챙김</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade"
+                aria-selected="false" aria-controls="megapanel-craft-handmade" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">🧶</span>
+          <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking"
+                aria-selected="false" aria-controls="megapanel-cooking-baking" tabindex="-1">
+          <span class="mega-cat__emoji" aria-hidden="true">🍳</span>
+          <span class="mega-cat__name">요리 &amp; 베이킹</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="mega__subs">
+        <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
+          <a class="mega-sub__title" href="category-dev-it-1.html">
+            개발 &amp; IT 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-dev-it-web-publishing.html">웹 퍼블리싱</a></li>
+            <li><a class="mega-sub__link" href="category-dev-it-frontend.html">프론트엔드</a></li>
+            <li><a class="mega-sub__link" href="category-dev-it-backend.html">백엔드 &amp; 서버</a></li>
+            <li><a class="mega-sub__link" href="category-dev-it-mobile.html">모바일 &amp; 앱 개발</a></li>
+            <li><a class="mega-sub__link" href="category-dev-it-data-ai.html">데이터 &amp; AI</a></li>
+            <li><a class="mega-sub__link" href="category-dev-it-ai-tools.html">AI 개발 도구</a></li>
+            <li><a class="mega-sub__link" href="category-dev-it-nocode.html">노코드 &amp; 자동화</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money" hidden>
+          <a class="mega-sub__title" href="category-career-money-1.html">
+            커리어 &amp; 머니 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-career-money-job-skills.html">직무 역량 &amp; 일잘러</a></li>
+            <li><a class="mega-sub__link" href="category-career-money-job-search.html">취업 &amp; 이직</a></li>
+            <li><a class="mega-sub__link" href="category-career-money-marketing.html">마케팅 &amp; 브랜딩</a></li>
+            <li><a class="mega-sub__link" href="category-career-money-sideproject.html">사이드프로젝트 &amp; N잡</a></li>
+            <li><a class="mega-sub__link" href="category-career-money-investing.html">재테크 &amp; 투자</a></li>
+            <li><a class="mega-sub__link" href="category-career-money-tax.html">절세 &amp; 머니 관리</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative" hidden>
+          <a class="mega-sub__title" href="category-design-creative-1.html">
+            디자인 &amp; 크리에이티브 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-design-creative-uxui.html">UX/UI 디자인</a></li>
+            <li><a class="mega-sub__link" href="category-design-creative-graphic.html">그래픽 디자인</a></li>
+            <li><a class="mega-sub__link" href="category-design-creative-branding.html">브랜딩 &amp; 로고</a></li>
+            <li><a class="mega-sub__link" href="category-design-creative-3d-motion.html">3D &amp; 모션 디자인</a></li>
+            <li><a class="mega-sub__link" href="category-design-creative-illust.html">일러스트 &amp; 디지털아트</a></li>
+            <li><a class="mega-sub__link" href="category-design-creative-intro.html">크리에이티브 입문</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
+          <a class="mega-sub__title" href="category-photo-video-1.html">
+            사진 &amp; 영상 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-photo-video-photography.html">사진 촬영</a></li>
+            <li><a class="mega-sub__link" href="category-photo-video-videography.html">영상 촬영</a></li>
+            <li><a class="mega-sub__link" href="category-photo-video-editing.html">편집 &amp; 후보정</a></li>
+            <li><a class="mega-sub__link" href="category-photo-video-motion.html">모션 &amp; 크리에이티브</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust" hidden>
+          <a class="mega-sub__title" href="category-drawing-illust-1.html">
+            드로잉 &amp; 일러스트 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-drawing-illust-digital.html">디지털 드로잉</a></li>
+            <li><a class="mega-sub__link" href="category-drawing-illust-handdrawing.html">손그림 &amp; 회화</a></li>
+            <li><a class="mega-sub__link" href="category-drawing-illust-character.html">캐릭터 &amp; 웹툰</a></li>
+            <li><a class="mega-sub__link" href="category-drawing-illust-calligraphy.html">캘리그라피 &amp; 레터링</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness" aria-labelledby="megacat-fitness-mindfulness" hidden>
+          <a class="mega-sub__title" href="category-fitness-mindfulness-1.html">
+            운동 &amp; 마음챙김 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-fitness-mindfulness-hometraining.html">홈트 &amp; 근력</a></li>
+            <li><a class="mega-sub__link" href="category-fitness-mindfulness-yoga.html">요가 &amp; 필라테스</a></li>
+            <li><a class="mega-sub__link" href="category-fitness-mindfulness-running.html">러닝 &amp; 유산소</a></li>
+            <li><a class="mega-sub__link" href="category-fitness-mindfulness-meditation.html">명상 &amp; 마음챙김</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade" hidden>
+          <a class="mega-sub__title" href="category-craft-handmade-1.html">
+            공예 &amp; 핸드메이드 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
+            <li><a class="mega-sub__link" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
+            <li><a class="mega-sub__link" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
+            <li><a class="mega-sub__link" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking" hidden>
+          <a class="mega-sub__title" href="category-cooking-baking-1.html">
+            요리 &amp; 베이킹 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
+            <li><a class="mega-sub__link" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
+            <li><a class="mega-sub__link" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
+            <li><a class="mega-sub__link" href="category-cooking-baking-world.html">세계요리 &amp; 비건</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mega-backdrop" hidden></div>
+</header>
+
+<main id="main" class="course-detail">
+
+  <section class="course-hero" aria-labelledby="course-hero-title">
+    <div class="course-hero__inner l-container">
+      <div class="course-hero__intro">
+        <p class="course-hero__brand">
+          <img class="course-hero__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP">
+          <span class="course-hero__brand-label">| ONLINE CLASS</span>
+        </p>
+        <div class="course-hero__titles">
+          <p class="course-hero__eyebrow">제로부터 완성하는</p>
+          <h1 class="course-hero__title" id="course-hero-title">
+            <span class="course-hero__title-line">반응형 웹</span>
+            <span class="course-hero__title-line course-hero__title-line--accent">퍼블리싱 마스터</span>
+          </h1>
+        </div>
+        <ul class="course-hero__tags">
+          <li><span class="course-hero__tag">HTML5</span></li>
+          <li><span class="course-hero__tag">CSS3</span></li>
+          <li><span class="course-hero__tag">FLEX &amp; GRID</span></li>
+          <li><span class="course-hero__tag">반응형</span></li>
+        </ul>
+        <a class="course-hero__cta" href="#enroll">지금 배우기 시작<span class="icon icon--chevron-right" aria-hidden="true"></span></a>
+      </div>
+      <img class="course-hero__illust" src="assets/course/detail-hero-illust.png"
+           alt="반응형 웹 화면과 코드를 보며 대화하는 일러스트" loading="lazy" width="400" height="400">
+    </div>
+  </section>
+
+  <div class="course-body l-container">
+    <div class="course-body__main">
+
+      <nav class="course-nav" aria-label="강의 상세 내비게이션">
+        <ul class="course-nav__list">
+          <li><a class="course-nav__link is-current" href="#about">클래스 소개</a></li>
+          <li><a class="course-nav__link" href="#curriculum">커리큘럼</a></li>
+          <li><a class="course-nav__link" href="#reviews">수강후기(415)</a></li>
+          <li><a class="course-nav__link" href="#faq">자주 묻는 질문들</a></li>
+          <li><a class="course-nav__link" href="#mentor">멘토 소개</a></li>
+        </ul>
+      </nav>
+
+      <section class="course-section" id="about" aria-labelledby="about-title">
+        <div class="section-band">
+          <h2 class="section-band__title" id="about-title">클래스 소개</h2>
+          <p class="section-band__lead">HTML 0줄에서 포트폴리오까지, 30일</p>
+          <p class="section-band__desc">제로부터 완성하는 반응형 웹 퍼블리싱 마스터. 코딩이 처음이어도 괜찮아요. 손으로 따라 치다 보면, 어느새 당신의 첫 반응형 웹사이트가 완성됩니다.</p>
+        </div>
+
+      <div class="course-block worry">
+        <h3 class="worry__title">혹시, 이런 고민 있지 않으세요?</h3>
+        <figure class="worry__illust" aria-hidden="true">
+          <img class="worry__illust-color worry__illust-color2" src="svg/detail-gomin-color2.svg" alt="">
+          <img class="worry__illust-color worry__illust-color1" src="svg/detail-gomin-color1.svg" alt="">
+          <img class="worry__illust-lines" src="svg/detail-gomin-outlines.svg" alt="">
+        </figure>
+        <ul class="worry__bubbles">
+          <li class="worry__bubble">강의를 다 들었는데 막상 <b>빈 화면</b>을 보면 어디부터 손대야 할지 모르겠어요.</li>
+          <li class="worry__bubble"><b>Flex, Grid</b>만 나오면 매번 검색해요. 내 걸로 만든 적이 없어요.</li>
+          <li class="worry__bubble">PC에선 멀쩡한데 <b>모바일 화면</b>에서 다 깨져요.</li>
+          <li class="worry__bubble">면접 때 보여줄 <b>결과물</b>이 없어요.</li>
+        </ul>
+        <p class="worry__lead">혼자 독학하다 같은 자리에서 멈춘 사람이 <b>정말 많아요.</b></p>
+        <p class="worry__point">문제는 머리가 아니라 <em>‘손이 익히는 과정’</em>이 빠졌던 것 뿐입니다.</p>
+      </div>
+
+      <div class="course-banner" style="background-image:url('assets/course/detail-banner-1.png');">
+        <div class="course-banner__inner">
+          <p class="course-banner__title">그래서, 손으로 끝까지 함께 갑니다</p>
+          <span class="course-banner__rule" aria-hidden="true"></span>
+          <div class="course-banner__desc">
+            <p>이 클래스는 외워서 넘어가지 않아요.</p>
+            <p>모든 강의를 <b>라이브 코딩</b>으로, 멘토가 치는 코드를 똑같이 따라 치며 진행합니다.</p>
+            <p>태그 하나를 처음 써보는 순간부터 실제 쇼핑몰 메인 페이지를 퍼블리싱하는 순간까지,</p>
+            <p>52강 전부가 ‘보는 강의’가 아니라 <b>‘만드는 강의’</b>예요.</p>
+          </div>
+        </div>
+      </div>
+      <div class="course-block">
+        <h3 class="course-block__heading course-block__heading--center">이 클래스가 보장하는 3가지</h3>
+        <ul class="benefit">
+          <li class="benefit__item">
+            <div class="benefit__media"><img class="benefit__image" src="assets/course/detail-benefit-1.png" alt="라이브 코딩으로 강의를 진행하는 화면" loading="lazy"></div>
+            <div class="benefit__desc">
+              <p class="benefit__title">“전 강의 라이브 코딩”</p>
+              <p class="benefit__text">결과 화면만 보여주지 않아요. 코드를 한 줄씩 같이 치며 “왜 이렇게 쓰는지”를 이해합니다.</p>
+            </div>
+          </li>
+          <li class="benefit__item benefit__item--reverse">
+            <div class="benefit__media"><img class="benefit__image" src="assets/course/detail-benefit-2.png" alt="노트북으로 실습 예제를 따라 만드는 모습" loading="lazy"></div>
+            <div class="benefit__desc">
+              <p class="benefit__title">“52강 전부 실습형”</p>
+              <p class="benefit__text">미니 프로젝트, 마지막엔 실전 프로젝트. 손이 먼저 기억하게 만듭니다.</p>
+            </div>
+          </li>
+          <li class="benefit__item">
+            <div class="benefit__media"><img class="benefit__image" src="assets/course/detail-benefit-3.png" alt="완성된 반응형 포트폴리오 화면" loading="lazy"></div>
+            <div class="benefit__desc">
+              <p class="benefit__title">“포트폴리오 결과물 보장”</p>
+              <p class="benefit__text">완강하면 면접에 바로 올릴 반응형 쇼핑몰 메인 1종이 손에 남아요.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="course-block course-block--checklist">
+        <h3 class="course-block__heading course-block__heading--underline">이런 분께 추천해요</h3>
+        <ul class="checklist">
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>비전공인데 웹 퍼블리셔로 취업·이직을 준비하는 분</li>
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>독학하다 매번 레이아웃(Flex·Grid)에서 막혔던 분</li>
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>강의만 보고 끝나는 게 아니라 결과물(포트폴리오)이 필요한 분</li>
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>디자이너·기획자인데 내 화면을 직접 코드로 구현해보고 싶은 분</li>
+        </ul>
+      </div>
+
+      <div class="course-block beforeafter">
+        <p class="beforeafter__title">Before &amp; After</p>
+        <img class="beforeafter__illust" src="assets/course/detail-ba-illust.png" alt="수강 전과 후의 변화를 표현한 일러스트" loading="lazy" width="200" height="200">
+        <div class="beforeafter__cols">
+          <div class="beforeafter__col beforeafter__col--before">
+            <p class="beforeafter__col-head">수강 전</p>
+            <ul class="beforeafter__list">
+              <li><span class="icon icon--x-circle" aria-hidden="true"></span>시안을 봐도 어디부터 손댈지 막막</li>
+              <li><span class="icon icon--x-circle" aria-hidden="true"></span>Flex·Grid만 나오면 매번 검색</li>
+              <li><span class="icon icon--x-circle" aria-hidden="true"></span>모바일에서 와르르 무너지는 화면</li>
+              <li><span class="icon icon--x-circle" aria-hidden="true"></span>보여줄 결과물이 하나도 없음</li>
+            </ul>
+          </div>
+          <div class="beforeafter__col beforeafter__col--after">
+            <p class="beforeafter__col-head">수강 후</p>
+            <ul class="beforeafter__list">
+              <li><span class="icon icon--check" aria-hidden="true"></span>구조부터 스스로 설계해 마크업</li>
+              <li><span class="icon icon--check" aria-hidden="true"></span>어떤 레이아웃도 자유자재</li>
+              <li><span class="icon icon--check" aria-hidden="true"></span>PC·태블릿·모바일 완벽 대응</li>
+              <li><span class="icon icon--check" aria-hidden="true"></span>포트폴리오 웹사이트 1종 완성</li>
+            </ul>
+          </div>
+        </div>
+        <p class="beforeafter__point">머리가 아니라 <b>손에 익히는 과정</b>으로 막막함이 <em>자신감</em>으로 바뀝니다.</p>
+      </div>
+      <div class="course-block course-block--checklist">
+        <h3 class="course-block__heading course-block__heading--underline">이 클래스에서 배우는 것</h3>
+        <ul class="checklist">
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>시맨틱 HTML로 구조를 설계하는 법</li>
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>CSS 박스모델과 선택자, 우선순위의 원리</li>
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>Flex와 Grid로 어떤 레이아웃이든 자유롭게 잡기</li>
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>미디어쿼리로 PC·태블릿·모바일에 모두 대응하는 반응형 웹</li>
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>transition·transform으로 살아 있는 인터랙션 만들기</li>
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>실제 쇼핑몰 메인 페이지 1종을 처음부터 끝까지 퍼블리싱</li>
+        </ul>
+      </div>
+      <div class="course-block practice-block">
+        <h3 class="course-block__heading course-block__heading--center">핵심 실습 7가지 <span class="practice-block__sub">+ 실전 프로젝트</span></h3>
+        <ul class="practice">
+          <li class="practice__item">
+            <div class="practice__body">
+              <p class="practice__title"><span class="practice__no">1</span>회원가입 폼 마크업 (HTML)</p>
+              <p class="practice__text">input·label·select·체크박스를 직접 배치해 실제 가입 폼을 만듭니다. 폼 구조와 접근성 마크업이 한 번에 손에 익어요. (실습 결과물: 회원가입 폼 1종)</p>
+            </div>
+            <div class="practice__media"><img class="practice__image" src="assets/course/detail-practice-1.png" alt="회원가입 폼을 마크업하는 코드 화면" loading="lazy"></div>
+          </li>
+          <li class="practice__item practice__item--reverse">
+            <div class="practice__body">
+              <p class="practice__title"><span class="practice__no">2</span>카드 컴포넌트 스타일링 (CSS)</p>
+              <p class="practice__text">박스모델·그림자·둥근 모서리·호버를 적용해 강의 카드 한 장을 완성합니다. 어떤 사이트에나 쓰이는 핵심 UI를 직접 만들어봐요.</p>
+            </div>
+            <div class="practice__media"><img class="practice__image" src="assets/course/detail-practice-2.png" alt="카드 컴포넌트를 스타일링하는 화면" loading="lazy"></div>
+          </li>
+          <li class="practice__item">
+            <div class="practice__body">
+              <p class="practice__title"><span class="practice__no">3</span>반응형 갤러리 레이아웃 (Flex·Grid)</p>
+              <p class="practice__text">Flex와 Grid로 이미지 갤러리를 배치하고, 화면 크기에 따라 열 수가 바뀌게 만듭니다. 레이아웃의 두 핵심 무기를 실전에서 익혀요.</p>
+            </div>
+            <div class="practice__media"><img class="practice__image" src="assets/course/detail-practice-3.png" alt="반응형 갤러리 그리드 레이아웃" loading="lazy"></div>
+          </li>
+          <li class="practice__item practice__item--reverse">
+            <div class="practice__body">
+              <p class="practice__title"><span class="practice__no">4</span>메인 페이지 반응형 전환 (미디어쿼리)</p>
+              <p class="practice__text">PC용으로 만든 화면을 미디어쿼리로 태블릿·모바일까지 대응시킵니다. ‘깨지지 않는 화면’을 만드는 감각을 잡아요.</p>
+            </div>
+            <div class="practice__media"><img class="practice__image" src="assets/course/detail-practice-4.png" alt="여러 화면 크기로 반응형 전환을 확인하는 모습" loading="lazy"></div>
+          </li>
+          <li class="practice__item">
+            <div class="practice__body">
+              <p class="practice__title"><span class="practice__no">5</span>쇼핑몰 메인 — 헤더 &amp; 내비게이션 (프로젝트)</p>
+              <p class="practice__text">로고·메뉴·검색·아이콘이 담긴 실제 쇼핑몰 헤더를 퍼블리싱합니다. 모바일에서는 햄버거 메뉴로 전환되는 구조까지 구현해요.</p>
+            </div>
+            <div class="practice__media"><img class="practice__image" src="assets/course/detail-practice-5.png" alt="쇼핑몰 헤더와 내비게이션 퍼블리싱 화면" loading="lazy"></div>
+          </li>
+          <li class="practice__item practice__item--reverse">
+            <div class="practice__body">
+              <p class="practice__title"><span class="practice__no">6</span>쇼핑몰 메인 — 상품 카드 그리드 (프로젝트)</p>
+              <p class="practice__text">상품 카드를 반응형 그리드로 배치하고 할인율·평점 같은 요소를 채웁니다. 카드(1·2번)와 레이아웃(3번) 실습이 하나로 합쳐지는 단계예요.</p>
+            </div>
+            <div class="practice__media"><img class="practice__image" src="assets/course/detail-practice-6.png" alt="상품 카드 그리드를 배치한 쇼핑몰 화면" loading="lazy"></div>
+          </li>
+          <li class="practice__item">
+            <div class="practice__body">
+              <p class="practice__title"><span class="practice__no">7</span>쇼핑몰 메인 — 푸터 &amp; 전체 마무리 (프로젝트)</p>
+              <p class="practice__text">링크 컬럼·사업자 정보·SNS가 담긴 푸터를 완성하고 전체 페이지를 점검합니다. 한 페이지가 처음부터 끝까지 연결되는 경험을 해요.</p>
+            </div>
+            <div class="practice__media"><img class="practice__image" src="assets/course/detail-practice-7.png" alt="쇼핑몰 푸터와 전체 페이지 마무리 화면" loading="lazy"></div>
+          </li>
+          <li class="practice__item practice__item--reverse">
+            <div class="practice__body">
+              <p class="practice__title"><span class="practice__no practice__no--plus" aria-hidden="true">＋</span>＋ 포트폴리오 다듬기 &amp; 멘토 코드 리뷰</p>
+              <p class="practice__text">완성한 쇼핑몰 메인을 포트폴리오용으로 정리하고, 멘토에게 코드 리뷰를 받습니다. 면접에서 바로 보여줄 결과물 1종이 남아요.</p>
+            </div>
+            <div class="practice__media"><img class="practice__image" src="assets/course/detail-practice-8.png" alt="포트폴리오 코드 리뷰를 진행하는 화면" loading="lazy"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="course-block course-block--checklist">
+        <h3 class="course-block__heading course-block__heading--underline">다양한 학습 자료 제공</h3>
+        <ul class="checklist">
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>모든 강의 실습 예제 소스 코드(챕터별 zip)</li>
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>실전 프로젝트 완성본 소스 (쇼핑몰 메인)</li>
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>강의에서 쓰는 디자인 시안 파일</li>
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>자주 쓰는 HTML/CSS 스니펫 모음</li>
+          <li class="checklist__item"><span class="checklist__icon icon icon--check" aria-hidden="true"></span>학습 흐름을 정리한 PDF 요약 노트</li>
+        </ul>
+      </div>
+
+      <div class="course-banner" style="background-image:url('assets/course/detail-banner-2.png');">
+        <div class="course-banner__inner">
+          <p class="course-banner__title">완강하면, 당신은</p>
+          <span class="course-banner__rule" aria-hidden="true"></span>
+          <div class="course-banner__desc">
+            <p>시안을 보고 <b>스스로 구조를 잡아</b> 마크업할 수 있어요.</p>
+            <p><b>반응형 레이아웃</b>을 막힘없이 구현할 수 있어요.</p>
+            <p>포트폴리오에 올릴 <b>반응형 웹페이지</b> 1종과 졸업모(수료증)를 갖게 돼요.</p>
+          </div>
+        </div>
+      </div>
+      </section>
+
+      <section class="course-section" id="curriculum" aria-labelledby="curriculum-title">
+        <div class="section-band">
+          <h2 class="section-band__title" id="curriculum-title">커리큘럼</h2>
+          <p class="section-band__lead">총 7챕터 · 52강 · 약 11시간</p>
+          <p class="section-band__desc">노베이스도 끝까지 따라올 수 있도록 짧은 호흡으로 설계했어요. 챕터 1은 무료로 미리 볼 수 있습니다.</p>
+        </div>
+        <div class="curriculum">
+      <details class="curriculum__chapter" open>
+        <summary class="curriculum__summary">
+          <span class="curriculum__chapter-head">
+            <span class="curriculum__chapter-title">Chapter 01. 오리엔테이션 <span class="curriculum__free">무료 공개</span></span>
+            <span class="curriculum__chapter-desc">개발 환경을 세팅하고, 웹 퍼블리셔가 무슨 일을 하는지 그림을 그립니다.</span>
+          </span>
+          <span class="curriculum__chapter-meta">4강 · 39분</span>
+          <span class="curriculum__chevron icon icon--chevron-right" aria-hidden="true"></span>
+        </summary>
+        <ul class="curriculum__lessons">
+          <li class="curriculum__lesson curriculum__lesson--free">
+            <span class="curriculum__lesson-no">01</span>
+            <span class="curriculum__lesson-title">웹 퍼블리셔라는 직업, 무엇을 하나요</span>
+            <span class="curriculum__lesson-free">미리보기</span>
+            <span class="curriculum__lesson-time">08:00</span>
+          </li>
+          <li class="curriculum__lesson curriculum__lesson--free">
+            <span class="curriculum__lesson-no">02</span>
+            <span class="curriculum__lesson-title">개발 환경 세팅: VS Code &amp; 확장 프로그램</span>
+            <span class="curriculum__lesson-free">미리보기</span>
+            <span class="curriculum__lesson-time">10:30</span>
+          </li>
+          <li class="curriculum__lesson curriculum__lesson--free">
+            <span class="curriculum__lesson-no">03</span>
+            <span class="curriculum__lesson-title">브라우저와 개발자도구(DevTools) 친해지기</span>
+            <span class="curriculum__lesson-free">미리보기</span>
+            <span class="curriculum__lesson-time">12:00</span>
+          </li>
+          <li class="curriculum__lesson curriculum__lesson--free">
+            <span class="curriculum__lesson-no">04</span>
+            <span class="curriculum__lesson-title">이 강의를 200% 활용하는 법 + 실습 자료 안내</span>
+            <span class="curriculum__lesson-free">미리보기</span>
+            <span class="curriculum__lesson-time">08:30</span>
+          </li>
+        </ul>
+      </details>
+      <details class="curriculum__chapter">
+        <summary class="curriculum__summary">
+          <span class="curriculum__chapter-head">
+            <span class="curriculum__chapter-title">Chapter 02. HTML 기초 </span>
+            <span class="curriculum__chapter-desc">화면의 ‘뼈대’를 세우는 법. 의미 있는 마크업의 원리를 익힙니다.</span>
+          </span>
+          <span class="curriculum__chapter-meta">10강 · 약 2시간 9분</span>
+          <span class="curriculum__chevron icon icon--chevron-right" aria-hidden="true"></span>
+        </summary>
+        <ul class="curriculum__lessons">
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">01</span>
+            <span class="curriculum__lesson-title">HTML 문서 구조와 태그의 원리</span>
+            
+            <span class="curriculum__lesson-time">11:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">02</span>
+            <span class="curriculum__lesson-title">텍스트 태그: 제목·문단·줄바꿈·강조</span>
+            
+            <span class="curriculum__lesson-time">10:30</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">03</span>
+            <span class="curriculum__lesson-title">링크와 이미지 다루기</span>
+            
+            <span class="curriculum__lesson-time">12:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">04</span>
+            <span class="curriculum__lesson-title">리스트와 표(table) 만들기</span>
+            
+            <span class="curriculum__lesson-time">13:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">05</span>
+            <span class="curriculum__lesson-title">시맨틱 태그로 의미 있는 마크업하기</span>
+            
+            <span class="curriculum__lesson-time">14:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">06</span>
+            <span class="curriculum__lesson-title">폼(form)의 기본: input·label·button</span>
+            
+            <span class="curriculum__lesson-time">12:30</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">07</span>
+            <span class="curriculum__lesson-title">폼 심화: select·radio·checkbox·유효성</span>
+            
+            <span class="curriculum__lesson-time">15:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">08</span>
+            <span class="curriculum__lesson-title">미디어 요소: 오디오·비디오·iframe</span>
+            
+            <span class="curriculum__lesson-time">11:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">09</span>
+            <span class="curriculum__lesson-title">자주 쓰는 마크업 패턴과 접근성 기초</span>
+            
+            <span class="curriculum__lesson-time">13:30</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">10</span>
+            <span class="curriculum__lesson-title">[실습] 회원가입 폼 마크업하기</span>
+            
+            <span class="curriculum__lesson-time">18:00</span>
+          </li>
+        </ul>
+      </details>
+      <details class="curriculum__chapter">
+        <summary class="curriculum__summary">
+          <span class="curriculum__chapter-head">
+            <span class="curriculum__chapter-title">Chapter 03. CSS 기초 </span>
+            <span class="curriculum__chapter-desc">‘뼈대’에 옷을 입히는 법. 박스모델과 선택자의 원리를 잡습니다.</span>
+          </span>
+          <span class="curriculum__chapter-meta">10강 · 약 2시간 7분</span>
+          <span class="curriculum__chevron icon icon--chevron-right" aria-hidden="true"></span>
+        </summary>
+        <ul class="curriculum__lessons">
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">01</span>
+            <span class="curriculum__lesson-title">CSS 적용 3가지 방법과 선택자</span>
+            
+            <span class="curriculum__lesson-time">12:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">02</span>
+            <span class="curriculum__lesson-title">색상·단위·타이포그래피</span>
+            
+            <span class="curriculum__lesson-time">13:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">03</span>
+            <span class="curriculum__lesson-title">박스모델: margin·border·padding 완전 이해</span>
+            
+            <span class="curriculum__lesson-time">15:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">04</span>
+            <span class="curriculum__lesson-title">display 속성과 요소의 흐름</span>
+            
+            <span class="curriculum__lesson-time">11:30</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">05</span>
+            <span class="curriculum__lesson-title">배경(background)과 그라데이션</span>
+            
+            <span class="curriculum__lesson-time">12:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">06</span>
+            <span class="curriculum__lesson-title">웹폰트 적용하기 (Pretendard·구글폰트)</span>
+            
+            <span class="curriculum__lesson-time">10:30</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">07</span>
+            <span class="curriculum__lesson-title">가상 클래스·가상 요소 활용</span>
+            
+            <span class="curriculum__lesson-time">12:30</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">08</span>
+            <span class="curriculum__lesson-title">우선순위(명시도)와 상속</span>
+            
+            <span class="curriculum__lesson-time">14:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">09</span>
+            <span class="curriculum__lesson-title">CSS 변수(custom property)로 관리하기</span>
+            
+            <span class="curriculum__lesson-time">11:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">10</span>
+            <span class="curriculum__lesson-title">[실습] 카드 컴포넌트 스타일링</span>
+            
+            <span class="curriculum__lesson-time">17:00</span>
+          </li>
+        </ul>
+      </details>
+      <details class="curriculum__chapter">
+        <summary class="curriculum__summary">
+          <span class="curriculum__chapter-head">
+            <span class="curriculum__chapter-title">Chapter 04. 레이아웃 마스터 </span>
+            <span class="curriculum__chapter-desc">이 강의의 심장부. Flex·Grid로 어떤 화면이든 배치합니다.</span>
+          </span>
+          <span class="curriculum__chapter-meta">10강 · 약 2시간 12분</span>
+          <span class="curriculum__chevron icon icon--chevron-right" aria-hidden="true"></span>
+        </summary>
+        <ul class="curriculum__lessons">
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">01</span>
+            <span class="curriculum__lesson-title">position의 모든 것 (static~sticky)</span>
+            
+            <span class="curriculum__lesson-time">12:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">02</span>
+            <span class="curriculum__lesson-title">z-index와 쌓임 맥락</span>
+            
+            <span class="curriculum__lesson-time">09:30</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">03</span>
+            <span class="curriculum__lesson-title">Flex 기초: 주축과 교차축</span>
+            
+            <span class="curriculum__lesson-time">14:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">04</span>
+            <span class="curriculum__lesson-title">Flex 실전: 정렬과 분배</span>
+            
+            <span class="curriculum__lesson-time">15:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">05</span>
+            <span class="curriculum__lesson-title">Grid 기초: 행·열 정의하기</span>
+            
+            <span class="curriculum__lesson-time">13:30</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">06</span>
+            <span class="curriculum__lesson-title">Grid 실전: 영역 배치와 반응형 그리드</span>
+            
+            <span class="curriculum__lesson-time">16:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">07</span>
+            <span class="curriculum__lesson-title">float와 클리어픽스(레거시 이해)</span>
+            
+            <span class="curriculum__lesson-time">10:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">08</span>
+            <span class="curriculum__lesson-title">실무에서 Flex vs Grid 선택 기준</span>
+            
+            <span class="curriculum__lesson-time">12:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">09</span>
+            <span class="curriculum__lesson-title">자주 쓰는 레이아웃 패턴(헤더·사이드바·카드)</span>
+            
+            <span class="curriculum__lesson-time">13:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">10</span>
+            <span class="curriculum__lesson-title">[실습] 반응형 갤러리 레이아웃</span>
+            
+            <span class="curriculum__lesson-time">18:00</span>
+          </li>
+        </ul>
+      </details>
+      <details class="curriculum__chapter">
+        <summary class="curriculum__summary">
+          <span class="curriculum__chapter-head">
+            <span class="curriculum__chapter-title">Chapter 05. 반응형 웹 </span>
+            <span class="curriculum__chapter-desc">하나의 코드로 모든 화면에 대응하는 반응형 원리를 완성합니다.</span>
+          </span>
+          <span class="curriculum__chapter-meta">8강 · 약 1시간 40분</span>
+          <span class="curriculum__chevron icon icon--chevron-right" aria-hidden="true"></span>
+        </summary>
+        <ul class="curriculum__lessons">
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">01</span>
+            <span class="curriculum__lesson-title">반응형 웹의 원리와 뷰포트</span>
+            
+            <span class="curriculum__lesson-time">11:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">02</span>
+            <span class="curriculum__lesson-title">미디어쿼리 작성법</span>
+            
+            <span class="curriculum__lesson-time">13:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">03</span>
+            <span class="curriculum__lesson-title">모바일 퍼스트 전략</span>
+            
+            <span class="curriculum__lesson-time">12:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">04</span>
+            <span class="curriculum__lesson-title">가변 단위(%, vw, rem, clamp)</span>
+            
+            <span class="curriculum__lesson-time">12:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">05</span>
+            <span class="curriculum__lesson-title">반응형 이미지와 picture 태그</span>
+            
+            <span class="curriculum__lesson-time">11:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">06</span>
+            <span class="curriculum__lesson-title">반응형 타이포그래피</span>
+            
+            <span class="curriculum__lesson-time">10:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">07</span>
+            <span class="curriculum__lesson-title">자주 쓰는 브레이크포인트 설계</span>
+            
+            <span class="curriculum__lesson-time">12:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">08</span>
+            <span class="curriculum__lesson-title">[실습] 메인 페이지 반응형으로 만들기</span>
+            
+            <span class="curriculum__lesson-time">19:00</span>
+          </li>
+        </ul>
+      </details>
+      <details class="curriculum__chapter">
+        <summary class="curriculum__summary">
+          <span class="curriculum__chapter-head">
+            <span class="curriculum__chapter-title">Chapter 06. 인터랙션 기초 </span>
+            <span class="curriculum__chapter-desc">멈춰 있던 화면에 움직임을 더해 디테일을 살립니다.</span>
+          </span>
+          <span class="curriculum__chapter-meta">5강 · 약 1시간 4분</span>
+          <span class="curriculum__chevron icon icon--chevron-right" aria-hidden="true"></span>
+        </summary>
+        <ul class="curriculum__lessons">
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">01</span>
+            <span class="curriculum__lesson-title">transition으로 부드러운 변화 만들기</span>
+            
+            <span class="curriculum__lesson-time">12:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">02</span>
+            <span class="curriculum__lesson-title">transform: 이동·회전·확대</span>
+            
+            <span class="curriculum__lesson-time">13:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">03</span>
+            <span class="curriculum__lesson-title">hover·focus 인터랙션 디자인</span>
+            
+            <span class="curriculum__lesson-time">12:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">04</span>
+            <span class="curriculum__lesson-title">keyframes 애니메이션 기초</span>
+            
+            <span class="curriculum__lesson-time">14:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">05</span>
+            <span class="curriculum__lesson-title">마이크로 인터랙션으로 디테일 살리기</span>
+            
+            <span class="curriculum__lesson-time">13:00</span>
+          </li>
+        </ul>
+      </details>
+      <details class="curriculum__chapter">
+        <summary class="curriculum__summary">
+          <span class="curriculum__chapter-head">
+            <span class="curriculum__chapter-title">Chapter 07. 실전 프로젝트 </span>
+            <span class="curriculum__chapter-desc">배운 모든 걸 모아, 포트폴리오용 쇼핑몰 메인을 완성합니다.</span>
+          </span>
+          <span class="curriculum__chapter-meta">5강 · 약 1시간 24분</span>
+          <span class="curriculum__chevron icon icon--chevron-right" aria-hidden="true"></span>
+        </summary>
+        <ul class="curriculum__lessons">
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">01</span>
+            <span class="curriculum__lesson-title">[프로젝트] 쇼핑몰 메인 기획·구조 설계</span>
+            
+            <span class="curriculum__lesson-time">14:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">02</span>
+            <span class="curriculum__lesson-title">[프로젝트] 헤더·내비게이션 퍼블리싱</span>
+            
+            <span class="curriculum__lesson-time">16:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">03</span>
+            <span class="curriculum__lesson-title">[프로젝트] 상품 카드 그리드 &amp; 반응형</span>
+            
+            <span class="curriculum__lesson-time">17:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">04</span>
+            <span class="curriculum__lesson-title">[프로젝트] 푸터 &amp; 전체 마무리</span>
+            
+            <span class="curriculum__lesson-time">15:00</span>
+          </li>
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">05</span>
+            <span class="curriculum__lesson-title">포트폴리오로 다듬기 + 멘토 코드 리뷰</span>
+            
+            <span class="curriculum__lesson-time">22:00</span>
+          </li>
+        </ul>
+      </details>
+      <details class="curriculum__chapter">
+        <summary class="curriculum__summary">
+          <span class="curriculum__chapter-head">
+            <span class="curriculum__chapter-title">보너스 챕터 <span class="curriculum__free">AI 활용</span></span>
+            <span class="curriculum__chapter-desc">완강 후 자동 오픈. 클로드 코드·커서로 퍼블리싱 속도를 끌어올리는 실무 워크플로우.</span>
+          </span>
+          <span class="curriculum__chapter-meta">1강 · 29분</span>
+          <span class="curriculum__chevron icon icon--chevron-right" aria-hidden="true"></span>
+        </summary>
+        <ul class="curriculum__lessons">
+          <li class="curriculum__lesson">
+            <span class="curriculum__lesson-no">01</span>
+            <span class="curriculum__lesson-title">AI로 퍼블리싱 속도 2배 (클로드 코드·커서 활용)</span>
+            
+            <span class="curriculum__lesson-time">29:00</span>
+          </li>
+        </ul>
+      </details>
+        </div>
+      </section>
+
+      <section class="course-section" id="reviews" aria-labelledby="reviews-title">
+        <div class="section-band">
+          <h2 class="section-band__title" id="reviews-title">수강후기</h2>
+          <p class="section-band__lead">★ 4.9 / 5.0 (총 415개)</p>
+          <p class="section-band__desc">노베이스에서 시작해 포트폴리오와 합격까지 — 415명의 수강생이 ★4.9로 증명한 ‘끝까지 따라가는 강의’. 막혔던 그 자리에서 다시 시작한 분들의 진짜 후기를 만나보세요.</p>
+        </div>
+        <div class="review-list">
+        <div class="review-group">
+          <h3 class="review-group__title"><span class="review-group__icon icon icon--briefcase" aria-hidden="true"></span>취업·이직에 성공했어요</h3>
+          <ul class="review-group__list">
+            <li class="review-card">
+              <div class="review-card__head">
+                <img class="review-card__avatar" src="assets/avatar/wl-han.png" alt="" loading="lazy">
+                <span class="review-card__name">과현우</span>
+                <img class="review-card__stars" src="assets/brand/stars-49.svg" alt="평점 5점 만점에 4.9점" loading="lazy">
+                <time class="review-card__date" datetime="2026-05-21">2026-05-21</time>
+              </div>
+              <p class="review-card__body">"비전공 30대 직장인입니다. 6개월 독학하다 포기했었는데, 손으로 같이 치니까 진짜 남더라고요. 챕터 7 결과물을 그대로 포트폴리오에 넣었고, 한 달 뒤 웹 퍼블리셔로 합격했어요. 정말 인생이 바뀌었습니다."</p>
+            </li>
+            <li class="review-card">
+              <div class="review-card__head">
+                <img class="review-card__avatar" src="assets/avatar/career-worker-bona.png" alt="" loading="lazy">
+                <span class="review-card__name">별이맘</span>
+                <img class="review-card__stars" src="assets/brand/stars-49.svg" alt="평점 5점 만점에 4.9점" loading="lazy">
+                <time class="review-card__date" datetime="2026-05-21">2026-05-21</time>
+              </div>
+              <p class="review-card__body">"경력 단절 후 재취업이 막막했어요. 면접에서 직접 만든 반응형 사이트를 보여줬더니 분위기가 확 달라지더라고요. 결과물 하나가 이렇게 큰 무기가 될 줄 몰랐습니다. 같은 고민 하는 분들께 완전 추천해요."</p>
+            </li>
+          </ul>
+        </div>
+        <div class="review-group">
+          <h3 class="review-group__title"><span class="review-group__icon icon icon--pencil" aria-hidden="true"></span>이제 입문했어요</h3>
+          <ul class="review-group__list">
+            <li class="review-card">
+              <div class="review-card__head">
+                <img class="review-card__avatar" src="assets/avatar/wl-mio.png" alt="" loading="lazy">
+                <span class="review-card__name">codingmom</span>
+                <img class="review-card__stars" src="assets/brand/stars-49.svg" alt="평점 5점 만점에 4.9점" loading="lazy">
+                <time class="review-card__date" datetime="2026-05-21">2026-05-21</time>
+              </div>
+              <p class="review-card__body">"코딩이라곤 한 줄도 안 써본 완전 노베이스였어요. Flexbox·Grid 설명이 지금까지 본 것 중 제일 직관적이라, 매번 막히던 레이아웃이 드디어 이해됐습니다. 미디어쿼리까지 손에 익으니 자신감이 붙어요."</p>
+            </li>
+            <li class="review-card">
+              <div class="review-card__head">
+                <img class="review-card__avatar" src="assets/avatar/wl-yunseo.png" alt="" loading="lazy">
+                <span class="review-card__name">대학생_윤</span>
+                <img class="review-card__stars" src="assets/brand/stars-49.svg" alt="평점 5점 만점에 4.9점" loading="lazy">
+                <time class="review-card__date" datetime="2026-05-21">2026-05-21</time>
+              </div>
+              <p class="review-card__body">"유튜브 무료 강의만 보다 늘 중간에 길을 잃었는데, 챕터가 차근차근 이어져서 처음으로 끝까지 갔어요. 환경 설정부터 같이 해주니 따라가기 쉬웠습니다. 입문자에게 딱 맞는 강의를 기획해 주셔서 정말 감사합니다."</p>
+            </li>
+          </ul>
+        </div>
+        <div class="review-group">
+          <h3 class="review-group__title"><span class="review-group__icon icon icon--journal-code" aria-hidden="true"></span>실무하는데 도움이 됐어요</h3>
+          <ul class="review-group__list">
+            <li class="review-card">
+              <div class="review-card__head">
+                <img class="review-card__avatar" src="assets/avatar/wl-kang.png" alt="" loading="lazy">
+                <span class="review-card__name">Andy7132</span>
+                <img class="review-card__stars" src="assets/brand/stars-49.svg" alt="평점 5점 만점에 4.9점" loading="lazy">
+                <time class="review-card__date" datetime="2026-05-21">2026-05-21</time>
+              </div>
+              <p class="review-card__body">"현업인데 기초가 늘 불안했어요. 어깨너머로 배운 걸 이 강의로 제대로 정리했습니다. 막힐 때마다 Q&amp;A에 질문하면 하루 안에 답이 와서 큰 도움이 됐고, 이제 코드에 근거가 생겼어요. 멘토님 정말 친절합니다."</p>
+            </li>
+            <li class="review-card">
+              <div class="review-card__head">
+                <img class="review-card__avatar" src="assets/avatar/wl-dohun.png" alt="" loading="lazy">
+                <span class="review-card__name">퍼블리셔3년차</span>
+                <img class="review-card__stars" src="assets/brand/stars-42.svg" alt="평점 5점 만점에 4.2점" loading="lazy">
+                <time class="review-card__date" datetime="2026-05-21">2026-05-21</time>
+              </div>
+              <p class="review-card__body">"내용은 최고인데 후반부 진도가 살짝 빨라요. 0.75배속으로 두 번 봤습니다. 그래도 자주 쓰는 레이아웃 패턴 정리가 실무에 바로 도움이 됐어요. 저처럼 현업자이면서 기초를 다시 다지고 싶은 분께 강추."</p>
+            </li>
+          </ul>
+        </div>
+        <div class="review-group">
+          <h3 class="review-group__title"><span class="review-group__icon icon icon--mouse2" aria-hidden="true"></span>디자이너·기획자인데 들었어요</h3>
+          <ul class="review-group__list">
+            <li class="review-card">
+              <div class="review-card__head">
+                <img class="review-card__avatar" src="assets/avatar/designer-seorin.png" alt="" loading="lazy">
+                <span class="review-card__name">디자이너_솔</span>
+                <img class="review-card__stars" src="assets/brand/stars-49.svg" alt="평점 5점 만점에 4.9점" loading="lazy">
+                <time class="review-card__date" datetime="2026-05-21">2026-05-21</time>
+              </div>
+              <p class="review-card__body">"맨날 개발자에게 ‘이거 구현 가능해요?’ 물어보던 디자이너입니다. 이제 제 시안을 직접 코드로 옮겨보니 협업이 훨씬 매끄러워졌어요. 기획·디자인 직군이라도 화면을 이해하고 싶다면 강력 추천합니다."</p>
+            </li>
+            <li class="review-card">
+              <div class="review-card__head">
+                <img class="review-card__avatar" src="assets/avatar/data-sua.png" alt="" loading="lazy">
+                <span class="review-card__name">기획자노트</span>
+                <img class="review-card__stars" src="assets/brand/stars-49.svg" alt="평점 5점 만점에 4.9점" loading="lazy">
+                <time class="review-card__date" datetime="2026-05-21">2026-05-21</time>
+              </div>
+              <p class="review-card__body">"서비스 기획자예요. 기획서에 직접 만든 화면을 넣으니 설득력이 달라지더라고요. 개발자와 같은 언어로 대화하게 된 게 가장 큰 수확입니다. 저처럼 코드 하나도 모르는 비개발 직군에게도 정말 유용한 강의예요."</p>
+            </li>
+          </ul>
+        </div>
+        <div class="review-group">
+          <h3 class="review-group__title"><span class="review-group__icon icon icon--stopwatch" aria-hidden="true"></span>직장 다니며 완주했어요</h3>
+          <ul class="review-group__list">
+            <li class="review-card">
+              <div class="review-card__head">
+                <img class="review-card__avatar" src="assets/avatar/wl-jung.png" alt="" loading="lazy">
+                <span class="review-card__name">야근러김</span>
+                <img class="review-card__stars" src="assets/brand/stars-49.svg" alt="평점 5점 만점에 4.9점" loading="lazy">
+                <time class="review-card__date" datetime="2026-05-21">2026-05-21</time>
+              </div>
+              <p class="review-card__body">"퇴근하면 지쳐서 늘 작심삼일이었는데, 강의가 짧게 끊겨 있어서 하루 한 강씩 밤샘 스트릭 채우는 재미로 완주했어요. 평생 소장이라 진도 압박이 없는 것도 큰 장점. 결국 끝까지 갔습니다."</p>
+            </li>
+            <li class="review-card">
+              <div class="review-card__head">
+                <img class="review-card__avatar" src="assets/avatar/career-money-jaei.png" alt="" loading="lazy">
+                <span class="review-card__name">두아이맘</span>
+                <img class="review-card__stars" src="assets/brand/stars-49.svg" alt="평점 5점 만점에 4.9점" loading="lazy">
+                <time class="review-card__date" datetime="2026-05-21">2026-05-21</time>
+              </div>
+              <p class="review-card__body">"애 재우고 새벽에 조금씩 들었어요. 한 강이 길지 않아서 자투리 시간에 딱이었고, 평생 소장이라 천천히 제 속도로 끝낼 수 있었습니다. 육아하면서도 완주 가능하다는 걸 증명했네요!"</p>
+            </li>
+          </ul>
+        </div>
+        </div>
+        <p class="course-section__more"><a class="btn-outline" href="#reviews">수강후기 더보기<span class="icon icon--chevron-right" aria-hidden="true"></span></a></p>
+      </section>
+
+      <section class="course-section" id="faq" aria-labelledby="faq-title">
+        <div class="section-band">
+          <h2 class="section-band__title" id="faq-title">자주 묻는 질문들</h2>
+          <p class="section-band__lead">수강 전 꼭 알아두면 좋은 것들</p>
+          <p class="section-band__desc">수강생들이 실제로 가장 많이 남긴 질문을 선별했어요. 결제·수강기간·수료증·환불 규정을 명확히 안내하니, 충분히 확인하고 결정하셔도 괜찮습니다.</p>
+        </div>
+        <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__question"><span class="faq__q-text">Q1. 선수지식이나 준비물이 필요한가요?</span><span class="faq__toggle icon icon--chevron-right" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>사전 지식 없이 시작할 수 있어요. 챕터 1에서 무료 프로그램(VS Code) 설치부터 함께 진행합니다. PC만 있으면 되고, 맥·윈도우 모두 가능해요. 노트북 사양도 크게 가리지 않습니다.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question"><span class="faq__q-text">Q2. 정말 코딩을 한 번도 안 해본 사람도 따라갈 수 있나요?</span><span class="faq__toggle icon icon--chevron-right" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>네, ‘입문’ 난이도로 설계했어요. 모든 강의를 라이브 코딩으로 천천히 진행하고, 막히면 Q&amp;A 탭에서 바로 질문할 수 있습니다. 노베이스 수강생의 합격 후기가 그 증거예요.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question"><span class="faq__q-text">Q3. 디자인이나 포토샵도 다룰 줄 알아야 하나요?</span><span class="faq__toggle icon icon--chevron-right" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>아니요. 실습용 디자인 시안은 모두 제공되며, 이 클래스는 ‘화면을 코드로 구현하는 퍼블리싱’에만 집중합니다. 디자인 툴을 몰라도 전혀 문제없이 따라올 수 있어요.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question"><span class="faq__q-text">Q4. 강의는 언제까지 볼 수 있나요?</span><span class="faq__toggle icon icon--chevron-right" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>한 번 구매하면 평생 소장이라 수강기간 제한이 없어요. 원하는 속도로, 필요할 때마다 반복해서 보실 수 있습니다. 진도 압박 없이 내 페이스대로 끝내세요.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question"><span class="faq__q-text">Q5. 모바일이나 태블릿에서도 볼 수 있나요?</span><span class="faq__toggle icon icon--chevron-right" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>웹·iOS·안드로이드 앱을 모두 지원하고, 시청 기록은 기기 간 자동 동기화돼요. 배속(0.5~2.0배)·자막·이어보기도 지원해 출퇴근길에도 편하게 학습할 수 있습니다.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question"><span class="faq__q-text">Q6. 실습 자료는 어떻게 받나요?</span><span class="faq__toggle icon icon--chevron-right" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>각 강의 하단과 ‘수업 자료’ 탭에서 챕터별 예제 소스, 실전 프로젝트 완성본, 디자인 시안, PDF 요약 노트를 내려받을 수 있어요. 복습과 포트폴리오 정리에 그대로 쓰입니다.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question"><span class="faq__q-text">Q7. 완강하면 수료증이 나오나요?</span><span class="faq__toggle icon icon--chevron-right" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>네. 강의를 100% 완강하면 졸업모(수료증)가 자동 발급되어 마이 둥지에서 바로 다운로드할 수 있어요. 학습 이력을 증빙하거나 포트폴리오에 함께 첨부하기 좋습니다.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question"><span class="faq__q-text">Q8. 보너스 챕터(AI 퍼블리싱)도 따로 결제해야 하나요?</span><span class="faq__toggle icon icon--chevron-right" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>아니요, 본 강의에 포함되어 있어요. 본편을 완강하면 자동으로 열리며, 클로드 코드·커서로 퍼블리싱 속도를 높이는 실무 워크플로우를 추가 비용 없이 배울 수 있습니다.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question"><span class="faq__q-text">Q9. 강의 중 궁금한 점은 어떻게 질문하나요?</span><span class="faq__toggle icon icon--chevron-right" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>강의 ‘Q&amp;A’ 탭에서 멘토에게 직접 질문할 수 있어요. 보통 1~2일 안에 답변이 달리고, 다른 수강생의 질문도 함께 볼 수 있어 막히는 지점을 빠르게 해결할 수 있습니다.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question"><span class="faq__q-text">Q10. 환불 규정이 궁금해요.</span><span class="faq__toggle icon icon--chevron-right" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>결제 후 7일 이내이고 수강률 10% 미만이면 전액 환불돼요. 이후에는 진도율에 따라 환불액이 산정됩니다. 마이 둥지 &gt; 결제내역에서 신청하면 영업일 3일 내 처리됩니다.</p></div>
+        </details>
+        </div>
+      </section>
+
+      <section class="course-section" id="mentor" aria-labelledby="mentor-title">
+        <div class="section-band">
+          <h2 class="section-band__title" id="mentor-title">멘토 소개</h2>
+          <p class="section-band__lead">코드랩 현우</p>
+          <p class="section-band__desc">8년 차 프론트엔드 개발자이자 비전공자 대상 부트캠프 멘토. 수백 명의 노베이스 수강생을 웹 퍼블리셔로 길러낸 경험을 바탕으로, “막히는 지점”을 정확히 짚어 풀어주는 강의로 정평이 나 있습니다.</p>
+        </div>
+
+        <div class="mentor-profile">
+          <div class="mentor-profile__detail">
+            <div class="mentor-profile__group">
+              <h3 class="mentor-profile__label">멘토 대표 분야</h3>
+              <p class="mentor-profile__text">웹 퍼블리싱 · HTML/CSS · 반응형 웹 · 프론트엔드 입문</p>
+            </div>
+            <div class="mentor-profile__group">
+              <h3 class="mentor-profile__label">주요 경력 &amp; 활동</h3>
+              <ul class="mentor-profile__list">
+                <li>현) 프론트엔드 개발 8년 차 · 비전공자 부트캠프 멘토</li>
+                <li>시맨틱 마크업·웹 접근성 실무 교육 다수 진행</li>
+                <li>훗업 ‘웹 퍼블리싱’ 카테고리 대표 멘토</li>
+                <li>훗업 매거진(블로그) ‘비전공자가 6개월 만에 웹 퍼블리셔로 취업한 진짜 순서’ 기고</li>
+              </ul>
+            </div>
+          </div>
+          <figure class="mentor-profile__card">
+            <img class="mentor-profile__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="멘토 코드랩 현우 프로필 사진" loading="lazy" width="100" height="100">
+            <figcaption class="mentor-profile__caption">
+              <p class="mentor-profile__name">코드랩 현우</p>
+              <p class="mentor-profile__quote">“코드는 외우는 게 아니라 손에 익히는 거예요. 그래서 저는 절대 결과 화면만 보여주지 않습니다.”</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="mentor-courses">
+          <div class="mentor-courses__head">
+            <h3 class="mentor-courses__title">멘토의 다른 강의</h3>
+            <a class="mentor-courses__all" href="/courses">전체 클래스 보기</a>
+          </div>
+          <ul class="mentor-courses__list">
+            <li class="mentor-course">
+              <a class="mentor-course__thumb" href="/courses/htmlcss" tabindex="-1"><img src="assets/course/cat-dev-htmlcss.png" alt="HTML과 CSS 기초를 실습하는 강의 썸네일" loading="lazy"></a>
+              <div class="mentor-course__body">
+                <img class="mentor-course__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="" loading="lazy">
+                <div class="mentor-course__info">
+                  <h4 class="mentor-course__title"><a href="/courses/htmlcss">손에 익히는 HTML/CSS 기초 부트캠프</a></h4>
+                  <p class="mentor-course__meta">코드랩 현우・60강・12시간 30분</p>
+                  <p class="mentor-course__price"><span class="mentor-course__rate">20%</span><del class="mentor-course__before">77,000원</del><span class="icon icon--arrow-right mentor-course__arrow" aria-hidden="true"></span><ins class="mentor-course__after">61,600원</ins></p>
+                  <p class="mentor-course__rating"><img class="mentor-course__stars" src="assets/brand/stars-48.svg" alt="평점 5점 만점에 4.8점" loading="lazy"><span class="mentor-course__score">4.8</span><span class="mentor-course__sep" aria-hidden="true">|</span><span class="mentor-course__students">5,640명 수강</span></p>
+                </div>
+              </div>
+            </li>
+            <li class="mentor-course">
+              <a class="mentor-course__thumb" href="/courses/css" tabindex="-1"><img src="assets/course/cat-dev-css.png" alt="CSS Flexbox와 Grid 레이아웃 강의 썸네일" loading="lazy"></a>
+              <div class="mentor-course__body">
+                <img class="mentor-course__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="" loading="lazy">
+                <div class="mentor-course__info">
+                  <h4 class="mentor-course__title"><a href="/courses/css">CSS Flexbox &amp; Grid 레이아웃 완전 정복</a></h4>
+                  <p class="mentor-course__meta">코드랩 현우・44강・8시간 30분</p>
+                  <p class="mentor-course__price"><span class="mentor-course__rate">40%</span><del class="mentor-course__before">99,000원</del><span class="icon icon--arrow-right mentor-course__arrow" aria-hidden="true"></span><ins class="mentor-course__after">59,400원</ins></p>
+                  <p class="mentor-course__rating"><img class="mentor-course__stars" src="assets/brand/stars-49.svg" alt="평점 5점 만점에 4.9점" loading="lazy"><span class="mentor-course__score">4.9</span><span class="mentor-course__sep" aria-hidden="true">|</span><span class="mentor-course__students">3,210명 수강</span></p>
+                </div>
+              </div>
+            </li>
+            <li class="mentor-course">
+              <a class="mentor-course__thumb" href="/courses/js-core" tabindex="-1"><img src="assets/course/cat-dev-js-core.png" alt="자바스크립트 핵심 문법 강의 썸네일" loading="lazy"></a>
+              <div class="mentor-course__body">
+                <img class="mentor-course__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="" loading="lazy">
+                <div class="mentor-course__info">
+                  <h4 class="mentor-course__title"><a href="/courses/js-core">실무에서 바로 쓰는 자바스크립트 핵심 완전 정복</a></h4>
+                  <p class="mentor-course__meta">코드랩 현우・72강・15시간</p>
+                  <p class="mentor-course__price"><span class="mentor-course__rate">35%</span><del class="mentor-course__before">132,000원</del><span class="icon icon--arrow-right mentor-course__arrow" aria-hidden="true"></span><ins class="mentor-course__after">85,800원</ins></p>
+                  <p class="mentor-course__rating"><img class="mentor-course__stars" src="assets/brand/stars-48.svg" alt="평점 5점 만점에 4.8점" loading="lazy"><span class="mentor-course__score">4.8</span><span class="mentor-course__sep" aria-hidden="true">|</span><span class="mentor-course__students">4,760명 수강</span></p>
+                </div>
+              </div>
+            </li>
+            <li class="mentor-course">
+              <a class="mentor-course__thumb" href="/courses/vanilla-js" tabindex="-1"><img src="assets/course/cat-dev-vanilla-js.png" alt="바닐라 자바스크립트로 만드는 인터랙티브 웹 강의 썸네일" loading="lazy"></a>
+              <div class="mentor-course__body">
+                <img class="mentor-course__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="" loading="lazy">
+                <div class="mentor-course__info">
+                  <h4 class="mentor-course__title"><a href="/courses/vanilla-js">바닐라 자바 스크립트로 만드는 인터랙티브 웹</a></h4>
+                  <p class="mentor-course__meta">코드랩 현우・56강・12시간</p>
+                  <p class="mentor-course__price"><span class="mentor-course__rate">30%</span><del class="mentor-course__before">143,000원</del><span class="icon icon--arrow-right mentor-course__arrow" aria-hidden="true"></span><ins class="mentor-course__after">100,100원</ins></p>
+                  <p class="mentor-course__rating"><img class="mentor-course__stars" src="assets/brand/stars-47.svg" alt="평점 5점 만점에 4.7점" loading="lazy"><span class="mentor-course__score">4.7</span><span class="mentor-course__sep" aria-hidden="true">|</span><span class="mentor-course__students">2,180명 수강</span></p>
+                </div>
+              </div>
+            </li>
+            <li class="mentor-course">
+              <a class="mentor-course__thumb" href="/courses/react" tabindex="-1"><img src="assets/course/cat-dev-react.png" alt="React 프론트엔드 실전 프로젝트 강의 썸네일" loading="lazy"></a>
+              <div class="mentor-course__body">
+                <img class="mentor-course__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="" loading="lazy">
+                <div class="mentor-course__info">
+                  <h4 class="mentor-course__title"><a href="/courses/react">포트폴리오까지 끝내는 React 프론트엔드 실전 프로젝트</a></h4>
+                  <p class="mentor-course__meta">코드랩 현우・88강・18시간</p>
+                  <p class="mentor-course__price"><span class="mentor-course__rate">40%</span><del class="mentor-course__before">165,000원</del><span class="icon icon--arrow-right mentor-course__arrow" aria-hidden="true"></span><ins class="mentor-course__after">99,000원</ins></p>
+                  <p class="mentor-course__rating"><img class="mentor-course__stars" src="assets/brand/stars-48.svg" alt="평점 5점 만점에 4.8점" loading="lazy"><span class="mentor-course__score">4.8</span><span class="mentor-course__sep" aria-hidden="true">|</span><span class="mentor-course__students">2,604명 수강</span></p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="course-aside" aria-label="수강 신청">
+      <div class="enroll-card" id="enroll">
+        <figure class="enroll-card__thumb">
+          <img src="assets/course/cat-dev-responsive-publishing.png" alt="여러 화면 크기로 반응형 레이아웃을 확인하는 웹 퍼블리싱 작업 화면" loading="lazy">
+          <button class="enroll-card__wish" type="button" aria-pressed="false" aria-label="찜하기"><span class="icon icon--heart"></span></button>
+          <span class="enroll-card__badge">30% 할인</span>
+        </figure>
+        <p class="enroll-card__hashtags"><span>#웹퍼블리싱</span><span>#반응형</span><span>#피그마</span></p>
+        <ul class="enroll-card__keywords">
+          <li class="enroll-card__keyword enroll-card__keyword--danger">얼리버드 할인중</li>
+          <li class="enroll-card__keyword">멘토 답변 제공</li>
+          <li class="enroll-card__keyword enroll-card__keyword--danger">평생무료</li>
+        </ul>
+        <h2 class="enroll-card__title">제로부터 완성하는 반응형 웹 퍼블리싱 마스터 클래스</h2>
+        <p class="enroll-card__rating">
+          <img class="enroll-card__stars" src="assets/brand/stars-49.svg" alt="평점 5점 만점에 4.9점" loading="lazy">
+          <span class="enroll-card__score">4.9</span>
+          <span class="enroll-card__sep" aria-hidden="true">|</span>
+          <span class="enroll-card__students">4,128명 수강</span>
+        </p>
+        <div class="enroll-card__price">
+          <span class="enroll-card__rate">30%</span>
+          <div class="enroll-card__price-main">
+            <ins class="enroll-card__now">77,000원</ins>
+            <span class="enroll-card__monthly">월 25,670원</span>
+          </div>
+          <div class="enroll-card__price-sub">
+            <del class="enroll-card__before">110,000원</del>
+            <span class="enroll-card__installment">3개월 할부 시</span>
+          </div>
+        </div>
+        <div class="enroll-card__actions">
+          <a class="enroll-card__btn enroll-card__btn--primary" href="#enroll">지금 배우기 시작 <span>(수강신청)</span></a>
+          <a class="enroll-card__btn enroll-card__btn--outline" href="/cart">담은 둥지 <span>(장바구니)</span></a>
+          <a class="enroll-card__btn enroll-card__btn--wish" href="/wishlist">찜한 둥지 <span>(위시리스트)</span></a>
+        </div>
+      </div>
+
+      <div class="mentor-brief">
+        <div class="mentor-brief__head">
+          <img class="mentor-brief__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="" loading="lazy" width="30" height="30">
+          <span class="mentor-brief__name">코드랩 현우</span>
+        </div>
+        <dl class="mentor-brief__spec">
+          <div><dt>구성</dt><dd>총 7챕터・52강・11시간</dd></div>
+          <div><dt>난이도</dt><dd>입문(비전공・노베이스 환영)</dd></div>
+          <div><dt>수강 형태</dt><dd>평생소장・수강기간 무제한</dd></div>
+          <div><dt>완강 혜택</dt><dd>졸업모(수료증) 발급</dd></div>
+        </dl>
+        <a class="mentor-brief__link" href="/magazine">멘토 블로그 바로가기</a>
+      </div>
+    </aside>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner l-container">
+
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <img class="site-footer__logo" src="assets/brand/logo-white.svg" alt="HOOT UP" loading="lazy">
+        <p class="site-footer__slogan">밤에도 깨어 배우는 사람들의 아지트</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="푸터 메뉴">
+        <section class="link-group">
+          <h2 class="link-group__title">HOOT UP</h2>
+          <ul class="link-group__list">
+            <li><a class="link-group__link" href="/about">브랜드 스토리</a></li>
+            <li><a class="link-group__link" href="/desk">훗업 데스크(뉴스)</a></li>
+            <li><a class="link-group__link" href="/magazine">훗업 매거진(블로그)</a></li>
+            <li><a class="link-group__link" href="/b2b">단체 교육 (B2B)</a></li>
+            <li><a class="link-group__link" href="/careers">채용 안내</a></li>
+          </ul>
+        </section>
+
+        <section class="link-group">
+          <h2 class="link-group__title">둘러보기</h2>
+          <ul class="link-group__list">
+            <li><a class="link-group__link" href="/categories">전체 카테고리</a></li>
+            <li><a class="link-group__link" href="/chart">훗업 차트(베스트)</a></li>
+            <li><a class="link-group__link" href="new.html">갓 부화한 클래스</a></li>
+            <li><a class="link-group__link" href="/events">훗업 페스타(이벤트)</a></li>
+            <li><a class="link-group__link" href="/roadmap">레벨업 로드맵</a></li>
+            <li><a class="link-group__link" href="/subscribe">올나잇 패스(구독)</a></li>
+          </ul>
+        </section>
+
+        <section class="link-group">
+          <h2 class="link-group__title">크리에이터 지원</h2>
+          <ul class="link-group__list">
+            <li><a class="link-group__link" href="/creator/apply">클래스 개설 문의하기</a></li>
+            <li><a class="link-group__link" href="/creator/guide">크리에이터 가이드</a></li>
+            <li><a class="link-group__link" href="/creator/studio">스튜디오 대여</a></li>
+            <li><a class="link-group__link" href="/creator/settlement">정산・수익 안내</a></li>
+            <li><a class="link-group__link" href="/creator/mentor">멘토 교육 지원</a></li>
+          </ul>
+        </section>
+
+        <section class="link-group">
+          <h2 class="link-group__title">고객센터</h2>
+          <ul class="link-group__list">
+            <li><a class="link-group__link" href="/notice">공지사항</a></li>
+            <li><a class="link-group__link" href="/faq">자주 묻는 질문(FAQ)</a></li>
+            <li><a class="link-group__link" href="/terms">이용약관</a></li>
+            <li><a class="link-group__link" href="/privacy">개인정보처리방침</a></li>
+            <li><a class="link-group__link" href="/refund">환불 규정</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+
+    <hr class="site-footer__rule">
+
+    <div class="site-footer__contact">
+      <section class="contact-desk">
+        <h2 class="contact-desk__title">고객센터</h2>
+        <p class="contact-desk__tel"><a href="tel:0212345678">02-1234-5678</a></p>
+        <p class="contact-desk__hours">주중 10:00–18:00 / 주말·공휴일 휴무</p>
+      </section>
+
+      <dl class="contact-mail">
+        <div class="contact-mail__group">
+          <dt class="contact-mail__label">환불 문의</dt>
+          <dd class="contact-mail__value"><a href="mailto:refund@hootup.co.kr">refund@hootup.co.kr</a></dd>
+        </div>
+        <div class="contact-mail__group">
+          <dt class="contact-mail__label">기타 문의</dt>
+          <dd class="contact-mail__value"><a href="mailto:help@hootup.co.kr">help@hootup.co.kr</a></dd>
+        </div>
+        <div class="contact-mail__group">
+          <dt class="contact-mail__label">크리에이터 지원</dt>
+          <dd class="contact-mail__value"><a href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a></dd>
+        </div>
+      </dl>
+    </div>
+
+    <hr class="site-footer__rule">
+
+    <div class="site-footer__legal">
+      <nav class="policy" aria-label="약관 및 정책">
+        <ul class="policy__list">
+          <li><a class="policy__link" href="/terms">이용약관</a></li>
+          <li><a class="policy__link" href="/privacy">개인정보처리방침</a></li>
+          <li><a class="policy__link" href="/youth">청소년 보호정책</a></li>
+          <li><a class="policy__link" href="/refund">환불 규정</a></li>
+          <li><a class="policy__link" href="/business">사업자정보 확인</a></li>
+        </ul>
+      </nav>
+
+      <address class="company">
+        <p class="company__line">
+          <span>(주)훗업 컴퍼니</span>
+          <span>대표자 : 신호진</span>
+          <span>사업자등록번호 : 123-45-67890</span>
+          <span>개인정보책임관리자 : 신호진</span>
+        </p>
+        <p class="company__line">
+          <span>통신판매신고 : 제 2026-서울서초-1234호</span>
+          <span>(06621) 서울 서초구 강남대로 373, 10층</span>
+        </p>
+      </address>
+
+      <p class="site-footer__copyright"><small>Copyright © HOOT UP. All rights reserved.</small></p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="js/nav.js" defer></script>
+</body>
+</html>
