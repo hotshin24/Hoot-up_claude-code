@@ -81,56 +81,48 @@
       <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
         <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it"
                 aria-selected="true" aria-controls="megapanel-dev-it" tabindex="0">
-          <span class="mega-cat__emoji" aria-hidden="true">💻</span>
           <span class="mega-cat__name">개발 &amp; IT</span>
           <span class="mega-cat__badge mega-cat__badge--single">단건</span>
           <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
         </button>
         <button class="mega-cat" type="button" role="tab" id="megacat-career-money"
                 aria-selected="false" aria-controls="megapanel-career-money" tabindex="-1">
-          <span class="mega-cat__emoji" aria-hidden="true">💼</span>
           <span class="mega-cat__name">커리어 &amp; 머니</span>
           <span class="mega-cat__badge mega-cat__badge--single">단건</span>
           <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
         </button>
         <button class="mega-cat" type="button" role="tab" id="megacat-design-creative"
                 aria-selected="false" aria-controls="megapanel-design-creative" tabindex="-1">
-          <span class="mega-cat__emoji" aria-hidden="true">✏️</span>
           <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
           <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
           <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
         </button>
         <button class="mega-cat" type="button" role="tab" id="megacat-photo-video"
                 aria-selected="false" aria-controls="megapanel-photo-video" tabindex="-1">
-          <span class="mega-cat__emoji" aria-hidden="true">📷</span>
           <span class="mega-cat__name">사진 &amp; 영상</span>
           <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
           <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
         </button>
         <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust"
                 aria-selected="false" aria-controls="megapanel-drawing-illust" tabindex="-1">
-          <span class="mega-cat__emoji" aria-hidden="true">🎨</span>
           <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
           <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
           <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
         </button>
         <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness"
                 aria-selected="false" aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
-          <span class="mega-cat__emoji" aria-hidden="true">🧘</span>
           <span class="mega-cat__name">운동 &amp; 마음챙김</span>
           <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
           <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
         </button>
         <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade"
                 aria-selected="false" aria-controls="megapanel-craft-handmade" tabindex="-1">
-          <span class="mega-cat__emoji" aria-hidden="true">🧶</span>
           <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
           <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
           <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
         </button>
         <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking"
                 aria-selected="false" aria-controls="megapanel-cooking-baking" tabindex="-1">
-          <span class="mega-cat__emoji" aria-hidden="true">🍳</span>
           <span class="mega-cat__name">요리 &amp; 베이킹</span>
           <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
           <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
@@ -253,8 +245,22 @@
     <h1 class="category-banner__title">새로운 클래스</h1>
   </div>
 
+  <nav class="class-filter" aria-label="카테고리 필터">
+    <ul class="class-filter__list">
+      <li><button class="class-filter__btn is-active" type="button" data-filter="all" aria-pressed="true">전체</button></li>
+      <li><button class="class-filter__btn" type="button" data-filter="dev-it" aria-pressed="false">개발 &amp; IT</button></li>
+      <li><button class="class-filter__btn" type="button" data-filter="career-money" aria-pressed="false">커리어 &amp; 머니</button></li>
+      <li><button class="class-filter__btn" type="button" data-filter="design-creative" aria-pressed="false">디자인 &amp; 크리에이티브</button></li>
+      <li><button class="class-filter__btn" type="button" data-filter="photo-video" aria-pressed="false">사진 &amp; 영상</button></li>
+      <li><button class="class-filter__btn" type="button" data-filter="drawing-illust" aria-pressed="false">드로잉 &amp; 일러스트</button></li>
+      <li><button class="class-filter__btn" type="button" data-filter="fitness-mindfulness" aria-pressed="false">운동 &amp; 마음챙김</button></li>
+      <li><button class="class-filter__btn" type="button" data-filter="craft-handmade" aria-pressed="false">공예 &amp; 핸드메이드</button></li>
+      <li><button class="class-filter__btn" type="button" data-filter="cooking-baking" aria-pressed="false">요리 &amp; 베이킹</button></li>
+    </ul>
+  </nav>
+
   <ul class="course-grid">
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="dev-it">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-claude-code.png"
@@ -292,7 +298,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="career-money">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-p2-it-job.png"
@@ -329,7 +335,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="design-creative">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-ux-research.png"
@@ -366,7 +372,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="photo-video">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/pv-shortform.png"
@@ -403,7 +409,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="cooking-baking">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/ck-mocktail.png"
@@ -440,7 +446,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="dev-it">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-vibe.png"
@@ -477,7 +483,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="craft-handmade">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cr-pottery.png"
@@ -514,7 +520,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="career-money">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-p2-seo-blog.png"
@@ -551,7 +557,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="drawing-illust">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/dr-lettering.png"
@@ -588,7 +594,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="design-creative">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-p2-mobile-ui.png"
@@ -625,7 +631,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="fitness-mindfulness">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/wl-pilates.png"
@@ -662,7 +668,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="dev-it">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-cursor.png"
@@ -699,7 +705,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="career-money">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-p2-youtube.png"
@@ -736,7 +742,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="craft-handmade">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cr-resin.png"
@@ -773,7 +779,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="design-creative">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-p2-cinema4d-typo.png"
@@ -810,7 +816,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="photo-video">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/pv-davinci-color.png"
@@ -848,7 +854,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="drawing-illust">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/dr-webtoon-conti.png"
@@ -885,7 +891,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="career-money">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-p2-ebook.png"
@@ -922,7 +928,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="fitness-mindfulness">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/wl-stress-meditation.png"
@@ -959,7 +965,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="dev-it">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-p2-nextjs.png"
@@ -996,7 +1002,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="design-creative">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-p2-cardnews-sns.png"
@@ -1033,7 +1039,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="cooking-baking">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/ck-vegan.png"
@@ -1070,7 +1076,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="photo-video">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/pv-portrait-natural.png"
@@ -1107,7 +1113,7 @@
             </div>
           </article>
         </li>
-        <li class="course-grid__item">
+        <li class="course-grid__item" data-category="drawing-illust">
           <article class="course-card">
             <figure class="course-card__thumb">
               <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/dr-colorpencil.png"
@@ -1264,5 +1270,6 @@
 </footer>
 
 <script src="js/nav.js" defer></script>
+<script src="js/class-filter.js" defer></script>
 </body>
 </html>

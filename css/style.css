@@ -450,7 +450,7 @@ hr {
 
 .mega__inner {
   display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
+  grid-template-columns: 340px minmax(0, 1fr);
   gap: var(--space-2xl);
   align-items: start;
   padding-block: var(--space-xl);
@@ -489,6 +489,7 @@ hr {
 .mega-cat__name {
   margin-right: auto;
   font-weight: var(--font-weight-bold);
+  white-space: nowrap;
 }
 
 .mega-cat__badge {
@@ -4303,4 +4304,189 @@ hr {
 }
 @media (prefers-reduced-motion: reduce) {
   .desk-period__chip { transition: none; }
+}
+
+/* ==========================================================================
+   사이트맵 — 전체 메뉴(GNB) + 푸터 메뉴 한 화면 (sitemap.html)
+   ========================================================================== */
+.sitemap-page {
+  padding-block: var(--space-2xl) var(--space-4xl);
+}
+
+.sitemap-hero {
+  padding-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.sitemap-hero__eyebrow {
+  color: var(--color-brand-base);
+  font-size: var(--text-caption-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.14em;
+}
+.sitemap-hero__title {
+  margin-top: var(--space-xs);
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-leading);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-strong);
+}
+.sitemap-hero__desc {
+  margin-top: var(--space-xs);
+  color: var(--color-text-muted);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
+}
+
+.sitemap-section {
+  margin-top: var(--space-2xl);
+}
+.sitemap-section__title {
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-leading);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-strong);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+/* 바로가기(GNB 퀵) */
+.sitemap-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+.sitemap-quick__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 18px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-base);
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-weight-bold);
+  background-color: var(--color-surface-page);
+  transition: background-color var(--duration-base) var(--easing-standard), color var(--duration-base) var(--easing-standard), border-color var(--duration-base) var(--easing-standard);
+}
+.sitemap-quick__link:hover {
+  background-color: var(--color-brand-base);
+  border-color: var(--color-brand-base);
+  color: var(--color-neutral-white);
+}
+
+/* 카테고리/그룹 그리드 */
+.sitemap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-md);
+}
+
+.sitemap-cat {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-page);
+}
+.sitemap-cat__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-strong);
+}
+.sitemap-cat__head--plain {
+  cursor: default;
+}
+.sitemap-cat__emoji { font-size: 18px; line-height: 1; }
+.sitemap-cat__name {
+  font-size: var(--text-body-size);
+  font-weight: var(--font-weight-bold);
+}
+a.sitemap-cat__head:hover .sitemap-cat__name {
+  color: var(--color-brand-base);
+}
+.sitemap-cat__badge {
+  margin-left: auto;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+}
+.sitemap-cat__badge--single { background-color: var(--color-surface-muted); color: var(--color-text-muted); }
+.sitemap-cat__badge--sub    { background-color: var(--color-brand-lighter); color: var(--color-brand-darker); }
+.sitemap-cat__badge--mix    { background-color: var(--color-brand-base); color: var(--color-neutral-white); }
+
+.sitemap-cat__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sitemap-cat__link {
+  display: block;
+  padding: 6px 0;
+  color: var(--color-text-base);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+  transition: color var(--duration-base) var(--easing-standard);
+}
+.sitemap-cat__link:hover {
+  color: var(--color-brand-base);
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .sitemap-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 400px) {
+  .sitemap-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   클래스 목록 카테고리 필터 (best / new / signature)
+   ========================================================================== */
+.class-filter {
+  margin-bottom: var(--space-xl);
+}
+.class-filter__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-xs);
+}
+/* 색상 규칙은 세부 카테고리 메뉴(.chip)와 동일 */
+.class-filter__btn {
+  padding: 8px 16px;
+  border: 1px solid var(--color-neutral-base);
+  border-radius: var(--radius-pill);
+  background-color: transparent;
+  color: var(--color-neutral-base);
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard),
+              border-color var(--duration-fast) var(--easing-standard);
+}
+.class-filter__btn:hover {
+  border-color: var(--color-brand-base);
+  color: var(--color-brand-base);
+}
+.class-filter__btn.is-active {
+  background-color: var(--color-brand-base);
+  border-color: var(--color-brand-base);
+  color: var(--color-text-inverse);
+}
+.class-filter__btn.is-active:hover {
+  background-color: var(--color-brand-darker);
+  border-color: var(--color-brand-darker);
+  color: var(--color-text-inverse);
+}
+
+/* 필터로 숨겨진 아이템 (.course-grid__item[hidden] 우선순위 확보) */
+.course-grid__item[hidden] {
+  display: none;
 }
