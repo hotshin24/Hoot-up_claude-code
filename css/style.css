@@ -6463,3 +6463,61 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 @media (max-width: 620px) {
   .youth__cta-btn { flex: 1 1 100%; }
 }
+
+/* ============================================================
+   사업자정보 확인 — business.html (Figma 210-23593)
+   · terms 히어로 재사용(class="terms business") + 단일 컬럼 스코프
+   ============================================================ */
+/* 사업자 정보 dl */
+.business__info { margin-top: 10px; border: 1px solid var(--color-neutral-lighter); border-radius: 16px; overflow: hidden; }
+.business__row { display: grid; grid-template-columns: 294px 1fr; align-items: center; }
+.business__row + .business__row { border-top: 1px solid var(--color-neutral-lighter); }
+.business__row dt { padding: 22px 24px 22px 30px; color: var(--color-neutral-light); font-size: 15px; line-height: 24px; }
+.business__row dd { padding: 22px 24px; color: var(--color-neutral-darker); font-size: 16px; line-height: 26px; }
+
+/* 문의처 안내 */
+.business__contact-sec { margin-top: 70px; }
+.business__contact-eyebrow { color: var(--color-brand-base); font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; }
+.business__contact-title { margin-top: 9px; color: var(--color-neutral-darker); font-weight: 700; font-size: 28px; line-height: 41px; }
+.business__contacts { margin-top: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.business__contact { padding: 27px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; }
+.business__contact-label { color: var(--color-neutral-base); font-size: 15px; line-height: 22px; }
+.business__contact-mail { margin-top: 10px; display: inline-block; color: var(--color-brand-base); font-weight: 700; font-size: 16px; line-height: 22px; word-break: break-all; }
+.business__contact-mail:hover { text-decoration: underline; }
+
+/* 안내 박스 */
+.business__notices { margin-top: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.business__notice { padding: 34px 31px; border-radius: 20px; }
+.business__notice--dark { background: var(--color-neutral-darker); }
+.business__notice--dark .business__notice-title { color: var(--color-brand-secondary); }
+.business__notice--dark .business__notice-desc { color: var(--color-brand-lighter); }
+.business__notice--light { background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); }
+.business__notice--light .business__notice-title { color: var(--color-neutral-darker); }
+.business__notice--light .business__notice-desc { color: var(--color-neutral-base); }
+.business__notice-title { font-weight: 700; font-size: 19px; line-height: 30px; }
+.business__notice-desc { margin-top: 14px; font-size: 15px; line-height: 26px; }
+
+/* 하단 CTA */
+.business__cta { position: relative; overflow: hidden; background: radial-gradient(760px 300px at 50% 0%, rgb(22 103 250 / 0.45) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); border-bottom: 1px solid var(--color-neutral-base); }
+.business__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 26px; padding-block: 80px; text-align: center; }
+.business__cta-title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 30px; line-height: 45px; color: var(--color-neutral-white); }
+.business__cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.business__cta-btn { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 28px; border-radius: 30px; font-weight: 700; font-size: 16px; transition: background-color .18s ease, border-color .18s ease; }
+.business__cta-btn--phone { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
+.business__cta-btn--phone:hover { background: #e4e83a; }
+.business__cta-btn--mail { border: 1px solid rgb(255 255 255 / 0.3); color: var(--color-neutral-white); }
+.business__cta-btn--mail:hover { border-color: var(--color-neutral-white); }
+.business__cta-note { color: rgb(147 162 183 / 0.9); font-size: 14px; line-height: 24px; }
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .business__contacts { grid-template-columns: 1fr 1fr; }
+  .business__notices { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .business__contacts { grid-template-columns: 1fr; }
+  .business__row { grid-template-columns: 1fr; }
+  .business__row dt { padding: 20px 24px 0; }
+  .business__row dd { padding: 6px 24px 20px; }
+  .business__cta-btn { flex: 1 1 100%; }
+}
