@@ -4468,7 +4468,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   background-color: transparent;
   color: var(--color-neutral-base);
   font-size: var(--text-body-sm-size);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-regular);
   line-height: 1;
   cursor: pointer;
   transition: background-color var(--duration-fast) var(--easing-standard),
