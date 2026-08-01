@@ -918,6 +918,11 @@ hr {
   transition: transform 0.4s ease;
 }
 
+/* 썸네일을 컬러 그라데이션으로 대체(이미지 미확정 강의용) */
+.course-card__image--gradient {
+  display: block;
+}
+
 /* 호버 시 이미지만 1.3배 확대 — 감싼 레이아웃(썸네일 박스)은 overflow:hidden으로 고정 */
 .course-card__thumb:hover .course-card__image {
   transform: scale(1.3);
