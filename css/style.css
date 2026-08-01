@@ -6371,3 +6371,13 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .terms .terms__contact { padding: 28px; }
   .terms .terms__h2-title { font-size: 21px; }
 }
+
+/* ============================================================
+   개인정보처리방침 — privacy.html (Figma 211-27116)
+   · terms 레이아웃 재사용(class="terms privacy"), 표 밀도만 조정
+   ============================================================ */
+.privacy .terms__table thead th,
+.privacy .terms__table tbody td { padding: 13px 18px; font-size: 14px; line-height: 22px; }
+.privacy .terms__table tbody td:first-child { color: var(--color-neutral-darker); font-weight: 700; }
+.privacy .terms__table--wide { min-width: 900px; }
+.privacy .terms__intro { margin-bottom: 0; }
