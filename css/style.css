@@ -6298,3 +6298,76 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .hfaq__pad { padding-block: 56px 72px; }
   .hfaq .hfaq__q-text span:last-child { font-size: 16px; }
 }
+
+/* ============================================================
+   이용약관 — terms.html (Figma 211-26126 · 토큰 사용)
+   ============================================================ */
+.terms .terms__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
+
+/* ===== 히어로 ===== */
+.terms .terms__hero { position: relative; overflow: hidden; background: radial-gradient(900px 500px at 78% 30%, rgb(22 103 250 / 0.45) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
+.terms .terms__hero .terms__container { padding-block: 80px 90px; }
+.terms .terms__eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
+.terms .terms__title { margin-top: 22px; color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 48px; line-height: 1.24; letter-spacing: -0.96px; }
+.terms .terms__lead { margin-top: 18px; max-width: 700px; color: var(--color-brand-light); font-size: 16px; line-height: 30px; }
+.terms .terms__effective { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; padding: 9px 16px; border: 1px solid rgb(255 255 255 / 0.18); border-radius: 10px; background: rgb(255 255 255 / 0.05); }
+.terms .terms__effective-label { color: var(--color-brand-light); font-size: 13px; line-height: 22px; }
+.terms .terms__effective-value { color: var(--color-neutral-white); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.5px; }
+
+/* ===== 본문 레이아웃 ===== */
+.terms .terms__body { background: var(--color-neutral-white); }
+.terms .terms__body .terms__container { padding-block: 80px 100px; }
+.terms .terms__layout { display: grid; grid-template-columns: 260px minmax(0, 760px); justify-content: space-between; gap: 60px; align-items: start; }
+
+/* 목차 */
+.terms .terms__toc { position: sticky; top: 90px; padding: 28px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 16px; }
+.terms .terms__toc-label { color: var(--color-brand-base); font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; }
+.terms .terms__toc-list { margin-top: 18px; display: flex; flex-direction: column; gap: 4px; }
+.terms .terms__toc-link { display: flex; align-items: baseline; gap: 12px; padding: 7px 8px; border-radius: 8px; color: var(--color-neutral-dark); font-size: 15px; line-height: 22px; transition: background-color .15s ease, color .15s ease; }
+.terms .terms__toc-no { flex-shrink: 0; width: 20px; color: var(--color-brand-light); font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; text-align: left; }
+.terms .terms__toc-link:hover { background: var(--color-neutral-white); color: var(--color-brand-base); }
+.terms .terms__toc-link:hover .terms__toc-no { color: var(--color-brand-base); }
+
+/* 아티클 */
+.terms .terms__intro { margin-bottom: 44px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+.terms .terms__section { scroll-margin-top: 90px; }
+.terms .terms__section + .terms__section { margin-top: 48px; }
+.terms .terms__h2 { display: flex; align-items: baseline; gap: 12px; padding-bottom: 16px; border-bottom: 2px solid var(--color-neutral-darker); }
+.terms .terms__h2-no { flex-shrink: 0; color: var(--color-brand-base); font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 22px; line-height: 1; }
+.terms .terms__h2-title { color: var(--color-neutral-darker); font-weight: 700; font-size: 24px; line-height: 1.35; }
+.terms .terms__h3 { margin-top: 30px; color: var(--color-neutral-darker); font-weight: 700; font-size: 17px; line-height: 26px; }
+.terms .terms__p { margin-top: 12px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+.terms .terms__h3 + .terms__p { margin-top: 10px; }
+.terms .terms__h2 + .terms__p { margin-top: 20px; }
+
+/* 불릿 목록 */
+.terms .terms__bullets { margin-top: 14px; display: flex; flex-direction: column; gap: 9px; }
+.terms .terms__bullets li { position: relative; padding-left: 18px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+.terms .terms__bullets li::before { content: ""; position: absolute; left: 3px; top: 11px; width: 5px; height: 5px; border-radius: 50%; background: var(--color-neutral-light); }
+
+/* 표 (법적고지) */
+.terms .terms__table-wrap { margin-top: 22px; overflow-x: auto; border: 1px solid var(--color-neutral-lighter); border-radius: 16px; }
+.terms .terms__table { width: 100%; border-collapse: separate; border-spacing: 0; }
+.terms .terms__table thead th { background: var(--color-neutral-darker); color: var(--color-brand-secondary); font-weight: 700; font-size: 15px; text-align: left; padding: 16px 24px; white-space: nowrap; }
+.terms .terms__table tbody th { width: 40%; text-align: left; color: var(--color-neutral-darker); font-weight: 700; font-size: 15px; padding: 16px 24px; }
+.terms .terms__table tbody td { color: var(--color-neutral-base); font-size: 15px; padding: 16px 24px; }
+.terms .terms__table tbody tr + tr th, .terms .terms__table tbody tr + tr td { border-top: 1px solid var(--color-neutral-lighter); }
+
+/* 고객센터 */
+.terms .terms__contact { margin-top: 56px; padding: 40px; background: var(--color-neutral-darker); border-radius: 16px; }
+.terms .terms__contact-title { color: var(--color-brand-secondary); font-weight: 700; font-size: 18px; line-height: 26px; }
+.terms .terms__contact-p { margin-top: 14px; color: var(--color-neutral-light); font-size: 15px; line-height: 27px; }
+.terms .terms__contact-p a { color: var(--color-neutral-white); font-weight: 700; text-decoration: none; }
+.terms .terms__contact-p a:hover { text-decoration: underline; }
+.terms .terms__disclaimer { margin-top: 20px; color: var(--color-neutral-light); font-size: 13px; line-height: 22px; }
+
+/* ===== 반응형 ===== */
+@media (max-width: 900px) {
+  .terms .terms__layout { grid-template-columns: 1fr; gap: 32px; }
+  .terms .terms__toc { position: static; }
+  .terms .terms__title { font-size: 38px; }
+}
+@media (max-width: 620px) {
+  .terms .terms__contact { padding: 28px; }
+  .terms .terms__h2-title { font-size: 21px; }
+}
