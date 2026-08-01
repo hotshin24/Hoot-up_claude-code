@@ -5287,3 +5287,139 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .careers .careers__role { flex-direction: column; gap: 6px; min-height: 0; }
   .careers .careers__role-desc { text-align: left; }
 }
+
+/* ============================================================
+   레벨업 로드맵 페이지 — roadmap.html (Figma 시안 반영)
+   ============================================================ */
+.roadmap__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
+.roadmap__pad { padding-block: 110px; }
+
+/* 공통 섹션 헤더 */
+.roadmap .roadmap__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
+.roadmap .roadmap__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-base); }
+.roadmap .roadmap__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; letter-spacing: -0.36px; color: var(--color-neutral-darker); }
+
+/* 버튼 */
+.roadmap .roadmap__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 40px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
+.roadmap .roadmap__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
+.roadmap .roadmap__btn--primary:hover { background: var(--color-brand-darker); }
+.roadmap .roadmap__btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
+.roadmap .roadmap__btn--accent:hover { background: #e4e83a; }
+.roadmap .roadmap__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
+.roadmap .roadmap__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
+.roadmap .roadmap__btn--lg { padding: 15px 44px; font-size: 17px; }
+
+/* ===== 히어로 ===== */
+.roadmap .roadmap__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
+.roadmap .roadmap__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 60px; align-items: center; padding-block: 110px 100px; }
+.roadmap .roadmap__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.roadmap .roadmap__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
+.roadmap .roadmap__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(38px, 4.6vw, 54px); line-height: 1.22; letter-spacing: -1.08px; }
+.roadmap .roadmap__hero-desc { max-width: 560px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
+.roadmap .roadmap__hero-note { align-self: flex-start; background: var(--color-brand-secondary); color: var(--color-neutral-darker); font-weight: 700; font-size: 18px; line-height: 22px; border-radius: 20px; padding: 12px 24px; }
+.roadmap .roadmap__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+
+/* ===== 섹션 배경 ===== */
+.roadmap .roadmap__how { background: var(--color-neutral-white); }
+.roadmap .roadmap__featured { background: var(--color-neutral-lightest); }
+.roadmap .roadmap__by-cat { background: var(--color-neutral-white); }
+.roadmap .roadmap__benefits { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, #0d3d94 98.8%); }
+.roadmap .roadmap__cta { position: relative; overflow: hidden; background: radial-gradient(760px 300px at 50% 0%, rgb(22 103 250 / 0.45) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); border-bottom: 1px solid var(--color-neutral-base); }
+
+/* 블루 섹션 헤더 색상 */
+.roadmap .roadmap__benefits .roadmap__eyebrow { color: var(--color-brand-accent); }
+.roadmap .roadmap__benefits .roadmap__title { color: var(--color-neutral-white); }
+
+/* ===== 01 HOW IT WORKS ===== */
+.roadmap .roadmap__how-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.roadmap .roadmap__how-card { display: flex; flex-direction: column; gap: 12px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 29px; }
+.roadmap .roadmap__how-num { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 28px; line-height: 28px; color: var(--color-brand-lighter); }
+.roadmap .roadmap__how-title { font-weight: 700; font-size: 20px; line-height: 28px; color: var(--color-neutral-darker); }
+.roadmap .roadmap__how-desc { color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+
+/* ===== 02 FEATURED ===== */
+.roadmap .roadmap__featured-list { display: flex; flex-direction: column; gap: 40px; }
+.roadmap .roadmap__card { display: flex; flex-direction: column; gap: 30px; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 45px 41px; box-shadow: 0 0 5px rgb(0 0 0 / 0.05); }
+.roadmap .roadmap__card-head { display: flex; flex-direction: column; gap: 15px; }
+.roadmap .roadmap__tags { display: flex; flex-wrap: wrap; gap: 12px; }
+.roadmap .roadmap__tag { display: inline-flex; align-items: center; border-radius: 30px; padding: 6px 16px; }
+.roadmap .roadmap__tag--cat { background: var(--color-brand-lighter); color: var(--color-brand-darker); font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.88px; }
+.roadmap .roadmap__tag--step { background: var(--color-neutral-darker); color: var(--color-brand-secondary); font-weight: 700; font-size: 13px; }
+.roadmap .roadmap__card-title { font-weight: 700; font-size: 30px; line-height: 40.5px; color: var(--color-neutral-darker); }
+.roadmap .roadmap__card-goal { border-left: 3px solid var(--color-brand-secondary); padding-left: 27px; font-weight: 700; font-size: 17px; line-height: 30px; color: var(--color-neutral-darker); }
+
+.roadmap .roadmap__steps { display: flex; flex-direction: column; }
+.roadmap .roadmap__step-row { display: flex; align-items: baseline; gap: 20px; border-top: 1px solid var(--color-neutral-lighter); padding: 22px 0; }
+.roadmap .roadmap__step-label { flex-shrink: 0; width: 74px; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.04px; color: var(--color-brand-base); }
+.roadmap .roadmap__step-title { flex: 1 1 auto; font-weight: 700; font-size: 18px; line-height: 28px; color: var(--color-neutral-darker); }
+.roadmap .roadmap__step-link { color: inherit; text-decoration: none; transition: color .15s ease; }
+.roadmap .roadmap__step-link:hover { color: var(--color-brand-darker); }
+.roadmap .roadmap__step-note { flex-shrink: 0; text-align: right; color: var(--color-neutral-base); font-size: 15px; line-height: 26px; }
+
+.roadmap .roadmap__price { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 27px 31px; }
+.roadmap .roadmap__price-list { color: var(--color-neutral-light); font-size: 14px; line-height: 22px; }
+.roadmap .roadmap__price-deal { display: flex; align-items: baseline; gap: 10px; margin-top: 6px; }
+.roadmap .roadmap__price-off { color: var(--color-danger-base); font-weight: 700; font-size: 15px; }
+.roadmap .roadmap__price-now { color: var(--color-neutral-darker); font-weight: 700; font-size: 26px; line-height: 30px; }
+.roadmap .roadmap__price-reward { color: var(--color-neutral-base); font-size: 15px; line-height: 26px; }
+.roadmap .roadmap__price-reward strong { color: var(--color-neutral-darker); font-weight: 700; }
+
+.roadmap .roadmap__next { display: flex; flex-direction: column; gap: 18px; background: var(--color-neutral-darker); border-radius: 20px; padding: 30px 32px; }
+.roadmap .roadmap__next-title { color: var(--color-neutral-white); font-weight: 700; font-size: 19px; line-height: 30px; }
+.roadmap .roadmap__next-sub { color: var(--color-brand-light); font-size: 16px; line-height: 28px; }
+.roadmap .roadmap__next-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.roadmap .roadmap__next-step { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid rgb(255 255 255 / 0.12); padding-top: 19px; }
+.roadmap .roadmap__next-label { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: 0.96px; color: var(--color-brand-accent); }
+.roadmap .roadmap__next-name { color: var(--color-brand-lighter); font-size: 16px; line-height: 26px; }
+.roadmap .roadmap__next-link { color: inherit; text-decoration: none; transition: color .15s ease; }
+.roadmap .roadmap__next-link:hover { color: var(--color-neutral-white); }
+.roadmap .roadmap__next-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; }
+.roadmap .roadmap__next-was { color: var(--color-neutral-light); font-size: 15px; }
+.roadmap .roadmap__next-now { color: var(--color-brand-secondary); font-weight: 700; font-size: 20px; }
+.roadmap .roadmap__next-off { color: var(--color-brand-accent); font-weight: 700; font-size: 14px; }
+
+.roadmap .roadmap__event-note { display: flex; gap: 10px; background: #eef0ff; border-radius: 20px; padding: 24px 28px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+
+/* ===== 03 BY CATEGORY ===== */
+.roadmap .roadmap__cat-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 50px; }
+.roadmap .roadmap__cat-head .roadmap__head { margin-bottom: 0; }
+.roadmap .roadmap__cat-lead { color: var(--color-neutral-base); font-size: 16px; line-height: 30px; }
+.roadmap .roadmap__cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+.roadmap .roadmap__cat-col { display: flex; flex-direction: column; gap: 20px; }
+.roadmap .roadmap__cat { display: flex; flex-direction: column; gap: 20px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 35px 31px; }
+.roadmap .roadmap__cat-name { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; line-height: 28px; color: var(--color-neutral-darker); }
+.roadmap .roadmap__cat-list { display: flex; flex-direction: column; }
+.roadmap .roadmap__cat-list li { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--color-neutral-lighter); padding: 19px 0 18px; }
+.roadmap .roadmap__cat-item { font-weight: 700; font-size: 17px; line-height: 26px; color: var(--color-brand-base); }
+.roadmap .roadmap__cat-flow { color: var(--color-neutral-base); font-size: 15px; line-height: 26px; }
+
+/* ===== 04 BENEFITS ===== */
+.roadmap .roadmap__benefit-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.roadmap .roadmap__benefit { display: flex; flex-direction: column; gap: 12px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.16); border-radius: 20px; padding: 33px 29px; }
+.roadmap .roadmap__benefit-title { color: var(--color-brand-secondary); font-weight: 700; font-size: 20px; line-height: 28px; }
+.roadmap .roadmap__benefit-desc { color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
+
+/* ===== 마무리 CTA ===== */
+.roadmap .roadmap__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 30px; padding-block: 100px; text-align: center; }
+.roadmap .roadmap__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-white); }
+.roadmap .roadmap__cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+.roadmap .roadmap__cta-disclaimer { color: rgb(147 162 183 / 0.9); font-size: 14px; line-height: 24px; }
+
+/* ===== 반응형 ===== */
+@media (max-width: 1000px) {
+  .roadmap .roadmap__hero-grid { grid-template-columns: 1fr; }
+  .roadmap .roadmap__how-list,
+  .roadmap .roadmap__benefit-list { grid-template-columns: repeat(2, 1fr); }
+  .roadmap .roadmap__cats { grid-template-columns: 1fr; }
+  .roadmap .roadmap__cat-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
+  .roadmap .roadmap__next-steps { grid-template-columns: 1fr; gap: 0; }
+  .roadmap .roadmap__next-step { padding-top: 16px; padding-bottom: 14px; }
+}
+@media (max-width: 620px) {
+  .roadmap__pad { padding-block: 72px; }
+  .roadmap .roadmap__how-list,
+  .roadmap .roadmap__benefit-list { grid-template-columns: 1fr; }
+  .roadmap .roadmap__card { padding: 32px 24px; }
+  .roadmap .roadmap__step-row { flex-wrap: wrap; gap: 4px 20px; }
+  .roadmap .roadmap__step-note { width: 100%; text-align: left; padding-left: 94px; }
+}
