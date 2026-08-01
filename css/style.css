@@ -259,7 +259,14 @@ hr {
 /* 배경 밴드가 있는 변형 (매거진 · 데스크) */
 .section-head--banded {
   padding: 11px var(--space-xs);
-  background-color: var(--color-surface-muted);
+  /* 좌우 가장자리는 투명으로 페이드 */
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--color-surface-muted) 15%,
+    var(--color-surface-muted) 85%,
+    transparent 100%
+  );
 }
 
 /* ==========================================================================
@@ -1140,6 +1147,25 @@ hr {
   align-content: start;
 }
 
+/* 차트 순위 배지 (썸네일 좌상단) — course-card__thumb 그리드에 스택 */
+.chart__rank {
+  justify-self: start;
+  align-self: start;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-neutral-dark);
+  color: var(--color-neutral-white);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 1;
+  border-bottom-right-radius: var(--radius-sm);
+}
+
 /* --- 구독 신청 배너 --- */
 .promo {
   display: flex;
@@ -1150,7 +1176,7 @@ hr {
   /* 장식용 일러스트는 배경으로 얹어 레이아웃에 영향을 주지 않는다 */
   background-image: url("../assets/banner/illust-privacy.png"), var(--gradient-promo);
   background-repeat: no-repeat;
-  background-position: right -15px top 30px, center;
+  background-position: right 30px top 30px, center;
   background-size: 150px 150px, cover;
   color: var(--color-text-inverse);
 }
