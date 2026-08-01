@@ -5821,3 +5821,107 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .creator-guide .creator-guide__support-list,
   .creator-guide .creator-guide__checks { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   스튜디오 대여 — creator-studio.html (Figma 시안 · 토큰 사용)
+   ============================================================ */
+.creator-studio__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
+.creator-studio__pad { padding-block: 100px; }
+
+/* 공통 섹션 헤더 */
+.creator-studio .creator-studio__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
+.creator-studio .creator-studio__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-base); }
+.creator-studio .creator-studio__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; color: var(--color-neutral-darker); }
+
+/* 버튼 */
+.creator-studio .creator-studio__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 36px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
+.creator-studio .creator-studio__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
+.creator-studio .creator-studio__btn--primary:hover { background: var(--color-brand-darker); }
+.creator-studio .creator-studio__btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
+.creator-studio .creator-studio__btn--accent:hover { background: #e4e83a; }
+.creator-studio .creator-studio__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
+.creator-studio .creator-studio__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
+.creator-studio .creator-studio__btn--lg { padding: 15px 44px; font-size: 17px; }
+
+/* ===== 히어로 ===== */
+.creator-studio .creator-studio__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
+.creator-studio .creator-studio__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 60px; align-items: center; padding-block: 110px 100px; }
+.creator-studio .creator-studio__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.creator-studio .creator-studio__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
+.creator-studio .creator-studio__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(38px, 4.8vw, 56px); line-height: 1.2; letter-spacing: -1.12px; }
+.creator-studio .creator-studio__hero-lead { color: var(--color-brand-secondary); font-weight: 700; font-size: 24px; line-height: 32.4px; }
+.creator-studio .creator-studio__hero-desc { max-width: 540px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
+.creator-studio .creator-studio__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+
+/* ===== 섹션 배경 ===== */
+.creator-studio .creator-studio__spaces { background: var(--color-neutral-white); }
+.creator-studio .creator-studio__gear { background: var(--color-neutral-lightest); border-block: 1px solid var(--color-neutral-lighter); }
+.creator-studio .creator-studio__how { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, var(--color-brand-dark) 98.8%); }
+.creator-studio .creator-studio__info { background: var(--color-neutral-darker); }
+.creator-studio .creator-studio__faq { background: var(--color-neutral-lightest); }
+.creator-studio .creator-studio__cta { background: var(--color-neutral-white); }
+
+/* 블루/다크 섹션 헤더 색상 */
+.creator-studio .creator-studio__how .creator-studio__eyebrow,
+.creator-studio .creator-studio__info .creator-studio__eyebrow { color: var(--color-brand-accent); }
+.creator-studio .creator-studio__how .creator-studio__title,
+.creator-studio .creator-studio__info .creator-studio__title { color: var(--color-neutral-white); }
+
+/* ===== 01 공간 카드 ===== */
+.creator-studio .creator-studio__space-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.creator-studio .creator-studio__space { display: flex; flex-direction: column; gap: 18px; }
+.creator-studio .creator-studio__space-ph { aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-neutral-lighter); border-radius: 20px; background: repeating-linear-gradient(135deg, var(--color-neutral-lighter) 0 1px, var(--color-neutral-lightest) 1px 18px); }
+.creator-studio .creator-studio__space-ph-text { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; line-height: 21.6px; color: var(--color-neutral-light); text-align: center; }
+.creator-studio .creator-studio__space-cap { display: flex; flex-direction: column; gap: 8px; }
+.creator-studio .creator-studio__space-title { font-weight: 700; font-size: 20px; line-height: 28px; color: var(--color-neutral-darker); }
+.creator-studio .creator-studio__space-desc { color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+
+/* ===== 02 대여 장비 ===== */
+.creator-studio .creator-studio__gear-grid { display: grid; grid-template-columns: 360px 1fr; gap: 80px; align-items: start; }
+.creator-studio .creator-studio__gear-label { display: flex; flex-direction: column; gap: 14px; }
+.creator-studio .creator-studio__gear-note { border-left: 3px solid var(--color-brand-secondary); padding-left: 27px; color: var(--color-neutral-darker); font-weight: 700; font-size: 16px; line-height: 28px; }
+.creator-studio .creator-studio__gear-tags { display: flex; flex-wrap: wrap; gap: 11px; }
+.creator-studio .creator-studio__gear-tag { display: inline-flex; align-items: center; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 30px; padding: 13px 25px; color: var(--color-neutral-base); font-size: 16px; line-height: 22px; }
+
+/* ===== 03 이용 방법 (STEP) ===== */
+.creator-studio .creator-studio__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.creator-studio .creator-studio__step { display: flex; flex-direction: column; gap: 14px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.16); border-radius: 20px; padding: 33px 29px; }
+.creator-studio .creator-studio__step-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; color: var(--color-brand-secondary); }
+.creator-studio .creator-studio__step-title { font-weight: 700; font-size: 21px; line-height: 30px; color: var(--color-neutral-white); }
+.creator-studio .creator-studio__step-desc { color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
+
+/* ===== 04 이용 안내 (다크) ===== */
+.creator-studio .creator-studio__info-grid { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
+.creator-studio .creator-studio__info-label { display: flex; flex-direction: column; align-items: flex-start; gap: 17px; }
+.creator-studio .creator-studio__info-label .creator-studio__btn { margin-top: 8px; }
+.creator-studio .creator-studio__info-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.creator-studio .creator-studio__info-item { display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid rgb(255 255 255 / 0.1); padding: 22px 0 23px; }
+.creator-studio .creator-studio__info-dt { font-weight: 700; font-size: 14px; letter-spacing: 0.56px; color: var(--color-brand-accent); }
+.creator-studio .creator-studio__info-dd { color: var(--color-brand-lighter); font-size: 17px; line-height: 28px; }
+
+/* ===== 05 FAQ ===== */
+.creator-studio .creator-studio__faq-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+.creator-studio .creator-studio__faq-item { background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 31px; }
+.creator-studio .creator-studio__faq-q { display: flex; gap: 10px; font-weight: 700; font-size: 19px; line-height: 28px; color: var(--color-neutral-darker); }
+.creator-studio .creator-studio__faq-q span:first-child { color: var(--color-brand-base); }
+.creator-studio .creator-studio__faq-a { margin-top: 14px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+
+/* ===== 마무리 CTA ===== */
+.creator-studio .creator-studio__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 30px; padding-block: 100px; text-align: center; }
+.creator-studio .creator-studio__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-darker); }
+
+/* ===== 반응형 ===== */
+@media (max-width: 1000px) {
+  .creator-studio .creator-studio__hero-grid { grid-template-columns: 1fr; }
+  .creator-studio .creator-studio__space-list { grid-template-columns: repeat(2, 1fr); }
+  .creator-studio .creator-studio__gear-grid,
+  .creator-studio .creator-studio__info-grid { grid-template-columns: 1fr; gap: 30px; }
+  .creator-studio .creator-studio__steps { grid-template-columns: repeat(2, 1fr); }
+  .creator-studio .creator-studio__faq-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .creator-studio__pad { padding-block: 72px; }
+  .creator-studio .creator-studio__space-list,
+  .creator-studio .creator-studio__steps,
+  .creator-studio .creator-studio__info-list { grid-template-columns: 1fr; }
+}
