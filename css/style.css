@@ -6381,3 +6381,48 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .privacy .terms__table tbody td:first-child { color: var(--color-neutral-darker); font-weight: 700; }
 .privacy .terms__table--wide { min-width: 900px; }
 .privacy .terms__intro { margin-bottom: 0; }
+
+/* ============================================================
+   환불 규정 — refund.html (Figma 211-27610)
+   · terms 레이아웃 재사용(class="terms refund") + 신규 요소 스코프
+   ============================================================ */
+.refund .terms__lead { max-width: 780px; }
+
+/* ===== 용어 안내 밴드 ===== */
+.refund__glossary { background: var(--color-neutral-lightest); border-bottom: 1px solid var(--color-neutral-lighter); }
+.refund__glossary .terms__container { padding-block: 60px 70px; }
+.refund__glossary-title { color: var(--color-neutral-darker); font-weight: 700; font-size: 22px; line-height: 32px; }
+.refund__terms { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.refund__term { padding: 25px 27px; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; }
+.refund__term-dt { color: var(--color-neutral-darker); font-weight: 700; font-size: 16px; line-height: 24px; }
+.refund__term-dd { margin-top: 10px; color: var(--color-neutral-base); font-size: 14px; line-height: 24px; }
+
+/* ===== 콜아웃 ===== */
+.refund__note { margin-top: 22px; padding: 20px 24px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 16px; color: var(--color-neutral-darker); font-size: 15px; line-height: 26px; }
+.refund__note--dark { margin-top: 32px; padding: 22px 28px; background: var(--color-neutral-darker); border: 0; border-left: 4px solid var(--color-brand-secondary); border-radius: 16px; color: var(--color-neutral-white); font-weight: 500; }
+
+/* ===== 표 (환불 기준) — 2열, 행 상태 ===== */
+.refund .refund__table td:first-child, .refund .refund__table th:first-child { width: 62%; }
+.refund .refund__table tbody td { color: var(--color-neutral-base); }
+.refund .refund__table tbody td:last-child { color: var(--color-neutral-darker); font-weight: 700; }
+.refund .refund__table tbody tr.is-best { background: #f2f7ff; }
+.refund .refund__table tbody tr.is-best td:last-child { color: var(--color-brand-darker); }
+.refund .refund__table tbody tr.is-none { background: #fff7f7; }
+.refund .refund__table tbody tr.is-none td { color: #c0392b; }
+.refund .refund__table tbody tr.is-none td:last-child { color: #c0392b; }
+
+/* ===== STEP 카드 ===== */
+.refund__steps { margin-top: 8px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.refund__step { display: flex; flex-direction: column; padding: 27px 25px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; }
+.refund__step-no { color: var(--color-brand-base); font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; }
+.refund__step-title { margin-top: 14px; color: var(--color-neutral-darker); font-weight: 700; font-size: 17px; line-height: 25px; }
+.refund__step-desc { margin-top: 12px; color: var(--color-neutral-base); font-size: 14px; line-height: 24px; }
+
+/* ===== 반응형 ===== */
+@media (max-width: 900px) {
+  .refund__terms { grid-template-columns: 1fr 1fr; }
+  .refund__steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .refund__terms { grid-template-columns: 1fr; }
+}
