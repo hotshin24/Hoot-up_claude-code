@@ -1966,6 +1966,10 @@ hr {
   font-weight: var(--font-weight-bold);
   line-height: var(--text-h2-leading);
 }
+.category-banner__title-sub {
+  margin-left: var(--space-2xs);
+  font-size: var(--text-h4-size);
+}
 
 /* --- 세부 카테고리 --- */
 .subcat {
@@ -4920,3 +4924,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
     flex-basis: calc((100% - var(--space-card-gap)) / 1.2); /* 약 1.2개 */
   }
 }
+
+/* HOOT UP FESTA 이벤트 배너 호버 (event-1) */
+.festa-event .scp0:hover { transform: translateY(-2px); color: #1667fa }
+.festa-event .scp1:hover { background: rgb(255 255 255 / 0.14); color: #ffffff }
+.festa-event .scp2:hover { border-color: #9896fd; background: #ffffff }
+.festa-event .scp3:hover { background: #0703ab; color: #ffffff }
+.festa-event .scp4:hover { background: rgb(255 255 255 / 0.12); color: #ffffff }
