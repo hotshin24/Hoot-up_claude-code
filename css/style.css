@@ -4490,3 +4490,212 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .course-grid__item[hidden] {
   display: none;
 }
+
+/* ==========================================================================
+   베스트 · WEEKLY RANKING TOP 10 (best.html) — Figma 209:31132
+   색/폰트는 사이트 토큰 규칙을 따름
+   ========================================================================== */
+.best-rank { margin-bottom: var(--space-3xl); }
+
+.best-rank__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-md);
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-text-strong);
+}
+.best-rank__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-caption-size);
+  letter-spacing: 0.12em;
+  color: var(--color-brand-base);
+}
+.best-rank__eyebrow-line { width: 24px; height: 2px; background-color: var(--color-brand-base); }
+.best-rank__title {
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-h3-size);
+  line-height: 1.25;
+  color: var(--color-text-strong);
+}
+.best-rank__title b { color: var(--color-brand-base); }
+.best-rank__desc {
+  margin-top: 8px;
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+}
+.best-rank__date {
+  color: var(--color-text-muted);
+  font-size: var(--text-caption-size);
+  white-space: nowrap;
+}
+
+/* ---- 공통(가격/평점) — 기존 course-card 규칙과 동일하게 ---- */
+/* 평점: course-card__rating 과 동일 (body-sm, text-base, 일반 굵기) */
+.rank-card__rating, .rank-mini__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  color: var(--color-text-base);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+}
+/* 가격: course-card__price 와 동일 (본문 크기 상속, 일반 굵기, 색만 구분) */
+.rank-card__price, .rank-mini__price {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  line-height: var(--text-body-leading);
+}
+.rank-card__stars { width: 70px; height: 14px; flex-shrink: 0; }
+.rank-mini__stars { width: 60px; height: 12px; flex-shrink: 0; }
+.rank-card__sep, .rank-mini__sep { color: var(--color-text-base); }
+.rank-card__rate, .rank-mini__rate { color: var(--color-danger-base); }
+.rank-card__before, .rank-mini__before { color: var(--color-text-muted); text-decoration: line-through; }
+.rank-card__after, .rank-mini__after { color: var(--color-text-strong); }
+
+/* ---- 1~4위 대형 카드 ---- */
+.best-rank__top {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+.rank-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-surface-page);
+}
+.rank-card__thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 548 / 365;
+  overflow: hidden;
+}
+.rank-card__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.rank-card__no {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-text-strong);
+  color: var(--color-neutral-white);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 1;
+  border-bottom-right-radius: var(--radius-md);
+}
+.rank-card__flag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-flag-best);
+  color: var(--color-neutral-darker);
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-weight-bold);
+}
+.rank-card__badge {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  background-color: rgb(15 23 42 / 0.82);
+  color: var(--color-neutral-white);
+  font-size: var(--text-caption-size);
+  font-weight: var(--font-weight-bold);
+}
+.rank-card__body { display: flex; gap: 16px; padding: 20px 24px; }
+.rank-card__avatar { flex-shrink: 0; width: 42px; height: 42px; border-radius: var(--radius-circle); object-fit: cover; }
+.rank-card__info { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.rank-card__title { font-size: var(--text-body-size); font-weight: var(--font-weight-bold); line-height: var(--text-body-leading); color: var(--color-text-strong); }
+.rank-card__title a { color: inherit; text-decoration: none; }
+.rank-card__title a:hover { text-decoration: underline; }
+.rank-card__meta { color: var(--color-text-muted); font-size: var(--text-caption-size); }
+.rank-card__cat { color: var(--color-brand-base); font-weight: var(--font-weight-bold); font-size: var(--text-caption-size); }
+
+/* ---- 5~10위 컴팩트 카드 ---- */
+.best-rank__rest {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  counter-reset: none;
+}
+.rank-mini {
+  display: flex;
+  gap: var(--space-md);
+  padding: 15px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-subtle, #f7f9fb);
+}
+.rank-mini__thumb {
+  position: relative;
+  flex-shrink: 0;
+  width: 140px;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--color-surface-muted);
+}
+.rank-mini__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.rank-mini__no {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-text-strong);
+  color: var(--color-neutral-white);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 1;
+  border-bottom-right-radius: var(--radius-sm);
+}
+.rank-mini__body { display: flex; flex-direction: column; gap: 6px; min-width: 0; padding: 5px 5px 5px 0; }
+.rank-mini__top { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.rank-mini__cat {
+  flex-shrink: 0;
+  padding: 3px 9px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-page);
+  color: var(--color-brand-base);
+  font-size: var(--text-caption-size);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.4;
+}
+.rank-mini__meta { color: var(--color-text-muted); font-size: var(--text-caption-size); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rank-mini__title { font-size: var(--text-body-size); font-weight: var(--font-weight-bold); line-height: var(--text-body-leading); color: var(--color-text-strong); }
+.rank-mini__title a { color: inherit; text-decoration: none; }
+.rank-mini__title a:hover { text-decoration: underline; }
+.rank-mini__price { margin-top: auto; }
+
+@media (max-width: 768px) {
+  .best-rank__top, .best-rank__rest { grid-template-columns: 1fr; }
+  .best-rank__head { flex-direction: column; align-items: flex-start; gap: 6px; }
+}
