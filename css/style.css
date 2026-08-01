@@ -5725,3 +5725,99 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .creator-apply .creator-apply__form-foot { justify-content: stretch; }
   .creator-apply .creator-apply__submit { width: 100%; }
 }
+
+/* ============================================================
+   크리에이터 가이드 — creator-guide.html (Figma 시안 · 토큰 사용)
+   ============================================================ */
+.creator-guide__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
+.creator-guide__pad { padding-block: 100px; }
+
+/* 공통 섹션 헤더 */
+.creator-guide .creator-guide__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
+.creator-guide .creator-guide__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-accent); }
+.creator-guide .creator-guide__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; color: var(--color-neutral-darker); }
+
+/* 버튼 */
+.creator-guide .creator-guide__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 40px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
+.creator-guide .creator-guide__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
+.creator-guide .creator-guide__btn--primary:hover { background: var(--color-brand-darker); }
+.creator-guide .creator-guide__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
+.creator-guide .creator-guide__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
+.creator-guide .creator-guide__btn--lg { padding: 15px 44px; font-size: 17px; }
+
+/* ===== 히어로 ===== */
+.creator-guide .creator-guide__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
+.creator-guide .creator-guide__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 60px; align-items: center; padding-block: 110px 100px; }
+.creator-guide .creator-guide__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.creator-guide .creator-guide__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
+.creator-guide .creator-guide__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(38px, 4.8vw, 56px); line-height: 1.2; letter-spacing: -1.12px; }
+.creator-guide .creator-guide__hero-lead { color: var(--color-brand-secondary); font-weight: 700; font-size: 24px; line-height: 32.4px; }
+.creator-guide .creator-guide__hero-desc { max-width: 540px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
+.creator-guide .creator-guide__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+
+/* ===== 목차 (스티키) ===== */
+.creator-guide .creator-guide__toc { position: sticky; top: 0; z-index: 5; background: rgb(255 255 255 / 0.92); backdrop-filter: blur(4px); border-bottom: 1px solid var(--color-neutral-lighter); }
+.creator-guide .creator-guide__toc-list { display: flex; flex-wrap: wrap; gap: 0 24px; padding-block: 16px; }
+.creator-guide .creator-guide__toc-link { display: inline-flex; gap: 4px; padding-block: 6px; font-size: 15px; line-height: 22px; }
+.creator-guide .creator-guide__toc-num { font-family: 'Raleway', sans-serif; font-weight: 700; color: var(--color-neutral-light); }
+.creator-guide .creator-guide__toc-link span:last-child { font-weight: 700; color: var(--color-neutral-base); transition: color .15s ease; }
+.creator-guide .creator-guide__toc-link:hover span:last-child,
+.creator-guide .creator-guide__toc-link:hover .creator-guide__toc-num { color: var(--color-brand-base); }
+
+/* ===== 가이드 단계(01~05) ===== */
+.creator-guide .creator-guide__step-sec { background: var(--color-neutral-white); border-top: 1px solid var(--color-neutral-lighter); }
+.creator-guide .creator-guide__step-sec--alt { background: var(--color-neutral-lightest); }
+.creator-guide .creator-guide__step-grid { display: grid; grid-template-columns: 360px 720px; gap: 80px; justify-content: center; padding-block: 90px; }
+.creator-guide .creator-guide__step-label { align-self: start; position: sticky; top: 90px; }
+.creator-guide .creator-guide__step-no { display: block; font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 44px; line-height: 44px; color: var(--color-brand-lighter); }
+.creator-guide .creator-guide__step-h2 { margin-top: 15px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 34px; line-height: 44.2px; letter-spacing: -0.34px; color: var(--color-neutral-darker); }
+.creator-guide .creator-guide__step-desc { margin-top: 16px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+.creator-guide .creator-guide__points { display: flex; flex-direction: column; }
+.creator-guide .creator-guide__point { display: flex; gap: 18px; align-items: flex-start; border-top: 1px solid var(--color-neutral-lighter); padding: 25px 0 24px; }
+.creator-guide .creator-guide__point:first-child { border-top: 0; padding-top: 0; }
+.creator-guide .creator-guide__point-arrow { flex: 0 0 28px; display: flex; align-items: center; height: 28px; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 15px; line-height: 28px; color: var(--color-brand-base); }
+.creator-guide .creator-guide__rocket { height: 22px; width: auto; display: block; }
+.creator-guide .creator-guide__point-body { display: flex; flex-direction: column; gap: 8px; }
+.creator-guide .creator-guide__point-title { font-weight: 700; font-size: 19px; line-height: 28px; color: var(--color-neutral-darker); }
+.creator-guide .creator-guide__point-desc { color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+
+/* ===== SUPPORT (블루) ===== */
+.creator-guide .creator-guide__support { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, var(--color-brand-dark) 98.8%); }
+.creator-guide .creator-guide__support .creator-guide__title { color: var(--color-neutral-white); }
+.creator-guide .creator-guide__support-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.creator-guide .creator-guide__support-card { display: flex; flex-direction: column; gap: 10px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.16); border-radius: 20px; padding: 31px 27px; }
+.creator-guide .creator-guide__support-label { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; color: var(--color-brand-secondary); }
+.creator-guide .creator-guide__support-text { font-weight: 700; font-size: 18px; line-height: 28px; color: var(--color-neutral-white); }
+
+/* ===== 체크리스트 (다크) ===== */
+.creator-guide .creator-guide__checklist { background: var(--color-neutral-darker); }
+.creator-guide .creator-guide__check-grid { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
+.creator-guide .creator-guide__check-head .creator-guide__title { margin-top: 12px; color: var(--color-neutral-white); }
+.creator-guide .creator-guide__check-head .creator-guide__eyebrow { color: var(--color-brand-accent); }
+.creator-guide .creator-guide__check-count { margin-top: 20px; color: var(--color-brand-light); font-size: 16px; line-height: 28px; }
+.creator-guide .creator-guide__checks { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+.creator-guide .creator-guide__check { display: flex; align-items: center; gap: 16px; width: 100%; padding: 20px 0; background: none; border: 0; border-top: 1px solid rgb(255 255 255 / 0.1); color: var(--color-brand-lighter); font-family: inherit; font-size: 17px; line-height: 28px; text-align: left; cursor: pointer; }
+.creator-guide .creator-guide__check-box { position: relative; width: 26px; height: 26px; flex-shrink: 0; border: 1px solid rgb(226 225 255 / 0.35); border-radius: 8px; transition: background-color .15s ease, border-color .15s ease; }
+.creator-guide .creator-guide__check:hover .creator-guide__check-box { border-color: var(--color-brand-accent); }
+.creator-guide .creator-guide__check.is-checked .creator-guide__check-box { background: var(--color-brand-accent); border-color: var(--color-brand-accent); }
+.creator-guide .creator-guide__check.is-checked .creator-guide__check-box::after { content: ""; position: absolute; left: 9px; top: 4px; width: 6px; height: 12px; border: solid var(--color-neutral-darker); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.creator-guide .creator-guide__check.is-checked { color: var(--color-neutral-white); }
+
+/* ===== 마무리 CTA ===== */
+.creator-guide .creator-guide__cta { background: var(--color-neutral-white); border-top: 1px solid var(--color-neutral-lighter); }
+.creator-guide .creator-guide__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 30px; padding-block: 100px; text-align: center; }
+.creator-guide .creator-guide__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-darker); }
+
+/* ===== 반응형 ===== */
+@media (max-width: 1000px) {
+  .creator-guide .creator-guide__hero-grid { grid-template-columns: 1fr; }
+  .creator-guide .creator-guide__step-grid { grid-template-columns: 1fr; gap: 30px; }
+  .creator-guide .creator-guide__step-label { position: static; }
+  .creator-guide .creator-guide__support-list { grid-template-columns: repeat(2, 1fr); }
+  .creator-guide .creator-guide__check-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+@media (max-width: 640px) {
+  .creator-guide__pad { padding-block: 72px; }
+  .creator-guide .creator-guide__support-list,
+  .creator-guide .creator-guide__checks { grid-template-columns: 1fr; }
+}
