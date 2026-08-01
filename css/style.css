@@ -6220,3 +6220,81 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .notice .notice__detail { padding: 32px 24px; }
   .notice .notice__detail-title { font-size: 24px; line-height: 34px; }
 }
+
+/* ============================================================
+   자주 묻는 질문 (FAQ) — faq.html (Figma 시안 · 콘텐츠 md · 토큰 사용)
+   ============================================================ */
+.hfaq__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
+.hfaq__pad { padding-block: 80px 90px; }
+
+/* ===== 히어로 (검색) ===== */
+.hfaq .hfaq__hero { position: relative; overflow: hidden; background: radial-gradient(900px 400px at 78% 24%, rgb(22 103 250 / 0.5) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
+.hfaq .hfaq__hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px; padding-block: 90px; }
+.hfaq .hfaq__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; }
+.hfaq .hfaq__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
+.hfaq .hfaq__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 48px; line-height: 59.52px; letter-spacing: -0.96px; }
+.hfaq .hfaq__hero-desc { max-width: 520px; color: var(--color-brand-light); font-size: 17px; line-height: 30px; }
+.hfaq .hfaq__search { display: flex; align-items: center; gap: 12px; width: min(520px, 100%); height: 56px; padding: 0 25px; background: rgb(255 255 255 / 0.1); border: 1px solid rgb(255 255 255 / 0.2); border-radius: 30px; }
+.hfaq .hfaq__search-input { flex: 1 1 auto; min-width: 0; background: none; border: 0; outline: none; color: var(--color-neutral-white); font-family: inherit; font-size: 17px; }
+.hfaq .hfaq__search-input::placeholder { color: var(--color-neutral-light); }
+.hfaq .hfaq__search-input { -webkit-appearance: none; appearance: none; }
+.hfaq .hfaq__search-input::-webkit-search-cancel-button,
+.hfaq .hfaq__search-input::-webkit-search-decoration { -webkit-appearance: none; display: none; }
+.hfaq .hfaq__search-count { flex-shrink: 0; color: rgb(226 225 255 / 0.6); font-size: 15px; line-height: 22px; }
+.hfaq .hfaq__hero-mascot { display: grid; place-items: center; width: 240px; }
+.hfaq .hfaq__hero-mascot .brand-hero__box { max-width: 240px; font-size: 28px; }
+
+/* ===== 카테고리 필터 (스티키) ===== */
+.hfaq .hfaq__filter { position: sticky; top: 0; z-index: 5; background: rgb(255 255 255 / 0.94); backdrop-filter: blur(4px); border-bottom: 1px solid var(--color-neutral-lighter); }
+.hfaq .hfaq__filter-list { display: flex; flex-wrap: wrap; gap: 10px; padding-block: 18px; }
+.hfaq .hfaq__tab { display: inline-flex; align-items: center; justify-content: center; padding: 11px 25px; border: 1px solid var(--color-neutral-lighter); border-radius: 30px; background: var(--color-neutral-lightest); color: var(--color-neutral-base); font-family: inherit; font-size: 15px; font-weight: 400; line-height: 22px; cursor: pointer; transition: background-color .15s ease, color .15s ease, border-color .15s ease; }
+.hfaq .hfaq__tab:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+.hfaq .hfaq__tab.is-active { background: var(--color-brand-base); border-color: var(--color-brand-base); color: var(--color-neutral-white); font-weight: 700; padding: 10px 24px; }
+
+/* ===== FAQ 목록 ===== */
+.hfaq .hfaq__list-sec { background: var(--color-neutral-white); }
+.hfaq .hfaq__group { display: grid; grid-template-columns: 280px 820px; gap: 60px; justify-content: center; }
+.hfaq .hfaq__group + .hfaq__group { margin-top: 40px; }
+.hfaq .hfaq__group[hidden] { display: none; }
+.hfaq .hfaq__group-head { display: flex; flex-direction: column; gap: 10px; }
+.hfaq .hfaq__group-title { display: flex; align-items: center; gap: 10px; color: var(--color-neutral-darker); font-weight: 700; font-size: 24px; line-height: 34px; }
+.hfaq .hfaq__group-count { color: var(--color-neutral-light); font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; }
+.hfaq .hfaq__item { border-top: 1px solid var(--color-neutral-lighter); }
+.hfaq .hfaq__item[hidden] { display: none; }
+.hfaq .hfaq__q { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; padding: 26px 0; background: none; border: 0; text-align: left; cursor: pointer; }
+.hfaq .hfaq__q-text { display: flex; gap: 12px; align-items: baseline; }
+.hfaq .hfaq__q-mark { flex-shrink: 0; color: var(--color-brand-base); font-weight: 700; font-size: 18px; line-height: 28px; }
+.hfaq .hfaq__q-text span:last-child { color: var(--color-neutral-darker); font-weight: 700; font-size: 18px; line-height: 28px; }
+.hfaq .hfaq__q-icon { flex-shrink: 0; width: 20px; text-align: center; color: var(--color-neutral-light); font-weight: 700; font-size: 22px; line-height: 22px; transition: transform .2s ease, color .2s ease; }
+.hfaq .hfaq__q-icon::before { content: "+"; }
+.hfaq .hfaq__item.is-open .hfaq__q-icon { color: var(--color-brand-base); transform: rotate(45deg); }
+.hfaq .hfaq__answer { display: none; padding: 0 44px 28px 31px; }
+.hfaq .hfaq__item.is-open .hfaq__answer { display: block; }
+.hfaq .hfaq__answer p { color: var(--color-neutral-base); font-size: 17px; line-height: 30px; }
+.hfaq .hfaq__empty { padding: 80px 0; text-align: center; }
+.hfaq .hfaq__empty-title { color: var(--color-neutral-darker); font-weight: 700; font-size: 22px; line-height: 32px; }
+.hfaq .hfaq__empty-desc { margin-top: 10px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+
+/* ===== 하단 CTA ===== */
+.hfaq .hfaq__cta { position: relative; overflow: hidden; background: radial-gradient(760px 300px at 50% 0%, rgb(22 103 250 / 0.45) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); border-bottom: 1px solid var(--color-neutral-base); }
+.hfaq .hfaq__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 28px; padding-block: 90px; text-align: center; }
+.hfaq .hfaq__cta-title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 30px; line-height: 45px; color: var(--color-neutral-white); }
+.hfaq .hfaq__cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+.hfaq .hfaq__cta-btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 30px; font-weight: 700; font-size: 17px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
+.hfaq .hfaq__cta-btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); padding: 14px 40px; }
+.hfaq .hfaq__cta-btn--accent:hover { background: #e4e83a; }
+.hfaq .hfaq__cta-btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); padding: 15px 41px; }
+.hfaq .hfaq__cta-btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
+.hfaq .hfaq__cta-hours { color: var(--color-brand-light); font-size: 15px; line-height: 22px; }
+.hfaq .hfaq__cta-disclaimer { color: rgb(147 162 183 / 0.9); font-size: 14px; line-height: 24px; }
+
+/* ===== 반응형 ===== */
+@media (max-width: 900px) {
+  .hfaq .hfaq__hero-grid { grid-template-columns: 1fr; }
+  .hfaq .hfaq__hero-mascot { justify-self: start; }
+  .hfaq .hfaq__group { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 620px) {
+  .hfaq__pad { padding-block: 56px 72px; }
+  .hfaq .hfaq__q-text span:last-child { font-size: 16px; }
+}
