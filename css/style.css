@@ -5423,3 +5423,177 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .roadmap .roadmap__step-row { flex-wrap: wrap; gap: 4px 20px; }
   .roadmap .roadmap__step-note { width: 100%; text-align: left; padding-left: 94px; }
 }
+
+/* ============================================================
+   올나잇 패스(구독) 페이지 — subscribe.html (Figma 시안 · 토큰 사용)
+   ============================================================ */
+.subscribe__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
+.subscribe__pad { padding-block: 110px; }
+
+/* 공통 섹션 헤더 */
+.subscribe .subscribe__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
+.subscribe .subscribe__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-base); }
+.subscribe .subscribe__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; letter-spacing: -0.36px; color: var(--color-neutral-darker); }
+.subscribe .subscribe__lead { color: var(--color-neutral-base); font-size: 18px; line-height: 30px; }
+
+/* 버튼 */
+.subscribe .subscribe__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 36px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
+.subscribe .subscribe__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
+.subscribe .subscribe__btn--primary:hover { background: var(--color-brand-darker); }
+.subscribe .subscribe__btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
+.subscribe .subscribe__btn--accent:hover { background: #e4e83a; }
+.subscribe .subscribe__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
+.subscribe .subscribe__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
+.subscribe .subscribe__btn--outline { border: 1px solid rgb(255 255 255 / 0.5); color: var(--color-neutral-white); }
+.subscribe .subscribe__btn--outline:hover { border-color: var(--color-neutral-white); background: rgb(255 255 255 / 0.06); }
+.subscribe .subscribe__btn--lg { padding: 15px 44px; font-size: 17px; }
+
+/* ===== 히어로 ===== */
+.subscribe .subscribe__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
+.subscribe .subscribe__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 60px; align-items: center; padding-block: 110px 100px; }
+.subscribe .subscribe__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.subscribe .subscribe__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
+.subscribe .subscribe__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(38px, 4.8vw, 56px); line-height: 1.2; letter-spacing: -1.12px; }
+.subscribe .subscribe__hero-desc { max-width: 540px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
+.subscribe .subscribe__hero-prices { display: flex; flex-wrap: wrap; gap: 10px; }
+.subscribe .subscribe__price-pill { display: inline-flex; align-items: center; border-radius: 30px; font-weight: 700; font-size: 17px; line-height: 22px; }
+.subscribe .subscribe__price-pill--ghost { padding: 11px 23px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.18); color: var(--color-neutral-white); }
+.subscribe .subscribe__price-pill--accent { padding: 10px 22px; background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
+.subscribe .subscribe__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+
+/* ===== 섹션 배경 ===== */
+.subscribe .subscribe__ways { background: var(--color-neutral-white); }
+.subscribe .subscribe__included { background: var(--color-neutral-lightest); }
+.subscribe .subscribe__pricing { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, var(--color-brand-dark) 98.8%); }
+.subscribe .subscribe__forme { background: var(--color-neutral-white); }
+.subscribe .subscribe__faq { background: var(--color-neutral-lightest); }
+.subscribe .subscribe__cta { position: relative; overflow: hidden; background: radial-gradient(760px 300px at 50% 0%, rgb(22 103 250 / 0.45) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); border-bottom: 1px solid var(--color-neutral-base); }
+
+/* 블루 섹션 헤더 색상 */
+.subscribe .subscribe__pricing .subscribe__eyebrow { color: var(--color-brand-accent); }
+.subscribe .subscribe__pricing .subscribe__title { color: var(--color-neutral-white); }
+
+/* ===== 01 비교 테이블 ===== */
+.subscribe .subscribe__compare { border: 1px solid var(--color-neutral-lighter); border-radius: 20px; overflow: hidden; }
+.subscribe .subscribe__compare-head,
+.subscribe .subscribe__compare-row { display: flex; gap: 20px; padding: 22px 28px; }
+.subscribe .subscribe__compare-head { background: var(--color-neutral-darker); }
+.subscribe .subscribe__compare-row { background: var(--color-neutral-white); border-top: 1px solid var(--color-neutral-lighter); }
+.subscribe .subscribe__compare-label { flex: 0 0 130px; color: var(--color-neutral-light); font-weight: 700; font-size: 15px; line-height: 26px; }
+.subscribe .subscribe__compare-a,
+.subscribe .subscribe__compare-b { flex: 1 1 0; min-width: 0; font-weight: 700; font-size: 17px; line-height: 22px; }
+.subscribe .subscribe__compare-a { color: var(--color-brand-secondary); }
+.subscribe .subscribe__compare-b { color: var(--color-brand-accent); }
+.subscribe .subscribe__compare-cell { flex: 1 1 0; min-width: 0; color: var(--color-neutral-base); font-size: 16px; line-height: 26px; }
+.subscribe .subscribe__compare-cell--strong { color: var(--color-neutral-darker); }
+.subscribe .subscribe__ways-note { margin-top: 24px; border-left: 3px solid var(--color-brand-secondary); padding-left: 27px; color: var(--color-neutral-base); font-size: 16px; line-height: 30px; }
+
+/* ===== 02 카테고리 테이블 ===== */
+.subscribe .subscribe__cat-table { border: 1px solid var(--color-neutral-lighter); border-radius: 20px; overflow: hidden; }
+.subscribe .subscribe__cat-head,
+.subscribe .subscribe__cat-row { display: flex; align-items: center; gap: 16px; padding: 21px 28px; }
+.subscribe .subscribe__cat-head { background: var(--color-neutral-lighter); padding-block: 18px; }
+.subscribe .subscribe__cat-row { background: var(--color-neutral-white); border-top: 1px solid var(--color-neutral-lighter); }
+.subscribe .subscribe__cat-head .subscribe__cat-name,
+.subscribe .subscribe__cat-head .subscribe__cat-model,
+.subscribe .subscribe__cat-head .subscribe__cat-status { color: var(--color-neutral-base); font-weight: 700; font-size: 14px; line-height: 22px; }
+.subscribe .subscribe__cat-name { flex: 1 1 0; min-width: 0; display: flex; align-items: center; gap: 10px; color: var(--color-neutral-darker); font-weight: 700; font-size: 17px; line-height: 22px; }
+.subscribe .subscribe__cat-model { flex: 0 0 150px; color: var(--color-neutral-base); font-size: 15px; line-height: 22px; }
+.subscribe .subscribe__cat-status { flex: 0 0 150px; font-weight: 700; font-size: 15px; line-height: 22px; }
+.subscribe .subscribe__cat-status--yes { color: var(--color-brand-base); }
+.subscribe .subscribe__cat-status--no { color: var(--color-danger-base); }
+.subscribe .subscribe__cat-status--partial { color: var(--color-flag-best); }
+
+/* 요약 카드 */
+.subscribe .subscribe__summary { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+.subscribe .subscribe__summary-card { display: flex; flex-direction: column; gap: 14px; border-radius: 20px; }
+.subscribe .subscribe__summary-card--yes { background: var(--color-neutral-darker); padding: 34px 30px; }
+.subscribe .subscribe__summary-card--no { background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); padding: 35px 31px; }
+.subscribe .subscribe__summary-title { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; line-height: 22px; }
+.subscribe .subscribe__summary-card--yes .subscribe__summary-title { color: var(--color-brand-accent); }
+.subscribe .subscribe__summary-card--no .subscribe__summary-title { color: var(--color-neutral-darker); }
+.subscribe .subscribe__summary-mark--no { color: var(--color-danger-base); }
+.subscribe .subscribe__summary-card--yes .subscribe__summary-desc { color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
+.subscribe .subscribe__summary-card--no .subscribe__summary-desc { color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+
+/* 배지 안내 */
+.subscribe .subscribe__badge-note { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 20px; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 22px 28px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+.subscribe .subscribe__mini-badge { display: inline-flex; align-items: center; border-radius: 30px; padding: 3px 12px; font-size: 13px; font-weight: 700; }
+.subscribe .subscribe__mini-badge--sub { background: var(--color-brand-lighter); color: var(--color-brand-darker); }
+.subscribe .subscribe__mini-badge--own { background: var(--color-neutral-lighter); color: var(--color-neutral-base); }
+
+/* ===== 03 요금제 ===== */
+.subscribe .subscribe__plans { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
+.subscribe .subscribe__plan { display: flex; flex-direction: column; gap: 18px; border-radius: 20px; }
+.subscribe .subscribe__plan--monthly { background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.18); padding: 41px 37px; }
+.subscribe .subscribe__plan--annual { position: relative; background: var(--color-neutral-white); border: 2px solid var(--color-brand-secondary); box-shadow: 0 0 12px rgb(248 252 73 / 0.24); padding: 42px 38px; }
+.subscribe .subscribe__plan-badge { position: absolute; top: -14px; left: 36px; background: var(--color-brand-secondary); color: var(--color-neutral-darker); border-radius: 30px; padding: 6px 16px; font-weight: 700; font-size: 13px; line-height: 22px; }
+.subscribe .subscribe__plan-name { font-weight: 700; font-size: 20px; line-height: 22px; }
+.subscribe .subscribe__plan--monthly .subscribe__plan-name { color: var(--color-neutral-white); }
+.subscribe .subscribe__plan--annual .subscribe__plan-name { color: var(--color-neutral-darker); }
+.subscribe .subscribe__plan-price { display: flex; align-items: baseline; gap: 8px; }
+.subscribe .subscribe__plan-price strong { font-weight: 700; font-size: 40px; line-height: 40px; }
+.subscribe .subscribe__plan--monthly .subscribe__plan-price strong { color: var(--color-neutral-white); }
+.subscribe .subscribe__plan--annual .subscribe__plan-price strong { color: var(--color-neutral-darker); }
+.subscribe .subscribe__plan-unit { font-weight: 400; font-size: 16px; line-height: 22px; }
+.subscribe .subscribe__plan--monthly .subscribe__plan-unit { color: var(--color-brand-lighter); }
+.subscribe .subscribe__plan--annual .subscribe__plan-unit { color: var(--color-neutral-base); }
+.subscribe .subscribe__plan-note { flex: 1 1 auto; font-size: 16px; line-height: 28px; }
+.subscribe .subscribe__plan--monthly .subscribe__plan-note { color: var(--color-brand-lighter); }
+.subscribe .subscribe__plan--annual .subscribe__plan-note { color: var(--color-neutral-base); }
+.subscribe .subscribe__plan-hl { color: var(--color-brand-base); font-weight: 700; }
+.subscribe .subscribe__plan-hl2 { color: var(--color-neutral-darker); font-weight: 700; }
+.subscribe .subscribe__plan .subscribe__btn { align-self: flex-start; }
+
+.subscribe .subscribe__plan-perks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 40px; margin-top: 30px; }
+.subscribe .subscribe__plan-perk { display: flex; gap: 12px; align-items: baseline; color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
+
+/* ===== 04 추천 대상 ===== */
+.subscribe .subscribe__forme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
+.subscribe .subscribe__forme-card { display: flex; flex-direction: column; gap: 18px; border-radius: 20px; }
+.subscribe .subscribe__forme-card--fit { background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); padding: 39px 35px; }
+.subscribe .subscribe__forme-card--else { background: var(--color-neutral-darker); padding: 38px 34px; }
+.subscribe .subscribe__forme-title { font-weight: 700; font-size: 20px; line-height: 30px; }
+.subscribe .subscribe__forme-title--fit { color: var(--color-brand-base); }
+.subscribe .subscribe__forme-title--else { color: var(--color-brand-secondary); }
+.subscribe .subscribe__forme-list { display: flex; flex-direction: column; }
+.subscribe .subscribe__forme-list li { display: flex; gap: 12px; align-items: baseline; border-top: 1px solid var(--color-neutral-lighter); padding: 15px 0 14px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+.subscribe .subscribe__forme-list--dark li { border-top-color: rgb(255 255 255 / 0.12); color: var(--color-brand-lighter); }
+
+/* ↑ 마커 */
+.subscribe .subscribe__up { color: var(--color-brand-accent); font-weight: 700; display: inline-flex; align-self: center; }
+.subscribe .subscribe__up--brand { color: var(--color-brand-base); }
+.subscribe .subscribe__rocket { height: 22px; width: auto; display: block; }
+
+/* ===== 05 FAQ ===== */
+.subscribe .subscribe__faq-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+.subscribe .subscribe__faq-item { background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 31px; }
+.subscribe .subscribe__faq-q { display: flex; gap: 10px; font-weight: 700; font-size: 19px; line-height: 28px; color: var(--color-neutral-darker); }
+.subscribe .subscribe__faq-q span:first-child { color: var(--color-brand-base); }
+.subscribe .subscribe__faq-a { margin-top: 14px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+
+/* ===== 마무리 CTA ===== */
+.subscribe .subscribe__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 30px; padding-block: 100px; text-align: center; }
+.subscribe .subscribe__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-white); }
+.subscribe .subscribe__cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+.subscribe .subscribe__cta-disclaimer { color: rgb(147 162 183 / 0.9); font-size: 14px; line-height: 24px; }
+
+/* ===== 반응형 ===== */
+@media (max-width: 1000px) {
+  .subscribe .subscribe__hero-grid { grid-template-columns: 1fr; }
+  .subscribe .subscribe__summary,
+  .subscribe .subscribe__plans,
+  .subscribe .subscribe__forme-grid { grid-template-columns: 1fr; }
+  .subscribe .subscribe__plan-perks { grid-template-columns: 1fr; }
+  .subscribe .subscribe__faq-list { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .subscribe__pad { padding-block: 72px; }
+  .subscribe .subscribe__faq-list { grid-template-columns: 1fr; }
+  .subscribe .subscribe__compare-head,
+  .subscribe .subscribe__compare-row { flex-wrap: wrap; gap: 4px 16px; }
+  .subscribe .subscribe__compare-label { flex-basis: 100%; }
+  .subscribe .subscribe__cat-head { display: none; }
+  .subscribe .subscribe__cat-row { flex-wrap: wrap; gap: 4px 16px; }
+  .subscribe .subscribe__cat-name { flex-basis: 100%; }
+}
