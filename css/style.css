@@ -7023,7 +7023,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .account-nav__link.is-active:hover { background-color: var(--color-brand-lighter); }
 
 /* 콘텐츠 공통 카드 */
-.account-content { display: flex; flex-direction: column; gap: 30px; }
+.account-content { display: flex; flex-direction: column; gap: 20px; }
+.account-content.account-dashboard { gap: 30px; }
 .account-card {
   padding: 31px;
   background-color: var(--color-neutral-white);
@@ -7777,4 +7778,52 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 @media screen and (max-width: 767px) {
   .member-fields { grid-template-columns: 1fr; }
   .member-actions { flex-wrap: wrap; }
+}
+
+/* ============================================================
+   알림 설정 — account-notifications.html (Figma 215-30070)
+   ============================================================ */
+/* 헤더 */
+.notify-head__title { font-weight: var(--font-weight-bold); font-size: 28px; line-height: 36px; color: var(--color-neutral-darker); }
+.notify-head__summary { margin-top: 6px; font-size: 15px; color: var(--color-neutral-base); }
+
+/* 알림 표 카드 */
+.notify-card {
+  padding: 27px 31px; background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md);
+}
+.notify-row {
+  display: grid; grid-template-columns: 1fr 90px 90px; gap: 16px; align-items: center;
+}
+.notify-row--head { padding-bottom: 15px; border-bottom: 1px solid var(--color-neutral-lighter); }
+.notify-row--head .notify-row__col { color: var(--color-neutral-light); font-size: 13px; font-weight: var(--font-weight-bold); }
+.notify-row__col--center { justify-self: center; }
+.notify-card > .notify-row:not(.notify-row--head) { padding: 19px 0; border-bottom: 1px solid var(--color-neutral-lighter); }
+.notify-card > .notify-row:not(.notify-row--head):last-child { border-bottom: 0; }
+.notify-row__info { display: flex; flex-direction: column; gap: 3px; }
+.notify-row__title { font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.notify-row__desc { font-size: 13px; color: var(--color-neutral-base); }
+.notify-row__toggle { justify-self: center; }
+
+/* 방해 금지 시간 */
+.dnd { display: flex; flex-direction: column; gap: 16px; }
+.dnd__title { font-weight: var(--font-weight-bold); font-size: 20px; line-height: 26px; color: var(--color-neutral-darker); }
+.dnd__body { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.dnd__desc { font-size: 14px; line-height: 22px; color: var(--color-neutral-base); }
+.dnd__range { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.dnd__time {
+  display: flex; align-items: center; height: 44px; padding: 0 21px;
+  background-color: var(--color-neutral-lightest);
+  border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md);
+  font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker);
+}
+.dnd__sep { font-family: var(--font-display); font-size: 16px; color: var(--color-neutral-light); }
+
+/* 저장 버튼 (member-btn 재사용) */
+.notify-actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+/* 반응형 */
+@media screen and (max-width: 767px) {
+  .dnd__body { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .notify-actions { flex-wrap: wrap; }
 }

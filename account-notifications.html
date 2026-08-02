@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>위시리스트 — HOOT UP</title>
-  <meta name="description" content="HOOT UP 위시리스트 — 담아둔 클래스의 할인 현황을 확인하고 장바구니에 담으세요.">
+  <title>알림 설정 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 알림 설정 — 이메일·앱 푸시 알림을 항목별로 켜고 끄고, 방해 금지 시간을 설정하세요.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -262,7 +262,7 @@
           <li><a class="account-nav__link" href="account.html">대시보드</a></li>
           <li><a class="account-nav__link" href="account-classes.html">내 클래스</a></li>
           <li><a class="account-nav__link" href="account-pass.html">올나잇 패스</a></li>
-          <li><a class="account-nav__link is-active" href="account-wishlist.html" aria-current="page">위시리스트</a></li>
+          <li><a class="account-nav__link" href="account-wishlist.html">위시리스트</a></li>
         </ul>
         <p class="account-nav__label">PAYMENT</p>
         <ul class="account-nav__list">
@@ -272,91 +272,93 @@
         <p class="account-nav__label">SETTINGS</p>
         <ul class="account-nav__list">
           <li><a class="account-nav__link" href="account-member.html">회원정보</a></li>
-          <li><a class="account-nav__link" href="account-notifications.html">알림 설정</a></li>
+          <li><a class="account-nav__link is-active" href="account-notifications.html" aria-current="page">알림 설정</a></li>
         </ul>
     </aside>
 
-    <div class="account-content account-wishlist">
+    <div class="account-content account-notifications-page">
 
       <!-- 헤더 -->
-      <div class="wish-head">
-        <div class="wish-head__intro">
-          <h2 class="wish-head__title">위시리스트</h2>
-          <p class="wish-head__summary">담아둔 클래스 6개 · 그중 4개가 지금 할인 중이에요.</p>
-        </div>
-        <div class="wish-head__actions">
-          <button class="wish-head__btn wish-head__btn--ghost" type="button">할인 중만 보기</button>
-          <button class="wish-head__btn wish-head__btn--primary" type="button">선택 상품 장바구니 담기</button>
-        </div>
+      <div class="notify-head">
+        <h2 class="notify-head__title">알림 설정</h2>
+        <p class="notify-head__summary">받고 싶은 소식만 골라 받으세요.</p>
       </div>
 
-      <!-- 아이템 리스트 -->
-      <section class="wish-list">
-        <div class="wish-item">
-          <input class="wish-check" type="checkbox" checked aria-label="나만의 감성을 담은 브랜드를 만드는 로고 디자인 선택">
-          <img class="wish-item__thumb" src="assets/course/design-logo.png" alt="" loading="lazy">
-          <div class="wish-item__info">
-            <p class="wish-item__cat">스튜디오 결 · 디자인 &amp; 크리에이티브</p>
-            <h3 class="wish-item__title">나만의 감성을 담은 브랜드를 만드는 로고 디자인</h3>
-            <img class="wish-item__stars" src="assets/brand/stars-48.svg" width="70" height="14" alt="평점 5점 만점에 4.8">
-          </div>
-          <div class="wish-item__price">
-              <p class="wish-item__was">154,000원</p>
-              <p class="wish-item__now"><span class="wish-item__off">35%</span><span class="wish-item__final">100,100원</span></p>
-            </div>
-          <a class="wish-item__btn" href="#">담기</a>
+      <!-- 알림 종류 표 -->
+      <section class="notify-card">
+        <div class="notify-row notify-row--head">
+          <span class="notify-row__col">알림 종류</span>
+          <span class="notify-row__col notify-row__col--center">이메일</span>
+          <span class="notify-row__col notify-row__col--center">앱 푸시</span>
         </div>
-        <div class="wish-item">
-          <input class="wish-check" type="checkbox" checked aria-label="데이터로 굴리는 퍼포먼스 마케팅 실전 선택">
-          <img class="wish-item__thumb" src="assets/course/career-performance-marketing.png" alt="" loading="lazy">
-          <div class="wish-item__info">
-            <p class="wish-item__cat">그로스해커 진 · 커리어 &amp; 머니</p>
-            <h3 class="wish-item__title">데이터로 굴리는 퍼포먼스 마케팅 실전</h3>
-            <img class="wish-item__stars" src="assets/brand/stars-47.svg" width="70" height="14" alt="평점 5점 만점에 4.7">
-          </div>
-          <div class="wish-item__price">
-              <p class="wish-item__was">154,000원</p>
-              <p class="wish-item__now"><span class="wish-item__off">40%</span><span class="wish-item__final">92,400원</span></p>
+          <div class="notify-row">
+            <div class="notify-row__info">
+              <p class="notify-row__title">야간 학습 리마인더</p>
+              <p class="notify-row__desc">밤 10시, 오늘의 강의를 알려드려요</p>
             </div>
-          <a class="wish-item__btn" href="#">담기</a>
-        </div>
-        <div class="wish-item">
-          <input class="wish-check" type="checkbox" aria-label="블렌더로 시작하는 첫 3D 모델링 마스터 클래스 선택">
-          <img class="wish-item__thumb" src="assets/course/design-blender-3d.png" alt="" loading="lazy">
-          <div class="wish-item__info">
-            <p class="wish-item__cat">쓰리디랩 노아 · 디자인 &amp; 크리에이티브</p>
-            <h3 class="wish-item__title">블렌더로 시작하는 첫 3D 모델링 마스터 클래스</h3>
-            <img class="wish-item__stars" src="assets/brand/stars-48.svg" width="70" height="14" alt="평점 5점 만점에 4.8">
+            <div class="notify-row__toggle"><button class="account-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="야간 학습 리마인더 이메일 알림"><span class="account-toggle__knob"></span></button></div>
+            <div class="notify-row__toggle"><button class="account-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="야간 학습 리마인더 앱 푸시 알림"><span class="account-toggle__knob"></span></button></div>
           </div>
-          <div class="wish-item__price">
-              <p class="wish-item__was">143,000원</p>
-              <p class="wish-item__now"><span class="wish-item__off">40%</span><span class="wish-item__final">85,800원</span></p>
+          <div class="notify-row">
+            <div class="notify-row__info">
+              <p class="notify-row__title">수강 중인 클래스 소식</p>
+              <p class="notify-row__desc">새 강의 추가, 자료 업데이트, 공지</p>
             </div>
-          <a class="wish-item__btn" href="#">담기</a>
-        </div>
-        <div class="wish-item">
-          <input class="wish-check" type="checkbox" aria-label="비전공자를 위한 서비스 기획·PM 입문 선택">
-          <img class="wish-item__thumb" src="assets/course/career-service-pm.png" alt="" loading="lazy">
-          <div class="wish-item__info">
-            <p class="wish-item__cat">PM 도윤 · 커리어 &amp; 머니</p>
-            <h3 class="wish-item__title">비전공자를 위한 서비스 기획·PM 입문</h3>
-            <img class="wish-item__stars" src="assets/brand/stars-48.svg" width="70" height="14" alt="평점 5점 만점에 4.8">
+            <div class="notify-row__toggle"><button class="account-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="수강 중인 클래스 소식 이메일 알림"><span class="account-toggle__knob"></span></button></div>
+            <div class="notify-row__toggle"><button class="account-toggle" type="button" role="switch" aria-checked="false" aria-label="수강 중인 클래스 소식 앱 푸시 알림"><span class="account-toggle__knob"></span></button></div>
           </div>
-          <div class="wish-item__price">
-              <p class="wish-item__now"><span class="wish-item__final">165,000원</span></p>
+          <div class="notify-row">
+            <div class="notify-row__info">
+              <p class="notify-row__title">질문 답변 알림</p>
+              <p class="notify-row__desc">내가 남긴 질문에 답변이 달렸을 때</p>
             </div>
-          <a class="wish-item__btn" href="#">담기</a>
+            <div class="notify-row__toggle"><button class="account-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="질문 답변 알림 이메일 알림"><span class="account-toggle__knob"></span></button></div>
+            <div class="notify-row__toggle"><button class="account-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="질문 답변 알림 앱 푸시 알림"><span class="account-toggle__knob"></span></button></div>
+          </div>
+          <div class="notify-row">
+            <div class="notify-row__info">
+              <p class="notify-row__title">위시리스트 할인 알림</p>
+              <p class="notify-row__desc">담아둔 클래스가 할인을 시작할 때</p>
+            </div>
+            <div class="notify-row__toggle"><button class="account-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="위시리스트 할인 알림 이메일 알림"><span class="account-toggle__knob"></span></button></div>
+            <div class="notify-row__toggle"><button class="account-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="위시리스트 할인 알림 앱 푸시 알림"><span class="account-toggle__knob"></span></button></div>
+          </div>
+          <div class="notify-row">
+            <div class="notify-row__info">
+              <p class="notify-row__title">결제 · 구독 안내</p>
+              <p class="notify-row__desc">결제 예정일, 영수증, 구독 상태 변경</p>
+            </div>
+            <div class="notify-row__toggle"><button class="account-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="결제 · 구독 안내 이메일 알림"><span class="account-toggle__knob"></span></button></div>
+            <div class="notify-row__toggle"><button class="account-toggle" type="button" role="switch" aria-checked="false" aria-label="결제 · 구독 안내 앱 푸시 알림"><span class="account-toggle__knob"></span></button></div>
+          </div>
+          <div class="notify-row">
+            <div class="notify-row__info">
+              <p class="notify-row__title">마케팅 정보 수신</p>
+              <p class="notify-row__desc">할인·이벤트 소식 (선택)</p>
+            </div>
+            <div class="notify-row__toggle"><button class="account-toggle" type="button" role="switch" aria-checked="false" aria-label="마케팅 정보 수신 이메일 알림"><span class="account-toggle__knob"></span></button></div>
+            <div class="notify-row__toggle"><button class="account-toggle" type="button" role="switch" aria-checked="false" aria-label="마케팅 정보 수신 앱 푸시 알림"><span class="account-toggle__knob"></span></button></div>
+          </div>
+      </section>
+
+      <!-- 방해 금지 시간 -->
+      <section class="notify-card dnd">
+        <h3 class="dnd__title">방해 금지 시간</h3>
+        <div class="dnd__body">
+          <p class="dnd__desc">설정한 시간에는 푸시 알림을 보내지 않아요.<br>야간 학습 리마인더는 이 설정보다 우선합니다.</p>
+          <div class="dnd__range">
+            <span class="dnd__time">02:00</span>
+            <span class="dnd__sep">—</span>
+            <span class="dnd__time">09:00</span>
+          </div>
         </div>
       </section>
 
-      <!-- 프로모 배너 -->
-      <section class="wish-promo">
-        <div class="wish-promo__text">
-          <p class="wish-promo__title">담아둔 4개를 지금 사면 178,400원 아껴요</p>
-          <p class="wish-promo__sub">LEVEL UP WEEK 종료까지 6일 13시간 남았습니다.</p>
-        </div>
-        <a class="wish-promo__btn" href="#">할인 상품 모두 담기</a>
-      </section>
+      <!-- 저장 버튼 -->
+      <div class="notify-actions">
+        <button class="member-btn member-btn--cancel" type="button">기본값으로</button>
+        <button class="member-btn member-btn--save" type="submit">알림 설정 저장</button>
+      </div>
 
     </div>
   </div>
