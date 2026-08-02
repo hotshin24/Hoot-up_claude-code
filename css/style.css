@@ -8038,3 +8038,118 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .order-refund__policy { display: flex; flex-direction: column; gap: 14px; padding-top: 2px; }
 .order-refund__policy-label { font-size: 14px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
 .order-refund__policy-text { margin-top: 4px; font-size: 13px; line-height: 20px; color: var(--color-neutral-base); }
+
+/* ============================================================
+   크리에이터 홈 — creator.html (Figma 215-30403)
+   테마 포인트: brand-darker(#0703ab)
+   ============================================================ */
+.creator { background-color: var(--color-neutral-lightest); }
+/* 히어로 (퍼플 그라디언트 + 그린 eyebrow) */
+.creator-hero { background-image: linear-gradient(225deg, #0703ab 0%, #9896fd 100%); color: var(--color-neutral-white); }
+.creator-hero .l-container { padding-block: 46px 40px; }
+.creator-hero__eyebrow { font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 13px; letter-spacing: 1.82px; color: var(--color-brand-accent); }
+.creator-hero__title { margin-top: 6px; font-weight: var(--font-weight-bold); font-size: 36px; line-height: 42px; }
+.creator-hero__desc { margin-top: 8px; font-size: 16px; line-height: 22px; color: rgb(255 255 255 / 0.78); }
+
+/* 사이드바 active — 크리에이터 테마(퍼플) */
+.creator-nav .account-nav__link.is-active { color: var(--color-brand-darker); }
+.creator-nav .account-nav__link:hover { color: var(--color-brand-darker); }
+
+/* 콘텐츠 간격 */
+.account-content.creator-content { gap: 30px; }
+
+/* 카드 공통 */
+.creator-card { padding: 31px; background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md); box-shadow: 0 0 5px rgb(0 0 0 / 0.04); }
+.creator-card__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
+.creator-card__title { font-weight: var(--font-weight-bold); font-size: 20px; line-height: 26px; color: var(--color-neutral-darker); }
+.creator-card__sub { margin-left: 6px; font-size: 14px; font-weight: var(--font-weight-regular); color: var(--color-neutral-light); }
+.creator-card__count { color: var(--color-brand-darker); }
+.creator-more { font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-brand-darker); }
+.creator-more:hover { text-decoration: underline; }
+
+/* 버튼 */
+.creator-btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: var(--radius-pill); font-size: 14px; font-weight: var(--font-weight-bold); white-space: nowrap; transition: background-color .15s ease, border-color .15s ease, color .15s ease, opacity .15s ease; }
+.creator-btn--primary { background-color: var(--color-brand-darker); color: var(--color-neutral-white); }
+.creator-btn--primary:hover { opacity: 0.9; }
+.creator-btn--ghost { background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-darker); }
+.creator-btn--ghost:hover { border-color: var(--color-brand-darker); color: var(--color-brand-darker); }
+.creator-btn--sm { padding: 9px 16px; font-size: 13px; }
+
+/* 프로필 */
+.creator-profile { display: flex; flex-direction: column; gap: 26px; }
+.creator-profile__head { display: flex; align-items: center; gap: 20px; }
+.creator-profile__avatar { flex-shrink: 0; width: 84px; height: 84px; border-radius: var(--radius-circle); object-fit: cover; }
+.creator-profile__meta { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.creator-profile__nameline { display: flex; align-items: center; gap: 8px; }
+.creator-profile__name { font-weight: var(--font-weight-bold); font-size: 24px; line-height: 30px; color: var(--color-neutral-darker); }
+.creator-profile__badge { padding: 4px 10px; border-radius: var(--radius-pill); background-color: var(--color-brand-lighter); color: var(--color-brand-darker); font-size: 12px; font-weight: var(--font-weight-bold); }
+.creator-profile__sub { font-size: 14px; line-height: 20px; color: var(--color-neutral-base); }
+.creator-profile__actions { flex-shrink: 0; display: flex; gap: 8px; }
+
+/* 통계 4 */
+.creator-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.creator-stat { display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; background-color: var(--color-neutral-lightest); border-radius: var(--radius-md); }
+.creator-stat__label { font-size: 13px; color: var(--color-neutral-base); }
+.creator-stat__value { font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 26px; color: var(--color-neutral-darker); }
+.creator-stat__value span { margin-left: 3px; font-size: 14px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
+.creator-stat__sub { font-size: 12px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
+.creator-stat__sub--up { color: var(--color-brand-darker); }
+
+/* 수익 추이 차트 */
+.creator-chart__bars { display: flex; align-items: flex-end; gap: 18px; height: 200px; border-bottom: 1px solid var(--color-neutral-lighter); }
+.creator-bar { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+.creator-bar__val { margin-bottom: 8px; font-size: 12px; font-weight: var(--font-weight-bold); color: var(--color-neutral-light); }
+.creator-bar__val--top { color: var(--color-neutral-darker); }
+.creator-bar__fill { width: 100%; border-radius: var(--radius-sm) var(--radius-sm) 0 0; background-color: var(--color-brand-lighter); }
+.creator-bar__fill--mid { background-color: var(--color-brand-light); }
+.creator-bar__fill--top { background-color: var(--color-brand-darker); }
+.creator-chart__months { display: flex; gap: 18px; margin-top: 10px; }
+.creator-bar__month { flex: 1; min-width: 0; text-align: center; font-size: 12px; color: var(--color-neutral-light); }
+
+/* 내 클래스 */
+.creator-classes__list { display: flex; flex-direction: column; gap: 14px; }
+.creator-class { display: flex; align-items: center; gap: 18px; padding: 15px; border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md); }
+.creator-class__thumb { flex-shrink: 0; width: 132px; height: 78px; border-radius: var(--radius-sm); overflow: hidden; }
+.creator-class__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.creator-class__info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.creator-class__tags { display: flex; align-items: center; gap: 6px; }
+.creator-tag { padding: 3px 8px; border-radius: var(--radius-pill); background-color: var(--color-brand-lighter); color: var(--color-brand-darker); font-size: 11px; font-weight: var(--font-weight-bold); }
+.creator-class__title { font-size: 16px; font-weight: var(--font-weight-bold); line-height: 22px; color: var(--color-neutral-darker); }
+.creator-class__meta { font-size: 13px; color: var(--color-neutral-base); }
+.creator-class__btn { flex-shrink: 0; }
+
+/* 답변 대기 + 최근 리뷰 (2열) */
+.creator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.creator-panel { padding: 27px; }
+.creator-q__list, .creator-review__list { display: flex; flex-direction: column; }
+.creator-q { padding: 14px 0; }
+.creator-q + .creator-q { border-top: 1px solid var(--color-neutral-lighter); }
+.creator-q__title { font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.creator-q__meta { margin-top: 5px; font-size: 13px; color: var(--color-neutral-light); }
+.creator-review { padding: 16px 0; }
+.creator-review + .creator-review { border-top: 1px solid var(--color-neutral-lighter); }
+.creator-review__stars { width: 70px; height: 14px; }
+.creator-review__text { margin-top: 8px; font-size: 14px; line-height: 20px; color: var(--color-neutral-darker); }
+.creator-review__who { margin-top: 8px; font-size: 13px; color: var(--color-neutral-light); }
+
+/* 정산 · 계정 설정 */
+.creator-set__list { display: flex; flex-direction: column; margin-top: 4px; }
+.creator-set__row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; }
+.creator-set__row + .creator-set__row { border-top: 1px solid var(--color-neutral-lighter); }
+.creator-set__label { font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.creator-set__desc { margin-top: 4px; font-size: 13px; color: var(--color-neutral-light); }
+
+/* 반응형 */
+@media screen and (max-width: 1279px) {
+  .account-body:has(.creator-nav) { grid-template-columns: 1fr; }
+  .creator-stats { grid-template-columns: 1fr 1fr; }
+}
+@media screen and (max-width: 767px) {
+  .creator-profile__head { flex-wrap: wrap; }
+  .creator-profile__actions { flex-wrap: wrap; }
+  .creator-stats { grid-template-columns: 1fr 1fr; }
+  .creator-grid { grid-template-columns: 1fr; }
+  .creator-class { flex-wrap: wrap; }
+  .creator-chart__bars { gap: 8px; }
+  .creator-chart__months { gap: 8px; }
+}
