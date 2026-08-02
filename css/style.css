@@ -2120,6 +2120,20 @@ hr {
   pointer-events: none;
 }
 
+/* 클래스 더보기 (load more) — 페이저 대체, 기본 16 + 8개씩 노출 */
+.course-more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-2xl);
+}
+.course-more[hidden] {
+  display: none;
+}
+.course-more__btn {
+  background-color: transparent;
+  cursor: pointer;
+}
+
 /* 좁은 화면 대응 */
 @media (max-width: 1023px) {
   .course-grid {

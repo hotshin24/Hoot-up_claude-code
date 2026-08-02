@@ -15,6 +15,13 @@
   var pager = document.querySelector('[data-client-pager]');
   var PAGE_SIZE = pager ? (parseInt(pager.getAttribute('data-page-size'), 10) || 16) : Infinity;
 
+  // 클래스 더보기(load more): 기본 N개 + 클릭 시 STEP개씩 노출 (페이저 대체)
+  var loadMore = document.querySelector('[data-load-more]');
+  var moreBtn = loadMore ? loadMore.querySelector('.course-more__btn') : null;
+  var INITIAL = loadMore ? (parseInt(loadMore.getAttribute('data-initial'), 10) || 16) : 0;
+  var STEP = loadMore ? (parseInt(loadMore.getAttribute('data-step'), 10) || 8) : 0;
+  var shown = INITIAL;
+
   var filter = 'all';
   var page = 1;
 
@@ -25,6 +32,7 @@
   }
 
   function render() {
+    if (loadMore) { renderLoadMore(); return; }
     var list = filtered();
     var totalPages = PAGE_SIZE === Infinity ? 1 : Math.max(1, Math.ceil(list.length / PAGE_SIZE));
     if (page > totalPages) page = totalPages;
@@ -36,6 +44,15 @@
     list.slice(start, end).forEach(function (li) { li.removeAttribute('hidden'); });
 
     renderPager(totalPages);
+  }
+
+  function renderLoadMore() {
+    var list = filtered();
+    if (shown > list.length) shown = list.length;
+    items.forEach(function (li) { li.setAttribute('hidden', ''); });
+    list.slice(0, shown).forEach(function (li) { li.removeAttribute('hidden'); });
+    if (shown >= list.length) loadMore.setAttribute('hidden', '');
+    else loadMore.removeAttribute('hidden');
   }
 
   function arrow(dir, enabled) {
@@ -66,6 +83,7 @@
     if (!btn) return;
     filter = btn.getAttribute('data-filter');
     page = 1;
+    shown = INITIAL;
     buttons.forEach(function (b) {
       var on = b === btn;
       b.classList.toggle('is-active', on);
@@ -73,6 +91,14 @@
     });
     render();
   });
+
+  // 클래스 더보기 버튼
+  if (moreBtn) {
+    moreBtn.addEventListener('click', function () {
+      shown += STEP;
+      render();
+    });
+  }
 
   // 클라이언트 페이저
   if (pager) {
