@@ -3189,6 +3189,7 @@ hr {
   padding-bottom: 3px;
 }
 .mag-cover__more:hover { border-bottom-color: var(--mag-accent); }
+.mag-cover__more .icon, .mag-classes__all .icon { --icon-size: 1em; vertical-align: -0.1em; margin-left: 2px; }
 
 /* ---------- 바이라인 공통 ---------- */
 .mag-byline { display: flex; align-items: center; gap: 9px; }
