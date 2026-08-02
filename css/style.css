@@ -7305,3 +7305,112 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .myclass-search__input { width: 100%; flex: 1; }
   .myclass-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   올나잇 패스 — account-pass.html (Figma 215-29185)
+   ============================================================ */
+/* 헤더 */
+.pass-head__title { font-weight: var(--font-weight-bold); font-size: 28px; line-height: 36px; color: var(--color-neutral-darker); }
+.pass-head__desc { margin-top: 6px; font-size: 15px; color: var(--color-neutral-base); }
+
+/* 구독 카드 */
+.pass-sub {
+  display: flex; flex-direction: column; gap: 26px;
+  padding: 30px; border-radius: var(--radius-md);
+  background-image: linear-gradient(to right, #4f7bfe 0%, #2948ff 100%);
+  color: var(--color-neutral-white);
+}
+.pass-sub__top { display: flex; align-items: flex-start; gap: 30px; }
+.pass-sub__info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.pass-sub__tagline { display: flex; align-items: center; gap: 8px; }
+.pass-sub__badge {
+  padding: 4px 10px; border-radius: var(--radius-pill);
+  background-color: var(--color-brand-accent); color: var(--color-brand-darker);
+  font-size: 12px; font-weight: var(--font-weight-bold);
+}
+.pass-sub__eyebrow {
+  font-family: var(--font-display); font-weight: var(--font-weight-extrabold);
+  font-size: 12px; letter-spacing: 1.2px; color: rgb(255 255 255 / 0.72);
+}
+.pass-sub__price { font-weight: var(--font-weight-bold); font-size: 28px; line-height: 36px; }
+.pass-sub__since { font-size: 15px; line-height: 22px; color: rgb(255 255 255 / 0.82); }
+.pass-sub__next {
+  flex-shrink: 0; width: 220px;
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 20px 24px; border-radius: var(--radius-md);
+  background-color: rgb(255 255 255 / 0.14);
+}
+.pass-sub__next-label { font-size: 13px; color: rgb(255 255 255 / 0.72); }
+.pass-sub__next-date { font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 24px; }
+.pass-sub__next-card { padding-top: 8px; font-size: 13px; color: rgb(255 255 255 / 0.82); }
+.pass-sub__actions { display: flex; align-items: center; gap: 8px; }
+.pass-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 19px; border-radius: var(--radius-pill);
+  font-size: 14px; font-weight: var(--font-weight-bold);
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.pass-btn--ghost { border: 1px solid rgb(255 255 255 / 0.4); color: var(--color-neutral-white); }
+.pass-btn--ghost:hover { background-color: rgb(255 255 255 / 0.12); }
+.pass-btn--cancel {
+  margin-left: auto; padding: 12px 18px;
+  background-color: rgb(0 0 0 / 0.2); color: rgb(255 255 255 / 0.82);
+}
+.pass-btn--cancel:hover { background-color: rgb(0 0 0 / 0.32); }
+
+/* 2열 카드 */
+.pass-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.pass-card {
+  padding: 27px; background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md);
+}
+.pass-card__title { font-weight: var(--font-weight-bold); font-size: 20px; line-height: 26px; color: var(--color-neutral-darker); }
+
+/* 이번 달 이용 현황 */
+.pass-usage__list { margin-top: 16px; display: flex; flex-direction: column; gap: 14px; }
+.pass-usage__item { display: flex; flex-direction: column; gap: 6px; }
+.pass-usage__row { display: flex; align-items: center; justify-content: space-between; }
+.pass-usage__label { font-size: 14px; color: var(--color-neutral-base); }
+.pass-usage__val { font-size: 14px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.pass-usage__track { height: 6px; overflow: hidden; background-color: var(--color-neutral-lighter); border-radius: var(--radius-pill); }
+.pass-usage__fill { display: block; height: 100%; background-color: var(--color-brand-base); border-radius: var(--radius-pill); }
+.pass-usage__note { margin-top: 18px; font-size: 13px; line-height: 20px; color: var(--color-neutral-light); }
+
+/* 결제 이력 */
+.pass-history__list { margin-top: 16px; display: flex; flex-direction: column; }
+.pass-history__row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 0 14px; border-bottom: 1px solid var(--color-neutral-lighter);
+}
+.pass-history__row:last-child { border-bottom: 0; }
+.pass-history__date { font-size: 14px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.pass-history__sub { margin-top: 2px; font-size: 12px; color: var(--color-neutral-light); }
+.pass-history__amount { font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+
+/* 연간 전환 CTA */
+.pass-cta {
+  display: flex; align-items: center; gap: 24px;
+  padding: 26px 30px; border-radius: var(--radius-md);
+  background-color: var(--color-neutral-darker); color: var(--color-neutral-white);
+}
+.pass-cta__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.pass-cta__title { font-weight: var(--font-weight-bold); font-size: 20px; line-height: 26px; }
+.pass-cta__desc { font-size: 14px; line-height: 20px; color: rgb(255 255 255 / 0.72); }
+.pass-cta__btn {
+  flex-shrink: 0; padding: 12px 22px; border-radius: var(--radius-pill);
+  background-color: var(--color-brand-secondary); color: var(--color-neutral-darker);
+  font-size: 14px; font-weight: var(--font-weight-bold);
+}
+.pass-cta__btn:hover { opacity: 0.9; }
+
+/* 반응형 */
+@media screen and (max-width: 1279px) {
+  .pass-sub__top { flex-direction: column; }
+  .pass-sub__next { width: 100%; }
+}
+@media screen and (max-width: 767px) {
+  .pass-sub__actions { flex-wrap: wrap; }
+  .pass-btn--cancel { margin-left: 0; }
+  .pass-grid { grid-template-columns: 1fr; }
+  .pass-cta { flex-direction: column; align-items: flex-start; }
+}
