@@ -37,12 +37,25 @@
         </button>
       </form>
 
-      <ul class="user-menu user-menu--guest">
+      <ul class="user-menu">
         <li class="user-menu__item">
-          <a class="user-menu__auth" href="/login">로그인</a>
+          <a class="user-menu__link" href="/cart">
+            <span class="icon icon--cart"></span>
+            <span class="a11y-hidden">장바구니</span>
+            <span class="user-menu__badge">2<span class="a11y-hidden">개 담김</span></span>
+          </a>
         </li>
         <li class="user-menu__item">
-          <a class="user-menu__auth user-menu__auth--signup" href="/signup">회원가입</a>
+          <a class="user-menu__link" href="/notifications">
+            <span class="icon icon--bell"></span>
+            <span class="a11y-hidden">알림</span>
+            <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
+          </a>
+        </li>
+        <li class="user-menu__item">
+          <a class="user-menu__profile" href="/mypage">
+            <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
+          </a>
         </li>
       </ul>
     </div>
