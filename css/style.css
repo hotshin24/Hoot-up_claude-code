@@ -1980,7 +1980,7 @@ hr {
 .subcat {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: 0;
 }
 
 .subcat__title {
@@ -1999,18 +1999,19 @@ hr {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
+  padding: 22px 0 23px;
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-xs) var(--size-icon-md);
+  padding: 8px 17px;
   border: 1px solid var(--color-neutral-base);
   border-radius: var(--radius-pill);
   background-color: transparent;
   color: var(--color-neutral-base);
-  font-size: var(--text-body-size);
+  font-size: 13px;
   line-height: var(--text-body-leading);
   white-space: nowrap;
   cursor: pointer;
@@ -2021,19 +2022,17 @@ hr {
 
 .chip:hover {
   border-color: var(--color-brand-base);
-  color: var(--color-brand-base);
 }
 
 .chip--active {
   background-color: var(--color-brand-base);
   border-color: var(--color-brand-base);
   color: var(--color-text-inverse);
+  font-weight: var(--font-weight-bold);
 }
 
 .chip--active:hover {
-  background-color: var(--color-brand-darker);
-  border-color: var(--color-brand-darker);
-  color: var(--color-text-inverse);
+  border-color: var(--color-brand-base);
 }
 
 .chip--brand {
@@ -4678,7 +4677,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
    클래스 목록 카테고리 필터 (best / new / signature)
    ========================================================================== */
 .class-filter {
+  padding-bottom: 23px;
   margin-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 .class-filter__list {
   display: flex;
@@ -4687,14 +4688,13 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 /* 색상 규칙은 세부 카테고리 메뉴(.chip)와 동일 */
 .class-filter__btn {
-  padding: 8px 16px;
+  padding: 8px 17px;
   border: 1px solid var(--color-neutral-base);
   border-radius: var(--radius-pill);
   background-color: transparent;
   color: var(--color-neutral-base);
-  font-size: var(--text-body-sm-size);
-  font-weight: var(--font-weight-regular);
-  line-height: 1;
+  font-size: 13px;
+  line-height: var(--text-body-leading);
   cursor: pointer;
   transition: background-color var(--duration-fast) var(--easing-standard),
               color var(--duration-fast) var(--easing-standard),
@@ -4702,17 +4702,15 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .class-filter__btn:hover {
   border-color: var(--color-brand-base);
-  color: var(--color-brand-base);
 }
 .class-filter__btn.is-active {
   background-color: var(--color-brand-base);
   border-color: var(--color-brand-base);
   color: var(--color-text-inverse);
+  font-weight: var(--font-weight-bold);
 }
 .class-filter__btn.is-active:hover {
-  background-color: var(--color-brand-darker);
-  border-color: var(--color-brand-darker);
-  color: var(--color-text-inverse);
+  border-color: var(--color-brand-base);
 }
 
 /* 필터로 숨겨진 아이템 (.course-grid__item[hidden] 우선순위 확보) */
