@@ -7687,3 +7687,94 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .cp-coupons__grid { grid-template-columns: 1fr; }
   .cp-summary__stats { flex-direction: column; }
 }
+
+/* ============================================================
+   회원정보 — account-member.html (Figma 215-29918)
+   ============================================================ */
+/* 헤더 */
+.member-head__title { font-weight: var(--font-weight-bold); font-size: 28px; line-height: 36px; color: var(--color-neutral-darker); }
+.member-head__summary { margin-top: 6px; font-size: 15px; color: var(--color-neutral-base); }
+
+/* 프로필 폼 카드 */
+.member-form {
+  display: flex; flex-direction: column;
+  padding: 31px; background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md);
+}
+
+/* 프로필 사진 행 */
+.member-photo {
+  display: flex; align-items: center; gap: 24px;
+  padding-bottom: 27px; border-bottom: 1px solid var(--color-neutral-lighter);
+}
+.member-photo__avatar { width: 96px; height: 96px; border-radius: var(--radius-circle); object-fit: cover; flex-shrink: 0; }
+.member-photo__info { display: flex; flex-direction: column; gap: 4px; }
+.member-photo__title { font-size: 16px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.member-photo__hint { font-size: 13px; color: var(--color-neutral-light); }
+.member-photo__actions { display: flex; gap: 8px; padding-top: 8px; }
+.member-photo__btn {
+  padding: 11px 19px; border-radius: var(--radius-pill);
+  border: 1px solid var(--color-neutral-lighter); background-color: var(--color-neutral-white);
+  color: var(--color-neutral-darker); font-size: 14px; font-weight: var(--font-weight-bold); cursor: pointer;
+  transition: border-color .15s ease, color .15s ease;
+}
+.member-photo__btn:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+.member-photo__btn--text { padding: 11px 8px; border: 0; background: transparent; color: var(--color-neutral-light); }
+.member-photo__btn--text:hover { color: var(--color-danger-base); }
+
+/* 입력 필드 (2열) */
+.member-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 26px 0; }
+.member-field { display: flex; flex-direction: column; gap: 8px; }
+.member-field__label { font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
+.member-field__input {
+  height: 48px; padding: 0 19px;
+  background-color: var(--color-neutral-lightest);
+  border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md);
+  font-size: 15px; color: var(--color-neutral-darker);
+}
+.member-field__input:focus { outline: none; border-color: var(--color-brand-base); }
+.member-field__input--disabled { background-color: var(--color-neutral-lighter); color: var(--color-neutral-light); cursor: not-allowed; }
+
+/* 관심 카테고리 */
+.member-interest {
+  display: flex; flex-direction: column; gap: 10px;
+  padding-bottom: 27px; border-bottom: 1px solid var(--color-neutral-lighter);
+}
+.member-interest__label { font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
+.member-interest__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.member-chip {
+  padding: 10px 17px; border-radius: var(--radius-pill);
+  background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter);
+  color: var(--color-neutral-base); font-size: 14px; font-weight: var(--font-weight-bold); cursor: pointer;
+  transition: border-color .15s ease, color .15s ease;
+}
+.member-chip:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+.member-chip.is-active {
+  padding: 9px 16px; border: 0;
+  background-color: var(--color-brand-base); color: var(--color-neutral-white);
+}
+
+/* 저장/취소 버튼 */
+.member-actions { display: flex; justify-content: flex-end; gap: 8px; padding-top: 26px; }
+.member-btn {
+  padding: 14px 25px; border-radius: var(--radius-pill);
+  font-size: 15px; font-weight: var(--font-weight-bold); cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.member-btn--cancel { background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-base); }
+.member-btn--cancel:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+.member-btn--save { padding: 14px 28px; background-color: var(--color-brand-base); color: var(--color-neutral-white); }
+.member-btn--save:hover { background-color: var(--color-brand-darker); }
+
+/* 로그인 & 보안 (행은 .account-settings__* 재사용) */
+.member-security {
+  padding: 27px 31px; background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md);
+}
+.member-security__title { margin-bottom: 6px; font-weight: var(--font-weight-bold); font-size: 20px; line-height: 26px; color: var(--color-neutral-darker); }
+
+/* 반응형 */
+@media screen and (max-width: 767px) {
+  .member-fields { grid-template-columns: 1fr; }
+  .member-actions { flex-wrap: wrap; }
+}

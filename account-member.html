@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>주문 · 결제 내역 — HOOT UP</title>
-  <meta name="description" content="HOOT UP 주문 · 결제 내역 — 최근 주문과 결제 상태, 결제수단, 환불 안내를 확인하세요.">
+  <title>회원정보 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 회원정보 — 프로필 사진, 닉네임, 관심 카테고리와 로그인·보안 정보를 관리하세요.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -266,106 +266,102 @@
         </ul>
         <p class="account-nav__label">PAYMENT</p>
         <ul class="account-nav__list">
-          <li><a class="account-nav__link is-active" href="account-orders.html" aria-current="page">주문·결제 내역</a></li>
+          <li><a class="account-nav__link" href="account-orders.html">주문·결제 내역</a></li>
           <li><a class="account-nav__link" href="account-coupons.html">쿠폰·포인트</a></li>
         </ul>
         <p class="account-nav__label">SETTINGS</p>
         <ul class="account-nav__list">
-          <li><a class="account-nav__link" href="account-member.html">회원정보</a></li>
+          <li><a class="account-nav__link is-active" href="account-member.html" aria-current="page">회원정보</a></li>
           <li><a class="account-nav__link" href="#">알림 설정</a></li>
         </ul>
     </aside>
 
-    <div class="account-content account-orders-page">
+    <div class="account-content account-member-page">
 
       <!-- 헤더 -->
-      <div class="order-head">
-        <div class="order-head__intro">
-          <h2 class="order-head__title">주문 · 결제 내역</h2>
-          <p class="order-head__summary">최근 12개월 · 총 14건 · 결제 금액 1,284,600원</p>
-        </div>
-        <div class="order-head__filter">
-          <button class="myclass-chip is-active" type="button">전체</button>
-          <button class="myclass-chip" type="button">단건 결제</button>
-          <button class="myclass-chip" type="button">구독</button>
-          <button class="myclass-chip" type="button">환불</button>
-        </div>
+      <div class="member-head">
+        <h2 class="member-head__title">회원정보</h2>
+        <p class="member-head__summary">프로필과 로그인 정보를 관리합니다.</p>
       </div>
 
-      <!-- 주문 테이블 -->
-      <section class="order-card">
-        <div class="order-table">
-          <div class="order-row order-row--head">
-            <span>주문일</span>
-            <span>상품</span>
-            <span>주문번호</span>
-            <span>결제 금액</span>
-            <span>상태</span>
-            <span></span>
+      <!-- 프로필 폼 -->
+      <section class="member-form">
+        <div class="member-photo">
+          <img class="member-photo__avatar" src="assets/avatar/user.jpg" alt="밤샘러 지우 프로필 사진">
+          <div class="member-photo__info">
+            <p class="member-photo__title">프로필 사진</p>
+            <p class="member-photo__hint">JPG, PNG · 5MB 이하 · 정사각형 권장</p>
+            <div class="member-photo__actions">
+              <button class="member-photo__btn" type="button">이미지 변경</button>
+              <button class="member-photo__btn member-photo__btn--text" type="button">삭제</button>
+            </div>
           </div>
-          <div class="order-row">
-            <span class="order-cell__date">2026.07.20</span>
-            <span class="order-cell__product">올나잇 패스 월 구독</span>
-            <span class="order-cell__no">H26-072001</span>
-            <span class="order-cell__amount">19,900원</span>
-            <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+        </div>
+
+        <div class="member-fields">
+          <div class="member-field">
+            <label class="member-field__label" for="field-nickname">닉네임</label>
+            <input class="member-field__input" id="field-nickname" type="text" value="밤샘러 지우">
           </div>
-          <div class="order-row">
-            <span class="order-cell__date">2026.06.28</span>
-            <span class="order-cell__product">개발 생산성 10배 올리는 클로드 코드 마스터 과정</span>
-            <span class="order-cell__no">H26-062803</span>
-            <span class="order-cell__amount">107,800원</span>
-            <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+          <div class="member-field">
+            <label class="member-field__label" for="field-name">이름</label>
+            <input class="member-field__input" id="field-name" type="text" value="박지우">
           </div>
-          <div class="order-row">
-            <span class="order-cell__date">2026.06.20</span>
-            <span class="order-cell__product">올나잇 패스 월 구독</span>
-            <span class="order-cell__no">H26-062001</span>
-            <span class="order-cell__amount">19,900원</span>
-            <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+          <div class="member-field">
+            <label class="member-field__label" for="field-email">이메일 (아이디)</label>
+            <input class="member-field__input member-field__input--disabled" id="field-email" type="text" value="jiwoo.night@hootup.co.kr" disabled>
           </div>
-          <div class="order-row">
-            <span class="order-cell__date">2026.05.14</span>
-            <span class="order-cell__product">피그마로 완성하는 UX/UI 디자인 입문</span>
-            <span class="order-cell__no">H26-051402</span>
-            <span class="order-cell__amount">85,800원</span>
-            <span class="order-cell__status order-cell__status--refund">환불 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+          <div class="member-field">
+            <label class="member-field__label" for="field-phone">휴대폰</label>
+            <input class="member-field__input" id="field-phone" type="text" value="010-2456-1188">
           </div>
-          <div class="order-row">
-            <span class="order-cell__date">2026.04.02</span>
-            <span class="order-cell__product">제로부터 완성하는 반응형 웹 퍼블리싱 마스터 클래스</span>
-            <span class="order-cell__no">H26-040201</span>
-            <span class="order-cell__amount">77,000원</span>
-            <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+        </div>
+
+        <div class="member-interest">
+          <p class="member-interest__label">관심 카테고리</p>
+          <div class="member-interest__chips">
+            <button class="member-chip is-active" type="button" aria-pressed="true">개발 &amp; IT</button>
+            <button class="member-chip is-active" type="button" aria-pressed="true">디자인 &amp; 크리에이티브</button>
+            <button class="member-chip" type="button" aria-pressed="false">커리어 &amp; 머니</button>
+            <button class="member-chip" type="button" aria-pressed="false">사진 &amp; 영상</button>
+            <button class="member-chip" type="button" aria-pressed="false">드로잉 &amp; 일러스트</button>
+            <button class="member-chip" type="button" aria-pressed="false">운동 &amp; 마음챙김</button>
           </div>
+        </div>
+
+        <div class="member-actions">
+          <button class="member-btn member-btn--cancel" type="button">취소</button>
+          <button class="member-btn member-btn--save" type="submit">변경사항 저장</button>
         </div>
       </section>
 
-      <!-- 결제수단 + 환불 안내 -->
-      <div class="order-bottom">
-        <section class="order-pay">
-          <h3 class="order-pay__title">결제수단</h3>
-          <div class="order-pay__method">
-            <div class="order-pay__method-info">
-              <p class="order-pay__card">국민카드 ****4821</p>
-              <p class="order-pay__card-sub">기본 결제수단 · 유효기간 09/28</p>
+      <!-- 로그인 & 보안 -->
+      <section class="member-security">
+        <h3 class="member-security__title">로그인 &amp; 보안</h3>
+        <ul class="account-settings__list">
+          <li class="account-settings__row">
+            <div class="account-settings__text">
+              <p class="account-settings__label">비밀번호</p>
+              <p class="account-settings__desc">마지막 변경 2025.11.02</p>
             </div>
-            <span class="order-pay__badge">기본</span>
-          </div>
-          <a class="order-pay__add" href="#">+ 결제수단 추가</a>
-        </section>
-
-        <section class="order-refund">
-          <h3 class="order-refund__title">환불 안내</h3>
-          <p class="order-refund__desc">결제 후 7일 이내, 수강률 10% 미만이면 전액 환불됩니다. 구독은 다음 결제일 전까지 언제든 해지할 수 있어요.</p>
-          <a class="order-refund__link" href="refund.html">환불 규정 자세히 보기 →</a>
-        </section>
-      </div>
+            <a class="account-btn account-btn--sm" href="#">변경</a>
+          </li>
+          <li class="account-settings__row">
+            <div class="account-settings__text">
+              <p class="account-settings__label">연결된 계정</p>
+              <p class="account-settings__desc">카카오 연결됨 · 애플 미연결</p>
+            </div>
+            <a class="account-btn account-btn--sm" href="#">관리</a>
+          </li>
+          <li class="account-settings__row account-settings__row--danger">
+            <div class="account-settings__text">
+              <p class="account-settings__label account-settings__label--danger">회원 탈퇴</p>
+              <p class="account-settings__desc">보유 포인트와 수강 기록이 모두 삭제됩니다</p>
+            </div>
+            <a class="account-btn account-btn--danger" href="#">탈퇴하기</a>
+          </li>
+        </ul>
+      </section>
 
     </div>
   </div>
