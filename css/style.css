@@ -8283,3 +8283,97 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .pp-career { flex-wrap: wrap; }
   .pp-career__year { width: 100%; }
 }
+
+/* ============================================================
+   크리에이터 · 내 클래스 관리 (creator-classes.html)
+   ============================================================ */
+.creator-classes-page .pp-head__save { align-items: flex-end; }
+/* 필터 칩 active = 크리에이터 퍼플 */
+.creator-classes-page .myclass-chip.is-active { background-color: var(--color-brand-darker); }
+
+.creator-classes-page .myclass-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* 목록 카드 */
+.cm-list { padding: 4px 28px; }
+
+/* 행 */
+.cm-row {
+  display: flex; gap: 20px; align-items: flex-start;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-neutral-lighter);
+}
+.cm-row--last { border-bottom: 0; }
+
+/* 썸네일 */
+.cm-thumb {
+  flex-shrink: 0; width: 180px; height: 106px;
+  border-radius: 5px; overflow: hidden; display: block;
+  background-color: var(--color-neutral-lighter);
+}
+.cm-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cm-thumb--empty {
+  background-image: repeating-linear-gradient(45deg, #f1f4f8 0, #f1f4f8 10px, #e6ebf1 10px, #e6ebf1 20px);
+}
+
+/* 정보 영역 */
+.cm-row__info { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.cm-row__badges { display: flex; gap: 6px; }
+.cm-badge {
+  padding: 3px 8px; border-radius: var(--radius-pill);
+  font-size: 11px; font-weight: var(--font-weight-bold); white-space: nowrap;
+  background-color: var(--color-brand-lighter); color: var(--color-brand-darker);
+}
+.cm-badge--review { background-color: #fef1d9; color: #b45309; }
+.cm-badge--draft { background-color: var(--color-neutral-lighter); color: var(--color-neutral-base); }
+
+.cm-row__title {
+  font-size: 18px; line-height: 24px; font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-darker);
+}
+.cm-row__title--muted { color: var(--color-neutral-base); }
+
+/* 통계 (운영 중) */
+.cm-stats { display: flex; gap: 16px; padding-top: 4px; flex-wrap: wrap; }
+.cm-stat { display: flex; flex-direction: column; gap: 3px; min-width: 92px; }
+.cm-stat__k { font-size: 12px; color: var(--color-neutral-light); }
+.cm-stat__v { font-size: 16px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+
+/* 진행 바 (심사 중 · 초안) */
+.cm-progress { display: flex; align-items: center; gap: 10px; padding-top: 6px; }
+.cm-progress__track {
+  flex: 1 1 0; min-width: 0; height: 6px; border-radius: var(--radius-pill);
+  background-color: var(--color-neutral-lighter); overflow: hidden;
+}
+.cm-progress__fill { display: block; height: 100%; border-radius: var(--radius-pill); }
+.cm-progress__fill--review { background-color: #f59e0b; }
+.cm-progress__fill--draft { background-color: var(--color-neutral-light); }
+.cm-progress__label { font-size: 13px; font-weight: var(--font-weight-bold); white-space: nowrap; }
+.cm-progress__label--review { color: #b45309; }
+.cm-progress__label--draft { color: var(--color-neutral-light); }
+
+.cm-row__meta { padding-top: 8px; font-size: 13px; color: var(--color-neutral-base); }
+
+/* 버튼 열 */
+.cm-row__actions { flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; }
+.cm-btn {
+  padding: 11px 20px; border-radius: var(--radius-pill);
+  font-size: 14px; font-weight: var(--font-weight-bold);
+  text-align: center; white-space: nowrap; cursor: pointer;
+  border: 1px solid transparent; transition: opacity .15s ease, border-color .15s ease, color .15s ease;
+}
+.cm-btn--dark { background-color: var(--color-neutral-darker); color: var(--color-neutral-white); }
+.cm-btn--dark:hover { opacity: 0.9; }
+.cm-btn--primary { background-color: var(--color-brand-darker); color: var(--color-neutral-white); }
+.cm-btn--primary:hover { opacity: 0.9; }
+.cm-btn--ghost { background-color: var(--color-neutral-white); border-color: var(--color-neutral-lighter); color: var(--color-neutral-darker); }
+.cm-btn--ghost:hover { border-color: var(--color-brand-darker); color: var(--color-brand-darker); }
+.cm-btn--ghost-muted { background-color: var(--color-neutral-white); border-color: var(--color-neutral-lighter); color: var(--color-neutral-base); }
+.cm-btn--ghost-muted:hover { border-color: var(--color-neutral-light); }
+.cm-btn--danger { background-color: var(--color-neutral-white); border-color: var(--color-danger-lighter); color: var(--color-danger-base); }
+.cm-btn--danger:hover { border-color: var(--color-danger-base); }
+
+@media (max-width: 720px) {
+  .cm-row { flex-wrap: wrap; }
+  .cm-thumb { width: 140px; height: 82px; }
+  .cm-row__actions { flex-direction: row; flex-wrap: wrap; width: 100%; }
+}
