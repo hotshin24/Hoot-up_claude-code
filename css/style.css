@@ -258,6 +258,7 @@ hr {
 
 /* 배경 밴드가 있는 변형 (매거진 · 데스크) */
 .section-head--banded {
+  justify-content: center;
   padding: 11px var(--space-xs);
   /* 좌우 가장자리는 투명으로 페이드 */
   background: linear-gradient(
@@ -1461,7 +1462,12 @@ hr {
 }
 
 .blog-card__category {
-  color: var(--color-danger-base);
+  color: var(--color-brand-accent);
+  font-family: var(--font-alt);
+  font-size: 11.5px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   line-height: var(--text-body-leading);
 }
 
@@ -1587,7 +1593,8 @@ hr {
   gap: var(--space-lg) var(--space-desk-col-gap);
 }
 
-.desk__more {
+.desk__more,
+.magazine__more {
   display: flex;
   justify-content: center;
   margin-top: var(--space-lg);
@@ -1609,9 +1616,12 @@ hr {
 
 .news-card__category {
   color: var(--color-brand-base);
-  font-size: var(--text-body-sm-size);
+  font-family: var(--font-alt);
+  font-size: 11.5px;
   font-weight: var(--font-weight-bold);
-  line-height: var(--text-body-sm-leading);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: var(--text-body-leading);
 }
 
 .news-card__title {
@@ -4071,7 +4081,7 @@ hr {
 .desk-card:last-child .desk-card__link { padding-right: 0; }
 .desk-card__thumb { display: block; height: 170px; overflow: hidden; border-radius: var(--radius-md); }
 .desk-card__thumb img { width: 100%; height: 100%; object-fit: cover; }
-.desk-card__cat { margin-top: 6px; color: var(--desk-accent); font-weight: var(--font-weight-bold); font-size: 11.5px; letter-spacing: 0.14em; }
+.desk-card__cat { margin-top: 6px; color: var(--desk-accent); font-family: var(--font-alt); font-weight: var(--font-weight-bold); font-size: 11.5px; letter-spacing: 0.16em; }
 .desk-card__title { font-weight: var(--font-weight-bold); font-size: 25px; line-height: 1.32; letter-spacing: -0.03em; color: var(--desk-ink); }
 .desk-card__link:hover .desk-card__title { color: var(--desk-accent); }
 .desk-card__excerpt { font-size: 14.5px; line-height: 1.75; color: var(--desk-strong); }
