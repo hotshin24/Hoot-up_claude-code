@@ -7247,6 +7247,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* 카드 그리드 */
 .myclass-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.myclass-grid .class-card[hidden] { display: none; }
 .class-card {
   display: flex; flex-direction: column;
   background-color: var(--color-neutral-white);
