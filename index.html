@@ -39,10 +39,10 @@
 
       <ul class="user-menu user-menu--guest">
         <li class="user-menu__item">
-          <a class="user-menu__auth" href="/login">로그인</a>
+          <a class="user-menu__auth" href="/login" data-open-login>로그인</a>
         </li>
         <li class="user-menu__item">
-          <a class="user-menu__auth user-menu__auth--signup" href="/signup">회원가입</a>
+          <a class="user-menu__auth user-menu__auth--signup" href="/signup" data-open-signup>회원가입</a>
         </li>
       </ul>
     </div>
@@ -2016,8 +2016,103 @@
 </footer>
 
 
+<!-- ====================================================================
+     회원가입 모달
+     ==================================================================== -->
+<div class="modal" id="signup-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="signup-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+
+    <div class="signup__welcome">
+      <p class="signup__eyebrow">밤에 깨어 배우는 사람들의 아지트!</p>
+      <h2 class="signup__title" id="signup-title">조용히 나를 키우는 <img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 에<br>지금 <span class="signup__accent">합류</span>해 보세요.</h2>
+    </div>
+
+    <img class="signup__coupon" src="assets/brand/welcome-coupon-7day.png" alt="첫 둥지 트는 밤 · 신규가입 7일 무료 + 20% 쿠폰" width="200" loading="lazy">
+
+    <form class="signup__form" novalidate>
+      <div class="signup__fields">
+        <input class="signup__input" type="email" name="email" placeholder="이메일" autocomplete="email">
+        <div class="signup__field">
+          <input class="signup__input" type="password" name="password" placeholder="비밀번호" autocomplete="new-password">
+          <button class="signup__eye" type="button" data-pw-toggle aria-label="비밀번호 표시"><span class="icon icon--eye-slash"></span></button>
+        </div>
+        <div class="signup__field">
+          <input class="signup__input" type="password" name="password-confirm" placeholder="비밀번호 확인" autocomplete="new-password">
+          <button class="signup__eye" type="button" data-pw-toggle aria-label="비밀번호 표시"><span class="icon icon--eye-slash"></span></button>
+        </div>
+      </div>
+      <button class="signup__submit" type="submit">가입하기</button>
+    </form>
+
+    <div class="signup__foot">
+      <p class="signup__terms">가입 시, 통합 계정으로 HOOT UP이 제공하는 서비스를 모두 이용하실 수 있습니다. 서비스 이용약관, 개인정보취급방침에 동의합니다.</p>
+      <label class="signup__check">
+        <input type="checkbox" name="marketing">
+        <span>할인 혜택 및 마케팅 정보 수신을 동의합니다.</span>
+      </label>
+      <hr class="signup__divider">
+      <p class="signup__login">이미 가입된 계정이 있나요? <a href="#" data-open-login>로그인 하기</a></p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ====================================================================
+     로그인 모달
+     ==================================================================== -->
+<div class="modal" id="login-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="login-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+
+    <div class="signup__welcome">
+      <p class="signup__eyebrow">밤에 깨어 배우는 당신, 어서 와요</p>
+      <h2 class="signup__title" id="login-title">오늘도 <img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 에서<br>배움을 이어가 볼까요?</h2>
+    </div>
+
+    <form class="signup__form" novalidate>
+      <div class="signup__fields">
+        <input class="signup__input" type="email" name="email" placeholder="이메일" autocomplete="email">
+        <div class="signup__field">
+          <input class="signup__input" type="password" name="password" placeholder="비밀번호" autocomplete="current-password">
+          <button class="signup__eye" type="button" data-pw-toggle aria-label="비밀번호 표시"><span class="icon icon--eye-slash"></span></button>
+        </div>
+      </div>
+      <button class="signup__submit" type="submit">로그인</button>
+      <p class="login__prompt">HOOT UP이 처음이신가요? <a href="#" data-open-signup>간편 회원가입</a></p>
+    </form>
+
+    <div class="login__social">
+      <button class="login__social-btn login__social-btn--kakao" type="button"><span class="icon icon--chat-fill" aria-hidden="true"></span>카카오로 시작하기</button>
+      <button class="login__social-btn login__social-btn--facebook" type="button"><span class="icon icon--facebook" aria-hidden="true"></span>페이스북으로 시작하기</button>
+    </div>
+
+    <p class="login__or"><span>or</span></p>
+
+    <button class="login__social-btn login__social-btn--email" type="button"><span class="icon icon--envelope" aria-hidden="true"></span>이메일 계정으로 시작하기</button>
+
+    <p class="login__disclaimer">처음 로그인하면 HOOT UP의 이용약관 및 개인정보처리방침에 동의한 것으로 간주합니다.</p>
+
+    <div class="login__demo">
+      <p class="login__demo-title">이 포트폴리오 사이트는 일반 사용자 계정과 크리에이터 계정으로 제작되었습니다.</p>
+      <div class="login__demo-options">
+        <label class="login__demo-radio"><input type="radio" name="demo-account" data-demo-email="jiwoo.night@hootup.co.kr" data-demo-pw="demo1234"> 일반 사용자</label>
+        <label class="login__demo-radio"><input type="radio" name="demo-account" data-demo-email="hyunwoo@hootup.co.kr" data-demo-pw="demo1234"> 크리에이터</label>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <script src="js/nav.js" defer></script>
 <script src="js/carousel.js" defer></script>
 <script src="js/search.js" defer></script>
+<script src="js/auth-modal.js" defer></script>
 </body>
 </html>
