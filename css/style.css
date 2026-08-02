@@ -7532,8 +7532,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   padding: 16px 6px 17px;
   border-bottom: 1px solid var(--color-neutral-lighter);
 }
-.order-row:last-child { border-bottom: 0; }
+.order-row[hidden] { display: none; }
+.order-row.is-last { border-bottom: 0; }
 .order-row--head { padding: 0 6px 13px; }
+.order-empty { padding: 34px 6px; text-align: center; color: var(--color-neutral-light); font-size: 14px; }
 .order-row--head span { color: var(--color-neutral-light); font-size: 13px; font-weight: var(--font-weight-bold); }
 .order-cell__date { color: var(--color-neutral-base); font-size: 14px; }
 .order-cell__product { color: var(--color-neutral-darker); font-size: 15px; font-weight: var(--font-weight-bold); line-height: 19px; }
