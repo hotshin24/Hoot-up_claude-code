@@ -7507,3 +7507,91 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .wish-item__price { width: auto; align-items: flex-start; }
   .wish-promo { flex-direction: column; align-items: flex-start; }
 }
+
+/* ============================================================
+   주문·결제 내역 — account-orders.html (Figma 215-29577)
+   ============================================================ */
+/* 헤더 (칩은 .myclass-chip 재사용) */
+.order-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.order-head__title { font-weight: var(--font-weight-bold); font-size: 28px; line-height: 36px; color: var(--color-neutral-darker); }
+.order-head__summary { margin-top: 6px; font-size: 15px; color: var(--color-neutral-base); }
+.order-head__filter { display: flex; gap: 6px; flex-shrink: 0; }
+
+/* 주문 테이블 카드 */
+.order-card {
+  padding: 27px 31px; background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md);
+}
+.order-table { display: flex; flex-direction: column; }
+.order-row {
+  display: grid;
+  grid-template-columns: 100px 204px 118px 110px 84px 1fr;
+  gap: 16px; align-items: center;
+  padding: 16px 6px 17px;
+  border-bottom: 1px solid var(--color-neutral-lighter);
+}
+.order-row:last-child { border-bottom: 0; }
+.order-row--head { padding: 0 6px 13px; }
+.order-row--head span { color: var(--color-neutral-light); font-size: 13px; font-weight: var(--font-weight-bold); }
+.order-cell__date { color: var(--color-neutral-base); font-size: 14px; }
+.order-cell__product { color: var(--color-neutral-darker); font-size: 15px; font-weight: var(--font-weight-bold); line-height: 19px; }
+.order-cell__no { color: var(--color-neutral-light); font-size: 13px; }
+.order-cell__amount { color: var(--color-neutral-darker); font-size: 15px; font-weight: var(--font-weight-bold); }
+.order-cell__status { font-size: 13px; font-weight: var(--font-weight-bold); }
+.order-cell__status--paid { color: var(--color-brand-base); }
+.order-cell__status--refund { color: var(--color-neutral-light); }
+.order-cell__receipt {
+  justify-self: end; padding: 8px 24px; border-radius: var(--radius-pill);
+  background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
+  color: var(--color-neutral-base); font-size: 13px; font-weight: var(--font-weight-bold); white-space: nowrap;
+  transition: border-color .15s ease, color .15s ease;
+}
+.order-cell__receipt:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+
+/* 하단 2열 */
+.order-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.order-pay, .order-refund {
+  padding: 27px; background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md);
+}
+.order-pay__title, .order-refund__title { font-weight: var(--font-weight-bold); font-size: 20px; line-height: 26px; color: var(--color-neutral-darker); }
+
+/* 결제수단 */
+.order-pay { display: flex; flex-direction: column; gap: 10px; }
+.order-pay__method {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 22px 18px 16px; border-radius: var(--radius-md);
+  background-color: var(--color-neutral-lightest);
+}
+.order-pay__card { font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.order-pay__card-sub { margin-top: 3px; font-size: 12px; color: var(--color-neutral-light); }
+.order-pay__badge {
+  padding: 4px 10px; border-radius: var(--radius-pill);
+  background-color: var(--color-brand-lighter); color: var(--color-brand-darker);
+  font-size: 11px; font-weight: var(--font-weight-bold);
+}
+.order-pay__add {
+  display: flex; align-items: center; justify-content: center;
+  padding: 13px; border-radius: var(--radius-md);
+  border: 1px dashed var(--color-neutral-light); background-color: var(--color-neutral-white);
+  color: var(--color-neutral-base); font-size: 14px; font-weight: var(--font-weight-bold);
+  transition: border-color .15s ease, color .15s ease;
+}
+.order-pay__add:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+
+/* 환불 안내 */
+.order-refund { display: flex; flex-direction: column; gap: 14px; }
+.order-refund__desc { padding-top: 2px; font-size: 14px; line-height: 22px; color: var(--color-neutral-base); }
+.order-refund__link { font-size: 14px; font-weight: var(--font-weight-bold); color: var(--color-brand-base); }
+.order-refund__link:hover { text-decoration: underline; }
+
+/* 반응형 */
+@media screen and (max-width: 1279px) {
+  .order-card { overflow-x: auto; }
+  .order-table { min-width: 720px; }
+}
+@media screen and (max-width: 767px) {
+  .order-head { flex-direction: column; align-items: stretch; gap: 16px; }
+  .order-head__filter { flex-wrap: wrap; }
+  .order-bottom { grid-template-columns: 1fr; }
+}
