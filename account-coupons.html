@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>올나잇 패스 — HOOT UP</title>
-  <meta name="description" content="HOOT UP 올나잇 패스 — 구독 상태와 결제 정보, 이용 현황, 결제 이력을 관리하세요.">
+  <title>쿠폰 · 포인트 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 쿠폰 · 포인트 — 보유 쿠폰과 포인트 적립·사용 내역을 확인하고 관리하세요.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -261,13 +261,13 @@
         <ul class="account-nav__list">
           <li><a class="account-nav__link" href="account.html">대시보드</a></li>
           <li><a class="account-nav__link" href="account-classes.html">내 클래스</a></li>
-          <li><a class="account-nav__link is-active" href="account-pass.html" aria-current="page">올나잇 패스</a></li>
+          <li><a class="account-nav__link" href="account-pass.html">올나잇 패스</a></li>
           <li><a class="account-nav__link" href="account-wishlist.html">위시리스트</a></li>
         </ul>
         <p class="account-nav__label">PAYMENT</p>
         <ul class="account-nav__list">
           <li><a class="account-nav__link" href="account-orders.html">주문·결제 내역</a></li>
-          <li><a class="account-nav__link" href="account-coupons.html">쿠폰·포인트</a></li>
+          <li><a class="account-nav__link is-active" href="account-coupons.html" aria-current="page">쿠폰·포인트</a></li>
         </ul>
         <p class="account-nav__label">SETTINGS</p>
         <ul class="account-nav__list">
@@ -276,89 +276,104 @@
         </ul>
     </aside>
 
-    <div class="account-content account-pass-page">
+    <div class="account-content account-coupons-page">
 
       <!-- 헤더 -->
-      <div class="pass-head">
-        <h2 class="pass-head__title">올나잇 패스</h2>
-        <p class="pass-head__desc">구독 상태와 결제 정보를 관리합니다.</p>
+      <div class="cp-head">
+        <h2 class="cp-head__title">쿠폰 · 포인트</h2>
+        <p class="cp-head__summary">보유 쿠폰 3장 · 사용 가능 포인트 4,800P</p>
       </div>
 
-      <!-- 구독 카드 -->
-      <section class="pass-sub">
-        <div class="pass-sub__top">
-          <div class="pass-sub__info">
-            <p class="pass-sub__tagline">
-              <span class="pass-sub__badge">이용 중</span>
-              <span class="pass-sub__eyebrow">ALL-NIGHT PASS · MONTHLY</span>
-            </p>
-            <h3 class="pass-sub__price">월 19,900원</h3>
-            <p class="pass-sub__since">2025.11.20부터 이용 중 · 9개월째</p>
-          </div>
-          <div class="pass-sub__next">
-            <p class="pass-sub__next-label">다음 결제일</p>
-            <p class="pass-sub__next-date">2026. 08. 20</p>
-            <p class="pass-sub__next-card">국민카드 ****4821</p>
-          </div>
+      <!-- 포인트 요약 (다크) -->
+      <section class="cp-summary">
+        <div class="cp-summary__main">
+          <p class="cp-summary__label">사용 가능 포인트</p>
+          <p class="cp-summary__total">4,800<span>P</span></p>
         </div>
-        <div class="pass-sub__actions">
-          <a class="pass-btn pass-btn--ghost" href="#">결제수단 변경</a>
-          <a class="pass-btn pass-btn--ghost" href="#">결제일 변경</a>
-          <a class="pass-btn pass-btn--cancel" href="#">구독 해지</a>
+        <div class="cp-summary__stats">
+          <div class="cp-summary__stat">
+            <p class="cp-summary__stat-label">이번 달 적립</p>
+            <p class="cp-summary__stat-val cp-summary__stat-val--plus">+800P</p>
+          </div>
+          <div class="cp-summary__stat">
+            <p class="cp-summary__stat-label">이번 달 사용</p>
+            <p class="cp-summary__stat-val">-2,000P</p>
+          </div>
+          <div class="cp-summary__stat">
+            <p class="cp-summary__stat-label">소멸 예정</p>
+            <p class="cp-summary__stat-val cp-summary__stat-val--expire">1,200P</p>
+          </div>
         </div>
       </section>
 
-      <!-- 이용 현황 + 결제 이력 -->
-      <div class="pass-grid">
-        <section class="pass-card pass-usage">
-          <h3 class="pass-card__title">이번 달 이용 현황</h3>
-          <div class="pass-usage__list">
-          <div class="pass-usage__item">
-            <div class="pass-usage__row"><span class="pass-usage__label">시청한 강의</span><span class="pass-usage__val">42강</span></div>
-            <div class="pass-usage__track"><span class="pass-usage__fill" style="width:70%;"></span></div>
-          </div>
-          <div class="pass-usage__item">
-            <div class="pass-usage__row"><span class="pass-usage__label">학습 시간</span><span class="pass-usage__val">11시간 20분</span></div>
-            <div class="pass-usage__track"><span class="pass-usage__fill" style="width:55%;"></span></div>
-          </div>
-          <div class="pass-usage__item">
-            <div class="pass-usage__row"><span class="pass-usage__label">구독으로 연 클래스</span><span class="pass-usage__val">3개</span></div>
-            <div class="pass-usage__track"><span class="pass-usage__fill" style="width:30%;"></span></div>
-          </div>
-          </div>
-          <p class="pass-usage__note">구독 한 달 값으로 클래스 2개를 여셨어요. 이번 달도 잘 쓰고 계세요.</p>
-        </section>
-
-        <section class="pass-card pass-history">
-          <h3 class="pass-card__title">결제 이력</h3>
-          <div class="pass-history__list">
-          <div class="pass-history__row">
-            <div class="pass-history__meta"><p class="pass-history__date">2026.07.20</p><p class="pass-history__sub">국민카드 ****4821</p></div>
-            <span class="pass-history__amount">19,900원</span>
-          </div>
-          <div class="pass-history__row">
-            <div class="pass-history__meta"><p class="pass-history__date">2026.06.20</p><p class="pass-history__sub">국민카드 ****4821</p></div>
-            <span class="pass-history__amount">19,900원</span>
-          </div>
-          <div class="pass-history__row">
-            <div class="pass-history__meta"><p class="pass-history__date">2026.05.20</p><p class="pass-history__sub">국민카드 ****4821</p></div>
-            <span class="pass-history__amount">19,900원</span>
-          </div>
-          <div class="pass-history__row">
-            <div class="pass-history__meta"><p class="pass-history__date">2026.04.20</p><p class="pass-history__sub">첫 결제 20% 쿠폰 적용</p></div>
-            <span class="pass-history__amount">15,920원</span>
-          </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- 연간 전환 CTA -->
-      <section class="pass-cta">
-        <div class="pass-cta__text">
-          <h3 class="pass-cta__title">연간 결제로 바꾸면 2개월 무료</h3>
-          <p class="pass-cta__desc">월 19,900원 → 연 199,000원 (월 16,583원)</p>
+      <!-- 보유 쿠폰 -->
+      <section class="cp-card cp-coupons">
+        <div class="cp-coupons__head">
+          <h3 class="cp-card__title">보유 쿠폰 <span class="cp-card__count">3</span></h3>
+          <form class="cp-coupons__form" onsubmit="return false;">
+            <label class="a11y-hidden" for="coupon-code">쿠폰 번호 입력</label>
+            <input class="cp-coupons__input" id="coupon-code" type="text" placeholder="쿠폰 번호 입력" autocomplete="off">
+            <button class="cp-coupons__submit" type="submit">등록</button>
+          </form>
         </div>
-        <a class="pass-cta__btn" href="#">연간 결제로 전환</a>
+        <div class="cp-coupons__grid">
+            <div class="cp-coupon">
+              <span class="cp-coupon__value">20%</span>
+              <div class="cp-coupon__info">
+                <p class="cp-coupon__name">첫 결제 20% 할인</p>
+                <p class="cp-coupon__meta">2026.08.31까지 · 단건 강의 · 최대 30,000원</p>
+              </div>
+            </div>
+            <div class="cp-coupon">
+              <span class="cp-coupon__value">18%</span>
+              <div class="cp-coupon__info">
+                <p class="cp-coupon__name">로드맵 패키지 18% 추가</p>
+                <p class="cp-coupon__meta">2026.08.09까지 · 로드맵 전용</p>
+              </div>
+            </div>
+            <div class="cp-coupon cp-coupon--expiring">
+              <span class="cp-coupon__value">10,000</span>
+              <div class="cp-coupon__info">
+                <p class="cp-coupon__name">10,000원 웰컴 쿠폰</p>
+                <p class="cp-coupon__meta">3일 후 만료 · 50,000원 이상 결제</p>
+              </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- 포인트 내역 -->
+      <section class="cp-card cp-history">
+        <h3 class="cp-card__title">포인트 내역</h3>
+        <div class="cp-history__list">
+          <div class="cp-history__row">
+            <div class="cp-history__info">
+              <p class="cp-history__label">수강평 작성 적립</p>
+              <p class="cp-history__meta">2026.07.28 · 반응형 웹 퍼블리싱</p>
+            </div>
+            <span class="cp-history__delta cp-history__delta--plus">+500P</span>
+          </div>
+          <div class="cp-history__row">
+            <div class="cp-history__info">
+              <p class="cp-history__label">클래스 결제 사용</p>
+              <p class="cp-history__meta">2026.06.28 · 클로드 코드 마스터 과정</p>
+            </div>
+            <span class="cp-history__delta cp-history__delta--minus">-2,000P</span>
+          </div>
+          <div class="cp-history__row">
+            <div class="cp-history__info">
+              <p class="cp-history__label">출석 이벤트 적립</p>
+              <p class="cp-history__meta">2026.06.14 · 7일 연속 출석</p>
+            </div>
+            <span class="cp-history__delta cp-history__delta--plus">+300P</span>
+          </div>
+          <div class="cp-history__row">
+            <div class="cp-history__info">
+              <p class="cp-history__label">친구 초대 적립</p>
+              <p class="cp-history__meta">2026.05.30 · 초대 2명 가입</p>
+            </div>
+            <span class="cp-history__delta cp-history__delta--plus">+2,000P</span>
+          </div>
+        </div>
       </section>
 
     </div>

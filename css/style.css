@@ -7595,3 +7595,95 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .order-head__filter { flex-wrap: wrap; }
   .order-bottom { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   쿠폰·포인트 — account-coupons.html (Figma 215-29739)
+   ============================================================ */
+/* 헤더 */
+.cp-head__title { font-weight: var(--font-weight-bold); font-size: 28px; line-height: 36px; color: var(--color-neutral-darker); }
+.cp-head__summary { margin-top: 6px; font-size: 15px; color: var(--color-neutral-base); }
+
+/* 포인트 요약 (다크) */
+.cp-summary {
+  display: flex; align-items: center; gap: 40px;
+  padding: 30px; border-radius: var(--radius-md);
+  background-color: var(--color-neutral-darker); color: var(--color-neutral-white);
+}
+.cp-summary__main { flex-shrink: 0; display: flex; flex-direction: column; gap: 6px; }
+.cp-summary__label { font-size: 13px; color: rgb(255 255 255 / 0.6); }
+.cp-summary__total { font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 48px; line-height: 48px; color: var(--color-brand-secondary); }
+.cp-summary__total span { margin-left: 3px; font-size: 20px; }
+.cp-summary__stats {
+  flex: 1; min-width: 0; display: flex; gap: 20px;
+  padding-left: 41px; border-left: 1px solid rgb(255 255 255 / 0.1);
+}
+.cp-summary__stat { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.cp-summary__stat-label { font-size: 13px; color: rgb(255 255 255 / 0.6); }
+.cp-summary__stat-val { font-size: 20px; font-weight: var(--font-weight-bold); color: var(--color-neutral-white); }
+.cp-summary__stat-val--plus { color: var(--color-brand-accent); }
+.cp-summary__stat-val--expire { color: var(--color-danger-base); }
+
+/* 카드 공통 */
+.cp-card {
+  padding: 27px 31px; background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md);
+}
+.cp-card__title { font-weight: var(--font-weight-bold); font-size: 20px; line-height: 26px; color: var(--color-neutral-darker); }
+.cp-card__count { color: var(--color-brand-base); }
+
+/* 보유 쿠폰 */
+.cp-coupons__head { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 18px; }
+.cp-coupons__form { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.cp-coupons__input {
+  width: 190px; height: 40px; padding: 0 19px;
+  background-color: var(--color-neutral-lightest);
+  border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md);
+  font-size: 14px; color: var(--color-neutral-darker);
+}
+.cp-coupons__input::placeholder { color: #757575; }
+.cp-coupons__input:focus { outline: none; border-color: var(--color-brand-base); }
+.cp-coupons__submit {
+  padding: 11px 20px; border-radius: var(--radius-pill);
+  background-color: var(--color-brand-base); color: var(--color-neutral-white);
+  font-size: 14px; font-weight: var(--font-weight-bold); cursor: pointer;
+}
+.cp-coupons__submit:hover { background-color: var(--color-brand-darker); }
+.cp-coupons__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cp-coupon {
+  display: flex; align-items: center; gap: 18px;
+  padding: 20px 22px; border-radius: var(--radius-md);
+  background-color: var(--color-neutral-lightest);
+}
+.cp-coupon__value { flex-shrink: 0; font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 30px; color: var(--color-brand-base); }
+.cp-coupon__info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.cp-coupon__name { font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.cp-coupon__meta { font-size: 12px; color: var(--color-neutral-light); }
+.cp-coupon--expiring { background-color: var(--color-danger-lighter); }
+.cp-coupon--expiring .cp-coupon__value { color: var(--color-danger-base); }
+.cp-coupon--expiring .cp-coupon__meta { color: var(--color-danger-dark); }
+
+/* 포인트 내역 */
+.cp-history__list { margin-top: 18px; display: flex; flex-direction: column; }
+.cp-history__row {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 15px 0 16px; border-bottom: 1px solid var(--color-neutral-lighter);
+}
+.cp-history__row:last-child { border-bottom: 0; }
+.cp-history__info { display: flex; flex-direction: column; gap: 3px; }
+.cp-history__label { font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.cp-history__meta { font-size: 12px; color: var(--color-neutral-light); }
+.cp-history__delta { font-size: 16px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.cp-history__delta--plus { color: var(--color-brand-base); }
+
+/* 반응형 */
+@media screen and (max-width: 1279px) {
+  .cp-summary { flex-direction: column; align-items: stretch; gap: 24px; }
+  .cp-summary__stats { padding-left: 0; border-left: 0; padding-top: 24px; border-top: 1px solid rgb(255 255 255 / 0.1); }
+}
+@media screen and (max-width: 767px) {
+  .cp-coupons__head { flex-direction: column; align-items: stretch; }
+  .cp-coupons__form { width: 100%; }
+  .cp-coupons__input { flex: 1; width: auto; }
+  .cp-coupons__grid { grid-template-columns: 1fr; }
+  .cp-summary__stats { flex-direction: column; }
+}
