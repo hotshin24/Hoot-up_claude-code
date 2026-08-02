@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>전체 · HOOT UP DESK — HOOT UP</title>
-  <meta name="description" content="숫자로 일과 커리어의 변화를 읽습니다. HOOT UP DESK Data 섹션 — 채용·연봉·합격률·수요를 데이터로 분석하는 저널리즘.">
+  <title>내 계정 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 내 계정 — 수강 기록과 구독, 결제 내역, 쿠폰·포인트, 계정 설정을 한 곳에서 관리하세요.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,13 +15,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <a class="skip-link" href="#main">본문 바로가기</a>
 
+<!-- ======================================================================
+     헤더
+     ====================================================================== -->
 <header class="site-header">
   <div class="site-header__inner l-container">
 
     <div class="site-header__utility">
-      <a class="site-header__logo" href="index.html">
+      <a class="site-header__logo" href="/">
         <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
       </a>
 
@@ -237,133 +241,252 @@
   <div class="mega-backdrop" hidden></div>
 </header>
 
-<main id="main" class="desk-page desk-page--category">
-  <div class="desk-page__inner l-container">
+<main id="main" class="account" data-screen-label="내 계정">
 
-    <div class="desk-artbar">
-      <p class="desk-artbar__brand"><a href="desk.html">HOOT UP DESK</a><span class="desk-artbar__sep" aria-hidden="true">|</span><span>섹션</span></p>
-      <p class="desk-artbar__date">2026년 7월 31일 금요일</p>
+  <!-- ===== 히어로 ===== -->
+  <section class="account-hero">
+    <div class="l-container">
+      <p class="account-hero__eyebrow">MY ACCOUNT</p>
+      <h1 class="account-hero__title">내 계정</h1>
+      <p class="account-hero__desc">수강 기록과 구독, 결제 내역을 한 곳에서 관리하세요.</p>
     </div>
+  </section>
 
-    <header class="desk-cathead">
-      <h1 class="desk-cathead__title">전체</h1>
-      <p class="desk-cathead__desc">HOOT UP DESK의 모든 기사를 한자리에서 <b>총 173건</b></p>
-      <ul class="desk-cathead__sort" aria-label="정렬">
-        <li><a class="desk-cathead__sortlink desk-cathead__sortlink--active" href="#" aria-current="true">최신순</a></li>
-        <li><a class="desk-cathead__sortlink" href="#">많이 본 순</a></li>
-      </ul>
-    </header>
+  <!-- ===== 본문 ===== -->
+  <div class="account-body l-container">
 
-    <div class="desk-catwrap">
-      <aside class="desk-filter" aria-label="기사 필터">
-        <div class="desk-filter__group">
-          <h2 class="desk-filter__title">섹션</h2>
-          <ul>
-          <li><a class="desk-filter__row desk-filter__row--active" href="desk-all-1.html" aria-current="page"><span class="desk-filter__name">전체</span><span class="desk-filter__count">173</span></a></li>
-          <li><a class="desk-filter__row" href="desk-tech-ai-1.html"><span class="desk-filter__name">Tech·AI</span><span class="desk-filter__count">43</span></a></li>
-          <li><a class="desk-filter__row" href="desk-career-1.html"><span class="desk-filter__name">Career</span><span class="desk-filter__count">34</span></a></li>
-          <li><a class="desk-filter__row" href="desk-development-it-1.html"><span class="desk-filter__name">Development·IT</span><span class="desk-filter__count">36</span></a></li>
-          <li><a class="desk-filter__row" href="desk-interview-1.html"><span class="desk-filter__name">Interview</span><span class="desk-filter__count">30</span></a></li>
-          <li><a class="desk-filter__row" href="desk-data-1.html"><span class="desk-filter__name">Data</span><span class="desk-filter__count">30</span></a></li>
-          </ul>
-        </div>
-        <div class="desk-filter__group">
-          <h2 class="desk-filter__title">기간</h2>
-          <ul class="desk-period">
-          <li><a class="desk-period__chip desk-period__chip--active" href="#">1주</a></li>
-          <li><a class="desk-period__chip" href="#">1개월</a></li>
-          <li><a class="desk-period__chip" href="#">3개월</a></li>
-          <li><a class="desk-period__chip" href="#">전체</a></li>
-          </ul>
-        </div>
-        <div class="desk-filter__group">
-          <h2 class="desk-filter__title">기자</h2>
-          <ul>
-          <li><a class="desk-filter__reporter" href="#">김도윤 기자</a></li>
-          <li><a class="desk-filter__reporter" href="#">박하늘 기자</a></li>
-          <li><a class="desk-filter__reporter" href="#">정태현 기자</a></li>
-          <li><a class="desk-filter__reporter" href="#">한지우 기자</a></li>
-          </ul>
-        </div>
-      </aside>
+    <!-- 사이드 내비 -->
+    <aside class="account-nav" aria-label="계정 메뉴">
+        <p class="account-nav__label">LEARNING</p>
+        <ul class="account-nav__list">
+          <li><a class="account-nav__link is-active" href="account.html" aria-current="page">대시보드</a></li>
+          <li><a class="account-nav__link" href="#">내 클래스</a></li>
+          <li><a class="account-nav__link" href="#">올나잇 패스</a></li>
+          <li><a class="account-nav__link" href="#">위시리스트</a></li>
+        </ul>
+        <p class="account-nav__label">PAYMENT</p>
+        <ul class="account-nav__list">
+          <li><a class="account-nav__link" href="#">주문·결제 내역</a></li>
+          <li><a class="account-nav__link" href="#">쿠폰·포인트</a></li>
+        </ul>
+        <p class="account-nav__label">SETTINGS</p>
+        <ul class="account-nav__list">
+          <li><a class="account-nav__link" href="#">회원정보</a></li>
+          <li><a class="account-nav__link" href="#">알림 설정</a></li>
+        </ul>
+    </aside>
 
-      <section class="desk-newslist" aria-label="전체 기사 목록">
-        <p class="desk-newsgroup__date">2026. 07. 14</p>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">웹 애니메이션 라이브러리 비교</span>
-          <span class="desk-newsrow__byline">한지우 기자</span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">폼 UX, 이탈을 줄이는 설계</span>
-          <span class="desk-newsrow__byline">김도윤 기자</span>
-        </a>
-        <p class="desk-newsgroup__date">2026. 07. 13</p>
-        <a class="desk-newsfeat" href="desk-ai-coding.html">
-          <div class="desk-newsfeat__body">
-            <h3 class="desk-newsfeat__title">AI 시대의 코드 품질 관리</h3>
-            <p class="desk-newsfeat__excerpt">AI 협업 시대에 맞춰 리뷰·테스트 체계가 어떻게 바뀌는지 짚었다.</p>
-            <p class="desk-newsfeat__byline">한지우 기자</p>
+    <div class="account-content">
+
+      <!-- 프로필 + 통계 -->
+      <section class="account-card account-profile">
+        <div class="account-profile__head">
+          <img class="account-profile__avatar" src="assets/avatar/user.jpg" alt="밤샘러 지우 프로필">
+          <div class="account-profile__meta">
+            <div class="account-profile__nameline">
+              <h2 class="account-profile__name">밤샘러 지우</h2>
+              <span class="account-profile__level">올빼미 Lv.4</span>
+            </div>
+            <p class="account-profile__email">jiwoo.night@hootup.co.kr · 2024.03.11 가입</p>
           </div>
-          <span class="desk-newsfeat__thumb"><img src="assets/news/frontend-2026.jpg" alt="코드 리뷰 화면이 띄워진 모니터" loading="lazy"></span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">RAG, 사내 지식과 AI를 잇다</span>
-          <span class="desk-newsrow__byline">김도윤 기자</span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">사수 없는 회사에서 성장하기</span>
-          <span class="desk-newsrow__byline">박하늘 기자</span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">개발 블로그, 커리어에 도움될까</span>
-          <span class="desk-newsrow__byline">정태현 기자</span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">연봉보다 중요한 첫 직장 조건</span>
-          <span class="desk-newsrow__byline">박하늘 기자</span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">이력서 프로젝트, 몇 개가 적당할까</span>
-          <span class="desk-newsrow__byline">박하늘 기자</span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">“대기업을 떠나 스타트업으로”</span>
-          <span class="desk-newsrow__byline">김도윤 기자</span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">“첫 오픈소스 기여, 그날의 떨림”</span>
-          <span class="desk-newsrow__byline">한지우 기자</span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">“워킹맘 개발자의 시간 관리법”</span>
-          <span class="desk-newsrow__byline">박하늘 기자</span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">부트캠프 수강료 대비 취업 성과</span>
-          <span class="desk-newsrow__byline">박하늘 기자</span>
-        </a>
-        <nav class="pager" aria-label="페이지 매김">
-          <a class="pager__arrow" href="desk-all-6.html" aria-label="이전 페이지">
-            <span class="icon icon--chevron-left"></span>
-          </a>
-          <a class="pager__num" href="desk-all-1.html">1</a>
-          <a class="pager__num" href="desk-all-2.html">2</a>
-          <a class="pager__num" href="desk-all-3.html">3</a>
-          <a class="pager__num" href="desk-all-4.html">4</a>
-          <a class="pager__num" href="desk-all-5.html">5</a>
-          <a class="pager__num" href="desk-all-6.html">6</a>
-          <a class="pager__num pager__num--active" href="desk-all-7.html" aria-current="page">7</a>
-          <a class="pager__num" href="desk-all-8.html">8</a>
-          <a class="pager__num" href="desk-all-9.html">9</a>
-          <a class="pager__num" href="desk-all-10.html">10</a>
-          <a class="pager__arrow" href="desk-all-8.html" aria-label="다음 페이지">
-            <span class="icon icon--chevron-right"></span>
-          </a>
-        </nav>
+          <div class="account-profile__actions">
+            <a class="account-btn account-btn--ghost" href="#">프로필 편집</a>
+            <a class="account-btn account-btn--primary" href="#">이어서 학습</a>
+          </div>
+        </div>
+        <div class="account-stats">
+          <div class="account-stat"><p class="account-stat__label">수강 중</p><p class="account-stat__value">5<span>개</span></p></div>
+          <div class="account-stat"><p class="account-stat__label">수료</p><p class="account-stat__value">12<span>개</span></p></div>
+          <div class="account-stat"><p class="account-stat__label">보유 쿠폰</p><p class="account-stat__value">3<span>장</span></p></div>
+          <div class="account-stat"><p class="account-stat__label">포인트</p><p class="account-stat__value account-stat__value--point">4,800<span>P</span></p></div>
+        </div>
       </section>
-    </div>
 
+      <!-- 구독: 올나잇 패스 -->
+      <section class="account-pass">
+        <div class="account-pass__info">
+          <p class="account-pass__tagline">
+            <span class="account-pass__badge">이용 중</span>
+            <span class="account-pass__eyebrow">ALL-NIGHT PASS</span>
+          </p>
+          <h3 class="account-pass__title">올나잇 패스 · 월 구독</h3>
+          <p class="account-pass__meta">다음 결제일 2026. 08. 20 · 월 19,900원 · 국민카드 ****4821</p>
+        </div>
+        <div class="account-pass__actions">
+          <a class="account-btn account-btn--onblue-ghost" href="#">결제수단 변경</a>
+          <a class="account-btn account-btn--onblue" href="#">구독 관리</a>
+        </div>
+      </section>
+
+      <!-- 이어서 학습하기 -->
+      <section class="account-card account-learn">
+        <div class="account-card__head">
+          <h3 class="account-card__title">이어서 학습하기</h3>
+          <a class="account-card__more" href="#">내 클래스 전체 보기</a>
+        </div>
+        <ul class="account-learn__list">
+          <li class="account-learn__item">
+            <span class="account-learn__thumb"><img src="assets/course/cat-dev-react.png" alt="" loading="lazy"></span>
+            <div class="account-learn__body">
+              <p class="account-learn__meta">코드랩 현우 · 개발 &amp; IT</p>
+              <p class="account-learn__title">포트폴리오까지 끝내는 React 프론트엔드 실전 프로젝트</p>
+              <div class="account-progress">
+                <div class="account-progress__track"><span class="account-progress__fill" style="width:62%;"></span></div>
+                <span class="account-progress__pct">62%</span>
+              </div>
+            </div>
+            <a class="account-btn account-btn--dark" href="course-responsive-publishing.html">이어보기</a>
+          </li>
+          <li class="account-learn__item">
+            <span class="account-learn__thumb"><img src="assets/course/design-figma-uxui.png" alt="" loading="lazy"></span>
+            <div class="account-learn__body">
+              <p class="account-learn__meta">디자이너 서린 · 디자인 &amp; 크리에이티브</p>
+              <p class="account-learn__title">피그마로 완성하는 UX/UI 디자인 입문</p>
+              <div class="account-progress">
+                <div class="account-progress__track"><span class="account-progress__fill" style="width:28%;"></span></div>
+                <span class="account-progress__pct">28%</span>
+              </div>
+            </div>
+            <a class="account-btn account-btn--dark" href="course-responsive-publishing.html">이어보기</a>
+          </li>
+          <li class="account-learn__item">
+            <span class="account-learn__thumb"><img src="assets/course/cat-dev-claude-code.png" alt="" loading="lazy"></span>
+            <div class="account-learn__body">
+              <p class="account-learn__meta">새벽코딩 제이든 · 개발 &amp; IT</p>
+              <p class="account-learn__title">개발 생산성 10배 올리는 클로드 코드 마스터 과정</p>
+              <div class="account-progress">
+                <div class="account-progress__track"><span class="account-progress__fill account-progress__fill--done" style="width:94%;"></span></div>
+                <span class="account-progress__pct">94%</span>
+              </div>
+            </div>
+            <a class="account-btn account-btn--dark" href="course-responsive-publishing.html">이어보기</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 주문·결제 내역 -->
+      <section class="account-card account-orders">
+        <div class="account-card__head">
+          <h3 class="account-card__title">주문 · 결제 내역</h3>
+          <a class="account-card__more" href="#">전체 내역</a>
+        </div>
+        <ul class="account-orders__table">
+          <li class="account-orders__row account-orders__row--head">
+            <span class="account-orders__date">주문일</span>
+            <span class="account-orders__product">상품</span>
+            <span class="account-orders__amount">결제 금액</span>
+            <span class="account-orders__status">상태</span>
+            <span></span>
+          </li>
+          <li class="account-orders__row">
+            <span class="account-orders__date">2026.07.20</span>
+            <span class="account-orders__product">올나잇 패스 월 구독</span>
+            <span class="account-orders__amount">19,900원</span>
+            <span class="account-orders__status account-orders__status--paid">결제 완료</span>
+            <a class="account-btn account-btn--sm" href="#">영수증</a>
+          </li>
+          <li class="account-orders__row">
+            <span class="account-orders__date">2026.06.28</span>
+            <span class="account-orders__product">개발 생산성 10배 올리는 클로드 코드 마스터 과정</span>
+            <span class="account-orders__amount">107,800원</span>
+            <span class="account-orders__status account-orders__status--paid">결제 완료</span>
+            <a class="account-btn account-btn--sm" href="#">영수증</a>
+          </li>
+          <li class="account-orders__row">
+            <span class="account-orders__date">2026.05.14</span>
+            <span class="account-orders__product">피그마로 완성하는 UX/UI 디자인 입문</span>
+            <span class="account-orders__amount">85,800원</span>
+            <span class="account-orders__status account-orders__status--refund">환불 완료</span>
+            <a class="account-btn account-btn--sm" href="#">영수증</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 쿠폰 + 포인트 -->
+      <div class="account-benefit">
+        <section class="account-card account-coupons">
+          <h3 class="account-card__title">보유 쿠폰 <span class="account-card__count">3</span></h3>
+          <ul class="account-coupons__list">
+            <li class="account-coupon">
+              <div class="account-coupon__info">
+                <p class="account-coupon__name">첫 결제 20% 할인</p>
+                <p class="account-coupon__meta">2026.08.31까지 · 단건 강의</p>
+              </div>
+              <span class="account-coupon__value">20%</span>
+            </li>
+            <li class="account-coupon">
+              <div class="account-coupon__info">
+                <p class="account-coupon__name">로드맵 패키지 18% 추가</p>
+                <p class="account-coupon__meta">2026.08.09까지 · 로드맵 전용</p>
+              </div>
+              <span class="account-coupon__value">18%</span>
+            </li>
+            <li class="account-coupon account-coupon--expiring">
+              <div class="account-coupon__info">
+                <p class="account-coupon__name">10,000원 웰컴 쿠폰</p>
+                <p class="account-coupon__meta">3일 후 만료</p>
+              </div>
+              <span class="account-coupon__value">10,000</span>
+            </li>
+          </ul>
+        </section>
+        <section class="account-points">
+          <h3 class="account-points__title">포인트</h3>
+          <p class="account-points__total">4,800<span>P</span></p>
+          <p class="account-points__expire">1,200P가 2026.09.30 소멸 예정입니다.</p>
+          <ul class="account-points__list">
+              <li><span>수강평 작성 적립</span><span class="account-points__delta account-points__delta--plus">+500P</span></li>
+              <li><span>클래스 결제 사용</span><span class="account-points__delta account-points__delta--minus">-2,000P</span></li>
+              <li><span>출석 이벤트 적립</span><span class="account-points__delta account-points__delta--plus">+300P</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- 계정 설정 -->
+      <section class="account-card account-settings">
+        <h3 class="account-card__title">계정 설정</h3>
+        <ul class="account-settings__list">
+          <li class="account-settings__row">
+            <div class="account-settings__text">
+              <p class="account-settings__label">회원정보 수정</p>
+              <p class="account-settings__desc">닉네임, 연락처, 관심 카테고리</p>
+            </div>
+            <a class="account-btn account-btn--sm" href="#">수정</a>
+          </li>
+          <li class="account-settings__row">
+            <div class="account-settings__text">
+              <p class="account-settings__label">비밀번호 변경</p>
+              <p class="account-settings__desc">마지막 변경 2025.11.02</p>
+            </div>
+            <a class="account-btn account-btn--sm" href="#">변경</a>
+          </li>
+          <li class="account-settings__row">
+            <div class="account-settings__text">
+              <p class="account-settings__label">야간 학습 알림</p>
+              <p class="account-settings__desc">밤 10시, 오늘의 강의를 알려드려요</p>
+            </div>
+            <button class="account-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="야간 학습 알림"><span class="account-toggle__knob"></span></button>
+          </li>
+          <li class="account-settings__row">
+            <div class="account-settings__text">
+              <p class="account-settings__label">마케팅 정보 수신</p>
+              <p class="account-settings__desc">할인·이벤트 소식 이메일 및 앱 푸시</p>
+            </div>
+            <button class="account-toggle" type="button" role="switch" aria-checked="false" aria-label="마케팅 정보 수신"><span class="account-toggle__knob"></span></button>
+          </li>
+          <li class="account-settings__row account-settings__row--danger">
+            <div class="account-settings__text">
+              <p class="account-settings__label account-settings__label--danger">회원 탈퇴</p>
+              <p class="account-settings__desc">보유 포인트와 수강 기록이 모두 삭제됩니다</p>
+            </div>
+            <a class="account-btn account-btn--danger" href="#">탈퇴하기</a>
+          </li>
+        </ul>
+      </section>
+
+    </div>
   </div>
+
 </main>
 
 <footer class="site-footer">
@@ -480,7 +603,9 @@
   </div>
 </footer>
 
+
 <script src="js/nav.js" defer></script>
+<script src="js/carousel.js" defer></script>
 <script src="js/search.js" defer></script>
 </body>
 </html>

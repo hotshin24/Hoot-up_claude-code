@@ -82,5 +82,14 @@
         if (pwField) pwField.value = radio.getAttribute("data-demo-pw");
       });
     });
+
+    // 선택한 데모 계정에 맞는 페이지로 이동 (일반 사용자 → 계정 대시보드)
+    var loginForm = loginModal.querySelector("form");
+    if (loginForm) {
+      loginForm.addEventListener("submit", function () {
+        var checked = loginModal.querySelector("[data-demo-dest]:checked");
+        if (checked) window.location.href = checked.getAttribute("data-demo-dest");
+      });
+    }
   }
 })();

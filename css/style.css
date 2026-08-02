@@ -6944,3 +6944,264 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   margin: 0;
   accent-color: var(--color-brand-base);
 }
+
+/* ============================================================
+   내 계정 대시보드 — account.html (Figma 214-28016)
+   ============================================================ */
+.account { background-color: var(--color-neutral-lightest); }
+
+/* 히어로 */
+.account-hero {
+  background-image: linear-gradient(to right, #4f7bfe 0%, #2948ff 100%);
+  color: var(--color-neutral-white);
+}
+.account-hero .l-container { padding-block: 46px 40px; }
+.account-hero__eyebrow {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-extrabold);
+  font-size: 13px;
+  letter-spacing: 1.82px;
+  color: var(--color-brand-light);
+}
+.account-hero__title {
+  margin-top: 6px;
+  font-weight: var(--font-weight-bold);
+  font-size: 36px;
+  line-height: 42px;
+}
+.account-hero__desc {
+  margin-top: 8px;
+  font-size: 16px;
+  color: rgb(255 255 255 / 0.78);
+}
+
+/* 본문 레이아웃 */
+.account-body {
+  display: grid;
+  grid-template-columns: 236px minmax(0, 1fr);
+  gap: 30px;
+  padding-block: 40px 80px;
+}
+
+/* 사이드 내비 */
+.account-nav {
+  align-self: start;
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 25px 19px;
+  background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-lighter);
+  border-radius: var(--radius-md);
+}
+.account-nav__label {
+  padding-left: 10px;
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-extrabold);
+  font-size: 11px;
+  letter-spacing: 1.32px;
+  color: var(--color-neutral-light);
+}
+.account-nav__label:not(:first-child) { padding-top: 10px; }
+.account-nav__list { display: flex; flex-direction: column; gap: 2px; }
+.account-nav__link {
+  display: block;
+  padding: 11px 12px;
+  border-radius: var(--radius-pill);
+  color: var(--color-neutral-base);
+  font-size: 15px;
+  font-weight: var(--font-weight-bold);
+  transition: background-color .15s ease, color .15s ease;
+}
+.account-nav__link:hover { background-color: var(--color-neutral-lightest); color: var(--color-brand-base); }
+.account-nav__link.is-active {
+  background-color: var(--color-brand-lighter);
+  color: var(--color-brand-base);
+}
+.account-nav__link.is-active:hover { background-color: var(--color-brand-lighter); }
+
+/* 콘텐츠 공통 카드 */
+.account-content { display: flex; flex-direction: column; gap: 30px; }
+.account-card {
+  padding: 31px;
+  background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-lighter);
+  border-radius: var(--radius-md);
+}
+.account-card__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+.account-card__title { font-weight: var(--font-weight-bold); font-size: 19px; color: var(--color-neutral-darker); }
+.account-card__count { color: var(--color-brand-base); }
+.account-card__more { color: var(--color-brand-base); font-size: 13px; }
+.account-card__more:hover { text-decoration: underline; }
+
+/* 버튼 */
+.account-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 42px; padding: 0 20px;
+  border-radius: var(--radius-pill);
+  font-weight: var(--font-weight-bold); font-size: 14px;
+  white-space: nowrap;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease, opacity .15s ease;
+}
+.account-btn--primary { background-color: var(--color-brand-base); color: var(--color-text-inverse); }
+.account-btn--primary:hover { background-color: var(--color-brand-darker); }
+.account-btn--ghost { border: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-dark); }
+.account-btn--ghost:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+.account-btn--dark { height: 40px; background-color: var(--color-neutral-darker); color: var(--color-text-inverse); }
+.account-btn--dark:hover { opacity: 0.88; }
+.account-btn--sm { height: 32px; padding: 0 14px; border: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-base); font-size: 13px; }
+.account-btn--sm:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+.account-btn--danger { height: 38px; color: var(--color-danger-base); font-size: 13px; }
+.account-btn--danger:hover { text-decoration: underline; }
+.account-btn--onblue { background-color: var(--color-neutral-white); color: var(--color-brand-base); }
+.account-btn--onblue:hover { opacity: 0.9; }
+.account-btn--onblue-ghost { border: 1px solid rgb(255 255 255 / 0.5); color: var(--color-neutral-white); }
+.account-btn--onblue-ghost:hover { background-color: rgb(255 255 255 / 0.12); }
+
+/* 프로필 + 통계 */
+.account-profile__head { display: flex; align-items: center; gap: 20px; }
+.account-profile__avatar { width: 84px; height: 84px; border-radius: var(--radius-circle); object-fit: cover; flex-shrink: 0; }
+.account-profile__meta { flex: 1; min-width: 0; }
+.account-profile__nameline { display: flex; align-items: center; gap: 8px; }
+.account-profile__name { font-weight: var(--font-weight-bold); font-size: 22px; color: var(--color-neutral-darker); }
+.account-profile__level {
+  padding: 4px 10px; border-radius: var(--radius-pill);
+  background-color: var(--color-brand-lighter); color: var(--color-brand-base);
+  font-size: 12px; font-weight: var(--font-weight-bold);
+}
+.account-profile__email { margin-top: 8px; color: var(--color-neutral-base); font-size: 14px; }
+.account-profile__actions { display: flex; gap: 8px; flex-shrink: 0; }
+.account-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 26px; }
+.account-stat { padding: 18px 20px; background-color: var(--color-neutral-lightest); border-radius: var(--radius-md); }
+.account-stat__label { color: var(--color-neutral-base); font-size: 13px; }
+.account-stat__value { margin-top: 6px; font-weight: var(--font-weight-bold); font-size: 26px; color: var(--color-neutral-darker); }
+.account-stat__value span { margin-left: 2px; font-size: 14px; font-weight: var(--font-weight-regular); color: var(--color-neutral-base); }
+.account-stat__value--point { color: var(--color-brand-base); }
+.account-stat__value--point span { color: var(--color-brand-base); }
+
+/* 구독: 올나잇 패스 */
+.account-pass {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 30px; border-radius: var(--radius-md);
+  background-image: linear-gradient(to right, #4f7bfe 0%, #2948ff 100%);
+  color: var(--color-neutral-white);
+}
+.account-pass__tagline { display: flex; align-items: center; gap: 8px; }
+.account-pass__badge {
+  padding: 4px 10px; border-radius: var(--radius-pill);
+  background-color: var(--color-brand-accent); color: var(--color-brand-darker);
+  font-size: 12px; font-weight: var(--font-weight-bold);
+}
+.account-pass__eyebrow { font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 12px; letter-spacing: 1.2px; color: rgb(255 255 255 / 0.72); }
+.account-pass__title { margin-top: 12px; font-weight: var(--font-weight-bold); font-size: 24px; line-height: 30px; }
+.account-pass__meta { margin-top: 10px; font-size: 14px; color: rgb(255 255 255 / 0.82); }
+.account-pass__actions { display: flex; gap: 8px; flex-shrink: 0; }
+
+/* 이어서 학습하기 */
+.account-learn__list { display: flex; flex-direction: column; }
+.account-learn__item { display: flex; align-items: center; gap: 18px; padding: 15px 0; }
+.account-learn__item + .account-learn__item { border-top: 1px solid var(--color-neutral-lighter); }
+.account-learn__thumb { flex-shrink: 0; width: 132px; height: 78px; border-radius: var(--radius-sm); overflow: hidden; }
+.account-learn__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.account-learn__body { flex: 1; min-width: 0; }
+.account-learn__meta { color: var(--color-neutral-light); font-size: 12px; }
+.account-learn__title { margin-top: 4px; color: var(--color-neutral-darker); font-weight: var(--font-weight-bold); font-size: 15px; }
+.account-progress { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+.account-progress__track { flex: 1; height: 6px; border-radius: var(--radius-pill); background-color: var(--color-neutral-lighter); overflow: hidden; }
+.account-progress__fill { display: block; height: 100%; border-radius: var(--radius-pill); background-color: var(--color-brand-base); }
+.account-progress__fill--done { background-color: var(--color-brand-accent); }
+.account-progress__pct { flex-shrink: 0; color: var(--color-neutral-base); font-size: 13px; font-weight: var(--font-weight-bold); }
+
+/* 주문·결제 내역 */
+.account-orders__table { display: flex; flex-direction: column; }
+.account-orders__row {
+  display: grid;
+  grid-template-columns: 116px 1fr 120px 94px 90px;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 6px;
+}
+.account-orders__row + .account-orders__row { border-top: 1px solid var(--color-neutral-lighter); }
+.account-orders__row--head { padding: 0 6px 12px; border-bottom: 1px solid var(--color-neutral-lighter); }
+.account-orders__row--head span { color: var(--color-neutral-light); font-size: 13px; }
+.account-orders__date { color: var(--color-neutral-base); font-size: 14px; }
+.account-orders__product { color: var(--color-neutral-darker); font-size: 14px; }
+.account-orders__amount { color: var(--color-neutral-darker); font-weight: var(--font-weight-bold); font-size: 14px; }
+.account-orders__status { font-size: 13px; font-weight: var(--font-weight-bold); }
+.account-orders__status--paid { color: var(--color-brand-base); }
+.account-orders__status--refund { color: var(--color-neutral-light); }
+.account-orders__row .account-btn { justify-self: end; }
+
+/* 쿠폰 + 포인트 */
+.account-benefit { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.account-benefit .account-card { padding: 27px; }
+.account-coupons .account-card__title { margin-bottom: 16px; }
+.account-coupons__list { display: flex; flex-direction: column; gap: 10px; }
+.account-coupon {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 16px 18px; border-radius: var(--radius-md);
+  background-color: var(--color-neutral-lightest);
+}
+.account-coupon__name { color: var(--color-neutral-darker); font-weight: var(--font-weight-bold); font-size: 15px; }
+.account-coupon__meta { margin-top: 3px; color: var(--color-neutral-light); font-size: 12px; }
+.account-coupon__value {
+  font-family: var(--font-display); font-weight: var(--font-weight-extrabold);
+  font-size: 22px; color: var(--color-brand-base);
+}
+.account-coupon--expiring { background-color: var(--color-danger-lighter); }
+.account-coupon--expiring .account-coupon__meta { color: var(--color-danger-dark); }
+.account-coupon--expiring .account-coupon__value { font-size: 20px; color: var(--color-danger-base); }
+
+.account-points {
+  padding: 27px; border-radius: var(--radius-md);
+  background-color: var(--color-neutral-darker);
+  color: var(--color-neutral-white);
+}
+.account-points__title { font-weight: var(--font-weight-bold); font-size: 19px; }
+.account-points__total { margin-top: 12px; font-weight: var(--font-weight-bold); font-size: 34px; color: var(--color-brand-secondary); }
+.account-points__total span { margin-left: 3px; font-size: 18px; }
+.account-points__expire { margin-top: 6px; color: rgb(255 255 255 / 0.6); font-size: 12px; }
+.account-points__list { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+.account-points__list li { display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: rgb(255 255 255 / 0.82); }
+.account-points__delta { font-weight: var(--font-weight-bold); }
+.account-points__delta--plus { color: var(--color-brand-accent); }
+.account-points__delta--minus { color: #ff6b7d; }
+
+/* 계정 설정 */
+.account-settings__list { display: flex; flex-direction: column; }
+.account-settings__row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; }
+.account-settings__row + .account-settings__row { border-top: 1px solid var(--color-neutral-lighter); }
+.account-settings__label { color: var(--color-neutral-darker); font-weight: var(--font-weight-bold); font-size: 15px; }
+.account-settings__label--danger { color: var(--color-danger-base); }
+.account-settings__desc { margin-top: 4px; color: var(--color-neutral-light); font-size: 13px; }
+
+/* 토글 스위치 */
+.account-toggle {
+  position: relative; flex-shrink: 0;
+  width: 48px; height: 28px; border-radius: var(--radius-pill);
+  background-color: var(--color-neutral-light); cursor: pointer;
+  transition: background-color .18s ease;
+}
+.account-toggle.is-on { background-color: var(--color-brand-base); }
+.account-toggle__knob {
+  position: absolute; top: 3px; left: 3px;
+  width: 22px; height: 22px; border-radius: var(--radius-circle);
+  background-color: var(--color-neutral-white);
+  transition: left .18s ease;
+}
+.account-toggle.is-on .account-toggle__knob { left: 23px; }
+
+/* 반응형 */
+@media screen and (max-width: 1279px) {
+  .account-body { grid-template-columns: 1fr; }
+  .account-nav { position: static; }
+}
+@media screen and (max-width: 767px) {
+  .account-profile__head { flex-wrap: wrap; }
+  .account-stats { grid-template-columns: 1fr 1fr; }
+  .account-pass { flex-direction: column; align-items: flex-start; }
+  .account-benefit { grid-template-columns: 1fr; }
+  .account-orders__row { grid-template-columns: 1fr auto; }
+}
