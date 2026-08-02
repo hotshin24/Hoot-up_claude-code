@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>내 계정 — HOOT UP</title>
-  <meta name="description" content="HOOT UP 내 계정 — 수강 기록과 구독, 결제 내역, 쿠폰·포인트, 계정 설정을 한 곳에서 관리하세요.">
+  <title>내 클래스 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 내 클래스 — 수강 중·수료·구독 클래스를 한 곳에서 확인하고 이어서 학습하세요.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -259,8 +259,8 @@
     <aside class="account-nav" aria-label="계정 메뉴">
         <p class="account-nav__label">LEARNING</p>
         <ul class="account-nav__list">
-          <li><a class="account-nav__link is-active" href="account.html" aria-current="page">대시보드</a></li>
-          <li><a class="account-nav__link" href="account-classes.html">내 클래스</a></li>
+          <li><a class="account-nav__link" href="account.html">대시보드</a></li>
+          <li><a class="account-nav__link is-active" href="account-classes.html" aria-current="page">내 클래스</a></li>
           <li><a class="account-nav__link" href="#">올나잇 패스</a></li>
           <li><a class="account-nav__link" href="#">위시리스트</a></li>
         </ul>
@@ -276,213 +276,128 @@
         </ul>
     </aside>
 
-    <div class="account-content">
+    <div class="account-content account-classes">
 
-      <!-- 프로필 + 통계 -->
-      <section class="account-card account-profile">
-        <div class="account-profile__head">
-          <img class="account-profile__avatar" src="assets/avatar/user.jpg" alt="밤샘러 지우 프로필">
-          <div class="account-profile__meta">
-            <div class="account-profile__nameline">
-              <h2 class="account-profile__name">밤샘러 지우</h2>
-              <span class="account-profile__level">올빼미 Lv.4</span>
-            </div>
-            <p class="account-profile__email">jiwoo.night@hootup.co.kr · 2024.03.11 가입</p>
-          </div>
-          <div class="account-profile__actions">
-            <a class="account-btn account-btn--ghost" href="#">프로필 편집</a>
-            <a class="account-btn account-btn--primary" href="#">이어서 학습</a>
-          </div>
+      <!-- 헤더 -->
+      <div class="myclass-head">
+        <div class="myclass-head__intro">
+          <h2 class="myclass-head__title">내 클래스</h2>
+          <p class="myclass-head__summary">평생 소장 17개 · 수강 중 5개 · 수료 12개</p>
         </div>
-        <div class="account-stats">
-          <div class="account-stat"><p class="account-stat__label">수강 중</p><p class="account-stat__value">5<span>개</span></p></div>
-          <div class="account-stat"><p class="account-stat__label">수료</p><p class="account-stat__value">12<span>개</span></p></div>
-          <div class="account-stat"><p class="account-stat__label">보유 쿠폰</p><p class="account-stat__value">3<span>장</span></p></div>
-          <div class="account-stat"><p class="account-stat__label">포인트</p><p class="account-stat__value account-stat__value--point">4,800<span>P</span></p></div>
-        </div>
-      </section>
-
-      <!-- 구독: 올나잇 패스 -->
-      <section class="account-pass">
-        <div class="account-pass__info">
-          <p class="account-pass__tagline">
-            <span class="account-pass__badge">이용 중</span>
-            <span class="account-pass__eyebrow">ALL-NIGHT PASS</span>
-          </p>
-          <h3 class="account-pass__title">올나잇 패스 · 월 구독</h3>
-          <p class="account-pass__meta">다음 결제일 2026. 08. 20 · 월 19,900원 · 국민카드 ****4821</p>
-        </div>
-        <div class="account-pass__actions">
-          <a class="account-btn account-btn--onblue-ghost" href="#">결제수단 변경</a>
-          <a class="account-btn account-btn--onblue" href="#">구독 관리</a>
-        </div>
-      </section>
-
-      <!-- 이어서 학습하기 -->
-      <section class="account-card account-learn">
-        <div class="account-card__head">
-          <h3 class="account-card__title">이어서 학습하기</h3>
-          <a class="account-card__more" href="#">내 클래스 전체 보기</a>
-        </div>
-        <ul class="account-learn__list">
-          <li class="account-learn__item">
-            <span class="account-learn__thumb"><img src="assets/course/cat-dev-react.png" alt="" loading="lazy"></span>
-            <div class="account-learn__body">
-              <p class="account-learn__meta">코드랩 현우 · 개발 &amp; IT</p>
-              <p class="account-learn__title">포트폴리오까지 끝내는 React 프론트엔드 실전 프로젝트</p>
-              <div class="account-progress">
-                <div class="account-progress__track"><span class="account-progress__fill" style="width:62%;"></span></div>
-                <span class="account-progress__pct">62%</span>
-              </div>
-            </div>
-            <a class="account-btn account-btn--dark" href="course-responsive-publishing.html">이어보기</a>
-          </li>
-          <li class="account-learn__item">
-            <span class="account-learn__thumb"><img src="assets/course/design-figma-uxui.png" alt="" loading="lazy"></span>
-            <div class="account-learn__body">
-              <p class="account-learn__meta">디자이너 서린 · 디자인 &amp; 크리에이티브</p>
-              <p class="account-learn__title">피그마로 완성하는 UX/UI 디자인 입문</p>
-              <div class="account-progress">
-                <div class="account-progress__track"><span class="account-progress__fill" style="width:28%;"></span></div>
-                <span class="account-progress__pct">28%</span>
-              </div>
-            </div>
-            <a class="account-btn account-btn--dark" href="course-responsive-publishing.html">이어보기</a>
-          </li>
-          <li class="account-learn__item">
-            <span class="account-learn__thumb"><img src="assets/course/cat-dev-claude-code.png" alt="" loading="lazy"></span>
-            <div class="account-learn__body">
-              <p class="account-learn__meta">새벽코딩 제이든 · 개발 &amp; IT</p>
-              <p class="account-learn__title">개발 생산성 10배 올리는 클로드 코드 마스터 과정</p>
-              <div class="account-progress">
-                <div class="account-progress__track"><span class="account-progress__fill account-progress__fill--done" style="width:94%;"></span></div>
-                <span class="account-progress__pct">94%</span>
-              </div>
-            </div>
-            <a class="account-btn account-btn--dark" href="course-responsive-publishing.html">이어보기</a>
-          </li>
-        </ul>
-      </section>
-
-      <!-- 주문·결제 내역 -->
-      <section class="account-card account-orders">
-        <div class="account-card__head">
-          <h3 class="account-card__title">주문 · 결제 내역</h3>
-          <a class="account-card__more" href="#">전체 내역</a>
-        </div>
-        <ul class="account-orders__table">
-          <li class="account-orders__row account-orders__row--head">
-            <span class="account-orders__date">주문일</span>
-            <span class="account-orders__product">상품</span>
-            <span class="account-orders__amount">결제 금액</span>
-            <span class="account-orders__status">상태</span>
-            <span></span>
-          </li>
-          <li class="account-orders__row">
-            <span class="account-orders__date">2026.07.20</span>
-            <span class="account-orders__product">올나잇 패스 월 구독</span>
-            <span class="account-orders__amount">19,900원</span>
-            <span class="account-orders__status account-orders__status--paid">결제 완료</span>
-            <a class="account-btn account-btn--sm" href="#">영수증</a>
-          </li>
-          <li class="account-orders__row">
-            <span class="account-orders__date">2026.06.28</span>
-            <span class="account-orders__product">개발 생산성 10배 올리는 클로드 코드 마스터 과정</span>
-            <span class="account-orders__amount">107,800원</span>
-            <span class="account-orders__status account-orders__status--paid">결제 완료</span>
-            <a class="account-btn account-btn--sm" href="#">영수증</a>
-          </li>
-          <li class="account-orders__row">
-            <span class="account-orders__date">2026.05.14</span>
-            <span class="account-orders__product">피그마로 완성하는 UX/UI 디자인 입문</span>
-            <span class="account-orders__amount">85,800원</span>
-            <span class="account-orders__status account-orders__status--refund">환불 완료</span>
-            <a class="account-btn account-btn--sm" href="#">영수증</a>
-          </li>
-        </ul>
-      </section>
-
-      <!-- 쿠폰 + 포인트 -->
-      <div class="account-benefit">
-        <section class="account-card account-coupons">
-          <h3 class="account-card__title">보유 쿠폰 <span class="account-card__count">3</span></h3>
-          <ul class="account-coupons__list">
-            <li class="account-coupon">
-              <div class="account-coupon__info">
-                <p class="account-coupon__name">첫 결제 20% 할인</p>
-                <p class="account-coupon__meta">2026.08.31까지 · 단건 강의</p>
-              </div>
-              <span class="account-coupon__value">20%</span>
-            </li>
-            <li class="account-coupon">
-              <div class="account-coupon__info">
-                <p class="account-coupon__name">로드맵 패키지 18% 추가</p>
-                <p class="account-coupon__meta">2026.08.09까지 · 로드맵 전용</p>
-              </div>
-              <span class="account-coupon__value">18%</span>
-            </li>
-            <li class="account-coupon account-coupon--expiring">
-              <div class="account-coupon__info">
-                <p class="account-coupon__name">10,000원 웰컴 쿠폰</p>
-                <p class="account-coupon__meta">3일 후 만료</p>
-              </div>
-              <span class="account-coupon__value">10,000</span>
-            </li>
-          </ul>
-        </section>
-        <section class="account-points">
-          <h3 class="account-points__title">포인트</h3>
-          <p class="account-points__total">4,800<span>P</span></p>
-          <p class="account-points__expire">1,200P가 2026.09.30 소멸 예정입니다.</p>
-          <ul class="account-points__list">
-              <li><span>수강평 작성 적립</span><span class="account-points__delta account-points__delta--plus">+500P</span></li>
-              <li><span>클래스 결제 사용</span><span class="account-points__delta account-points__delta--minus">-2,000P</span></li>
-              <li><span>출석 이벤트 적립</span><span class="account-points__delta account-points__delta--plus">+300P</span></li>
-          </ul>
-        </section>
+        <form class="myclass-search" role="search" onsubmit="return false;">
+          <label class="a11y-hidden" for="class-search">클래스 검색</label>
+          <input class="myclass-search__input" id="class-search" type="search" placeholder="클래스 검색" autocomplete="off">
+          <span class="icon icon--search myclass-search__icon" aria-hidden="true"></span>
+        </form>
       </div>
 
-      <!-- 계정 설정 -->
-      <section class="account-card account-settings">
-        <h3 class="account-card__title">계정 설정</h3>
-        <ul class="account-settings__list">
-          <li class="account-settings__row">
-            <div class="account-settings__text">
-              <p class="account-settings__label">회원정보 수정</p>
-              <p class="account-settings__desc">닉네임, 연락처, 관심 카테고리</p>
+      <!-- 필터 -->
+      <div class="myclass-filter" role="tablist">
+        <button class="myclass-chip is-active" type="button">전체 17</button>
+        <button class="myclass-chip" type="button">수강 중 5</button>
+        <button class="myclass-chip" type="button">수료 12</button>
+        <button class="myclass-chip" type="button">구독으로 수강 3</button>
+      </div>
+
+      <!-- 카드 그리드 -->
+      <div class="myclass-grid">
+        <article class="class-card">
+          <div class="class-card__media">
+            <img class="class-card__thumb" src="assets/course/cat-dev-react.png" alt="" loading="lazy">
+            <span class="class-card__badge class-card__badge--learning">수강 중</span>
+          </div>
+          <div class="class-card__body">
+            <p class="class-card__tutor">코드랩 현우</p>
+            <h3 class="class-card__title">포트폴리오까지 끝내는 React 프론트엔드 실전 프로젝트</h3>
+            <div class="class-card__progress">
+              <span class="class-card__track"><span class="class-card__fill" style="width:62%;"></span></span>
+              <span class="class-card__pct">62%</span>
             </div>
-            <a class="account-btn account-btn--sm" href="#">수정</a>
-          </li>
-          <li class="account-settings__row">
-            <div class="account-settings__text">
-              <p class="account-settings__label">비밀번호 변경</p>
-              <p class="account-settings__desc">마지막 변경 2025.11.02</p>
+            <p class="class-card__detail">55/88강 · 마지막 학습 2일 전</p>
+            <a class="class-card__btn" href="#">이어보기</a>
+          </div>
+        </article>
+        <article class="class-card">
+          <div class="class-card__media">
+            <img class="class-card__thumb" src="assets/course/design-figma-uxui.png" alt="" loading="lazy">
+            <span class="class-card__badge class-card__badge--learning">수강 중</span>
+          </div>
+          <div class="class-card__body">
+            <p class="class-card__tutor">디자이너 서린</p>
+            <h3 class="class-card__title">피그마로 완성하는 UX/UI 디자인 입문</h3>
+            <div class="class-card__progress">
+              <span class="class-card__track"><span class="class-card__fill" style="width:28%;"></span></span>
+              <span class="class-card__pct">28%</span>
             </div>
-            <a class="account-btn account-btn--sm" href="#">변경</a>
-          </li>
-          <li class="account-settings__row">
-            <div class="account-settings__text">
-              <p class="account-settings__label">야간 학습 알림</p>
-              <p class="account-settings__desc">밤 10시, 오늘의 강의를 알려드려요</p>
+            <p class="class-card__detail">11/40강 · 마지막 학습 6일 전</p>
+            <a class="class-card__btn" href="#">이어보기</a>
+          </div>
+        </article>
+        <article class="class-card">
+          <div class="class-card__media">
+            <img class="class-card__thumb" src="assets/course/cat-dev-claude-code.png" alt="" loading="lazy">
+            <span class="class-card__badge class-card__badge--learning">수강 중</span>
+          </div>
+          <div class="class-card__body">
+            <p class="class-card__tutor">새벽코딩 제이든</p>
+            <h3 class="class-card__title">개발 생산성 10배 올리는 클로드 코드 마스터 과정</h3>
+            <div class="class-card__progress">
+              <span class="class-card__track"><span class="class-card__fill" style="width:94%;"></span></span>
+              <span class="class-card__pct">94%</span>
             </div>
-            <button class="account-toggle is-on" type="button" role="switch" aria-checked="true" aria-label="야간 학습 알림"><span class="account-toggle__knob"></span></button>
-          </li>
-          <li class="account-settings__row">
-            <div class="account-settings__text">
-              <p class="account-settings__label">마케팅 정보 수신</p>
-              <p class="account-settings__desc">할인·이벤트 소식 이메일 및 앱 푸시</p>
+            <p class="class-card__detail">45/48강 · 마지막 학습 어제</p>
+            <a class="class-card__btn" href="#">이어보기</a>
+          </div>
+        </article>
+        <article class="class-card">
+          <div class="class-card__media">
+            <img class="class-card__thumb" src="assets/course/cat-dev-responsive-publishing.png" alt="" loading="lazy">
+            <span class="class-card__badge class-card__badge--done">수료</span>
+          </div>
+          <div class="class-card__body">
+            <p class="class-card__tutor">코드랩 현우</p>
+            <h3 class="class-card__title">제로부터 완성하는 반응형 웹 퍼블리싱 마스터 클래스</h3>
+            <div class="class-card__progress">
+              <span class="class-card__track"><span class="class-card__fill class-card__fill--done" style="width:100%;"></span></span>
+              <span class="class-card__pct class-card__pct--done">100%</span>
             </div>
-            <button class="account-toggle" type="button" role="switch" aria-checked="false" aria-label="마케팅 정보 수신"><span class="account-toggle__knob"></span></button>
-          </li>
-          <li class="account-settings__row account-settings__row--danger">
-            <div class="account-settings__text">
-              <p class="account-settings__label account-settings__label--danger">회원 탈퇴</p>
-              <p class="account-settings__desc">보유 포인트와 수강 기록이 모두 삭제됩니다</p>
+            <p class="class-card__detail">2026.04.02 수료 · 수료증 발급 완료</p>
+            <a class="class-card__btn class-card__btn--outline" href="#">수료증 보기</a>
+          </div>
+        </article>
+        <article class="class-card">
+          <div class="class-card__media">
+            <img class="class-card__thumb" src="assets/course/career-njob.png" alt="" loading="lazy">
+            <span class="class-card__badge class-card__badge--done">수료</span>
+          </div>
+          <div class="class-card__body">
+            <p class="class-card__tutor">사이드랩 민</p>
+            <h3 class="class-card__title">직장인 사이드프로젝트로 N잡 만드는 법</h3>
+            <div class="class-card__progress">
+              <span class="class-card__track"><span class="class-card__fill class-card__fill--done" style="width:100%;"></span></span>
+              <span class="class-card__pct class-card__pct--done">100%</span>
             </div>
-            <a class="account-btn account-btn--danger" href="#">탈퇴하기</a>
-          </li>
-        </ul>
-      </section>
+            <p class="class-card__detail">2026.02.18 수료 · 후기 작성 완료</p>
+            <a class="class-card__btn class-card__btn--outline" href="#">다시 보기</a>
+          </div>
+        </article>
+        <article class="class-card">
+          <div class="class-card__media">
+            <img class="class-card__thumb" src="assets/course/dr-ipad-character.png" alt="" loading="lazy">
+            <span class="class-card__badge class-card__badge--pass">올나잇 패스</span>
+          </div>
+          <div class="class-card__body">
+            <p class="class-card__tutor">무지(MOOZI)</p>
+            <h3 class="class-card__title">아이패드로 시작하는 감성 캐릭터 드로잉</h3>
+            <div class="class-card__progress">
+              <span class="class-card__track"><span class="class-card__fill" style="width:12%;"></span></span>
+              <span class="class-card__pct">12%</span>
+            </div>
+            <p class="class-card__detail">3/28강 · 구독 종료 시 열람 불가</p>
+            <a class="class-card__btn" href="#">이어보기</a>
+          </div>
+        </article>
+      </div>
 
     </div>
   </div>
