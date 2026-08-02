@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tech·AI · HOOT UP DESK — HOOT UP</title>
-  <meta name="description" content="기술이 일하는 방식을 바꾸는 지점을 취재합니다. HOOT UP DESK Tech·AI 섹션 — AI 코딩 도구, 프롬프트, 채용까지 IT·AI 저널리즘.">
+  <title>담은 둥지 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 담은 둥지(장바구니) — 담은 클래스를 확인하고 결제하세요.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,13 +15,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <a class="skip-link" href="#main">본문 바로가기</a>
 
+<!-- ======================================================================
+     헤더
+     ====================================================================== -->
 <header class="site-header">
   <div class="site-header__inner l-container">
 
     <div class="site-header__utility">
-      <a class="site-header__logo" href="index.html">
+      <a class="site-header__logo" href="/">
         <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
       </a>
 
@@ -237,124 +241,136 @@
   <div class="mega-backdrop" hidden></div>
 </header>
 
-<main id="main" class="desk-page desk-page--category">
-  <div class="desk-page__inner l-container">
+<main id="main" class="cart" data-screen-label="담은 둥지">
 
-    <div class="desk-artbar">
-      <p class="desk-artbar__brand"><a href="desk.html">HOOT UP DESK</a><span class="desk-artbar__sep" aria-hidden="true">|</span><span>섹션</span></p>
-      <p class="desk-artbar__date">2026년 7월 31일 금요일</p>
+  <!-- 히어로 -->
+  <section class="account-hero cart-hero">
+    <div class="l-container">
+      <p class="account-hero__eyebrow">CART</p>
+      <h1 class="account-hero__title">담은 둥지</h1>
+      <p class="account-hero__desc">담아둔 클래스 3개 · 지금 결제하면 <span data-save>200,750원</span> 아껴요.</p>
     </div>
+  </section>
 
-    <header class="desk-cathead">
-      <h1 class="desk-cathead__title">Tech·AI</h1>
-      <p class="desk-cathead__desc">기술이 일하는 방식을 바꾸는 지점을 취재합니다 <b>총 43건</b></p>
-      <ul class="desk-cathead__sort" aria-label="정렬">
-        <li><a class="desk-cathead__sortlink desk-cathead__sortlink--active" href="#" aria-current="true">최신순</a></li>
-        <li><a class="desk-cathead__sortlink" href="#">많이 본 순</a></li>
-      </ul>
-    </header>
+  <!-- 본문 -->
+  <div class="cart-body l-container">
 
-    <div class="desk-catwrap">
-      <aside class="desk-filter" aria-label="기사 필터">
-        <div class="desk-filter__group">
-          <h2 class="desk-filter__title">섹션</h2>
-          <ul>
-          <li><a class="desk-filter__row" href="desk-all-1.html"><span class="desk-filter__name">전체</span><span class="desk-filter__count">173</span></a></li>
-          <li><a class="desk-filter__row desk-filter__row--active" href="desk-tech-ai-1.html" aria-current="page"><span class="desk-filter__name">Tech·AI</span><span class="desk-filter__count">43</span></a></li>
-          <li><a class="desk-filter__row" href="desk-career-1.html"><span class="desk-filter__name">Career</span><span class="desk-filter__count">34</span></a></li>
-          <li><a class="desk-filter__row" href="desk-development-it-1.html"><span class="desk-filter__name">Development·IT</span><span class="desk-filter__count">36</span></a></li>
-          <li><a class="desk-filter__row" href="desk-interview-1.html"><span class="desk-filter__name">Interview</span><span class="desk-filter__count">30</span></a></li>
-          <li><a class="desk-filter__row" href="desk-data-1.html"><span class="desk-filter__name">Data</span><span class="desk-filter__count">30</span></a></li>
-          </ul>
-        </div>
-        <div class="desk-filter__group">
-          <h2 class="desk-filter__title">기간</h2>
-          <ul class="desk-period">
-          <li><a class="desk-period__chip desk-period__chip--active" href="#">1주</a></li>
-          <li><a class="desk-period__chip" href="#">1개월</a></li>
-          <li><a class="desk-period__chip" href="#">3개월</a></li>
-          <li><a class="desk-period__chip" href="#">전체</a></li>
-          </ul>
-        </div>
-        <div class="desk-filter__group">
-          <h2 class="desk-filter__title">기자</h2>
-          <ul>
-          <li><a class="desk-filter__reporter" href="#">정태현 기자</a></li>
-          <li><a class="desk-filter__reporter" href="#">한지우 기자</a></li>
-          <li><a class="desk-filter__reporter" href="#">김도윤 기자</a></li>
-          <li><a class="desk-filter__reporter" href="#">박하늘 기자</a></li>
-          </ul>
-        </div>
-      </aside>
+    <!-- 담은 목록 -->
+    <section class="cart-list">
+      <h2 class="cart-list__title">담은 둥지<span class="gown-sub">(장바구니)</span></h2>
+      <div class="cart-list__bar">
+        <label class="cart-list__all">
+          <input class="wish-check cart-all" type="checkbox" checked>
+          <span class="cart-list__all-text">전체선택 <b class="cart-all__count">3/3</b></span>
+        </label>
+        <button class="cart-list__clear" type="button">전체 삭제</button>
+      </div>
+      <div class="cart-list__items">
+          <div class="cart-item" data-original="154000" data-final="100100">
+            <input class="wish-check cart-item__check" type="checkbox" checked aria-label="나만의 감성을 담은 브랜드를 만드는 로고 디자인 선택">
+            <span class="cart-item__thumb"><img src="assets/course/design-logo.png" alt="" loading="lazy"></span>
+            <div class="cart-item__info">
+              <p class="cart-item__tags"><span class="cart-item__badge">BEST</span><span class="cart-item__cat">디자인 &amp; 크리에이티브</span></p>
+              <h3 class="cart-item__title">나만의 감성을 담은 브랜드를 만드는 로고 디자인</h3>
+              <p class="cart-item__meta">스튜디오 결 · 42강 · 9시간 · 평생 소장</p>
+            </div>
+            <div class="cart-item__price">
+              <button class="cart-item__remove" type="button">삭제</button>
+              <p class="cart-item__was">154,000원</p>
+              <p class="cart-item__now"><span class="cart-item__off">35%</span><span class="cart-item__final">100,100원</span></p>
+            </div>
+          </div>
+          <div class="cart-item" data-original="198000" data-final="108900">
+            <input class="wish-check cart-item__check" type="checkbox" checked aria-label="Next.js로 완성하는 풀스택 웹앱 프로젝트 마스터 과정 선택">
+            <span class="cart-item__thumb"><img src="assets/course/cat-dev-p2-nextjs.png" alt="" loading="lazy"></span>
+            <div class="cart-item__info">
+              <p class="cart-item__tags"><span class="cart-item__badge">SIGNATURE</span><span class="cart-item__cat">개발 &amp; IT</span></p>
+              <h3 class="cart-item__title">Next.js로 완성하는 풀스택 웹앱 프로젝트 마스터 과정</h3>
+              <p class="cart-item__meta">풀스택 재현 · 56강 · 14시간 · 평생 소장</p>
+            </div>
+            <div class="cart-item__price">
+              <button class="cart-item__remove" type="button">삭제</button>
+              <p class="cart-item__was">198,000원</p>
+              <p class="cart-item__now"><span class="cart-item__off">45%</span><span class="cart-item__final">108,900원</span></p>
+            </div>
+          </div>
+          <div class="cart-item" data-original="165000" data-final="107250">
+            <input class="wish-check cart-item__check" type="checkbox" checked aria-label="비전공자를 위한 서비스 기획·PM 입문 선택">
+            <span class="cart-item__thumb"><img src="assets/course/career-service-pm.png" alt="" loading="lazy"></span>
+            <div class="cart-item__info">
+              <p class="cart-item__tags"><span class="cart-item__cat">커리어 &amp; 머니</span></p>
+              <h3 class="cart-item__title">비전공자를 위한 서비스 기획·PM 입문</h3>
+              <p class="cart-item__meta">PM 도윤 · 34강 · 6시간 30분 · 평생 소장</p>
+            </div>
+            <div class="cart-item__price">
+              <button class="cart-item__remove" type="button">삭제</button>
+              <p class="cart-item__was">165,000원</p>
+              <p class="cart-item__now"><span class="cart-item__off">35%</span><span class="cart-item__final">107,250원</span></p>
+            </div>
+          </div>
+      </div>
+      <div class="cart-promo">
+        <span class="cart-promo__icon" aria-hidden="true">🦉</span>
+        <p class="cart-promo__text">LEVEL UP WEEK 종료까지 6일 13시간 남았어요. 지금 결제하면 <b>200,750원</b>을 아낍니다.</p>
+      </div>
+    </section>
 
-      <section class="desk-newslist" aria-label="Tech·AI 기사 목록">
-        <p class="desk-newsgroup__date">2026. 07. 05</p>
-        <a class="desk-newsfeat" href="desk-ai-coding.html">
-          <div class="desk-newsfeat__body">
-            <h3 class="desk-newsfeat__title">AI 페어 프로그래밍, 생산성 진짜 오를까</h3>
-            <p class="desk-newsfeat__excerpt">AI 페어 프로그래밍의 현장 체감과 데이터 사이의 간극을 들여다봤다.</p>
-            <p class="desk-newsfeat__byline">정태현 기자</p>
-          </div>
-          <span class="desk-newsfeat__thumb"><img src="assets/news/nocode-debate.jpg" alt="페어 프로그래밍을 하는 두 개발자" loading="lazy"></span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">멀티모달 AI, 개발 도구로 들어오다</span>
-          <span class="desk-newsrow__byline">한지우 기자</span>
-        </a>
-        <p class="desk-newsgroup__date">2026. 07. 03</p>
-        <a class="desk-newsfeat" href="desk-ai-coding.html">
-          <div class="desk-newsfeat__body">
-            <h3 class="desk-newsfeat__title">AI가 쓴 코드의 저작권, 누구의 것인가</h3>
-            <p class="desk-newsfeat__excerpt">AI가 쓴 코드의 저작권과 책임을 둘러싼 논쟁을 정리했다.</p>
-            <p class="desk-newsfeat__byline">한지우 기자</p>
-          </div>
-          <span class="desk-newsfeat__thumb"><img src="assets/news/desk-career-junior.jpg" alt="코드와 법률 문서가 겹쳐진 이미지" loading="lazy"></span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">사내 LLM 구축, 비용 대비 효과는</span>
-          <span class="desk-newsrow__byline">김도윤 기자</span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">AI 보안 취약점, 새로운 공격 표면</span>
-          <span class="desk-newsrow__byline">정태현 기자</span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">프롬프트 엔지니어링은 직무가 될까</span>
-          <span class="desk-newsrow__byline">한지우 기자</span>
-        </a>
-        <p class="desk-newsgroup__date">2026. 07. 01</p>
-        <a class="desk-newsfeat" href="desk-ai-coding.html">
-          <div class="desk-newsfeat__body">
-            <h3 class="desk-newsfeat__title">온디바이스 AI 시대, 무엇이 달라지나</h3>
-            <p class="desk-newsfeat__excerpt">기기에서 직접 도는 AI가 앱 설계를 어떻게 바꾸는지 살폈다.</p>
-            <p class="desk-newsfeat__byline">한지우 기자</p>
-          </div>
-          <span class="desk-newsfeat__thumb"><img src="assets/news/ai-coding-tools.jpg" alt="온디바이스 AI가 구동되는 모바일 기기" loading="lazy"></span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">생성형 AI 앞에 선 디자이너의 새 무기</span>
-          <span class="desk-newsrow__byline">정태현 기자</span>
-        </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
-          <span class="desk-newsrow__title">AI 에이전트, 어디까지 일을 맡길 수 있나</span>
-          <span class="desk-newsrow__byline">정태현 기자</span>
-        </a>
-        <nav class="pager" aria-label="페이지 매김">
-          <a class="pager__arrow" href="desk-tech-ai-3.html" aria-label="이전 페이지">
-            <span class="icon icon--chevron-left"></span>
-          </a>
-          <a class="pager__num" href="desk-tech-ai-1.html">1</a>
-          <a class="pager__num" href="desk-tech-ai-2.html">2</a>
-          <a class="pager__num" href="desk-tech-ai-3.html">3</a>
-          <a class="pager__num pager__num--active" href="desk-tech-ai-4.html" aria-current="page">4</a>
-          <a class="pager__arrow" href="#" aria-label="다음 페이지" aria-disabled="true">
-            <span class="icon icon--chevron-right"></span>
-          </a>
-        </nav>
-      </section>
-    </div>
+    <!-- 결제 금액 -->
+    <aside class="cart-pay">
+      <h2 class="cart-pay__title">결제 금액</h2>
+      <div class="cart-pay__summary">
+        <div class="cart-pay__row"><span>상품금액</span><span class="cart-pay__num" data-sum-original>517,000원</span></div>
+        <div class="cart-pay__row"><span>총 할인 금액</span><span class="cart-pay__num cart-pay__num--minus" data-sum-discount>-200,750원</span></div>
+      </div>
+      <div class="cart-pay__total">
+        <span class="cart-pay__total-label">총 결제 금액</span>
+        <span class="cart-pay__total-amount"><b data-sum-total>316,250</b>원</span>
+      </div>
+
+      <h3 class="cart-pay__sub">휴대폰 번호 입력</h3>
+      <form class="cart-phone" onsubmit="return false;">
+        <input class="cart-phone__input" type="tel" inputmode="numeric" placeholder="휴대폰 번호(숫자만)" aria-label="휴대폰 번호">
+        <button class="cart-phone__btn" type="submit">인증요청</button>
+      </form>
+
+      <h3 class="cart-pay__sub">결제 수단</h3>
+      <div class="cart-methods">
+            <label class="cart-method is-selected">
+              <input class="cart-radio" type="radio" name="pay" checked>
+              <span class="cart-method__name">카드 전자결제</span>
+              <span class="cart-method__tag">무이자 할부</span>
+            </label>
+            <label class="cart-method">
+              <input class="cart-radio" type="radio" name="pay">
+              <span class="cart-method__name">휴대폰 결제</span>
+              
+            </label>
+            <label class="cart-method">
+              <input class="cart-radio" type="radio" name="pay">
+              <span class="cart-method__name">계좌이체</span>
+              
+            </label>
+            <label class="cart-method">
+              <input class="cart-radio" type="radio" name="pay">
+              <span class="cart-method__name">네이버페이</span>
+              
+            </label>
+            <label class="cart-method">
+              <input class="cart-radio" type="radio" name="pay">
+              <span class="cart-method__name">카카오페이</span>
+              
+            </label>
+            <label class="cart-method">
+              <input class="cart-radio" type="radio" name="pay">
+              <span class="cart-method__name">토스페이</span>
+              
+            </label>
+      </div>
+
+      <button class="cart-pay__submit" type="button"><span data-pay-btn>316,250원 결제하기</span></button>    </aside>
 
   </div>
+
 </main>
 
 <footer class="site-footer">
@@ -471,7 +487,10 @@
   </div>
 </footer>
 
+
 <script src="js/nav.js" defer></script>
+<script src="js/carousel.js" defer></script>
 <script src="js/search.js" defer></script>
+<script src="js/cart.js" defer></script>
 </body>
 </html>
