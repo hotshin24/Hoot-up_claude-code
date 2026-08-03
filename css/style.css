@@ -5668,7 +5668,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .subscribe .subscribe__lead { color: var(--color-neutral-base); font-size: 18px; line-height: 30px; }
 
 /* 버튼 */
-.subscribe .subscribe__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 36px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
+.subscribe .subscribe__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 36px; appearance: none; border: 0; background-color: transparent; border-radius: 30px; font-family: inherit; font-weight: 700; font-size: 16px; line-height: 22px; cursor: pointer; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
 .subscribe .subscribe__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
 .subscribe .subscribe__btn--primary:hover { background: var(--color-brand-darker); }
 .subscribe .subscribe__btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
