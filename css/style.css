@@ -8377,3 +8377,121 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .cm-thumb { width: 140px; height: 82px; }
   .cm-row__actions { flex-direction: row; flex-wrap: wrap; width: 100%; }
 }
+
+/* ============================================================
+   크리에이터 · 수강생 · 리뷰 (creator-reviews.html)
+   ============================================================ */
+
+/* 평점 요약 */
+.rv-summary { display: flex; align-items: center; gap: 40px; }
+.rv-score { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.rv-score__num {
+  font-family: var(--font-display); font-weight: var(--font-weight-extrabold);
+  font-size: 56px; line-height: 56px; color: var(--color-brand-darker);
+}
+.rv-score__stars { display: block; width: 90px; height: 18px; }
+.rv-score__count { font-size: 13px; color: var(--color-neutral-light); }
+
+.rv-dist {
+  flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 8px;
+  padding-left: 41px; border-left: 1px solid var(--color-neutral-lighter);
+}
+.rv-dist__row { display: flex; align-items: center; gap: 12px; }
+.rv-dist__label { flex-shrink: 0; width: 28px; font-size: 13px; color: var(--color-neutral-base); }
+.rv-dist__track {
+  flex: 1 1 0; min-width: 0; height: 8px; border-radius: var(--radius-pill);
+  background-color: var(--color-neutral-lighter); overflow: hidden;
+}
+.rv-dist__fill { display: block; height: 100%; border-radius: var(--radius-pill); }
+.rv-dist__fill--5 { background-color: var(--color-brand-darker); }
+.rv-dist__fill--4 { background-color: #9896fd; }
+.rv-dist__fill--3,
+.rv-dist__fill--2,
+.rv-dist__fill--1 { background-color: var(--color-brand-lighter); }
+.rv-dist__count { flex-shrink: 0; width: 54px; text-align: right; font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+
+/* 통계 4 */
+.rv-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.rv-stat {
+  background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
+  border-radius: var(--radius-md); padding: 21px 23px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.rv-stat__label { font-size: 13px; color: var(--color-neutral-light); }
+.rv-stat__value {
+  font-family: var(--font-display); font-weight: var(--font-weight-extrabold);
+  font-size: 26px; line-height: 1; color: var(--color-neutral-darker);
+}
+.rv-stat__value--danger { color: var(--color-danger-base); }
+
+/* 리뷰 관리 */
+.rv-manage__head { margin-bottom: 0; }
+.rv-filter { display: flex; gap: 6px; flex-shrink: 0; }
+.rv-chip {
+  padding: 9px 17px; border-radius: var(--radius-pill);
+  background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter);
+  font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base);
+  cursor: pointer; transition: border-color .15s ease, color .15s ease;
+}
+.rv-chip:hover { border-color: var(--color-brand-darker); color: var(--color-brand-darker); }
+.rv-chip.is-active {
+  padding: 8px 16px; border: 0;
+  background-color: var(--color-brand-darker); color: var(--color-neutral-white);
+}
+
+.rv-list { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+.rv-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  background-color: var(--color-neutral-lightest); border-radius: var(--radius-md);
+  padding: 22px;
+}
+.rv-item__avatar {
+  flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-md);
+  object-fit: cover; background-color: var(--color-brand-lighter);
+}
+.rv-item__body { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.rv-item__head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.rv-item__name { font-size: 14px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.rv-item__stars { display: block; width: 70px; height: 14px; }
+.rv-item__meta { font-size: 12px; color: var(--color-neutral-light); }
+.rv-badge {
+  padding: 3px 8px; border-radius: var(--radius-pill);
+  background-color: var(--color-danger-lighter); color: var(--color-danger-base);
+  font-size: 11px; font-weight: var(--font-weight-bold); white-space: nowrap;
+}
+.rv-item__text { font-size: 15px; line-height: 22px; color: var(--color-neutral-darker); }
+
+/* 내 답글 (작성됨) */
+.rv-reply {
+  background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
+  border-radius: var(--radius-md); padding: 21px 19px 15px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.rv-reply__label { font-size: 12px; font-weight: var(--font-weight-bold); color: var(--color-brand-darker); }
+.rv-reply__text { font-size: 14px; line-height: 20px; color: var(--color-neutral-base); }
+
+/* 답글 입력 (대기) */
+.rv-answer { display: flex; gap: 8px; align-items: stretch; padding-top: 6px; }
+.rv-answer__input {
+  flex: 1 1 0; min-width: 0; height: 44px;
+  background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
+  border-radius: var(--radius-md); padding: 0 19px;
+  font-size: 14px; color: var(--color-neutral-darker);
+}
+.rv-answer__input::placeholder { color: #757575; }
+.rv-answer__input:focus { outline: none; border-color: var(--color-brand-darker); }
+.rv-answer__btn {
+  flex-shrink: 0; padding: 0 22px; border-radius: var(--radius-pill); border: 0;
+  background-color: var(--color-brand-darker); color: var(--color-neutral-white);
+  font-size: 14px; font-weight: var(--font-weight-bold); cursor: pointer;
+  transition: opacity .15s ease;
+}
+.rv-answer__btn:hover { opacity: 0.9; }
+
+@media (max-width: 720px) {
+  .rv-summary { flex-direction: column; align-items: stretch; gap: 24px; }
+  .rv-dist { padding-left: 0; border-left: 0; }
+  .rv-stats { grid-template-columns: repeat(2, 1fr); }
+  .rv-answer { flex-wrap: wrap; }
+  .rv-answer__btn { padding: 12px 22px; }
+}
