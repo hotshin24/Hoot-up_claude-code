@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>내 클래스 관리 — HOOT UP</title>
-  <meta name="description" content="HOOT UP 크리에이터 내 클래스 관리 — 운영 중·심사 중·초안 클래스를 한 곳에서 관리하세요.">
+  <title>스튜디오 예약 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 크리에이터 스튜디오 예약 — 촬영 스튜디오와 장비를 예약하고 현장 스태프의 지원을 받으세요.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -241,7 +241,7 @@
   <div class="mega-backdrop" hidden></div>
 </header>
 
-<main id="main" class="creator creator-classes-page" data-screen-label="내 클래스 관리">
+<main id="main" class="creator creator-studio-page" data-screen-label="스튜디오 예약">
 
   <section class="creator-hero">
     <div class="l-container">
@@ -257,7 +257,7 @@
         <ul class="account-nav__list">
           <li><a class="account-nav__link" href="creator.html">크리에이터 홈</a></li>
           <li><a class="account-nav__link" href="creator-profile.html">공개 프로필</a></li>
-          <li><a class="account-nav__link is-active" href="creator-classes.html" aria-current="page">내 클래스 관리</a></li>
+          <li><a class="account-nav__link" href="creator-classes.html">내 클래스 관리</a></li>
           <li><a class="account-nav__link" href="creator-reviews.html">수강생 · 리뷰</a></li>
           <li><a class="account-nav__link" href="creator-questions.html">질문 관리</a></li>
         </ul>
@@ -268,7 +268,7 @@
         </ul>
         <p class="account-nav__label">SUPPORT</p>
         <ul class="account-nav__list">
-          <li><a class="account-nav__link" href="creator-studio-booking.html">스튜디오 예약</a></li>
+          <li><a class="account-nav__link is-active" href="creator-studio-booking.html" aria-current="page">스튜디오 예약</a></li>
         </ul>
     </aside>
 
@@ -277,104 +277,199 @@
       <!-- 헤더 -->
       <div class="pp-head">
         <div class="pp-head__intro">
-          <h2 class="pp-head__title">내 클래스 관리</h2>
-          <p class="pp-head__desc">운영 중 2 · 심사 중 1 · 초안 1 · 누적 수강생 21,340명</p>
+          <h2 class="pp-head__title">스튜디오 예약</h2>
+          <p class="pp-head__desc">촬영이 부담되면 스튜디오와 장비를 이용하세요. 현장 스태프가 함께합니다.</p>
         </div>
         <div class="pp-head__save">
-          <button class="creator-btn creator-btn--primary" type="button">+ 새 클래스 개설</button>
+          <span class="stu-status">예약 1건 진행 중</span>
         </div>
       </div>
 
-      <!-- 필터 칩 -->
-      <div class="myclass-chips" role="tablist" aria-label="클래스 상태 필터">
-        <button class="myclass-chip is-active" type="button" role="tab" aria-selected="true">전체 4</button>
-        <button class="myclass-chip" type="button" role="tab" aria-selected="false">운영 중 2</button>
-        <button class="myclass-chip" type="button" role="tab" aria-selected="false">심사 중 1</button>
-        <button class="myclass-chip" type="button" role="tab" aria-selected="false">초안 1</button>
-      </div>
+      <!-- 다가오는 예약 -->
+      <section class="stu-card stu-upcoming">
+        <h3 class="creator-card__title">다가오는 예약</h3>
+        <div class="stu-booking">
+          <div class="stu-booking__date">
+            <p class="stu-booking__month">8월</p>
+            <p class="stu-booking__day">06</p>
+            <p class="stu-booking__dow">목요일</p>
+          </div>
+          <div class="stu-booking__info">
+            <p class="stu-booking__title">강의 촬영 스튜디오 · 반일 (14:00 – 18:00)</p>
+            <p class="stu-booking__desc">카메라 · 소프트박스 조명 · 핀 마이크 대여 · 현장 스태프 지원 포함</p>
+          </div>
+          <div class="stu-booking__actions">
+            <button class="stu-booking__btn stu-booking__btn--edit" type="button">일정 변경</button>
+            <button class="stu-booking__btn stu-booking__btn--cancel" type="button">예약 취소</button>
+          </div>
+        </div>
+      </section>
 
-      <!-- 클래스 목록 -->
-      <section class="creator-card cm-list">
-        <article class="cm-row">
-          <span class="cm-thumb"><img src="assets/course/cat-dev-react.png" alt="" loading="lazy"></span>
-          <div class="cm-row__info">
-            <div class="cm-row__badges">
-              <span class="cm-badge cm-badge--live">운영 중</span>
-              <span class="cm-badge">SIGNATURE</span>
+      <!-- 공간 -->
+      <section class="stu-card stu-spaces">
+        <h3 class="creator-card__title">이런 공간이 준비돼 있어요</h3>
+        <div class="stu-spaces__grid">
+          <div class="stu-space stu-space--active">
+            <span class="stu-space__thumb"><img src="assets/studio/studio-lecture.jpg" alt="강의 촬영 스튜디오" loading="lazy"></span>
+            <div class="stu-space__body">
+              <p class="stu-space__title">강의 촬영 스튜디오</p>
+              <p class="stu-space__desc">화이트/우드 배경, 조명 세팅 완비</p>
             </div>
-            <h3 class="cm-row__title">포트폴리오까지 끝내는 React 프론트엔드 실전 프로젝트</h3>
-            <div class="cm-stats">
-              <div class="cm-stat"><p class="cm-stat__k">수강생</p><p class="cm-stat__v">2,604명</p></div>
-              <div class="cm-stat"><p class="cm-stat__k">평점</p><p class="cm-stat__v">4.8</p></div>
-              <div class="cm-stat"><p class="cm-stat__k">완주율</p><p class="cm-stat__v">62%</p></div>
-              <div class="cm-stat"><p class="cm-stat__k">이번 달 매출</p><p class="cm-stat__v">3,180,000원</p></div>
+          </div>
+          <div class="stu-space">
+            <span class="stu-space__thumb"><img src="assets/studio/studio-handson.jpg" alt="핸즈온 촬영대" loading="lazy"></span>
+            <div class="stu-space__body">
+              <p class="stu-space__title">핸즈온 촬영대</p>
+              <p class="stu-space__desc">요리·공예·드로잉 등 손 작업 탑뷰 촬영</p>
             </div>
-            <p class="cm-row__meta">88강 · 18시간 · 165,000원 (40% 할인 적용 중) · 최종 수정 2026.07.18</p>
           </div>
-          <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">커리큘럼 편집</button>
-            <button class="cm-btn cm-btn--ghost" type="button">가격 · 할인</button>
-            <button class="cm-btn cm-btn--ghost-muted" type="button">판매 중지</button>
-          </div>
-        </article>
-        <article class="cm-row">
-          <span class="cm-thumb"><img src="assets/course/cat-dev-responsive-publishing.png" alt="" loading="lazy"></span>
-          <div class="cm-row__info">
-            <div class="cm-row__badges">
-              <span class="cm-badge cm-badge--live">운영 중</span>
-              <span class="cm-badge">BEST</span>
+          <div class="stu-space">
+            <span class="stu-space__thumb"><img src="assets/studio/studio-voice.jpg" alt="보이스 부스" loading="lazy"></span>
+            <div class="stu-space__body">
+              <p class="stu-space__title">보이스 부스</p>
+              <p class="stu-space__desc">조용한 녹음 환경(내레이션·더빙)</p>
             </div>
-            <h3 class="cm-row__title">제로부터 완성하는 반응형 웹 퍼블리싱 마스터 클래스</h3>
-            <div class="cm-stats">
-              <div class="cm-stat"><p class="cm-stat__k">수강생</p><p class="cm-stat__v">4,128명</p></div>
-              <div class="cm-stat"><p class="cm-stat__k">평점</p><p class="cm-stat__v">4.9</p></div>
-              <div class="cm-stat"><p class="cm-stat__k">완주율</p><p class="cm-stat__v">71%</p></div>
-              <div class="cm-stat"><p class="cm-stat__k">이번 달 매출</p><p class="cm-stat__v">2,940,000원</p></div>
+          </div>
+          <div class="stu-space">
+            <span class="stu-space__thumb"><img src="assets/studio/studio-edit.jpg" alt="편집실" loading="lazy"></span>
+            <div class="stu-space__body">
+              <p class="stu-space__title">편집실</p>
+              <p class="stu-space__desc">고사양 편집 장비와 작업 공간</p>
             </div>
-            <p class="cm-row__meta">52강 · 11시간 · 110,000원 (30% 할인 적용 중) · 최종 수정 2026.06.02</p>
           </div>
-          <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">커리큘럼 편집</button>
-            <button class="cm-btn cm-btn--ghost" type="button">가격 · 할인</button>
-            <button class="cm-btn cm-btn--ghost-muted" type="button">판매 중지</button>
+        </div>
+      </section>
+
+      <!-- 캘린더 -->
+      <section class="stu-card stu-calendar">
+        <div class="stu-calendar__head">
+          <h3 class="creator-card__title">2026년 8월</h3>
+          <div class="stu-legend">
+            <span class="stu-legend__item"><span class="stu-legend__dot stu-legend__dot--avail"></span>예약 가능</span>
+            <span class="stu-legend__item"><span class="stu-legend__dot stu-legend__dot--mine"></span>내 예약</span>
+            <span class="stu-legend__item"><span class="stu-legend__dot stu-legend__dot--closed"></span>마감</span>
           </div>
-        </article>
-        <article class="cm-row">
-          <span class="cm-thumb"><img src="assets/course/cat-dev-vibe.png" alt="" loading="lazy"></span>
-          <div class="cm-row__info">
-            <div class="cm-row__badges">
-              <span class="cm-badge cm-badge--review">심사 중</span>
-            </div>
-            <h3 class="cm-row__title">AI와 함께 일하는 바이브 코딩 실무 완전 가이드</h3>
-            <div class="cm-progress">
-              <span class="cm-progress__track"><span class="cm-progress__fill cm-progress__fill--review" style="width:60%;"></span></span>
-              <span class="cm-progress__label cm-progress__label--review">검수 3/5단계</span>
-            </div>
-            <p class="cm-row__meta">영상 품질 검수 완료 · 자막 검수 진행 중 · 예상 오픈 2026.08.14</p>
+        </div>
+        <div class="stu-cal__weekdays">
+          <span class="stu-cal__wd stu-cal__wd--sun">일</span>
+          <span class="stu-cal__wd">월</span>
+          <span class="stu-cal__wd">화</span>
+          <span class="stu-cal__wd">수</span>
+          <span class="stu-cal__wd">목</span>
+          <span class="stu-cal__wd">금</span>
+          <span class="stu-cal__wd stu-cal__wd--sat">토</span>
+        </div>
+        <div class="stu-cal__grid">
+            <span class="stu-cal__pad" aria-hidden="true"></span>
+            <span class="stu-cal__pad" aria-hidden="true"></span>
+            <span class="stu-cal__pad" aria-hidden="true"></span>
+            <span class="stu-cal__pad" aria-hidden="true"></span>
+            <span class="stu-cal__pad" aria-hidden="true"></span>
+            <span class="stu-cal__pad" aria-hidden="true"></span>
+            <span class="stu-cal__day stu-cal__day--closed">1</span>
+            <span class="stu-cal__day stu-cal__day--closed">2</span>
+            <span class="stu-cal__day stu-cal__day--avail">3</span>
+            <span class="stu-cal__day stu-cal__day--avail">4</span>
+            <span class="stu-cal__day stu-cal__day--closed">5</span>
+            <span class="stu-cal__day stu-cal__day--mine">6</span>
+            <span class="stu-cal__day stu-cal__day--avail">7</span>
+            <span class="stu-cal__day stu-cal__day--closed">8</span>
+            <span class="stu-cal__day stu-cal__day--closed">9</span>
+            <span class="stu-cal__day stu-cal__day--avail">10</span>
+            <span class="stu-cal__day stu-cal__day--avail">11</span>
+            <span class="stu-cal__day stu-cal__day--avail">12</span>
+            <span class="stu-cal__day stu-cal__day--closed">13</span>
+            <span class="stu-cal__day stu-cal__day--avail">14</span>
+            <span class="stu-cal__day stu-cal__day--avail">15</span>
+            <span class="stu-cal__day stu-cal__day--closed">16</span>
+            <span class="stu-cal__day stu-cal__day--closed">17</span>
+            <span class="stu-cal__day stu-cal__day--avail">18</span>
+            <span class="stu-cal__day stu-cal__day--avail">19</span>
+            <span class="stu-cal__day stu-cal__day--avail">20</span>
+            <span class="stu-cal__day stu-cal__day--avail">21</span>
+            <span class="stu-cal__day stu-cal__day--avail">22</span>
+            <span class="stu-cal__day stu-cal__day--closed">23</span>
+            <span class="stu-cal__day stu-cal__day--closed">24</span>
+            <span class="stu-cal__day stu-cal__day--avail">25</span>
+            <span class="stu-cal__day stu-cal__day--avail">26</span>
+            <span class="stu-cal__day stu-cal__day--avail">27</span>
+            <span class="stu-cal__day stu-cal__day--closed">28</span>
+            <span class="stu-cal__day stu-cal__day--avail">29</span>
+            <span class="stu-cal__day stu-cal__day--closed">30</span>
+            <span class="stu-cal__day stu-cal__day--avail">31</span>
+        </div>
+      </section>
+
+      <!-- 대여 장비 -->
+      <section class="stu-card stu-gear">
+        <h3 class="creator-card__title">대여 장비</h3>
+        <p class="stu-gear__desc">장비 사용이 처음이어도 괜찮아요. 현장 세팅과 기본 사용법을 안내해 드립니다.</p>
+        <div class="stu-gear__chips">
+          <span class="stu-chip">카메라</span>
+          <span class="stu-chip">삼각대</span>
+          <span class="stu-chip">짐벌</span>
+          <span class="stu-chip">소프트박스 조명</span>
+          <span class="stu-chip">링라이트</span>
+          <span class="stu-chip">배경지</span>
+          <span class="stu-chip">핀 마이크</span>
+          <span class="stu-chip">샷건 마이크</span>
+          <span class="stu-chip">오디오 인터페이스</span>
+          <span class="stu-chip">탑뷰 리그</span>
+          <span class="stu-chip">모니터</span>
+        </div>
+      </section>
+
+      <!-- 이용 방법 -->
+      <section class="stu-card stu-flow">
+        <h3 class="creator-card__title">이용 방법</h3>
+        <div class="rev-flow__steps">
+          <div class="rev-step">
+            <p class="rev-step__no">STEP 01</p>
+            <h4 class="rev-step__title">예약 신청</h4>
+            <p class="rev-step__desc">원하는 날짜·공간·장비 선택</p>
           </div>
-          <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">진행 상황</button>
-            <button class="cm-btn cm-btn--ghost" type="button">검수 의견</button>
+          <div class="rev-step">
+            <p class="rev-step__no">STEP 02</p>
+            <h4 class="rev-step__title">사전 안내</h4>
+            <p class="rev-step__desc">촬영 구성 상담 및 세팅 확인</p>
           </div>
-        </article>
-        <article class="cm-row cm-row--last">
-          <span class="cm-thumb cm-thumb--empty" aria-hidden="true"></span>
-          <div class="cm-row__info">
-            <div class="cm-row__badges">
-              <span class="cm-badge cm-badge--draft">초안</span>
-            </div>
-            <h3 class="cm-row__title cm-row__title--muted">TypeScript 실무 리팩터링 (제목 미정)</h3>
-            <div class="cm-progress">
-              <span class="cm-progress__track"><span class="cm-progress__fill cm-progress__fill--draft" style="width:30%;"></span></span>
-              <span class="cm-progress__label cm-progress__label--draft">커리큘럼 12/40강</span>
-            </div>
-            <p class="cm-row__meta">썸네일 미등록 · 소개 영상 미등록 · 마지막 저장 3일 전</p>
+          <div class="rev-step">
+            <p class="rev-step__no">STEP 03</p>
+            <h4 class="rev-step__title">촬영 진행</h4>
+            <p class="rev-step__desc">현장 지원 스태프의 도움</p>
           </div>
-          <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--primary" type="button">이어서 작성</button>
-            <button class="cm-btn cm-btn--danger" type="button">초안 삭제</button>
+          <div class="rev-step rev-step--accent">
+            <p class="rev-step__no">STEP 04</p>
+            <h4 class="rev-step__title">데이터 전달</h4>
+            <p class="rev-step__desc">촬영본 정리 후 편집 단계로</p>
           </div>
-        </article>
+        </div>
+      </section>
+
+      <!-- 이용 안내 -->
+      <section class="stu-card stu-guide">
+        <h3 class="creator-card__title">이용 안내</h3>
+        <div class="stu-guide__list">
+          <div class="stu-guide__row">
+            <span class="stu-guide__k">이용 대상</span>
+            <span class="stu-guide__v">훗업 클래스 개설이 확정된 크리에이터</span>
+          </div>
+          <div class="stu-guide__row">
+            <span class="stu-guide__k">예약 단위</span>
+            <span class="stu-guide__v">반일 / 종일 (공간별 상이)</span>
+          </div>
+          <div class="stu-guide__row">
+            <span class="stu-guide__k">비용</span>
+            <span class="stu-guide__v">클래스 제작 지원의 일부로 지원 가능 (조건은 파트너십 미팅에서 안내)</span>
+          </div>
+          <div class="stu-guide__row">
+            <span class="stu-guide__k">위치</span>
+            <span class="stu-guide__v">(06621) 서울 서초구 강남대로 373, 10층</span>
+          </div>
+        </div>
+        <div class="stu-guide__foot">
+          <button class="stu-guide__btn" type="button">예약 신청</button>
+        </div>
       </section>
 
     </div>

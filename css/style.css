@@ -8811,3 +8811,118 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .tax-form, .tax-types { grid-template-columns: 1fr; }
   .tax-doc { flex-wrap: wrap; }
 }
+
+/* ============================================================
+   크리에이터 · 스튜디오 예약 (creator-studio-booking.html)
+   ============================================================ */
+
+/* 헤더 상태 배지 */
+.stu-status {
+  padding: 10px 20px; border-radius: var(--radius-pill);
+  background-color: var(--color-brand-lighter); color: var(--color-brand-darker);
+  font-size: 14px; font-weight: var(--font-weight-bold); white-space: nowrap;
+}
+
+/* 카드 공통 */
+.stu-card {
+  background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
+  border-radius: var(--radius-md); padding: 27px 31px; box-shadow: 0 0 5px rgb(0 0 0 / 0.04);
+  display: flex; flex-direction: column; gap: 18px;
+}
+.stu-calendar, .stu-guide { gap: 10px; }
+.stu-gear { gap: 12px; }
+
+/* 다가오는 예약 */
+.stu-booking {
+  display: flex; align-items: center; gap: 22px;
+  background-color: var(--color-brand-lighter); border-radius: var(--radius-md); padding: 22px;
+}
+.stu-booking__date {
+  flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding-right: 23px; border-right: 1px solid rgba(7,3,171,0.2);
+}
+.stu-booking__month { font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-brand-darker); }
+.stu-booking__day { font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 34px; line-height: 34px; color: var(--color-brand-darker); }
+.stu-booking__dow { font-size: 12px; color: var(--color-brand-darker); opacity: 0.7; }
+.stu-booking__info { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.stu-booking__title { font-size: 18px; font-weight: var(--font-weight-bold); color: var(--color-brand-darker); }
+.stu-booking__desc { font-size: 14px; line-height: 20px; color: var(--color-brand-darker); opacity: 0.8; }
+.stu-booking__actions { flex-shrink: 0; display: flex; gap: 8px; }
+.stu-booking__btn { border-radius: var(--radius-pill); font-size: 14px; font-weight: var(--font-weight-bold); cursor: pointer; white-space: nowrap; transition: opacity .15s ease, background-color .15s ease; }
+.stu-booking__btn--edit { padding: 12px 19px; background-color: transparent; border: 1px solid rgba(7,3,171,0.3); color: var(--color-brand-darker); }
+.stu-booking__btn--edit:hover { background-color: rgba(7,3,171,0.06); }
+.stu-booking__btn--cancel { padding: 12px 18px; background-color: var(--color-neutral-white); border: 0; color: var(--color-danger-base); }
+.stu-booking__btn--cancel:hover { opacity: 0.8; }
+
+/* 공간 카드 */
+.stu-spaces__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.stu-space { border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md); overflow: hidden; }
+.stu-space--active { border: 2px solid var(--color-brand-darker); }
+.stu-space__thumb { display: block; height: 140px; background-color: var(--color-neutral-lighter); }
+.stu-space__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.stu-space__body { padding: 18px; display: flex; flex-direction: column; gap: 4px; }
+.stu-space__title { font-size: 16px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.stu-space__desc { font-size: 13px; line-height: 20px; color: var(--color-neutral-base); }
+
+/* 캘린더 */
+.stu-calendar__head { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.stu-legend { display: flex; gap: 16px; }
+.stu-legend__item { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--color-neutral-base); }
+.stu-legend__dot { width: 10px; height: 10px; border-radius: 3px; }
+.stu-legend__dot--avail { background-color: var(--color-brand-lighter); }
+.stu-legend__dot--mine { background-color: var(--color-brand-darker); }
+.stu-legend__dot--closed { background-color: var(--color-neutral-lighter); }
+.stu-cal__weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; padding-top: 10px; }
+.stu-cal__wd { text-align: center; font-size: 12px; font-weight: var(--font-weight-bold); color: var(--color-neutral-light); }
+.stu-cal__wd--sun { color: var(--color-danger-base); }
+.stu-cal__wd--sat { color: var(--color-brand-base); }
+.stu-cal__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+.stu-cal__pad { height: 56px; }
+.stu-cal__day {
+  height: 56px; display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-md); font-size: 15px; font-weight: var(--font-weight-bold);
+}
+.stu-cal__day--avail { background-color: var(--color-brand-lighter); color: var(--color-brand-darker); cursor: pointer; }
+.stu-cal__day--avail:hover { background-color: #d3d1ff; }
+.stu-cal__day--mine { background-color: var(--color-brand-darker); color: var(--color-neutral-white); }
+.stu-cal__day--closed { background-color: var(--color-neutral-lighter); color: var(--color-neutral-light); }
+
+/* 대여 장비 칩 */
+.stu-gear__desc { font-size: 14px; line-height: 22px; color: var(--color-neutral-base); }
+.stu-gear__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.stu-chip {
+  padding: 10px 17px; border-radius: var(--radius-pill);
+  background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter);
+  font-size: 14px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base);
+}
+
+/* 이용 안내 */
+.stu-guide__list { display: flex; flex-direction: column; }
+.stu-guide__row {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 17px 0; border-bottom: 1px solid var(--color-neutral-lighter);
+}
+.stu-guide__row:last-child { border-bottom: 0; }
+.stu-guide__k { flex-shrink: 0; font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-light); }
+.stu-guide__v { text-align: right; font-size: 16px; line-height: 24px; color: var(--color-neutral-base); }
+.stu-guide__foot { display: flex; justify-content: flex-end; padding-top: 2px; }
+.stu-guide__btn {
+  padding: 13px 28px; border-radius: var(--radius-pill); border: 0;
+  background-color: var(--color-brand-darker); color: var(--color-neutral-white);
+  font-size: 15px; font-weight: var(--font-weight-bold); cursor: pointer; transition: opacity .15s ease;
+}
+.stu-guide__btn:hover { opacity: 0.9; }
+
+@media (max-width: 760px) {
+  .stu-spaces__grid { grid-template-columns: repeat(2, 1fr); }
+  .rev-flow__steps { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .stu-booking { flex-direction: column; align-items: stretch; gap: 16px; }
+  .stu-booking__date { flex-direction: row; gap: 10px; padding-right: 0; border-right: 0; border-bottom: 1px solid rgba(7,3,171,0.2); padding-bottom: 12px; align-items: baseline; }
+  .stu-booking__actions { justify-content: flex-end; }
+  .stu-calendar { overflow-x: auto; }
+  .stu-cal__grid, .stu-cal__weekdays { min-width: 460px; }
+  .stu-guide__row { flex-wrap: wrap; gap: 4px; }
+  .stu-guide__v { text-align: left; }
+}
