@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>내 클래스 관리 — HOOT UP</title>
-  <meta name="description" content="HOOT UP 크리에이터 내 클래스 관리 — 운영 중·심사 중·초안 클래스를 한 곳에서 관리하세요.">
+  <title>질문 관리 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 크리에이터 질문 관리 — 수강생 질문에 답변하고 응답 현황을 관리하세요.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -241,7 +241,7 @@
   <div class="mega-backdrop" hidden></div>
 </header>
 
-<main id="main" class="creator creator-classes-page" data-screen-label="내 클래스 관리">
+<main id="main" class="creator creator-questions-page" data-screen-label="질문 관리">
 
   <section class="creator-hero">
     <div class="l-container">
@@ -257,9 +257,9 @@
         <ul class="account-nav__list">
           <li><a class="account-nav__link" href="creator.html">크리에이터 홈</a></li>
           <li><a class="account-nav__link" href="creator-profile.html">공개 프로필</a></li>
-          <li><a class="account-nav__link is-active" href="creator-classes.html" aria-current="page">내 클래스 관리</a></li>
+          <li><a class="account-nav__link" href="creator-classes.html">내 클래스 관리</a></li>
           <li><a class="account-nav__link" href="creator-reviews.html">수강생 · 리뷰</a></li>
-          <li><a class="account-nav__link" href="creator-questions.html">질문 관리</a></li>
+          <li><a class="account-nav__link is-active" href="creator-questions.html" aria-current="page">질문 관리</a></li>
         </ul>
         <p class="account-nav__label">REVENUE</p>
         <ul class="account-nav__list">
@@ -277,103 +277,70 @@
       <!-- 헤더 -->
       <div class="pp-head">
         <div class="pp-head__intro">
-          <h2 class="pp-head__title">내 클래스 관리</h2>
-          <p class="pp-head__desc">운영 중 2 · 심사 중 1 · 초안 1 · 누적 수강생 21,340명</p>
+          <h2 class="pp-head__title">질문 관리</h2>
+          <p class="pp-head__desc">답변 대기 7건 · 평균 응답 시간 6시간 · 이번 달 답변 42건</p>
         </div>
-        <div class="pp-head__save">
-          <button class="creator-btn creator-btn--primary" type="button">+ 새 클래스 개설</button>
+        <div class="qa-tabs" role="tablist" aria-label="질문 상태 필터">
+          <button class="qa-tab is-active" type="button" role="tab" aria-selected="true">답변 대기 7</button>
+          <button class="qa-tab" type="button" role="tab" aria-selected="false">답변 완료</button>
+          <button class="qa-tab" type="button" role="tab" aria-selected="false">전체</button>
         </div>
       </div>
 
-      <!-- 필터 칩 -->
-      <div class="myclass-chips" role="tablist" aria-label="클래스 상태 필터">
-        <button class="myclass-chip is-active" type="button" role="tab" aria-selected="true">전체 4</button>
-        <button class="myclass-chip" type="button" role="tab" aria-selected="false">운영 중 2</button>
-        <button class="myclass-chip" type="button" role="tab" aria-selected="false">심사 중 1</button>
-        <button class="myclass-chip" type="button" role="tab" aria-selected="false">초안 1</button>
-      </div>
-
-      <!-- 클래스 목록 -->
-      <section class="creator-card cm-list">
-        <article class="cm-row">
-          <span class="cm-thumb"><img src="assets/course/cat-dev-react.png" alt="" loading="lazy"></span>
-          <div class="cm-row__info">
-            <div class="cm-row__badges">
-              <span class="cm-badge cm-badge--live">운영 중</span>
-              <span class="cm-badge">SIGNATURE</span>
-            </div>
-            <h3 class="cm-row__title">포트폴리오까지 끝내는 React 프론트엔드 실전 프로젝트</h3>
-            <div class="cm-stats">
-              <div class="cm-stat"><p class="cm-stat__k">수강생</p><p class="cm-stat__v">2,604명</p></div>
-              <div class="cm-stat"><p class="cm-stat__k">평점</p><p class="cm-stat__v">4.8</p></div>
-              <div class="cm-stat"><p class="cm-stat__k">완주율</p><p class="cm-stat__v">62%</p></div>
-              <div class="cm-stat"><p class="cm-stat__k">이번 달 매출</p><p class="cm-stat__v">3,180,000원</p></div>
-            </div>
-            <p class="cm-row__meta">88강 · 18시간 · 165,000원 (40% 할인 적용 중) · 최종 수정 2026.07.18</p>
+      <!-- 질문 목록 -->
+      <section class="creator-card qa-list">
+        <article class="qa-card qa-card--open">
+          <div class="qa-metarow">
+            <span class="qa-badge qa-badge--wait">답변 대기</span>
+            <span class="qa-src">React 실전 프로젝트 · 14강 「상태 관리 훅 만들기」 · 2시간 전</span>
           </div>
-          <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">커리큘럼 편집</button>
-            <button class="cm-btn cm-btn--ghost" type="button">가격 · 할인</button>
-            <button class="cm-btn cm-btn--ghost-muted" type="button">판매 중지</button>
+          <h3 class="qa-title qa-title--lg">useEffect 의존성 배열 질문이요</h3>
+          <p class="qa-body qa-body--lg">강의에서 의존성 배열에 객체를 넣지 말라고 하셨는데, 그럼 API 응답 객체를 감시해야 할 때는 어떻게 해야 하나요? useMemo로 감싸는 게 맞을까요?</p>
+          <div class="qa-asker">
+            <img class="qa-asker__avatar" src="assets/avatar/user.jpg" alt="밤샘러 지우 프로필" loading="lazy">
+            <span class="qa-asker__meta">밤샘러 지우 · 수강률 62%</span>
+          </div>
+          <textarea class="qa-textarea" rows="3" placeholder="답변을 입력하세요" aria-label="답변 입력"></textarea>
+          <div class="qa-tools">
+            <div class="qa-chiprow">
+              <button class="qa-chip" type="button">자주 쓰는 답변</button>
+              <button class="qa-chip" type="button">코드 첨부</button>
+            </div>
+            <button class="qa-submit" type="button">답변 등록</button>
           </div>
         </article>
-        <article class="cm-row">
-          <span class="cm-thumb"><img src="assets/course/cat-dev-responsive-publishing.png" alt="" loading="lazy"></span>
-          <div class="cm-row__info">
-            <div class="cm-row__badges">
-              <span class="cm-badge cm-badge--live">운영 중</span>
-              <span class="cm-badge">BEST</span>
+        <article class="qa-card qa-card--compact">
+          <div class="qa-compact__main">
+            <div class="qa-metarow">
+              <span class="qa-badge qa-badge--wait">답변 대기</span>
+              <span class="qa-src">반응형 웹 퍼블리싱 · 22강 · 5시간 전</span>
             </div>
-            <h3 class="cm-row__title">제로부터 완성하는 반응형 웹 퍼블리싱 마스터 클래스</h3>
-            <div class="cm-stats">
-              <div class="cm-stat"><p class="cm-stat__k">수강생</p><p class="cm-stat__v">4,128명</p></div>
-              <div class="cm-stat"><p class="cm-stat__k">평점</p><p class="cm-stat__v">4.9</p></div>
-              <div class="cm-stat"><p class="cm-stat__k">완주율</p><p class="cm-stat__v">71%</p></div>
-              <div class="cm-stat"><p class="cm-stat__k">이번 달 매출</p><p class="cm-stat__v">2,940,000원</p></div>
-            </div>
-            <p class="cm-row__meta">52강 · 11시간 · 110,000원 (30% 할인 적용 중) · 최종 수정 2026.06.02</p>
+            <h3 class="qa-title">그리드 레이아웃이 사파리에서 깨져요</h3>
+            <p class="qa-body">크롬에서는 정상인데 사파리에서만 3열이 2열로 나옵니다. minmax 값 문제일까요?</p>
           </div>
-          <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">커리큘럼 편집</button>
-            <button class="cm-btn cm-btn--ghost" type="button">가격 · 할인</button>
-            <button class="cm-btn cm-btn--ghost-muted" type="button">판매 중지</button>
-          </div>
+          <button class="qa-btn qa-btn--dark" type="button">답변하기</button>
         </article>
-        <article class="cm-row">
-          <span class="cm-thumb"><img src="assets/course/cat-dev-vibe.png" alt="" loading="lazy"></span>
-          <div class="cm-row__info">
-            <div class="cm-row__badges">
-              <span class="cm-badge cm-badge--review">심사 중</span>
+        <article class="qa-card qa-card--compact">
+          <div class="qa-compact__main">
+            <div class="qa-metarow">
+              <span class="qa-badge qa-badge--wait">답변 대기</span>
+              <span class="qa-src">React 실전 프로젝트 · 40강 · 어제</span>
             </div>
-            <h3 class="cm-row__title">AI와 함께 일하는 바이브 코딩 실무 완전 가이드</h3>
-            <div class="cm-progress">
-              <span class="cm-progress__track"><span class="cm-progress__fill cm-progress__fill--review" style="width:60%;"></span></span>
-              <span class="cm-progress__label cm-progress__label--review">검수 3/5단계</span>
-            </div>
-            <p class="cm-row__meta">영상 품질 검수 완료 · 자막 검수 진행 중 · 예상 오픈 2026.08.14</p>
+            <h3 class="qa-title">포트폴리오 배포는 어디로 하나요?</h3>
+            <p class="qa-body">강의에서는 Vercel을 쓰셨는데 무료 플랜으로도 충분한지 궁금합니다.</p>
           </div>
-          <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">진행 상황</button>
-            <button class="cm-btn cm-btn--ghost" type="button">검수 의견</button>
-          </div>
+          <button class="qa-btn qa-btn--dark" type="button">답변하기</button>
         </article>
-        <article class="cm-row cm-row--last">
-          <span class="cm-thumb cm-thumb--empty" aria-hidden="true"></span>
-          <div class="cm-row__info">
-            <div class="cm-row__badges">
-              <span class="cm-badge cm-badge--draft">초안</span>
+        <article class="qa-card qa-card--compact qa-card--done">
+          <div class="qa-compact__main">
+            <div class="qa-metarow">
+              <span class="qa-badge qa-badge--done">답변 완료</span>
+              <span class="qa-src">반응형 웹 퍼블리싱 · 8강 · 2일 전</span>
             </div>
-            <h3 class="cm-row__title cm-row__title--muted">TypeScript 실무 리팩터링 (제목 미정)</h3>
-            <div class="cm-progress">
-              <span class="cm-progress__track"><span class="cm-progress__fill cm-progress__fill--draft" style="width:30%;"></span></span>
-              <span class="cm-progress__label cm-progress__label--draft">커리큘럼 12/40강</span>
-            </div>
-            <p class="cm-row__meta">썸네일 미등록 · 소개 영상 미등록 · 마지막 저장 3일 전</p>
+            <h3 class="qa-title">flex-basis와 width 차이가 헷갈려요</h3>
+            <p class="qa-body">답변 완료 · 도움이 됐어요 12</p>
           </div>
-          <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--primary" type="button">이어서 작성</button>
-            <button class="cm-btn cm-btn--danger" type="button">초안 삭제</button>
-          </div>
+          <button class="qa-btn qa-btn--ghost" type="button">답변 보기</button>
         </article>
       </section>
 
