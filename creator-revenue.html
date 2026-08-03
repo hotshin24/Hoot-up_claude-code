@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>질문 관리 — HOOT UP</title>
-  <meta name="description" content="HOOT UP 크리에이터 질문 관리 — 수강생 질문에 답변하고 응답 현황을 관리하세요.">
+  <title>수익 · 정산 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 크리에이터 수익·정산 — 구독 정산과 소장 판매 수익, 정산 내역을 한 곳에서 확인하세요.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -241,7 +241,7 @@
   <div class="mega-backdrop" hidden></div>
 </header>
 
-<main id="main" class="creator creator-questions-page" data-screen-label="질문 관리">
+<main id="main" class="creator creator-revenue-page" data-screen-label="수익 · 정산">
 
   <section class="creator-hero">
     <div class="l-container">
@@ -259,11 +259,11 @@
           <li><a class="account-nav__link" href="creator-profile.html">공개 프로필</a></li>
           <li><a class="account-nav__link" href="creator-classes.html">내 클래스 관리</a></li>
           <li><a class="account-nav__link" href="creator-reviews.html">수강생 · 리뷰</a></li>
-          <li><a class="account-nav__link is-active" href="creator-questions.html" aria-current="page">질문 관리</a></li>
+          <li><a class="account-nav__link" href="creator-questions.html">질문 관리</a></li>
         </ul>
         <p class="account-nav__label">REVENUE</p>
         <ul class="account-nav__list">
-          <li><a class="account-nav__link" href="creator-revenue.html">수익 · 정산</a></li>
+          <li><a class="account-nav__link is-active" href="creator-revenue.html" aria-current="page">수익 · 정산</a></li>
           <li><a class="account-nav__link" href="#">정산 계좌 · 세금</a></li>
         </ul>
         <p class="account-nav__label">SUPPORT</p>
@@ -277,71 +277,224 @@
       <!-- 헤더 -->
       <div class="pp-head">
         <div class="pp-head__intro">
-          <h2 class="pp-head__title">질문 관리</h2>
-          <p class="pp-head__desc">답변 대기 7건 · 평균 응답 시간 6시간 · 이번 달 답변 42건</p>
+          <h2 class="pp-head__title">수익 · 정산</h2>
+          <p class="pp-head__desc">구독과 소장, 두 갈래 수익을 한 화면에서 확인하세요.</p>
         </div>
-        <div class="qa-tabs" role="tablist" aria-label="질문 상태 필터">
-          <button class="qa-tab is-active" type="button" role="tab" aria-selected="true">답변 대기 7</button>
-          <button class="qa-tab" type="button" role="tab" aria-selected="false">답변 완료</button>
-          <button class="qa-tab" type="button" role="tab" aria-selected="false">전체</button>
+        <div class="pp-head__save">
+          <button class="creator-btn creator-btn--ghost" type="button">정산 리포트 다운로드</button>
         </div>
       </div>
 
-      <!-- 질문 목록 -->
-      <section class="creator-card qa-list">
-        <article class="qa-card qa-card--open">
-          <div class="qa-metarow">
-            <span class="qa-badge qa-badge--wait">답변 대기</span>
-            <span class="qa-src">React 실전 프로젝트 · 14강 「상태 관리 훅 만들기」 · 2시간 전</span>
+      <!-- 요약 밴드 -->
+      <section class="rev-summary">
+        <div class="rev-summary__main">
+          <p class="rev-summary__label">2026년 7월 집계 수익</p>
+          <p class="rev-summary__total">8,420,000<span>원</span></p>
+        </div>
+        <div class="rev-summary__stats">
+          <div class="rev-summary__stat"><p class="rev-summary__k">구독 정산 (학습량 기반)</p><p class="rev-summary__v">2,300,000원</p></div>
+          <div class="rev-summary__stat"><p class="rev-summary__k">소장 판매 (판매액 기준)</p><p class="rev-summary__v">6,120,000원</p></div>
+          <div class="rev-summary__stat"><p class="rev-summary__k">정산 상태</p><p class="rev-summary__v rev-summary__v--accent">확정 대기</p></div>
+        </div>
+      </section>
+
+      <!-- 수익 구조 2카드 -->
+      <div class="rev-cards">
+        <section class="rev-card rev-info">
+          <div class="rev-info__top">
+            <span class="rev-info__num">01</span>
+            <span class="rev-info__badge">SUBSCRIPTION</span>
           </div>
-          <h3 class="qa-title qa-title--lg">useEffect 의존성 배열 질문이요</h3>
-          <p class="qa-body qa-body--lg">강의에서 의존성 배열에 객체를 넣지 말라고 하셨는데, 그럼 API 응답 객체를 감시해야 할 때는 어떻게 해야 하나요? useMemo로 감싸는 게 맞을까요?</p>
-          <div class="qa-asker">
-            <img class="qa-asker__avatar" src="assets/avatar/user.jpg" alt="밤샘러 지우 프로필" loading="lazy">
-            <span class="qa-asker__meta">밤샘러 지우 · 수강률 62%</span>
+          <h3 class="rev-info__title">구독 정산 (올나잇 패스)</h3>
+          <p class="rev-info__desc">구독 회원이 내 클래스를 학습한 만큼 정산돼요. 꾸준한 학습이 곧 꾸준한 수익이 됩니다.</p>
+          <div class="rev-info__row">
+            <span class="rev-info__k">기준</span>
+            <span class="rev-info__v rev-info__v--accent">학습량(시청·수강 데이터) 기반</span>
           </div>
-          <textarea class="qa-textarea" rows="3" placeholder="답변을 입력하세요" aria-label="답변 입력"></textarea>
-          <div class="qa-tools">
-            <div class="qa-chiprow">
-              <button class="qa-chip" type="button">자주 쓰는 답변</button>
-              <button class="qa-chip" type="button">코드 첨부</button>
+          <div class="rev-info__row">
+            <span class="rev-info__k">특징</span>
+            <span class="rev-info__v">완주율이 높을수록 유리한 구조</span>
+          </div>
+        </section>
+        <section class="rev-card rev-info">
+          <div class="rev-info__top">
+            <span class="rev-info__num">02</span>
+            <span class="rev-info__badge">SINGLE</span>
+          </div>
+          <h3 class="rev-info__title">소장 판매 (단건)</h3>
+          <p class="rev-info__desc">평생 소장으로 판매된 클래스의 판매액을 기준으로 정산돼요.</p>
+          <div class="rev-info__row">
+            <span class="rev-info__k">기준</span>
+            <span class="rev-info__v rev-info__v--accent">판매액 기준</span>
+          </div>
+          <div class="rev-info__row">
+            <span class="rev-info__k">특징</span>
+            <span class="rev-info__v">이벤트·얼리버드 등 프로모션 판매도 포함</span>
+          </div>
+        </section>
+      </div>
+
+      <!-- 월별 수익 차트 -->
+      <section class="rev-card rev-chart">
+        <div class="rev-chart__head">
+          <h3 class="rev-card__title">월별 수익 <span class="rev-card__sub">최근 6개월</span></h3>
+          <div class="rev-legend">
+            <span class="rev-legend__item"><span class="rev-legend__dot rev-legend__dot--own"></span>소장 판매</span>
+            <span class="rev-legend__item"><span class="rev-legend__dot rev-legend__dot--sub"></span>구독 정산</span>
+          </div>
+        </div>
+        <div class="rev-bars">
+            <div class="rev-bar">
+              <span class="rev-bar__val">512만</span>
+              <div class="rev-bar__stack">
+                <span class="rev-bar__seg rev-bar__seg--sub" style="height:26px;"></span>
+                <span class="rev-bar__seg rev-bar__seg--own" style="height:80px;"></span>
+              </div>
             </div>
-            <button class="qa-submit" type="button">답변 등록</button>
-          </div>
-        </article>
-        <article class="qa-card qa-card--compact">
-          <div class="qa-compact__main">
-            <div class="qa-metarow">
-              <span class="qa-badge qa-badge--wait">답변 대기</span>
-              <span class="qa-src">반응형 웹 퍼블리싱 · 22강 · 5시간 전</span>
+            <div class="rev-bar">
+              <span class="rev-bar__val">468만</span>
+              <div class="rev-bar__stack">
+                <span class="rev-bar__seg rev-bar__seg--sub" style="height:22px;"></span>
+                <span class="rev-bar__seg rev-bar__seg--own" style="height:74px;"></span>
+              </div>
             </div>
-            <h3 class="qa-title">그리드 레이아웃이 사파리에서 깨져요</h3>
-            <p class="qa-body">크롬에서는 정상인데 사파리에서만 3열이 2열로 나옵니다. minmax 값 문제일까요?</p>
-          </div>
-          <button class="qa-btn qa-btn--dark" type="button">답변하기</button>
-        </article>
-        <article class="qa-card qa-card--compact">
-          <div class="qa-compact__main">
-            <div class="qa-metarow">
-              <span class="qa-badge qa-badge--wait">답변 대기</span>
-              <span class="qa-src">React 실전 프로젝트 · 40강 · 어제</span>
+            <div class="rev-bar">
+              <span class="rev-bar__val">604만</span>
+              <div class="rev-bar__stack">
+                <span class="rev-bar__seg rev-bar__seg--sub" style="height:30px;"></span>
+                <span class="rev-bar__seg rev-bar__seg--own" style="height:94px;"></span>
+              </div>
             </div>
-            <h3 class="qa-title">포트폴리오 배포는 어디로 하나요?</h3>
-            <p class="qa-body">강의에서는 Vercel을 쓰셨는데 무료 플랜으로도 충분한지 궁금합니다.</p>
-          </div>
-          <button class="qa-btn qa-btn--dark" type="button">답변하기</button>
-        </article>
-        <article class="qa-card qa-card--compact qa-card--done">
-          <div class="qa-compact__main">
-            <div class="qa-metarow">
-              <span class="qa-badge qa-badge--done">답변 완료</span>
-              <span class="qa-src">반응형 웹 퍼블리싱 · 8강 · 2일 전</span>
+            <div class="rev-bar">
+              <span class="rev-bar__val">588만</span>
+              <div class="rev-bar__stack">
+                <span class="rev-bar__seg rev-bar__seg--sub" style="height:28px;"></span>
+                <span class="rev-bar__seg rev-bar__seg--own" style="height:92px;"></span>
+              </div>
             </div>
-            <h3 class="qa-title">flex-basis와 width 차이가 헷갈려요</h3>
-            <p class="qa-body">답변 완료 · 도움이 됐어요 12</p>
+            <div class="rev-bar">
+              <span class="rev-bar__val">712만</span>
+              <div class="rev-bar__stack">
+                <span class="rev-bar__seg rev-bar__seg--sub" style="height:34px;"></span>
+                <span class="rev-bar__seg rev-bar__seg--own" style="height:112px;"></span>
+              </div>
+            </div>
+            <div class="rev-bar">
+              <span class="rev-bar__val rev-bar__val--top">842만</span>
+              <div class="rev-bar__stack">
+                <span class="rev-bar__seg rev-bar__seg--sub" style="height:40px;"></span>
+                <span class="rev-bar__seg rev-bar__seg--own" style="height:132px;"></span>
+              </div>
+            </div>
+        </div>
+        <div class="rev-months">
+              <span class="rev-months__m">2월</span>
+              <span class="rev-months__m">3월</span>
+              <span class="rev-months__m">4월</span>
+              <span class="rev-months__m">5월</span>
+              <span class="rev-months__m">6월</span>
+              <span class="rev-months__m rev-months__m--now">7월</span>
+        </div>
+      </section>
+
+      <!-- 정산 흐름 -->
+      <section class="rev-card rev-flow">
+        <h3 class="rev-card__title">정산 흐름</h3>
+        <div class="rev-flow__steps">
+          <div class="rev-step">
+            <p class="rev-step__no">STEP 01</p>
+            <h4 class="rev-step__title">집계</h4>
+            <p class="rev-step__desc">매월 학습량·판매액 집계</p>
           </div>
-          <button class="qa-btn qa-btn--ghost" type="button">답변 보기</button>
-        </article>
+          <div class="rev-step">
+            <p class="rev-step__no">STEP 02</p>
+            <h4 class="rev-step__title">리포트 제공</h4>
+            <p class="rev-step__desc">정산 내역을 대시보드·리포트로 공개</p>
+          </div>
+          <div class="rev-step">
+            <p class="rev-step__no">STEP 03</p>
+            <h4 class="rev-step__title">정산 확정</h4>
+            <p class="rev-step__desc">확정 내역 확인</p>
+          </div>
+          <div class="rev-step rev-step--accent">
+            <p class="rev-step__no">STEP 04</p>
+            <h4 class="rev-step__title">지급</h4>
+            <p class="rev-step__desc">정해진 지급일에 등록 계좌로 입금</p>
+          </div>
+        </div>
+        <p class="rev-flow__note">＊구체적인 정산 비율·지급 주기·최소 정산액 등은 파트너십 미팅 및 계약서에서 안내드립니다.</p>
+      </section>
+
+      <!-- 정산 내역 -->
+      <section class="rev-card rev-table">
+        <h3 class="rev-card__title">정산 내역</h3>
+        <div class="rev-table__scroll">
+          <div class="rev-table__inner">
+            <div class="rev-table__head">
+              <span>집계 월</span>
+              <span>구분</span>
+              <span>구독 정산</span>
+              <span>소장 판매</span>
+              <span>상태</span>
+            </div>
+            <div class="rev-table__row">
+              <span class="rev-table__month">2026년 7월</span>
+              <span class="rev-table__type">구독 + 소장</span>
+              <span class="rev-table__num">2,300,000원</span>
+              <span class="rev-table__num">6,120,000원</span>
+              <span class="rev-table__status rev-table__status--wait">확정 대기</span>
+            </div>
+            <div class="rev-table__row">
+              <span class="rev-table__month">2026년 6월</span>
+              <span class="rev-table__type">구독 + 소장</span>
+              <span class="rev-table__num">1,980,000원</span>
+              <span class="rev-table__num">5,140,000원</span>
+              <span class="rev-table__status rev-table__status--done">지급 완료</span>
+            </div>
+            <div class="rev-table__row">
+              <span class="rev-table__month">2026년 5월</span>
+              <span class="rev-table__type">구독 + 소장</span>
+              <span class="rev-table__num">1,740,000원</span>
+              <span class="rev-table__num">4,140,000원</span>
+              <span class="rev-table__status rev-table__status--done">지급 완료</span>
+            </div>
+            <div class="rev-table__row">
+              <span class="rev-table__month">2026년 4월</span>
+              <span class="rev-table__type">구독 + 소장</span>
+              <span class="rev-table__num">1,660,000원</span>
+              <span class="rev-table__num">4,380,000원</span>
+              <span class="rev-table__status rev-table__status--done">지급 완료</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 클래스별 성과 -->
+      <section class="rev-card rev-perf">
+        <h3 class="rev-card__title">클래스별 성과 <span class="rev-card__sub">이번 달</span></h3>
+        <div class="rev-perf__list">
+          <div class="rev-perf__item">
+            <div class="rev-perf__head">
+              <span class="rev-perf__name">포트폴리오까지 끝내는 React 프론트엔드 실전 프로젝트</span>
+              <span class="rev-perf__amt">3,180,000원</span>
+            </div>
+            <span class="rev-perf__track"><span class="rev-perf__fill" style="width:38%;"></span></span>
+          </div>
+          <div class="rev-perf__item">
+            <div class="rev-perf__head">
+              <span class="rev-perf__name">제로부터 완성하는 반응형 웹 퍼블리싱 마스터 클래스</span>
+              <span class="rev-perf__amt">2,940,000원</span>
+            </div>
+            <span class="rev-perf__track"><span class="rev-perf__fill" style="width:35%;"></span></span>
+          </div>
+          <div class="rev-perf__item">
+            <div class="rev-perf__head">
+              <span class="rev-perf__name">올나잇 패스 학습량 정산</span>
+              <span class="rev-perf__amt">2,300,000원</span>
+            </div>
+            <span class="rev-perf__track"><span class="rev-perf__fill" style="width:27%;"></span></span>
+          </div>
+        </div>
       </section>
 
     </div>

@@ -8582,3 +8582,116 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .qa-card--compact { flex-direction: column; align-items: stretch; }
   .qa-btn { width: 100%; text-align: center; }
 }
+
+/* ============================================================
+   크리에이터 · 수익 · 정산 (creator-revenue.html)
+   ============================================================ */
+
+/* 공통 카드 */
+.rev-card {
+  background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
+  border-radius: var(--radius-md); padding: 27px 31px; box-shadow: 0 0 5px rgb(0 0 0 / 0.04);
+}
+.rev-card__title { font-size: 20px; line-height: 26px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.rev-card__sub { margin-left: 8px; font-size: 14px; font-weight: var(--font-weight-regular); color: var(--color-neutral-light); }
+
+/* 요약 밴드 */
+.rev-summary {
+  display: flex; align-items: center; gap: 40px; padding: 30px; border-radius: var(--radius-md);
+  background-image: linear-gradient(225deg, var(--color-brand-darker) 0%, #9896fd 100%);
+}
+.rev-summary__main { flex-shrink: 0; min-width: 231px; display: flex; flex-direction: column; gap: 6px; }
+.rev-summary__label { font-size: 13px; color: rgba(255,255,255,0.72); }
+.rev-summary__total { font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 44px; line-height: 44px; color: var(--color-neutral-white); }
+.rev-summary__total span { margin-left: 3px; font-size: 20px; font-weight: 900; }
+.rev-summary__stats { flex: 1 1 0; min-width: 0; display: flex; gap: 20px; padding-left: 41px; border-left: 1px solid rgba(255,255,255,0.2); }
+.rev-summary__stat { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.rev-summary__k { font-size: 13px; color: rgba(255,255,255,0.72); }
+.rev-summary__v { font-size: 20px; font-weight: var(--font-weight-bold); color: var(--color-neutral-white); }
+.rev-summary__v--accent { color: #f8fc49; }
+
+/* 수익 구조 2카드 */
+.rev-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.rev-info { display: flex; flex-direction: column; padding: 27px; }
+.rev-info__top { display: flex; align-items: center; justify-content: space-between; }
+.rev-info__num { font-family: var(--font-display); font-weight: 900; font-size: 26px; color: var(--color-brand-lighter); }
+.rev-info__badge {
+  padding: 6px 16px; border-radius: var(--radius-pill);
+  background-color: var(--color-brand-lighter); color: var(--color-brand-darker);
+  font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 11px; letter-spacing: 0.88px;
+}
+.rev-info__title { padding-top: 12px; font-size: 22px; line-height: 30px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.rev-info__desc { padding: 8px 0 16px; font-size: 15px; line-height: 24px; color: var(--color-neutral-base); }
+.rev-info__row {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding-top: 18px; border-top: 1px solid var(--color-neutral-lighter);
+}
+.rev-info__row:not(:last-child) { padding-bottom: 16px; }
+.rev-info__k { flex-shrink: 0; font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-light); }
+.rev-info__v { text-align: right; font-size: 16px; color: var(--color-neutral-base); }
+.rev-info__v--accent { font-weight: var(--font-weight-bold); color: var(--color-brand-darker); }
+
+/* 월별 수익 차트 */
+.rev-chart__head { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 26px; }
+.rev-legend { display: flex; gap: 14px; }
+.rev-legend__item { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--color-neutral-base); }
+.rev-legend__dot { width: 10px; height: 10px; border-radius: 2px; }
+.rev-legend__dot--own { background-color: var(--color-brand-darker); }
+.rev-legend__dot--sub { background-color: #9896fd; }
+.rev-bars { display: flex; align-items: flex-end; justify-content: center; gap: 18px; height: 220px; border-bottom: 1px solid var(--color-neutral-lighter); }
+.rev-bar { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.rev-bar__val { font-size: 12px; font-weight: var(--font-weight-bold); color: var(--color-neutral-light); }
+.rev-bar__val--top { color: var(--color-neutral-darker); }
+.rev-bar__stack { width: 100%; display: flex; flex-direction: column; }
+.rev-bar__seg { display: block; width: 100%; }
+.rev-bar__seg--sub { background-color: #9896fd; border-radius: 5px 5px 0 0; }
+.rev-bar__seg--own { background-color: var(--color-brand-darker); }
+.rev-months { display: flex; gap: 18px; padding-top: 10px; }
+.rev-months__m { flex: 1 1 0; min-width: 0; text-align: center; font-size: 12px; color: var(--color-neutral-light); }
+.rev-months__m--now { font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+
+/* 정산 흐름 */
+.rev-flow { display: flex; flex-direction: column; gap: 18px; }
+.rev-flow__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.rev-step { background-color: var(--color-neutral-lightest); border-radius: var(--radius-md); padding: 22px 20px; display: flex; flex-direction: column; gap: 6px; }
+.rev-step--accent { background-color: var(--color-brand-lighter); }
+.rev-step__no { font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 13px; letter-spacing: 1.3px; color: var(--color-brand-darker); }
+.rev-step__title { padding-top: 4px; font-size: 17px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.rev-step--accent .rev-step__title { color: var(--color-brand-darker); }
+.rev-step__desc { font-size: 14px; line-height: 22px; color: var(--color-neutral-base); }
+.rev-step--accent .rev-step__desc { color: var(--color-brand-darker); opacity: 0.8; }
+.rev-flow__note { background-color: var(--color-neutral-darker); border-radius: var(--radius-md); padding: 16px 20px; font-size: 14px; line-height: 22px; color: var(--color-brand-lighter); }
+
+/* 정산 내역 표 */
+.rev-table__scroll { overflow-x: auto; }
+.rev-table__inner { min-width: 640px; }
+.rev-table__head, .rev-table__row {
+  display: grid; grid-template-columns: 120px minmax(160px, 1fr) 130px 130px 100px; gap: 16px;
+  align-items: center; padding: 0 6px;
+}
+.rev-table__head { padding-bottom: 13px; border-bottom: 1px solid var(--color-neutral-lighter); }
+.rev-table__head span { font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-light); }
+.rev-table__row { padding-top: 16px; padding-bottom: 17px; border-bottom: 1px solid var(--color-neutral-lighter); }
+.rev-table__row:last-child { border-bottom: 0; padding-bottom: 0; }
+.rev-table__month { font-size: 14px; color: var(--color-neutral-base); }
+.rev-table__type { font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.rev-table__num { font-size: 15px; color: var(--color-neutral-darker); }
+.rev-table__status { font-size: 13px; font-weight: var(--font-weight-bold); }
+.rev-table__status--wait { color: var(--color-flag-best); }
+.rev-table__status--done { color: var(--color-brand-darker); }
+
+/* 클래스별 성과 */
+.rev-perf__list { display: flex; flex-direction: column; gap: 16px; padding-top: 27px; }
+.rev-perf__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 8px; }
+.rev-perf__name { font-size: 15px; color: var(--color-neutral-darker); }
+.rev-perf__amt { flex-shrink: 0; font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.rev-perf__track { display: block; height: 8px; border-radius: var(--radius-pill); background-color: var(--color-neutral-lighter); overflow: hidden; }
+.rev-perf__fill { display: block; height: 100%; border-radius: var(--radius-pill); background-color: var(--color-brand-darker); }
+
+@media (max-width: 720px) {
+  .rev-summary { flex-direction: column; align-items: stretch; gap: 24px; }
+  .rev-summary__stats { padding-left: 0; border-left: 0; flex-wrap: wrap; gap: 16px; }
+  .rev-cards { grid-template-columns: 1fr; }
+  .rev-flow__steps { grid-template-columns: repeat(2, 1fr); }
+  .rev-flow__note { white-space: normal; }
+}
