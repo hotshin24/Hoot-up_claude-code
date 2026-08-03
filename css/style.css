@@ -8303,6 +8303,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   border-bottom: 1px solid var(--color-neutral-lighter);
 }
 .cm-row--last { border-bottom: 0; }
+.cm-row[hidden] { display: none; }
 
 /* 썸네일 */
 .cm-thumb {
