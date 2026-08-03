@@ -557,10 +557,15 @@ hr {
   align-items: center;
   height: 36px;
   padding: 0 18px;
+  appearance: none;
+  border: 0;
+  background-color: transparent;
   border-radius: var(--radius-pill);
+  font-family: inherit;
   font-size: var(--text-body-sm-size);
   font-weight: var(--font-weight-bold);
   white-space: nowrap;
+  cursor: pointer;
   color: var(--color-neutral-dark);
   transition: background-color var(--duration-fast) var(--easing-standard),
               color var(--duration-fast) var(--easing-standard);
