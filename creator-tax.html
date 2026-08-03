@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>크리에이터 계정 — HOOT UP</title>
-  <meta name="description" content="HOOT UP 크리에이터 계정 — 클래스 운영과 수익·정산, 수강생·리뷰를 한 곳에서 관리하세요.">
+  <title>정산 계좌 · 세금 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 크리에이터 정산 계좌·세금 — 지급 계좌와 사업자 구분·세금 서류를 등록하세요.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -241,9 +241,8 @@
   <div class="mega-backdrop" hidden></div>
 </header>
 
-<main id="main" class="creator" data-screen-label="크리에이터 계정">
+<main id="main" class="creator creator-tax-page" data-screen-label="정산 계좌 · 세금">
 
-  <!-- 히어로 -->
   <section class="creator-hero">
     <div class="l-container">
       <p class="creator-hero__eyebrow">CREATOR STUDIO</p>
@@ -256,7 +255,7 @@
     <aside class="account-nav creator-nav" aria-label="크리에이터 메뉴">
         <p class="account-nav__label">STUDIO</p>
         <ul class="account-nav__list">
-          <li><a class="account-nav__link is-active" href="creator.html" aria-current="page">크리에이터 홈</a></li>
+          <li><a class="account-nav__link" href="creator.html">크리에이터 홈</a></li>
           <li><a class="account-nav__link" href="creator-profile.html">공개 프로필</a></li>
           <li><a class="account-nav__link" href="creator-classes.html">내 클래스 관리</a></li>
           <li><a class="account-nav__link" href="creator-reviews.html">수강생 · 리뷰</a></li>
@@ -265,7 +264,7 @@
         <p class="account-nav__label">REVENUE</p>
         <ul class="account-nav__list">
           <li><a class="account-nav__link" href="creator-revenue.html">수익 · 정산</a></li>
-          <li><a class="account-nav__link" href="creator-tax.html">정산 계좌 · 세금</a></li>
+          <li><a class="account-nav__link is-active" href="creator-tax.html" aria-current="page">정산 계좌 · 세금</a></li>
         </ul>
         <p class="account-nav__label">SUPPORT</p>
         <ul class="account-nav__list">
@@ -275,191 +274,108 @@
 
     <div class="account-content creator-content">
 
-      <!-- 프로필 -->
-      <section class="creator-card creator-profile">
-        <div class="creator-profile__head">
-          <img class="creator-profile__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="코드랩 현우 프로필">
-          <div class="creator-profile__meta">
-            <div class="creator-profile__nameline">
-              <h2 class="creator-profile__name">코드랩 현우</h2>
-              <span class="creator-profile__badge">시그니처 크리에이터</span>
-            </div>
-            <p class="creator-profile__sub">개발 &amp; IT · 팔로워 12,480명 · 누적 수강생 21,340명</p>
-          </div>
-          <div class="creator-profile__actions">
-            <a class="creator-btn creator-btn--ghost" href="creator-profile.html">공개 프로필</a>
-            <a class="creator-btn creator-btn--primary" href="creator-classes.html">새 클래스 개설</a>
-          </div>
+      <!-- 헤더 -->
+      <div class="pp-head">
+        <div class="pp-head__intro">
+          <h2 class="pp-head__title">정산 계좌 · 세금</h2>
+          <p class="pp-head__desc">지급 정보를 정확히 등록해야 정산이 지연되지 않아요.</p>
         </div>
-        <div class="creator-stats">
-          <div class="creator-stat">
-            <p class="creator-stat__label">이번 달 수익</p>
-            <p class="creator-stat__value">8,420,000<span>원</span></p>
-            <p class="creator-stat__sub creator-stat__sub--up">▲ 18.2% 전월 대비</p>
-          </div>
-          <div class="creator-stat">
-            <p class="creator-stat__label">구독 정산분</p>
-            <p class="creator-stat__value">2,300,000<span>원</span></p>
-            <p class="creator-stat__sub">학습량 기반 · 확정 대기</p>
-          </div>
-          <div class="creator-stat">
-            <p class="creator-stat__label">이번 달 판매</p>
-            <p class="creator-stat__value">312<span>건</span></p>
-            <p class="creator-stat__sub creator-stat__sub--up">▲ 24건 전월 대비</p>
-          </div>
-          <div class="creator-stat">
-            <p class="creator-stat__label">평균 평점</p>
-            <p class="creator-stat__value">4.8<span>/ 5</span></p>
-            <p class="creator-stat__sub">신규 리뷰 24건</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 수익 추이 -->
-      <section class="creator-card creator-revenue">
-        <div class="creator-card__head">
-          <h3 class="creator-card__title">수익 추이 <span class="creator-card__sub">최근 6개월</span></h3>
-          <a class="creator-more" href="creator-revenue.html">정산 상세 보기</a>
-        </div>
-        <div class="creator-chart">
-          <div class="creator-chart__bars">
-            <div class="creator-bar">
-              <span class="creator-bar__val">512만</span>
-              <span class="creator-bar__fill" style="height:106px;"></span>
-            </div>
-            <div class="creator-bar">
-              <span class="creator-bar__val">468만</span>
-              <span class="creator-bar__fill" style="height:96px;"></span>
-            </div>
-            <div class="creator-bar">
-              <span class="creator-bar__val">604만</span>
-              <span class="creator-bar__fill" style="height:124px;"></span>
-            </div>
-            <div class="creator-bar">
-              <span class="creator-bar__val">588만</span>
-              <span class="creator-bar__fill" style="height:120px;"></span>
-            </div>
-            <div class="creator-bar">
-              <span class="creator-bar__val">712만</span>
-              <span class="creator-bar__fill creator-bar__fill--mid" style="height:146px;"></span>
-            </div>
-            <div class="creator-bar">
-              <span class="creator-bar__val creator-bar__val--top">842만</span>
-              <span class="creator-bar__fill creator-bar__fill--top" style="height:172px;"></span>
-            </div>
-          </div>
-          <div class="creator-chart__months">
-              <span class="creator-bar__month">2월</span>
-              <span class="creator-bar__month">3월</span>
-              <span class="creator-bar__month">4월</span>
-              <span class="creator-bar__month">5월</span>
-              <span class="creator-bar__month">6월</span>
-              <span class="creator-bar__month">7월</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- 내 클래스 -->
-      <section class="creator-card creator-classes">
-        <div class="creator-card__head">
-          <h3 class="creator-card__title">내 클래스 <span class="creator-card__count">4</span></h3>
-          <a class="creator-more" href="creator-classes.html">클래스 관리</a>
-        </div>
-        <div class="creator-classes__list">
-          <div class="creator-class">
-            <span class="creator-class__thumb"><img src="assets/course/cat-dev-react.png" alt="" loading="lazy"></span>
-            <div class="creator-class__info">
-              <p class="creator-class__tags"><span class="creator-tag">운영 중</span><span class="creator-tag">SIGNATURE</span></p>
-              <p class="creator-class__title">포트폴리오까지 끝내는 React 프론트엔드 실전 프로젝트</p>
-              <p class="creator-class__meta">수강생 2,604명 · 평점 4.8 · 이번 달 매출 3,180,000원</p>
-            </div>
-            <a class="creator-btn creator-btn--ghost creator-class__btn" href="#">통계</a>
-          </div>
-          <div class="creator-class">
-            <span class="creator-class__thumb"><img src="assets/course/cat-dev-responsive-publishing.png" alt="" loading="lazy"></span>
-            <div class="creator-class__info">
-              <p class="creator-class__tags"><span class="creator-tag">운영 중</span><span class="creator-tag">BEST</span></p>
-              <p class="creator-class__title">제로부터 완성하는 반응형 웹 퍼블리싱 마스터 클래스</p>
-              <p class="creator-class__meta">수강생 4,128명 · 평점 4.9 · 이번 달 매출 2,940,000원</p>
-            </div>
-            <a class="creator-btn creator-btn--ghost creator-class__btn" href="#">통계</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- 답변 대기 + 최근 리뷰 -->
-      <div class="creator-grid">
-        <section class="creator-card creator-panel">
-          <div class="creator-card__head">
-            <h3 class="creator-card__title">답변 대기 <span class="creator-card__count">7</span></h3>
-            <a class="creator-more" href="creator-questions.html">전체 보기</a>
-          </div>
-          <ul class="creator-q__list">
-            <li class="creator-q">
-              <p class="creator-q__title">useEffect 의존성 배열 질문이요</p>
-              <p class="creator-q__meta">React 실전 프로젝트 · 14강 · 2시간 전</p>
-            </li>
-            <li class="creator-q">
-              <p class="creator-q__title">그리드 레이아웃이 사파리에서 깨져요</p>
-              <p class="creator-q__meta">반응형 웹 퍼블리싱 · 22강 · 5시간 전</p>
-            </li>
-            <li class="creator-q">
-              <p class="creator-q__title">포트폴리오 배포는 어디로 하나요?</p>
-              <p class="creator-q__meta">React 실전 프로젝트 · 40강 · 어제</p>
-            </li>
-          </ul>
-        </section>
-        <section class="creator-card creator-panel">
-          <div class="creator-card__head">
-            <h3 class="creator-card__title">최근 리뷰</h3>
-            <a class="creator-more" href="creator-reviews.html">전체 보기</a>
-          </div>
-          <ul class="creator-review__list">
-            <li class="creator-review">
-              <img class="creator-review__stars" src="assets/brand/stars-48.svg" width="70" height="14" alt="평점 5점 만점에 4.8">
-              <p class="creator-review__text">실무에서 바로 쓸 구조를 알려줘서 좋았어요. 폴더 설계 파트 최고.</p>
-              <p class="creator-review__who">밤샘러 지우 · 3일 전</p>
-            </li>
-            <li class="creator-review">
-              <img class="creator-review__stars" src="assets/brand/stars-48.svg" width="70" height="14" alt="평점 5점 만점에 4.8">
-              <p class="creator-review__text">설명은 훌륭한데 후반부 진행 속도가 조금 빨랐습니다.</p>
-              <p class="creator-review__who">퍼블리싱 준비생 · 5일 전</p>
-            </li>
-            <li class="creator-review">
-              <img class="creator-review__stars" src="assets/brand/stars-49.svg" width="70" height="14" alt="평점 5점 만점에 4.9">
-              <p class="creator-review__text">비전공자인데 끝까지 따라갔습니다. 과제 피드백이 큰 도움이 됐어요.</p>
-              <p class="creator-review__who">주경야독 민 · 1주 전</p>
-            </li>
-          </ul>
-        </section>
       </div>
 
-      <!-- 정산 · 계정 설정 -->
-      <section class="creator-card creator-set">
-        <h3 class="creator-card__title">정산 · 계정 설정</h3>
-        <ul class="creator-set__list">
-          <li class="creator-set__row">
-            <div class="creator-set__text">
-              <p class="creator-set__label">정산 계좌</p>
-              <p class="creator-set__desc">국민은행 ****-**-4821 · 예금주 신현우 · 실명 인증 완료</p>
+      <!-- 세금 서류 알림 -->
+      <section class="tax-alert">
+        <div class="tax-alert__text">
+          <p class="tax-alert__title">세금 서류가 아직 제출되지 않았습니다</p>
+          <p class="tax-alert__desc">사업자·개인 여부에 따라 절차가 달라요. 필요한 서류와 처리 방법은 정산 담당이 지원합니다.</p>
+        </div>
+        <a class="tax-alert__btn" href="mailto:creator@hootup.co.kr">정산 담당에게 문의</a>
+      </section>
+
+      <!-- 정산 계좌 -->
+      <section class="tax-card tax-account">
+        <h3 class="creator-card__title">정산 계좌</h3>
+        <div class="tax-form">
+          <div class="tax-field">
+            <label class="tax-field__label" for="tax-bank">은행</label>
+            <div class="tax-select">
+              <select class="tax-field__control tax-field__control--select" id="tax-bank">
+                <option selected>국민은행</option>
+                <option>신한은행</option>
+                <option>우리은행</option>
+                <option>하나은행</option>
+                <option>농협은행</option>
+                <option>카카오뱅크</option>
+                <option>토스뱅크</option>
+              </select>
+              <span class="tax-select__arrow" aria-hidden="true">▾</span>
             </div>
-            <a class="creator-btn creator-btn--ghost creator-btn--sm" href="#">변경</a>
-          </li>
-          <li class="creator-set__row">
-            <div class="creator-set__text">
-              <p class="creator-set__label">사업자 · 세금 정보</p>
-              <p class="creator-set__desc">개인 구분 · 신분증·사업자등록증 미제출</p>
+          </div>
+          <div class="tax-field">
+            <label class="tax-field__label" for="tax-acct">계좌번호</label>
+            <input class="tax-field__control" id="tax-acct" type="text" value="123456-04-482100">
+          </div>
+          <div class="tax-field">
+            <label class="tax-field__label" for="tax-holder">예금주</label>
+            <input class="tax-field__control" id="tax-holder" type="text" value="신현우">
+          </div>
+          <div class="tax-field">
+            <label class="tax-field__label" for="tax-birth">생년월일</label>
+            <input class="tax-field__control" id="tax-birth" type="text" value="1992.04.14">
+          </div>
+        </div>
+        <div class="tax-verify">
+          <span class="tax-verify__badge">인증 완료</span>
+          <p class="tax-verify__text">2026.01.12 계좌 실명 인증됨 · 계좌 변경 시 재인증이 필요합니다.</p>
+        </div>
+        <div class="tax-actions">
+          <button class="tax-btn tax-btn--cancel" type="button">취소</button>
+          <button class="tax-btn tax-btn--save" type="button">계좌 정보 저장</button>
+        </div>
+      </section>
+
+      <!-- 사업자 구분 -->
+      <section class="tax-card tax-business">
+        <h3 class="creator-card__title">사업자 구분</h3>
+        <p class="tax-business__desc">선택한 구분에 따라 세금계산서 · 원천징수 절차를 안내해 드려요.</p>
+        <div class="tax-types">
+          <button class="tax-type tax-type--active" type="button" aria-pressed="true">
+            <span class="tax-type__title">개인</span>
+            <span class="tax-type__desc">개인 크리에이터로 정산 · 원천징수 절차 안내</span>
+          </button>
+          <button class="tax-type" type="button" aria-pressed="false">
+            <span class="tax-type__title">개인사업자 · 법인</span>
+            <span class="tax-type__desc">세금계산서 발행 절차로 진행</span>
+          </button>
+        </div>
+        <div class="tax-docs">
+            <div class="tax-doc">
+              <div class="tax-doc__info">
+                <p class="tax-doc__label">신분증 · 사업자등록증</p>
+                <p class="tax-doc__sub tax-doc__sub--danger">미제출 · 첫 정산 전까지 제출이 필요합니다</p>
+              </div>
+              <button class="tax-doc__btn" type="button">파일 업로드</button>
             </div>
-            <a class="creator-btn creator-btn--primary creator-btn--sm" href="#">등록하기</a>
-          </li>
-          <li class="creator-set__row">
-            <div class="creator-set__text">
-              <p class="creator-set__label">스튜디오 예약</p>
-              <p class="creator-set__desc">강의 촬영 스튜디오 · 2026.08.06 반일(14:00–18:00) 예약됨</p>
+            <div class="tax-doc">
+              <div class="tax-doc__info">
+                <p class="tax-doc__label">계약서</p>
+                <p class="tax-doc__sub">2026.01.10 전자서명 완료 · 정산 비율·주기 명시</p>
+              </div>
+              <button class="tax-doc__btn" type="button">계약서 보기</button>
             </div>
-            <a class="creator-btn creator-btn--ghost creator-btn--sm" href="#">예약 관리</a>
-          </li>
-        </ul>
+            <div class="tax-doc">
+              <div class="tax-doc__info">
+                <p class="tax-doc__label">정산 알림 이메일</p>
+                <p class="tax-doc__sub">hyunwoo@codelab.kr</p>
+              </div>
+              <button class="tax-doc__btn" type="button">변경</button>
+            </div>
+        </div>
+      </section>
+
+      <!-- 안내 노트 -->
+      <section class="tax-note">
+        <p class="tax-note__text">＊구체적인 정산 비율·지급 주기·최소 정산액 등은 파트너십 미팅 및 계약서에서 안내드립니다.</p>
+        <a class="tax-note__btn" href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a>
       </section>
 
     </div>

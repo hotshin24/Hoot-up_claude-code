@@ -8695,3 +8695,119 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .rev-flow__steps { grid-template-columns: repeat(2, 1fr); }
   .rev-flow__note { white-space: normal; }
 }
+
+/* ============================================================
+   크리에이터 · 정산 계좌 · 세금 (creator-tax.html)
+   ============================================================ */
+
+/* 세금 서류 알림 */
+.tax-alert {
+  display: flex; align-items: center; gap: 20px;
+  background-color: var(--color-danger-lighter); border-radius: var(--radius-md);
+  padding: 22px 26px;
+}
+.tax-alert__text { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.tax-alert__title { font-size: 16px; font-weight: var(--font-weight-bold); color: var(--color-danger-dark, #cb102d); }
+.tax-alert__desc { font-size: 14px; line-height: 20px; color: var(--color-danger-dark, #cb102d); opacity: 0.8; }
+.tax-alert__btn {
+  flex-shrink: 0; padding: 12px 22px; border-radius: var(--radius-pill);
+  background-color: var(--color-danger-base); color: var(--color-neutral-white);
+  font-size: 14px; font-weight: var(--font-weight-bold); white-space: nowrap;
+  text-decoration: none; transition: opacity .15s ease;
+}
+.tax-alert__btn:hover { opacity: 0.9; }
+
+/* 카드 공통 */
+.tax-card {
+  background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
+  border-radius: var(--radius-md); padding: 31px; box-shadow: 0 0 5px rgb(0 0 0 / 0.04);
+  display: flex; flex-direction: column;
+}
+.tax-account { gap: 22px; }
+.tax-business { gap: 8px; }
+
+/* 정산 계좌 폼 */
+.tax-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.tax-field { display: flex; flex-direction: column; gap: 8px; }
+.tax-field__label { font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
+.tax-field__control {
+  width: 100%; height: 48px; padding: 0 19px;
+  background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter);
+  border-radius: var(--radius-md); font-family: inherit; font-size: 15px; color: var(--color-neutral-darker);
+}
+.tax-field__control:focus { outline: none; border-color: var(--color-brand-darker); }
+.tax-select { position: relative; }
+.tax-field__control--select { appearance: none; -webkit-appearance: none; padding-right: 42px; cursor: pointer; }
+.tax-select__arrow { position: absolute; right: 19px; top: 50%; transform: translateY(-50%); color: var(--color-neutral-light); pointer-events: none; font-size: 15px; }
+
+/* 인증 완료 안내 */
+.tax-verify {
+  display: flex; align-items: center; gap: 10px;
+  background-color: var(--color-neutral-lightest); border-radius: var(--radius-md); padding: 16px 20px;
+}
+.tax-verify__badge {
+  flex-shrink: 0; padding: 4px 10px; border-radius: var(--radius-pill);
+  background-color: var(--color-brand-accent); color: var(--color-brand-darker);
+  font-size: 11px; font-weight: var(--font-weight-bold);
+}
+.tax-verify__text { font-size: 13px; color: var(--color-neutral-base); }
+
+/* 폼 버튼 */
+.tax-actions { display: flex; justify-content: flex-end; gap: 8px; padding-top: 2px; }
+.tax-btn { border-radius: var(--radius-pill); font-size: 15px; font-weight: var(--font-weight-bold); cursor: pointer; border: 1px solid transparent; transition: opacity .15s ease, border-color .15s ease, color .15s ease; }
+.tax-btn--cancel { padding: 14px 25px; background-color: var(--color-neutral-white); border-color: var(--color-neutral-lighter); color: var(--color-neutral-base); }
+.tax-btn--cancel:hover { border-color: var(--color-neutral-light); }
+.tax-btn--save { padding: 14px 28px; background-color: var(--color-brand-darker); color: var(--color-neutral-white); }
+.tax-btn--save:hover { opacity: 0.9; }
+
+/* 사업자 구분 */
+.tax-business__desc { font-size: 14px; line-height: 22px; color: var(--color-neutral-base); }
+.tax-types { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 6px; }
+.tax-type {
+  display: flex; flex-direction: column; gap: 4px; text-align: left; cursor: pointer;
+  border: 2px solid var(--color-neutral-lighter); border-radius: var(--radius-md);
+  background-color: var(--color-neutral-lightest); padding: 22px 24px;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.tax-type__title { font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
+.tax-type__desc { font-size: 13px; line-height: 20px; color: var(--color-neutral-light); }
+.tax-type:hover { border-color: var(--color-brand-lighter); }
+.tax-type--active { border-color: var(--color-brand-darker); background-color: var(--color-brand-lighter); }
+.tax-type--active .tax-type__title { color: var(--color-brand-darker); }
+.tax-type--active .tax-type__desc { color: var(--color-brand-darker); opacity: 0.8; }
+
+/* 문서 행 */
+.tax-docs { display: flex; flex-direction: column; margin-top: 10px; }
+.tax-doc { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--color-neutral-lighter); }
+.tax-doc:last-child { border-bottom: 0; }
+.tax-doc__info { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.tax-doc__label { font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.tax-doc__sub { font-size: 13px; color: var(--color-neutral-base); }
+.tax-doc__sub--danger { color: var(--color-danger-base); }
+.tax-doc__btn {
+  flex-shrink: 0; padding: 10px 17px; border-radius: var(--radius-pill);
+  background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
+  font-size: 14px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker);
+  cursor: pointer; transition: border-color .15s ease, color .15s ease;
+}
+.tax-doc__btn:hover { border-color: var(--color-brand-darker); color: var(--color-brand-darker); }
+
+/* 안내 노트 */
+.tax-note {
+  display: flex; align-items: center; gap: 20px;
+  background-color: var(--color-neutral-darker); border-radius: var(--radius-md); padding: 24px 30px;
+}
+.tax-note__text { flex: 1 1 0; min-width: 0; font-size: 14px; line-height: 22px; color: var(--color-brand-lighter); }
+.tax-note__btn {
+  flex-shrink: 0; padding: 12px 22px; border-radius: var(--radius-pill);
+  background-color: var(--color-brand-accent); color: var(--color-brand-darker);
+  font-size: 14px; font-weight: var(--font-weight-bold); white-space: nowrap;
+  text-decoration: none; transition: opacity .15s ease;
+}
+.tax-note__btn:hover { opacity: 0.9; }
+
+@media (max-width: 720px) {
+  .tax-alert, .tax-note { flex-direction: column; align-items: stretch; gap: 16px; }
+  .tax-form, .tax-types { grid-template-columns: 1fr; }
+  .tax-doc { flex-wrap: wrap; }
+}
