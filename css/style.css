@@ -6918,11 +6918,16 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   line-height: 18px;
   text-align: center;
 }
-.signup__login a {
+.signup__login button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
   color: inherit;
   text-decoration: underline;
 }
-.signup__login a:hover { color: var(--color-brand-base); }
+.signup__login button:hover { color: var(--color-brand-base); }
 
 /* ============================================================
    로그인 모달 — login modal (Figma 154-64988)
@@ -6937,8 +6942,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   font-size: 12px;
   line-height: 18px;
 }
-.login__prompt a { color: var(--color-neutral-base); text-decoration: underline; }
-.login__prompt a:hover { color: var(--color-brand-base); }
+.login__prompt button { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; color: var(--color-neutral-base); text-decoration: underline; }
+.login__prompt button:hover { color: var(--color-brand-base); }
 
 /* 소셜 로그인 버튼 */
 .login__social {
