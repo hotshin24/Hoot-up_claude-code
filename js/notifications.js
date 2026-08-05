@@ -26,6 +26,8 @@
   panel.setAttribute('aria-label', '알림');
   panel.hidden = true;
   item.appendChild(panel);
+  // 패널이 실제로 생성된 뒤에 연결 (정적 HTML에 존재하지 않는 IDREF로 인한 W3C 오류 방지)
+  toggle.setAttribute('aria-controls', 'notif-panel');
 
   function esc(s) {
     return s.replace(/[&<>"]/g, function (c) {
