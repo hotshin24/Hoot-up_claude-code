@@ -8486,7 +8486,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cm-btn--danger { background-color: var(--color-neutral-white); border-color: var(--color-danger-lighter); color: var(--color-danger-base); }
 .cm-btn--danger:hover { border-color: var(--color-danger-base); }
 
-@media (max-width: 720px) {
+@media screen and (max-width: 767px) {
   .cm-row { flex-wrap: wrap; }
   .cm-thumb { width: 140px; height: 82px; }
   .cm-row__actions { flex-direction: row; flex-wrap: wrap; width: 100%; }
@@ -8602,7 +8602,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .rv-answer__btn:hover { opacity: 0.9; }
 
-@media (max-width: 720px) {
+@media screen and (max-width: 767px) {
   .rv-summary { flex-direction: column; align-items: stretch; gap: 24px; }
   .rv-dist { padding-left: 0; border-left: 0; }
   .rv-stats { grid-template-columns: repeat(2, 1fr); }
@@ -8689,7 +8689,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .qa-btn--ghost { padding: 12px 21px; background-color: var(--color-neutral-white); border-color: var(--color-neutral-lighter); color: var(--color-neutral-base); }
 .qa-btn--ghost:hover { border-color: var(--color-neutral-light); }
 
-@media (max-width: 720px) {
+@media screen and (max-width: 767px) {
   .qa-tabs { flex-wrap: wrap; }
   .qa-tools { flex-direction: column; align-items: stretch; gap: 10px; }
   .qa-submit { width: 100%; }
@@ -8802,7 +8802,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .rev-perf__track { display: block; height: 8px; border-radius: var(--radius-pill); background-color: var(--color-neutral-lighter); overflow: hidden; }
 .rev-perf__fill { display: block; height: 100%; border-radius: var(--radius-pill); background-color: var(--color-brand-darker); }
 
-@media (max-width: 720px) {
+@media screen and (max-width: 767px) {
   .rev-summary { flex-direction: column; align-items: stretch; gap: 24px; }
   .rev-summary__stats { padding-left: 0; border-left: 0; flex-wrap: wrap; gap: 16px; }
   .rev-cards { grid-template-columns: 1fr; }
@@ -8920,7 +8920,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .tax-note__btn:hover { opacity: 0.9; }
 
-@media (max-width: 720px) {
+@media screen and (max-width: 767px) {
   .tax-alert, .tax-note { flex-direction: column; align-items: stretch; gap: 16px; }
   .tax-form, .tax-types { grid-template-columns: 1fr; }
   .tax-doc { flex-wrap: wrap; }
@@ -9027,11 +9027,11 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .stu-guide__btn:hover { opacity: 0.9; }
 
-@media (max-width: 760px) {
+@media screen and (max-width: 767px) {
   .stu-spaces__grid { grid-template-columns: repeat(2, 1fr); }
   .rev-flow__steps { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 720px) {
+@media screen and (max-width: 767px) {
   .stu-booking { flex-direction: column; align-items: stretch; gap: 16px; }
   .stu-booking__date { flex-direction: row; gap: 10px; padding-right: 0; border-right: 0; border-bottom: 1px solid rgba(7,3,171,0.2); padding-bottom: 12px; align-items: baseline; }
   .stu-booking__actions { justify-content: flex-end; }
