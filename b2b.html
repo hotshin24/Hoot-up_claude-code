@@ -16,6 +16,7 @@
 
   <script src="js/common.js" defer></script>
   <script src="js/carousel.js" defer></script>
+  <script src="js/subscribe-modal.js" defer></script>
 </head>
 <body>
 
@@ -252,11 +253,10 @@
       <div class="b2b__hero-content">
         <p class="b2b__hero-eyebrow">FOR TEAMS · B2B</p>
         <h1 class="b2b__hero-title">팀의 성장을,<br>훗업이 함께합니다</h1>
-        <p class="b2b__hero-lead">구성원 한 명 한 명의 레벨업 <span class="b2b__arrow">↑</span></p>
+        <p class="b2b__hero-lead">구성원 한 명 한 명의 레벨업 <img class="b2b__rocket" src="assets/brand/rocket.svg" alt="" aria-hidden="true"></p>
         <p class="b2b__hero-desc">바쁜 팀일수록 배움은 뒤로 밀리죠. 훗업은 구성원이 각자의 속도로,<br>그러나 함께 성장하도록 돕는 기업 교육 파트너입니다.</p>
         <div class="b2b__hero-actions">
-          <a class="b2b__btn b2b__btn--primary" href="#contact">도입 문의하기 ↑</a>
-          <a class="b2b__btn b2b__btn--ghost" href="#plans">커리큘럼 상담받기</a>
+          <a class="b2b__btn b2b__btn--primary" href="#contact" data-open-subscribe aria-haspopup="dialog" aria-controls="b2b-contact-modal">도입 문의하기</a>
         </div>
       </div>
       <figure class="brand-hero__grid-2">
@@ -431,10 +431,10 @@
         <h2 class="b2b__title">기대 효과</h2>
       </div>
       <ul class="b2b__outcome-list">
-        <li class="b2b__outcome-item"><span class="b2b__up">↑</span><span>구성원 자기주도 학습 문화 정착</span></li>
-        <li class="b2b__outcome-item"><span class="b2b__up">↑</span><span>직무 역량 강화와 실무 전이</span></li>
-        <li class="b2b__outcome-item"><span class="b2b__up">↑</span><span>온보딩 기간 단축과 조직 적응 지원</span></li>
-        <li class="b2b__outcome-item"><span class="b2b__up">↑</span><span>학습 데이터로 보는 성장 가시화</span></li>
+        <li class="b2b__outcome-item"><img class="b2b__up-rocket" src="assets/brand/rocket.svg" alt="" aria-hidden="true"><span>구성원 자기주도 학습 문화 정착</span></li>
+        <li class="b2b__outcome-item"><img class="b2b__up-rocket" src="assets/brand/rocket.svg" alt="" aria-hidden="true"><span>직무 역량 강화와 실무 전이</span></li>
+        <li class="b2b__outcome-item"><img class="b2b__up-rocket" src="assets/brand/rocket.svg" alt="" aria-hidden="true"><span>온보딩 기간 단축과 조직 적응 지원</span></li>
+        <li class="b2b__outcome-item"><img class="b2b__up-rocket" src="assets/brand/rocket.svg" alt="" aria-hidden="true"><span>학습 데이터로 보는 성장 가시화</span></li>
       </ul>
     </div>
   </section>
@@ -457,7 +457,7 @@
         </div>
         <div class="b2b__faq-item">
           <dt class="b2b__faq-q"><span>Q.</span><span>학습 현황을 관리할 수 있나요?</span></dt>
-          <dd class="b2b__faq-a">관리자 대시보드로 완주율·진도·활동을 확인할 수 있어요.</dd>
+          <dd class="b2b__faq-a">관리자 대시보드로 완주율·진도·활동을<br>실시간으로 한눈에 확인할 수 있어요.</dd>
         </div>
         <div class="b2b__faq-item">
           <dt class="b2b__faq-q"><span>Q.</span><span>결제·계약은 어떻게 하나요?</span></dt>
@@ -474,8 +474,8 @@
       <h2 class="b2b__contact-title">팀이 함께 밤을 밝히면,<br>성장의 속도가 달라집니다.</h2>
       <p class="b2b__contact-sub">우리 조직에 맞는 배움, 지금 상담해보세요.</p>
       <div class="b2b__contact-actions">
-        <a class="b2b__btn b2b__btn--primary b2b__btn--lg" href="mailto:b2b@hootup.co.kr">도입 문의하기 ↑</a>
         <p class="b2b__contact-line">기업 교육 문의 <a href="mailto:b2b@hootup.co.kr">b2b@hootup.co.kr</a> · <a href="tel:0212345678">02-1234-5678</a></p>
+        <a class="b2b__btn b2b__btn--primary b2b__btn--lg" href="mailto:b2b@hootup.co.kr" data-open-subscribe aria-haspopup="dialog" aria-controls="b2b-contact-modal">도입 문의하기</a>
       </div>
     </div>
   </section>
@@ -595,6 +595,60 @@
 
   </div>
 </footer>
+
+<!-- B2B 도입 문의 모달 -->
+<div class="modal" id="b2b-contact-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog modal__dialog--form" role="dialog" aria-modal="true" aria-labelledby="b2b-contact-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+
+    <h2 class="b2b-form__title" id="b2b-contact-title">도입 문의하기</h2>
+    <p class="b2b-form__desc">조직에 맞는 학습 도입, 담당자가 직접 도와드립니다.</p>
+
+    <form class="b2b-form" data-subscribe-form>
+      <div class="b2b-form__grid">
+        <label class="b2b-form__field">
+          <span class="b2b-form__label">회사명</span>
+          <input class="b2b-form__input" type="text" name="company" placeholder="(주)훗업" required>
+        </label>
+        <label class="b2b-form__field">
+          <span class="b2b-form__label">담당자 이름</span>
+          <input class="b2b-form__input" type="text" name="name" placeholder="홍길동" required>
+        </label>
+      </div>
+
+      <label class="b2b-form__field">
+        <span class="b2b-form__label">담당자 연락처</span>
+        <input class="b2b-form__input" type="tel" name="phone" placeholder="010-0000-0000" required>
+      </label>
+
+      <fieldset class="b2b-form__field b2b-form__fieldset">
+        <legend class="b2b-form__label">도입 희망 카테고리</legend>
+        <div class="b2b-form__radios">
+          <label class="b2b-form__radio"><input type="radio" name="category" value="개발 & IT" required><span>개발 &amp; IT</span></label>
+          <label class="b2b-form__radio"><input type="radio" name="category" value="커리어 & 머니"><span>커리어 &amp; 머니</span></label>
+          <label class="b2b-form__radio"><input type="radio" name="category" value="디자인 & 크리에이티브"><span>디자인 &amp; 크리에이티브</span></label>
+          <label class="b2b-form__radio"><input type="radio" name="category" value="사진 & 영상"><span>사진 &amp; 영상</span></label>
+          <label class="b2b-form__radio"><input type="radio" name="category" value="드로잉 & 일러스트"><span>드로잉 &amp; 일러스트</span></label>
+          <label class="b2b-form__radio"><input type="radio" name="category" value="운동 & 마음챙김"><span>운동 &amp; 마음챙김</span></label>
+          <label class="b2b-form__radio"><input type="radio" name="category" value="공예 & 핸드메이드"><span>공예 &amp; 핸드메이드</span></label>
+          <label class="b2b-form__radio"><input type="radio" name="category" value="요리 & 베이킹"><span>요리 &amp; 베이킹</span></label>
+        </div>
+      </fieldset>
+
+      <label class="b2b-form__field">
+        <span class="b2b-form__label">문의 내용</span>
+        <textarea class="b2b-form__textarea" name="message" rows="4" placeholder="도입 규모, 일정 등 자유롭게 남겨주세요."></textarea>
+      </label>
+
+      <button class="signup__submit b2b-form__submit" type="submit">전송</button>
+    </form>
+
+    <p class="subscribe-done" role="status" hidden>문의가 접수되었습니다.</p>
+  </div>
+</div>
 
 </body>
 </html>
