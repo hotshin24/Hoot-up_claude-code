@@ -1,0 +1,13 @@
+/* ============================================================
+   HOOT UP — 통합 스타일 진입점 (head 정리용)
+   폰트 → 디자인 토큰 → 전역 스타일 순으로 로드
+   ※ preconnect 힌트는 CSS로 옮길 수 없어 각 HTML <head>에 유지
+   ============================================================ */
+
+/* 폰트 (Google Fonts · Spoqa Han Sans Neo) */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&display=swap');
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+
+/* 디자인 토큰 · 전역 스타일 */
+@import url('tokens.css');
+@import url('style.css');
