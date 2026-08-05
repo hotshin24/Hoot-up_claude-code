@@ -9,6 +9,41 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/import.css">
+
+  <script src="js/common.js" defer></script>
+  <script src="js/carousel.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+(function(){
+  var wrap=document.querySelector('[data-notice-list]'); if(!wrap) return;
+  var items=[].slice.call(wrap.querySelectorAll('.notice__item'));
+  var count=document.querySelector('[data-notice-count]');
+  var more=document.querySelector('[data-notice-more]');
+  var cat='all';
+  function render(){
+    var shown=0, revealAll=(more && more.classList.contains('is-done'));
+    var visible=items.filter(function(it){ return cat==='all'||it.dataset.cat===cat; });
+    items.forEach(function(it){ it.style.display='none'; });
+    visible.forEach(function(it,idx){
+      // 전체 카테고리에서는 더보기 전까지 6개만
+      if(cat==='all' && !revealAll && idx>=6){ return; }
+      it.style.display='flex'; shown++;
+    });
+    if(count) count.textContent='총 '+visible.length+'건';
+    if(more){ more.style.display=(cat==='all' && !revealAll && visible.length>6)?'':'none'; }
+  }
+  document.querySelectorAll('.notice__filter-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.notice__filter-btn').forEach(function(x){x.classList.remove('is-active');x.setAttribute('aria-pressed','false');});
+      b.classList.add('is-active'); b.setAttribute('aria-pressed','true');
+      cat=b.dataset.cat; if(more) more.classList.remove('is-done'); render();
+    });
+  });
+  if(more){ more.addEventListener('click',function(){ more.classList.add('is-done'); render(); }); }
+  render();
+})();
+  });
+  </script>
 </head>
 <body>
 
@@ -512,38 +547,5 @@
   </div>
 </footer>
 
-
-<script src="js/common.js" defer></script>
-<script src="js/carousel.js" defer></script>
-<script>
-(function(){
-  var wrap=document.querySelector('[data-notice-list]'); if(!wrap) return;
-  var items=[].slice.call(wrap.querySelectorAll('.notice__item'));
-  var count=document.querySelector('[data-notice-count]');
-  var more=document.querySelector('[data-notice-more]');
-  var cat='all';
-  function render(){
-    var shown=0, revealAll=(more && more.classList.contains('is-done'));
-    var visible=items.filter(function(it){ return cat==='all'||it.dataset.cat===cat; });
-    items.forEach(function(it){ it.style.display='none'; });
-    visible.forEach(function(it,idx){
-      // 전체 카테고리에서는 더보기 전까지 6개만
-      if(cat==='all' && !revealAll && idx>=6){ return; }
-      it.style.display='flex'; shown++;
-    });
-    if(count) count.textContent='총 '+visible.length+'건';
-    if(more){ more.style.display=(cat==='all' && !revealAll && visible.length>6)?'':'none'; }
-  }
-  document.querySelectorAll('.notice__filter-btn').forEach(function(b){
-    b.addEventListener('click',function(){
-      document.querySelectorAll('.notice__filter-btn').forEach(function(x){x.classList.remove('is-active');x.setAttribute('aria-pressed','false');});
-      b.classList.add('is-active'); b.setAttribute('aria-pressed','true');
-      cat=b.dataset.cat; if(more) more.classList.remove('is-done'); render();
-    });
-  });
-  if(more){ more.addEventListener('click',function(){ more.classList.add('is-done'); render(); }); }
-  render();
-})();
-</script>
 </body>
 </html>

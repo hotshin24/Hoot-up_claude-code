@@ -9,6 +9,28 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/import.css">
+
+  <script src="js/common.js" defer></script>
+  <script src="js/carousel.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+(function(){
+  var wrap=document.querySelector('[data-checklist]');
+  if(!wrap) return;
+  var out=document.querySelector('[data-check-done]');
+  var btns=wrap.querySelectorAll('.creator-guide__check');
+  function sync(){ var n=wrap.querySelectorAll('.creator-guide__check.is-checked').length; if(out) out.textContent=n; }
+  btns.forEach(function(b){
+    b.setAttribute('aria-pressed','false');
+    b.addEventListener('click', function(){
+      var on=b.classList.toggle('is-checked');
+      b.setAttribute('aria-pressed', on?'true':'false');
+      sync();
+    });
+  });
+})();
+  });
+  </script>
 </head>
 <body>
 
@@ -551,25 +573,5 @@
   </div>
 </footer>
 
-
-<script src="js/common.js" defer></script>
-<script src="js/carousel.js" defer></script>
-<script>
-(function(){
-  var wrap=document.querySelector('[data-checklist]');
-  if(!wrap) return;
-  var out=document.querySelector('[data-check-done]');
-  var btns=wrap.querySelectorAll('.creator-guide__check');
-  function sync(){ var n=wrap.querySelectorAll('.creator-guide__check.is-checked').length; if(out) out.textContent=n; }
-  btns.forEach(function(b){
-    b.setAttribute('aria-pressed','false');
-    b.addEventListener('click', function(){
-      var on=b.classList.toggle('is-checked');
-      b.setAttribute('aria-pressed', on?'true':'false');
-      sync();
-    });
-  });
-})();
-</script>
 </body>
 </html>
