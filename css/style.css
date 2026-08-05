@@ -809,39 +809,6 @@ hr {
 }
 
 /* 좁은 화면: 단 쌓기 + 내부 스크롤 */
-@media screen and (max-width: 767px) {
-  .mega__inner {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-    max-height: 70vh;
-    overflow-y: auto;
-  }
-
-  .mega__cats {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-right: 0;
-    padding-bottom: var(--space-md);
-    border-right: 0;
-    border-bottom: 1px solid var(--color-border-subtle);
-  }
-
-  .mega-cat {
-    width: auto;
-  }
-
-  .mega-cat__name {
-    margin-right: var(--space-2xs);
-  }
-
-  .mega-cat__arrow {
-    display: none;
-  }
-
-  .mega-sub__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
 
 /* ==========================================================================
    7. Hero — LEVEL UP WEEK
@@ -2074,60 +2041,6 @@ hr {
    17. 1920px 미만 대응 (레이아웃이 깨지지 않도록 최소한의 축소만)
    ========================================================================== */
 
-@media screen and (max-width: 1279px) {
-  /* 컨테이너 밖으로 나가던 캐러셀 버튼을 안쪽으로 들인다 */
-  .collection__carousel {
-    margin-inline: 0;
-  }
-
-  .hero__inner {
-    flex-wrap: wrap;
-    gap: var(--space-2xl);
-  }
-
-  .hero__offer {
-    flex-basis: auto;
-  }
-
-  .chart__body {
-    grid-template-columns: 1fr;
-  }
-
-  .countdown__card {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: var(--space-2xl);
-  }
-
-  .site-footer__top,
-  .site-footer__contact {
-    flex-wrap: wrap;
-    gap: var(--space-2xl);
-  }
-
-  .site-footer__nav {
-    flex-wrap: wrap;
-    gap: var(--space-2xl);
-  }
-  .category__list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .course-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .magazine__list,
-  .desk__list,
-  .chart__list {
-    grid-template-columns: 1fr;
-  }
-
-  .countdown__clock {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
 
 /* ==========================================================================
    19. Category page (개발·IT 등 카테고리 상세)
@@ -2335,17 +2248,7 @@ hr {
 }
 
 /* 좁은 화면 대응 */
-@media screen and (max-width: 1279px) {
-  .course-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
 
-@media screen and (max-width: 767px) {
-  .course-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 
 /* ==========================================================================
@@ -3201,29 +3104,6 @@ hr {
 .btn-outline .icon { --icon-size: 20px; }
 
 /* ---------- 반응형 ---------- */
-@media screen and (max-width: 1279px) {
-  .course-body { grid-template-columns: 1fr; }
-  .course-aside { position: static; flex-direction: row; flex-wrap: wrap; }
-  .course-aside > * { flex: 1 1 320px; }
-  .course-hero__inner { align-items: center; }
-  .course-hero__illust { width: 300px; height: 300px; }
-  .mentor-courses__list { grid-template-columns: repeat(2, 1fr); }
-}
-@media screen and (max-width: 767px) {
-  .course-hero__inner { flex-direction: column; align-items: flex-start; }
-  .course-hero__illust { align-self: center; }
-  .course-nav__list { overflow-x: auto; }
-  .course-nav__link { white-space: nowrap; }
-  .benefit__item, .benefit__item--reverse,
-  .practice__item { grid-template-columns: 1fr; }
-  .benefit__item--reverse .benefit__media,
-  .practice__item--reverse .practice__body { order: 0; }
-  .worry__bubbles, .beforeafter__cols,
-  .review-group__list, .mentor-courses__list { grid-template-columns: 1fr; }
-  .mentor-profile { flex-direction: column; }
-  .section-band { padding: var(--space-md); }
-  .practice-block { padding: var(--space-2xl) var(--space-md); }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .curriculum__chevron, .faq__toggle, .course-hero__cta,
@@ -3545,19 +3425,6 @@ hr {
 .mag-btn:hover { background-color: var(--color-brand-accent); border-color: var(--color-brand-accent); color: var(--mag-bg); }
 
 /* ---------- 반응형 ---------- */
-@media screen and (max-width: 1279px) {
-  .mag-cover { grid-template-columns: 1fr; gap: 28px; }
-  .mag-picks { grid-template-columns: 1fr; }
-  .mag-classes__list { grid-template-columns: 1fr; }
-  .mag-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media screen and (max-width: 767px) {
-  .mag-classes { padding: 24px 20px; }
-  .mag-grid { grid-template-columns: 1fr; }
-  .mag-row { flex-wrap: wrap; gap: 6px 16px; }
-  .mag-row__title { width: 100%; flex-basis: 100%; white-space: normal; }
-  .mag-row__cat { width: auto; }
-}
 @media (prefers-reduced-motion: reduce) {
   .mag-feature__media img, .mag-card__thumb img,
   .mag-chip, .mag-btn, .mag-cover__more { transition: none; }
@@ -3671,13 +3538,6 @@ hr {
 .mag-pager__arrow .icon { --icon-size: 16px; }
 .mag-pager__arrow[aria-disabled="true"] { color: var(--mag-num); pointer-events: none; }
 
-@media screen and (max-width: 1279px) {
-  .mag-grid--cat { grid-template-columns: repeat(2, 1fr); }
-}
-@media screen and (max-width: 767px) {
-  .mag-grid--cat { grid-template-columns: 1fr; }
-  .mag-filter { flex-direction: column; align-items: flex-start; }
-}
 @media (prefers-reduced-motion: reduce) {
   .mag-tag, .mag-pager__num, .mag-pager__arrow { transition: none; }
 }
@@ -3878,12 +3738,6 @@ hr {
 .article-related__title { font-weight: var(--font-weight-bold); font-size: 24px; color: var(--mag-text); margin-bottom: 28px; }
 .mag-card--slim .mag-card__meta { margin-top: 0; }
 
-@media screen and (max-width: 767px) {
-  .article-hero img { height: 260px; }
-  .article-course { flex-direction: column; align-items: stretch; }
-  .article-course__buy { align-items: flex-start; }
-  .article-related__grid { grid-template-columns: 1fr; }
-}
 @media (prefers-reduced-motion: reduce) {
   .article-head__action, .article-course__btn, .article-author__follow { transition: none; }
 }
@@ -4015,23 +3869,6 @@ hr {
 
 .mentor-more { display: flex; justify-content: center; padding: 40px 0 72px; }
 
-@media screen and (max-width: 1279px) {
-  .mentor-classes__list { grid-template-columns: repeat(2, 1fr); }
-  .mentor-hero { flex-wrap: wrap; }
-  .mentor-hero__actions { width: 100%; flex-direction: row; }
-  .mentor-featured { flex-direction: column-reverse; align-items: stretch; }
-  .mentor-featured__media { width: 100%; }
-  .mentor-featured__title { font-size: 26px; }
-  .mentor-posts__grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media screen and (max-width: 767px) {
-  .mentor-stats { grid-template-columns: repeat(2, 1fr); gap: 20px 0; }
-  .mentor-classes__list { grid-template-columns: 1fr; }
-  .mentor-posts__grid { grid-template-columns: 1fr; }
-  .mentor-post { flex-wrap: wrap; gap: 6px 16px; }
-  .mentor-post__title { width: 100%; flex-basis: 100%; white-space: normal; }
-  .mentor-post__cat { width: auto; }
-}
 @media (prefers-reduced-motion: reduce) {
   .mentor-hero__btn, .mentor-filter__chip { transition: none; }
 }
@@ -4336,25 +4173,6 @@ hr {
 .desk-more { display: flex; justify-content: center; padding-top: 36px; }
 
 /* ---------- 반응형 ---------- */
-@media screen and (max-width: 1279px) {
-  .desk-top { grid-template-columns: 1fr; }
-  .desk-feature { border-right: 0; padding-right: 0; }
-  .desk-side { padding-left: 0; border-top: 1px solid var(--desk-line); }
-  .desk-feature__body { columns: 2; }
-}
-@media screen and (max-width: 767px) {
-  .desk-masthead { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .desk-masthead__desc { width: 100%; max-width: none; padding-left: 0; border-left: 0; }
-  .desk-feature__body { columns: 1; }
-  .desk-cards { grid-template-columns: 1fr; }
-  .desk-card { border-right: 0; border-bottom: 1px solid var(--desk-line); }
-  .desk-card__link, .desk-card:first-child .desk-card__link, .desk-card:last-child .desk-card__link { padding: 24px 0; }
-  .desk-lists { grid-template-columns: 1fr; }
-  .desk-listcol, .desk-listcol:last-child { padding: 24px 0; }
-  .desk-listcol:first-child { border-right: 0; border-bottom: 1px solid var(--desk-line); }
-  .desk-classes { flex-direction: column; align-items: flex-start; }
-  .desk-classes__list { grid-template-columns: 1fr; width: 100%; }
-}
 
 
 /* ==========================================================================
@@ -4573,15 +4391,6 @@ hr {
 .desk-morecard__title { font-weight: var(--font-weight-bold); font-size: 16px; line-height: 1.45; color: var(--desk-ink); }
 .desk-morecard__link:hover .desk-morecard__title { color: var(--color-brand-base); }
 
-@media screen and (max-width: 1279px) {
-  .desk-artwrap { grid-template-columns: 1fr; gap: 40px; }
-  .desk-article { max-width: none; }
-  .desk-mostread__grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media screen and (max-width: 767px) {
-  .desk-article__figure img { height: 240px; }
-  .desk-mostread__grid { grid-template-columns: 1fr; }
-}
 @media (prefers-reduced-motion: reduce) {
   .desk-actionbtn, .desk-tag-chip, .desk-promo__btn { transition: none; }
 }
@@ -4719,14 +4528,6 @@ hr {
 .desk-page .pager { padding: 44px 0 8px; flex-wrap: wrap; row-gap: var(--space-sm); }
 .desk-page a.pager__num--active { color: var(--color-text-inverse); }
 
-@media screen and (max-width: 1279px) {
-  .desk-catwrap { grid-template-columns: 1fr; gap: 32px; }
-  .desk-filter { flex-direction: row; flex-wrap: wrap; gap: 24px 40px; }
-}
-@media screen and (max-width: 767px) {
-  .desk-newsfeat { flex-direction: column-reverse; }
-  .desk-newsfeat__thumb { width: 100%; height: 200px; }
-}
 @media (prefers-reduced-motion: reduce) {
   .desk-period__chip { transition: none; }
 }
@@ -4863,9 +4664,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 767px) {
-  .sitemap-grid { grid-template-columns: 1fr; }
-}
 
 /* ==========================================================================
    클래스 목록 카테고리 필터 (best / new / signature)
@@ -5116,10 +4914,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .rank-mini__title a:hover { text-decoration: underline; }
 .rank-mini__price { margin-top: auto; }
 
-@media screen and (max-width: 767px) {
-  .best-rank__top, .best-rank__rest { grid-template-columns: 1fr; }
-  .best-rank__head { flex-direction: column; align-items: flex-start; gap: 6px; }
-}
 
 /* ==========================================================================
    컬렉션 캐러셀 슬라이더 (index 시그니처 등) — .course-list--slider
@@ -5145,16 +4939,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   cursor: default;
 }
 
-@media screen and (max-width: 1279px) {
-  .course-list--slider .course-list__item {
-    flex-basis: calc((100% - var(--space-card-gap)) / 2);  /* 2개 노출 */
-  }
-}
-@media screen and (max-width: 767px) {
-  .course-list--slider .course-list__item {
-    flex-basis: calc((100% - var(--space-card-gap)) / 1.2); /* 약 1.2개 */
-  }
-}
 
 /* HOOT UP FESTA 이벤트 배너 호버 (event-1) */
 .festa-event .scp0:hover { transform: translateY(-2px); color: #1667fa }
@@ -5389,22 +5173,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .b2b .b2b__contact-line a { color: var(--color-brand-base); font-weight: 700; }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .b2b .b2b__hero-grid { grid-template-columns: 1fr; }
-  .b2b .b2b__pain-grid,
-  .b2b .b2b__outcomes-grid { grid-template-columns: 1fr; gap: 40px; }
-  .b2b .b2b__cards,
-  .b2b .b2b__steps { grid-template-columns: repeat(2, 1fr); }
-  .b2b .b2b__process-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
-  .b2b .b2b__faq-list { grid-template-columns: 1fr; }
-}
-@media screen and (max-width: 767px) {
-  .b2b__pad { padding-block: 72px; }
-  .b2b .b2b__pain-list,
-  .b2b .b2b__outcome-list,
-  .b2b .b2b__cards,
-  .b2b .b2b__steps { grid-template-columns: 1fr; }
-}
 
 /* ============================================================
    채용 안내 페이지 — careers.html (Figma 시안 반영)
@@ -5500,24 +5268,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .careers .careers__apply-line a { color: var(--color-brand-base); font-weight: 700; }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .careers .careers__hero-grid { grid-template-columns: 1fr; }
-  .careers .careers__team-grid,
-  .careers .careers__share-grid { grid-template-columns: 1fr; gap: 40px; padding-right: 0; }
-  .careers .careers__cards,
-  .careers .careers__steps { grid-template-columns: repeat(2, 1fr); }
-  .careers .careers__roles { grid-template-columns: 1fr 1fr; }
-  .careers .careers__roles-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
-}
-@media screen and (max-width: 767px) {
-  .careers__pad { padding-block: 72px; }
-  .careers .careers__cards,
-  .careers .careers__steps,
-  .careers .careers__roles,
-  .careers .careers__share-list { grid-template-columns: 1fr; }
-  .careers .careers__role { flex-direction: column; gap: 6px; min-height: 0; }
-  .careers .careers__role-desc { text-align: left; }
-}
 
 /* ============================================================
    레벨업 로드맵 페이지 — roadmap.html (Figma 시안 반영)
@@ -5637,23 +5387,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .roadmap .roadmap__cta-disclaimer { color: rgb(147 162 183 / 0.9); font-size: 14px; line-height: 24px; }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .roadmap .roadmap__hero-grid { grid-template-columns: 1fr; }
-  .roadmap .roadmap__how-list,
-  .roadmap .roadmap__benefit-list { grid-template-columns: repeat(2, 1fr); }
-  .roadmap .roadmap__cats { grid-template-columns: 1fr; }
-  .roadmap .roadmap__cat-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
-  .roadmap .roadmap__next-steps { grid-template-columns: 1fr; gap: 0; }
-  .roadmap .roadmap__next-step { padding-top: 16px; padding-bottom: 14px; }
-}
-@media screen and (max-width: 767px) {
-  .roadmap__pad { padding-block: 72px; }
-  .roadmap .roadmap__how-list,
-  .roadmap .roadmap__benefit-list { grid-template-columns: 1fr; }
-  .roadmap .roadmap__card { padding: 32px 24px; }
-  .roadmap .roadmap__step-row { flex-wrap: wrap; gap: 4px 20px; }
-  .roadmap .roadmap__step-note { width: 100%; text-align: left; padding-left: 94px; }
-}
 
 /* ============================================================
    올나잇 패스(구독) 페이지 — subscribe.html (Figma 시안 · 토큰 사용)
@@ -5810,24 +5543,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .subscribe .subscribe__cta-disclaimer { color: rgb(147 162 183 / 0.9); font-size: 14px; line-height: 24px; }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .subscribe .subscribe__hero-grid { grid-template-columns: 1fr; }
-  .subscribe .subscribe__summary,
-  .subscribe .subscribe__plans,
-  .subscribe .subscribe__forme-grid { grid-template-columns: 1fr; }
-  .subscribe .subscribe__plan-perks { grid-template-columns: 1fr; }
-  .subscribe .subscribe__faq-list { grid-template-columns: 1fr 1fr; }
-}
-@media screen and (max-width: 767px) {
-  .subscribe__pad { padding-block: 72px; }
-  .subscribe .subscribe__faq-list { grid-template-columns: 1fr; }
-  .subscribe .subscribe__compare-head,
-  .subscribe .subscribe__compare-row { flex-wrap: wrap; gap: 4px 16px; }
-  .subscribe .subscribe__compare-label { flex-basis: 100%; }
-  .subscribe .subscribe__cat-head { display: none; }
-  .subscribe .subscribe__cat-row { flex-wrap: wrap; gap: 4px 16px; }
-  .subscribe .subscribe__cat-name { flex-basis: 100%; }
-}
 
 /* ============================================================
    클래스 개설 문의하기 — creator-apply.html (Figma 시안 · 토큰 사용)
@@ -5940,22 +5655,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-apply .creator-apply__cta-line a { color: var(--color-brand-secondary); font-weight: 700; }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .creator-apply .creator-apply__hero-grid { grid-template-columns: 1fr; }
-  .creator-apply .creator-apply__before-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
-  .creator-apply .creator-apply__cards,
-  .creator-apply .creator-apply__steps { grid-template-columns: repeat(2, 1fr); }
-  .creator-apply .creator-apply__faq-list { grid-template-columns: 1fr; }
-  .creator-apply .creator-apply__field-row { grid-template-columns: 1fr; }
-}
-@media screen and (max-width: 767px) {
-  .creator-apply__pad { padding-block: 72px; }
-  .creator-apply .creator-apply__cards,
-  .creator-apply .creator-apply__steps { grid-template-columns: 1fr; }
-  .creator-apply .creator-apply__form { padding: 28px 22px; }
-  .creator-apply .creator-apply__form-foot { justify-content: stretch; }
-  .creator-apply .creator-apply__submit { width: 100%; }
-}
 
 /* ============================================================
    크리에이터 가이드 — creator-guide.html (Figma 시안 · 토큰 사용)
@@ -6040,18 +5739,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-guide .creator-guide__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-darker); }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .creator-guide .creator-guide__hero-grid { grid-template-columns: 1fr; }
-  .creator-guide .creator-guide__step-grid { grid-template-columns: 1fr; gap: 30px; }
-  .creator-guide .creator-guide__step-label { position: static; }
-  .creator-guide .creator-guide__support-list { grid-template-columns: repeat(2, 1fr); }
-  .creator-guide .creator-guide__check-grid { grid-template-columns: 1fr; gap: 30px; }
-}
-@media screen and (max-width: 767px) {
-  .creator-guide__pad { padding-block: 72px; }
-  .creator-guide .creator-guide__support-list,
-  .creator-guide .creator-guide__checks { grid-template-columns: 1fr; }
-}
 
 /* ============================================================
    스튜디오 대여 — creator-studio.html (Figma 시안 · 토큰 사용)
@@ -6142,20 +5829,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-studio .creator-studio__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-darker); }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .creator-studio .creator-studio__hero-grid { grid-template-columns: 1fr; }
-  .creator-studio .creator-studio__space-list { grid-template-columns: repeat(2, 1fr); }
-  .creator-studio .creator-studio__gear-grid,
-  .creator-studio .creator-studio__info-grid { grid-template-columns: 1fr; gap: 30px; }
-  .creator-studio .creator-studio__steps { grid-template-columns: repeat(2, 1fr); }
-  .creator-studio .creator-studio__faq-list { grid-template-columns: 1fr; }
-}
-@media screen and (max-width: 767px) {
-  .creator-studio__pad { padding-block: 72px; }
-  .creator-studio .creator-studio__space-list,
-  .creator-studio .creator-studio__steps,
-  .creator-studio .creator-studio__info-list { grid-template-columns: 1fr; }
-}
 
 /* ============================================================
    정산·수익 안내 — creator-settlement.html (Figma 시안 · 토큰 사용)
@@ -6249,20 +5922,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .settlement .settlement__cta-disclaimer { color: var(--color-neutral-light); font-size: 14px; line-height: 24px; }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .settlement .settlement__hero-grid { grid-template-columns: 1fr; }
-  .settlement .settlement__stream-list,
-  .settlement .settlement__faq-list { grid-template-columns: 1fr; }
-  .settlement .settlement__dash-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
-  .settlement .settlement__dash-list,
-  .settlement .settlement__steps { grid-template-columns: repeat(2, 1fr); }
-}
-@media screen and (max-width: 767px) {
-  .settlement__pad { padding-block: 72px; }
-  .settlement .settlement__dash-list,
-  .settlement .settlement__steps { grid-template-columns: 1fr; }
-  .settlement .settlement__stream { padding: 32px 24px; }
-}
 
 /* ============================================================
    멘토 교육 지원 — creator-mentor.html (Figma 시안 · 토큰 사용)
@@ -6348,20 +6007,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .mentor .mentor__cta-line a { color: var(--color-brand-base); font-weight: 700; }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .mentor .mentor__hero-grid { grid-template-columns: 1fr; }
-  .mentor .mentor__prog-list { grid-template-columns: repeat(2, 1fr); }
-  .mentor .mentor__grow-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
-  .mentor .mentor__steps { grid-template-columns: repeat(2, 1fr); }
-  .mentor .mentor__foryou-grid { grid-template-columns: 1fr; gap: 40px; }
-  .mentor .mentor__faq-list { grid-template-columns: 1fr; }
-}
-@media screen and (max-width: 767px) {
-  .mentor__pad { padding-block: 72px; }
-  .mentor .mentor__prog-list,
-  .mentor .mentor__steps,
-  .mentor .mentor__foryou-list { grid-template-columns: 1fr; }
-}
 
 /* ============================================================
    공지사항 — notice.html (Figma 시안 · 토큰 사용)
@@ -6435,17 +6080,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .notice .notice__detail-disclaimer { margin-top: 24px; color: var(--color-neutral-light); font-size: 14px; line-height: 24px; }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .notice .notice__hero-grid { grid-template-columns: 1fr; }
-  .notice .notice__hero-mascot { justify-self: start; }
-  .notice .notice__pinned-inner { flex-direction: column; align-items: flex-start; }
-}
-@media screen and (max-width: 767px) {
-  .notice .notice__item { flex-wrap: wrap; gap: 8px 16px; }
-  .notice .notice__item-title { flex-basis: 100%; order: 3; }
-  .notice .notice__detail { padding: 32px 24px; }
-  .notice .notice__detail-title { font-size: 24px; line-height: 34px; }
-}
 
 /* ============================================================
    자주 묻는 질문 (FAQ) — faq.html (Figma 시안 · 콘텐츠 md · 토큰 사용)
@@ -6515,15 +6149,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .hfaq .hfaq__cta-disclaimer { color: rgb(147 162 183 / 0.9); font-size: 14px; line-height: 24px; }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .hfaq .hfaq__hero-grid { grid-template-columns: 1fr; }
-  .hfaq .hfaq__hero-mascot { justify-self: start; }
-  .hfaq .hfaq__group { grid-template-columns: 1fr; gap: 20px; }
-}
-@media screen and (max-width: 767px) {
-  .hfaq__pad { padding-block: 56px 72px; }
-  .hfaq .hfaq__q-text span:last-child { font-size: 16px; }
-}
 
 /* ============================================================
    이용약관 — terms.html (Figma 211-26126 · 토큰 사용)
@@ -6588,15 +6213,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .terms .terms__disclaimer { margin-top: 20px; color: var(--color-neutral-light); font-size: 13px; line-height: 22px; }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .terms .terms__layout { grid-template-columns: 1fr; gap: 32px; }
-  .terms .terms__toc { position: static; }
-  .terms .terms__title { font-size: 38px; }
-}
-@media screen and (max-width: 767px) {
-  .terms .terms__contact { padding: 28px; }
-  .terms .terms__h2-title { font-size: 21px; }
-}
 
 /* ============================================================
    개인정보처리방침 — privacy.html (Figma 211-27116)
@@ -6645,13 +6261,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .refund__step-desc { margin-top: 12px; color: var(--color-neutral-base); font-size: 14px; line-height: 24px; }
 
 /* ===== 반응형 ===== */
-@media screen and (max-width: 1279px) {
-  .refund__terms { grid-template-columns: 1fr 1fr; }
-  .refund__steps { grid-template-columns: 1fr; }
-}
-@media screen and (max-width: 767px) {
-  .refund__terms { grid-template-columns: 1fr; }
-}
 
 /* ============================================================
    청소년 보호정책 — youth.html (Figma 210-23441)
@@ -6686,9 +6295,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .youth__cta-btn--mail { border: 1px solid rgb(255 255 255 / 0.25); color: var(--color-neutral-white); }
 .youth__cta-btn--mail:hover { border-color: var(--color-neutral-white); }
 
-@media screen and (max-width: 767px) {
-  .youth__cta-btn { flex: 1 1 100%; }
-}
 
 /* ============================================================
    사업자정보 확인 — business.html (Figma 210-23593)
@@ -6736,17 +6342,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .business__cta-note { color: rgb(147 162 183 / 0.9); font-size: 14px; line-height: 24px; }
 
 /* 반응형 */
-@media screen and (max-width: 1279px) {
-  .business__contacts { grid-template-columns: 1fr 1fr; }
-  .business__notices { grid-template-columns: 1fr; }
-}
-@media screen and (max-width: 767px) {
-  .business__contacts { grid-template-columns: 1fr; }
-  .business__row { grid-template-columns: 1fr; }
-  .business__row dt { padding: 20px 24px 0; }
-  .business__row dd { padding: 6px 24px 20px; }
-  .business__cta-btn { flex: 1 1 100%; }
-}
 
 /* ============================================================
    회원가입 모달 — signup modal (Figma 154-65044)
@@ -7308,17 +6903,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .account-toggle.is-on .account-toggle__knob { left: 23px; }
 
 /* 반응형 */
-@media screen and (max-width: 1279px) {
-  .account-body { grid-template-columns: 1fr; }
-  .account-nav { position: static; }
-}
-@media screen and (max-width: 767px) {
-  .account-profile__head { flex-wrap: wrap; }
-  .account-stats { grid-template-columns: 1fr 1fr; }
-  .account-pass { flex-direction: column; align-items: flex-start; }
-  .account-benefit { grid-template-columns: 1fr; }
-  .account-orders__row { grid-template-columns: 1fr auto; }
-}
 
 /* ============================================================
    내 클래스 — account-classes.html (Figma 215-29184)
@@ -7411,15 +6995,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .class-card__btn--outline:hover { opacity: 1; border-color: var(--color-brand-base); color: var(--color-brand-base); }
 
 /* 반응형 */
-@media screen and (max-width: 1279px) {
-  .myclass-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media screen and (max-width: 767px) {
-  .myclass-head { flex-direction: column; align-items: stretch; gap: 16px; }
-  .myclass-search { width: 100%; }
-  .myclass-search__input { width: 100%; flex: 1; }
-  .myclass-grid { grid-template-columns: 1fr; }
-}
 
 /* ============================================================
    올나잇 패스 — account-pass.html (Figma 215-29185)
@@ -7519,16 +7094,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .pass-cta__btn:hover { opacity: 0.9; }
 
 /* 반응형 */
-@media screen and (max-width: 1279px) {
-  .pass-sub__top { flex-direction: column; }
-  .pass-sub__next { width: 100%; }
-}
-@media screen and (max-width: 767px) {
-  .pass-sub__actions { flex-wrap: wrap; }
-  .pass-btn--cancel { margin-left: 0; }
-  .pass-grid { grid-template-columns: 1fr; }
-  .pass-cta { flex-direction: column; align-items: flex-start; }
-}
 
 /* ============================================================
    위시리스트 — account-wishlist.html (Figma 215-29392)
@@ -7615,13 +7180,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .wish-promo__btn:hover { opacity: 0.92; }
 
 /* 반응형 */
-@media screen and (max-width: 767px) {
-  .wish-head { flex-direction: column; align-items: stretch; gap: 16px; }
-  .wish-head__actions { flex-wrap: wrap; }
-  .wish-item { flex-wrap: wrap; }
-  .wish-item__price { width: auto; align-items: flex-start; }
-  .wish-promo { flex-direction: column; align-items: flex-start; }
-}
 
 /* ============================================================
    주문·결제 내역 — account-orders.html (Figma 215-29577)
@@ -7704,15 +7262,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .order-refund__link:hover { text-decoration: underline; }
 
 /* 반응형 */
-@media screen and (max-width: 1279px) {
-  .order-card { overflow-x: auto; }
-  .order-table { min-width: 720px; }
-}
-@media screen and (max-width: 767px) {
-  .order-head { flex-direction: column; align-items: stretch; gap: 16px; }
-  .order-head__filter { flex-wrap: wrap; }
-  .order-bottom { grid-template-columns: 1fr; }
-}
 
 /* ============================================================
    쿠폰·포인트 — account-coupons.html (Figma 215-29739)
@@ -7794,17 +7343,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cp-history__delta--plus { color: var(--color-brand-base); }
 
 /* 반응형 */
-@media screen and (max-width: 1279px) {
-  .cp-summary { flex-direction: column; align-items: stretch; gap: 24px; }
-  .cp-summary__stats { padding-left: 0; border-left: 0; padding-top: 24px; border-top: 1px solid rgb(255 255 255 / 0.1); }
-}
-@media screen and (max-width: 767px) {
-  .cp-coupons__head { flex-direction: column; align-items: stretch; }
-  .cp-coupons__form { width: 100%; }
-  .cp-coupons__input { flex: 1; width: auto; }
-  .cp-coupons__grid { grid-template-columns: 1fr; }
-  .cp-summary__stats { flex-direction: column; }
-}
 
 /* ============================================================
    회원정보 — account-member.html (Figma 215-29918)
@@ -7892,10 +7430,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .member-security__title { margin-bottom: 6px; font-weight: var(--font-weight-bold); font-size: 20px; line-height: 26px; color: var(--color-neutral-darker); }
 
 /* 반응형 */
-@media screen and (max-width: 767px) {
-  .member-fields { grid-template-columns: 1fr; }
-  .member-actions { flex-wrap: wrap; }
-}
 
 /* ============================================================
    알림 설정 — account-notifications.html (Figma 215-30070)
@@ -7940,10 +7474,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .notify-actions { display: flex; justify-content: flex-end; gap: 8px; }
 
 /* 반응형 */
-@media screen and (max-width: 767px) {
-  .dnd__body { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .notify-actions { flex-wrap: wrap; }
-}
 
 /* ============================================================
    수료증 — account-certificates.html (Figma 215-32932)
@@ -8042,18 +7572,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cert-faq__a { margin-top: 6px; font-size: 14px; line-height: 22px; color: var(--color-neutral-base); }
 
 /* 반응형 */
-@media screen and (max-width: 1279px) {
-  .cert-summary { flex-direction: column; align-items: stretch; gap: 24px; }
-  .cert-summary__stats { padding-left: 0; border-left: 0; padding-top: 24px; border-top: 1px solid rgb(255 255 255 / 0.2); }
-  .cert-got__grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media screen and (max-width: 767px) {
-  .cert-head { flex-direction: column; align-items: stretch; gap: 16px; }
-  .cert-head__actions { flex-wrap: wrap; }
-  .cert-pending__item { flex-wrap: wrap; }
-  .cert-summary__stats { flex-direction: column; }
-  .cert-got__grid { grid-template-columns: 1fr; }
-}
 
 /* '졸업모(수료증)' — 괄호 부분은 상대적으로 작고 얇게 (제목·사이드바 공용) */
 .gown-sub { font-size: 0.72em; font-weight: var(--font-weight-regular); }
@@ -8138,14 +7656,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cart-pay__note { padding-top: 2px; font-size: 12px; line-height: 18px; text-align: center; color: var(--color-neutral-light); }
 
 /* 반응형 */
-@media screen and (max-width: 1279px) {
-  .cart-body { grid-template-columns: 1fr; }
-  .cart-pay { position: static; }
-}
-@media screen and (max-width: 767px) {
-  .cart-item { flex-wrap: wrap; }
-  .cart-item__price { width: auto; align-items: flex-start; }
-}
 
 /* 환불 안내 — 정책 2종(단건/구독) 구조화 */
 .order-refund__policy { display: flex; flex-direction: column; gap: 14px; padding-top: 2px; }
@@ -8253,19 +7763,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-set__desc { margin-top: 4px; font-size: 13px; color: var(--color-neutral-light); }
 
 /* 반응형 */
-@media screen and (max-width: 1279px) {
-  .account-body:has(.creator-nav) { grid-template-columns: 1fr; }
-  .creator-stats { grid-template-columns: 1fr 1fr; }
-}
-@media screen and (max-width: 767px) {
-  .creator-profile__head { flex-wrap: wrap; }
-  .creator-profile__actions { flex-wrap: wrap; }
-  .creator-stats { grid-template-columns: 1fr 1fr; }
-  .creator-grid { grid-template-columns: 1fr; }
-  .creator-class { flex-wrap: wrap; }
-  .creator-chart__bars { gap: 8px; }
-  .creator-chart__months { gap: 8px; }
-}
 
 /* ============================================================
    크리에이터 공개 프로필 작성 — creator-profile.html (Figma 215-32475)
@@ -8384,18 +7881,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .pp-progress__note { padding-top: 2px; font-size: 12px; line-height: 19px; color: var(--color-neutral-base); }
 
 /* 반응형 */
-@media screen and (max-width: 1279px) {
-  .pp-layout { grid-template-columns: 1fr; }
-  .pp-preview { position: static; }
-}
-@media screen and (max-width: 767px) {
-  .pp-head { flex-direction: column; align-items: stretch; gap: 16px; }
-  .pp-fields { grid-template-columns: 1fr; }
-  .pp-photo { flex-wrap: wrap; }
-  .pp-savebar { flex-direction: column; align-items: flex-start; }
-  .pp-career { flex-wrap: wrap; }
-  .pp-career__year { width: 100%; }
-}
 
 /* ============================================================
    크리에이터 · 내 클래스 관리 (creator-classes.html)
@@ -8486,11 +7971,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cm-btn--danger { background-color: var(--color-neutral-white); border-color: var(--color-danger-lighter); color: var(--color-danger-base); }
 .cm-btn--danger:hover { border-color: var(--color-danger-base); }
 
-@media screen and (max-width: 767px) {
-  .cm-row { flex-wrap: wrap; }
-  .cm-thumb { width: 140px; height: 82px; }
-  .cm-row__actions { flex-direction: row; flex-wrap: wrap; width: 100%; }
-}
 
 /* ============================================================
    크리에이터 · 수강생 · 리뷰 (creator-reviews.html)
@@ -8602,13 +8082,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .rv-answer__btn:hover { opacity: 0.9; }
 
-@media screen and (max-width: 767px) {
-  .rv-summary { flex-direction: column; align-items: stretch; gap: 24px; }
-  .rv-dist { padding-left: 0; border-left: 0; }
-  .rv-stats { grid-template-columns: repeat(2, 1fr); }
-  .rv-answer { flex-wrap: wrap; }
-  .rv-answer__btn { padding: 12px 22px; }
-}
 
 /* ============================================================
    크리에이터 · 질문 관리 (creator-questions.html)
@@ -8689,13 +8162,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .qa-btn--ghost { padding: 12px 21px; background-color: var(--color-neutral-white); border-color: var(--color-neutral-lighter); color: var(--color-neutral-base); }
 .qa-btn--ghost:hover { border-color: var(--color-neutral-light); }
 
-@media screen and (max-width: 767px) {
-  .qa-tabs { flex-wrap: wrap; }
-  .qa-tools { flex-direction: column; align-items: stretch; gap: 10px; }
-  .qa-submit { width: 100%; }
-  .qa-card--compact { flex-direction: column; align-items: stretch; }
-  .qa-btn { width: 100%; text-align: center; }
-}
 
 /* ============================================================
    크리에이터 · 수익 · 정산 (creator-revenue.html)
@@ -8802,13 +8268,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .rev-perf__track { display: block; height: 8px; border-radius: var(--radius-pill); background-color: var(--color-neutral-lighter); overflow: hidden; }
 .rev-perf__fill { display: block; height: 100%; border-radius: var(--radius-pill); background-color: var(--color-brand-darker); }
 
-@media screen and (max-width: 767px) {
-  .rev-summary { flex-direction: column; align-items: stretch; gap: 24px; }
-  .rev-summary__stats { padding-left: 0; border-left: 0; flex-wrap: wrap; gap: 16px; }
-  .rev-cards { grid-template-columns: 1fr; }
-  .rev-flow__steps { grid-template-columns: repeat(2, 1fr); }
-  .rev-flow__note { white-space: normal; }
-}
 
 /* ============================================================
    크리에이터 · 정산 계좌 · 세금 (creator-tax.html)
@@ -8920,11 +8379,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .tax-note__btn:hover { opacity: 0.9; }
 
-@media screen and (max-width: 767px) {
-  .tax-alert, .tax-note { flex-direction: column; align-items: stretch; gap: 16px; }
-  .tax-form, .tax-types { grid-template-columns: 1fr; }
-  .tax-doc { flex-wrap: wrap; }
-}
 
 /* ============================================================
    크리에이터 · 스튜디오 예약 (creator-studio-booking.html)
@@ -9027,11 +8481,408 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .stu-guide__btn:hover { opacity: 0.9; }
 
+/* ============================================================
+   반응형 통합 — 태블릿 이하 (≤1279px)
+   ============================================================ */
+@media screen and (max-width: 1279px) {
+  /* 컨테이너 밖으로 나가던 캐러셀 버튼을 안쪽으로 들인다 */
+  .collection__carousel {
+    margin-inline: 0;
+  }
+
+  .hero__inner {
+    flex-wrap: wrap;
+    gap: var(--space-2xl);
+  }
+
+  .hero__offer {
+    flex-basis: auto;
+  }
+
+  .chart__body {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown__card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: var(--space-2xl);
+  }
+
+  .site-footer__top,
+  .site-footer__contact {
+    flex-wrap: wrap;
+    gap: var(--space-2xl);
+  }
+
+  .site-footer__nav {
+    flex-wrap: wrap;
+    gap: var(--space-2xl);
+  }
+  .category__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .course-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .magazine__list,
+  .desk__list,
+  .chart__list {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown__clock {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .course-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .course-body { grid-template-columns: 1fr; }
+  .course-aside { position: static; flex-direction: row; flex-wrap: wrap; }
+  .course-aside > * { flex: 1 1 320px; }
+  .course-hero__inner { align-items: center; }
+  .course-hero__illust { width: 300px; height: 300px; }
+  .mentor-courses__list { grid-template-columns: repeat(2, 1fr); }
+  .mag-cover { grid-template-columns: 1fr; gap: 28px; }
+  .mag-picks { grid-template-columns: 1fr; }
+  .mag-classes__list { grid-template-columns: 1fr; }
+  .mag-grid { grid-template-columns: repeat(2, 1fr); }
+  .mag-grid--cat { grid-template-columns: repeat(2, 1fr); }
+  .mentor-classes__list { grid-template-columns: repeat(2, 1fr); }
+  .mentor-hero { flex-wrap: wrap; }
+  .mentor-hero__actions { width: 100%; flex-direction: row; }
+  .mentor-featured { flex-direction: column-reverse; align-items: stretch; }
+  .mentor-featured__media { width: 100%; }
+  .mentor-featured__title { font-size: 26px; }
+  .mentor-posts__grid { grid-template-columns: repeat(2, 1fr); }
+  .desk-top { grid-template-columns: 1fr; }
+  .desk-feature { border-right: 0; padding-right: 0; }
+  .desk-side { padding-left: 0; border-top: 1px solid var(--desk-line); }
+  .desk-feature__body { columns: 2; }
+  .desk-artwrap { grid-template-columns: 1fr; gap: 40px; }
+  .desk-article { max-width: none; }
+  .desk-mostread__grid { grid-template-columns: repeat(2, 1fr); }
+  .desk-catwrap { grid-template-columns: 1fr; gap: 32px; }
+  .desk-filter { flex-direction: row; flex-wrap: wrap; gap: 24px 40px; }
+  .course-list--slider .course-list__item {
+    flex-basis: calc((100% - var(--space-card-gap)) / 2);  /* 2개 노출 */
+  }
+  .b2b .b2b__hero-grid { grid-template-columns: 1fr; }
+  .b2b .b2b__pain-grid,
+  .b2b .b2b__outcomes-grid { grid-template-columns: 1fr; gap: 40px; }
+  .b2b .b2b__cards,
+  .b2b .b2b__steps { grid-template-columns: repeat(2, 1fr); }
+  .b2b .b2b__process-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
+  .b2b .b2b__faq-list { grid-template-columns: 1fr; }
+  .careers .careers__hero-grid { grid-template-columns: 1fr; }
+  .careers .careers__team-grid,
+  .careers .careers__share-grid { grid-template-columns: 1fr; gap: 40px; padding-right: 0; }
+  .careers .careers__cards,
+  .careers .careers__steps { grid-template-columns: repeat(2, 1fr); }
+  .careers .careers__roles { grid-template-columns: 1fr 1fr; }
+  .careers .careers__roles-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
+  .roadmap .roadmap__hero-grid { grid-template-columns: 1fr; }
+  .roadmap .roadmap__how-list,
+  .roadmap .roadmap__benefit-list { grid-template-columns: repeat(2, 1fr); }
+  .roadmap .roadmap__cats { grid-template-columns: 1fr; }
+  .roadmap .roadmap__cat-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
+  .roadmap .roadmap__next-steps { grid-template-columns: 1fr; gap: 0; }
+  .roadmap .roadmap__next-step { padding-top: 16px; padding-bottom: 14px; }
+  .subscribe .subscribe__hero-grid { grid-template-columns: 1fr; }
+  .subscribe .subscribe__summary,
+  .subscribe .subscribe__plans,
+  .subscribe .subscribe__forme-grid { grid-template-columns: 1fr; }
+  .subscribe .subscribe__plan-perks { grid-template-columns: 1fr; }
+  .subscribe .subscribe__faq-list { grid-template-columns: 1fr 1fr; }
+  .creator-apply .creator-apply__hero-grid { grid-template-columns: 1fr; }
+  .creator-apply .creator-apply__before-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
+  .creator-apply .creator-apply__cards,
+  .creator-apply .creator-apply__steps { grid-template-columns: repeat(2, 1fr); }
+  .creator-apply .creator-apply__faq-list { grid-template-columns: 1fr; }
+  .creator-apply .creator-apply__field-row { grid-template-columns: 1fr; }
+  .creator-guide .creator-guide__hero-grid { grid-template-columns: 1fr; }
+  .creator-guide .creator-guide__step-grid { grid-template-columns: 1fr; gap: 30px; }
+  .creator-guide .creator-guide__step-label { position: static; }
+  .creator-guide .creator-guide__support-list { grid-template-columns: repeat(2, 1fr); }
+  .creator-guide .creator-guide__check-grid { grid-template-columns: 1fr; gap: 30px; }
+  .creator-studio .creator-studio__hero-grid { grid-template-columns: 1fr; }
+  .creator-studio .creator-studio__space-list { grid-template-columns: repeat(2, 1fr); }
+  .creator-studio .creator-studio__gear-grid,
+  .creator-studio .creator-studio__info-grid { grid-template-columns: 1fr; gap: 30px; }
+  .creator-studio .creator-studio__steps { grid-template-columns: repeat(2, 1fr); }
+  .creator-studio .creator-studio__faq-list { grid-template-columns: 1fr; }
+  .settlement .settlement__hero-grid { grid-template-columns: 1fr; }
+  .settlement .settlement__stream-list,
+  .settlement .settlement__faq-list { grid-template-columns: 1fr; }
+  .settlement .settlement__dash-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
+  .settlement .settlement__dash-list,
+  .settlement .settlement__steps { grid-template-columns: repeat(2, 1fr); }
+  .mentor .mentor__hero-grid { grid-template-columns: 1fr; }
+  .mentor .mentor__prog-list { grid-template-columns: repeat(2, 1fr); }
+  .mentor .mentor__grow-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
+  .mentor .mentor__steps { grid-template-columns: repeat(2, 1fr); }
+  .mentor .mentor__foryou-grid { grid-template-columns: 1fr; gap: 40px; }
+  .mentor .mentor__faq-list { grid-template-columns: 1fr; }
+  .notice .notice__hero-grid { grid-template-columns: 1fr; }
+  .notice .notice__hero-mascot { justify-self: start; }
+  .notice .notice__pinned-inner { flex-direction: column; align-items: flex-start; }
+  .hfaq .hfaq__hero-grid { grid-template-columns: 1fr; }
+  .hfaq .hfaq__hero-mascot { justify-self: start; }
+  .hfaq .hfaq__group { grid-template-columns: 1fr; gap: 20px; }
+  .terms .terms__layout { grid-template-columns: 1fr; gap: 32px; }
+  .terms .terms__toc { position: static; }
+  .terms .terms__title { font-size: 38px; }
+  .refund__terms { grid-template-columns: 1fr 1fr; }
+  .refund__steps { grid-template-columns: 1fr; }
+  .business__contacts { grid-template-columns: 1fr 1fr; }
+  .business__notices { grid-template-columns: 1fr; }
+  .account-body { grid-template-columns: 1fr; }
+  .account-nav { position: static; }
+  .myclass-grid { grid-template-columns: repeat(2, 1fr); }
+  .pass-sub__top { flex-direction: column; }
+  .pass-sub__next { width: 100%; }
+  .order-card { overflow-x: auto; }
+  .order-table { min-width: 720px; }
+  .cp-summary { flex-direction: column; align-items: stretch; gap: 24px; }
+  .cp-summary__stats { padding-left: 0; border-left: 0; padding-top: 24px; border-top: 1px solid rgb(255 255 255 / 0.1); }
+  .cert-summary { flex-direction: column; align-items: stretch; gap: 24px; }
+  .cert-summary__stats { padding-left: 0; border-left: 0; padding-top: 24px; border-top: 1px solid rgb(255 255 255 / 0.2); }
+  .cert-got__grid { grid-template-columns: repeat(2, 1fr); }
+  .cart-body { grid-template-columns: 1fr; }
+  .cart-pay { position: static; }
+  .account-body:has(.creator-nav) { grid-template-columns: 1fr; }
+  .creator-stats { grid-template-columns: 1fr 1fr; }
+  .pp-layout { grid-template-columns: 1fr; }
+  .pp-preview { position: static; }
+}
+
+/* ============================================================
+   반응형 통합 — 모바일 (≤767px)
+   ============================================================ */
 @media screen and (max-width: 767px) {
+  .mega__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .mega__cats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 0;
+    padding-bottom: var(--space-md);
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .mega-cat {
+    width: auto;
+  }
+
+  .mega-cat__name {
+    margin-right: var(--space-2xs);
+  }
+
+  .mega-cat__arrow {
+    display: none;
+  }
+
+  .mega-sub__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+  .course-hero__inner { flex-direction: column; align-items: flex-start; }
+  .course-hero__illust { align-self: center; }
+  .course-nav__list { overflow-x: auto; }
+  .course-nav__link { white-space: nowrap; }
+  .benefit__item, .benefit__item--reverse,
+  .practice__item { grid-template-columns: 1fr; }
+  .benefit__item--reverse .benefit__media,
+  .practice__item--reverse .practice__body { order: 0; }
+  .worry__bubbles, .beforeafter__cols,
+  .review-group__list, .mentor-courses__list { grid-template-columns: 1fr; }
+  .mentor-profile { flex-direction: column; }
+  .section-band { padding: var(--space-md); }
+  .practice-block { padding: var(--space-2xl) var(--space-md); }
+  .mag-classes { padding: 24px 20px; }
+  .mag-grid { grid-template-columns: 1fr; }
+  .mag-row { flex-wrap: wrap; gap: 6px 16px; }
+  .mag-row__title { width: 100%; flex-basis: 100%; white-space: normal; }
+  .mag-row__cat { width: auto; }
+  .mag-grid--cat { grid-template-columns: 1fr; }
+  .mag-filter { flex-direction: column; align-items: flex-start; }
+  .article-hero img { height: 260px; }
+  .article-course { flex-direction: column; align-items: stretch; }
+  .article-course__buy { align-items: flex-start; }
+  .article-related__grid { grid-template-columns: 1fr; }
+  .mentor-stats { grid-template-columns: repeat(2, 1fr); gap: 20px 0; }
+  .mentor-classes__list { grid-template-columns: 1fr; }
+  .mentor-posts__grid { grid-template-columns: 1fr; }
+  .mentor-post { flex-wrap: wrap; gap: 6px 16px; }
+  .mentor-post__title { width: 100%; flex-basis: 100%; white-space: normal; }
+  .mentor-post__cat { width: auto; }
+  .desk-masthead { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .desk-masthead__desc { width: 100%; max-width: none; padding-left: 0; border-left: 0; }
+  .desk-feature__body { columns: 1; }
+  .desk-cards { grid-template-columns: 1fr; }
+  .desk-card { border-right: 0; border-bottom: 1px solid var(--desk-line); }
+  .desk-card__link, .desk-card:first-child .desk-card__link, .desk-card:last-child .desk-card__link { padding: 24px 0; }
+  .desk-lists { grid-template-columns: 1fr; }
+  .desk-listcol, .desk-listcol:last-child { padding: 24px 0; }
+  .desk-listcol:first-child { border-right: 0; border-bottom: 1px solid var(--desk-line); }
+  .desk-classes { flex-direction: column; align-items: flex-start; }
+  .desk-classes__list { grid-template-columns: 1fr; width: 100%; }
+  .desk-article__figure img { height: 240px; }
+  .desk-mostread__grid { grid-template-columns: 1fr; }
+  .desk-newsfeat { flex-direction: column-reverse; }
+  .desk-newsfeat__thumb { width: 100%; height: 200px; }
+  .sitemap-grid { grid-template-columns: 1fr; }
+  .best-rank__top, .best-rank__rest { grid-template-columns: 1fr; }
+  .best-rank__head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .course-list--slider .course-list__item {
+    flex-basis: calc((100% - var(--space-card-gap)) / 1.2); /* 약 1.2개 */
+  }
+  .b2b__pad { padding-block: 72px; }
+  .b2b .b2b__pain-list,
+  .b2b .b2b__outcome-list,
+  .b2b .b2b__cards,
+  .b2b .b2b__steps { grid-template-columns: 1fr; }
+  .careers__pad { padding-block: 72px; }
+  .careers .careers__cards,
+  .careers .careers__steps,
+  .careers .careers__roles,
+  .careers .careers__share-list { grid-template-columns: 1fr; }
+  .careers .careers__role { flex-direction: column; gap: 6px; min-height: 0; }
+  .careers .careers__role-desc { text-align: left; }
+  .roadmap__pad { padding-block: 72px; }
+  .roadmap .roadmap__how-list,
+  .roadmap .roadmap__benefit-list { grid-template-columns: 1fr; }
+  .roadmap .roadmap__card { padding: 32px 24px; }
+  .roadmap .roadmap__step-row { flex-wrap: wrap; gap: 4px 20px; }
+  .roadmap .roadmap__step-note { width: 100%; text-align: left; padding-left: 94px; }
+  .subscribe__pad { padding-block: 72px; }
+  .subscribe .subscribe__faq-list { grid-template-columns: 1fr; }
+  .subscribe .subscribe__compare-head,
+  .subscribe .subscribe__compare-row { flex-wrap: wrap; gap: 4px 16px; }
+  .subscribe .subscribe__compare-label { flex-basis: 100%; }
+  .subscribe .subscribe__cat-head { display: none; }
+  .subscribe .subscribe__cat-row { flex-wrap: wrap; gap: 4px 16px; }
+  .subscribe .subscribe__cat-name { flex-basis: 100%; }
+  .creator-apply__pad { padding-block: 72px; }
+  .creator-apply .creator-apply__cards,
+  .creator-apply .creator-apply__steps { grid-template-columns: 1fr; }
+  .creator-apply .creator-apply__form { padding: 28px 22px; }
+  .creator-apply .creator-apply__form-foot { justify-content: stretch; }
+  .creator-apply .creator-apply__submit { width: 100%; }
+  .creator-guide__pad { padding-block: 72px; }
+  .creator-guide .creator-guide__support-list,
+  .creator-guide .creator-guide__checks { grid-template-columns: 1fr; }
+  .creator-studio__pad { padding-block: 72px; }
+  .creator-studio .creator-studio__space-list,
+  .creator-studio .creator-studio__steps,
+  .creator-studio .creator-studio__info-list { grid-template-columns: 1fr; }
+  .settlement__pad { padding-block: 72px; }
+  .settlement .settlement__dash-list,
+  .settlement .settlement__steps { grid-template-columns: 1fr; }
+  .settlement .settlement__stream { padding: 32px 24px; }
+  .mentor__pad { padding-block: 72px; }
+  .mentor .mentor__prog-list,
+  .mentor .mentor__steps,
+  .mentor .mentor__foryou-list { grid-template-columns: 1fr; }
+  .notice .notice__item { flex-wrap: wrap; gap: 8px 16px; }
+  .notice .notice__item-title { flex-basis: 100%; order: 3; }
+  .notice .notice__detail { padding: 32px 24px; }
+  .notice .notice__detail-title { font-size: 24px; line-height: 34px; }
+  .hfaq__pad { padding-block: 56px 72px; }
+  .hfaq .hfaq__q-text span:last-child { font-size: 16px; }
+  .terms .terms__contact { padding: 28px; }
+  .terms .terms__h2-title { font-size: 21px; }
+  .refund__terms { grid-template-columns: 1fr; }
+  .youth__cta-btn { flex: 1 1 100%; }
+  .business__contacts { grid-template-columns: 1fr; }
+  .business__row { grid-template-columns: 1fr; }
+  .business__row dt { padding: 20px 24px 0; }
+  .business__row dd { padding: 6px 24px 20px; }
+  .business__cta-btn { flex: 1 1 100%; }
+  .account-profile__head { flex-wrap: wrap; }
+  .account-stats { grid-template-columns: 1fr 1fr; }
+  .account-pass { flex-direction: column; align-items: flex-start; }
+  .account-benefit { grid-template-columns: 1fr; }
+  .account-orders__row { grid-template-columns: 1fr auto; }
+  .myclass-head { flex-direction: column; align-items: stretch; gap: 16px; }
+  .myclass-search { width: 100%; }
+  .myclass-search__input { width: 100%; flex: 1; }
+  .myclass-grid { grid-template-columns: 1fr; }
+  .pass-sub__actions { flex-wrap: wrap; }
+  .pass-btn--cancel { margin-left: 0; }
+  .pass-grid { grid-template-columns: 1fr; }
+  .pass-cta { flex-direction: column; align-items: flex-start; }
+  .wish-head { flex-direction: column; align-items: stretch; gap: 16px; }
+  .wish-head__actions { flex-wrap: wrap; }
+  .wish-item { flex-wrap: wrap; }
+  .wish-item__price { width: auto; align-items: flex-start; }
+  .wish-promo { flex-direction: column; align-items: flex-start; }
+  .order-head { flex-direction: column; align-items: stretch; gap: 16px; }
+  .order-head__filter { flex-wrap: wrap; }
+  .order-bottom { grid-template-columns: 1fr; }
+  .cp-coupons__head { flex-direction: column; align-items: stretch; }
+  .cp-coupons__form { width: 100%; }
+  .cp-coupons__input { flex: 1; width: auto; }
+  .cp-coupons__grid { grid-template-columns: 1fr; }
+  .cp-summary__stats { flex-direction: column; }
+  .member-fields { grid-template-columns: 1fr; }
+  .member-actions { flex-wrap: wrap; }
+  .dnd__body { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .notify-actions { flex-wrap: wrap; }
+  .cert-head { flex-direction: column; align-items: stretch; gap: 16px; }
+  .cert-head__actions { flex-wrap: wrap; }
+  .cert-pending__item { flex-wrap: wrap; }
+  .cert-summary__stats { flex-direction: column; }
+  .cert-got__grid { grid-template-columns: 1fr; }
+  .cart-item { flex-wrap: wrap; }
+  .cart-item__price { width: auto; align-items: flex-start; }
+  .creator-profile__head { flex-wrap: wrap; }
+  .creator-profile__actions { flex-wrap: wrap; }
+  .creator-stats { grid-template-columns: 1fr 1fr; }
+  .creator-grid { grid-template-columns: 1fr; }
+  .creator-class { flex-wrap: wrap; }
+  .creator-chart__bars { gap: 8px; }
+  .creator-chart__months { gap: 8px; }
+  .pp-head { flex-direction: column; align-items: stretch; gap: 16px; }
+  .pp-fields { grid-template-columns: 1fr; }
+  .pp-photo { flex-wrap: wrap; }
+  .pp-savebar { flex-direction: column; align-items: flex-start; }
+  .pp-career { flex-wrap: wrap; }
+  .pp-career__year { width: 100%; }
+  .cm-row { flex-wrap: wrap; }
+  .cm-thumb { width: 140px; height: 82px; }
+  .cm-row__actions { flex-direction: row; flex-wrap: wrap; width: 100%; }
+  .rv-summary { flex-direction: column; align-items: stretch; gap: 24px; }
+  .rv-dist { padding-left: 0; border-left: 0; }
+  .rv-stats { grid-template-columns: repeat(2, 1fr); }
+  .rv-answer { flex-wrap: wrap; }
+  .rv-answer__btn { padding: 12px 22px; }
+  .qa-tabs { flex-wrap: wrap; }
+  .qa-tools { flex-direction: column; align-items: stretch; gap: 10px; }
+  .qa-submit { width: 100%; }
+  .qa-card--compact { flex-direction: column; align-items: stretch; }
+  .qa-btn { width: 100%; text-align: center; }
+  .rev-summary { flex-direction: column; align-items: stretch; gap: 24px; }
+  .rev-summary__stats { padding-left: 0; border-left: 0; flex-wrap: wrap; gap: 16px; }
+  .rev-cards { grid-template-columns: 1fr; }
+  .rev-flow__steps { grid-template-columns: repeat(2, 1fr); }
+  .rev-flow__note { white-space: normal; }
+  .tax-alert, .tax-note { flex-direction: column; align-items: stretch; gap: 16px; }
+  .tax-form, .tax-types { grid-template-columns: 1fr; }
+  .tax-doc { flex-wrap: wrap; }
   .stu-spaces__grid { grid-template-columns: repeat(2, 1fr); }
   .rev-flow__steps { grid-template-columns: repeat(2, 1fr); }
-}
-@media screen and (max-width: 767px) {
   .stu-booking { flex-direction: column; align-items: stretch; gap: 16px; }
   .stu-booking__date { flex-direction: row; gap: 10px; padding-right: 0; border-right: 0; border-bottom: 1px solid rgba(7,3,171,0.2); padding-bottom: 12px; align-items: baseline; }
   .stu-booking__actions { justify-content: flex-end; }
