@@ -3236,7 +3236,7 @@ hr {
 .mag-cover__media {
   position: relative;
   display: block;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   aspect-ratio: 560 / 440;
 }
@@ -3318,7 +3318,7 @@ hr {
 .mag-feature { display: flex; flex-direction: column; gap: 9px; }
 .mag-feature__media {
   display: block;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   aspect-ratio: 570 / 300;
 }
@@ -3356,30 +3356,28 @@ hr {
 .mag-classes__all { color: var(--mag-text-4); font-size: 13px; }
 .mag-classes__all:hover { color: var(--color-brand-accent); }
 .mag-classes__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.mag-classcard {
-  display: flex;
-  gap: 14px;
-  background-color: var(--mag-card);
-  border-radius: 6px;
-  padding: 14px;
-  height: 100%;
+/* 매거진 추천 클래스: 표준 course-card를 다크 패널 위 화이트 카드로 표시 */
+.mag-classes .course-card {
+  background-color: var(--color-magazine-card);
+  border-radius: 12px;
+  gap: 12px;
+  padding: 12px 12px 16px;
+  font-family: var(--font-body); /* 매거진 Raleway 베이스 상속 방지 → 표준 카드처럼 Spoqa */
 }
-.mag-classcard__thumb { flex-shrink: 0; width: 88px; height: 66px; border-radius: 4px; overflow: hidden; }
-.mag-classcard__thumb img { width: 100%; height: 100%; object-fit: cover; }
-.mag-classcard__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.mag-classcard__title { font-weight: var(--font-weight-bold); font-size: 14px; line-height: 1.45; color: var(--mag-text); }
-.mag-classcard:hover .mag-classcard__title { color: var(--color-brand-accent); }
-.mag-classcard__meta { color: var(--mag-text-5); font-size: 12.5px; }
-.mag-classcard__price { font-size: 13.5px; margin-top: auto; }
-.mag-classcard__rate { color: var(--color-brand-accent); font-weight: var(--font-weight-bold); }
-.mag-classcard__amount { color: var(--mag-text); font-weight: var(--font-weight-bold); }
+.mag-classes .course-card__thumb { border-radius: var(--radius-md); }
+.mag-classes .course-card__body { padding-inline: 0; }
+.mag-classes .course-card__link { color: var(--mag-text); }
+.mag-classes .course-card__price-after { color: var(--mag-text); }
+.mag-classes .course-card__score,
+.mag-classes .course-card__students,
+.mag-classes .course-card__sep { color: var(--mag-text-5); }
 
 /* ---------- 최근 글 그리드 ---------- */
 .mag-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 28px; }
 .mag-card { display: flex; flex-direction: column; gap: 8px; }
 .mag-card__thumb {
   display: block;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   aspect-ratio: 373 / 190;
 }
@@ -3611,7 +3609,7 @@ hr {
 
 /* ---------- 히어로 이미지 ---------- */
 .article-hero { margin: 44px 0 0; }
-.article-hero img { width: 100%; height: 520px; object-fit: cover; border-radius: 6px; }
+.article-hero img { width: 100%; height: 520px; object-fit: cover; border-radius: var(--radius-md); }
 .article-hero figcaption {
   margin-top: 16px;
   text-align: center;
@@ -3855,7 +3853,7 @@ hr {
 .mentor-featured:hover .mentor-featured__title { color: var(--color-brand-accent); }
 .mentor-featured__excerpt { color: var(--mag-text-2); font-size: 15.5px; line-height: 1.85; }
 .mentor-featured__meta { color: var(--mag-text-5); font-size: 12.5px; }
-.mentor-featured__media { flex-shrink: 0; width: 380px; height: 220px; border-radius: 6px; overflow: hidden; }
+.mentor-featured__media { flex-shrink: 0; width: 380px; height: 220px; border-radius: var(--radius-md); overflow: hidden; }
 .mentor-featured__media img { width: 100%; height: 100%; object-fit: cover; }
 
 .mentor-posts { padding-bottom: 100px; }
