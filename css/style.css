@@ -4816,6 +4816,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   overflow: hidden;
 }
 .rank-card__thumb img { width: 100%; height: 100%; object-fit: cover; }
+/* 랭킹 썸네일 할인 배지: course-card__badge 비주얼 재사용 + 우측 하단 고정 */
+.rank-card__thumb .course-card__badge,
+.rank-mini__thumb .course-card__badge { position: absolute; right: 0; bottom: 14px; margin-top: 0; }
 .rank-card__no {
   position: absolute;
   top: 0;
@@ -4844,25 +4847,12 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   font-size: var(--text-body-sm-size);
   font-weight: var(--font-weight-bold);
 }
-.rank-card__badge {
-  position: absolute;
-  left: 15px;
-  bottom: 15px;
-  padding: 5px 10px;
-  border-radius: var(--radius-sm);
-  background-color: rgb(15 23 42 / 0.82);
-  color: var(--color-neutral-white);
-  font-size: var(--text-caption-size);
-  font-weight: var(--font-weight-bold);
-}
 .rank-card__body { display: flex; gap: 16px; padding: 20px 24px; }
 .rank-card__avatar { flex-shrink: 0; width: 42px; height: 42px; border-radius: var(--radius-circle); object-fit: cover; }
 .rank-card__info { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .rank-card__title { font-size: var(--text-body-size); font-weight: var(--font-weight-bold); line-height: var(--text-body-leading); color: var(--color-text-strong); }
 .rank-card__title a { color: inherit; text-decoration: none; }
-.rank-card__title a:hover { text-decoration: underline; }
 .rank-card__meta { color: var(--color-text-muted); font-size: var(--text-caption-size); }
-.rank-card__cat { color: var(--color-brand-base); font-weight: var(--font-weight-bold); font-size: var(--text-caption-size); }
 
 /* ---- 5~10위 컴팩트 카드 ---- */
 .best-rank__rest {
@@ -4909,17 +4899,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .rank-mini__body { display: flex; flex-direction: column; gap: 6px; min-width: 0; padding: 5px 5px 5px 0; }
 .rank-mini__top { display: flex; align-items: center; gap: 8px; min-width: 0; }
-.rank-mini__cat {
-  flex-shrink: 0;
-  padding: 3px 9px;
-  border: 1px solid var(--color-border-subtle);
-  border-radius: var(--radius-pill);
-  background-color: var(--color-surface-page);
-  color: var(--color-brand-base);
-  font-size: var(--text-caption-size);
-  font-weight: var(--font-weight-bold);
-  line-height: 1.4;
-}
 .rank-mini__meta { color: var(--color-text-muted); font-size: var(--text-caption-size); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .rank-mini__title { font-size: var(--text-body-size); font-weight: var(--font-weight-bold); line-height: var(--text-body-leading); color: var(--color-text-strong); }
 .rank-mini__title a { color: inherit; text-decoration: none; }
