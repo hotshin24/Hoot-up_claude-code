@@ -55,6 +55,19 @@
   --color-border-subtle: var(--color-neutral-lighter);
   --color-border-inverse: rgb(255 255 255 / 0.1);
   --color-focus-ring: var(--color-brand-base);
+  /* 추가 색상 토큰 (리터럴 정리) */
+  --color-text-placeholder: #757575; /* 폼 placeholder */
+  --color-brand-secondary-dark: #e4e83a; /* brand-secondary hover */
+  --color-account-hero-from: #4f7bfe; /* 계정 히어로 그라디언트 시작 */
+  --color-account-hero-to: #2948ff; /* 계정 히어로 그라디언트 끝 */
+  --color-review-bg: #fef1d9; /* 심사/리뷰 상태 배경(따뜻한 라이트) */
+  --color-review-text: #b45309; /* 심사/리뷰 상태 텍스트(다크 앰버) */
+  --color-state-positive-bg: #f2f7ff; /* 표 긍정(전액) 행 배경 */
+  --color-state-negative-bg: #fff7f7; /* 표 부정(없음) 행 배경 */
+  --color-state-negative-text: #c0392b; /* 표 부정(없음) 텍스트 */
+  --color-magazine-bg: #0a0c11; /* 매거진 다크 배경 */
+  --color-magazine-panel: #141821; /* 매거진 패널 */
+  --color-magazine-card: #1c212c; /* 매거진 카드 */
 
   /* ----------------------------------------------------------------------
      Gradient
