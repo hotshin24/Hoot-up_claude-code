@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="css/import.css">
 
   <script src="js/common.js" defer></script>
+  <script src="js/desk-news-data.js" defer></script>
+  <script src="js/desk-sort.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">본문 바로가기</a>
@@ -289,9 +291,9 @@
         </div>
       </aside>
 
-      <section class="desk-newslist" aria-label="Data 기사 목록">
+      <section class="desk-newslist" data-desk-scope="Data" aria-label="Data 기사 목록">
         <p class="desk-newsgroup__date">2026. 07. 31</p>
-        <a class="desk-newsfeat" href="desk-ai-coding.html">
+        <a class="desk-newsfeat" href="desk-ai-coding.html" data-views="4645">
           <div class="desk-newsfeat__body">
             <h3 class="desk-newsfeat__title">개발자 채용 공고 속 AI 키워드, 1년 새 2.4배</h3>
             <p class="desk-newsfeat__excerpt">1년 새 2.4배, 요구 역량의 변화 분석</p>
@@ -300,7 +302,7 @@
           <span class="desk-newsfeat__thumb"><img src="assets/news/desk-feature-ai.jpg" alt="채용 공고 속 AI 키워드 증가 그래프" loading="lazy"></span>
         </a>
         <p class="desk-newsgroup__date">2026. 07. 29</p>
-        <a class="desk-newsfeat" href="desk-ai-coding.html">
+        <a class="desk-newsfeat" href="desk-ai-coding.html" data-views="2776">
           <div class="desk-newsfeat__body">
             <h3 class="desk-newsfeat__title">비전공 취업, 학습 기간과 합격률의 상관관계</h3>
             <p class="desk-newsfeat__excerpt">경로별 취업 성과 비교</p>
@@ -309,7 +311,7 @@
           <span class="desk-newsfeat__thumb"><img src="assets/news/bootcamp-next.jpg" alt="학습 기간과 합격률의 상관 그래프" loading="lazy"></span>
         </a>
         <p class="desk-newsgroup__date">2026. 07. 27</p>
-        <a class="desk-newsfeat" href="desk-ai-coding.html">
+        <a class="desk-newsfeat" href="desk-ai-coding.html" data-views="2496">
           <div class="desk-newsfeat__body">
             <h3 class="desk-newsfeat__title">포트폴리오 유형별 서류 통과율</h3>
             <p class="desk-newsfeat__excerpt">유형이 가른 서류 합격률</p>
@@ -318,7 +320,7 @@
           <span class="desk-newsfeat__thumb"><img src="assets/news/desk-frontend.jpg" alt="포트폴리오 유형별 통과율 차트" loading="lazy"></span>
         </a>
         <p class="desk-newsgroup__date">2026. 07. 25</p>
-        <a class="desk-newsfeat" href="desk-ai-coding.html">
+        <a class="desk-newsfeat" href="desk-ai-coding.html" data-views="2678">
           <div class="desk-newsfeat__body">
             <h3 class="desk-newsfeat__title">주니어 연봉, 스킬셋에 따라 얼마나 벌어지나</h3>
             <p class="desk-newsfeat__excerpt">기술 조합에 따라 벌어지는 주니어 연봉</p>
@@ -327,7 +329,7 @@
           <span class="desk-newsfeat__thumb"><img src="assets/news/junior-to-senior.jpg" alt="스킬셋별 초봉 분포 그래프" loading="lazy"></span>
         </a>
         <p class="desk-newsgroup__date">2026. 07. 23</p>
-        <a class="desk-newsfeat" href="desk-ai-coding.html">
+        <a class="desk-newsfeat" href="desk-ai-coding.html" data-views="1704">
           <div class="desk-newsfeat__body">
             <h3 class="desk-newsfeat__title">웹 퍼블리셔 수요, 어떤 산업에서 늘고 있나</h3>
             <p class="desk-newsfeat__excerpt">어떤 산업에서 수요가 느는가</p>
@@ -336,7 +338,7 @@
           <span class="desk-newsfeat__thumb"><img src="assets/news/desk-career-junior.jpg" alt="업종별 퍼블리셔 채용 지형 지도" loading="lazy"></span>
         </a>
         <p class="desk-newsgroup__date">2026. 07. 21</p>
-        <a class="desk-newsfeat" href="desk-ai-coding.html">
+        <a class="desk-newsfeat" href="desk-ai-coding.html" data-views="2573">
           <div class="desk-newsfeat__body">
             <h3 class="desk-newsfeat__title">AI 도구 사용률, 경력별로 이렇게 다르다</h3>
             <p class="desk-newsfeat__excerpt">활용 패턴의 격차</p>
@@ -345,7 +347,7 @@
           <span class="desk-newsfeat__thumb"><img src="assets/news/ai-coding-tools.jpg" alt="경력별 AI 도구 사용률 비교 차트" loading="lazy"></span>
         </a>
         <p class="desk-newsgroup__date">2026. 07. 19</p>
-        <a class="desk-newsfeat" href="desk-ai-coding.html">
+        <a class="desk-newsfeat" href="desk-ai-coding.html" data-views="1586">
           <div class="desk-newsfeat__body">
             <h3 class="desk-newsfeat__title">지역별 개발자 일자리 지도</h3>
             <p class="desk-newsfeat__excerpt">수도권 집중부터 이직 후 연봉까지</p>
@@ -353,11 +355,11 @@
           </div>
           <span class="desk-newsfeat__thumb"><img src="assets/news/frontend-2026.jpg" alt="지역별 개발자 일자리 분포 지도" loading="lazy"></span>
         </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
+        <a class="desk-newsrow" href="desk-ai-coding.html" data-views="1950">
           <span class="desk-newsrow__title">이력서에 가장 많이 쓰는 기술</span>
           <span class="desk-newsrow__byline">박하늘 기자</span>
         </a>
-        <a class="desk-newsrow" href="desk-ai-coding.html">
+        <a class="desk-newsrow" href="desk-ai-coding.html" data-views="3143">
           <span class="desk-newsrow__title">개발자 이직 후 연봉 상승률</span>
           <span class="desk-newsrow__byline">한지우 기자</span>
         </a>

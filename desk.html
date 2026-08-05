@@ -15,6 +15,22 @@
   <link rel="stylesheet" href="css/import.css">
 
   <script src="js/common.js" defer></script>
+  <script src="js/newsletter-modal.js" defer></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.querySelector('.desk-morning__form');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // 백엔드 없음 → 전송 대신 데모 피드백
+      var input = form.querySelector('.desk-morning__input');
+      var btn = form.querySelector('.desk-morning__btn');
+      var done = form.querySelector('.desk-morning__done');
+      if (input) input.style.display = 'none';
+      if (btn) btn.style.display = 'none';
+      if (done) done.hidden = false;
+    });
+  });
+  </script>
 </head>
 <body>
 <a class="skip-link" href="#main">본문 바로가기</a>
@@ -247,7 +263,7 @@
       <nav class="desk-topbar__links" aria-label="데스크 보조 메뉴">
         <a href="magazine.html">훗업 매거진</a>
         <a href="categories.html">전체 클래스</a>
-        <a href="#">뉴스레터 구독</a>
+        <a href="#" data-open-newsletter aria-haspopup="dialog" aria-controls="newsletter-modal">뉴스레터 구독</a>
       </nav>
     </div>
 
@@ -287,7 +303,7 @@
           <p>대신 그 자리를 채우는 것은 ‘판단’이다. 요구사항을 충족하는지, 성능과 보안에 문제가 없는지 가려내는 일의 비중이 커졌다.</p>
           <p>채용 시장에서도 도구 활용 능력만이 아니라, 문제 해결의 사고 과정을 검증하려는 흐름이 뚜렷해지고 있다.</p>
         </div>
-        <p class="desk-feature__more"><a href="desk-ai-coding.html">기사 전문 읽기 →</a></p>
+        <p class="desk-feature__more"><a href="desk-ai-coding.html">기사 전문 읽기 <span class="icon icon--chevron-right" aria-hidden="true"></span></a></p>
       </article>
 
       <aside class="desk-side" aria-label="브리핑">
@@ -314,10 +330,11 @@
         <section class="desk-morning">
           <p class="desk-morning__eyebrow">MORNING BRIEF</p>
           <p class="desk-morning__title">매일 아침 6시, 밤에 배우는 사람을 위한 다섯 줄</p>
-          <form class="desk-morning__form" action="#" method="post">
+          <form class="desk-morning__form" action="#">
             <label class="a11y-hidden" for="desk-email">이메일 주소</label>
-            <input class="desk-morning__input" id="desk-email" type="email" name="email" placeholder="이메일 주소" autocomplete="email">
+            <input class="desk-morning__input" id="desk-email" type="email" name="email" placeholder="이메일 주소" autocomplete="email" required>
             <button class="desk-morning__btn" type="submit">구독</button>
+            <p class="desk-morning__done" role="status" hidden>구독 신청이 완료됐어요. 내일 아침 6시에 만나요 🦉</p>
           </form>
         </section>
       </aside>
@@ -544,6 +561,29 @@
 
   </div>
 </footer>
+
+<!-- 뉴스레터 구독 모달 -->
+<div class="modal" id="newsletter-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="newsletter-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="newsletter-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> DESK 뉴스레터를<br>받아보시겠어요?</h2>
+    </div>
+
+    <form class="signup__form" data-newsletter-form>
+      <div class="signup__fields">
+        <input class="signup__input" type="email" name="email" placeholder="이메일 주소" autocomplete="email" required>
+      </div>
+      <button class="signup__submit" type="submit">구독하기</button>
+    </form>
+
+    <p class="newsletter-done" role="status" hidden>뉴스레터 구독이 신청되었습니다.</p>
+  </div>
+</div>
 
 </body>
 </html>
