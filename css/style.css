@@ -4674,7 +4674,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .sitemap-cat__link:hover {
   color: var(--color-brand-base);
-  text-decoration: underline;
 }
 
 
