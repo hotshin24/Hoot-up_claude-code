@@ -6394,7 +6394,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   transition: color var(--duration-fast) var(--easing-standard);
 }
 .modal__close:hover { color: var(--color-neutral-base); }
-.newsletter-done { text-align: center; padding: 22px 8px 8px; font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-brand-base); }
+.subscribe-done { text-align: center; padding: 22px 8px 8px; font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-brand-base); }
 
 /* ----- 환영 문구 ----- */
 .signup__welcome {
@@ -6484,7 +6484,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   transition: background-color var(--duration-fast) var(--easing-standard);
 }
 .signup__submit:hover { background-color: var(--color-brand-darker); }
-#newsletter-modal .signup__submit:hover { background-color: var(--color-brand-base); } /* 뉴스레터 구독 버튼: 호버 효과 없음 */
+[data-subscribe-form] .signup__submit:hover { background-color: var(--color-brand-base); } /* 구독 모달(뉴스레터·매거진 등) 버튼: 호버 효과 없음 */
 
 /* ----- 동의 문구 / 로그인 링크 ----- */
 .signup__foot {

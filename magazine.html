@@ -16,6 +16,7 @@
 
   <script src="js/common.js" defer></script>
   <script src="js/mag-archive.js" defer></script>
+  <script src="js/subscribe-modal.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">본문 바로가기</a>
@@ -248,7 +249,7 @@
       <nav class="mag-topbar__links" aria-label="매거진 보조 메뉴">
         <a href="desk.html">훗업 데스크</a>
         <a href="categories.html">전체 클래스</a>
-        <a href="#">매거진 구독</a>
+        <a href="#" data-open-subscribe aria-haspopup="dialog" aria-controls="magazine-modal">매거진 구독</a>
       </nav>
     </div>
 
@@ -724,6 +725,29 @@
 
   </div>
 </footer>
+
+<!-- 매거진 구독 모달 -->
+<div class="modal" id="magazine-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="magazine-modal-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="magazine-modal-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> MAGAZINE을<br>구독하시겠어요?</h2>
+    </div>
+
+    <form class="signup__form" data-subscribe-form>
+      <div class="signup__fields">
+        <input class="signup__input" type="email" name="email" placeholder="이메일 주소" autocomplete="email" required>
+      </div>
+      <button class="signup__submit" type="submit">구독하기</button>
+    </form>
+
+    <p class="subscribe-done" role="status" hidden>'HOOT UP MAGAZINE' 구독 신청이 완료되었습니다.</p>
+  </div>
+</div>
 
 </body>
 </html>

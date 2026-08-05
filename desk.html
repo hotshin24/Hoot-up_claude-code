@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/import.css">
 
   <script src="js/common.js" defer></script>
-  <script src="js/newsletter-modal.js" defer></script>
+  <script src="js/subscribe-modal.js" defer></script>
   <script>
   document.addEventListener('DOMContentLoaded', function () {
     var form = document.querySelector('.desk-morning__form');
@@ -263,7 +263,7 @@
       <nav class="desk-topbar__links" aria-label="데스크 보조 메뉴">
         <a href="magazine.html">훗업 매거진</a>
         <a href="categories.html">전체 클래스</a>
-        <a href="#" data-open-newsletter aria-haspopup="dialog" aria-controls="newsletter-modal">뉴스레터 구독</a>
+        <a href="#" data-open-subscribe aria-haspopup="dialog" aria-controls="newsletter-modal">뉴스레터 구독</a>
       </nav>
     </div>
 
@@ -574,14 +574,14 @@
       <h2 class="signup__title" id="newsletter-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> DESK 뉴스레터를<br>받아보시겠어요?</h2>
     </div>
 
-    <form class="signup__form" data-newsletter-form>
+    <form class="signup__form" data-subscribe-form>
       <div class="signup__fields">
         <input class="signup__input" type="email" name="email" placeholder="이메일 주소" autocomplete="email" required>
       </div>
       <button class="signup__submit" type="submit">구독하기</button>
     </form>
 
-    <p class="newsletter-done" role="status" hidden>뉴스레터 구독이 신청되었습니다.</p>
+    <p class="subscribe-done" role="status" hidden>뉴스레터 구독이 신청되었습니다.</p>
   </div>
 </div>
 
