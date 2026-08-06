@@ -5411,7 +5411,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .subscribe__pad { padding-block: 110px; }
 .subscribe .subscribe__lead { color: var(--color-neutral-base); font-size: 18px; line-height: 30px; }
 .subscribe .subscribe__hero-prices { display: flex; flex-wrap: wrap; gap: 10px; }
-.subscribe .subscribe__price-pill { display: inline-flex; align-items: center; border-radius: 30px; font-weight: 700; font-size: 17px; line-height: 22px; }
+.subscribe .subscribe__price-pill { display: inline-flex; align-items: center; border-radius: var(--radius-sm); font-weight: 700; font-size: 17px; line-height: 22px; }
 .subscribe .subscribe__price-pill--ghost { padding: 11px 23px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.18); color: var(--color-neutral-white); }
 .subscribe .subscribe__price-pill--accent { padding: 10px 22px; background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
 
@@ -5421,6 +5421,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .subscribe .subscribe__pricing { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, var(--color-brand-dark) 98.8%); }
 .subscribe .subscribe__forme { background: var(--color-neutral-white); }
 .subscribe .subscribe__faq { background: var(--color-neutral-lightest); }
+.subscribe .lp-faq-item { transition: border-color 200ms cubic-bezier(0.2, 0, 0.2, 1), box-shadow 200ms; }
+.subscribe .lp-faq-item:hover { border-color: var(--color-brand-base); box-shadow: 0 0 10px rgb(22 103 250 / 0.16); }
+.subscribe .lp-faq-list { align-items: stretch; }
 
 /* 블루 섹션 헤더 색상 */
 .subscribe .subscribe__pricing .lp-eyebrow { color: var(--color-brand-accent); }
