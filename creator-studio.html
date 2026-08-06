@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>스튜디오 대여 — HOOT UP</title>
-  <meta name="description" content="촬영 걱정은 내려놓으세요 — HOOT UP 크리에이터 스튜디오. 강의 촬영 스튜디오·핸즈온 촬영대·보이스 부스·편집실과 대여 장비, 이용 방법·안내를 소개합니다.">
+  <meta name="description"
+    content="촬영 걱정은 내려놓으세요 — HOOT UP 크리에이터 스튜디오. 강의 촬영 스튜디오·핸즈온 촬영대·보이스 부스·편집실과 대여 장비, 이용 방법·안내를 소개합니다.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,542 +19,601 @@
   <script src="js/common.js" defer></script>
   <script src="js/carousel.js" defer></script>
 </head>
+
 <body>
 
-<a class="skip-link" href="#main">본문 바로가기</a>
+  <a class="skip-link" href="#main">본문 바로가기</a>
 
-<!-- ======================================================================
+  <!-- ======================================================================
      헤더
      ====================================================================== -->
-<header class="site-header">
-  <div class="site-header__inner l-container">
+  <header class="site-header">
+    <div class="site-header__inner l-container">
 
-    <div class="site-header__utility">
-      <a class="site-header__logo" href="index.html">
-        <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
-      </a>
+      <div class="site-header__utility">
+        <a class="site-header__logo" href="index.html">
+          <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
+        </a>
 
-      <form class="search" action="categories.html" method="get" role="search">
-        <label class="a11y-hidden" for="search-keyword">강의 검색</label>
-        <input class="search__input" id="search-keyword" type="search" name="keyword" placeholder="어떤 강의를 찾으시나요?" autocomplete="off">
-        <button class="search__submit" type="submit" aria-label="검색">
-          <span class="icon icon--search"></span>
-        </button>
-      </form>
-
-      <ul class="user-menu">
-        <li class="user-menu__item">
-          <a class="user-menu__link" href="cart.html">
-            <span class="icon icon--cart"></span>
-            <span class="a11y-hidden">장바구니</span>
-            <span class="user-menu__badge">3<span class="a11y-hidden">개 담김</span></span>
-          </a>
-        </li>
-        <li class="user-menu__item">
-          <button class="user-menu__link" type="button" data-notif-toggle aria-haspopup="dialog" aria-expanded="false">
-            <span class="icon icon--bell"></span>
-            <span class="a11y-hidden">알림</span>
-            <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
+        <form class="search" action="categories.html" method="get" role="search">
+          <label class="a11y-hidden" for="search-keyword">강의 검색</label>
+          <input class="search__input" id="search-keyword" type="search" name="keyword" placeholder="어떤 강의를 찾으시나요?"
+            autocomplete="off">
+          <button class="search__submit" type="submit" aria-label="검색">
+            <span class="icon icon--search"></span>
           </button>
-        </li>
-        <li class="user-menu__item">
-          <a class="user-menu__profile" href="account.html">
-            <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
-          </a>
-        </li>
-      </ul>
-    </div>
+        </form>
 
-    <nav class="gnb" aria-label="주요 메뉴">
-      <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega" aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
-        <span class="icon icon--list"></span>
-      </button>
-      <ul class="gnb__list" id="gnb-list">
-        <li class="gnb__item"><a class="gnb__link" href="categories.html">전체 클래스</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="best.html">베스트 클래스</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="event-1.html">이벤트 할인</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="new.html">새로운 클래스</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="earlybird-1.html">얼리버드 할인</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="signature.html">시그니쳐 클래스</a></li>
-      </ul>
-    </nav>
+        <ul class="user-menu">
+          <li class="user-menu__item">
+            <a class="user-menu__link" href="cart.html">
+              <span class="icon icon--cart"></span>
+              <span class="a11y-hidden">장바구니</span>
+              <span class="user-menu__badge">3<span class="a11y-hidden">개 담김</span></span>
+            </a>
+          </li>
+          <li class="user-menu__item">
+            <button class="user-menu__link" type="button" data-notif-toggle aria-haspopup="dialog"
+              aria-expanded="false">
+              <span class="icon icon--bell"></span>
+              <span class="a11y-hidden">알림</span>
+              <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
+            </button>
+          </li>
+          <li class="user-menu__item">
+            <a class="user-menu__profile" href="account.html">
+              <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </div>
 
-  </div>
-
-  <!-- ====================================================================
-       전체 카테고리 메가 메뉴 (햄버거 · '전체 카테고리' 트리거로 펼침)
-       ==================================================================== -->
-  <div class="mega" id="category-mega" aria-hidden="true">
-    <div class="mega__inner l-container">
-      <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
-        <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it"
-                aria-selected="true" aria-controls="megapanel-dev-it" tabindex="0">
-          <span class="mega-cat__name">개발 &amp; IT</span>
-          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+      <nav class="gnb" aria-label="주요 메뉴">
+        <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega"
+          aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
+          <span class="icon icon--list"></span>
         </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-career-money"
-                aria-selected="false" aria-controls="megapanel-career-money" tabindex="-1">
-          <span class="mega-cat__name">커리어 &amp; 머니</span>
-          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-design-creative"
-                aria-selected="false" aria-controls="megapanel-design-creative" tabindex="-1">
-          <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
-          <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-photo-video"
-                aria-selected="false" aria-controls="megapanel-photo-video" tabindex="-1">
-          <span class="mega-cat__name">사진 &amp; 영상</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust"
-                aria-selected="false" aria-controls="megapanel-drawing-illust" tabindex="-1">
-          <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness"
-                aria-selected="false" aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
-          <span class="mega-cat__name">운동 &amp; 마음챙김</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade"
-                aria-selected="false" aria-controls="megapanel-craft-handmade" tabindex="-1">
-          <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking"
-                aria-selected="false" aria-controls="megapanel-cooking-baking" tabindex="-1">
-          <span class="mega-cat__name">요리 &amp; 베이킹</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="mega__subs">
-        <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
-          <a class="mega-sub__title" href="category-dev-it-1.html">
-            개발 &amp; IT 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-dev-it-web-publishing.html">웹 퍼블리싱</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-frontend.html">프론트엔드</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-backend.html">백엔드 &amp; 서버</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-mobile.html">모바일 &amp; 앱 개발</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-data-ai.html">데이터 &amp; AI</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-ai-tools.html">AI 개발 도구</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-nocode.html">노코드 &amp; 자동화</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money" hidden>
-          <a class="mega-sub__title" href="category-career-money-1.html">
-            커리어 &amp; 머니 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-career-money-job-skills.html">직무 역량 &amp; 일잘러</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-job-search.html">취업 &amp; 이직</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-marketing.html">마케팅 &amp; 브랜딩</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-sideproject.html">사이드프로젝트 &amp; N잡</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-investing.html">재테크 &amp; 투자</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-tax.html">절세 &amp; 머니 관리</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative" hidden>
-          <a class="mega-sub__title" href="category-design-creative-1.html">
-            디자인 &amp; 크리에이티브 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-design-creative-uxui.html">UX/UI 디자인</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-graphic.html">그래픽 디자인</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-branding.html">브랜딩 &amp; 로고</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-3d-motion.html">3D &amp; 모션 디자인</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-illust.html">일러스트 &amp; 디지털아트</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-intro.html">크리에이티브 입문</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
-          <a class="mega-sub__title" href="category-photo-video-1.html">
-            사진 &amp; 영상 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-photo-video-photography.html">사진 촬영</a></li>
-            <li><a class="mega-sub__link" href="category-photo-video-videography.html">영상 촬영</a></li>
-            <li><a class="mega-sub__link" href="category-photo-video-editing.html">편집 &amp; 후보정</a></li>
-            <li><a class="mega-sub__link" href="category-photo-video-motion.html">모션 &amp; 크리에이티브</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust" hidden>
-          <a class="mega-sub__title" href="category-drawing-illust-1.html">
-            드로잉 &amp; 일러스트 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-drawing-illust-digital.html">디지털 드로잉</a></li>
-            <li><a class="mega-sub__link" href="category-drawing-illust-handdrawing.html">손그림 &amp; 회화</a></li>
-            <li><a class="mega-sub__link" href="category-drawing-illust-character.html">캐릭터 &amp; 웹툰</a></li>
-            <li><a class="mega-sub__link" href="category-drawing-illust-calligraphy.html">캘리그라피 &amp; 레터링</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness" aria-labelledby="megacat-fitness-mindfulness" hidden>
-          <a class="mega-sub__title" href="category-fitness-mindfulness-1.html">
-            운동 &amp; 마음챙김 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-hometraining.html">홈트 &amp; 근력</a></li>
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-yoga.html">요가 &amp; 필라테스</a></li>
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-running.html">러닝 &amp; 유산소</a></li>
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-meditation.html">명상 &amp; 마음챙김</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade" hidden>
-          <a class="mega-sub__title" href="category-craft-handmade-1.html">
-            공예 &amp; 핸드메이드 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
-            <li><a class="mega-sub__link" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
-            <li><a class="mega-sub__link" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
-            <li><a class="mega-sub__link" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking" hidden>
-          <a class="mega-sub__title" href="category-cooking-baking-1.html">
-            요리 &amp; 베이킹 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
-            <li><a class="mega-sub__link" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
-            <li><a class="mega-sub__link" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
-            <li><a class="mega-sub__link" href="category-cooking-baking-world.html">세계요리 &amp; 비건</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="mega-backdrop" hidden></div>
-</header>
-
-<main id="main" class="creator-studio brand-story" data-screen-label="스튜디오 대여">
-
-  <!-- ===== 히어로 ===== -->
-  <section class="lp-hero" data-screen-label="히어로">
-    <div class="l-container lp-hero-grid">
-      <div class="lp-hero-content">
-        <p class="lp-hero-eyebrow">CREATOR · STUDIO</p>
-        <h1 class="lp-hero-title">촬영 걱정은<br>내려놓으세요</h1>
-        <p class="lp-hero-lead">훗업 크리에이터 스튜디오</p>
-        <p class="lp-hero-desc">카메라도, 조명도, 편집 공간도 준비돼 있어요. 당신은 나눌 이야기만<br>가져오면 됩니다.</p>
-        <div class="lp-hero-actions">
-          <a class="lp-btn lp-btn--compact lp-btn--primary" href="#book">스튜디오 예약하기 ↑</a>
-          <a class="lp-btn lp-btn--compact lp-btn--ghost" href="creator-apply.html">개설 문의하기</a>
-        </div>
-      </div>
-      <figure class="brand-hero__grid-2">
-        <div class="brand-hero__box">
-          <div class="brand-hero__part"></div>
-          <div class="brand-hero__part-2"></div>
-          <div class="brand-hero__part-3">
-            <div class="brand-hero__part-4"></div>
-            <div class="brand-hero__part-5"></div>
-            <div class="brand-hero__part-6"></div>
-            <div class="brand-hero__part-7"></div>
-            <div class="brand-hero__part-8"></div>
-            <div class="brand-hero__part-9"></div>
-            <div class="brand-hero__part-10"></div>
-            <div class="brand-hero__part-11">
-              <div class="brand-hero__group-3"><div class="brand-hero__box-2">
-                    <div class="brand-hero__part-12"></div>
-                    <div class="brand-hero__part-13"></div>
-                  </div><div class="brand-hero__box-2">
-                    <div class="brand-hero__part-12"></div>
-                    <div class="brand-hero__part-13"></div>
-                  </div>
-              </div>
-              <div class="brand-hero__part-14"></div>
-            </div>
-            <div class="brand-hero__part-15"></div>
-            <div class="brand-hero__part-16"></div>
-            <div class="brand-hero__part-17"></div>
-            <div class="brand-hero__part-18"></div>
-            <div class="brand-hero__part-19"></div>
-            <div class="brand-hero__part-20">
-              <span class="brand-hero__label">UP<img class="brand-hero__label-rocket" src="assets/brand/rocket.svg" alt="" aria-hidden="true"></span>
-            </div>
-            <div class="brand-hero__part-21"></div>
-            <div class="brand-hero__part-22"></div>
-            <div class="brand-hero__part-23">
-              <div class="brand-hero__part-24"></div>
-              <div class="brand-hero__part-25"></div>
-              <div class="brand-hero__part-26"></div>
-              <div class="brand-hero__part-27"></div>
-            </div>
-          </div>
-        </div>
-        <figcaption class="brand-hero__box-3">UPBI_v1.0 · 업비</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ===== 01 이런 공간이 준비돼 있어요 ===== -->
-  <section class="creator-studio__section creator-studio__spaces" data-screen-label="공간">
-    <div class="l-container creator-studio__pad">
-      <div class="lp-head">
-        <p class="lp-eyebrow">01 — SPACES</p>
-        <h2 class="lp-title-plain">이런 공간이 준비돼 있어요</h2>
-      </div>
-      <ul class="creator-studio__space-list">
-        <li><figure class="creator-studio__space">
-          <img class="creator-studio__space-ph" src="assets/studio/studio-lecture.jpg" alt="강의 촬영 스튜디오" loading="lazy">
-          <figcaption class="creator-studio__space-cap"><h3 class="creator-studio__space-title">강의 촬영 스튜디오</h3><p class="creator-studio__space-desc">화이트/우드 배경, 조명 세팅 완비</p></figcaption>
-        </figure></li>
-        <li><figure class="creator-studio__space">
-          <img class="creator-studio__space-ph" src="assets/studio/studio-handson.jpg" alt="핸즈온 촬영대" loading="lazy">
-          <figcaption class="creator-studio__space-cap"><h3 class="creator-studio__space-title">핸즈온 촬영대</h3><p class="creator-studio__space-desc">요리·공예·드로잉 등 손 작업 탑뷰 촬영</p></figcaption>
-        </figure></li>
-        <li><figure class="creator-studio__space">
-          <img class="creator-studio__space-ph" src="assets/studio/studio-voice.jpg" alt="보이스 부스" loading="lazy">
-          <figcaption class="creator-studio__space-cap"><h3 class="creator-studio__space-title">보이스 부스</h3><p class="creator-studio__space-desc">조용한 녹음 환경(내레이션·더빙)</p></figcaption>
-        </figure></li>
-        <li><figure class="creator-studio__space">
-          <img class="creator-studio__space-ph" src="assets/studio/studio-edit.jpg" alt="편집실" loading="lazy">
-          <figcaption class="creator-studio__space-cap"><h3 class="creator-studio__space-title">편집실</h3><p class="creator-studio__space-desc">고사양 편집 장비와 작업 공간</p></figcaption>
-        </figure></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== 02 대여 장비 ===== -->
-  <section class="creator-studio__section creator-studio__gear" data-screen-label="대여 장비">
-    <div class="l-container creator-studio__pad creator-studio__gear-grid">
-      <div class="creator-studio__gear-label">
-        <p class="lp-eyebrow">02 — GEAR</p>
-        <h2 class="lp-title-plain">대여 장비</h2>
-        <p class="creator-studio__gear-note">장비 사용이 처음이어도 괜찮아요. 현장 세팅과 기본 사용법을 안내해 드립니다.</p>
-      </div>
-      <ul class="creator-studio__gear-tags">
-        <li class="creator-studio__gear-tag">카메라</li>
-        <li class="creator-studio__gear-tag">삼각대</li>
-        <li class="creator-studio__gear-tag">짐벌</li>
-        <li class="creator-studio__gear-tag">소프트박스 조명</li>
-        <li class="creator-studio__gear-tag">링라이트</li>
-        <li class="creator-studio__gear-tag">배경지</li>
-        <li class="creator-studio__gear-tag">핀 마이크</li>
-        <li class="creator-studio__gear-tag">샷건 마이크</li>
-        <li class="creator-studio__gear-tag">오디오 인터페이스</li>
-        <li class="creator-studio__gear-tag">탑뷰 리그</li>
-        <li class="creator-studio__gear-tag">모니터</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== 03 이용 방법 ===== -->
-  <section class="creator-studio__section creator-studio__how" data-screen-label="이용 방법">
-    <div class="l-container creator-studio__pad">
-      <div class="lp-head">
-        <p class="lp-eyebrow">03 — HOW TO USE</p>
-        <h2 class="lp-title-plain">이용 방법</h2>
-      </div>
-      <ol class="creator-studio__steps">
-        <li class="step-card step-card--bordered">
-          <p class="step-card__num">STEP 01</p>
-          <h3 class="step-card__title">예약 신청</h3>
-          <p class="step-card__desc">원하는 날짜·공간·장비 선택</p>
-        </li>
-        <li class="step-card step-card--bordered">
-          <p class="step-card__num">STEP 02</p>
-          <h3 class="step-card__title">사전 안내</h3>
-          <p class="step-card__desc">촬영 구성 상담 및 세팅 확인</p>
-        </li>
-        <li class="step-card step-card--bordered">
-          <p class="step-card__num">STEP 03</p>
-          <h3 class="step-card__title">촬영 진행</h3>
-          <p class="step-card__desc">현장 지원 스태프의 도움</p>
-        </li>
-        <li class="step-card step-card--bordered">
-          <p class="step-card__num">STEP 04</p>
-          <h3 class="step-card__title">데이터 전달</h3>
-          <p class="step-card__desc">촬영본 정리 후 편집 단계로</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ===== 04 이용 안내 ===== -->
-  <section id="book" class="creator-studio__section creator-studio__info" data-screen-label="이용 안내">
-    <div class="l-container creator-studio__pad creator-studio__info-grid">
-      <div class="creator-studio__info-label">
-        <p class="lp-eyebrow">04 — INFO</p>
-        <h2 class="lp-title-plain">이용 안내</h2>
-        <a class="lp-btn lp-btn--compact lp-btn--accent" href="creator-studio-booking.html">스튜디오 예약하기 ↑</a>
-      </div>
-      <dl class="creator-studio__info-list">
-        <div class="creator-studio__info-item"><dt class="creator-studio__info-dt">이용 대상</dt><dd class="creator-studio__info-dd">훗업 클래스 개설이 확정된 크리에이터</dd></div>
-        <div class="creator-studio__info-item"><dt class="creator-studio__info-dt">예약 단위</dt><dd class="creator-studio__info-dd">반일 / 종일 (공간별 상이)</dd></div>
-        <div class="creator-studio__info-item"><dt class="creator-studio__info-dt">비용</dt><dd class="creator-studio__info-dd">클래스 제작 지원의 일부로 지원 가능 (조건은 파트너십 미팅에서 안내)</dd></div>
-        <div class="creator-studio__info-item"><dt class="creator-studio__info-dt">위치</dt><dd class="creator-studio__info-dd">(06621) 서울 서초구 강남대로 373, 10층</dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- ===== 05 자주 묻는 질문 ===== -->
-  <section class="creator-studio__section creator-studio__faq" data-screen-label="자주 묻는 질문">
-    <div class="l-container creator-studio__pad">
-      <div class="lp-head">
-        <p class="lp-eyebrow">05 — FAQ</p>
-        <h2 class="lp-title-plain">자주 묻는 질문</h2>
-      </div>
-      <dl class="lp-faq-list">
-        <div class="lp-faq-item">
-          <dt class="lp-faq-q"><span>Q.</span><span>장비를 다룰 줄 몰라요.</span></dt>
-          <dd class="lp-faq-a">현장 스태프가 세팅과 기본 촬영을 지원해요. 카메라를 처음 잡아도 괜찮습니다.</dd>
-        </div>
-        <div class="lp-faq-item">
-          <dt class="lp-faq-q"><span>Q.</span><span>지방에 살아요. 꼭 스튜디오에 와야 하나요?</span></dt>
-          <dd class="lp-faq-a">자택·개인 공간 촬영도 가능해요. 그 경우 촬영 가이드와 원격 지원을 제공합니다.</dd>
-        </div>
-        <div class="lp-faq-item">
-          <dt class="lp-faq-q"><span>Q.</span><span>대여 비용이 부담돼요.</span></dt>
-          <dd class="lp-faq-a">클래스 제작 지원 범위 안에서 스튜디오·장비를 지원받을 수 있어요. 미팅에서 조건을 안내드립니다.</dd>
-        </div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- ===== 마무리 CTA ===== -->
-  <section class="creator-studio__section creator-studio__cta" data-screen-label="마무리">
-    <div class="l-container lp-cta-inner">
-      <h2 class="lp-cta-title">좋은 배움은 좋은 공간에서 편해져요.<br>촬영은 훗업에 맡기고, 당신은 이야기에 집중하세요.</h2>
-      <a class="lp-btn lp-btn--compact lp-btn--primary lp-btn--lg" href="#book">스튜디오 예약하기 ↑</a>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="site-footer__inner l-container">
-
-    <div class="site-footer__top">
-      <div class="site-footer__brand">
-        <img class="site-footer__logo" src="assets/brand/logo-white.svg" alt="HOOT UP" loading="lazy">
-        <p class="site-footer__slogan">밤에도 깨어 배우는 사람들의 아지트</p>
-      </div>
-
-      <nav class="site-footer__nav" aria-label="푸터 메뉴">
-        <section class="link-group">
-          <h2 class="link-group__title">HOOT UP</h2>
-          <ul class="link-group__list">
-            <li><a class="link-group__link" href="brand-story.html">브랜드 스토리</a></li>
-            <li><a class="link-group__link" href="desk.html">훗업 데스크(뉴스)</a></li>
-            <li><a class="link-group__link" href="magazine.html">훗업 매거진(블로그)</a></li>
-            <li><a class="link-group__link" href="b2b.html">단체 교육 (B2B)</a></li>
-            <li><a class="link-group__link" href="careers.html">채용 안내</a></li>
-          </ul>
-        </section>
-
-        <section class="link-group">
-          <h2 class="link-group__title">둘러보기</h2>
-          <ul class="link-group__list">
-            <li><a class="link-group__link" href="sitemap.html">전체 카테고리</a></li>
-            <li><a class="link-group__link" href="best.html">훗업 차트(베스트)</a></li>
-            <li><a class="link-group__link" href="new.html">갓 부화한 클래스(새로운)</a></li>
-            <li><a class="link-group__link" href="event-1.html">훗업 페스타(이벤트 할인)</a></li>
-            <li><a class="link-group__link" href="roadmap.html">레벨업 로드맵</a></li>
-            <li><a class="link-group__link" href="subscribe.html">올나잇 패스(구독)</a></li>
-          </ul>
-        </section>
-
-        <section class="link-group">
-          <h2 class="link-group__title">크리에이터 지원</h2>
-          <ul class="link-group__list">
-            <li><a class="link-group__link" href="creator-apply.html">클래스 개설 문의하기</a></li>
-            <li><a class="link-group__link" href="creator-guide.html">크리에이터 가이드</a></li>
-            <li><a class="link-group__link" href="creator-studio.html">스튜디오 대여</a></li>
-            <li><a class="link-group__link" href="creator-settlement.html">정산・수익 안내</a></li>
-            <li><a class="link-group__link" href="creator-mentor.html">멘토 교육 지원</a></li>
-          </ul>
-        </section>
-
-        <section class="link-group">
-          <h2 class="link-group__title">고객센터</h2>
-          <ul class="link-group__list">
-            <li><a class="link-group__link" href="notice.html">공지사항</a></li>
-            <li><a class="link-group__link" href="faq.html">자주 묻는 질문(FAQ)</a></li>
-            <li><a class="link-group__link" href="terms.html">이용약관</a></li>
-            <li><a class="link-group__link" href="privacy.html">개인정보처리방침</a></li>
-            <li><a class="link-group__link" href="refund.html">환불 규정</a></li>
-          </ul>
-        </section>
-      </nav>
-    </div>
-
-    <hr class="site-footer__rule">
-
-    <div class="site-footer__contact">
-      <section class="contact-desk">
-        <h2 class="contact-desk__title">고객센터</h2>
-        <p class="contact-desk__tel"><a href="tel:0212345678">02-1234-5678</a></p>
-        <p class="contact-desk__hours">주중 10:00–18:00 / 주말·공휴일 휴무</p>
-      </section>
-
-      <dl class="contact-mail">
-        <div class="contact-mail__group">
-          <dt class="contact-mail__label">환불 문의</dt>
-          <dd class="contact-mail__value"><a href="mailto:refund@hootup.co.kr">refund@hootup.co.kr</a></dd>
-        </div>
-        <div class="contact-mail__group">
-          <dt class="contact-mail__label">기타 문의</dt>
-          <dd class="contact-mail__value"><a href="mailto:help@hootup.co.kr">help@hootup.co.kr</a></dd>
-        </div>
-        <div class="contact-mail__group">
-          <dt class="contact-mail__label">크리에이터 지원</dt>
-          <dd class="contact-mail__value"><a href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a></dd>
-        </div>
-      </dl>
-    </div>
-
-    <hr class="site-footer__rule">
-
-    <div class="site-footer__legal">
-      <nav class="policy" aria-label="약관 및 정책">
-        <ul class="policy__list">
-          <li><a class="policy__link" href="terms.html">이용약관</a></li>
-          <li><a class="policy__link" href="privacy.html">개인정보처리방침</a></li>
-          <li><a class="policy__link" href="youth.html">청소년 보호정책</a></li>
-          <li><a class="policy__link" href="refund.html">환불 규정</a></li>
-          <li><a class="policy__link" href="business.html">사업자정보 확인</a></li>
+        <ul class="gnb__list" id="gnb-list">
+          <li class="gnb__item"><a class="gnb__link" href="categories.html">전체 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="best.html">베스트 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="event-1.html">이벤트 할인</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="new.html">새로운 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="earlybird-1.html">얼리버드 할인</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="signature.html">시그니쳐 클래스</a></li>
         </ul>
       </nav>
 
-      <address class="company">
-        <p class="company__line">
-          <span>(주)훗업 컴퍼니</span>
-          <span>대표자 : 신호진</span>
-          <span>사업자등록번호 : 123-45-67890</span>
-          <span>개인정보책임관리자 : 신호진</span>
-        </p>
-        <p class="company__line">
-          <span>통신판매신고 : 제 2026-서울서초-1234호</span>
-          <span>(06621) 서울 서초구 강남대로 373, 10층</span>
-        </p>
-      </address>
-
-      <p class="site-footer__copyright"><small>Copyright © HOOT UP. All rights reserved.</small></p>
     </div>
 
-  </div>
-</footer>
+    <!-- ====================================================================
+       전체 카테고리 메가 메뉴 (햄버거 · '전체 카테고리' 트리거로 펼침)
+       ==================================================================== -->
+    <div class="mega" id="category-mega" aria-hidden="true">
+      <div class="mega__inner l-container">
+        <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
+          <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it" aria-selected="true"
+            aria-controls="megapanel-dev-it" tabindex="0">
+            <span class="mega-cat__name">개발 &amp; IT</span>
+            <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-career-money" aria-selected="false"
+            aria-controls="megapanel-career-money" tabindex="-1">
+            <span class="mega-cat__name">커리어 &amp; 머니</span>
+            <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-design-creative" aria-selected="false"
+            aria-controls="megapanel-design-creative" tabindex="-1">
+            <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
+            <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-photo-video" aria-selected="false"
+            aria-controls="megapanel-photo-video" tabindex="-1">
+            <span class="mega-cat__name">사진 &amp; 영상</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust" aria-selected="false"
+            aria-controls="megapanel-drawing-illust" tabindex="-1">
+            <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness" aria-selected="false"
+            aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
+            <span class="mega-cat__name">운동 &amp; 마음챙김</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade" aria-selected="false"
+            aria-controls="megapanel-craft-handmade" tabindex="-1">
+            <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking" aria-selected="false"
+            aria-controls="megapanel-cooking-baking" tabindex="-1">
+            <span class="mega-cat__name">요리 &amp; 베이킹</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="mega__subs">
+          <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
+            <a class="mega-sub__title" href="category-dev-it-1.html">
+              개발 &amp; IT 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-dev-it-web-publishing.html">웹 퍼블리싱</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-frontend.html">프론트엔드</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-backend.html">백엔드 &amp; 서버</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-mobile.html">모바일 &amp; 앱 개발</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-data-ai.html">데이터 &amp; AI</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-ai-tools.html">AI 개발 도구</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-nocode.html">노코드 &amp; 자동화</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money"
+            hidden>
+            <a class="mega-sub__title" href="category-career-money-1.html">
+              커리어 &amp; 머니 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-career-money-job-skills.html">직무 역량 &amp; 일잘러</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-job-search.html">취업 &amp; 이직</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-marketing.html">마케팅 &amp; 브랜딩</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-sideproject.html">사이드프로젝트 &amp; N잡</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-investing.html">재테크 &amp; 투자</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-tax.html">절세 &amp; 머니 관리</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative"
+            hidden>
+            <a class="mega-sub__title" href="category-design-creative-1.html">
+              디자인 &amp; 크리에이티브 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-design-creative-uxui.html">UX/UI 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-graphic.html">그래픽 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-branding.html">브랜딩 &amp; 로고</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-3d-motion.html">3D &amp; 모션 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-illust.html">일러스트 &amp; 디지털아트</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-intro.html">크리에이티브 입문</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
+            <a class="mega-sub__title" href="category-photo-video-1.html">
+              사진 &amp; 영상 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-photo-video-photography.html">사진 촬영</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-videography.html">영상 촬영</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-editing.html">편집 &amp; 후보정</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-motion.html">모션 &amp; 크리에이티브</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust"
+            hidden>
+            <a class="mega-sub__title" href="category-drawing-illust-1.html">
+              드로잉 &amp; 일러스트 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-drawing-illust-digital.html">디지털 드로잉</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-handdrawing.html">손그림 &amp; 회화</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-character.html">캐릭터 &amp; 웹툰</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-calligraphy.html">캘리그라피 &amp; 레터링</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness"
+            aria-labelledby="megacat-fitness-mindfulness" hidden>
+            <a class="mega-sub__title" href="category-fitness-mindfulness-1.html">
+              운동 &amp; 마음챙김 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-hometraining.html">홈트 &amp; 근력</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-yoga.html">요가 &amp; 필라테스</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-running.html">러닝 &amp; 유산소</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-meditation.html">명상 &amp; 마음챙김</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade"
+            hidden>
+            <a class="mega-sub__title" href="category-craft-handmade-1.html">
+              공예 &amp; 핸드메이드 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking"
+            hidden>
+            <a class="mega-sub__title" href="category-cooking-baking-1.html">
+              요리 &amp; 베이킹 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-world.html">세계요리 &amp; 비건</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mega-backdrop" hidden></div>
+  </header>
+
+  <main id="main" class="creator-studio brand-story" data-screen-label="스튜디오 대여">
+
+    <!-- ===== 히어로 ===== -->
+    <section class="lp-hero" data-screen-label="히어로">
+      <div class="l-container lp-hero-grid">
+        <div class="lp-hero-content">
+          <p class="lp-hero-eyebrow">CREATOR · STUDIO</p>
+          <h1 class="lp-hero-title">촬영 걱정은<br>내려놓으세요</h1>
+          <p class="lp-hero-lead">훗업 크리에이터 스튜디오</p>
+          <p class="lp-hero-desc">카메라도, 조명도, 편집 공간도 준비돼 있어요. 당신은 나눌 이야기만<br>가져오면 됩니다.</p>
+          <div class="lp-hero-actions">
+            <a class="lp-btn lp-btn--compact lp-btn--primary" href="creator-studio-booking.html">스튜디오 예약하기</a>
+            <a class="lp-btn lp-btn--compact lp-btn--ghost" href="creator-apply.html">개설 문의하기</a>
+          </div>
+        </div>
+        <figure class="brand-hero__grid-2">
+          <div class="brand-hero__box">
+            <div class="brand-hero__part"></div>
+            <div class="brand-hero__part-2"></div>
+            <div class="brand-hero__part-3">
+              <div class="brand-hero__part-4"></div>
+              <div class="brand-hero__part-5"></div>
+              <div class="brand-hero__part-6"></div>
+              <div class="brand-hero__part-7"></div>
+              <div class="brand-hero__part-8"></div>
+              <div class="brand-hero__part-9"></div>
+              <div class="brand-hero__part-10"></div>
+              <div class="brand-hero__part-11">
+                <div class="brand-hero__group-3">
+                  <div class="brand-hero__box-2">
+                    <div class="brand-hero__part-12"></div>
+                    <div class="brand-hero__part-13"></div>
+                  </div>
+                  <div class="brand-hero__box-2">
+                    <div class="brand-hero__part-12"></div>
+                    <div class="brand-hero__part-13"></div>
+                  </div>
+                </div>
+                <div class="brand-hero__part-14"></div>
+              </div>
+              <div class="brand-hero__part-15"></div>
+              <div class="brand-hero__part-16"></div>
+              <div class="brand-hero__part-17"></div>
+              <div class="brand-hero__part-18"></div>
+              <div class="brand-hero__part-19"></div>
+              <div class="brand-hero__part-20">
+                <span class="brand-hero__label">UP<img class="brand-hero__label-rocket" src="assets/brand/rocket.svg"
+                    alt="" aria-hidden="true"></span>
+              </div>
+              <div class="brand-hero__part-21"></div>
+              <div class="brand-hero__part-22"></div>
+              <div class="brand-hero__part-23">
+                <div class="brand-hero__part-24"></div>
+                <div class="brand-hero__part-25"></div>
+                <div class="brand-hero__part-26"></div>
+                <div class="brand-hero__part-27"></div>
+              </div>
+            </div>
+          </div>
+          <figcaption class="brand-hero__box-3">UPBI_v1.0 · 업비</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== 01 이런 공간이 준비돼 있어요 ===== -->
+    <section class="creator-studio__section creator-studio__spaces" data-screen-label="공간">
+      <div class="l-container creator-studio__pad">
+        <div class="lp-head">
+          <p class="lp-eyebrow">01 — SPACES</p>
+          <h2 class="lp-title-plain">이런 공간이 준비돼 있어요</h2>
+        </div>
+        <ul class="creator-studio__space-list">
+          <li>
+            <figure class="creator-studio__space">
+              <img class="creator-studio__space-ph" src="assets/studio/studio-lecture.jpg" alt="강의 촬영 스튜디오"
+                loading="lazy">
+              <figcaption class="creator-studio__space-cap">
+                <h3 class="creator-studio__space-title">강의 촬영 스튜디오</h3>
+                <p class="creator-studio__space-desc">화이트/우드 배경, 조명 세팅 완비</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="creator-studio__space">
+              <img class="creator-studio__space-ph" src="assets/studio/studio-handson.jpg" alt="핸즈온 촬영대" loading="lazy">
+              <figcaption class="creator-studio__space-cap">
+                <h3 class="creator-studio__space-title">핸즈온 촬영대</h3>
+                <p class="creator-studio__space-desc">요리·공예·드로잉 등 손 작업 탑뷰 촬영</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="creator-studio__space">
+              <img class="creator-studio__space-ph" src="assets/studio/studio-voice.jpg" alt="보이스 부스" loading="lazy">
+              <figcaption class="creator-studio__space-cap">
+                <h3 class="creator-studio__space-title">보이스 부스</h3>
+                <p class="creator-studio__space-desc">조용한 녹음 환경(내레이션·더빙)</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="creator-studio__space">
+              <img class="creator-studio__space-ph" src="assets/studio/studio-edit.jpg" alt="편집실" loading="lazy">
+              <figcaption class="creator-studio__space-cap">
+                <h3 class="creator-studio__space-title">편집실</h3>
+                <p class="creator-studio__space-desc">고사양 편집 장비와 작업 공간</p>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 02 대여 장비 ===== -->
+    <section class="creator-studio__section creator-studio__gear" data-screen-label="대여 장비">
+      <div class="l-container creator-studio__pad creator-studio__gear-grid">
+        <div class="creator-studio__gear-label">
+          <p class="lp-eyebrow">02 — GEAR</p>
+          <h2 class="lp-title-plain">대여 장비</h2>
+          <p class="creator-studio__gear-note">장비 사용이 처음이어도 괜찮아요. 현장 세팅과 기본 사용법을 안내해 드립니다.</p>
+        </div>
+        <ul class="creator-studio__gear-tags">
+          <li class="creator-studio__gear-tag">카메라</li>
+          <li class="creator-studio__gear-tag">삼각대</li>
+          <li class="creator-studio__gear-tag">짐벌</li>
+          <li class="creator-studio__gear-tag">소프트박스 조명</li>
+          <li class="creator-studio__gear-tag">링라이트</li>
+          <li class="creator-studio__gear-tag">배경지</li>
+          <li class="creator-studio__gear-tag">핀 마이크</li>
+          <li class="creator-studio__gear-tag">샷건 마이크</li>
+          <li class="creator-studio__gear-tag">오디오 인터페이스</li>
+          <li class="creator-studio__gear-tag">탑뷰 리그</li>
+          <li class="creator-studio__gear-tag">모니터</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 03 이용 방법 ===== -->
+    <section class="creator-studio__section creator-studio__how" data-screen-label="이용 방법">
+      <div class="l-container creator-studio__pad">
+        <div class="lp-head">
+          <p class="lp-eyebrow">03 — HOW TO USE</p>
+          <h2 class="lp-title-plain">이용 방법</h2>
+        </div>
+        <ol class="creator-studio__steps">
+          <li class="step-card step-card--ring">
+            <p class="step-card__num">STEP 01</p>
+            <h3 class="step-card__title">예약 신청</h3>
+            <p class="step-card__desc">원하는 날짜·공간·장비 선택</p>
+          </li>
+          <li class="step-card step-card--ring">
+            <p class="step-card__num">STEP 02</p>
+            <h3 class="step-card__title">사전 안내</h3>
+            <p class="step-card__desc">촬영 구성 상담 및 세팅 확인</p>
+          </li>
+          <li class="step-card step-card--ring">
+            <p class="step-card__num">STEP 03</p>
+            <h3 class="step-card__title">촬영 진행</h3>
+            <p class="step-card__desc">현장 지원 스태프의 도움</p>
+          </li>
+          <li class="step-card step-card--ring">
+            <p class="step-card__num">STEP 04</p>
+            <h3 class="step-card__title">데이터 전달</h3>
+            <p class="step-card__desc">촬영본 정리 후 편집 단계로</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== 04 이용 안내 ===== -->
+    <section id="book" class="creator-studio__section creator-studio__info" data-screen-label="이용 안내">
+      <div class="l-container creator-studio__pad creator-studio__info-grid">
+        <div class="creator-studio__info-label">
+          <p class="lp-eyebrow">04 — INFO</p>
+          <h2 class="lp-title-plain">이용 안내</h2>
+          <a class="lp-btn lp-btn--compact lp-btn--accent" href="creator-studio-booking.html">스튜디오 예약하기</a>
+        </div>
+        <dl class="creator-studio__info-list">
+          <div class="creator-studio__info-item">
+            <dt class="creator-studio__info-dt">이용 대상</dt>
+            <dd class="creator-studio__info-dd">훗업 클래스 개설이 확정된 크리에이터</dd>
+          </div>
+          <div class="creator-studio__info-item">
+            <dt class="creator-studio__info-dt">예약 단위</dt>
+            <dd class="creator-studio__info-dd">반일 / 종일 (공간별 상이)</dd>
+          </div>
+          <div class="creator-studio__info-item">
+            <dt class="creator-studio__info-dt">비용</dt>
+            <dd class="creator-studio__info-dd">클래스 제작 지원의 일부로 지원 가능 (조건은 파트너십 미팅에서 안내)</dd>
+          </div>
+          <div class="creator-studio__info-item">
+            <dt class="creator-studio__info-dt">위치</dt>
+            <dd class="creator-studio__info-dd">(06621) 서울 서초구 강남대로 373, 10층</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== 05 자주 묻는 질문 ===== -->
+    <section class="creator-studio__section creator-studio__faq" data-screen-label="자주 묻는 질문">
+      <div class="l-container creator-studio__pad">
+        <div class="lp-head">
+          <p class="lp-eyebrow">05 — FAQ</p>
+          <h2 class="lp-title-plain">자주 묻는 질문</h2>
+        </div>
+        <dl class="lp-faq-list">
+          <div class="lp-faq-item">
+            <dt class="lp-faq-q"><span>Q.</span><span>장비를 다룰 줄 몰라요.</span></dt>
+            <dd class="lp-faq-a">현장 스태프가 세팅과 기본 촬영을 지원해요. 카메라를 처음 잡아도 괜찮습니다.</dd>
+          </div>
+          <div class="lp-faq-item">
+            <dt class="lp-faq-q"><span>Q.</span><span>지방에 살아요. 꼭 스튜디오에 와야 하나요?</span></dt>
+            <dd class="lp-faq-a">자택·개인 공간 촬영도 가능해요. 그 경우 촬영 가이드와 원격 지원을 제공합니다.</dd>
+          </div>
+          <div class="lp-faq-item">
+            <dt class="lp-faq-q"><span>Q.</span><span>대여 비용이 부담돼요.</span></dt>
+            <dd class="lp-faq-a">클래스 제작 지원 범위 안에서 스튜디오·장비를 지원받을 수 있어요. 미팅에서 조건을 안내드립니다.</dd>
+          </div>
+          <div class="lp-faq-item">
+            <dt class="lp-faq-q"><span>Q.</span><span>예약은 어떻게 하나요?</span></dt>
+            <dd class="lp-faq-a">클래스 개설이 확정되면 원하는 날짜·공간·장비를 선택해 예약할 수 있어요. 반일/종일 단위로 운영됩니다.</dd>
+          </div>
+          <div class="lp-faq-item">
+            <dt class="lp-faq-q"><span>Q.</span><span>어떤 공간과 장비가 준비돼 있나요?</span></dt>
+            <dd class="lp-faq-a">강의 촬영 스튜디오, 손 작업용 탑뷰 촬영대, 보이스 부스, 편집실이 있어요. 카메라·조명·마이크 등 기본 장비도 대여됩니다.</dd>
+          </div>
+          <div class="lp-faq-item">
+            <dt class="lp-faq-q"><span>Q.</span><span>편집도 스튜디오에서 할 수 있나요?</span></dt>
+            <dd class="lp-faq-a">네. 고사양 장비를 갖춘 편집실을 이용할 수 있고, 촬영본 정리부터 편집 단계까지 제작 지원을 받을 수 있어요.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== 마무리 CTA ===== -->
+    <section class="creator-studio__section creator-studio__cta" data-screen-label="마무리">
+      <div class="l-container lp-cta-inner">
+        <h2 class="lp-cta-title">좋은 배움은 좋은 공간에서 편해져요.<br>촬영은 훗업에 맡기고, 당신은 이야기에 집중하세요.</h2>
+        <a class="lp-btn lp-btn--compact lp-btn--primary lp-btn--lg" href="creator-studio-booking.html">스튜디오 예약하기</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner l-container">
+
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <img class="site-footer__logo" src="assets/brand/logo-white.svg" alt="HOOT UP" loading="lazy">
+          <p class="site-footer__slogan">밤에도 깨어 배우는 사람들의 아지트</p>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="푸터 메뉴">
+          <section class="link-group">
+            <h2 class="link-group__title">HOOT UP</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="brand-story.html">브랜드 스토리</a></li>
+              <li><a class="link-group__link" href="desk.html">훗업 데스크(뉴스)</a></li>
+              <li><a class="link-group__link" href="magazine.html">훗업 매거진(블로그)</a></li>
+              <li><a class="link-group__link" href="b2b.html">단체 교육 (B2B)</a></li>
+              <li><a class="link-group__link" href="careers.html">채용 안내</a></li>
+            </ul>
+          </section>
+
+          <section class="link-group">
+            <h2 class="link-group__title">둘러보기</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="sitemap.html">전체 카테고리</a></li>
+              <li><a class="link-group__link" href="best.html">훗업 차트(베스트)</a></li>
+              <li><a class="link-group__link" href="new.html">갓 부화한 클래스(새로운)</a></li>
+              <li><a class="link-group__link" href="event-1.html">훗업 페스타(이벤트 할인)</a></li>
+              <li><a class="link-group__link" href="roadmap.html">레벨업 로드맵</a></li>
+              <li><a class="link-group__link" href="subscribe.html">올나잇 패스(구독)</a></li>
+            </ul>
+          </section>
+
+          <section class="link-group">
+            <h2 class="link-group__title">크리에이터 지원</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="creator-apply.html">클래스 개설 문의하기</a></li>
+              <li><a class="link-group__link" href="creator-guide.html">크리에이터 가이드</a></li>
+              <li><a class="link-group__link" href="creator-studio.html">스튜디오 대여</a></li>
+              <li><a class="link-group__link" href="creator-settlement.html">정산・수익 안내</a></li>
+              <li><a class="link-group__link" href="creator-mentor.html">멘토 교육 지원</a></li>
+            </ul>
+          </section>
+
+          <section class="link-group">
+            <h2 class="link-group__title">고객센터</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="notice.html">공지사항</a></li>
+              <li><a class="link-group__link" href="faq.html">자주 묻는 질문(FAQ)</a></li>
+              <li><a class="link-group__link" href="terms.html">이용약관</a></li>
+              <li><a class="link-group__link" href="privacy.html">개인정보처리방침</a></li>
+              <li><a class="link-group__link" href="refund.html">환불 규정</a></li>
+            </ul>
+          </section>
+        </nav>
+      </div>
+
+      <hr class="site-footer__rule">
+
+      <div class="site-footer__contact">
+        <section class="contact-desk">
+          <h2 class="contact-desk__title">고객센터</h2>
+          <p class="contact-desk__tel"><a href="tel:0212345678">02-1234-5678</a></p>
+          <p class="contact-desk__hours">주중 10:00–18:00 / 주말·공휴일 휴무</p>
+        </section>
+
+        <dl class="contact-mail">
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">환불 문의</dt>
+            <dd class="contact-mail__value"><a href="mailto:refund@hootup.co.kr">refund@hootup.co.kr</a></dd>
+          </div>
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">기타 문의</dt>
+            <dd class="contact-mail__value"><a href="mailto:help@hootup.co.kr">help@hootup.co.kr</a></dd>
+          </div>
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">크리에이터 지원</dt>
+            <dd class="contact-mail__value"><a href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a></dd>
+          </div>
+        </dl>
+      </div>
+
+      <hr class="site-footer__rule">
+
+      <div class="site-footer__legal">
+        <nav class="policy" aria-label="약관 및 정책">
+          <ul class="policy__list">
+            <li><a class="policy__link" href="terms.html">이용약관</a></li>
+            <li><a class="policy__link" href="privacy.html">개인정보처리방침</a></li>
+            <li><a class="policy__link" href="youth.html">청소년 보호정책</a></li>
+            <li><a class="policy__link" href="refund.html">환불 규정</a></li>
+            <li><a class="policy__link" href="business.html">사업자정보 확인</a></li>
+          </ul>
+        </nav>
+
+        <address class="company">
+          <p class="company__line">
+            <span>(주)훗업 컴퍼니</span>
+            <span>대표자 : 신호진</span>
+            <span>사업자등록번호 : 123-45-67890</span>
+            <span>개인정보책임관리자 : 신호진</span>
+          </p>
+          <p class="company__line">
+            <span>통신판매신고 : 제 2026-서울서초-1234호</span>
+            <span>(06621) 서울 서초구 강남대로 373, 10층</span>
+          </p>
+        </address>
+
+        <p class="site-footer__copyright"><small>Copyright © HOOT UP. All rights reserved.</small></p>
+      </div>
+
+    </div>
+  </footer>
 
 </body>
+
 </html>

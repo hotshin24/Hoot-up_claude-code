@@ -5163,8 +5163,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .lp-faq-item { background: var(--color-neutral-white); border-radius: 20px; border: 1px solid var(--color-neutral-lighter); padding: 33px 31px; }
 .lp-faq-q { color: var(--color-neutral-darker); display: flex; font-size: 19px; font-weight: 700; gap: 10px; line-height: 28px; }
 .lp-faq-a { color: var(--color-neutral-base); font-size: 16px; line-height: 28px; margin-top: 14px; }
-.lp-faq-list { display: grid; align-items: start; gap: 20px; grid-template-columns: repeat(3, 1fr); }
-.lp-faq-list-2 { display: grid; align-items: start; gap: 20px; grid-template-columns: 1fr 1fr; }
+.lp-faq-list { display: grid; align-items: stretch; grid-auto-rows: 1fr; gap: 20px; grid-template-columns: repeat(3, 1fr); }
+.lp-faq-list-2 { display: grid; align-items: stretch; grid-auto-rows: 1fr; gap: 20px; grid-template-columns: 1fr 1fr; }
 .lp-head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
 .lp-title { color: var(--color-neutral-darker); font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: 36px; font-weight: 700; letter-spacing: -0.36px; line-height: 46.8px; }
 .lp-title-plain { color: var(--color-neutral-darker); font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: 36px; font-weight: 700; line-height: 46.8px; }
@@ -5421,7 +5421,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .subscribe .subscribe__pricing { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, var(--color-brand-dark) 98.8%); }
 .subscribe .subscribe__forme { background: var(--color-neutral-white); }
 .subscribe .subscribe__faq { background: var(--color-neutral-lightest); }
-.subscribe .lp-faq-list { align-items: stretch; grid-auto-rows: 1fr; }
 
 /* 블루 섹션 헤더 색상 */
 .subscribe .subscribe__pricing .lp-eyebrow { color: var(--color-brand-accent); }
@@ -5579,7 +5578,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-apply .creator-apply__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .creator-apply .creator-apply__next-note { margin-top: 30px; text-align: center; color: rgb(226 225 255 / 0.85); font-size: 14px; line-height: 26px; }
 .creator-apply .creator-apply__faq-item { background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 31px; }
-.creator-apply .lp-faq-list { align-items: stretch; grid-auto-rows: 1fr; }
 .creator-apply .lp-faq-q span:first-child { color: var(--color-brand-base); }
 .creator-apply .creator-apply__cta-line { color: var(--color-brand-lighter); font-size: 16px; line-height: 22px; }
 .creator-apply .creator-apply__cta-line a { color: var(--color-brand-secondary); font-weight: 700; }
