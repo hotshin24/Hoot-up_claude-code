@@ -4953,16 +4953,15 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .festa-hero__lead { margin: 0; font-size: var(--text-h5-size); line-height: 28px; color: rgb(255 255 255 / 0.86); text-wrap: pretty; }
 .festa-hero__lead-em { color: var(--color-brand-secondary); font-weight: var(--font-weight-extrabold); }
 .festa-hero__badges { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin: var(--space-2xs) 0 0; padding: 0; list-style: none; }
-.festa-hero__badge { padding: 8px var(--space-sm); border-radius: var(--radius-pill); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); }
+.festa-hero__badge { padding: 8px var(--space-sm); border-radius: var(--radius-sm); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); }
 .festa-hero__badge--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
 .festa-hero__badge--outline { background: rgb(255 255 255 / 0.14); border: 1px solid rgb(255 255 255 / 0.28); }
 .festa-hero__cta { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-xs); }
 .festa-hero__btn { display: inline-flex; align-items: center; gap: var(--space-xs); padding: 17px var(--space-xl); border-radius: var(--radius-pill); font-size: var(--text-body-size); font-weight: var(--font-weight-bold); }
 .festa-hero__btn--solid { background: var(--color-neutral-white); color: var(--color-neutral-darker); box-shadow: 0 0 5px rgb(0 0 0 / 0.1); transition: transform var(--duration-base) var(--easing-standard); }
-.festa-hero__btn--solid:hover { transform: translateY(-2px); color: var(--color-brand-base); }
+.festa-hero__btn--solid:hover {color: var(--color-brand-base); }
 .festa-hero__btn--ghost { border: 1px solid rgb(255 255 255 / 0.5); color: var(--color-neutral-white); transition: background var(--duration-base) var(--easing-standard); }
 .festa-hero__btn--ghost:hover { background: rgb(255 255 255 / 0.14); color: var(--color-neutral-white); }
-.festa-hero__btn-arrow { font-family: var(--font-display); font-weight: var(--font-weight-black); }
 .festa-hero__note { margin: var(--space-xs) 0 0; font-size: var(--text-body-sm-size); line-height: var(--text-body-sm-leading); color: rgb(255 255 255 / 0.6); }
 
 .festa-hero__aside { display: flex; flex-direction: column; gap: var(--space-md); padding: var(--space-xl); border-radius: var(--radius-md); background: rgb(15 23 42 / 0.55); border: 1px solid rgb(255 255 255 / 0.16); }
@@ -4972,7 +4971,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .festa-hero__timer-num { margin: 0; font-family: var(--font-display); font-size: var(--text-h2-size); font-weight: var(--font-weight-black); line-height: 1; color: var(--color-neutral-white); }
 .festa-hero__timer-num--accent { color: var(--color-brand-secondary); }
 .festa-hero__timer-unit { margin: 8px 0 0; font-size: var(--text-caption-size); color: rgb(255 255 255 / 0.6); }
-.festa-hero__aside-note { margin: 0; font-size: var(--text-body-sm-size); line-height: var(--text-body-sm-leading); color: rgb(255 255 255 / 0.78); }
+.festa-hero__aside-note { margin: 0; font-size: var(--text-body-sm-size); line-height: var(--text-body-sm-leading); color: rgb(255 255 255 / 0.78); text-align: center;}
 .festa-hero__divider { height: 1px; background: rgb(255 255 255 / 0.16); }
 .festa-hero__stat { margin: 0; display: flex; align-items: baseline; gap: var(--space-xs); }
 .festa-hero__stat-num { font-family: var(--font-display); font-size: 40px; font-weight: var(--font-weight-black); line-height: 1; color: var(--color-neutral-white); }
@@ -5025,7 +5024,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .festa-cta__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm); margin-top: var(--space-xs); }
 .festa-cta__btn { display: inline-flex; align-items: center; gap: var(--space-xs); padding: 17px var(--space-xl); border-radius: var(--radius-pill); font-size: var(--text-body-size); font-weight: var(--font-weight-bold); transition: background var(--duration-base) var(--easing-standard); }
 .festa-cta__btn--solid { background: var(--color-brand-base); color: var(--color-neutral-white); }
-.festa-cta__btn--solid:hover { background: var(--color-brand-darker); color: var(--color-neutral-white); }
 .festa-cta__btn--ghost { border: 1px solid rgb(255 255 255 / 0.4); color: var(--color-neutral-white); }
 .festa-cta__btn--ghost:hover { background: rgb(255 255 255 / 0.12); color: var(--color-neutral-white); }
 

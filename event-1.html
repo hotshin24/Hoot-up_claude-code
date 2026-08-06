@@ -16,6 +16,7 @@
 
   <script src="js/common.js" defer></script>
   <script src="js/class-filter.js" defer></script>
+  <script src="js/festa-timer.js" defer></script>
 </head>
 <body>
 
@@ -269,10 +270,8 @@
           </ul>
           <div class="festa-hero__cta">
             <a class="festa-hero__btn festa-hero__btn--solid" href="#festa-classes">
-              이벤트 할인 클래스 보기
-              <span class="festa-hero__btn-arrow">↑</span>
-            </a>
-            <a class="festa-hero__btn festa-hero__btn--ghost" href="subscribe.html">올나잇 패스로 전부 보기</a>
+              이벤트 할인 클래스 보기</a>
+            <a class="festa-hero__btn festa-hero__btn--ghost" href="subscribe.html">올나잇 패스 구독하기</a>
           </div>
           <p class="festa-hero__note">불안하게 몰아세우지 않아요. 다만 이 조건은 지금만이에요 — 다음 기회는 약속할게요.</p>
         </div>
@@ -293,7 +292,7 @@
               <p class="festa-hero__timer-unit">SEC</p>
             </div>
           </div>
-          <p class="festa-hero__aside-note">매일 밤 12시, 올빼미 타임 한정 특가가 새로 열려요.</p>
+          <p class="festa-hero__aside-note">매일 밤 12시, 올빼미 타임 한정 특가가<br> 새로 열려요.</p>
           <div class="festa-hero__divider"></div>
           <p class="festa-hero__stat">
             <span class="festa-hero__stat-num">73</span>
@@ -362,10 +361,24 @@
           <p class="festa-card__desc">수강 후기 리워드</p>
           <p class="festa-card__detail">후기 작성 시 도토리 지급</p>
         </li>
+        <li class="festa-card">
+          <p class="festa-card__head">
+            <span class="festa-card__name">마이그레이션 페스타</span>
+          </p>
+          <p class="festa-card__desc">다른 곳에서 배우다 온 당신을 위한 환영전</p>
+          <p class="festa-card__detail">타 플랫폼 수강 인증 시 웰컴 쿠폰 + 첫 소장 클래스 20% 할인</p>
+        </li>
+        <li class="festa-card">
+          <p class="festa-card__head">
+            <span class="festa-card__name">졸업 부엉이 페스타</span>
+          </p>
+          <p class="festa-card__desc">끝까지 완강한 당신에게 주는 보상의 밤</p>
+          <p class="festa-card__detail">완강(졸업모 획득) 시 도토리 2배 + 다음 로드맵 STEP 추가 할인</p>
+        </li>
       </ul>
     </section>
 
-    <section id="festa-classes" class="festa-benefits">
+    <section class="festa-benefits">
       <div class="festa-benefits__stack">
         <span class="festa-benefits__eyebrow">STACKED BENEFITS</span>
         <h3 class="festa-col-title">혜택은 이렇게 쌓여요</h3>
@@ -440,14 +453,14 @@
       <h3 class="festa-cta__title">오늘 밤, 가장 크게 담는 시간</h3>
       <p class="festa-cta__desc">놓치면 다음 페스타까지. 지금 이 밤이 가장 좋은 조건이에요.</p>
       <div class="festa-cta__actions">
-        <a class="festa-cta__btn festa-cta__btn--solid" href="#festa-classes">이벤트 할인 클래스 전체 보기 (73)</a>
+        <a class="festa-cta__btn festa-cta__btn--solid" href="#festa-classes">이벤트 할인 클래스 보기</a>
         <a class="festa-cta__btn festa-cta__btn--ghost" href="subscribe.html">올나잇 패스 구독하기</a>
       </div>
     </section>
 
   </div>
 
-  <nav class="class-filter" aria-label="카테고리 필터">
+  <nav id="festa-classes" class="class-filter" aria-label="카테고리 필터">
     <ul class="class-filter__list">
       <li><button class="class-filter__btn is-active" type="button" data-filter="all" aria-pressed="true">전체</button></li>
       <li><button class="class-filter__btn" type="button" data-filter="dev-it" aria-pressed="false">개발 &amp; IT</button></li>
