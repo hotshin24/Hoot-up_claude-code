@@ -5065,6 +5065,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .brand-story .brand-hero__part-19 { position: absolute; right: 20%; top: 66%; width: 7%; height: 1.5px; background: rgb(22 103 250 / 0.35); }
 .brand-story .brand-hero__part-20 { position: absolute; left: 28%; right: 28%; top: 53%; height: 25%; border-radius: 24%/30%; background: linear-gradient(168deg, var(--color-neutral-white) 0%, var(--color-neutral-lightest) 60%, var(--color-brand-lighter) 100%); box-shadow: inset 0 2px 0 rgb(255 255 255 / 0.9), 0 10px 24px rgb(15 23 42 / 0.16); display: grid; place-items: center; }
 .brand-story .brand-hero__label { font-family: 'Raleway', sans-serif; font-size: 0.58em; font-weight: 900; letter-spacing: 0.04em; color: var(--color-brand-base); }
+.brand-hero__label-rocket { display: inline-block; height: 1em; width: auto; vertical-align: -0.15em; margin-left: 0.1em; }
 .brand-story .brand-hero__part-21 { position: absolute; left: 30%; right: 30%; top: 76.5%; height: 2.6%; border-radius: 999px; background: var(--color-brand-accent); box-shadow: 0 0 12px rgb(73 252 166 / 0.6); }
 .brand-story .brand-hero__part-22 { position: absolute; left: 31%; right: 31%; top: 78.5%; height: 13%; border-radius: 6% 6% 50% 50% / 6% 6% 100% 100%; background: linear-gradient(180deg, var(--color-brand-base) 0%, var(--color-brand-dark) 100%); box-shadow: 0 12px 26px rgb(13 70 176 / 0.35); }
 .brand-story .brand-hero__part-23 { position: absolute; left: 50%; top: -6%; transform: translateX(-50%) rotate(-5deg); width: 40%; height: 11%; }
