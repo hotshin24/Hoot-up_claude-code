@@ -5715,7 +5715,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .settlement .settlement__dash-head .lp-head { margin-bottom: 0; gap: 13px; }
 .settlement .settlement__dash-lead { color: var(--color-brand-light); font-size: 17px; line-height: 30px; }
 .settlement .settlement__dash-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.settlement .settlement__dash-card { display: flex; flex-direction: column; gap: 12px; background: rgb(255 255 255 / 0.06); border: 1px solid rgb(255 255 255 / 0.14); border-radius: 20px; padding: 31px 27px; }
+.settlement .settlement__dash-card { display: flex; flex-direction: column; gap: 12px; background: rgb(255 255 255 / 0.06); border-radius: 20px; padding: 31px 27px; }
 .settlement .settlement__dash-label { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: 1.2px; color: var(--color-brand-secondary); }
 .settlement .settlement__dash-title { font-weight: 700; font-size: 19px; line-height: 28px; color: var(--color-neutral-white); }
 .settlement .settlement__dash-desc { color: var(--color-brand-lighter); font-size: 15px; line-height: 26px; }
@@ -5726,6 +5726,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .settlement .lp-faq-q span:first-child { color: var(--color-brand-base); }
 .settlement .settlement__cta-line { color: var(--color-neutral-base); font-size: 16px; line-height: 22px; }
 .settlement .settlement__cta-line a { color: var(--color-brand-base); font-weight: 700; }
+.settlement .lp-cta-actions-wide { flex-direction: column; gap: 20px; }
 .settlement .settlement__cta-disclaimer { color: var(--color-neutral-light); font-size: 14px; line-height: 24px; }
 .mentor__pad { padding-block: 100px; }
 
@@ -8374,7 +8375,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .creator-studio .lp-faq-list { grid-template-columns: 1fr; }
   .settlement .lp-hero-grid { grid-template-columns: 1fr; }
   .settlement .settlement__stream-list,
-  .settlement .lp-faq-list-2 { grid-template-columns: 1fr; }
+  .settlement .lp-faq-list { grid-template-columns: 1fr; }
   .settlement .settlement__dash-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
   .settlement .settlement__dash-list,
   .settlement .settlement__steps { grid-template-columns: repeat(2, 1fr); }
