@@ -6667,7 +6667,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .myclass-head__summary { margin-top: 6px; font-size: 15px; color: var(--color-neutral-base); }
 
 /* 필터 칩 */
-.myclass-filter { display: flex; flex-wrap: wrap; gap: 6px; margin: 20px 0; }
+.myclass-filter { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-xs); margin: 20px 0; }
 .myclass-chip {
   padding: 10px 19px; border-radius: var(--radius-pill);
   background-color: var(--color-neutral-white);
@@ -6680,6 +6680,33 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .myclass-chip.is-active {
   padding: 9px 18px; border: 0;
   background-color: var(--color-brand-base); color: var(--color-neutral-white);
+}
+
+/* 내 클래스 필터 칩 — .class-filter__btn 디자인 규칙 적용 (폰트 사이즈는 기존 유지) */
+.myclass-filter .myclass-chip {
+  padding: 8px 17px;
+  border: 1px solid var(--color-neutral-base);
+  background-color: transparent;
+  color: var(--color-neutral-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-body-leading);
+  transition: background-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard),
+              border-color var(--duration-fast) var(--easing-standard);
+}
+.myclass-filter .myclass-chip:hover {
+  border-color: var(--color-brand-base);
+  color: var(--color-neutral-base);
+}
+.myclass-filter .myclass-chip.is-active {
+  padding: 8px 17px;
+  border: 1px solid var(--color-brand-base);
+  background-color: var(--color-brand-base);
+  color: var(--color-text-inverse);
+  font-weight: var(--font-weight-bold);
+}
+.myclass-filter .myclass-chip.is-active:hover {
+  border-color: var(--color-brand-base);
 }
 
 /* 카드 그리드 */
