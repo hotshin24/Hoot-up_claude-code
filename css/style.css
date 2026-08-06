@@ -5421,6 +5421,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .subscribe .subscribe__pricing { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, var(--color-brand-dark) 98.8%); }
 .subscribe .subscribe__forme { background: var(--color-neutral-white); }
 .subscribe .subscribe__faq { background: var(--color-neutral-lightest); }
+.subscribe .lp-faq-list { align-items: stretch; grid-auto-rows: 1fr; }
 
 /* 블루 섹션 헤더 색상 */
 .subscribe .subscribe__pricing .lp-eyebrow { color: var(--color-brand-accent); }
