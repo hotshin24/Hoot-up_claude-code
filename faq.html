@@ -1,564 +1,754 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>자주 묻는 질문(FAQ) — HOOT UP</title>
- <meta name="description" content="HOOT UP 자주 묻는 질문(FAQ) — 수강·결제/환불·구독·소장/로드맵·계정·수료증/도토리 등 궁금한 점을 카테고리별로 모았어요. 검색으로 빠르게 찾을 수 있습니다.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>자주 묻는 질문(FAQ) — HOOT UP</title>
+  <meta name="description"
+    content="HOOT UP 자주 묻는 질문(FAQ) — 수강·결제/환불·구독·소장/로드맵·계정·수료증/도토리 등 궁금한 점을 카테고리별로 모았어요. 검색으로 빠르게 찾을 수 있습니다.">
 
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link rel="preconnect" href="https://spoqa.github.io">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://spoqa.github.io">
 
- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&display=swap">
- <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
- <link rel="stylesheet" href="css/import.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+  <link rel="stylesheet" href="css/import.css">
 
   <script src="js/common.js" defer></script>
   <script src="js/carousel.js" defer></script>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-(function(){
- var root=document.querySelector('[data-faq-groups]'); if(!root) return;
- var groups=[].slice.call(root.querySelectorAll('.hfaq__group'));
- var items=[].slice.call(root.querySelectorAll('.hfaq__item'));
- var empty=root.querySelector('[data-faq-empty]');
- var countEl=document.querySelector('[data-faq-count]');
- var input=document.querySelector('[data-faq-search]');
- var tabs=[].slice.call(document.querySelectorAll('.hfaq__tab'));
- var cat='all', kw='';
- items.forEach(function(it){ it._text=(it.querySelector('.hfaq__q-text span:last-child').textContent+' '+it.querySelector('.hfaq__answer').textContent).toLowerCase(); });
- function apply(){
- var total=0;
- groups.forEach(function(g){
- var gc=g.dataset.cat, gvis=0;
- var lis=[].slice.call(g.querySelectorAll('.hfaq__item'));
- lis.forEach(function(it){
- var ok=(cat==='all'||gc===cat) && (kw===''||it._text.indexOf(kw)>-1);
- it.hidden=!ok; if(ok){gvis++; total++;}
- });
- var cnt=g.querySelector('[data-group-count]'); if(cnt) cnt.textContent=gvis;
- g.hidden=(gvis===0);
- });
- if(countEl) countEl.textContent=total+'건';
- if(empty) empty.hidden=(total>0);
- }
- // 아코디언
- root.addEventListener('click',function(e){
- var btn=e.target.closest('.hfaq__q'); if(!btn) return;
- var li=btn.closest('.hfaq__item'); var open=li.classList.toggle('is-open');
- btn.setAttribute('aria-expanded', open?'true':'false');
- });
- // 필터
- tabs.forEach(function(t){ t.addEventListener('click',function(){
- tabs.forEach(function(x){x.classList.remove('is-active');x.setAttribute('aria-pressed','false');});
- t.classList.add('is-active'); t.setAttribute('aria-pressed','true'); cat=t.dataset.cat; apply();
- }); });
- // 검색
- if(input) input.addEventListener('input',function(){ kw=input.value.trim().toLowerCase(); apply(); });
- apply();
-})();
-  });
-  </script>
+  <script src="js/faq.js" defer></script>
 </head>
+
 <body>
 
-<a class="skip-link" href="#main">본문 바로가기</a>
+  <a class="skip-link" href="#main">본문 바로가기</a>
 
-<!-- ======================================================================
+  <!-- ======================================================================
  헤더
  ====================================================================== -->
-<header class="site-header">
- <div class="site-header__inner l-container">
+  <header class="site-header">
+    <div class="site-header__inner l-container">
 
- <div class="site-header__utility">
- <a class="site-header__logo" href="index.html">
- <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
- </a>
+      <div class="site-header__utility">
+        <a class="site-header__logo" href="index.html">
+          <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
+        </a>
 
- <form class="search" action="categories.html" method="get" role="search">
- <label class="a11y-hidden" for="search-keyword">강의 검색</label>
- <input class="search__input" id="search-keyword" type="search" name="keyword" placeholder="어떤 강의를 찾으시나요?" autocomplete="off">
- <button class="search__submit" type="submit" aria-label="검색">
- <span class="icon icon--search"></span>
- </button>
- </form>
+        <form class="search" action="categories.html" method="get" role="search">
+          <label class="a11y-hidden" for="search-keyword">강의 검색</label>
+          <input class="search__input" id="search-keyword" type="search" name="keyword" placeholder="어떤 강의를 찾으시나요?"
+            autocomplete="off">
+          <button class="search__submit" type="submit" aria-label="검색">
+            <span class="icon icon--search"></span>
+          </button>
+        </form>
 
- <ul class="user-menu">
- <li class="user-menu__item">
- <a class="user-menu__link" href="cart.html">
- <span class="icon icon--cart"></span>
- <span class="a11y-hidden">장바구니</span>
- <span class="user-menu__badge">3<span class="a11y-hidden">개 담김</span></span>
- </a>
- </li>
- <li class="user-menu__item">
- <button class="user-menu__link" type="button" data-notif-toggle aria-haspopup="dialog" aria-expanded="false">
- <span class="icon icon--bell"></span>
- <span class="a11y-hidden">알림</span>
- <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
- </button>
- </li>
- <li class="user-menu__item">
- <a class="user-menu__profile" href="account.html">
- <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
- </a>
- </li>
- </ul>
- </div>
+        <ul class="user-menu">
+          <li class="user-menu__item">
+            <a class="user-menu__link" href="cart.html">
+              <span class="icon icon--cart"></span>
+              <span class="a11y-hidden">장바구니</span>
+              <span class="user-menu__badge">3<span class="a11y-hidden">개 담김</span></span>
+            </a>
+          </li>
+          <li class="user-menu__item">
+            <button class="user-menu__link" type="button" data-notif-toggle aria-haspopup="dialog"
+              aria-expanded="false">
+              <span class="icon icon--bell"></span>
+              <span class="a11y-hidden">알림</span>
+              <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
+            </button>
+          </li>
+          <li class="user-menu__item">
+            <a class="user-menu__profile" href="account.html">
+              <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </div>
 
- <nav class="gnb" aria-label="주요 메뉴">
- <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega" aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
- <span class="icon icon--list"></span>
- </button>
- <ul class="gnb__list" id="gnb-list">
- <li class="gnb__item"><a class="gnb__link" href="categories.html">전체 클래스</a></li>
- <li class="gnb__item"><a class="gnb__link" href="best.html">베스트 클래스</a></li>
- <li class="gnb__item"><a class="gnb__link" href="event-1.html">이벤트 할인</a></li>
- <li class="gnb__item"><a class="gnb__link" href="new.html">새로운 클래스</a></li>
- <li class="gnb__item"><a class="gnb__link" href="earlybird-1.html">얼리버드 할인</a></li>
- <li class="gnb__item"><a class="gnb__link" href="signature.html">시그니쳐 클래스</a></li>
- </ul>
- </nav>
+      <nav class="gnb" aria-label="주요 메뉴">
+        <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega"
+          aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
+          <span class="icon icon--list"></span>
+        </button>
+        <ul class="gnb__list" id="gnb-list">
+          <li class="gnb__item"><a class="gnb__link" href="categories.html">전체 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="best.html">베스트 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="event-1.html">이벤트 할인</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="new.html">새로운 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="earlybird-1.html">얼리버드 할인</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="signature.html">시그니쳐 클래스</a></li>
+        </ul>
+      </nav>
 
- </div>
+    </div>
 
- <!-- ====================================================================
+    <!-- ====================================================================
  전체 카테고리 메가 메뉴 (햄버거 · '전체 카테고리' 트리거로 펼침)
  ==================================================================== -->
- <div class="mega" id="category-mega" aria-hidden="true">
- <div class="mega__inner l-container">
- <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
- <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it"
- aria-selected="true" aria-controls="megapanel-dev-it" tabindex="0">
- <span class="mega-cat__name">개발 &amp; IT</span>
- <span class="mega-cat__badge mega-cat__badge--single">단건</span>
- <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
- </button>
- <button class="mega-cat" type="button" role="tab" id="megacat-career-money"
- aria-selected="false" aria-controls="megapanel-career-money" tabindex="-1">
- <span class="mega-cat__name">커리어 &amp; 머니</span>
- <span class="mega-cat__badge mega-cat__badge--single">단건</span>
- <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
- </button>
- <button class="mega-cat" type="button" role="tab" id="megacat-design-creative"
- aria-selected="false" aria-controls="megapanel-design-creative" tabindex="-1">
- <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
- <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
- <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
- </button>
- <button class="mega-cat" type="button" role="tab" id="megacat-photo-video"
- aria-selected="false" aria-controls="megapanel-photo-video" tabindex="-1">
- <span class="mega-cat__name">사진 &amp; 영상</span>
- <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
- <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
- </button>
- <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust"
- aria-selected="false" aria-controls="megapanel-drawing-illust" tabindex="-1">
- <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
- <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
- <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
- </button>
- <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness"
- aria-selected="false" aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
- <span class="mega-cat__name">운동 &amp; 마음챙김</span>
- <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
- <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
- </button>
- <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade"
- aria-selected="false" aria-controls="megapanel-craft-handmade" tabindex="-1">
- <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
- <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
- <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
- </button>
- <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking"
- aria-selected="false" aria-controls="megapanel-cooking-baking" tabindex="-1">
- <span class="mega-cat__name">요리 &amp; 베이킹</span>
- <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
- <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
- </button>
- </div>
- <div class="mega__subs">
- <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
- <a class="mega-sub__title" href="category-dev-it-1.html">
- 개발 &amp; IT 전체 보기
- <span class="icon icon--chevron-right" aria-hidden="true"></span>
- </a>
- <ul class="mega-sub__list">
- <li><a class="mega-sub__link" href="category-dev-it-web-publishing.html">웹 퍼블리싱</a></li>
- <li><a class="mega-sub__link" href="category-dev-it-frontend.html">프론트엔드</a></li>
- <li><a class="mega-sub__link" href="category-dev-it-backend.html">백엔드 &amp; 서버</a></li>
- <li><a class="mega-sub__link" href="category-dev-it-mobile.html">모바일 &amp; 앱 개발</a></li>
- <li><a class="mega-sub__link" href="category-dev-it-data-ai.html">데이터 &amp; AI</a></li>
- <li><a class="mega-sub__link" href="category-dev-it-ai-tools.html">AI 개발 도구</a></li>
- <li><a class="mega-sub__link" href="category-dev-it-nocode.html">노코드 &amp; 자동화</a></li>
- </ul>
- </div>
- <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money" hidden>
- <a class="mega-sub__title" href="category-career-money-1.html">
- 커리어 &amp; 머니 전체 보기
- <span class="icon icon--chevron-right" aria-hidden="true"></span>
- </a>
- <ul class="mega-sub__list">
- <li><a class="mega-sub__link" href="category-career-money-job-skills.html">직무 역량 &amp; 일잘러</a></li>
- <li><a class="mega-sub__link" href="category-career-money-job-search.html">취업 &amp; 이직</a></li>
- <li><a class="mega-sub__link" href="category-career-money-marketing.html">마케팅 &amp; 브랜딩</a></li>
- <li><a class="mega-sub__link" href="category-career-money-sideproject.html">사이드프로젝트 &amp; N잡</a></li>
- <li><a class="mega-sub__link" href="category-career-money-investing.html">재테크 &amp; 투자</a></li>
- <li><a class="mega-sub__link" href="category-career-money-tax.html">절세 &amp; 머니 관리</a></li>
- </ul>
- </div>
- <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative" hidden>
- <a class="mega-sub__title" href="category-design-creative-1.html">
- 디자인 &amp; 크리에이티브 전체 보기
- <span class="icon icon--chevron-right" aria-hidden="true"></span>
- </a>
- <ul class="mega-sub__list">
- <li><a class="mega-sub__link" href="category-design-creative-uxui.html">UX/UI 디자인</a></li>
- <li><a class="mega-sub__link" href="category-design-creative-graphic.html">그래픽 디자인</a></li>
- <li><a class="mega-sub__link" href="category-design-creative-branding.html">브랜딩 &amp; 로고</a></li>
- <li><a class="mega-sub__link" href="category-design-creative-3d-motion.html">3D &amp; 모션 디자인</a></li>
- <li><a class="mega-sub__link" href="category-design-creative-illust.html">일러스트 &amp; 디지털아트</a></li>
- <li><a class="mega-sub__link" href="category-design-creative-intro.html">크리에이티브 입문</a></li>
- </ul>
- </div>
- <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
- <a class="mega-sub__title" href="category-photo-video-1.html">
- 사진 &amp; 영상 전체 보기
- <span class="icon icon--chevron-right" aria-hidden="true"></span>
- </a>
- <ul class="mega-sub__list">
- <li><a class="mega-sub__link" href="category-photo-video-photography.html">사진 촬영</a></li>
- <li><a class="mega-sub__link" href="category-photo-video-videography.html">영상 촬영</a></li>
- <li><a class="mega-sub__link" href="category-photo-video-editing.html">편집 &amp; 후보정</a></li>
- <li><a class="mega-sub__link" href="category-photo-video-motion.html">모션 &amp; 크리에이티브</a></li>
- </ul>
- </div>
- <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust" hidden>
- <a class="mega-sub__title" href="category-drawing-illust-1.html">
- 드로잉 &amp; 일러스트 전체 보기
- <span class="icon icon--chevron-right" aria-hidden="true"></span>
- </a>
- <ul class="mega-sub__list">
- <li><a class="mega-sub__link" href="category-drawing-illust-digital.html">디지털 드로잉</a></li>
- <li><a class="mega-sub__link" href="category-drawing-illust-handdrawing.html">손그림 &amp; 회화</a></li>
- <li><a class="mega-sub__link" href="category-drawing-illust-character.html">캐릭터 &amp; 웹툰</a></li>
- <li><a class="mega-sub__link" href="category-drawing-illust-calligraphy.html">캘리그라피 &amp; 레터링</a></li>
- </ul>
- </div>
- <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness" aria-labelledby="megacat-fitness-mindfulness" hidden>
- <a class="mega-sub__title" href="category-fitness-mindfulness-1.html">
- 운동 &amp; 마음챙김 전체 보기
- <span class="icon icon--chevron-right" aria-hidden="true"></span>
- </a>
- <ul class="mega-sub__list">
- <li><a class="mega-sub__link" href="category-fitness-mindfulness-hometraining.html">홈트 &amp; 근력</a></li>
- <li><a class="mega-sub__link" href="category-fitness-mindfulness-yoga.html">요가 &amp; 필라테스</a></li>
- <li><a class="mega-sub__link" href="category-fitness-mindfulness-running.html">러닝 &amp; 유산소</a></li>
- <li><a class="mega-sub__link" href="category-fitness-mindfulness-meditation.html">명상 &amp; 마음챙김</a></li>
- </ul>
- </div>
- <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade" hidden>
- <a class="mega-sub__title" href="category-craft-handmade-1.html">
- 공예 &amp; 핸드메이드 전체 보기
- <span class="icon icon--chevron-right" aria-hidden="true"></span>
- </a>
- <ul class="mega-sub__list">
- <li><a class="mega-sub__link" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
- <li><a class="mega-sub__link" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
- <li><a class="mega-sub__link" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
- <li><a class="mega-sub__link" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
- </ul>
- </div>
- <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking" hidden>
- <a class="mega-sub__title" href="category-cooking-baking-1.html">
- 요리 &amp; 베이킹 전체 보기
- <span class="icon icon--chevron-right" aria-hidden="true"></span>
- </a>
- <ul class="mega-sub__list">
- <li><a class="mega-sub__link" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
- <li><a class="mega-sub__link" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
- <li><a class="mega-sub__link" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
- <li><a class="mega-sub__link" href="category-cooking-baking-world.html">세계요리 &amp; 비건</a></li>
- </ul>
- </div>
- </div>
- </div>
- </div>
- <div class="mega-backdrop" hidden></div>
-</header>
+    <div class="mega" id="category-mega" aria-hidden="true">
+      <div class="mega__inner l-container">
+        <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
+          <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it" aria-selected="true"
+            aria-controls="megapanel-dev-it" tabindex="0">
+            <span class="mega-cat__name">개발 &amp; IT</span>
+            <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-career-money" aria-selected="false"
+            aria-controls="megapanel-career-money" tabindex="-1">
+            <span class="mega-cat__name">커리어 &amp; 머니</span>
+            <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-design-creative" aria-selected="false"
+            aria-controls="megapanel-design-creative" tabindex="-1">
+            <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
+            <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-photo-video" aria-selected="false"
+            aria-controls="megapanel-photo-video" tabindex="-1">
+            <span class="mega-cat__name">사진 &amp; 영상</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust" aria-selected="false"
+            aria-controls="megapanel-drawing-illust" tabindex="-1">
+            <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness" aria-selected="false"
+            aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
+            <span class="mega-cat__name">운동 &amp; 마음챙김</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade" aria-selected="false"
+            aria-controls="megapanel-craft-handmade" tabindex="-1">
+            <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking" aria-selected="false"
+            aria-controls="megapanel-cooking-baking" tabindex="-1">
+            <span class="mega-cat__name">요리 &amp; 베이킹</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="mega__subs">
+          <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
+            <a class="mega-sub__title" href="category-dev-it-1.html">
+              개발 &amp; IT 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-dev-it-web-publishing.html">웹 퍼블리싱</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-frontend.html">프론트엔드</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-backend.html">백엔드 &amp; 서버</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-mobile.html">모바일 &amp; 앱 개발</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-data-ai.html">데이터 &amp; AI</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-ai-tools.html">AI 개발 도구</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-nocode.html">노코드 &amp; 자동화</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money"
+            hidden>
+            <a class="mega-sub__title" href="category-career-money-1.html">
+              커리어 &amp; 머니 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-career-money-job-skills.html">직무 역량 &amp; 일잘러</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-job-search.html">취업 &amp; 이직</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-marketing.html">마케팅 &amp; 브랜딩</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-sideproject.html">사이드프로젝트 &amp; N잡</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-investing.html">재테크 &amp; 투자</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-tax.html">절세 &amp; 머니 관리</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative"
+            hidden>
+            <a class="mega-sub__title" href="category-design-creative-1.html">
+              디자인 &amp; 크리에이티브 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-design-creative-uxui.html">UX/UI 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-graphic.html">그래픽 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-branding.html">브랜딩 &amp; 로고</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-3d-motion.html">3D &amp; 모션 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-illust.html">일러스트 &amp; 디지털아트</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-intro.html">크리에이티브 입문</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
+            <a class="mega-sub__title" href="category-photo-video-1.html">
+              사진 &amp; 영상 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-photo-video-photography.html">사진 촬영</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-videography.html">영상 촬영</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-editing.html">편집 &amp; 후보정</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-motion.html">모션 &amp; 크리에이티브</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust"
+            hidden>
+            <a class="mega-sub__title" href="category-drawing-illust-1.html">
+              드로잉 &amp; 일러스트 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-drawing-illust-digital.html">디지털 드로잉</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-handdrawing.html">손그림 &amp; 회화</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-character.html">캐릭터 &amp; 웹툰</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-calligraphy.html">캘리그라피 &amp; 레터링</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness"
+            aria-labelledby="megacat-fitness-mindfulness" hidden>
+            <a class="mega-sub__title" href="category-fitness-mindfulness-1.html">
+              운동 &amp; 마음챙김 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-hometraining.html">홈트 &amp; 근력</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-yoga.html">요가 &amp; 필라테스</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-running.html">러닝 &amp; 유산소</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-meditation.html">명상 &amp; 마음챙김</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade"
+            hidden>
+            <a class="mega-sub__title" href="category-craft-handmade-1.html">
+              공예 &amp; 핸드메이드 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking"
+            hidden>
+            <a class="mega-sub__title" href="category-cooking-baking-1.html">
+              요리 &amp; 베이킹 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-world.html">세계요리 &amp; 비건</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mega-backdrop" hidden></div>
+  </header>
 
-<main id="main" class="hfaq brand-story" data-screen-label="자주 묻는 질문">
+  <main id="main" class="hfaq brand-story" data-screen-label="자주 묻는 질문">
 
- <!-- ===== 히어로 (검색) ===== -->
- <section class="hfaq__hero" data-screen-label="히어로">
- <div class="l-container hfaq__hero-grid">
- <div class="hfaq__hero-content">
- <p class="lp-hero-eyebrow">HELP CENTER · FAQ</p>
- <h1 class="lp-hero-title-fixed">무엇을 도와드릴까요?</h1>
- <p class="hfaq__hero-desc">궁금한 점을 카테고리별로 모았어요. 검색으로 빠르게 찾을 수도 있습니다.</p>
- <div class="hfaq__search">
- <input class="hfaq__search-input" type="search" placeholder="궁금한 내용을 검색해보세요" aria-label="FAQ 검색" data-faq-search>
- <span class="hfaq__search-count"><span data-faq-count>0</span></span>
- </div>
- </div>
- <figure class="hfaq__hero-mascot">
- <div class="brand-hero__box">
- <div class="brand-hero__part"></div>
- <div class="brand-hero__part-2"></div>
- <div class="brand-hero__part-3">
- <div class="brand-hero__part-4"></div>
- <div class="brand-hero__part-5"></div>
- <div class="brand-hero__part-6"></div>
- <div class="brand-hero__part-7"></div>
- <div class="brand-hero__part-8"></div>
- <div class="brand-hero__part-9"></div>
- <div class="brand-hero__part-10"></div>
- <div class="brand-hero__part-11">
- <div class="brand-hero__group-3"><div class="brand-hero__box-2">
- <div class="brand-hero__part-12"></div>
- <div class="brand-hero__part-13"></div>
- </div><div class="brand-hero__box-2">
- <div class="brand-hero__part-12"></div>
- <div class="brand-hero__part-13"></div>
- </div>
- </div>
- <div class="brand-hero__part-14"></div>
- </div>
- <div class="brand-hero__part-15"></div>
- <div class="brand-hero__part-16"></div>
- <div class="brand-hero__part-17"></div>
- <div class="brand-hero__part-18"></div>
- <div class="brand-hero__part-19"></div>
- <div class="brand-hero__part-20"><span class="brand-hero__label">UP<img class="brand-hero__label-rocket" src="assets/brand/rocket.svg" alt="" aria-hidden="true"></span></div>
- <div class="brand-hero__part-21"></div>
- <div class="brand-hero__part-22"></div>
- <div class="brand-hero__part-23">
- <div class="brand-hero__part-24"></div>
- <div class="brand-hero__part-25"></div>
- <div class="brand-hero__part-26"></div>
- <div class="brand-hero__part-27"></div>
- </div>
- </div>
- </div>
- </figure>
- </div>
- </section>
+    <!-- ===== 히어로 (검색) ===== -->
+    <section class="hfaq__hero" data-screen-label="히어로">
+      <div class="l-container hfaq__hero-grid">
+        <div class="hfaq__hero-content">
+          <p class="lp-hero-eyebrow">HELP CENTER · FAQ</p>
+          <h1 class="lp-hero-title-fixed">무엇을 도와드릴까요?</h1>
+          <p class="hfaq__hero-desc">궁금한 점을 카테고리별로 모았어요. 검색으로 빠르게 찾을 수도 있습니다.</p>
+          <div class="hfaq__search">
+            <input class="hfaq__search-input" type="search" placeholder="궁금한 내용을 검색해보세요" aria-label="FAQ 검색"
+              data-faq-search>
+            <span class="hfaq__search-count"><span data-faq-count>0</span></span>
+          </div>
+        </div>
+        <figure class="hfaq__hero-mascot">
+          <div class="brand-hero__box">
+            <div class="brand-hero__part"></div>
+            <div class="brand-hero__part-2"></div>
+            <div class="brand-hero__part-3">
+              <div class="brand-hero__part-4"></div>
+              <div class="brand-hero__part-5"></div>
+              <div class="brand-hero__part-6"></div>
+              <div class="brand-hero__part-7"></div>
+              <div class="brand-hero__part-8"></div>
+              <div class="brand-hero__part-9"></div>
+              <div class="brand-hero__part-10"></div>
+              <div class="brand-hero__part-11">
+                <div class="brand-hero__group-3">
+                  <div class="brand-hero__box-2">
+                    <div class="brand-hero__part-12"></div>
+                    <div class="brand-hero__part-13"></div>
+                  </div>
+                  <div class="brand-hero__box-2">
+                    <div class="brand-hero__part-12"></div>
+                    <div class="brand-hero__part-13"></div>
+                  </div>
+                </div>
+                <div class="brand-hero__part-14"></div>
+              </div>
+              <div class="brand-hero__part-15"></div>
+              <div class="brand-hero__part-16"></div>
+              <div class="brand-hero__part-17"></div>
+              <div class="brand-hero__part-18"></div>
+              <div class="brand-hero__part-19"></div>
+              <div class="brand-hero__part-20"><span class="brand-hero__label">UP<img class="brand-hero__label-rocket"
+                    src="assets/brand/rocket.svg" alt="" aria-hidden="true"></span></div>
+              <div class="brand-hero__part-21"></div>
+              <div class="brand-hero__part-22"></div>
+              <div class="brand-hero__part-23">
+                <div class="brand-hero__part-24"></div>
+                <div class="brand-hero__part-25"></div>
+                <div class="brand-hero__part-26"></div>
+                <div class="brand-hero__part-27"></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
 
- <!-- ===== 카테고리 필터 (스티키) ===== -->
- <nav class="hfaq__filter" aria-label="FAQ 카테고리">
- <ul class="l-container hfaq__filter-list" data-faq-tabs>
- <li><button type="button" class="hfaq__tab is-active" data-cat="all">전체</button></li>
-<li><button type="button" class="hfaq__tab" data-cat="learning">수강</button></li>
-<li><button type="button" class="hfaq__tab" data-cat="payment">결제 / 환불</button></li>
-<li><button type="button" class="hfaq__tab" data-cat="subscribe">구독 (올나잇 패스)</button></li>
-<li><button type="button" class="hfaq__tab" data-cat="own">소장 / 로드맵</button></li>
-<li><button type="button" class="hfaq__tab" data-cat="account">계정</button></li>
-<li><button type="button" class="hfaq__tab" data-cat="cert">수료증 / 도토리</button></li>
- </ul>
- </nav>
+    <!-- ===== 카테고리 필터 (스티키) ===== -->
+    <nav class="hfaq__filter" aria-label="FAQ 카테고리">
+      <ul class="l-container hfaq__filter-list" data-faq-tabs>
+        <li><button type="button" class="hfaq__tab is-active" data-cat="all">전체</button></li>
+        <li><button type="button" class="hfaq__tab" data-cat="learning">수강</button></li>
+        <li><button type="button" class="hfaq__tab" data-cat="payment">결제 / 환불</button></li>
+        <li><button type="button" class="hfaq__tab" data-cat="subscribe">구독 (올나잇 패스)</button></li>
+        <li><button type="button" class="hfaq__tab" data-cat="own">소장 / 로드맵</button></li>
+        <li><button type="button" class="hfaq__tab" data-cat="account">계정</button></li>
+        <li><button type="button" class="hfaq__tab" data-cat="cert">수료증 / 도토리</button></li>
+      </ul>
+    </nav>
 
- <!-- ===== FAQ 목록 ===== -->
- <section class="hfaq__list-sec" data-screen-label="FAQ 목록">
- <div class="l-container hfaq__pad" data-faq-groups>
- <section class="hfaq__group" data-cat="learning">
- <div class="hfaq__group-head"><h2 class="hfaq__group-title">수강</h2><p class="hfaq__group-count"><span data-group-count>6</span> QUESTIONS</p></div>
- <ul class="hfaq__list">
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>강의는 어디서, 무엇으로 볼 수 있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>웹·iOS·안드로이드 앱을 모두 지원하고, 시청 기록은 기기 간 자동 동기화돼요. 배속(0.5~2.0)·자막·이어보기도 지원합니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>수강 기간 제한이 있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>평생 소장 클래스는 기간 제한 없이 반복 수강할 수 있어요. 구독(올나잇 패스) 클래스는 구독 기간 동안 무제한입니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>강의 중 질문은 어떻게 하나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>각 클래스의 ‘Q&amp;A’ 탭에서 멘토에게 직접 질문할 수 있어요. 보통 1~2일 내 답변이 달립니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>실습 자료는 어디서 받나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>각 강의 하단과 ‘수업 자료’ 탭에서 예제 소스·완성본·요약 노트를 내려받을 수 있어요.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>오프라인으로 저장해서 볼 수 있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>모바일 앱에서 일부 강의는 다운로드 후 오프라인 재생을 지원해요. 대상은 앱 내 안내를 확인해주세요.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>자막이나 배속을 지원하나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>네. 0.5~2.0배속과 자막을 지원해 자투리 시간에도 편하게 학습할 수 있어요.</p></div></li>
- </ul>
-</section>
-<section class="hfaq__group" data-cat="payment">
- <div class="hfaq__group-head"><h2 class="hfaq__group-title">결제 / 환불</h2><p class="hfaq__group-count"><span data-group-count>6</span> QUESTIONS</p></div>
- <ul class="hfaq__list">
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>어떤 결제 수단을 쓸 수 있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>신용·체크카드, 간편결제 등을 지원해요. 자세한 수단은 결제 화면에서 확인할 수 있습니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>환불 규정이 궁금해요.</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>결제 후 7일 이내이고 수강률 10% 미만이면 전액 환불돼요. 이후에는 진도율에 따라 산정됩니다. 자세한 내용은 ‘환불 규정’ 페이지를 참고하세요.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>환불은 어디서 신청하나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>마이 둥지 &gt; 결제내역에서 신청하면 영업일 기준 3일 내 처리됩니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>쿠폰과 도토리를 함께 쓸 수 있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>쿠폰 할인 후 결제 금액에 도토리를 사용할 수 있어요. 중복 조건은 결제 화면에서 안내됩니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>현금영수증·세금계산서 발급이 되나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>개인 결제는 현금영수증을, 사업자·단체 결제는 세금계산서 발급을 지원해요. 결제 시 또는 고객센터로 요청할 수 있습니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>결제가 자꾸 실패해요.</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>카드 한도·해외결제 차단 여부를 먼저 확인해주세요. 그래도 안 되면 다른 수단을 이용하거나 고객센터로 후트해 주세요.</p></div></li>
- </ul>
-</section>
-<section class="hfaq__group" data-cat="subscribe">
- <div class="hfaq__group-head"><h2 class="hfaq__group-title">구독 (올나잇 패스)</h2><p class="hfaq__group-count"><span data-group-count>6</span> QUESTIONS</p></div>
- <ul class="hfaq__list">
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>올나잇 패스로 모든 강의를 볼 수 있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>아니요. 구독 대상(사진영상·드로잉·운동·공예·요리 + 디자인 일부) 클래스만 무제한이에요. 개발·커리어 등 소장 배지 클래스는 개별 구매가 필요합니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>무료 체험이 있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>네. 신규 가입 시 ‘첫 둥지 트는 밤’ 혜택으로 7일 무료 체험과 20% 쿠폰을 드려요. 체험 중 해지하면 요금이 청구되지 않습니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>해지하면 바로 못 보나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>해지해도 결제한 기간까지는 이용할 수 있어요. 자동 결제만 중단됩니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>월간과 연간의 차이는요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>연간(159,000원)은 월 환산 13,250원으로 월간(19,900원)보다 알뜰해요. 꾸준히 볼 계획이라면 연간을 추천합니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>구독 중에 소장 클래스를 사면 어떻게 되나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>소장 클래스는 구독과 별개로 구매하며, 구매 후엔 구독을 해지해도 평생 소장돼요.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>디자인 카테고리는 왜 일부만 포함인가요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>디자인 &amp; 크리에이티브는 취미형(구독)과 실무 심화형(단건)이 섞여 있어요. 카드의 구독/소장 배지로 구분됩니다.</p></div></li>
- </ul>
-</section>
-<section class="hfaq__group" data-cat="own">
- <div class="hfaq__group-head"><h2 class="hfaq__group-title">소장 / 로드맵</h2><p class="hfaq__group-count"><span data-group-count>5</span> QUESTIONS</p></div>
- <ul class="hfaq__list">
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>평생 소장은 정말 평생 볼 수 있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>네. 한 번 구매하면 기간 제한 없이 반복 수강할 수 있어요.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>레벨업 로드맵 패키지는 뭔가요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>연관 클래스를 STEP 순서로 묶은 과정이에요. 패키지로 담으면 추가 18% 할인되고, 완주 시 로드맵 수료 인증(졸업 부엉이)을 받아요.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>로드맵을 STEP별로 하나씩 사도 되나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>네. 개별 구매도 가능해요. 다만 패키지로 묶어 담으면 추가 18% 할인이 적용됩니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>소장한 클래스도 업데이트되나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>강의가 개정되면 소장 회원도 별도 비용 없이 업데이트된 버전을 볼 수 있어요.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>클래스를 선물할 수 있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>선물하기를 지원하는 클래스는 결제 시 ‘선물’ 옵션으로 보낼 수 있어요. 받는 분은 코드로 등록해 소장합니다.</p></div></li>
- </ul>
-</section>
-<section class="hfaq__group" data-cat="account">
- <div class="hfaq__group-head"><h2 class="hfaq__group-title">계정</h2><p class="hfaq__group-count"><span data-group-count>5</span> QUESTIONS</p></div>
- <ul class="hfaq__list">
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>회원가입은 어떻게 하나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>이메일 또는 간편가입으로 가입할 수 있어요. 신규가입 시 ‘첫 둥지 트는 밤’ 혜택(7일 무료 + 20% 쿠폰)이 제공됩니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>비밀번호를 잊었어요.</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>로그인 화면의 ‘비밀번호 찾기’에서 이메일 인증 후 재설정할 수 있어요.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>이메일이나 닉네임을 바꿀 수 있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>마이 둥지 &gt; 계정 설정에서 변경할 수 있어요. 일부 항목은 보안을 위해 재인증이 필요할 수 있습니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>여러 기기에서 로그인할 수 있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>웹·모바일에서 함께 사용할 수 있고 시청 기록이 동기화돼요. 다만 비정상적 동시 접속은 제한될 수 있습니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>회원 탈퇴는 어떻게 하나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>마이 둥지 &gt; 계정 설정에서 신청할 수 있어요. 탈퇴 시 보유 도토리·수강 이력은 소멸되니 신중히 진행해주세요.</p></div></li>
- </ul>
-</section>
-<section class="hfaq__group" data-cat="cert">
- <div class="hfaq__group-head"><h2 class="hfaq__group-title">수료증 / 도토리</h2><p class="hfaq__group-count"><span data-group-count>5</span> QUESTIONS</p></div>
- <ul class="hfaq__list">
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>수료증(졸업모)은 어떻게 받나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>강의를 100% 완강하면 졸업모(수료증)가 자동 발급되어 마이 둥지에서 다운로드할 수 있어요.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>도토리는 어디에 쓰나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>적립한 도토리는 결제 시 사용할 수 있어요. 후기 작성·로드맵 완주 등으로 적립됩니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>도토리는 어떻게 적립하나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>수강 후기 작성, 로드맵 완주, 이벤트 참여 등으로 쌓여요. 적립 내역은 마이 둥지에서 확인할 수 있습니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>도토리에 유효기간이 있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>적립일로부터 일정 기간 후 소멸될 수 있어요. 만료 예정 도토리는 사전에 후트 알림으로 안내드립니다.</p></div></li>
- <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>로드맵을 완주하면 뭐가 달라지나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button><div class="hfaq__answer"><p>마지막 STEP까지 완강하면 로드맵 수료 인증(졸업 부엉이)과 완주 보너스 도토리를 받아요.</p></div></li>
- </ul>
-</section>
- <div class="hfaq__empty" data-faq-empty hidden>
- <p class="hfaq__empty-title">검색 결과가 없어요.</p>
- <p class="hfaq__empty-desc">다른 키워드로 찾아보거나, 고객센터로 문의해 주세요</p>
- </div>
- </div>
- </section>
+    <!-- ===== FAQ 목록 ===== -->
+    <section class="hfaq__list-sec" data-screen-label="FAQ 목록">
+      <div class="l-container hfaq__pad" data-faq-groups>
+        <section class="hfaq__group" data-cat="learning">
+          <div class="hfaq__group-head">
+            <h2 class="hfaq__group-title">수강</h2>
+            <p class="hfaq__group-count"><span data-group-count>6</span> QUESTIONS</p>
+          </div>
+          <ul class="hfaq__list">
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>강의는 어디서, 무엇으로 볼 수
+                    있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>웹·iOS·안드로이드 앱을 모두 지원하고, 시청 기록은 기기 간 자동 동기화돼요. 배속(0.5~2.0)·자막·이어보기도 지원합니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>수강 기간 제한이 있나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>평생 소장 클래스는 기간 제한 없이 반복 수강할 수 있어요. 구독(올나잇 패스) 클래스는 구독 기간 동안 무제한입니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>강의 중 질문은 어떻게 하나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>각 클래스의 ‘Q&amp;A’ 탭에서 멘토에게 직접 질문할 수 있어요. 보통 1~2일 내 답변이 달립니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>실습 자료는 어디서 받나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>각 강의 하단과 ‘수업 자료’ 탭에서 예제 소스·완성본·요약 노트를 내려받을 수 있어요.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>오프라인으로 저장해서 볼 수 있나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>모바일 앱에서 일부 강의는 다운로드 후 오프라인 재생을 지원해요. 대상은 앱 내 안내를 확인해주세요.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>자막이나 배속을 지원하나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>네. 0.5~2.0배속과 자막을 지원해 자투리 시간에도 편하게 학습할 수 있어요.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="hfaq__group" data-cat="payment">
+          <div class="hfaq__group-head">
+            <h2 class="hfaq__group-title">결제 / 환불</h2>
+            <p class="hfaq__group-count"><span data-group-count>6</span> QUESTIONS</p>
+          </div>
+          <ul class="hfaq__list">
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>어떤 결제 수단을 쓸 수 있나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>신용·체크카드, 간편결제 등을 지원해요. 자세한 수단은 결제 화면에서 확인할 수 있습니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>환불 규정이 궁금해요.</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>결제 후 7일 이내이고 수강률 10% 미만이면 전액 환불돼요. 이후에는 진도율에 따라 산정됩니다. 자세한 내용은 ‘환불 규정’ 페이지를 참고하세요.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>환불은 어디서 신청하나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>마이 둥지 &gt; 결제내역에서 신청하면 영업일 기준 3일 내 처리됩니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>쿠폰과 도토리를 함께 쓸 수 있나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>쿠폰 할인 후 결제 금액에 도토리를 사용할 수 있어요. 중복 조건은 결제 화면에서 안내됩니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>현금영수증·세금계산서 발급이 되나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>개인 결제는 현금영수증을, 사업자·단체 결제는 세금계산서 발급을 지원해요. 결제 시 또는 고객센터로 요청할 수 있습니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>결제가 자꾸 실패해요.</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>카드 한도·해외결제 차단 여부를 먼저 확인해주세요. 그래도 안 되면 다른 수단을 이용하거나 고객센터로 후트해 주세요.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="hfaq__group" data-cat="subscribe">
+          <div class="hfaq__group-head">
+            <h2 class="hfaq__group-title">구독 (올나잇 패스)</h2>
+            <p class="hfaq__group-count"><span data-group-count>6</span> QUESTIONS</p>
+          </div>
+          <ul class="hfaq__list">
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>올나잇 패스로 모든 강의를 볼 수
+                    있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>아니요. 구독 대상(사진영상·드로잉·운동·공예·요리 + 디자인 일부) 클래스만 무제한이에요. 개발·커리어 등 소장 배지 클래스는 개별 구매가 필요합니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>무료 체험이 있나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>네. 신규 가입 시 ‘첫 둥지 트는 밤’ 혜택으로 7일 무료 체험과 20% 쿠폰을 드려요. 체험 중 해지하면 요금이 청구되지 않습니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>해지하면 바로 못 보나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>해지해도 결제한 기간까지는 이용할 수 있어요. 자동 결제만 중단됩니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>월간과 연간의 차이는요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>연간(159,000원)은 월 환산 13,250원으로 월간(19,900원)보다 알뜰해요. 꾸준히 볼 계획이라면 연간을 추천합니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>구독 중에 소장 클래스를 사면 어떻게
+                    되나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>소장 클래스는 구독과 별개로 구매하며, 구매 후엔 구독을 해지해도 평생 소장돼요.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>디자인 카테고리는 왜 일부만
+                    포함인가요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>디자인 &amp; 크리에이티브는 취미형(구독)과 실무 심화형(단건)이 섞여 있어요. 카드의 구독/소장 배지로 구분됩니다.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="hfaq__group" data-cat="own">
+          <div class="hfaq__group-head">
+            <h2 class="hfaq__group-title">소장 / 로드맵</h2>
+            <p class="hfaq__group-count"><span data-group-count>5</span> QUESTIONS</p>
+          </div>
+          <ul class="hfaq__list">
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>평생 소장은 정말 평생 볼 수
+                    있나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>네. 한 번 구매하면 기간 제한 없이 반복 수강할 수 있어요.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>레벨업 로드맵 패키지는 뭔가요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>연관 클래스를 STEP 순서로 묶은 과정이에요. 패키지로 담으면 추가 18% 할인되고, 완주 시 로드맵 수료 인증(졸업 부엉이)을 받아요.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>로드맵을 STEP별로 하나씩 사도
+                    되나요?</span></span><span class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>네. 개별 구매도 가능해요. 다만 패키지로 묶어 담으면 추가 18% 할인이 적용됩니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>소장한 클래스도 업데이트되나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>강의가 개정되면 소장 회원도 별도 비용 없이 업데이트된 버전을 볼 수 있어요.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>클래스를 선물할 수 있나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>선물하기를 지원하는 클래스는 결제 시 ‘선물’ 옵션으로 보낼 수 있어요. 받는 분은 코드로 등록해 소장합니다.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="hfaq__group" data-cat="account">
+          <div class="hfaq__group-head">
+            <h2 class="hfaq__group-title">계정</h2>
+            <p class="hfaq__group-count"><span data-group-count>5</span> QUESTIONS</p>
+          </div>
+          <ul class="hfaq__list">
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>회원가입은 어떻게 하나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>이메일 또는 간편가입으로 가입할 수 있어요. 신규가입 시 ‘첫 둥지 트는 밤’ 혜택(7일 무료 + 20% 쿠폰)이 제공됩니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>비밀번호를 잊었어요.</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>로그인 화면의 ‘비밀번호 찾기’에서 이메일 인증 후 재설정할 수 있어요.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>이메일이나 닉네임을 바꿀 수 있나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>마이 둥지 &gt; 계정 설정에서 변경할 수 있어요. 일부 항목은 보안을 위해 재인증이 필요할 수 있습니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>여러 기기에서 로그인할 수 있나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>웹·모바일에서 함께 사용할 수 있고 시청 기록이 동기화돼요. 다만 비정상적 동시 접속은 제한될 수 있습니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>회원 탈퇴는 어떻게 하나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>마이 둥지 &gt; 계정 설정에서 신청할 수 있어요. 탈퇴 시 보유 도토리·수강 이력은 소멸되니 신중히 진행해주세요.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="hfaq__group" data-cat="cert">
+          <div class="hfaq__group-head">
+            <h2 class="hfaq__group-title">수료증 / 도토리</h2>
+            <p class="hfaq__group-count"><span data-group-count>5</span> QUESTIONS</p>
+          </div>
+          <ul class="hfaq__list">
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>수료증(졸업모)은 어떻게 받나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>강의를 100% 완강하면 졸업모(수료증)가 자동 발급되어 마이 둥지에서 다운로드할 수 있어요.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>도토리는 어디에 쓰나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>적립한 도토리는 결제 시 사용할 수 있어요. 후기 작성·로드맵 완주 등으로 적립됩니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>도토리는 어떻게 적립하나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>수강 후기 작성, 로드맵 완주, 이벤트 참여 등으로 쌓여요. 적립 내역은 마이 둥지에서 확인할 수 있습니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>도토리에 유효기간이 있나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>적립일로부터 일정 기간 후 소멸될 수 있어요. 만료 예정 도토리는 사전에 후트 알림으로 안내드립니다.</p>
+              </div>
+            </li>
+            <li class="hfaq__item"><button type="button" class="hfaq__q" aria-expanded="false"><span
+                  class="hfaq__q-text"><span class="hfaq__q-mark">Q.</span><span>로드맵을 완주하면 뭐가 달라지나요?</span></span><span
+                  class="hfaq__q-icon" aria-hidden="true"></span></button>
+              <div class="hfaq__answer">
+                <p>마지막 STEP까지 완강하면 로드맵 수료 인증(졸업 부엉이)과 완주 보너스 도토리를 받아요.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <div class="hfaq__empty" data-faq-empty hidden>
+          <p class="hfaq__empty-title">검색 결과가 없어요.</p>
+          <p class="hfaq__empty-desc">다른 키워드로 찾아보거나, 고객센터로 문의해 주세요</p>
+        </div>
+      </div>
+    </section>
 
- <!-- ===== 하단 CTA ===== -->
- <section class="lp-cta" data-screen-label="고객센터">
- <div class="l-container hfaq__cta-inner">
- <h2 class="hfaq__cta-title">원하는 답을 못 찾으셨나요?<br>언제든 고객센터로 문의해 주세요</h2>
- <div class="lp-cta-actions">
- <a class="hfaq__cta-btn hfaq__cta-btn--accent" href="tel:0212345678">02-1234-5678</a>
- <a class="hfaq__cta-btn hfaq__cta-btn--ghost" href="mailto:help@hootup.co.kr">help@hootup.co.kr</a>
- </div>
- <p class="hfaq__cta-hours">주중 10:00–18:00 · 주말·공휴일 휴무</p>
- <p class="hfaq__cta-disclaimer">＊본 페이지는 포트폴리오용 가상 콘텐츠입니다.</p>
- </div>
- </section>
+    <!-- ===== 하단 CTA ===== -->
+    <section class="lp-cta" data-screen-label="고객센터">
+      <div class="l-container hfaq__cta-inner">
+        <h2 class="hfaq__cta-title">원하는 답을 못 찾으셨나요?<br>언제든 고객센터로 문의해 주세요</h2>
+        <div class="lp-cta-actions">
+          <a class="hfaq__cta-btn hfaq__cta-btn--accent" href="tel:0212345678">02-1234-5678</a>
+          <a class="hfaq__cta-btn hfaq__cta-btn--ghost" href="mailto:help@hootup.co.kr">help@hootup.co.kr</a>
+        </div>
+        <p class="hfaq__cta-hours">주중 10:00–18:00 · 주말·공휴일 휴무</p>
+        <p class="hfaq__cta-disclaimer">＊본 페이지는 포트폴리오용 가상 콘텐츠입니다.</p>
+      </div>
+    </section>
 
-</main>
+  </main>
 
-<footer class="site-footer">
- <div class="site-footer__inner l-container">
+  <footer class="site-footer">
+    <div class="site-footer__inner l-container">
 
- <div class="site-footer__top">
- <div class="site-footer__brand">
- <img class="site-footer__logo" src="assets/brand/logo-white.svg" alt="HOOT UP" loading="lazy">
- <p class="site-footer__slogan">밤에도 깨어 배우는 사람들의 아지트</p>
- </div>
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <img class="site-footer__logo" src="assets/brand/logo-white.svg" alt="HOOT UP" loading="lazy">
+          <p class="site-footer__slogan">밤에도 깨어 배우는 사람들의 아지트</p>
+        </div>
 
- <nav class="site-footer__nav" aria-label="푸터 메뉴">
- <section class="link-group">
- <h2 class="link-group__title">HOOT UP</h2>
- <ul class="link-group__list">
- <li><a class="link-group__link" href="brand-story.html">브랜드 스토리</a></li>
- <li><a class="link-group__link" href="desk.html">훗업 데스크(뉴스)</a></li>
- <li><a class="link-group__link" href="magazine.html">훗업 매거진(블로그)</a></li>
- <li><a class="link-group__link" href="b2b.html">단체 교육 (B2B)</a></li>
- <li><a class="link-group__link" href="careers.html">채용 안내</a></li>
- </ul>
- </section>
+        <nav class="site-footer__nav" aria-label="푸터 메뉴">
+          <section class="link-group">
+            <h2 class="link-group__title">HOOT UP</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="brand-story.html">브랜드 스토리</a></li>
+              <li><a class="link-group__link" href="desk.html">훗업 데스크(뉴스)</a></li>
+              <li><a class="link-group__link" href="magazine.html">훗업 매거진(블로그)</a></li>
+              <li><a class="link-group__link" href="b2b.html">단체 교육 (B2B)</a></li>
+              <li><a class="link-group__link" href="careers.html">채용 안내</a></li>
+            </ul>
+          </section>
 
- <section class="link-group">
- <h2 class="link-group__title">둘러보기</h2>
- <ul class="link-group__list">
- <li><a class="link-group__link" href="sitemap.html">전체 카테고리</a></li>
- <li><a class="link-group__link" href="best.html">훗업 차트(베스트)</a></li>
- <li><a class="link-group__link" href="new.html">갓 부화한 클래스(새로운)</a></li>
- <li><a class="link-group__link" href="event-1.html">훗업 페스타(이벤트 할인)</a></li>
- <li><a class="link-group__link" href="roadmap.html">레벨업 로드맵</a></li>
- <li><a class="link-group__link" href="subscribe.html">올나잇 패스(구독)</a></li>
- </ul>
- </section>
+          <section class="link-group">
+            <h2 class="link-group__title">둘러보기</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="sitemap.html">전체 카테고리</a></li>
+              <li><a class="link-group__link" href="best.html">훗업 차트(베스트)</a></li>
+              <li><a class="link-group__link" href="new.html">갓 부화한 클래스(새로운)</a></li>
+              <li><a class="link-group__link" href="event-1.html">훗업 페스타(이벤트 할인)</a></li>
+              <li><a class="link-group__link" href="roadmap.html">레벨업 로드맵</a></li>
+              <li><a class="link-group__link" href="subscribe.html">올나잇 패스(구독)</a></li>
+            </ul>
+          </section>
 
- <section class="link-group">
- <h2 class="link-group__title">크리에이터 지원</h2>
- <ul class="link-group__list">
- <li><a class="link-group__link" href="creator-apply.html">클래스 개설 문의하기</a></li>
- <li><a class="link-group__link" href="creator-guide.html">크리에이터 가이드</a></li>
- <li><a class="link-group__link" href="creator-studio.html">스튜디오 대여</a></li>
- <li><a class="link-group__link" href="creator-settlement.html">정산・수익 안내</a></li>
- <li><a class="link-group__link" href="creator-mentor.html">멘토 교육 지원</a></li>
- </ul>
- </section>
+          <section class="link-group">
+            <h2 class="link-group__title">크리에이터 지원</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="creator-apply.html">클래스 개설 문의하기</a></li>
+              <li><a class="link-group__link" href="creator-guide.html">크리에이터 가이드</a></li>
+              <li><a class="link-group__link" href="creator-studio.html">스튜디오 대여</a></li>
+              <li><a class="link-group__link" href="creator-settlement.html">정산・수익 안내</a></li>
+              <li><a class="link-group__link" href="creator-mentor.html">멘토 교육 지원</a></li>
+            </ul>
+          </section>
 
- <section class="link-group">
- <h2 class="link-group__title">고객센터</h2>
- <ul class="link-group__list">
- <li><a class="link-group__link" href="notice.html">공지사항</a></li>
- <li><a class="link-group__link" href="faq.html">자주 묻는 질문(FAQ)</a></li>
- <li><a class="link-group__link" href="terms.html">이용약관</a></li>
- <li><a class="link-group__link" href="privacy.html">개인정보처리방침</a></li>
- <li><a class="link-group__link" href="refund.html">환불 규정</a></li>
- </ul>
- </section>
- </nav>
- </div>
+          <section class="link-group">
+            <h2 class="link-group__title">고객센터</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="notice.html">공지사항</a></li>
+              <li><a class="link-group__link" href="faq.html">자주 묻는 질문(FAQ)</a></li>
+              <li><a class="link-group__link" href="terms.html">이용약관</a></li>
+              <li><a class="link-group__link" href="privacy.html">개인정보처리방침</a></li>
+              <li><a class="link-group__link" href="refund.html">환불 규정</a></li>
+            </ul>
+          </section>
+        </nav>
+      </div>
 
- <hr class="site-footer__rule">
+      <hr class="site-footer__rule">
 
- <div class="site-footer__contact">
- <section class="contact-desk">
- <h2 class="contact-desk__title">고객센터</h2>
- <p class="contact-desk__tel"><a href="tel:0212345678">02-1234-5678</a></p>
- <p class="contact-desk__hours">주중 10:00–18:00 / 주말·공휴일 휴무</p>
- </section>
+      <div class="site-footer__contact">
+        <section class="contact-desk">
+          <h2 class="contact-desk__title">고객센터</h2>
+          <p class="contact-desk__tel"><a href="tel:0212345678">02-1234-5678</a></p>
+          <p class="contact-desk__hours">주중 10:00–18:00 / 주말·공휴일 휴무</p>
+        </section>
 
- <dl class="contact-mail">
- <div class="contact-mail__group">
- <dt class="contact-mail__label">환불 문의</dt>
- <dd class="contact-mail__value"><a href="mailto:refund@hootup.co.kr">refund@hootup.co.kr</a></dd>
- </div>
- <div class="contact-mail__group">
- <dt class="contact-mail__label">기타 문의</dt>
- <dd class="contact-mail__value"><a href="mailto:help@hootup.co.kr">help@hootup.co.kr</a></dd>
- </div>
- <div class="contact-mail__group">
- <dt class="contact-mail__label">크리에이터 지원</dt>
- <dd class="contact-mail__value"><a href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a></dd>
- </div>
- </dl>
- </div>
+        <dl class="contact-mail">
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">환불 문의</dt>
+            <dd class="contact-mail__value"><a href="mailto:refund@hootup.co.kr">refund@hootup.co.kr</a></dd>
+          </div>
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">기타 문의</dt>
+            <dd class="contact-mail__value"><a href="mailto:help@hootup.co.kr">help@hootup.co.kr</a></dd>
+          </div>
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">크리에이터 지원</dt>
+            <dd class="contact-mail__value"><a href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a></dd>
+          </div>
+        </dl>
+      </div>
 
- <hr class="site-footer__rule">
+      <hr class="site-footer__rule">
 
- <div class="site-footer__legal">
- <nav class="policy" aria-label="약관 및 정책">
- <ul class="policy__list">
- <li><a class="policy__link" href="terms.html">이용약관</a></li>
- <li><a class="policy__link" href="privacy.html">개인정보처리방침</a></li>
- <li><a class="policy__link" href="youth.html">청소년 보호정책</a></li>
- <li><a class="policy__link" href="refund.html">환불 규정</a></li>
- <li><a class="policy__link" href="business.html">사업자정보 확인</a></li>
- </ul>
- </nav>
+      <div class="site-footer__legal">
+        <nav class="policy" aria-label="약관 및 정책">
+          <ul class="policy__list">
+            <li><a class="policy__link" href="terms.html">이용약관</a></li>
+            <li><a class="policy__link" href="privacy.html">개인정보처리방침</a></li>
+            <li><a class="policy__link" href="youth.html">청소년 보호정책</a></li>
+            <li><a class="policy__link" href="refund.html">환불 규정</a></li>
+            <li><a class="policy__link" href="business.html">사업자정보 확인</a></li>
+          </ul>
+        </nav>
 
- <address class="company">
- <p class="company__line">
- <span>(주)훗업 컴퍼니</span>
- <span>대표자 : 신호진</span>
- <span>사업자등록번호 : 123-45-67890</span>
- <span>개인정보책임관리자 : 신호진</span>
- </p>
- <p class="company__line">
- <span>통신판매신고 : 제 2026-서울서초-1234호</span>
- <span>(06621) 서울 서초구 강남대로 373, 10층</span>
- </p>
- </address>
+        <address class="company">
+          <p class="company__line">
+            <span>(주)훗업 컴퍼니</span>
+            <span>대표자 : 신호진</span>
+            <span>사업자등록번호 : 123-45-67890</span>
+            <span>개인정보책임관리자 : 신호진</span>
+          </p>
+          <p class="company__line">
+            <span>통신판매신고 : 제 2026-서울서초-1234호</span>
+            <span>(06621) 서울 서초구 강남대로 373, 10층</span>
+          </p>
+        </address>
 
- <p class="site-footer__copyright"><small>Copyright © HOOT UP. All rights reserved.</small></p>
- </div>
+        <p class="site-footer__copyright"><small>Copyright © HOOT UP. All rights reserved.</small></p>
+      </div>
 
- </div>
-</footer>
+    </div>
+  </footer>
 
 </body>
+
 </html>

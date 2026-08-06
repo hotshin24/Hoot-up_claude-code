@@ -5847,11 +5847,12 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .hfaq .hfaq__hero-mascot .brand-hero__box { max-width: 240px; font-size: var(--text-h3-size); }
 
 /* ===== 카테고리 필터 (스티키) ===== */
-.hfaq .hfaq__filter { position: sticky; top: 0; z-index: 5; background: rgb(255 255 255 / 0.94); backdrop-filter: blur(4px); border-bottom: 1px solid var(--color-neutral-lighter); }
-.hfaq .hfaq__filter-list { display: flex; flex-wrap: wrap; gap: var(--space-xs); padding-block: 18px; }
-.hfaq .hfaq__tab { display: inline-flex; align-items: center; justify-content: center; padding: 11px 25px; border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-pill); background: var(--color-neutral-lightest); color: var(--color-neutral-base); font-family: inherit; font-size: 15px; font-weight: var(--font-weight-regular); line-height: 22px; cursor: pointer; transition: background-color .15s ease, color .15s ease, border-color .15s ease; }
-.hfaq .hfaq__tab:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
-.hfaq .hfaq__tab.is-active { background: var(--color-brand-base); border-color: var(--color-brand-base); color: var(--color-neutral-white); font-weight: var(--font-weight-bold); padding: 10px 24px; }
+.hfaq .hfaq__filter { position: sticky; top: 0; z-index: 5; background: rgb(255 255 255 / 0.94); backdrop-filter: blur(4px); }
+.hfaq .hfaq__filter-list { display: flex; flex-wrap: wrap; gap: var(--space-xs); padding-block: 23px; border-bottom: 1px solid var(--color-neutral-lighter); }
+.hfaq .hfaq__tab { padding: 8px 17px; border: 1px solid var(--color-neutral-base); border-radius: var(--radius-pill); background-color: transparent; color: var(--color-neutral-base); font-size: 15px; line-height: var(--text-body-leading); cursor: pointer; transition: background-color var(--duration-fast) var(--easing-standard), color var(--duration-fast) var(--easing-standard), border-color var(--duration-fast) var(--easing-standard); }
+.hfaq .hfaq__tab:hover { border-color: var(--color-brand-base); }
+.hfaq .hfaq__tab.is-active { background-color: var(--color-brand-base); border-color: var(--color-brand-base); color: var(--color-text-inverse); font-weight: var(--font-weight-bold); }
+.hfaq .hfaq__tab.is-active:hover { border-color: var(--color-brand-base); }
 
 /* ===== FAQ 목록 ===== */
 .hfaq .hfaq__list-sec { background: var(--color-neutral-white); }
@@ -5878,7 +5879,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .hfaq .hfaq__empty-desc { margin-top: var(--space-xs); color: var(--color-neutral-base); font-size: var(--text-body-size); line-height: 28px; }
 .hfaq .hfaq__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 28px; padding-block: 90px; text-align: center; }
 .hfaq .hfaq__cta-title { font-family: var(--font-body); font-weight: var(--font-weight-bold); font-size: 30px; line-height: 45px; color: var(--color-neutral-white); }
-.hfaq .hfaq__cta-btn { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-pill); font-weight: var(--font-weight-bold); font-size: 17px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
+.hfaq .hfaq__cta-btn { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); font-weight: var(--font-weight-bold); font-size: 17px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
 .hfaq .hfaq__cta-btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); padding: 14px 40px; }
 .hfaq .hfaq__cta-btn--accent:hover { background: var(--color-brand-secondary-dark); }
 .hfaq .hfaq__cta-btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); padding: 15px 41px; }
