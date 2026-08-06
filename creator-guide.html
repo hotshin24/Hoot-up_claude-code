@@ -16,25 +16,7 @@
 
   <script src="js/common.js" defer></script>
   <script src="js/carousel.js" defer></script>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-(function(){
-  var wrap=document.querySelector('[data-checklist]');
-  if(!wrap) return;
-  var out=document.querySelector('[data-check-done]');
-  var btns=wrap.querySelectorAll('.creator-guide__check');
-  function sync(){ var n=wrap.querySelectorAll('.creator-guide__check.is-checked').length; if(out) out.textContent=n; }
-  btns.forEach(function(b){
-    b.setAttribute('aria-pressed','false');
-    b.addEventListener('click', function(){
-      var on=b.classList.toggle('is-checked');
-      b.setAttribute('aria-pressed', on?'true':'false');
-      sync();
-    });
-  });
-})();
-  });
-  </script>
+  <script src="js/creator-guide.js" defer></script>
 </head>
 <body>
 
@@ -274,7 +256,7 @@
         <p class="lp-hero-lead">크리에이터 가이드</p>
         <p class="lp-hero-desc">기획부터 촬영·편집·오픈까지. 처음이어도 헤매지 않도록, 훗업이 쌓은<br>노하우를 단계별로 정리했어요.</p>
         <div class="lp-hero-actions">
-          <a class="lp-btn lp-btn--primary" href="creator-apply.html">개설 문의하기 ↑</a>
+          <a class="lp-btn lp-btn--primary" href="creator-apply.html">개설 문의하기</a>
           <a class="lp-btn lp-btn--ghost" href="creator-studio.html">스튜디오 대여 알아보기</a>
         </div>
       </div>
@@ -426,10 +408,10 @@
         <h2 class="lp-title-plain">훗업이 함께하는 것</h2>
       </div>
       <ul class="creator-guide__support-list">
-        <li class="creator-guide__support-card"><span class="creator-guide__support-label">COACHING</span><p class="creator-guide__support-text">커리큘럼 설계 코칭 (러닝 디자인 팀)</p></li>
-        <li class="creator-guide__support-card"><span class="creator-guide__support-label">STUDIO</span><p class="creator-guide__support-text">스튜디오 · 장비 대여</p></li>
-        <li class="creator-guide__support-card"><span class="creator-guide__support-label">PRODUCTION</span><p class="creator-guide__support-text">편집 · 페이지 제작 지원</p></li>
-        <li class="creator-guide__support-card"><span class="creator-guide__support-label">REPORT</span><p class="creator-guide__support-text">오픈 후 성장 데이터 리포트</p></li>
+        <li class="creator-guide__support-card step-card--ring"><span class="creator-guide__support-label">COACHING</span><p class="creator-guide__support-text">커리큘럼 설계 코칭<br>(러닝 디자인 팀)</p></li>
+        <li class="creator-guide__support-card step-card--ring"><span class="creator-guide__support-label">STUDIO</span><p class="creator-guide__support-text">스튜디오 · 장비 대여</p></li>
+        <li class="creator-guide__support-card step-card--ring"><span class="creator-guide__support-label">PRODUCTION</span><p class="creator-guide__support-text">편집 · 페이지 제작 지원</p></li>
+        <li class="creator-guide__support-card step-card--ring"><span class="creator-guide__support-label">REPORT</span><p class="creator-guide__support-text">오픈 후 성장 데이터 리포트</p></li>
       </ul>
     </div>
   </section>
@@ -457,7 +439,7 @@
   <section class="creator-guide__cta" data-screen-label="마무리">
     <div class="l-container lp-cta-inner">
       <h2 class="lp-cta-title">잘 가르치는 건 재능이 아니라 설계예요.<br>그 설계, 훗업이 같이 할게요.</h2>
-      <a class="lp-btn lp-btn--primary lp-btn--lg" href="creator-apply.html">클래스 개설 문의하기 ↑</a>
+      <a class="lp-btn lp-btn--primary lp-btn--lg" href="creator-apply.html">개설 문의하기</a>
     </div>
   </section>
 

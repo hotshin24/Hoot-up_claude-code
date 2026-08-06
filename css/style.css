@@ -5617,7 +5617,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-guide .creator-guide__support { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, var(--color-brand-dark) 98.8%); }
 .creator-guide .creator-guide__support .lp-title-plain { color: var(--color-neutral-white); }
 .creator-guide .creator-guide__support-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.creator-guide .creator-guide__support-card { display: flex; flex-direction: column; gap: 10px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.16); border-radius: 20px; padding: 31px 27px; }
+.creator-guide .creator-guide__support-card { display: flex; flex-direction: column; gap: 10px; background: rgb(255 255 255 / 0.08); border-radius: 20px; padding: 31px 27px; }
 .creator-guide .creator-guide__support-label { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; color: var(--color-brand-secondary); }
 .creator-guide .creator-guide__support-text { font-weight: 700; font-size: 18px; line-height: 28px; color: var(--color-neutral-white); }
 
