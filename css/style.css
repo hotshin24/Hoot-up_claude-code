@@ -5173,7 +5173,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .lp-btn--compact { padding: 14px 36px; }
 .lp-btn--lg { padding: 15px 44px; font-size: 17px; }
 .lp-btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
-.lp-btn--primary:hover { background: var(--color-brand-darker); }
 .lp-btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
 .lp-btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
 .lp-btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
