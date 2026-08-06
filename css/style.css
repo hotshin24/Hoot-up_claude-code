@@ -5553,7 +5553,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-apply .creator-apply__req { color: var(--color-danger-base); }
 .creator-apply .creator-apply__optional { color: var(--color-neutral-light); font-weight: var(--font-weight-regular); }
 .creator-apply .creator-apply__input,
-.creator-apply .creator-apply__textarea { width: 100%; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md); padding: 14px 21px; font-family: inherit; font-size: var(--text-body-size); line-height: 22px; color: var(--color-neutral-darker); transition: border-color .15s ease, box-shadow .15s ease; }
+.creator-apply .creator-apply__textarea { width: 100%; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-sm); padding: 14px 21px; font-family: inherit; font-size: var(--text-body-size); line-height: 22px; color: var(--color-neutral-darker); transition: border-color .15s ease, box-shadow .15s ease; }
 .creator-apply .creator-apply__textarea { min-height: 138px; padding: 17px 21px; line-height: 26px; resize: vertical; }
 .creator-apply .creator-apply__input::placeholder,
 .creator-apply .creator-apply__textarea::placeholder { color: var(--color-neutral-light); }
@@ -6162,6 +6162,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   vertical-align: -3px;
   margin: 0 2px;
 }
+.signup__result { color: var(--color-brand-base); font-size: 15px; line-height: 24px; font-weight: var(--font-weight-bold); }
+.ca-modal-actions { display: flex; justify-content: center; gap: 12px; margin-top: 24px; }
+.ca-modal-actions .btn--solid:hover { background-color: var(--color-brand-base); }
 
 /* ----- 쿠폰 일러스트 ----- */
 .signup__coupon {
