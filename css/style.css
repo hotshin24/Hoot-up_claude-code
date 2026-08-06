@@ -2068,21 +2068,28 @@ hr {
   border-radius: var(--radius-md);
   overflow: hidden;
   background-color: var(--color-neutral-darker);
-  background-image:
-    linear-gradient(90deg, rgb(15 23 42 / 0.55), rgb(15 23 42 / 0.1)),
-    var(--category-banner-image, url("../assets/category/dev-it-banner.jpg"));
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-/* 이미지 없이 브랜드 그라디언트로 채우는 배너 (베스트 클래스 등) */
-.category-banner.category-banner--plain {
-  background-image: linear-gradient(
-    100deg,
-    var(--color-neutral-darker),
-    var(--color-brand-base)
-  );
+/* 배너 이미지 — 페이지별 모디파이어 (오버레이 없이 이미지만) */
+.category-banner--dev-it          { background-image: url("../assets/category/dev-it-banner.jpg"); }
+.category-banner--career-money    { background-image: url("../assets/category/career-money-banner.jpg"); }
+.category-banner--design-creative { background-image: url("../assets/category/design-creative-banner.jpg"); }
+.category-banner--photo-video     { background-image: url("../assets/category/photo-video-banner.jpg"); }
+.category-banner--drawing-illust  { background-image: url("../assets/category/drawing-illust-banner.jpg"); }
+.category-banner--craft           { background-image: url("../assets/category/craft-banner.jpg"); }
+.category-banner--cooking         { background-image: url("../assets/category/cooking-banner.jpg"); }
+.category-banner--wellness        { background-image: url("../assets/category/wellness-banner.jpg"); }
+.category-banner--new-hatch       { background-image: url("../assets/banner/new-hatch.jpg"); }
+.category-banner--signature       { background-image: url("../assets/banner/signature.jpg"); }
+.category-banner--earlybird       { background-image: url("../assets/banner/earlybird.jpg"); }
+.category-banner--best-chart      { background-image: url("../assets/banner/best-chart.jpg"); }
+
+/* 훗업 페스타(이벤트) 배너 — 오버레이 없이 이미지만 (CSS로 이관) */
+.category-banner.category-banner--festa {
+  background-image: url("../assets/banner/festa-event.jpg");
 }
 
 .category-banner__title {
