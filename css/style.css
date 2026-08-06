@@ -5326,7 +5326,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .roadmap__pad { padding-block: 110px; }
 .roadmap .roadmap__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(38px, 4.6vw, 54px); line-height: 1.22; letter-spacing: -1.08px; }
 .roadmap .roadmap__hero-desc { max-width: 560px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
-.roadmap .roadmap__hero-note { align-self: flex-start; background: var(--color-brand-secondary); color: var(--color-neutral-darker); font-weight: 700; font-size: 18px; line-height: 22px; border-radius: 20px; padding: 12px 24px; }
+.roadmap .roadmap__hero-note { align-self: flex-start; background: var(--color-brand-secondary); color: var(--color-neutral-darker); font-weight: 700; font-size: 18px; line-height: 22px; border-radius: var(--radius-sm); padding: 12px 24px; }
 
 /* ===== 섹션 배경 ===== */
 .roadmap .roadmap__how { background: var(--color-neutral-white); }
@@ -5340,7 +5340,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 01 HOW IT WORKS ===== */
 .roadmap .roadmap__how-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.roadmap .roadmap__how-card { display: flex; flex-direction: column; gap: 12px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 29px; }
+.roadmap .roadmap__how-card { display: flex; flex-direction: column; gap: 12px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 29px; transition: border-color 200ms cubic-bezier(0.2, 0, 0.2, 1), box-shadow 200ms; }
+.roadmap .roadmap__how-card:hover { border-color: var(--color-brand-base); box-shadow: 0 0 10px rgb(22 103 250 / 0.16); }
 .roadmap .roadmap__how-num { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 28px; line-height: 28px; color: var(--color-brand-lighter); }
 .roadmap .roadmap__how-title { font-weight: 700; font-size: 20px; line-height: 28px; color: var(--color-neutral-darker); }
 .roadmap .roadmap__how-desc { color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
@@ -5403,7 +5404,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 04 BENEFITS ===== */
 .roadmap .roadmap__benefit-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.roadmap .roadmap__benefit { display: flex; flex-direction: column; gap: 12px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.16); border-radius: 20px; padding: 33px 29px; }
+.roadmap .roadmap__benefit { display: flex; flex-direction: column; gap: 12px; background: rgb(255 255 255 / 0.08); border-radius: 20px; padding: 33px 29px; }
 .roadmap .roadmap__benefit-title { color: var(--color-brand-secondary); font-weight: 700; font-size: 20px; line-height: 28px; }
 .roadmap .roadmap__benefit-desc { color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
 .roadmap .roadmap__cta-disclaimer { color: rgb(147 162 183 / 0.9); font-size: 14px; line-height: 24px; }
