@@ -5159,7 +5159,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .lp-cta-title { color: var(--color-neutral-darker); font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: 32px; font-weight: 700; line-height: 48px; max-width: 780px; }
 .lp-cta-title-light { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: 32px; font-weight: 700; line-height: 48px; max-width: 780px; }
 .lp-cta-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; justify-content: center; }
-.lp-cta-actions-wide { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; justify-content: center; }
+.lp-cta-actions-wide { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; }
 .lp-faq-item { background: var(--color-neutral-white); border-radius: 20px; border: 1px solid var(--color-neutral-lighter); padding: 33px 31px; }
 .lp-faq-q { color: var(--color-neutral-darker); display: flex; font-size: 19px; font-weight: 700; gap: 10px; line-height: 28px; }
 .lp-faq-a { color: var(--color-neutral-base); font-size: 16px; line-height: 28px; margin-top: 14px; }
@@ -5581,7 +5581,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-apply .lp-faq-q span:first-child { color: var(--color-brand-base); }
 .creator-apply .creator-apply__cta-line { color: var(--color-brand-lighter); font-size: 16px; line-height: 22px; }
 .creator-apply .creator-apply__cta-line a { color: var(--color-brand-secondary); font-weight: 700; }
-.creator-apply .lp-cta-actions-wide { flex-direction: column; gap: 20px; }
 .creator-guide__pad { padding-block: 100px; }
 .creator-guide .creator-guide__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-accent); }
 
@@ -5726,7 +5725,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .settlement .lp-faq-q span:first-child { color: var(--color-brand-base); }
 .settlement .settlement__cta-line { color: var(--color-neutral-base); font-size: 16px; line-height: 22px; }
 .settlement .settlement__cta-line a { color: var(--color-brand-base); font-weight: 700; }
-.settlement .lp-cta-actions-wide { flex-direction: column; gap: 20px; }
 .settlement .settlement__cta-disclaimer { color: var(--color-neutral-light); font-size: 14px; line-height: 24px; }
 .mentor__pad { padding-block: 100px; }
 
@@ -5745,7 +5743,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 01 지원 프로그램 카드 ===== */
 .mentor .mentor__prog-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.mentor .mentor__prog { display: flex; flex-direction: column; gap: 14px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 35px 31px; }
+.mentor .mentor__prog { display: flex; flex-direction: column; gap: 14px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 35px 31px; transition: border-color 200ms cubic-bezier(0.2, 0, 0.2, 1), box-shadow 200ms; }
+.mentor .mentor__prog:hover { border-color: var(--color-brand-base); box-shadow: 0 0 10px rgb(22 103 250 / 0.16); }
 .mentor .mentor__prog-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .mentor .mentor__prog-no { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 30px; line-height: 30px; color: var(--color-brand-lighter); }
 .mentor .mentor__prog-tag { background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); color: var(--color-brand-base); border-radius: 30px; padding: 6px 15px; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.88px; }
