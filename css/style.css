@@ -6024,15 +6024,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .youth .terms__p + .youth__list { margin-top: var(--space-md); }
 
 /* 하단 신고·상담 CTA */
-.youth__cta { margin-top: 48px; padding: 32px 30px; background: var(--color-neutral-darker); border-radius: 16px; }
-.youth__cta-title { color: var(--color-brand-secondary); font-weight: var(--font-weight-bold); font-size: 18px; line-height: 26px; }
-.youth__cta-sub { margin-top: 8px; color: var(--color-neutral-light); font-size: 15px; line-height: 26px; }
-.youth__cta-actions { margin-top: 22px; display: flex; flex-wrap: wrap; gap: var(--space-xs); }
-.youth__cta-btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 26px; border-radius: var(--radius-sm); font-weight: var(--font-weight-bold); font-size: 15px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
-.youth__cta-btn--phone { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
-.youth__cta-btn--phone:hover { background: var(--color-brand-secondary-dark); }
-.youth__cta-btn--mail { border: 1px solid rgb(255 255 255 / 0.25); color: var(--color-neutral-white); }
-.youth__cta-btn--mail:hover { border-color: var(--color-neutral-white); }
 
 /* ============================================================
    사업자정보 확인 — business.html (Figma 210-23593)
@@ -8560,7 +8551,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .terms .terms__contact { padding: 28px; }
   .terms .terms__h2-title { font-size: 21px; }
   .refund__terms { grid-template-columns: 1fr; }
-  .youth__cta-btn { flex: 1 1 100%; }
   .business__contacts { grid-template-columns: 1fr; }
   .business__row { grid-template-columns: 1fr; }
   .business__row dt { padding: 20px 24px 0; }
