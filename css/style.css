@@ -5421,9 +5421,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .subscribe .subscribe__pricing { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, var(--color-brand-dark) 98.8%); }
 .subscribe .subscribe__forme { background: var(--color-neutral-white); }
 .subscribe .subscribe__faq { background: var(--color-neutral-lightest); }
-.subscribe .lp-faq-item { transition: border-color 200ms cubic-bezier(0.2, 0, 0.2, 1), box-shadow 200ms; }
-.subscribe .lp-faq-item:hover { border-color: var(--color-brand-base); box-shadow: 0 0 10px rgb(22 103 250 / 0.16); }
-.subscribe .lp-faq-list { align-items: stretch; }
 
 /* 블루 섹션 헤더 색상 */
 .subscribe .subscribe__pricing .lp-eyebrow { color: var(--color-brand-accent); }
@@ -5539,7 +5536,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-apply .creator-apply__before-head .lp-head { margin-bottom: 0; gap: 14px; }
 .creator-apply .creator-apply__before-note { border-left: 3px solid var(--color-brand-secondary); padding-left: 27px; color: var(--color-neutral-base); font-size: 16px; line-height: 30px; }
 .creator-apply .creator-apply__cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.creator-apply .creator-apply__card { display: flex; flex-direction: column; gap: 12px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 29px; }
+.creator-apply .creator-apply__card { display: flex; flex-direction: column; gap: 12px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 29px; transition: border-color 200ms cubic-bezier(0.2, 0, 0.2, 1), box-shadow 200ms; }
+.creator-apply .creator-apply__card:hover { border-color: var(--color-brand-base); box-shadow: 0 0 10px rgb(22 103 250 / 0.16); }
 .creator-apply .creator-apply__card-num { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 28px; line-height: 28px; color: var(--color-brand-lighter); }
 .creator-apply .creator-apply__card-title { font-weight: 700; font-size: 20px; line-height: 28px; color: var(--color-neutral-darker); }
 .creator-apply .creator-apply__card-desc { color: var(--color-neutral-base); font-size: 16px; line-height: 26px; }
@@ -5560,7 +5558,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-apply .creator-apply__input::placeholder,
 .creator-apply .creator-apply__textarea::placeholder { color: var(--color-neutral-light); }
 .creator-apply .creator-apply__input:focus,
-.creator-apply .creator-apply__textarea:focus { outline: none; border-color: var(--color-brand-base); box-shadow: 0 0 0 3px rgb(22 103 250 / 0.12); }
+.creator-apply .creator-apply__textarea:focus { outline: none; }
 
 /* 칩(체크·라디오) */
 .creator-apply .creator-apply__fieldset { border: 0; margin: 0; padding: 0; }
@@ -5569,24 +5567,22 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-apply .creator-apply__chip { display: inline-flex; align-items: center; gap: 8px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 30px; padding: 11px 21px; cursor: pointer; color: var(--color-neutral-base); font-size: 15px; line-height: 22px; transition: border-color .15s ease, background-color .15s ease, color .15s ease; }
 .creator-apply .creator-apply__chip input { position: absolute; opacity: 0; width: 0; height: 0; }
 .creator-apply .creator-apply__chip-mark { width: 13px; height: 13px; flex-shrink: 0; border: 1px solid var(--color-neutral-light); border-radius: 50%; background: var(--color-neutral-white); transition: background-color .15s ease, border-color .15s ease; }
-.creator-apply .creator-apply__chip:hover { border-color: var(--color-brand-light); }
-.creator-apply .creator-apply__chip:has(input:checked) { border-color: var(--color-brand-base); background: var(--color-brand-lighter); color: var(--color-brand-darker); }
 .creator-apply .creator-apply__chip:has(input:checked) .creator-apply__chip-mark { background: var(--color-brand-base); border-color: var(--color-brand-base); box-shadow: inset 0 0 0 2px var(--color-neutral-white); }
-.creator-apply .creator-apply__chip:focus-within { border-color: var(--color-brand-base); box-shadow: 0 0 0 3px rgb(22 103 250 / 0.12); }
 
 /* 폼 하단 */
 .creator-apply .creator-apply__form-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--color-neutral-lighter); padding-top: 13px; }
 .creator-apply .creator-apply__privacy { font-size: 14px; line-height: 22px; }
-.creator-apply .creator-apply__submit { display: inline-flex; align-items: center; justify-content: center; background: var(--color-brand-base); border: 2px solid var(--color-neutral-darker); box-shadow: 0 0 2.5px rgb(0 0 0 / 0.1); border-radius: 30px; padding: 16px 46px; color: var(--color-neutral-white); font-family: inherit; font-weight: 700; font-size: 17px; line-height: 22px; cursor: pointer; transition: background-color .18s ease; }
-.creator-apply .creator-apply__submit:hover { background: var(--color-brand-darker); }
+.creator-apply .creator-apply__submit { display: inline-flex; align-items: center; justify-content: center; background: var(--color-brand-base); box-shadow: 0 0 2.5px rgb(0 0 0 / 0.1); border-radius: 30px; padding: 16px 46px; color: var(--color-neutral-white); font-family: inherit; font-weight: 700; font-size: 17px; line-height: 22px; cursor: pointer; }
 
 /* ===== 03 진행 절차(STEP) ===== */
 .creator-apply .creator-apply__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .creator-apply .creator-apply__next-note { margin-top: 30px; text-align: center; color: rgb(226 225 255 / 0.85); font-size: 14px; line-height: 26px; }
 .creator-apply .creator-apply__faq-item { background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 31px; }
+.creator-apply .lp-faq-list { align-items: stretch; grid-auto-rows: 1fr; }
 .creator-apply .lp-faq-q span:first-child { color: var(--color-brand-base); }
 .creator-apply .creator-apply__cta-line { color: var(--color-brand-lighter); font-size: 16px; line-height: 22px; }
 .creator-apply .creator-apply__cta-line a { color: var(--color-brand-secondary); font-weight: 700; }
+.creator-apply .lp-cta-actions-wide { flex-direction: column; gap: 20px; }
 .creator-guide__pad { padding-block: 100px; }
 .creator-guide .creator-guide__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-accent); }
 
