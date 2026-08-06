@@ -204,11 +204,6 @@ hr {
   box-shadow: var(--shadow-button);
   color: var(--color-text-inverse);
 }
-
-.btn--solid:hover {
-  background-color: var(--color-brand-darker);
-}
-
 .btn--outline {
   padding: var(--space-xs) var(--space-3xl);
   border: 1px solid var(--color-brand-base);
@@ -583,10 +578,7 @@ hr {
   background-color: var(--color-brand-base);
   color: var(--color-text-inverse);
 }
-.user-menu__auth--signup:hover {
-  background-color: var(--color-brand-darker);
-  color: var(--color-text-inverse);
-}
+.user-menu__auth--signup:hover { color: var(--color-text-inverse); }
 
 /* --- 글로벌 내비게이션 --- */
 .gnb {
@@ -2365,7 +2357,6 @@ hr {
   border-radius: var(--radius-pill);
   transition: background-color var(--duration-base) var(--easing-standard);
 }
-.course-hero__cta:hover { background-color: var(--color-brand-darker); }
 .course-hero__cta .icon { --icon-size: 20px; }
 .course-hero__illust {
   width: 400px;
@@ -3060,7 +3051,6 @@ hr {
 }
 .enroll-card__btn span { font-weight: var(--font-weight-regular); font-size: var(--text-caption-size); margin-left: var(--space-3xs); }
 .enroll-card__btn--primary { background-color: var(--color-brand-base); color: var(--color-neutral-white); }
-.enroll-card__btn--primary:hover { background-color: var(--color-brand-darker); }
 .enroll-card__btn--outline { border: 1px solid var(--color-brand-base); color: var(--color-brand-base); }
 .enroll-card__btn--outline:hover { background-color: var(--color-brand-base); color: var(--color-neutral-white); }
 .enroll-card__btn--wish { border: 1px solid var(--color-brand-accent); color: var(--color-success-base, var(--color-brand-accent)); }
@@ -3788,7 +3778,6 @@ hr {
   transition: background-color var(--duration-base) var(--easing-standard), border-color var(--duration-base) var(--easing-standard);
 }
 .magazine-page a.mentor-hero__btn--primary { background-color: var(--color-brand-base); color: var(--color-neutral-white); }
-.mentor-hero__btn--primary:hover { background-color: var(--color-brand-darker); }
 .magazine-page a.mentor-hero__btn--outline { border: 1px solid rgb(255 255 255 / 0.2); color: var(--mag-text); }
 .mentor-hero__btn--outline:hover { border-color: var(--color-brand-accent); }
 
@@ -4357,8 +4346,6 @@ hr {
 /* .desk-page a { color: inherit }(0,1,1) 위로 흰색 고정 */
 .desk-page a.desk-promo__btn { color: var(--color-neutral-white); }
 .desk-promo__btn span { font-weight: var(--font-weight-regular); font-size: var(--text-caption-size); margin-left: var(--space-3xs); }
-.desk-promo__btn:hover { background-color: var(--color-brand-darker); }
-
 /* ---------- 많이 본 기사 ---------- */
 .desk-mostread { margin-top: 56px; }
 .desk-mostread__title {
@@ -5176,7 +5163,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .lp-btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
 .lp-btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
 .lp-btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
-.lp-btn--accent:hover { background: var(--color-brand-secondary-dark); }
 .lp-btn--outline { border: 1px solid rgb(255 255 255 / 0.5); color: var(--color-neutral-white); }
 .lp-btn--outline:hover { border-color: var(--color-neutral-white); background: rgb(255 255 255 / 0.06); }
 
@@ -5881,7 +5867,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .hfaq .hfaq__cta-title { font-family: var(--font-body); font-weight: var(--font-weight-bold); font-size: 30px; line-height: 45px; color: var(--color-neutral-white); }
 .hfaq .hfaq__cta-btn { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); font-weight: var(--font-weight-bold); font-size: 17px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
 .hfaq .hfaq__cta-btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); padding: 14px 40px; }
-.hfaq .hfaq__cta-btn--accent:hover { background: var(--color-brand-secondary-dark); }
 .hfaq .hfaq__cta-btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); padding: 15px 41px; }
 .hfaq .hfaq__cta-btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
 .hfaq .hfaq__cta-hours { color: var(--color-brand-light); font-size: 15px; line-height: 22px; }
@@ -6065,7 +6050,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .business__cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 .business__cta-btn { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 28px; border-radius: var(--radius-pill); font-weight: var(--font-weight-bold); font-size: var(--text-body-size); transition: background-color .18s ease, border-color .18s ease; }
 .business__cta-btn--phone { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
-.business__cta-btn--phone:hover { background: var(--color-brand-secondary-dark); }
 .business__cta-btn--mail { border: 1px solid rgb(255 255 255 / 0.3); color: var(--color-neutral-white); }
 .business__cta-btn--mail:hover { border-color: var(--color-neutral-white); }
 .business__cta-note { color: rgb(147 162 183 / 0.9); font-size: var(--text-body-sm-size); line-height: 24px; }
@@ -6225,8 +6209,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   cursor: pointer;
   transition: background-color var(--duration-fast) var(--easing-standard);
 }
-.signup__submit:hover { background-color: var(--color-brand-darker); }
-[data-subscribe-form] .signup__submit:hover { background-color: var(--color-brand-base); } /* 구독 모달(뉴스레터·매거진 등) 버튼: 호버 효과 없음 */
 
 /* ----- 동의 문구 / 로그인 링크 ----- */
 .signup__foot {
@@ -6512,7 +6494,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   transition: background-color .15s ease, border-color .15s ease, color .15s ease, opacity .15s ease;
 }
 .account-btn--primary { background-color: var(--color-brand-base); color: var(--color-text-inverse); }
-.account-btn--primary:hover { background-color: var(--color-brand-darker); }
 .account-btn--ghost { border: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-dark); }
 .account-btn--ghost:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
 .account-btn--dark { height: 40px; background-color: var(--color-neutral-darker); color: var(--color-text-inverse); }
@@ -6868,8 +6849,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .wish-head__btn--ghost { padding: 11px 17px; background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-base); }
 .wish-head__btn--ghost:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
 .wish-head__btn--primary { background-color: var(--color-brand-base); color: var(--color-neutral-white); }
-.wish-head__btn--primary:hover { background-color: var(--color-brand-darker); }
-
 /* 아이템 리스트 */
 .wish-list {
   padding: 13px 27px; background-color: var(--color-neutral-white);
@@ -7071,7 +7050,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   background-color: var(--color-brand-base); color: var(--color-neutral-white);
   font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); cursor: pointer;
 }
-.cp-coupons__submit:hover { background-color: var(--color-brand-darker); }
 .cp-coupons__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .cp-coupon {
   display: flex; align-items: center; gap: 18px;
@@ -7177,8 +7155,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .member-btn--cancel { background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-base); }
 .member-btn--cancel:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
 .member-btn--save { padding: 14px 28px; background-color: var(--color-brand-base); color: var(--color-neutral-white); }
-.member-btn--save:hover { background-color: var(--color-brand-darker); }
-
 /* 로그인 & 보안 (행은 .account-settings__* 재사용) */
 .member-security {
   padding: 27px 31px; background-color: var(--color-neutral-white);
@@ -7244,8 +7220,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cert-head__btn--ghost { background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-base); }
 .cert-head__btn--ghost:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
 .cert-head__btn--primary { background-color: var(--color-brand-base); color: var(--color-neutral-white); }
-.cert-head__btn--primary:hover { background-color: var(--color-brand-darker); }
-
 /* 요약 (블루) */
 .cert-summary { display: flex; align-items: center; gap: var(--space-2xl); padding: var(--space-xl); border-radius: var(--radius-md); background-image: linear-gradient(to right, var(--color-account-hero-from) 0%, var(--color-account-hero-to) 100%); color: var(--color-neutral-white); }
 .cert-summary__main { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
@@ -7409,7 +7383,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cart-method__tag { flex-shrink: 0; font-size: 11px; font-weight: var(--font-weight-bold); color: var(--color-danger-base); }
 
 .cart-pay__submit { margin-top: var(--space-3xs); padding: var(--space-sm); border: 0; border-radius: var(--radius-pill); background-color: var(--color-brand-base); color: var(--color-neutral-white); font-size: var(--text-body-size); font-weight: var(--font-weight-bold); cursor: pointer; }
-.cart-pay__submit:hover { background-color: var(--color-brand-darker); }
 .cart-pay__note { padding-top: 2px; font-size: var(--text-caption-size); line-height: 18px; text-align: center; color: var(--color-neutral-light); }
 
 /* 반응형 */
