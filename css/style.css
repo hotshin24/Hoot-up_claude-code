@@ -5757,6 +5757,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 히어로 (컴팩트) ===== */
 .notice .notice__hero { position: relative; overflow: hidden; background: radial-gradient(900px 400px at 80% 26%, rgb(22 103 250 / 0.5) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
+.notice .notice__hero-sub { font-size: var(--text-h4-size); }
 .notice .notice__hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--space-2xl); padding-block: 66px; }
 .notice .notice__hero-desc { color: var(--color-brand-light); font-size: 17px; line-height: 30px; }
 .notice .notice__hero-mascot { display: grid; place-items: center; width: 200px; }
