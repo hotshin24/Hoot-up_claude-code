@@ -983,7 +983,6 @@ hr {
   box-shadow: var(--shadow-card);
 }
 
-
 .category__icon {
   display: flex;
   align-items: center;
@@ -2047,7 +2046,6 @@ hr {
    17. 1920px 미만 대응 (레이아웃이 깨지지 않도록 최소한의 축소만)
    ========================================================================== */
 
-
 /* ==========================================================================
    19. Category page (개발·IT 등 카테고리 상세)
    ========================================================================== */
@@ -2261,8 +2259,6 @@ hr {
 }
 
 /* 좁은 화면 대응 */
-
-
 
 /* ==========================================================================
    Course Detail — 강의 소개 상세 페이지 (course-responsive-publishing.html)
@@ -3124,7 +3120,6 @@ hr {
   .course-nav__link { transition: none; }
 }
 
-
 /* ==========================================================================
    Magazine — 블로그 매거진 메인 (magazine.html)  · 다크 테마
    Figma: 블로그_main (188:68723)
@@ -3443,7 +3438,6 @@ hr {
   .mag-chip, .mag-btn, .mag-cover__more { transition: none; }
 }
 
-
 /* ==========================================================================
    Magazine — 카테고리 메인 (magazine-<cat>.html)  · 다크 테마
    Figma: 카테고리 메인 (188:68540)
@@ -3552,7 +3546,6 @@ hr {
 @media (prefers-reduced-motion: reduce) {
   .mag-tag, .mag-pager__num, .mag-pager__arrow { transition: none; }
 }
-
 
 /* ==========================================================================
    Magazine — 블로그 아티클 상세 (magazine-<slug>.html)  · 다크 테마
@@ -3761,7 +3754,6 @@ hr {
 .magazine-page a.mag-pager__num--active { color: var(--mag-bg); }        /* 활성 번호: 기본·호버 모두 --mag-bg (초록 배경 위 어두운 텍스트) */
 .magazine-page a.mag-cover__more        { color: var(--color-brand-accent); } /* .magazine-page a{inherit} 이기고 텍스트=언더라인 그린 */
 
-
 /* ==========================================================================
    Magazine — 멘토(지식 공유자) 블로그 (magazine-mentor-*.html)  · 다크 테마
    Figma: 멘토 블로그 (188:68722)
@@ -3868,7 +3860,6 @@ hr {
 @media (prefers-reduced-motion: reduce) {
   .mentor-hero__btn, .mentor-filter__chip { transition: none; }
 }
-
 
 /* ==========================================================================
    HOOT UP DESK — 뉴스/저널리즘 메인 (desk.html)  · 라이트(신문) 테마
@@ -4170,7 +4161,6 @@ hr {
 
 /* ---------- 반응형 ---------- */
 
-
 /* ==========================================================================
    HOOT UP DESK — 기사 상세 (desk-<slug>.html)  · 라이트(신문) 테마
    Figma: news article (191:12656)  · .desk-page 래퍼/토큰 재사용
@@ -4390,7 +4380,6 @@ hr {
 @media (prefers-reduced-motion: reduce) {
   .desk-actionbtn, .desk-tag-chip, .desk-promo__btn { transition: none; }
 }
-
 
 /* ==========================================================================
    HOOT UP DESK — 뉴스 카테고리 (desk-<section>.html)  · 라이트(신문) 테마
@@ -4683,7 +4672,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   color: var(--color-brand-base);
 }
 
-
 /* ==========================================================================
    클래스 목록 카테고리 필터 (best / new / signature)
    ========================================================================== */
@@ -4912,7 +4900,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .rank-mini__title a:hover { text-decoration: underline; }
 .rank-mini__price { margin-top: auto; }
 
-
 /* ==========================================================================
    컬렉션 캐러셀 슬라이더 (index 시그니처 등) — .course-list--slider
    ========================================================================== */
@@ -4936,7 +4923,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   opacity: 0.3;
   cursor: default;
 }
-
 
 /* HOOT UP FESTA 이벤트 배너 호버 (event-1) */
 /* ===== 훗업 페스타 상단 이벤트 히어로 (인라인 스타일 통합 · 토큰 매칭) ===== */
@@ -5026,7 +5012,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .festa-cta__btn--solid { background: var(--color-brand-base); color: var(--color-neutral-white); }
 .festa-cta__btn--ghost { border: 1px solid rgb(255 255 255 / 0.4); color: var(--color-neutral-white); }
 .festa-cta__btn--ghost:hover { background: rgb(255 255 255 / 0.12); color: var(--color-neutral-white); }
-
 
 /* 브랜드 스토리 전용 스타일 (brand-story.html) — 인라인 스타일 이관 */
 
@@ -5150,35 +5135,56 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .brand-story .brand-palette__box-3 { height: 180px; border-radius: 20px; border: 1px solid var(--color-neutral-lighter); background: var(--color-brand-accent); }
 .brand-story .brand-palette__box-4 { height: 180px; border-radius: 20px; border: 1px solid var(--color-neutral-lighter); background: linear-gradient(120deg, var(--color-neutral-darker) 0 50%, var(--color-neutral-lightest) 50% 100%); }
 .brand-story .brand-palette__text-2 { width: min(1160px, 100% - 40px); margin-inline: auto; padding-block: 30px; font-size: 13px; color: var(--color-neutral-light); }
-
-/* ============================================================
-   단체 교육 (B2B) 페이지 — b2b.html (Figma 시안 반영)
-   ============================================================ */
-.b2b__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
 .b2b__pad { padding-block: 110px; }
 
-/* 공통 섹션 헤더 */
-.b2b .b2b__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
-.b2b .b2b__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-base); }
-.b2b .b2b__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; letter-spacing: -0.36px; color: var(--color-neutral-darker); }
+/* ===== 랜딩 공용 프리미티브 (lp-*) ===== */
+.lp-eyebrow { color: var(--color-brand-base); font-family: 'Raleway', sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 1.96px; }
+.lp-eyebrow--center { text-align: center; }
 
-/* 버튼 */
-.b2b .b2b__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 40px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
-.b2b .b2b__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
-.b2b .b2b__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
-.b2b .b2b__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
+/* ===== 랜딩 hero/cta/faq/head/title 공용 ===== */
+.lp-hero { background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); overflow: hidden; position: relative; }
+.lp-hero-grid { display: grid; align-items: center; gap: 60px; grid-template-columns: 1fr minmax(280px, 420px); padding-block: 110px 100px; }
+.lp-hero-grid-wide { display: grid; align-items: center; gap: 60px; grid-template-columns: 1fr minmax(280px, 440px); padding-block: 110px 100px; }
+.lp-hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.lp-hero-content-wide { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.lp-hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: clamp(38px, 4.8vw, 56px); font-weight: 700; letter-spacing: -1.12px; line-height: 1.2; }
+.lp-hero-title-xl { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: clamp(40px, 5vw, 60px); font-weight: 700; letter-spacing: -1.2px; line-height: 1.18; }
+.lp-hero-title-fixed { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: 48px; font-weight: 700; letter-spacing: -0.96px; line-height: 59.52px; }
+.lp-hero-desc { color: var(--color-brand-light); font-size: 18px; line-height: 32px; max-width: 540px; }
+.lp-hero-lead { color: var(--color-brand-secondary); font-size: 24px; font-weight: 700; line-height: 32.4px; }
+.lp-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+.lp-hero-actions-wide { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.lp-cta { background: radial-gradient(760px 300px at 50% 0%, rgb(22 103 250 / 0.45) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); border-bottom: 1px solid var(--color-neutral-base); overflow: hidden; position: relative; }
+.lp-cta-inner { display: flex; flex-direction: column; align-items: center; gap: 30px; padding-block: 100px; text-align: center; }
+.lp-cta-title { color: var(--color-neutral-darker); font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: 32px; font-weight: 700; line-height: 48px; max-width: 780px; }
+.lp-cta-title-light { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: 32px; font-weight: 700; line-height: 48px; max-width: 780px; }
+.lp-cta-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.lp-cta-actions-wide { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; justify-content: center; }
+.lp-faq-item { background: var(--color-neutral-white); border-radius: 20px; border: 1px solid var(--color-neutral-lighter); padding: 33px 31px; }
+.lp-faq-q { color: var(--color-neutral-darker); display: flex; font-size: 19px; font-weight: 700; gap: 10px; line-height: 28px; }
+.lp-faq-a { color: var(--color-neutral-base); font-size: 16px; line-height: 28px; margin-top: 14px; }
+.lp-faq-list { display: grid; align-items: start; gap: 20px; grid-template-columns: repeat(3, 1fr); }
+.lp-faq-list-2 { display: grid; align-items: start; gap: 20px; grid-template-columns: 1fr 1fr; }
+.lp-head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
+.lp-title { color: var(--color-neutral-darker); font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: 36px; font-weight: 700; letter-spacing: -0.36px; line-height: 46.8px; }
+.lp-title-plain { color: var(--color-neutral-darker); font-family: 'Spoqa Han Sans Neo', sans-serif; font-size: 36px; font-weight: 700; line-height: 46.8px; }
+/* ===== 랜딩 버튼 (lp-btn) ===== */
+.lp-btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 40px; border-radius: 30px; font-family: inherit; font-weight: 700; font-size: 16px; line-height: 22px; appearance: none; border: 0; background-color: transparent; cursor: pointer; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
+.lp-btn--compact { padding: 14px 36px; }
+.lp-btn--lg { padding: 15px 44px; font-size: 17px; }
+.lp-btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
+.lp-btn--primary:hover { background: var(--color-brand-darker); }
+.lp-btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
+.lp-btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
+.lp-btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
+.lp-btn--accent:hover { background: var(--color-brand-secondary-dark); }
+.lp-btn--outline { border: 1px solid rgb(255 255 255 / 0.5); color: var(--color-neutral-white); }
+.lp-btn--outline:hover { border-color: var(--color-neutral-white); background: rgb(255 255 255 / 0.06); }
+
 .b2b .b2b__btn--lg { padding: 14px 44px; font-size: 17px; }
-
-/* ===== 히어로 ===== */
-.b2b .b2b__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
-.b2b .b2b__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 440px); gap: 60px; align-items: center; padding-block: 110px 100px; }
-.b2b .b2b__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
-.b2b .b2b__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
-.b2b .b2b__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(40px, 5vw, 60px); line-height: 1.18; letter-spacing: -1.2px; }
+.lp-hero-eyebrow { display: inline-flex; align-items: center; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; padding: 7px 17px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.82px; }
 .b2b .b2b__hero-lead { display: flex; align-items: center; gap: 10px; color: var(--color-brand-secondary); font-weight: 700; font-size: 24px; line-height: 32.4px; }
 .b2b .b2b__hero-lead .b2b__rocket { height: 28px; width: auto; }
-.b2b .b2b__hero-desc { max-width: 540px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
-.b2b .b2b__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
 
 /* ===== 섹션 배경 ===== */
 .b2b .b2b__pain { background: var(--color-neutral-white); }
@@ -5190,10 +5196,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .b2b .b2b__contact { background: var(--color-neutral-white); }
 
 /* 다크·블루 섹션의 헤더 색상 */
-.b2b .b2b__process .b2b__eyebrow,
-.b2b .b2b__outcomes .b2b__eyebrow { color: var(--color-brand-accent); }
-.b2b .b2b__process .b2b__title,
-.b2b .b2b__outcomes .b2b__title { color: var(--color-neutral-white); }
+.b2b .b2b__process .lp-eyebrow,
+.b2b .b2b__outcomes .lp-eyebrow { color: var(--color-brand-accent); }
+.b2b .b2b__process .lp-title,
+.b2b .b2b__outcomes .lp-title { color: var(--color-neutral-white); }
 
 /* ===== 01 PAIN POINTS ===== */
 .b2b .b2b__pain-grid { display: grid; grid-template-columns: 380px 1fr; gap: 80px; align-items: start; }
@@ -5208,12 +5214,12 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 /* ===== 카드 그리드 (WHY / PLANS) ===== */
 .b2b .b2b__cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
-/* WHY 카드 */
-.b2b .b2b__why-card { display: flex; flex-direction: column; gap: 14px; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 35px 31px; transition: border-color 200ms cubic-bezier(0.2, 0, 0.2, 1), box-shadow 200ms; }
-.b2b .b2b__why-card:hover { border-color: var(--color-brand-base); box-shadow: 0 0 10px rgb(22 103 250 / 0.16); }
-.b2b .b2b__why-num { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 32px; line-height: 32px; color: var(--color-brand-lighter); }
-.b2b .b2b__why-title { font-weight: 700; font-size: 21px; line-height: 30px; color: var(--color-neutral-darker); }
-.b2b .b2b__why-desc { color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+/* 넘버 카드 (b2b WHY · careers HOW WE WORK 공용) */
+.num-card { display: flex; flex-direction: column; gap: 14px; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 35px 31px; transition: border-color 200ms cubic-bezier(0.2, 0, 0.2, 1), box-shadow 200ms; }
+.num-card:hover { border-color: var(--color-brand-base); box-shadow: 0 0 10px rgb(22 103 250 / 0.16); }
+.num-card__num { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 32px; line-height: 32px; color: var(--color-brand-lighter); }
+.num-card__title { font-weight: 700; font-size: 21px; line-height: 30px; color: var(--color-neutral-darker); }
+.num-card__desc { color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
 
 /* PLANS 카드 */
 .b2b .b2b__plan-card { display: flex; flex-direction: column; gap: 16px; background: linear-gradient(180deg, var(--color-neutral-lightest) 0%, var(--color-neutral-white) 100%); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 37px 31px; }
@@ -5223,85 +5229,44 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 04 PROCESS ===== */
 .b2b .b2b__process-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 50px; }
-.b2b .b2b__process-head .b2b__head { margin-bottom: 0; }
+.b2b .b2b__process-head .lp-head { margin-bottom: 0; }
 .b2b .b2b__process-lead { color: var(--color-brand-lighter); font-size: 17px; line-height: 30px; }
 .b2b .b2b__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.b2b .b2b__step {
-  position: relative;
-  display: flex; flex-direction: column; gap: 14px;
-  padding: 33px 29px;
-  border-radius: 20px;
-  background: rgb(255 255 255 / 0.08); /* 박스 컬러 그대로(반투명 밝은 카드) */
-}
-/* iOS 느낌 그라데이션 하이라이트 보더 — 필은 유지, 마스크로 1px 테두리 링만 표시 */
-.b2b .b2b__step::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
+
+/* ===== STEP 카드 (랜딩 공용: b2b·careers·creator-apply·creator-studio·creator-mentor·creator-settlement) ===== */
+.step-card { display: flex; flex-direction: column; gap: 14px; background: rgb(255 255 255 / 0.08); border-radius: 20px; padding: 33px 29px; }
+.step-card--bordered { border: 1px solid rgb(255 255 255 / 0.16); }
+.step-card--ring { position: relative; }
+.step-card--ring::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
   background: linear-gradient(155deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.12) 42%, rgba(22, 103, 250, 0.45) 100%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  pointer-events: none;
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
 }
-.b2b .b2b__step-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; color: var(--color-brand-secondary); }
-.b2b .b2b__step-title { font-weight: 700; font-size: 21px; line-height: 30px; color: var(--color-neutral-white); }
-.b2b .b2b__step-desc { color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
+.step-card__num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; color: var(--color-brand-secondary); }
+.step-card__title { font-weight: 700; font-size: 21px; line-height: 30px; color: var(--color-neutral-white); }
+.step-card__desc { color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
 
 /* ===== 05 OUTCOMES ===== */
 .b2b .b2b__outcomes-grid { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
 .b2b .b2b__outcome-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
 .b2b .b2b__outcome-item { display: flex; gap: 14px; align-items: baseline; padding: 22px 0 23px; border-bottom: 1px solid rgb(255 255 255 / 0.1); color: var(--color-brand-lighter); font-size: 17px; line-height: 28px; }
 .b2b .b2b__up-rocket { height: 20px; width: auto; flex-shrink: 0; align-self: center; }
-
-/* ===== 06 FAQ ===== */
-.b2b .b2b__faq-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
-.b2b .b2b__faq-item { background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 31px; }
 .b2b .b2b__faq-q { display: flex; gap: 10px; font-weight: 700; font-size: 21px; line-height: 30px; color: var(--color-neutral-darker); }
 .b2b .b2b__faq-q span:first-child { color: var(--color-brand-base); }
 .b2b .b2b__faq-a { margin-top: 12px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
 
 /* ===== 07 CONTACT ===== */
 .b2b .b2b__contact-inner { display: flex; flex-direction: column; align-items: center; gap: 36px; text-align: center; }
-.b2b .b2b__eyebrow--center { text-align: center; }
 .b2b .b2b__contact-title { max-width: 820px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 34px; line-height: 49.3px; color: var(--color-neutral-darker); }
 .b2b .b2b__contact-sub { color: var(--color-neutral-base); font-size: 18px; line-height: 32px; }
 .b2b .b2b__contact-actions { display: flex; flex-direction: column; align-items: center; }
-.b2b .b2b__contact-actions .b2b__btn { margin-top: 20px; }
+.b2b .b2b__contact-actions .lp-btn { margin-top: 20px; }
 .b2b .b2b__contact-line { color: var(--color-neutral-base); font-size: 16px; line-height: 22px; }
 .b2b .b2b__contact-line a { color: var(--color-brand-base); font-weight: 700; }
-
-/* ===== 반응형 ===== */
-
-/* ============================================================
-   채용 안내 페이지 — careers.html (Figma 시안 반영)
-   ============================================================ */
-.careers__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
 .careers__pad { padding-block: 110px; }
-
-/* 공통 섹션 헤더 */
-.careers .careers__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
-.careers .careers__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-base); }
-.careers .careers__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; letter-spacing: -0.36px; color: var(--color-neutral-darker); }
-
-/* 버튼 */
-.careers .careers__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 40px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
-.careers .careers__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
-.careers .careers__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
-.careers .careers__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
 .careers .careers__btn--lg { padding: 14px 44px; font-size: 17px; }
-
-/* ===== 히어로 ===== */
-.careers .careers__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
-.careers .careers__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 440px); gap: 60px; align-items: center; padding-block: 110px 100px; }
-.careers .careers__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
-.careers .careers__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
-.careers .careers__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(40px, 5vw, 60px); line-height: 1.18; letter-spacing: -1.2px; }
-.careers .careers__hero-lead { color: var(--color-brand-secondary); font-weight: 700; font-size: 24px; line-height: 32.4px; }
 .careers .careers__hero-desc { max-width: 520px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
-.careers .careers__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
 
 /* ===== 섹션 배경 ===== */
 .careers .careers__team { background: var(--color-neutral-white); }
@@ -5312,10 +5277,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .careers .careers__apply { background: var(--color-neutral-lightest); }
 
 /* 다크·블루 섹션 헤더 색상 */
-.careers .careers__process .careers__eyebrow,
-.careers .careers__share .careers__eyebrow { color: var(--color-brand-accent); }
-.careers .careers__process .careers__title,
-.careers .careers__share .careers__title { color: var(--color-neutral-white); }
+.careers .careers__process .lp-eyebrow,
+.careers .careers__share .lp-eyebrow { color: var(--color-brand-accent); }
+.careers .careers__process .lp-title,
+.careers .careers__share .lp-title { color: var(--color-neutral-white); }
 
 /* ===== 01 WHO WE ARE ===== */
 .careers .careers__team-grid { display: grid; grid-template-columns: 380px 1fr; gap: 80px; align-items: start; padding-right: 40px; }
@@ -5327,15 +5292,11 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 카드 그리드 (HOW WE WORK) ===== */
 .careers .careers__cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.careers .careers__work-card { display: flex; flex-direction: column; gap: 14px; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 35px 31px; transition: border-color 200ms cubic-bezier(0.2, 0, 0.2, 1), box-shadow 200ms; }
-.careers .careers__work-card:hover { border-color: var(--color-brand-base); box-shadow: 0 0 10px rgb(22 103 250 / 0.16); }
-.careers .careers__work-num { font-family: 'Raleway', sans-serif; font-weight: 900; font-size: 32px; line-height: 32px; color: var(--color-brand-lighter); }
-.careers .careers__work-title { font-weight: 700; font-size: 21px; line-height: 30px; color: var(--color-neutral-darker); }
-.careers .careers__work-desc { color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
+/* 카드 본체는 공용 .num-card 사용 (b2b WHY와 통합) */
 
 /* ===== 03 OPEN ROLES ===== */
 .careers .careers__roles-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 30px; }
-.careers .careers__roles-head .careers__head { margin-bottom: 0; }
+.careers .careers__roles-head .lp-head { margin-bottom: 0; }
 .careers .careers__roles-lead { color: var(--color-neutral-base); font-size: 16px; line-height: 30px; }
 .careers .careers__roles { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 40px; }
 .careers .careers__role { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; border-top: 1px solid var(--color-neutral-lighter); padding: 27px 0; min-height: 104px; }
@@ -5344,35 +5305,12 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 04 PROCESS ===== */
 .careers .careers__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.careers .careers__step {
-  position: relative;
-  display: flex; flex-direction: column; gap: 14px;
-  padding: 33px 29px;
-  border-radius: 20px;
-  background: rgb(255 255 255 / 0.08); /* 박스 컬러 그대로(반투명 밝은 카드) */
-}
-/* iOS 느낌 그라데이션 하이라이트 보더 — 필은 유지, 마스크로 1px 테두리 링만 표시 */
-.careers .careers__step::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(155deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.12) 42%, rgba(22, 103, 250, 0.45) 100%);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  pointer-events: none;
-}
-.careers .careers__step-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; color: var(--color-brand-secondary); }
-.careers .careers__step-title { font-weight: 700; font-size: 21px; line-height: 30px; color: var(--color-neutral-white); }
-.careers .careers__step-desc { color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
 .careers .careers__process-note { margin-top: 30px; text-align: center; color: rgb(226 225 255 / 0.85); font-size: 14px; line-height: 26px; }
 
 /* ===== 05 WHAT WE SHARE ===== */
 .careers .careers__share-grid { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
 .careers .careers__share-head { display: flex; flex-direction: column; }
-.careers .careers__share-head .careers__title { margin-top: 12px; }
+.careers .careers__share-head .lp-title { margin-top: 12px; }
 .careers .careers__share-note { margin-top: 20px; color: var(--color-neutral-light); font-size: 14px; line-height: 26px; }
 .careers .careers__share-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
 .careers .careers__share-item { display: flex; gap: 14px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid rgb(255 255 255 / 0.1); color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
@@ -5380,57 +5318,26 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 06 APPLY ===== */
 .careers .careers__apply-inner { display: flex; flex-direction: column; align-items: center; gap: 36px; text-align: center; }
-.careers .careers__eyebrow--center { text-align: center; }
 .careers .careers__apply-title { max-width: 820px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 34px; line-height: 49.3px; color: var(--color-neutral-darker); }
 .careers .careers__apply-sub { color: var(--color-neutral-base); font-size: 18px; line-height: 32px; }
 .careers .careers__apply-actions { display: flex; flex-direction: column; align-items: center; }
-.careers .careers__apply-actions .careers__btn { margin-top: 20px; }
+.careers .careers__apply-actions .lp-btn { margin-top: 20px; }
 .careers .careers__apply-line { color: var(--color-neutral-base); font-size: 16px; line-height: 22px; }
 .careers .careers__apply-line a { color: var(--color-brand-base); font-weight: 700; }
-
-/* ===== 반응형 ===== */
-
-/* ============================================================
-   레벨업 로드맵 페이지 — roadmap.html (Figma 시안 반영)
-   ============================================================ */
-.roadmap__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
 .roadmap__pad { padding-block: 110px; }
-
-/* 공통 섹션 헤더 */
-.roadmap .roadmap__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
-.roadmap .roadmap__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-base); }
-.roadmap .roadmap__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; letter-spacing: -0.36px; color: var(--color-neutral-darker); }
-
-/* 버튼 */
-.roadmap .roadmap__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 40px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
-.roadmap .roadmap__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
-.roadmap .roadmap__btn--primary:hover { background: var(--color-brand-darker); }
-.roadmap .roadmap__btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
-.roadmap .roadmap__btn--accent:hover { background: var(--color-brand-secondary-dark); }
-.roadmap .roadmap__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
-.roadmap .roadmap__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
-.roadmap .roadmap__btn--lg { padding: 15px 44px; font-size: 17px; }
-
-/* ===== 히어로 ===== */
-.roadmap .roadmap__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
-.roadmap .roadmap__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 60px; align-items: center; padding-block: 110px 100px; }
-.roadmap .roadmap__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
-.roadmap .roadmap__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
 .roadmap .roadmap__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(38px, 4.6vw, 54px); line-height: 1.22; letter-spacing: -1.08px; }
 .roadmap .roadmap__hero-desc { max-width: 560px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
 .roadmap .roadmap__hero-note { align-self: flex-start; background: var(--color-brand-secondary); color: var(--color-neutral-darker); font-weight: 700; font-size: 18px; line-height: 22px; border-radius: 20px; padding: 12px 24px; }
-.roadmap .roadmap__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 
 /* ===== 섹션 배경 ===== */
 .roadmap .roadmap__how { background: var(--color-neutral-white); }
 .roadmap .roadmap__featured { background: var(--color-neutral-lightest); }
 .roadmap .roadmap__by-cat { background: var(--color-neutral-white); }
 .roadmap .roadmap__benefits { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, var(--color-brand-dark) 98.8%); }
-.roadmap .roadmap__cta { position: relative; overflow: hidden; background: radial-gradient(760px 300px at 50% 0%, rgb(22 103 250 / 0.45) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); border-bottom: 1px solid var(--color-neutral-base); }
 
 /* 블루 섹션 헤더 색상 */
-.roadmap .roadmap__benefits .roadmap__eyebrow { color: var(--color-brand-accent); }
-.roadmap .roadmap__benefits .roadmap__title { color: var(--color-neutral-white); }
+.roadmap .roadmap__benefits .lp-eyebrow { color: var(--color-brand-accent); }
+.roadmap .roadmap__benefits .lp-title { color: var(--color-neutral-white); }
 
 /* ===== 01 HOW IT WORKS ===== */
 .roadmap .roadmap__how-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -5484,7 +5391,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 03 BY CATEGORY ===== */
 .roadmap .roadmap__cat-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 50px; }
-.roadmap .roadmap__cat-head .roadmap__head { margin-bottom: 0; }
+.roadmap .roadmap__cat-head .lp-head { margin-bottom: 0; }
 .roadmap .roadmap__cat-lead { color: var(--color-neutral-base); font-size: 16px; line-height: 30px; }
 .roadmap .roadmap__cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
 .roadmap .roadmap__cat-col { display: flex; flex-direction: column; gap: 20px; }
@@ -5500,51 +5407,13 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .roadmap .roadmap__benefit { display: flex; flex-direction: column; gap: 12px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.16); border-radius: 20px; padding: 33px 29px; }
 .roadmap .roadmap__benefit-title { color: var(--color-brand-secondary); font-weight: 700; font-size: 20px; line-height: 28px; }
 .roadmap .roadmap__benefit-desc { color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
-
-/* ===== 마무리 CTA ===== */
-.roadmap .roadmap__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 30px; padding-block: 100px; text-align: center; }
-.roadmap .roadmap__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-white); }
-.roadmap .roadmap__cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
 .roadmap .roadmap__cta-disclaimer { color: rgb(147 162 183 / 0.9); font-size: 14px; line-height: 24px; }
-
-/* ===== 반응형 ===== */
-
-/* ============================================================
-   올나잇 패스(구독) 페이지 — subscribe.html (Figma 시안 · 토큰 사용)
-   ============================================================ */
-.subscribe__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
 .subscribe__pad { padding-block: 110px; }
-
-/* 공통 섹션 헤더 */
-.subscribe .subscribe__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
-.subscribe .subscribe__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-base); }
-.subscribe .subscribe__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; letter-spacing: -0.36px; color: var(--color-neutral-darker); }
 .subscribe .subscribe__lead { color: var(--color-neutral-base); font-size: 18px; line-height: 30px; }
-
-/* 버튼 */
-.subscribe .subscribe__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 36px; appearance: none; border: 0; background-color: transparent; border-radius: 30px; font-family: inherit; font-weight: 700; font-size: 16px; line-height: 22px; cursor: pointer; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
-.subscribe .subscribe__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
-.subscribe .subscribe__btn--primary:hover { background: var(--color-brand-darker); }
-.subscribe .subscribe__btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
-.subscribe .subscribe__btn--accent:hover { background: var(--color-brand-secondary-dark); }
-.subscribe .subscribe__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
-.subscribe .subscribe__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
-.subscribe .subscribe__btn--outline { border: 1px solid rgb(255 255 255 / 0.5); color: var(--color-neutral-white); }
-.subscribe .subscribe__btn--outline:hover { border-color: var(--color-neutral-white); background: rgb(255 255 255 / 0.06); }
-.subscribe .subscribe__btn--lg { padding: 15px 44px; font-size: 17px; }
-
-/* ===== 히어로 ===== */
-.subscribe .subscribe__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
-.subscribe .subscribe__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 60px; align-items: center; padding-block: 110px 100px; }
-.subscribe .subscribe__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
-.subscribe .subscribe__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
-.subscribe .subscribe__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(38px, 4.8vw, 56px); line-height: 1.2; letter-spacing: -1.12px; }
-.subscribe .subscribe__hero-desc { max-width: 540px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
 .subscribe .subscribe__hero-prices { display: flex; flex-wrap: wrap; gap: 10px; }
 .subscribe .subscribe__price-pill { display: inline-flex; align-items: center; border-radius: 30px; font-weight: 700; font-size: 17px; line-height: 22px; }
 .subscribe .subscribe__price-pill--ghost { padding: 11px 23px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.18); color: var(--color-neutral-white); }
 .subscribe .subscribe__price-pill--accent { padding: 10px 22px; background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
-.subscribe .subscribe__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 
 /* ===== 섹션 배경 ===== */
 .subscribe .subscribe__ways { background: var(--color-neutral-white); }
@@ -5552,11 +5421,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .subscribe .subscribe__pricing { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, var(--color-brand-dark) 98.8%); }
 .subscribe .subscribe__forme { background: var(--color-neutral-white); }
 .subscribe .subscribe__faq { background: var(--color-neutral-lightest); }
-.subscribe .subscribe__cta { position: relative; overflow: hidden; background: radial-gradient(760px 300px at 50% 0%, rgb(22 103 250 / 0.45) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); border-bottom: 1px solid var(--color-neutral-base); }
 
 /* 블루 섹션 헤더 색상 */
-.subscribe .subscribe__pricing .subscribe__eyebrow { color: var(--color-brand-accent); }
-.subscribe .subscribe__pricing .subscribe__title { color: var(--color-neutral-white); }
+.subscribe .subscribe__pricing .lp-eyebrow { color: var(--color-brand-accent); }
+.subscribe .subscribe__pricing .lp-title { color: var(--color-neutral-white); }
 
 /* ===== 01 비교 테이블 ===== */
 .subscribe .subscribe__compare { border: 1px solid var(--color-neutral-lighter); border-radius: 20px; overflow: hidden; }
@@ -5628,7 +5496,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .subscribe .subscribe__plan--annual .subscribe__plan-note { color: var(--color-neutral-base); }
 .subscribe .subscribe__plan-hl { color: var(--color-brand-base); font-weight: 700; }
 .subscribe .subscribe__plan-hl2 { color: var(--color-neutral-darker); font-weight: 700; }
-.subscribe .subscribe__plan .subscribe__btn { align-self: flex-start; }
+.subscribe .subscribe__plan .lp-btn { align-self: flex-start; }
 
 .subscribe .subscribe__plan-perks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 40px; margin-top: 30px; }
 .subscribe .subscribe__plan-perk { display: flex; gap: 12px; align-items: baseline; color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
@@ -5649,67 +5517,23 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .subscribe .subscribe__up { color: var(--color-brand-accent); font-weight: 700; display: inline-flex; align-self: center; }
 .subscribe .subscribe__up--brand { color: var(--color-brand-base); }
 .subscribe .subscribe__rocket { height: 22px; width: auto; display: block; }
-
-/* ===== 05 FAQ ===== */
-.subscribe .subscribe__faq-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
-.subscribe .subscribe__faq-item { background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 31px; }
-.subscribe .subscribe__faq-q { display: flex; gap: 10px; font-weight: 700; font-size: 19px; line-height: 28px; color: var(--color-neutral-darker); }
-.subscribe .subscribe__faq-q span:first-child { color: var(--color-brand-base); }
-.subscribe .subscribe__faq-a { margin-top: 14px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
-
-/* ===== 마무리 CTA ===== */
-.subscribe .subscribe__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 30px; padding-block: 100px; text-align: center; }
-.subscribe .subscribe__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-white); }
-.subscribe .subscribe__cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+.subscribe .lp-faq-q span:first-child { color: var(--color-brand-base); }
 .subscribe .subscribe__cta-disclaimer { color: rgb(147 162 183 / 0.9); font-size: 14px; line-height: 24px; }
-
-/* ===== 반응형 ===== */
-
-/* ============================================================
-   클래스 개설 문의하기 — creator-apply.html (Figma 시안 · 토큰 사용)
-   ============================================================ */
-.creator-apply__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
 .creator-apply__pad { padding-block: 110px; }
-
-/* 공통 섹션 헤더 */
-.creator-apply .creator-apply__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
-.creator-apply .creator-apply__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-base); }
-.creator-apply .creator-apply__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; letter-spacing: -0.36px; color: var(--color-neutral-darker); }
-
-/* 버튼 */
-.creator-apply .creator-apply__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 40px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
-.creator-apply .creator-apply__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
-.creator-apply .creator-apply__btn--primary:hover { background: var(--color-brand-darker); }
-.creator-apply .creator-apply__btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
-.creator-apply .creator-apply__btn--accent:hover { background: var(--color-brand-secondary-dark); }
-.creator-apply .creator-apply__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
-.creator-apply .creator-apply__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
-.creator-apply .creator-apply__btn--lg { padding: 15px 44px; font-size: 17px; }
-
-/* ===== 히어로 ===== */
-.creator-apply .creator-apply__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
-.creator-apply .creator-apply__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 60px; align-items: center; padding-block: 110px 100px; }
-.creator-apply .creator-apply__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
-.creator-apply .creator-apply__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
-.creator-apply .creator-apply__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(38px, 4.8vw, 56px); line-height: 1.2; letter-spacing: -1.12px; }
-.creator-apply .creator-apply__hero-lead { color: var(--color-brand-secondary); font-weight: 700; font-size: 24px; line-height: 32.4px; }
-.creator-apply .creator-apply__hero-desc { max-width: 540px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
-.creator-apply .creator-apply__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 
 /* ===== 섹션 배경 ===== */
 .creator-apply .creator-apply__before { background: var(--color-neutral-white); }
 .creator-apply .creator-apply__application { background: var(--color-neutral-lightest); }
 .creator-apply .creator-apply__next { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, var(--color-brand-dark) 98.8%); }
 .creator-apply .creator-apply__faq { background: var(--color-neutral-white); }
-.creator-apply .creator-apply__cta { position: relative; overflow: hidden; background: radial-gradient(760px 300px at 50% 0%, rgb(22 103 250 / 0.45) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); border-bottom: 1px solid var(--color-neutral-base); }
 
 /* 블루 섹션 헤더 색상 */
-.creator-apply .creator-apply__next .creator-apply__eyebrow { color: var(--color-brand-accent); }
-.creator-apply .creator-apply__next .creator-apply__title { color: var(--color-neutral-white); }
+.creator-apply .creator-apply__next .lp-eyebrow { color: var(--color-brand-accent); }
+.creator-apply .creator-apply__next .lp-title { color: var(--color-neutral-white); }
 
 /* ===== 01 준비물 ===== */
 .creator-apply .creator-apply__before-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 50px; }
-.creator-apply .creator-apply__before-head .creator-apply__head { margin-bottom: 0; gap: 14px; }
+.creator-apply .creator-apply__before-head .lp-head { margin-bottom: 0; gap: 14px; }
 .creator-apply .creator-apply__before-note { border-left: 3px solid var(--color-brand-secondary); padding-left: 27px; color: var(--color-neutral-base); font-size: 16px; line-height: 30px; }
 .creator-apply .creator-apply__cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .creator-apply .creator-apply__card { display: flex; flex-direction: column; gap: 12px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 29px; }
@@ -5755,56 +5579,13 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 03 진행 절차(STEP) ===== */
 .creator-apply .creator-apply__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.creator-apply .creator-apply__step { display: flex; flex-direction: column; gap: 14px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.16); border-radius: 20px; padding: 33px 29px; }
-.creator-apply .creator-apply__step-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; color: var(--color-brand-secondary); }
-.creator-apply .creator-apply__step-title { font-weight: 700; font-size: 21px; line-height: 30px; color: var(--color-neutral-white); }
-.creator-apply .creator-apply__step-desc { color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
 .creator-apply .creator-apply__next-note { margin-top: 30px; text-align: center; color: rgb(226 225 255 / 0.85); font-size: 14px; line-height: 26px; }
-
-/* ===== 04 FAQ ===== */
-.creator-apply .creator-apply__faq-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
 .creator-apply .creator-apply__faq-item { background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 31px; }
-.creator-apply .creator-apply__faq-q { display: flex; gap: 10px; font-weight: 700; font-size: 19px; line-height: 28px; color: var(--color-neutral-darker); }
-.creator-apply .creator-apply__faq-q span:first-child { color: var(--color-brand-base); }
-.creator-apply .creator-apply__faq-a { margin-top: 14px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
-
-/* ===== 마무리 CTA ===== */
-.creator-apply .creator-apply__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 30px; padding-block: 100px; text-align: center; }
-.creator-apply .creator-apply__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-white); }
-.creator-apply .creator-apply__cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 20px; }
+.creator-apply .lp-faq-q span:first-child { color: var(--color-brand-base); }
 .creator-apply .creator-apply__cta-line { color: var(--color-brand-lighter); font-size: 16px; line-height: 22px; }
 .creator-apply .creator-apply__cta-line a { color: var(--color-brand-secondary); font-weight: 700; }
-
-/* ===== 반응형 ===== */
-
-/* ============================================================
-   크리에이터 가이드 — creator-guide.html (Figma 시안 · 토큰 사용)
-   ============================================================ */
-.creator-guide__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
 .creator-guide__pad { padding-block: 100px; }
-
-/* 공통 섹션 헤더 */
-.creator-guide .creator-guide__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
 .creator-guide .creator-guide__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-accent); }
-.creator-guide .creator-guide__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; color: var(--color-neutral-darker); }
-
-/* 버튼 */
-.creator-guide .creator-guide__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 40px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
-.creator-guide .creator-guide__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
-.creator-guide .creator-guide__btn--primary:hover { background: var(--color-brand-darker); }
-.creator-guide .creator-guide__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
-.creator-guide .creator-guide__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
-.creator-guide .creator-guide__btn--lg { padding: 15px 44px; font-size: 17px; }
-
-/* ===== 히어로 ===== */
-.creator-guide .creator-guide__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
-.creator-guide .creator-guide__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 60px; align-items: center; padding-block: 110px 100px; }
-.creator-guide .creator-guide__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
-.creator-guide .creator-guide__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
-.creator-guide .creator-guide__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(38px, 4.8vw, 56px); line-height: 1.2; letter-spacing: -1.12px; }
-.creator-guide .creator-guide__hero-lead { color: var(--color-brand-secondary); font-weight: 700; font-size: 24px; line-height: 32.4px; }
-.creator-guide .creator-guide__hero-desc { max-width: 540px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
-.creator-guide .creator-guide__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 
 /* ===== 목차 (스티키) ===== */
 .creator-guide .creator-guide__toc { position: sticky; top: 0; z-index: 5; background: rgb(255 255 255 / 0.92); backdrop-filter: blur(4px); border-bottom: 1px solid var(--color-neutral-lighter); }
@@ -5834,7 +5615,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== SUPPORT (블루) ===== */
 .creator-guide .creator-guide__support { background: linear-gradient(225deg, var(--color-brand-base) 2.6%, var(--color-brand-dark) 98.8%); }
-.creator-guide .creator-guide__support .creator-guide__title { color: var(--color-neutral-white); }
+.creator-guide .creator-guide__support .lp-title-plain { color: var(--color-neutral-white); }
 .creator-guide .creator-guide__support-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .creator-guide .creator-guide__support-card { display: flex; flex-direction: column; gap: 10px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.16); border-radius: 20px; padding: 31px 27px; }
 .creator-guide .creator-guide__support-label { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; color: var(--color-brand-secondary); }
@@ -5843,7 +5624,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 /* ===== 체크리스트 (다크) ===== */
 .creator-guide .creator-guide__checklist { background: var(--color-neutral-darker); }
 .creator-guide .creator-guide__check-grid { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
-.creator-guide .creator-guide__check-head .creator-guide__title { margin-top: 12px; color: var(--color-neutral-white); }
+.creator-guide .creator-guide__check-head .lp-title-plain { margin-top: 12px; color: var(--color-neutral-white); }
 .creator-guide .creator-guide__check-head .creator-guide__eyebrow { color: var(--color-brand-accent); }
 .creator-guide .creator-guide__check-count { margin-top: 20px; color: var(--color-brand-light); font-size: 16px; line-height: 28px; }
 .creator-guide .creator-guide__checks { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
@@ -5856,41 +5637,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 마무리 CTA ===== */
 .creator-guide .creator-guide__cta { background: var(--color-neutral-white); border-top: 1px solid var(--color-neutral-lighter); }
-.creator-guide .creator-guide__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 30px; padding-block: 100px; text-align: center; }
-.creator-guide .creator-guide__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-darker); }
-
-/* ===== 반응형 ===== */
-
-/* ============================================================
-   스튜디오 대여 — creator-studio.html (Figma 시안 · 토큰 사용)
-   ============================================================ */
-.creator-studio__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
 .creator-studio__pad { padding-block: 100px; }
-
-/* 공통 섹션 헤더 */
-.creator-studio .creator-studio__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
-.creator-studio .creator-studio__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-base); }
-.creator-studio .creator-studio__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; color: var(--color-neutral-darker); }
-
-/* 버튼 */
-.creator-studio .creator-studio__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 36px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
-.creator-studio .creator-studio__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
-.creator-studio .creator-studio__btn--primary:hover { background: var(--color-brand-darker); }
-.creator-studio .creator-studio__btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); }
-.creator-studio .creator-studio__btn--accent:hover { background: var(--color-brand-secondary-dark); }
-.creator-studio .creator-studio__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
-.creator-studio .creator-studio__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
-.creator-studio .creator-studio__btn--lg { padding: 15px 44px; font-size: 17px; }
-
-/* ===== 히어로 ===== */
-.creator-studio .creator-studio__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
-.creator-studio .creator-studio__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 60px; align-items: center; padding-block: 110px 100px; }
-.creator-studio .creator-studio__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
-.creator-studio .creator-studio__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
-.creator-studio .creator-studio__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(38px, 4.8vw, 56px); line-height: 1.2; letter-spacing: -1.12px; }
-.creator-studio .creator-studio__hero-lead { color: var(--color-brand-secondary); font-weight: 700; font-size: 24px; line-height: 32.4px; }
-.creator-studio .creator-studio__hero-desc { max-width: 540px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
-.creator-studio .creator-studio__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 
 /* ===== 섹션 배경 ===== */
 .creator-studio .creator-studio__spaces { background: var(--color-neutral-white); }
@@ -5901,10 +5648,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-studio .creator-studio__cta { background: var(--color-neutral-white); }
 
 /* 블루/다크 섹션 헤더 색상 */
-.creator-studio .creator-studio__how .creator-studio__eyebrow,
-.creator-studio .creator-studio__info .creator-studio__eyebrow { color: var(--color-brand-accent); }
-.creator-studio .creator-studio__how .creator-studio__title,
-.creator-studio .creator-studio__info .creator-studio__title { color: var(--color-neutral-white); }
+.creator-studio .creator-studio__how .lp-eyebrow,
+.creator-studio .creator-studio__info .lp-eyebrow { color: var(--color-brand-accent); }
+.creator-studio .creator-studio__how .lp-title-plain,
+.creator-studio .creator-studio__info .lp-title-plain { color: var(--color-neutral-white); }
 
 /* ===== 01 공간 카드 ===== */
 .creator-studio .creator-studio__space-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -5924,61 +5671,17 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 03 이용 방법 (STEP) ===== */
 .creator-studio .creator-studio__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.creator-studio .creator-studio__step { display: flex; flex-direction: column; gap: 14px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.16); border-radius: 20px; padding: 33px 29px; }
-.creator-studio .creator-studio__step-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; color: var(--color-brand-secondary); }
-.creator-studio .creator-studio__step-title { font-weight: 700; font-size: 21px; line-height: 30px; color: var(--color-neutral-white); }
-.creator-studio .creator-studio__step-desc { color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
 
 /* ===== 04 이용 안내 (다크) ===== */
 .creator-studio .creator-studio__info-grid { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
 .creator-studio .creator-studio__info-label { display: flex; flex-direction: column; align-items: flex-start; gap: 17px; }
-.creator-studio .creator-studio__info-label .creator-studio__btn { margin-top: 8px; }
+.creator-studio .creator-studio__info-label .lp-btn { margin-top: 8px; }
 .creator-studio .creator-studio__info-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
 .creator-studio .creator-studio__info-item { display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid rgb(255 255 255 / 0.1); padding: 22px 0 23px; }
 .creator-studio .creator-studio__info-dt { font-weight: 700; font-size: 14px; letter-spacing: 0.56px; color: var(--color-brand-accent); }
 .creator-studio .creator-studio__info-dd { color: var(--color-brand-lighter); font-size: 17px; line-height: 28px; }
-
-/* ===== 05 FAQ ===== */
-.creator-studio .creator-studio__faq-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
-.creator-studio .creator-studio__faq-item { background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 31px; }
-.creator-studio .creator-studio__faq-q { display: flex; gap: 10px; font-weight: 700; font-size: 19px; line-height: 28px; color: var(--color-neutral-darker); }
-.creator-studio .creator-studio__faq-q span:first-child { color: var(--color-brand-base); }
-.creator-studio .creator-studio__faq-a { margin-top: 14px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
-
-/* ===== 마무리 CTA ===== */
-.creator-studio .creator-studio__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 30px; padding-block: 100px; text-align: center; }
-.creator-studio .creator-studio__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-darker); }
-
-/* ===== 반응형 ===== */
-
-/* ============================================================
-   정산·수익 안내 — creator-settlement.html (Figma 시안 · 토큰 사용)
-   ============================================================ */
-.settlement__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
+.creator-studio .lp-faq-q span:first-child { color: var(--color-brand-base); }
 .settlement__pad { padding-block: 100px; }
-
-/* 공통 섹션 헤더 */
-.settlement .settlement__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
-.settlement .settlement__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-base); }
-.settlement .settlement__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; color: var(--color-neutral-darker); }
-
-/* 버튼 */
-.settlement .settlement__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 40px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
-.settlement .settlement__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
-.settlement .settlement__btn--primary:hover { background: var(--color-brand-darker); }
-.settlement .settlement__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
-.settlement .settlement__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
-.settlement .settlement__btn--lg { padding: 15px 44px; font-size: 17px; }
-
-/* ===== 히어로 ===== */
-.settlement .settlement__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
-.settlement .settlement__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 60px; align-items: center; padding-block: 110px 100px; }
-.settlement .settlement__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
-.settlement .settlement__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
-.settlement .settlement__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(38px, 4.8vw, 56px); line-height: 1.2; letter-spacing: -1.12px; }
-.settlement .settlement__hero-lead { color: var(--color-brand-secondary); font-weight: 700; font-size: 24px; line-height: 32.4px; }
-.settlement .settlement__hero-desc { max-width: 540px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
-.settlement .settlement__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 
 /* ===== 섹션 배경 ===== */
 .settlement .settlement__streams { background: var(--color-neutral-white); }
@@ -5988,10 +5691,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .settlement .settlement__cta { background: var(--color-neutral-white); }
 
 /* 다크/블루 섹션 헤더 색상 */
-.settlement .settlement__dashboard .settlement__eyebrow,
-.settlement .settlement__flow .settlement__eyebrow { color: var(--color-brand-accent); }
-.settlement .settlement__dashboard .settlement__title,
-.settlement .settlement__flow .settlement__title { color: var(--color-neutral-white); }
+.settlement .settlement__dashboard .lp-eyebrow,
+.settlement .settlement__flow .lp-eyebrow { color: var(--color-brand-accent); }
+.settlement .settlement__dashboard .lp-title-plain,
+.settlement .settlement__flow .lp-title-plain { color: var(--color-neutral-white); }
 
 /* ===== 01 수익 카드 ===== */
 .settlement .settlement__stream-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -6011,7 +5714,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 02 대시보드 (다크) ===== */
 .settlement .settlement__dash-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 44px; }
-.settlement .settlement__dash-head .settlement__head { margin-bottom: 0; gap: 13px; }
+.settlement .settlement__dash-head .lp-head { margin-bottom: 0; gap: 13px; }
 .settlement .settlement__dash-lead { color: var(--color-brand-light); font-size: 17px; line-height: 30px; }
 .settlement .settlement__dash-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .settlement .settlement__dash-card { display: flex; flex-direction: column; gap: 12px; background: rgb(255 255 255 / 0.06); border: 1px solid rgb(255 255 255 / 0.14); border-radius: 20px; padding: 31px 27px; }
@@ -6021,57 +5724,12 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 03 정산 흐름 (STEP, 블루) ===== */
 .settlement .settlement__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.settlement .settlement__step { display: flex; flex-direction: column; gap: 14px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.16); border-radius: 20px; padding: 33px 29px; }
-.settlement .settlement__step-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; color: var(--color-brand-secondary); }
-.settlement .settlement__step-title { font-weight: 700; font-size: 21px; line-height: 30px; color: var(--color-neutral-white); }
-.settlement .settlement__step-desc { color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
 .settlement .settlement__flow-note { margin-top: 30px; text-align: center; color: rgb(226 225 255 / 0.85); font-size: 14px; line-height: 26px; }
-
-/* ===== 04 FAQ ===== */
-.settlement .settlement__faq-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
-.settlement .settlement__faq-item { background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 31px; }
-.settlement .settlement__faq-q { display: flex; gap: 10px; font-weight: 700; font-size: 19px; line-height: 28px; color: var(--color-neutral-darker); }
-.settlement .settlement__faq-q span:first-child { color: var(--color-brand-base); }
-.settlement .settlement__faq-a { margin-top: 14px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
-
-/* ===== 마무리 CTA ===== */
-.settlement .settlement__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 30px; padding-block: 100px; text-align: center; }
-.settlement .settlement__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-darker); }
-.settlement .settlement__cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 20px; }
+.settlement .lp-faq-q span:first-child { color: var(--color-brand-base); }
 .settlement .settlement__cta-line { color: var(--color-neutral-base); font-size: 16px; line-height: 22px; }
 .settlement .settlement__cta-line a { color: var(--color-brand-base); font-weight: 700; }
 .settlement .settlement__cta-disclaimer { color: var(--color-neutral-light); font-size: 14px; line-height: 24px; }
-
-/* ===== 반응형 ===== */
-
-/* ============================================================
-   멘토 교육 지원 — creator-mentor.html (Figma 시안 · 토큰 사용)
-   ============================================================ */
-.mentor__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
 .mentor__pad { padding-block: 100px; }
-
-/* 공통 섹션 헤더 */
-.mentor .mentor__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
-.mentor .mentor__eyebrow { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 1.96px; color: var(--color-brand-base); }
-.mentor .mentor__title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 36px; line-height: 46.8px; color: var(--color-neutral-darker); }
-
-/* 버튼 */
-.mentor .mentor__btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 40px; border-radius: 30px; font-weight: 700; font-size: 16px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
-.mentor .mentor__btn--primary { background: var(--color-brand-base); color: var(--color-neutral-white); }
-.mentor .mentor__btn--primary:hover { background: var(--color-brand-darker); }
-.mentor .mentor__btn--ghost { border: 1px solid rgb(255 255 255 / 0.35); color: var(--color-brand-lighter); }
-.mentor .mentor__btn--ghost:hover { border-color: var(--color-neutral-white); color: var(--color-neutral-white); }
-.mentor .mentor__btn--lg { padding: 15px 44px; font-size: 17px; }
-
-/* ===== 히어로 ===== */
-.mentor .mentor__hero { position: relative; overflow: hidden; background: radial-gradient(900px 420px at 78% 18%, rgb(22 103 250 / 0.55) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
-.mentor .mentor__hero-grid { display: grid; grid-template-columns: 1fr minmax(280px, 420px); gap: 60px; align-items: center; padding-block: 110px 100px; }
-.mentor .mentor__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
-.mentor .mentor__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
-.mentor .mentor__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: clamp(38px, 4.8vw, 56px); line-height: 1.2; letter-spacing: -1.12px; }
-.mentor .mentor__hero-lead { color: var(--color-brand-secondary); font-weight: 700; font-size: 24px; line-height: 32.4px; }
-.mentor .mentor__hero-desc { max-width: 540px; color: var(--color-brand-light); font-size: 18px; line-height: 32px; }
-.mentor .mentor__hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 
 /* ===== 섹션 배경 ===== */
 .mentor .mentor__programs { background: var(--color-neutral-white); }
@@ -6081,10 +5739,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .mentor .mentor__cta { background: var(--color-neutral-white); }
 
 /* 블루/다크 섹션 헤더 색상 */
-.mentor .mentor__grow .mentor__eyebrow,
-.mentor .mentor__foryou .mentor__eyebrow { color: var(--color-brand-accent); }
-.mentor .mentor__grow .mentor__title,
-.mentor .mentor__foryou .mentor__title { color: var(--color-neutral-white); }
+.mentor .mentor__grow .lp-eyebrow,
+.mentor .mentor__foryou .lp-eyebrow { color: var(--color-brand-accent); }
+.mentor .mentor__grow .lp-title-plain,
+.mentor .mentor__foryou .lp-title-plain { color: var(--color-neutral-white); }
 
 /* ===== 01 지원 프로그램 카드 ===== */
 .mentor .mentor__prog-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -6097,13 +5755,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* ===== 02 성장 흐름 (STEP, 블루) ===== */
 .mentor .mentor__grow-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 50px; }
-.mentor .mentor__grow-head .mentor__head { margin-bottom: 0; }
+.mentor .mentor__grow-head .lp-head { margin-bottom: 0; }
 .mentor .mentor__grow-lead { color: var(--color-brand-lighter); font-size: 16px; line-height: 30px; }
 .mentor .mentor__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.mentor .mentor__step { display: flex; flex-direction: column; gap: 14px; background: rgb(255 255 255 / 0.08); border: 1px solid rgb(255 255 255 / 0.16); border-radius: 20px; padding: 33px 29px; }
-.mentor .mentor__step-num { font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1.3px; color: var(--color-brand-secondary); }
-.mentor .mentor__step-title { font-weight: 700; font-size: 21px; line-height: 30px; color: var(--color-neutral-white); }
-.mentor .mentor__step-desc { color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
 
 /* ===== 03 추천 대상 (다크) ===== */
 .mentor .mentor__foryou-grid { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
@@ -6112,35 +5766,14 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .mentor .mentor__foryou-item { display: flex; gap: 14px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid rgb(255 255 255 / 0.1); color: var(--color-brand-lighter); font-size: 16px; line-height: 28px; }
 .mentor .mentor__up { color: var(--color-brand-accent); font-weight: 700; display: inline-flex; align-self: center; }
 .mentor .mentor__rocket { height: 22px; width: auto; display: block; }
-
-/* ===== 04 FAQ ===== */
-.mentor .mentor__faq-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
-.mentor .mentor__faq-item { background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: 20px; padding: 33px 31px; }
-.mentor .mentor__faq-q { display: flex; gap: 10px; font-weight: 700; font-size: 19px; line-height: 28px; color: var(--color-neutral-darker); }
-.mentor .mentor__faq-q span:first-child { color: var(--color-brand-base); }
-.mentor .mentor__faq-a { margin-top: 14px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
-
-/* ===== 마무리 CTA ===== */
-.mentor .mentor__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 30px; padding-block: 100px; text-align: center; }
-.mentor .mentor__cta-title { max-width: 780px; font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 32px; line-height: 48px; color: var(--color-neutral-darker); }
-.mentor .mentor__cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 20px; }
+.mentor .lp-faq-q span:first-child { color: var(--color-brand-base); }
 .mentor .mentor__cta-line { color: var(--color-neutral-base); font-size: 16px; line-height: 22px; }
 .mentor .mentor__cta-line a { color: var(--color-brand-base); font-weight: 700; }
-
-/* ===== 반응형 ===== */
-
-/* ============================================================
-   공지사항 — notice.html (Figma 시안 · 토큰 사용)
-   ============================================================ */
-.notice__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
 .notice__pad { padding-block: 60px 90px; }
 
 /* ===== 히어로 (컴팩트) ===== */
 .notice .notice__hero { position: relative; overflow: hidden; background: radial-gradient(900px 400px at 80% 26%, rgb(22 103 250 / 0.5) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
 .notice .notice__hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px; padding-block: 66px; }
-.notice .notice__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
-.notice .notice__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
-.notice .notice__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 48px; line-height: 59.52px; letter-spacing: -0.96px; }
 .notice .notice__hero-desc { color: var(--color-brand-light); font-size: 17px; line-height: 30px; }
 .notice .notice__hero-mascot { display: grid; place-items: center; width: 200px; }
 .notice .notice__hero-mascot .brand-hero__box { max-width: 200px; font-size: 23px; }
@@ -6199,21 +5832,12 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .notice .notice__rocket { height: 20px; width: auto; display: block; }
 .notice .notice__detail-cta a { color: var(--color-brand-base); font-weight: 700; font-size: 20px; line-height: 32px; }
 .notice .notice__detail-disclaimer { margin-top: 24px; color: var(--color-neutral-light); font-size: 14px; line-height: 24px; }
-
-/* ===== 반응형 ===== */
-
-/* ============================================================
-   자주 묻는 질문 (FAQ) — faq.html (Figma 시안 · 콘텐츠 md · 토큰 사용)
-   ============================================================ */
-.hfaq__container { width: min(1160px, 100% - 40px); margin-inline: auto; }
 .hfaq__pad { padding-block: 80px 90px; }
 
 /* ===== 히어로 (검색) ===== */
 .hfaq .hfaq__hero { position: relative; overflow: hidden; background: radial-gradient(900px 400px at 78% 24%, rgb(22 103 250 / 0.5) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); }
 .hfaq .hfaq__hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px; padding-block: 90px; }
 .hfaq .hfaq__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; }
-.hfaq .hfaq__hero-eyebrow { display: inline-flex; align-items: center; padding: 7px 17px; border: 1px solid rgb(255 255 255 / 0.25); border-radius: 30px; color: var(--color-brand-accent); font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 1.82px; }
-.hfaq .hfaq__hero-title { color: var(--color-neutral-white); font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 48px; line-height: 59.52px; letter-spacing: -0.96px; }
 .hfaq .hfaq__hero-desc { max-width: 520px; color: var(--color-brand-light); font-size: 17px; line-height: 30px; }
 .hfaq .hfaq__search { display: flex; align-items: center; gap: 12px; width: min(520px, 100%); height: 56px; padding: 0 25px; background: rgb(255 255 255 / 0.1); border: 1px solid rgb(255 255 255 / 0.2); border-radius: 30px; }
 .hfaq .hfaq__search-input { flex: 1 1 auto; min-width: 0; background: none; border: 0; outline: none; color: var(--color-neutral-white); font-family: inherit; font-size: 17px; }
@@ -6255,12 +5879,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .hfaq .hfaq__empty { padding: 80px 0; text-align: center; }
 .hfaq .hfaq__empty-title { color: var(--color-neutral-darker); font-weight: 700; font-size: 22px; line-height: 32px; }
 .hfaq .hfaq__empty-desc { margin-top: 10px; color: var(--color-neutral-base); font-size: 16px; line-height: 28px; }
-
-/* ===== 하단 CTA ===== */
-.hfaq .hfaq__cta { position: relative; overflow: hidden; background: radial-gradient(760px 300px at 50% 0%, rgb(22 103 250 / 0.45) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); border-bottom: 1px solid var(--color-neutral-base); }
 .hfaq .hfaq__cta-inner { display: flex; flex-direction: column; align-items: center; gap: 28px; padding-block: 90px; text-align: center; }
 .hfaq .hfaq__cta-title { font-family: 'Spoqa Han Sans Neo', sans-serif; font-weight: 700; font-size: 30px; line-height: 45px; color: var(--color-neutral-white); }
-.hfaq .hfaq__cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
 .hfaq .hfaq__cta-btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 30px; font-weight: 700; font-size: 17px; line-height: 22px; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }
 .hfaq .hfaq__cta-btn--accent { background: var(--color-brand-secondary); color: var(--color-neutral-darker); padding: 14px 40px; }
 .hfaq .hfaq__cta-btn--accent:hover { background: var(--color-brand-secondary-dark); }
@@ -6415,7 +6035,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .youth__cta-btn--phone:hover { background: var(--color-brand-secondary-dark); }
 .youth__cta-btn--mail { border: 1px solid rgb(255 255 255 / 0.25); color: var(--color-neutral-white); }
 .youth__cta-btn--mail:hover { border-color: var(--color-neutral-white); }
-
 
 /* ============================================================
    사업자정보 확인 — business.html (Figma 210-23593)
@@ -8117,7 +7736,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cm-btn--danger { background-color: var(--color-neutral-white); border-color: var(--color-danger-lighter); color: var(--color-danger-base); }
 .cm-btn--danger:hover { border-color: var(--color-danger-base); }
 
-
 /* ============================================================
    크리에이터 · 수강생 · 리뷰 (creator-reviews.html)
    ============================================================ */
@@ -8228,7 +7846,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .rv-answer__btn:hover { opacity: 0.9; }
 
-
 /* ============================================================
    크리에이터 · 질문 관리 (creator-questions.html)
    ============================================================ */
@@ -8307,7 +7924,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .qa-btn--dark:hover { opacity: 0.9; }
 .qa-btn--ghost { padding: 12px 21px; background-color: var(--color-neutral-white); border-color: var(--color-neutral-lighter); color: var(--color-neutral-base); }
 .qa-btn--ghost:hover { border-color: var(--color-neutral-light); }
-
 
 /* ============================================================
    크리에이터 · 수익 · 정산 (creator-revenue.html)
@@ -8413,7 +8029,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .rev-perf__amt { flex-shrink: 0; font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
 .rev-perf__track { display: block; height: 8px; border-radius: var(--radius-pill); background-color: var(--color-neutral-lighter); overflow: hidden; }
 .rev-perf__fill { display: block; height: 100%; border-radius: var(--radius-pill); background-color: var(--color-brand-darker); }
-
 
 /* ============================================================
    크리에이터 · 정산 계좌 · 세금 (creator-tax.html)
@@ -8524,7 +8139,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   text-decoration: none; transition: opacity .15s ease;
 }
 .tax-note__btn:hover { opacity: 0.9; }
-
 
 /* ============================================================
    크리에이터 · 스튜디오 예약 (creator-studio-booking.html)
@@ -8716,62 +8330,62 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .course-list--slider .course-list__item {
     flex-basis: calc((100% - var(--space-card-gap)) / 2);  /* 2개 노출 */
   }
-  .b2b .b2b__hero-grid { grid-template-columns: 1fr; }
+  .b2b .lp-hero-grid-wide { grid-template-columns: 1fr; }
   .b2b .b2b__pain-grid,
   .b2b .b2b__outcomes-grid { grid-template-columns: 1fr; gap: 40px; }
   .b2b .b2b__cards,
   .b2b .b2b__steps { grid-template-columns: repeat(2, 1fr); }
   .b2b .b2b__process-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
-  .b2b .b2b__faq-list { grid-template-columns: 1fr; }
-  .careers .careers__hero-grid { grid-template-columns: 1fr; }
+  .b2b .lp-faq-list-2 { grid-template-columns: 1fr; }
+  .careers .lp-hero-grid-wide { grid-template-columns: 1fr; }
   .careers .careers__team-grid,
   .careers .careers__share-grid { grid-template-columns: 1fr; gap: 40px; padding-right: 0; }
   .careers .careers__cards,
   .careers .careers__steps { grid-template-columns: repeat(2, 1fr); }
   .careers .careers__roles { grid-template-columns: 1fr 1fr; }
   .careers .careers__roles-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
-  .roadmap .roadmap__hero-grid { grid-template-columns: 1fr; }
+  .roadmap .lp-hero-grid { grid-template-columns: 1fr; }
   .roadmap .roadmap__how-list,
   .roadmap .roadmap__benefit-list { grid-template-columns: repeat(2, 1fr); }
   .roadmap .roadmap__cats { grid-template-columns: 1fr; }
   .roadmap .roadmap__cat-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
   .roadmap .roadmap__next-steps { grid-template-columns: 1fr; gap: 0; }
   .roadmap .roadmap__next-step { padding-top: 16px; padding-bottom: 14px; }
-  .subscribe .subscribe__hero-grid { grid-template-columns: 1fr; }
+  .subscribe .lp-hero-grid { grid-template-columns: 1fr; }
   .subscribe .subscribe__summary,
   .subscribe .subscribe__plans,
   .subscribe .subscribe__forme-grid { grid-template-columns: 1fr; }
   .subscribe .subscribe__plan-perks { grid-template-columns: 1fr; }
-  .subscribe .subscribe__faq-list { grid-template-columns: 1fr 1fr; }
-  .creator-apply .creator-apply__hero-grid { grid-template-columns: 1fr; }
+  .subscribe .lp-faq-list { grid-template-columns: 1fr 1fr; }
+  .creator-apply .lp-hero-grid { grid-template-columns: 1fr; }
   .creator-apply .creator-apply__before-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
   .creator-apply .creator-apply__cards,
   .creator-apply .creator-apply__steps { grid-template-columns: repeat(2, 1fr); }
-  .creator-apply .creator-apply__faq-list { grid-template-columns: 1fr; }
+  .creator-apply .lp-faq-list { grid-template-columns: 1fr; }
   .creator-apply .creator-apply__field-row { grid-template-columns: 1fr; }
-  .creator-guide .creator-guide__hero-grid { grid-template-columns: 1fr; }
+  .creator-guide .lp-hero-grid { grid-template-columns: 1fr; }
   .creator-guide .creator-guide__step-grid { grid-template-columns: 1fr; gap: 30px; }
   .creator-guide .creator-guide__step-label { position: static; }
   .creator-guide .creator-guide__support-list { grid-template-columns: repeat(2, 1fr); }
   .creator-guide .creator-guide__check-grid { grid-template-columns: 1fr; gap: 30px; }
-  .creator-studio .creator-studio__hero-grid { grid-template-columns: 1fr; }
+  .creator-studio .lp-hero-grid { grid-template-columns: 1fr; }
   .creator-studio .creator-studio__space-list { grid-template-columns: repeat(2, 1fr); }
   .creator-studio .creator-studio__gear-grid,
   .creator-studio .creator-studio__info-grid { grid-template-columns: 1fr; gap: 30px; }
   .creator-studio .creator-studio__steps { grid-template-columns: repeat(2, 1fr); }
-  .creator-studio .creator-studio__faq-list { grid-template-columns: 1fr; }
-  .settlement .settlement__hero-grid { grid-template-columns: 1fr; }
+  .creator-studio .lp-faq-list { grid-template-columns: 1fr; }
+  .settlement .lp-hero-grid { grid-template-columns: 1fr; }
   .settlement .settlement__stream-list,
-  .settlement .settlement__faq-list { grid-template-columns: 1fr; }
+  .settlement .lp-faq-list-2 { grid-template-columns: 1fr; }
   .settlement .settlement__dash-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
   .settlement .settlement__dash-list,
   .settlement .settlement__steps { grid-template-columns: repeat(2, 1fr); }
-  .mentor .mentor__hero-grid { grid-template-columns: 1fr; }
+  .mentor .lp-hero-grid { grid-template-columns: 1fr; }
   .mentor .mentor__prog-list { grid-template-columns: repeat(2, 1fr); }
   .mentor .mentor__grow-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
   .mentor .mentor__steps { grid-template-columns: repeat(2, 1fr); }
   .mentor .mentor__foryou-grid { grid-template-columns: 1fr; gap: 40px; }
-  .mentor .mentor__faq-list { grid-template-columns: 1fr; }
+  .mentor .lp-faq-list { grid-template-columns: 1fr; }
   .notice .notice__hero-grid { grid-template-columns: 1fr; }
   .notice .notice__hero-mascot { justify-self: start; }
   .notice .notice__pinned-inner { flex-direction: column; align-items: flex-start; }
@@ -8913,7 +8527,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .roadmap .roadmap__step-row { flex-wrap: wrap; gap: 4px 20px; }
   .roadmap .roadmap__step-note { width: 100%; text-align: left; padding-left: 94px; }
   .subscribe__pad { padding-block: 72px; }
-  .subscribe .subscribe__faq-list { grid-template-columns: 1fr; }
+  .subscribe .lp-faq-list { grid-template-columns: 1fr; }
   .subscribe .subscribe__compare-head,
   .subscribe .subscribe__compare-row { flex-wrap: wrap; gap: 4px 16px; }
   .subscribe .subscribe__compare-label { flex-basis: 100%; }
