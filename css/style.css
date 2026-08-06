@@ -164,6 +164,7 @@ hr {
 .icon--heart         { --icon-image: url("../svg/heart-fill.svg"); }
 .icon--arrow-right   { --icon-image: url("../svg/arrow-right.svg"); }
 .icon--chevron-left  { --icon-image: url("../svg/chevron-left.svg"); }
+.icon--download      { --icon-image: url("../svg/download.svg"); }
 .icon--chevron-right { --icon-image: url("../svg/chevron-right.svg"); }
 .icon--comment       { --icon-image: url("../svg/chat-left-quote.svg"); }
 .icon--caret-down     { --icon-image: url("../svg/caret-down-fill.svg"); }
@@ -7227,14 +7228,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
    수료증 — account-certificates.html (Figma 215-32932)
    ============================================================ */
 /* 헤더 */
-.cert-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
 .cert-head__title { font-weight: var(--font-weight-bold); font-size: var(--text-h3-size); line-height: 36px; color: var(--color-neutral-darker); }
 .cert-head__summary { margin-top: 6px; font-size: 15px; color: var(--color-neutral-base); }
-.cert-head__actions { display: flex; gap: 8px; flex-shrink: 0; }
-.cert-head__btn { padding: 11px 18px; border-radius: var(--radius-pill); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); cursor: pointer; transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
-.cert-head__btn--ghost { background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-base); }
-.cert-head__btn--ghost:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
-.cert-head__btn--primary { background-color: var(--color-brand-base); color: var(--color-neutral-white); }
 /* 요약 (블루) */
 .cert-summary { display: flex; align-items: center; gap: var(--space-2xl); padding: var(--space-xl); border-radius: var(--radius-md); background-image: linear-gradient(to right, var(--color-account-hero-from) 0%, var(--color-account-hero-to) 100%); color: var(--color-neutral-white); }
 .cert-summary__main { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
@@ -7274,7 +7269,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cert-pending__aside { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
 .cert-pending__left { font-size: 13px; color: var(--color-neutral-light); }
 .cert-pending__btn { padding: 11px 20px; border-radius: var(--radius-pill); background-color: var(--color-neutral-darker); color: var(--color-neutral-white); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); white-space: nowrap; }
-.cert-pending__btn:hover { opacity: 0.88; }
 
 /* 받은 졸업모 */
 .cert-got__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
@@ -7303,9 +7297,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cert-diploma__v--no { font-family: var(--font-display); }
 .cert-diploma__actions { display: flex; gap: 8px; }
 .cert-diploma__pdf { flex: 1; text-align: center; padding: 12px 11px; border-radius: var(--radius-pill); background-color: var(--color-neutral-darker); color: var(--color-neutral-white); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); }
-.cert-diploma__pdf:hover { opacity: 0.88; }
-.cert-diploma__share { flex-shrink: 0; padding: 12px 17px; border-radius: var(--radius-pill); background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-base); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); }
-.cert-diploma__share:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
 .cert-got__more { width: 100%; margin-top: 16px; background-color: transparent; cursor: pointer; }
 .cert-got__more[hidden] { display: none; }
 
@@ -8577,8 +8568,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .member-actions { flex-wrap: wrap; }
   .dnd__body { flex-direction: column; align-items: flex-start; gap: 16px; }
   .notify-actions { flex-wrap: wrap; }
-  .cert-head { flex-direction: column; align-items: stretch; gap: 16px; }
-  .cert-head__actions { flex-wrap: wrap; }
   .cert-pending__item { flex-wrap: wrap; }
   .cert-summary__stats { flex-direction: column; }
   .cert-got__grid { grid-template-columns: 1fr; }
@@ -8776,4 +8765,221 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .cw__stage { height: 60vh; }
   .cw__side { width: 100%; }
   .cw__rail { display: none; }
+}
+
+/* ==========================================================================
+   수료증 (certificate.html) — 수료 인증서 뷰
+   ========================================================================== */
+
+.cert-body { background-color: var(--color-neutral-lightest); }
+
+.cert-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 상단 바: 뒤로 · 로고 · PDF 내려받기 */
+.cert-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-2xl);
+  background-color: var(--color-neutral-white);
+  border-bottom: 1px solid var(--color-neutral-lighter);
+}
+.cert-bar__back {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-base);
+  --icon-size: 16px;
+}
+.cert-bar__logo { justify-self: center; }
+.cert-bar__logo img { display: block; height: 26px; }
+.cert-bar__dl {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: var(--space-2xs) var(--space-lg);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-brand-base);
+  box-shadow: var(--shadow-button);
+  color: var(--color-text-inverse);
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-weight-bold);
+  --icon-size: 16px;
+}
+
+/* 무대 */
+.cert-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+  padding: var(--space-4xl) var(--space-lg);
+}
+.cert-stage__note {
+  font-size: var(--text-caption-size);
+  color: var(--color-neutral-light);
+  text-align: center;
+}
+
+/* 증서 본체 */
+.cert {
+  width: 100%;
+  max-width: 820px;
+  padding: 10px;
+  background-color: var(--color-neutral-white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+}
+.cert__frame {
+  position: relative;
+  padding: var(--space-4xl) var(--space-3xl);
+  border: 2px solid var(--color-brand-base);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+.cert__frame::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid var(--color-brand-lighter);
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+/* 머리말 */
+.cert__logo { height: 30px; }
+.cert__eyebrow {
+  margin-top: var(--space-lg);
+  font-family: var(--font-display);
+  font-size: var(--text-caption-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.28em;
+  color: var(--color-brand-base);
+}
+.cert__title {
+  margin-block: 10px;
+  font-size: var(--text-h1-size);
+  font-weight: var(--font-weight-black);
+  letter-spacing: 0.12em;
+  color: var(--color-neutral-darker);
+}
+.cert__no {
+  margin-top: var(--space-xs);
+  font-size: var(--text-caption-size);
+  letter-spacing: 0.04em;
+  color: var(--color-neutral-light);
+}
+
+/* 본문 */
+.cert__lead {
+  margin-top: var(--space-2xl);
+  font-size: var(--text-body-size);
+  line-height: 1.7;
+  color: var(--color-neutral-base);
+}
+.cert__name-label,
+.cert__course-label {
+  margin-top: var(--space-xl);
+  font-size: var(--text-caption-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.2em;
+  color: var(--color-neutral-light);
+}
+.cert__name {
+  display: inline-block;
+  margin-top: var(--space-2xs);
+  padding-bottom: var(--space-2xs);
+  border-bottom: 2px solid var(--color-brand-accent);
+  font-size: var(--text-h2-size);
+  font-weight: var(--font-weight-black);
+  color: var(--color-brand-darker);
+}
+.cert__course {
+  margin-top: var(--space-2xs);
+  font-size: var(--text-h5-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-darker);
+}
+
+/* 메타 (멘토 · 구성 · 수료일) */
+.cert__meta {
+  margin-top: var(--space-2xl);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md) var(--space-3xl);
+}
+.cert__meta-item dt {
+  font-size: var(--text-caption-size);
+  letter-spacing: 0.1em;
+  color: var(--color-neutral-light);
+}
+.cert__meta-item dd {
+  margin-top: var(--space-3xs);
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-darker);
+}
+
+/* 꼬리말: 서명 · 직인 */
+.cert__foot {
+  margin-top: var(--space-4xl);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+.cert__sign { text-align: left; }
+.cert__sign-name {
+  font-size: var(--text-h5-size);
+  font-weight: var(--font-weight-black);
+  color: var(--color-neutral-darker);
+}
+.cert__sign-role {
+  margin-top: var(--space-3xs);
+  font-size: var(--text-caption-size);
+  color: var(--color-neutral-light);
+}
+.cert__seal {
+  flex-shrink: 0;
+  width: 92px;
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3xs);
+  border: 2px solid var(--color-brand-base);
+  border-radius: var(--radius-circle);
+  background-color: var(--color-brand-lighter);
+  color: var(--color-brand-darker);
+  transform: rotate(-8deg);
+}
+.cert__seal-rocket { width: 22px; height: 22px; }
+.cert__seal-text {
+  font-size: 10px;
+  font-weight: var(--font-weight-black);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 640px) {
+  .cert__frame { padding: var(--space-2xl) var(--space-lg); }
+  .cert__title { font-size: var(--text-h2-size); }
+  .cert__name { font-size: var(--text-h3-size); }
+  .cert__foot { flex-direction: column; align-items: center; gap: var(--space-xl); text-align: center; }
+  .cert__sign { text-align: center; }
 }
