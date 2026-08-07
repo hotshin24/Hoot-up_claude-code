@@ -6328,6 +6328,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .login__social-btn--kakao    { background-color: var(--color-warning-base); color: var(--color-neutral-dark); }
 .login__social-btn--facebook { background-color: var(--color-brand-base); color: var(--color-text-inverse); }
 .login__social-btn--apple    { background-color: var(--color-neutral-darker); color: var(--color-text-inverse); }
+/* 연결된 계정 관리 — 버튼 우측 상태 표기 */
+.linked-state { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: var(--text-caption-size); font-weight: var(--font-weight-regular); opacity: 0.8; }
+.login__social-btn:not(.is-linked) .linked-state { font-weight: var(--font-weight-bold); }
 .login__social-btn--email {
   margin-top: var(--space-md);
   background-color: transparent;
@@ -7150,7 +7153,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .member-field__input {
   height: 48px; padding: 0 19px;
   background-color: var(--color-neutral-lightest);
-  border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-sm);
   font-size: 15px; color: var(--color-neutral-darker);
 }
 .member-field__input:focus { outline: none; border-color: var(--color-brand-base); }
@@ -7163,17 +7166,40 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .member-interest__label { font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
 .member-interest__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+/* 관심 카테고리 칩 — notice__filter-btn 디자인 규칙 적용 (폰트 사이즈는 기존 유지) */
 .member-chip {
-  padding: 10px 17px; border-radius: var(--radius-pill);
-  background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter);
-  color: var(--color-neutral-base); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); cursor: pointer;
-  transition: border-color .15s ease, color .15s ease;
+  padding: 8px 17px; border-radius: var(--radius-pill);
+  background-color: transparent; border: 1px solid var(--color-neutral-base);
+  color: var(--color-neutral-base); font-size: var(--text-body-sm-size); line-height: var(--text-body-leading); cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard),
+              border-color var(--duration-fast) var(--easing-standard);
 }
-.member-chip:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+.member-chip:hover { border-color: var(--color-brand-base); }
 .member-chip.is-active {
-  padding: 9px 16px; border: 0;
-  background-color: var(--color-brand-base); color: var(--color-neutral-white);
+  border-color: var(--color-brand-base);
+  background-color: var(--color-brand-base); color: var(--color-text-inverse); font-weight: var(--font-weight-bold);
 }
+.member-chip.is-active:hover { border-color: var(--color-brand-base); }
+
+/* 보기(리스트) 모드 — input 을 값 텍스트처럼 표시 */
+.member-form.is-view .member-field__input {
+  border-color: transparent;
+  background-color: transparent;
+  padding-left: 0;
+  color: var(--color-neutral-darker);
+  font-weight: var(--font-weight-bold);
+}
+.member-form.is-view .member-photo__actions { display: none; }
+.member-form.is-view .member-btn--cancel { display: none; }
+.member-form.is-view .member-chip { pointer-events: none; }
+.member-form.is-view .member-chip:not(.is-active) { display: none; }
+
+/* 수정 확인 모달 — 내용 요약 */
+.save-summary { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+.save-summary__row { display: flex; gap: 12px; font-size: var(--text-body-sm-size); line-height: 20px; }
+.save-summary__row dt { flex-shrink: 0; width: 88px; color: var(--color-neutral-light); }
+.save-summary__row dd { flex: 1; min-width: 0; color: var(--color-neutral-darker); font-weight: var(--font-weight-bold); }
 
 /* 저장/취소 버튼 */
 .member-actions { display: flex; justify-content: flex-end; gap: 8px; padding-top: 26px; }

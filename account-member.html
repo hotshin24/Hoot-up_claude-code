@@ -16,6 +16,13 @@
 
   <script src="js/common.js" defer></script>
   <script src="js/carousel.js" defer></script>
+  <script src="js/member-interest.js" defer></script>
+  <script src="js/member-photo.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/subscribe-modal.js" defer></script>
+  <script src="js/account-withdraw.js" defer></script>
+  <script src="js/member-linked.js" defer></script>
+  <script src="js/member-save.js" defer></script>
 </head>
 <body>
 
@@ -289,7 +296,7 @@
       </div>
 
       <!-- 프로필 폼 -->
-      <section class="member-form">
+      <section class="member-form is-view">
         <h3 class="a11y-hidden">기본 정보</h3>
         <div class="member-photo">
           <img class="member-photo__avatar" src="assets/avatar/user.jpg" alt="밤샘러 지우 프로필 사진">
@@ -297,8 +304,9 @@
             <p class="member-photo__title">프로필 사진</p>
             <p class="member-photo__hint">JPG, PNG · 5MB 이하 · 정사각형 권장</p>
             <div class="member-photo__actions">
-              <button class="member-photo__btn" type="button">이미지 변경</button>
-              <button class="member-photo__btn member-photo__btn--text" type="button">삭제</button>
+              <button class="member-photo__btn" type="button" data-photo-change>이미지 변경</button>
+              <button class="member-photo__btn member-photo__btn--text" type="button" data-photo-delete>삭제</button>
+              <input class="a11y-hidden" type="file" id="member-photo-file" accept="image/*" tabindex="-1" aria-hidden="true" data-photo-input>
             </div>
           </div>
         </div>
@@ -306,11 +314,11 @@
         <div class="member-fields">
           <div class="member-field">
             <label class="member-field__label" for="field-nickname">닉네임</label>
-            <input class="member-field__input" id="field-nickname" type="text" value="밤샘러 지우">
+            <input class="member-field__input" id="field-nickname" type="text" value="밤샘러 지우" readonly>
           </div>
           <div class="member-field">
             <label class="member-field__label" for="field-name">이름</label>
-            <input class="member-field__input" id="field-name" type="text" value="박지우">
+            <input class="member-field__input" id="field-name" type="text" value="박지우" readonly>
           </div>
           <div class="member-field">
             <label class="member-field__label" for="field-email">이메일 (아이디)</label>
@@ -318,7 +326,7 @@
           </div>
           <div class="member-field">
             <label class="member-field__label" for="field-phone">휴대폰</label>
-            <input class="member-field__input" id="field-phone" type="text" value="010-2456-1188">
+            <input class="member-field__input" id="field-phone" type="text" value="010-2456-1188" readonly>
           </div>
         </div>
 
@@ -336,7 +344,7 @@
 
         <div class="member-actions">
           <button class="member-btn member-btn--cancel" type="button">취소</button>
-          <button class="member-btn member-btn--save" type="submit">변경사항 저장</button>
+          <button class="member-btn member-btn--save" type="button">수정하기</button>
         </div>
       </section>
 
@@ -349,21 +357,21 @@
               <p class="account-settings__label">비밀번호</p>
               <p class="account-settings__desc">마지막 변경 2025.11.02</p>
             </div>
-            <a class="account-btn account-btn--sm" href="#">변경</a>
+            <a class="account-btn account-btn--sm" href="#" data-open-subscribe aria-haspopup="dialog" aria-controls="password-modal">변경</a>
           </li>
           <li class="account-settings__row">
             <div class="account-settings__text">
               <p class="account-settings__label">연결된 계정</p>
-              <p class="account-settings__desc">카카오 연결됨 · 애플 미연결</p>
+              <p class="account-settings__desc" data-linked-summary>카카오 연결됨 · 페이스북 미연결</p>
             </div>
-            <a class="account-btn account-btn--sm" href="#">관리</a>
+            <a class="account-btn account-btn--sm" href="#" data-open-modal aria-haspopup="dialog" aria-controls="linked-modal">관리</a>
           </li>
           <li class="account-settings__row account-settings__row--danger">
             <div class="account-settings__text">
               <p class="account-settings__label account-settings__label--danger">회원 탈퇴</p>
               <p class="account-settings__desc">보유 포인트와 수강 기록이 모두 삭제됩니다</p>
             </div>
-            <a class="account-btn account-btn--danger" href="#">탈퇴하기</a>
+            <a class="account-btn account-btn--danger" href="#" data-open-modal aria-haspopup="dialog" aria-controls="withdraw-confirm-modal">탈퇴하기</a>
           </li>
         </ul>
       </section>
@@ -486,6 +494,111 @@
 
   </div>
 </footer>
+
+<!-- ===== 연결된 계정 관리 모달 ===== -->
+<div class="modal" id="linked-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="linked-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="linked-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 연결된 계정 관리</h2>
+    </div>
+    <div class="login__social">
+      <button class="login__social-btn login__social-btn--kakao is-linked" type="button" data-link="kakao" data-name="카카오" aria-pressed="true">
+        <span class="icon icon--chat-fill" aria-hidden="true"></span>카카오<span class="linked-state">연결됨</span>
+      </button>
+      <button class="login__social-btn login__social-btn--facebook" type="button" data-link="facebook" data-name="페이스북" aria-pressed="false">
+        <span class="icon icon--facebook" aria-hidden="true"></span>페이스북<span class="linked-state">미연결</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 탈퇴 확인 모달 ===== -->
+<div class="modal" id="withdraw-confirm-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="withdraw-confirm-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="withdraw-confirm-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 정말 탈퇴하시겠습니까?</h2>
+    </div>
+    <div class="ca-modal-actions">
+      <button class="btn btn--outline" type="button" data-modal-close>취소</button>
+      <button class="btn btn--solid" type="button" data-withdraw-confirm>확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 탈퇴 완료 모달 ===== -->
+<div class="modal" id="withdraw-done-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="withdraw-done-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="withdraw-done-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 정상적으로 탈퇴되었습니다</h2>
+      <p class="signup__result">그동안 훗업을 이용해 주셔서 감사합니다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 비밀번호 변경 모달 ===== -->
+<div class="modal" id="password-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="password-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="password-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 비밀번호 변경</h2>
+    </div>
+    <form class="signup__form" data-subscribe-form>
+      <div class="signup__fields">
+        <input class="signup__input" type="password" name="current-password" placeholder="현재 비밀번호" autocomplete="current-password" required>
+        <input class="signup__input" type="password" name="new-password" placeholder="새로운 비밀번호" autocomplete="new-password" required>
+        <input class="signup__input" type="password" name="confirm-password" placeholder="새로운 비밀번호 확인" autocomplete="new-password" required>
+      </div>
+      <button class="signup__submit" type="submit">변경하기</button>
+    </form>
+    <p class="subscribe-done" role="status" hidden>비밀번호가 정상적으로 변경되었습니다.</p>
+  </div>
+</div>
+
+<!-- ===== 수정 확인 모달 ===== -->
+<div class="modal" id="member-save-confirm" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="member-save-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="member-save-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 아래 내용으로 저장하시겠습니까?</h2>
+    </div>
+    <dl class="save-summary" data-save-summary></dl>
+    <div class="ca-modal-actions">
+      <button class="btn btn--outline" type="button" data-modal-close>취소</button>
+      <button class="btn btn--solid" type="button" data-save-confirm>확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 수정 완료 모달 ===== -->
+<div class="modal" id="member-save-done" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="member-save-done-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="member-save-done-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 변경사항이 정상적으로 저장되었습니다</h2>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
