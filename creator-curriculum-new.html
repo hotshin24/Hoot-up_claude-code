@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>새 클래스 초안 작성 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 크리에이터 새 클래스 초안 작성 — 챕터·강의를 추가하고 커리큘럼을 구성하세요.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://spoqa.github.io">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/import.css">
+
+  <script src="js/common.js" defer></script>
+  <script src="js/carousel.js" defer></script>
+  <script src="js/toggle.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/cm-curriculum.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<!-- ======================================================================
+     헤더
+     ====================================================================== -->
+<header class="site-header">
+  <div class="site-header__inner l-container">
+
+    <div class="site-header__utility">
+      <a class="site-header__logo" href="index.html">
+        <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
+      </a>
+
+      <form class="search" action="categories.html" method="get" role="search">
+        <label class="a11y-hidden" for="search-keyword">강의 검색</label>
+        <input class="search__input" id="search-keyword" type="search" name="keyword" placeholder="어떤 강의를 찾으시나요?" autocomplete="off">
+        <button class="search__submit" type="submit" aria-label="검색">
+          <span class="icon icon--search"></span>
+        </button>
+      </form>
+
+      <ul class="user-menu">
+        <li class="user-menu__item">
+          <a class="user-menu__link" href="cart.html">
+            <span class="icon icon--cart"></span>
+            <span class="a11y-hidden">장바구니</span>
+            <span class="user-menu__badge">3<span class="a11y-hidden">개 담김</span></span>
+          </a>
+        </li>
+        <li class="user-menu__item">
+          <button class="user-menu__link" type="button" data-notif-toggle aria-haspopup="dialog" aria-expanded="false">
+            <span class="icon icon--bell"></span>
+            <span class="a11y-hidden">알림</span>
+            <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
+          </button>
+        </li>
+        <li class="user-menu__item">
+          <a class="user-menu__profile" href="account.html">
+            <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <nav class="gnb" aria-label="주요 메뉴">
+      <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega" aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
+        <span class="icon icon--list"></span>
+      </button>
+      <ul class="gnb__list" id="gnb-list">
+        <li class="gnb__item"><a class="gnb__link" href="categories.html">전체 클래스</a></li>
+        <li class="gnb__item"><a class="gnb__link" href="best.html">베스트 클래스</a></li>
+        <li class="gnb__item"><a class="gnb__link" href="event-1.html">이벤트 할인</a></li>
+        <li class="gnb__item"><a class="gnb__link" href="new.html">새로운 클래스</a></li>
+        <li class="gnb__item"><a class="gnb__link" href="earlybird-1.html">얼리버드 할인</a></li>
+        <li class="gnb__item"><a class="gnb__link" href="signature.html">시그니쳐 클래스</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <!-- ====================================================================
+       전체 카테고리 메가 메뉴 (햄버거 · '전체 카테고리' 트리거로 펼침)
+       ==================================================================== -->
+  <div class="mega" id="category-mega" aria-hidden="true">
+    <div class="mega__inner l-container">
+      <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
+        <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it"
+                aria-selected="true" aria-controls="megapanel-dev-it" tabindex="0">
+          <span class="mega-cat__name">개발 &amp; IT</span>
+          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-career-money"
+                aria-selected="false" aria-controls="megapanel-career-money" tabindex="-1">
+          <span class="mega-cat__name">커리어 &amp; 머니</span>
+          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-design-creative"
+                aria-selected="false" aria-controls="megapanel-design-creative" tabindex="-1">
+          <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
+          <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-photo-video"
+                aria-selected="false" aria-controls="megapanel-photo-video" tabindex="-1">
+          <span class="mega-cat__name">사진 &amp; 영상</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust"
+                aria-selected="false" aria-controls="megapanel-drawing-illust" tabindex="-1">
+          <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness"
+                aria-selected="false" aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
+          <span class="mega-cat__name">운동 &amp; 마음챙김</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade"
+                aria-selected="false" aria-controls="megapanel-craft-handmade" tabindex="-1">
+          <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+        <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking"
+                aria-selected="false" aria-controls="megapanel-cooking-baking" tabindex="-1">
+          <span class="mega-cat__name">요리 &amp; 베이킹</span>
+          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="mega__subs">
+        <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
+          <a class="mega-sub__title" href="category-dev-it-1.html">
+            개발 &amp; IT 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-dev-it-web-publishing.html">웹 퍼블리싱</a></li>
+            <li><a class="mega-sub__link" href="category-dev-it-frontend.html">프론트엔드</a></li>
+            <li><a class="mega-sub__link" href="category-dev-it-backend.html">백엔드 &amp; 서버</a></li>
+            <li><a class="mega-sub__link" href="category-dev-it-mobile.html">모바일 &amp; 앱 개발</a></li>
+            <li><a class="mega-sub__link" href="category-dev-it-data-ai.html">데이터 &amp; AI</a></li>
+            <li><a class="mega-sub__link" href="category-dev-it-ai-tools.html">AI 개발 도구</a></li>
+            <li><a class="mega-sub__link" href="category-dev-it-nocode.html">노코드 &amp; 자동화</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money" hidden>
+          <a class="mega-sub__title" href="category-career-money-1.html">
+            커리어 &amp; 머니 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-career-money-job-skills.html">직무 역량 &amp; 일잘러</a></li>
+            <li><a class="mega-sub__link" href="category-career-money-job-search.html">취업 &amp; 이직</a></li>
+            <li><a class="mega-sub__link" href="category-career-money-marketing.html">마케팅 &amp; 브랜딩</a></li>
+            <li><a class="mega-sub__link" href="category-career-money-sideproject.html">사이드프로젝트 &amp; N잡</a></li>
+            <li><a class="mega-sub__link" href="category-career-money-investing.html">재테크 &amp; 투자</a></li>
+            <li><a class="mega-sub__link" href="category-career-money-tax.html">절세 &amp; 머니 관리</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative" hidden>
+          <a class="mega-sub__title" href="category-design-creative-1.html">
+            디자인 &amp; 크리에이티브 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-design-creative-uxui.html">UX/UI 디자인</a></li>
+            <li><a class="mega-sub__link" href="category-design-creative-graphic.html">그래픽 디자인</a></li>
+            <li><a class="mega-sub__link" href="category-design-creative-branding.html">브랜딩 &amp; 로고</a></li>
+            <li><a class="mega-sub__link" href="category-design-creative-3d-motion.html">3D &amp; 모션 디자인</a></li>
+            <li><a class="mega-sub__link" href="category-design-creative-illust.html">일러스트 &amp; 디지털아트</a></li>
+            <li><a class="mega-sub__link" href="category-design-creative-intro.html">크리에이티브 입문</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
+          <a class="mega-sub__title" href="category-photo-video-1.html">
+            사진 &amp; 영상 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-photo-video-photography.html">사진 촬영</a></li>
+            <li><a class="mega-sub__link" href="category-photo-video-videography.html">영상 촬영</a></li>
+            <li><a class="mega-sub__link" href="category-photo-video-editing.html">편집 &amp; 후보정</a></li>
+            <li><a class="mega-sub__link" href="category-photo-video-motion.html">모션 &amp; 크리에이티브</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust" hidden>
+          <a class="mega-sub__title" href="category-drawing-illust-1.html">
+            드로잉 &amp; 일러스트 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-drawing-illust-digital.html">디지털 드로잉</a></li>
+            <li><a class="mega-sub__link" href="category-drawing-illust-handdrawing.html">손그림 &amp; 회화</a></li>
+            <li><a class="mega-sub__link" href="category-drawing-illust-character.html">캐릭터 &amp; 웹툰</a></li>
+            <li><a class="mega-sub__link" href="category-drawing-illust-calligraphy.html">캘리그라피 &amp; 레터링</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness" aria-labelledby="megacat-fitness-mindfulness" hidden>
+          <a class="mega-sub__title" href="category-fitness-mindfulness-1.html">
+            운동 &amp; 마음챙김 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-fitness-mindfulness-hometraining.html">홈트 &amp; 근력</a></li>
+            <li><a class="mega-sub__link" href="category-fitness-mindfulness-yoga.html">요가 &amp; 필라테스</a></li>
+            <li><a class="mega-sub__link" href="category-fitness-mindfulness-running.html">러닝 &amp; 유산소</a></li>
+            <li><a class="mega-sub__link" href="category-fitness-mindfulness-meditation.html">명상 &amp; 마음챙김</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade" hidden>
+          <a class="mega-sub__title" href="category-craft-handmade-1.html">
+            공예 &amp; 핸드메이드 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
+            <li><a class="mega-sub__link" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
+            <li><a class="mega-sub__link" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
+            <li><a class="mega-sub__link" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
+          </ul>
+        </div>
+        <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking" hidden>
+          <a class="mega-sub__title" href="category-cooking-baking-1.html">
+            요리 &amp; 베이킹 전체 보기
+            <span class="icon icon--chevron-right" aria-hidden="true"></span>
+          </a>
+          <ul class="mega-sub__list">
+            <li><a class="mega-sub__link" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
+            <li><a class="mega-sub__link" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
+            <li><a class="mega-sub__link" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
+            <li><a class="mega-sub__link" href="category-cooking-baking-world.html">세계요리 &amp; 비건</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mega-backdrop" hidden></div>
+</header>
+
+<main id="main" class="creator creator-cedit-page" data-screen-label="새 클래스 초안 작성">
+
+  <section class="creator-hero">
+    <div class="l-container">
+      <p class="creator-hero__eyebrow">CREATOR STUDIO</p>
+      <h1 class="creator-hero__title">크리에이터 계정</h1>
+      <p class="creator-hero__desc">새 클래스 초안을 작성하세요.</p>
+    </div>
+  </section>
+
+  <div class="account-body l-container">
+    <aside class="account-nav creator-nav" aria-label="크리에이터 메뉴">
+        <p class="account-nav__label">STUDIO</p>
+        <ul class="account-nav__list">
+          <li><a class="account-nav__link" href="creator.html">크리에이터 홈</a></li>
+          <li><a class="account-nav__link" href="creator-profile.html">공개 프로필</a></li>
+          <li><a class="account-nav__link is-active" href="creator-classes.html" aria-current="page">내 클래스 관리</a></li>
+          <li><a class="account-nav__link" href="creator-reviews.html">수강생 · 리뷰</a></li>
+          <li><a class="account-nav__link" href="creator-questions.html">질문 관리</a></li>
+        </ul>
+        <p class="account-nav__label">REVENUE</p>
+        <ul class="account-nav__list">
+          <li><a class="account-nav__link" href="creator-revenue.html">수익 · 정산</a></li>
+          <li><a class="account-nav__link" href="creator-tax.html">정산 계좌 · 세금</a></li>
+        </ul>
+        <p class="account-nav__label">SUPPORT</p>
+        <ul class="account-nav__list">
+          <li><a class="account-nav__link" href="creator-studio-booking.html">스튜디오 예약</a></li>
+        </ul>
+    </aside>
+
+    <div class="account-content creator-content cedit is-editing">
+
+      <div class="pp-head">
+        <div class="pp-head__intro">
+          <p class="cedit-back"><a href="creator-classes.html"><span class="icon icon--chevron-left" aria-hidden="true"></span> 내 클래스 관리</a></p>
+          <h2 class="pp-head__title">새 클래스 초안 작성</h2>
+          <p class="pp-head__desc">타입으로 지키는 코드, TypeScript 실무 리팩터링 <span class="cedit-draft-tag">초안</span></p>
+        </div>
+        <div class="pp-head__save">
+          <button class="creator-btn creator-btn--primary cedit-only--view" type="button" data-cedit-edit>편집</button>
+          <button class="creator-btn creator-btn--ghost cedit-only--edit" type="button" data-cedit-cancel>취소</button>
+          <button class="creator-btn creator-btn--primary cedit-only--edit" type="button" data-cedit-save>초안 저장</button>
+        </div>
+      </div>
+
+      <!-- 1. 기본 정보 -->
+      <section class="creator-card cedit-form">
+        <h3 class="creator-card__title">기본 정보</h3>
+          <div class="cedit-field">
+            <label class="cedit-field__label">강의명</label>
+            <input class="cedit-in cedit-field__input" type="text" value="타입으로 지키는 코드, TypeScript 실무 리팩터링" aria-label="강의명" readonly>
+          </div>
+          <div class="cedit-field">
+            <label class="cedit-field__label">부제 · 한 줄 소개</label>
+            <input class="cedit-in cedit-field__input" type="text" value="돌아는 가지만 불안한 코드를, 타입으로 단단하게 다시 짭니다." aria-label="부제 · 한 줄 소개" readonly>
+          </div>
+          <div class="cedit-field">
+            <label class="cedit-field__label">대분류</label>
+            <input class="cedit-in cedit-field__input" type="text" value="개발 &amp; IT" aria-label="대분류" readonly>
+          </div>
+          <div class="cedit-field">
+            <label class="cedit-field__label">세부 카테고리</label>
+            <input class="cedit-in cedit-field__input" type="text" value="프론트엔드" aria-label="세부 카테고리" readonly>
+          </div>
+          <div class="cedit-field">
+            <label class="cedit-field__label">키워드 태그</label>
+            <input class="cedit-in cedit-field__input" type="text" value="#타입스크립트 #리팩터링 #코드품질 #실무" aria-label="키워드 태그" readonly>
+          </div>
+      </section>
+
+      <!-- 2. 대상 · 포지셔닝 -->
+      <section class="creator-card cedit-form">
+        <h3 class="creator-card__title">대상 · 포지셔닝</h3>
+          <div class="cedit-field">
+            <label class="cedit-field__label">추천 대상</label>
+            <textarea class="cedit-in cedit-field__input cedit-field__input--area" rows="4" aria-label="추천 대상" readonly>JS는 익숙하지만 TS는 `any`로 때우고 있는 개발자
+커지는 프로젝트에서 타입 에러·런타임 버그에 시달리는 분
+리팩터링을 하고 싶지만 어디부터 손댈지 모르는 주니어
+코드 리뷰에서 ‘타입을 더 좁혀보라’는 말을 자주 듣는 분</textarea>
+          </div>
+          <div class="cedit-field">
+            <label class="cedit-field__label">비추천 대상</label>
+            <input class="cedit-in cedit-field__input" type="text" value="프로그래밍이 처음인 분 (JS 기초 선행 권장)" aria-label="비추천 대상" readonly>
+          </div>
+          <div class="cedit-field">
+            <label class="cedit-field__label">선수 지식</label>
+            <input class="cedit-in cedit-field__input" type="text" value="HTML/CSS·자바스크립트 기본 문법, 간단한 함수·객체 이해" aria-label="선수 지식" readonly>
+          </div>
+          <div class="cedit-field">
+            <label class="cedit-field__label">난이도</label>
+            <input class="cedit-in cedit-field__input" type="text" value="중급 (실무 전환)" aria-label="난이도" readonly>
+          </div>
+      </section>
+
+      <!-- 3. 학습 성과 -->
+      <section class="creator-card cedit-form">
+        <h3 class="creator-card__title">학습 성과</h3>
+          <div class="cedit-field">
+            <label class="cedit-field__label">완강 후 할 수 있는 것</label>
+            <textarea class="cedit-in cedit-field__input cedit-field__input--area" rows="3" aria-label="완강 후 할 수 있는 것" readonly>1. `any` 없이 타입을 좁혀 안전한 코드를 작성
+2. 레거시 JS/느슨한 TS를 단계적으로 리팩터링
+3. 제네릭·유틸리티 타입으로 재사용 가능한 타입 설계</textarea>
+          </div>
+          <div class="cedit-field">
+            <label class="cedit-field__label">완성 결과물</label>
+            <input class="cedit-in cedit-field__input" type="text" value="느슨한 코드베이스를 타입 안전하게 리팩터링한 Before/After 프로젝트 1종" aria-label="완성 결과물" readonly>
+          </div>
+          <div class="cedit-field">
+            <label class="cedit-field__label">보장하는 3가지</label>
+            <textarea class="cedit-in cedit-field__input cedit-field__input--area" rows="3" aria-label="보장하는 3가지" readonly>1. any 탈출 — 좁은 타입으로 버그를 컴파일 단계에서 잡아요
+2. 실무 리팩터링 순서 — 무너뜨리지 않고 바꾸는 안전한 절차
+3. 재사용 타입 설계 — 제네릭·유틸리티 타입을 손에 익혀요</textarea>
+          </div>
+      </section>
+
+      <h3 class="cedit-section-title">커리큘럼</h3>
+      <p class="cedit-summary">개발 &amp; IT · 단건(평생 소장) · 총 8챕터 · 40강 · 약 9시간 <span class="cedit-summary__bonus">＋ 보너스 1강 · 챕터 1 무료</span></p>
+
+      <div class="cedit-list">
+        <section class="cedit-ch">
+          <div class="cedit-ch__bar">
+            <span class="cedit-ch__no">CH 01</span>
+            <input class="cedit-in cedit-ch__title" type="text" value="Chapter 01. 오리엔테이션" aria-label="챕터 제목" readonly>
+          </div>
+          <input class="cedit-in cedit-ch__desc" type="text" value="왜 리팩터링인가" placeholder="챕터 설명" aria-label="챕터 설명" readonly>
+          <ul class="cedit-lessons">
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">01</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="이 강의가 다루는 ‘실무 리팩터링’이란" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="08:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" checked disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">02</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="돌아가는 코드가 왜 위험한가" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="09:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" checked disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">03</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="리팩터링 전/후 프로젝트 미리보기" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="09:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" checked disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">04</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="실습 환경 세팅(tsconfig·에디터)" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="08:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" checked disabled> <span>미리보기</span></label>
+            </li>
+          </ul>
+          <button class="cedit-add" type="button" data-cedit-add>＋ 강의 추가</button>
+        </section>
+        <section class="cedit-ch">
+          <div class="cedit-ch__bar">
+            <span class="cedit-ch__no">CH 02</span>
+            <input class="cedit-in cedit-ch__title" type="text" value="Chapter 02. 타입의 기본기 다시 잡기" aria-label="챕터 제목" readonly>
+          </div>
+          <input class="cedit-in cedit-ch__desc" type="text" value="" placeholder="챕터 설명" aria-label="챕터 설명" readonly>
+          <ul class="cedit-lessons">
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">01</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="any가 부르는 실무 사고들" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="12:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">02</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="unknown·never로 안전하게" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="12:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">03</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="유니온·리터럴 타입 좁히기" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="13:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">04</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="타입 좁히기(narrowing)의 원리" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="14:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">05</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="[실습] any 걷어내기" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="14:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+          </ul>
+          <button class="cedit-add" type="button" data-cedit-add>＋ 강의 추가</button>
+        </section>
+        <section class="cedit-ch">
+          <div class="cedit-ch__bar">
+            <span class="cedit-ch__no">CH 03</span>
+            <input class="cedit-in cedit-ch__title" type="text" value="Chapter 03. 객체와 인터페이스 설계" aria-label="챕터 제목" readonly>
+          </div>
+          <input class="cedit-in cedit-ch__desc" type="text" value="" placeholder="챕터 설명" aria-label="챕터 설명" readonly>
+          <ul class="cedit-lessons">
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">01</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="interface vs type, 언제 무엇을" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="13:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">02</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="선택·읽기전용·인덱스 시그니처" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="13:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">03</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="구조적 타이핑 이해하기" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="14:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">04</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="확장과 합성(extends·&amp;)" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="13:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">05</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="[실습] 도메인 모델 타입 설계" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="15:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+          </ul>
+          <button class="cedit-add" type="button" data-cedit-add>＋ 강의 추가</button>
+        </section>
+        <section class="cedit-ch">
+          <div class="cedit-ch__bar">
+            <span class="cedit-ch__no">CH 04</span>
+            <input class="cedit-in cedit-ch__title" type="text" value="Chapter 04. 함수와 제네릭" aria-label="챕터 제목" readonly>
+          </div>
+          <input class="cedit-in cedit-ch__desc" type="text" value="" placeholder="챕터 설명" aria-label="챕터 설명" readonly>
+          <ul class="cedit-lessons">
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">01</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="함수 타입과 오버로드" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="13:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">02</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="제네릭 첫걸음" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="14:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">03</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="제약(extends)과 기본 타입 인자" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="14:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">04</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="제네릭으로 중복 걷어내기" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="14:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">05</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="[실습] 재사용 유틸 함수 타이핑" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="15:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+          </ul>
+          <button class="cedit-add" type="button" data-cedit-add>＋ 강의 추가</button>
+        </section>
+        <section class="cedit-ch">
+          <div class="cedit-ch__bar">
+            <span class="cedit-ch__no">CH 05</span>
+            <input class="cedit-in cedit-ch__title" type="text" value="Chapter 05. 유틸리티 타입 실전" aria-label="챕터 제목" readonly>
+          </div>
+          <input class="cedit-in cedit-ch__desc" type="text" value="" placeholder="챕터 설명" aria-label="챕터 설명" readonly>
+          <ul class="cedit-lessons">
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">01</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="Partial·Required·Readonly" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="13:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">02</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="Pick·Omit·Record" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="14:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">03</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="조건부 타입 맛보기" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="15:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">04</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="매핑드 타입으로 변환하기" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="15:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">05</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="[실습] 응답 타입 자동 파생" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="15:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+          </ul>
+          <button class="cedit-add" type="button" data-cedit-add>＋ 강의 추가</button>
+        </section>
+        <section class="cedit-ch">
+          <div class="cedit-ch__bar">
+            <span class="cedit-ch__no">CH 06</span>
+            <input class="cedit-in cedit-ch__title" type="text" value="Chapter 06. 리팩터링 패턴" aria-label="챕터 제목" readonly>
+          </div>
+          <input class="cedit-in cedit-ch__desc" type="text" value="" placeholder="챕터 설명" aria-label="챕터 설명" readonly>
+          <ul class="cedit-lessons">
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">01</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="안전하게 바꾸는 순서(테스트 우선)" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="14:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">02</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="함수 추출·책임 분리" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="15:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">03</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="조건문을 타입으로 대체하기" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="15:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">04</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="에러 처리와 Result 타입" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="15:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">05</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="[실습] 레거시 모듈 리팩터링" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="16:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+          </ul>
+          <button class="cedit-add" type="button" data-cedit-add>＋ 강의 추가</button>
+        </section>
+        <section class="cedit-ch">
+          <div class="cedit-ch__bar">
+            <span class="cedit-ch__no">CH 07</span>
+            <input class="cedit-in cedit-ch__title" type="text" value="Chapter 07. 실전 프로젝트: JS → TS 전환" aria-label="챕터 제목" readonly>
+          </div>
+          <input class="cedit-in cedit-ch__desc" type="text" value="" placeholder="챕터 설명" aria-label="챕터 설명" readonly>
+          <ul class="cedit-lessons">
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">01</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="[프로젝트] 대상 코드 진단" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="14:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">02</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="[프로젝트] 점진적 전환 전략" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="15:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">03</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="[프로젝트] 핵심 모듈 타이핑" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="16:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">04</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="[프로젝트] 제네릭·유틸리티 적용" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="16:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">05</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="[프로젝트] 타입 테스트로 검증" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="17:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">06</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="[프로젝트] Before/After 정리" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="17:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+          </ul>
+          <button class="cedit-add" type="button" data-cedit-add>＋ 강의 추가</button>
+        </section>
+        <section class="cedit-ch">
+          <div class="cedit-ch__bar">
+            <span class="cedit-ch__no">CH 08</span>
+            <input class="cedit-in cedit-ch__title" type="text" value="Chapter 08. 마무리 &amp; 실무 적용" aria-label="챕터 제목" readonly>
+          </div>
+          <input class="cedit-in cedit-ch__desc" type="text" value="" placeholder="챕터 설명" aria-label="챕터 설명" readonly>
+          <ul class="cedit-lessons">
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">01</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="tsconfig strict 옵션 총정리" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="14:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">02</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="린트·CI로 품질 지키기" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="14:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">03</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="팀 코드 컨벤션 만들기" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="14:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">04</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="리팩터링 회고와 다음 단계" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="13:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">05</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="포트폴리오로 정리하기 + 멘토 리뷰" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="16:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+          </ul>
+          <button class="cedit-add" type="button" data-cedit-add>＋ 강의 추가</button>
+        </section>
+        <section class="cedit-ch">
+          <div class="cedit-ch__bar">
+            <span class="cedit-ch__no">BONUS</span>
+            <input class="cedit-in cedit-ch__title" type="text" value="보너스 챕터" aria-label="챕터 제목" readonly>
+          </div>
+          <input class="cedit-in cedit-ch__desc" type="text" value="완강 후 오픈" placeholder="챕터 설명" aria-label="챕터 설명" readonly>
+          <ul class="cedit-lessons">
+            <li class="cedit-lesson">
+              <button class="cedit-lesson__del" type="button" data-cedit-del aria-label="강의 삭제">−</button>
+              <span class="cedit-lesson__no">01</span>
+              <input class="cedit-in cedit-lesson__title" type="text" value="AI 도구로 리팩터링 가속하기" aria-label="강의 제목" readonly>
+              <label class="cedit-file"><input class="cedit-file__input" type="file" accept="video/*" aria-label="영상 파일 첨부"><span class="cedit-file__btn"><span class="icon icon--camera" aria-hidden="true"></span> 영상 첨부</span><span class="cedit-file__name" data-cedit-filename></span></label>
+              <input class="cedit-in cedit-lesson__time" type="text" value="24:00" aria-label="강의 시간" readonly>
+              <label class="cedit-preview"><input class="cedit-preview__cb" type="checkbox" disabled> <span>미리보기</span></label>
+            </li>
+          </ul>
+          <button class="cedit-add" type="button" data-cedit-add>＋ 강의 추가</button>
+        </section>
+      </div>
+
+      <button class="cedit-add cedit-add--chapter" type="button" data-cedit-add-chapter>＋ 챕터 추가</button>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner l-container">
+
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <img class="site-footer__logo" src="assets/brand/logo-white.svg" alt="HOOT UP" loading="lazy">
+        <p class="site-footer__slogan">밤에도 깨어 배우는 사람들의 아지트</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="푸터 메뉴">
+        <div class="link-group">
+          <h2 class="link-group__title">HOOT UP</h2>
+          <ul class="link-group__list">
+            <li><a class="link-group__link" href="brand-story.html">브랜드 스토리</a></li>
+            <li><a class="link-group__link" href="desk.html">훗업 데스크(뉴스)</a></li>
+            <li><a class="link-group__link" href="magazine.html">훗업 매거진(블로그)</a></li>
+            <li><a class="link-group__link" href="b2b.html">단체 교육 (B2B)</a></li>
+            <li><a class="link-group__link" href="careers.html">채용 안내</a></li>
+          </ul>
+        </div>
+
+        <div class="link-group">
+          <h2 class="link-group__title">둘러보기</h2>
+          <ul class="link-group__list">
+            <li><a class="link-group__link" href="sitemap.html">전체 카테고리</a></li>
+            <li><a class="link-group__link" href="best.html">훗업 차트(베스트)</a></li>
+            <li><a class="link-group__link" href="new.html">갓 부화한 클래스(새로운)</a></li>
+            <li><a class="link-group__link" href="event-1.html">훗업 페스타(이벤트 할인)</a></li>
+            <li><a class="link-group__link" href="roadmap.html">레벨업 로드맵</a></li>
+            <li><a class="link-group__link" href="subscribe.html">올나잇 패스(구독)</a></li>
+          </ul>
+        </div>
+
+        <div class="link-group">
+          <h2 class="link-group__title">크리에이터 지원</h2>
+          <ul class="link-group__list">
+            <li><a class="link-group__link" href="creator-apply.html">클래스 개설 문의하기</a></li>
+            <li><a class="link-group__link" href="creator-guide.html">크리에이터 가이드</a></li>
+            <li><a class="link-group__link" href="creator-studio.html">스튜디오 대여</a></li>
+            <li><a class="link-group__link" href="creator-settlement.html">정산・수익 안내</a></li>
+            <li><a class="link-group__link" href="creator-mentor.html">멘토 교육 지원</a></li>
+          </ul>
+        </div>
+
+        <div class="link-group">
+          <h2 class="link-group__title">고객센터</h2>
+          <ul class="link-group__list">
+            <li><a class="link-group__link" href="notice.html">후트 알림(공지사항)</a></li>
+            <li><a class="link-group__link" href="faq.html">자주 묻는 질문(FAQ)</a></li>
+            <li><a class="link-group__link" href="terms.html">이용약관</a></li>
+            <li><a class="link-group__link" href="privacy.html">개인정보처리방침</a></li>
+            <li><a class="link-group__link" href="refund.html">환불 규정</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <hr class="site-footer__rule">
+
+    <div class="site-footer__contact">
+      <section class="contact-desk">
+        <h2 class="contact-desk__title">고객센터</h2>
+        <p class="contact-desk__tel"><a href="tel:0212345678">02-1234-5678</a></p>
+        <p class="contact-desk__hours">주중 10:00–18:00 / 주말·공휴일 휴무</p>
+      </section>
+
+      <dl class="contact-mail">
+        <div class="contact-mail__group">
+          <dt class="contact-mail__label">환불 문의</dt>
+          <dd class="contact-mail__value"><a href="mailto:refund@hootup.co.kr">refund@hootup.co.kr</a></dd>
+        </div>
+        <div class="contact-mail__group">
+          <dt class="contact-mail__label">기타 문의</dt>
+          <dd class="contact-mail__value"><a href="mailto:help@hootup.co.kr">help@hootup.co.kr</a></dd>
+        </div>
+        <div class="contact-mail__group">
+          <dt class="contact-mail__label">크리에이터 지원</dt>
+          <dd class="contact-mail__value"><a href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a></dd>
+        </div>
+      </dl>
+    </div>
+
+    <hr class="site-footer__rule">
+
+    <div class="site-footer__legal">
+      <nav class="policy" aria-label="약관 및 정책">
+        <ul class="policy__list">
+          <li><a class="policy__link" href="terms.html">이용약관</a></li>
+          <li><a class="policy__link" href="privacy.html">개인정보처리방침</a></li>
+          <li><a class="policy__link" href="youth.html">청소년 보호정책</a></li>
+          <li><a class="policy__link" href="refund.html">환불 규정</a></li>
+          <li><a class="policy__link" href="business.html">사업자정보 확인</a></li>
+        </ul>
+      </nav>
+
+      <address class="company">
+        <p class="company__line">
+          <span>(주)훗업 컴퍼니</span>
+          <span>대표자 : 신호진</span>
+          <span>사업자등록번호 : 123-45-67890</span>
+          <span>개인정보책임관리자 : 신호진</span>
+        </p>
+        <p class="company__line">
+          <span>통신판매신고 : 제 2026-서울서초-1234호</span>
+          <span>(06621) 서울 서초구 강남대로 373, 10층</span>
+        </p>
+      </address>
+
+      <p class="site-footer__copyright"><small>Copyright © HOOT UP. All rights reserved.</small></p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ===== 커리큘럼 저장 완료 모달 ===== -->
+<div class="modal" id="cedit-done" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="cedit-done-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="cedit-done-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 커리큘럼이 저장되었습니다</h2>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

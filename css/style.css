@@ -6174,6 +6174,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .signup__result { color: var(--color-brand-base); font-size: 15px; line-height: 24px; font-weight: var(--font-weight-bold); }
 .ca-modal-actions { display: flex; justify-content: center; gap: 12px; margin-top: 24px; }
+.ca-modal-actions--single .btn { min-width: 140px; }
 .ca-modal-actions .btn--solid:hover { background-color: var(--color-brand-base); }
 
 /* ----- 쿠폰 일러스트 ----- */
@@ -6697,7 +6698,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 /* 내 클래스 필터 칩 — .class-filter__btn 디자인 규칙 적용 (폰트 사이즈는 기존 유지) */
-.myclass-filter .myclass-chip {
+.myclass-filter .myclass-chip,
+.myclass-chips .myclass-chip {
   padding: 8px 17px;
   border: 1px solid var(--color-neutral-base);
   background-color: transparent;
@@ -6708,18 +6710,21 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
               color var(--duration-fast) var(--easing-standard),
               border-color var(--duration-fast) var(--easing-standard);
 }
-.myclass-filter .myclass-chip:hover {
+.myclass-filter .myclass-chip:hover,
+.myclass-chips .myclass-chip:hover {
   border-color: var(--color-brand-base);
   color: var(--color-neutral-base);
 }
-.myclass-filter .myclass-chip.is-active {
+.myclass-filter .myclass-chip.is-active,
+.myclass-chips .myclass-chip.is-active {
   padding: 8px 17px;
   border: 1px solid var(--color-brand-base);
   background-color: var(--color-brand-base);
   color: var(--color-text-inverse);
   font-weight: var(--font-weight-bold);
 }
-.myclass-filter .myclass-chip.is-active:hover {
+.myclass-filter .myclass-chip.is-active:hover,
+.myclass-chips .myclass-chip.is-active:hover {
   border-color: var(--color-brand-base);
 }
 
@@ -7674,10 +7679,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
    크리에이터 · 내 클래스 관리 (creator-classes.html)
    ============================================================ */
 .creator-classes-page .pp-head__save { align-items: flex-end; }
-/* 필터 칩 active = 크리에이터 퍼플 */
-.creator-classes-page .myclass-chip.is-active { background-color: var(--color-brand-darker); }
 
-.creator-classes-page .myclass-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+/* 필터 칩은 account-classes(.myclass-filter)와 동일 디자인 — 컨테이너 간격만 맞춤 */
+.creator-classes-page .myclass-chips { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-xs); }
 
 /* 목록 카드 */
 .cm-list { padding: 4px 28px; }
@@ -7749,9 +7753,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   border: 1px solid transparent; transition: opacity .15s ease, border-color .15s ease, color .15s ease;
 }
 .cm-btn--dark { background-color: var(--color-neutral-darker); color: var(--color-neutral-white); }
-.cm-btn--dark:hover { opacity: 0.9; }
 .cm-btn--primary { background-color: var(--color-brand-darker); color: var(--color-neutral-white); }
-.cm-btn--primary:hover { opacity: 0.9; }
 .cm-btn--ghost { background-color: var(--color-neutral-white); border-color: var(--color-neutral-lighter); color: var(--color-neutral-darker); }
 .cm-btn--ghost:hover { border-color: var(--color-brand-darker); color: var(--color-brand-darker); }
 .cm-btn--ghost-muted { background-color: var(--color-neutral-white); border-color: var(--color-neutral-lighter); color: var(--color-neutral-base); }
@@ -9088,6 +9090,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cedit.is-editing .cedit-only--view { display: none; }
 .cedit.is-editing .cedit-only--edit { display: inline-flex; }
 
+.cedit-back { margin-bottom: 10px; }
+.cedit-back a { display: inline-flex; align-items: center; gap: var(--space-3xs); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-light); --icon-size: 14px; }
 .cedit-summary { font-size: var(--text-body-sm-size); color: var(--color-neutral-base); }
 .cedit-summary__bonus { color: var(--color-neutral-light); }
 
@@ -9157,3 +9161,15 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cedit-preview { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); white-space: nowrap; cursor: pointer; }
 .cedit-preview__cb { width: 16px; height: 16px; accent-color: var(--color-brand-base); cursor: pointer; }
 .cedit-preview__cb:disabled { cursor: default; opacity: 0.55; }
+
+/* 새 클래스 초안 작성 — 초안 태그 + 챕터 추가 버튼 */
+.cedit-draft-tag { display: inline-block; margin-left: 8px; padding: 2px 9px; border-radius: var(--radius-pill); background-color: var(--color-review-bg); color: var(--color-review-text); font-size: 11px; font-weight: var(--font-weight-bold); vertical-align: middle; }
+.cedit-add--chapter { width: 100%; margin-top: 20px; padding: 14px; justify-content: center; border-width: 1px; border-style: dashed; font-size: var(--text-body-size); }
+.cedit.is-editing .cedit-add--chapter { display: flex; }
+
+/* 새 클래스 초안 — 기본정보/대상/학습성과 폼 */
+.cedit-field { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
+.cedit-field__label { font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
+.cedit-field__input { width: 100%; }
+.cedit-field__input--area { min-height: 84px; line-height: 1.7; resize: vertical; }
+.cedit-section-title { font-weight: var(--font-weight-bold); font-size: var(--text-h5-size); line-height: 26px; color: var(--color-neutral-darker); }

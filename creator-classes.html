@@ -21,6 +21,7 @@
   <script src="js/toggle.js" defer></script>
   <script src="js/modal.js" defer></script>
   <script src="js/cm-sale.js" defer></script>
+  <script src="js/cm-draft.js" defer></script>
 </head>
 <body>
 
@@ -289,7 +290,7 @@
           <p class="pp-head__desc">운영 중 6 · 심사 중 1 · 초안 1 · 누적 수강생 22,522명</p>
         </div>
         <div class="pp-head__save">
-          <button class="creator-btn creator-btn--primary" type="button">+ 새 클래스 개설</button>
+          <a class="creator-btn creator-btn--primary" href="creator-curriculum-new.html">+ 새 클래스 초안 작성</a>
         </div>
       </div>
 
@@ -449,8 +450,7 @@
             <p class="cm-row__meta">영상 품질 검수 완료 · 자막 검수 진행 중 · 예상 오픈 2026.08.14</p>
           </div>
           <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">진행 상황</button>
-            <button class="cm-btn cm-btn--ghost" type="button">검수 의견</button>
+            <button class="cm-btn cm-btn--dark" type="button" data-open-modal aria-haspopup="dialog" aria-controls="cm-review-modal">진행 상황</button>
           </div>
         </article>
         <article class="cm-row cm-row--last" data-tabs="all draft">
@@ -467,8 +467,8 @@
             <p class="cm-row__meta">썸네일 미등록 · 소개 영상 미등록 · 마지막 저장 3일 전</p>
           </div>
           <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--primary" type="button">이어서 작성</button>
-            <button class="cm-btn cm-btn--danger" type="button">초안 삭제</button>
+            <a class="cm-btn cm-btn--primary" href="creator-curriculum-new.html">이어서 작성</a>
+            <button class="cm-btn cm-btn--danger" type="button" data-cm-draft-del>초안 삭제</button>
           </div>
         </article>
       </section>
@@ -618,6 +618,52 @@
     </button>
     <div class="signup__welcome">
       <h2 class="signup__title" id="cm-sale-done-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 클래스 판매가 중지되었습니다</h2>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 검수 진행 상황 안내 모달 ===== -->
+<div class="modal" id="cm-review-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="cm-review-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="cm-review-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 검수가 진행 중입니다. 조금만 기다려주세요.</h2>
+    </div>
+    <div class="ca-modal-actions ca-modal-actions--single">
+      <button class="btn btn--solid" type="button" data-modal-close>확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 초안 삭제 확인 모달 ===== -->
+<div class="modal" id="cm-draft-confirm" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="cm-draft-confirm-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="cm-draft-confirm-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 초안을 삭제하시겠습니까?</h2>
+    </div>
+    <div class="ca-modal-actions">
+      <button class="btn btn--outline" type="button" data-modal-close>취소</button>
+      <button class="btn btn--solid" type="button" data-cm-draft-confirm>확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 초안 삭제 완료 모달 ===== -->
+<div class="modal" id="cm-draft-done" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="cm-draft-done-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="cm-draft-done-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 초안이 삭제되었습니다</h2>
     </div>
   </div>
 </div>

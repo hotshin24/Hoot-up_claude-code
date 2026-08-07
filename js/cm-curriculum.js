@@ -41,6 +41,32 @@
     return li;
   }
 
+  function renumberChapters() {
+    var n = 0;
+    [].forEach.call(list.querySelectorAll('.cedit-ch__no'), function (el) {
+      if (el.textContent.trim() === 'BONUS') return;
+      n++;
+      var s = String(n);
+      el.textContent = 'CH ' + (s.length < 2 ? '0' + s : s);
+    });
+  }
+
+  function newChapter() {
+    var sec = document.createElement('section');
+    sec.className = 'cedit-ch';
+    sec.innerHTML = [
+      '<div class="cedit-ch__bar">',
+      '  <span class="cedit-ch__no">CH 00</span>',
+      '  <input class="cedit-in cedit-ch__title" type="text" value="" placeholder="새 챕터 제목" aria-label="챕터 제목">',
+      '</div>',
+      '<input class="cedit-in cedit-ch__desc" type="text" value="" placeholder="챕터 설명" aria-label="챕터 설명">',
+      '<ul class="cedit-lessons"></ul>',
+      '<button class="cedit-add" type="button" data-cedit-add>＋ 강의 추가</button>'
+    ].join('');
+    sec.querySelector('.cedit-lessons').appendChild(newLesson());
+    return sec;
+  }
+
   function openDone() {
     if (!doneM) return;
     doneM.hidden = false;
@@ -76,6 +102,15 @@
       li2.querySelector('.cedit-lesson__title').focus();
       return;
     }
+    // 챕터(섹션) 통째로 추가
+    var addCh = t.closest('[data-cedit-add-chapter]');
+    if (addCh) {
+      var sec = newChapter();
+      list.appendChild(sec);
+      renumberChapters();
+      sec.querySelector('.cedit-ch__title').focus();
+      return;
+    }
   });
 
   // 영상 파일 선택 → 파일명 표시 (업로드 없음)
@@ -87,5 +122,6 @@
     if (disp) disp.textContent = name;
   });
 
-  setEditing(false); // 초기: 보기(readonly)
+  // 초기 상태: HTML 의 is-editing 유무를 존중 (새 초안 작성 페이지는 편집 모드로 시작)
+  setEditing(root.classList.contains('is-editing'));
 })();
