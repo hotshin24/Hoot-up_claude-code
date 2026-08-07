@@ -1849,8 +1849,13 @@ hr {
    16. Site footer
    ========================================================================== */
 
+/* 푸터와 맞닿는 마지막 콘텐츠(main)에 하단 여백 85px — 푸터 자체엔 margin 없음 */
+main { margin-bottom: 85px; }
+/* 다크 풀블리드 CTA(.lp-cta)로 끝나는 페이지(roadmap·subscribe·faq·creator-apply):
+   흰 여백(main margin) 대신 .lp-cta-inner 의 padding(다크)이 푸터까지 이어지도록 main 여백 제거 */
+main:has(> .lp-cta:last-child) { margin-bottom: 0; }
+
 .site-footer {
-  margin-top: 85px;
   padding-block: var(--space-3xl);
   background-color: var(--color-surface-inverse);
   color: var(--color-brand-lighter);
@@ -3139,9 +3144,9 @@ hr {
 .magazine-page__inner { width: min(var(--layout-container), 100% - var(--layout-gutter-min) * 2); margin-inline: auto; }
 .magazine-page a { color: inherit; }
 
-/* 다크 매거진 페이지 — 푸터와의 85px 간격을 매거진 배경색으로 (밝은 띠 방지) */
-.magazine-page { padding-bottom: 85px; }
-.magazine-page + .site-footer { margin-top: 0; }
+/* 다크 매거진 페이지 — 85px 간격을 매거진 배경색으로 (밝은 띠 방지)
+   main 의 margin-bottom 대신 padding-bottom 으로 다크 배경이 푸터까지 이어지게 */
+.magazine-page { margin-bottom: 0; padding-bottom: 85px; }
 
 /* ---------- 톱바 ---------- */
 .mag-topbar {
@@ -5149,7 +5154,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .lp-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: var(--space-3xs); }
 .lp-hero-actions-wide { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
 .lp-cta { background: radial-gradient(760px 300px at 50% 0%, rgb(22 103 250 / 0.45) 0%, rgb(22 103 250 / 0) 70%), var(--color-neutral-darker); border-bottom: 1px solid var(--color-neutral-base); overflow: hidden; position: relative; }
-.lp-cta-inner { display: flex; flex-direction: column; align-items: center; gap: var(--space-xl); padding-block: 100px; text-align: center; }
+.lp-cta-inner { display: flex; flex-direction: column; align-items: center; gap: var(--space-xl); padding-block: 85px; text-align: center; }
 .lp-cta-title { color: var(--color-neutral-darker); font-family: var(--font-body); font-size: 32px; font-weight: var(--font-weight-bold); line-height: 48px; max-width: 780px; }
 .lp-cta-title-light { color: var(--color-neutral-white); font-family: var(--font-body); font-size: 32px; font-weight: var(--font-weight-bold); line-height: 48px; max-width: 780px; }
 .lp-cta-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; justify-content: center; }
