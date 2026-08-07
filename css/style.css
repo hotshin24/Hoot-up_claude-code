@@ -703,19 +703,20 @@ hr {
   white-space: nowrap;
 }
 
+/* 배지 색상은 사이트맵(.sitemap-cat__badge) 규칙과 동일하게 통일 */
 .mega-cat__badge--single {
-  background-color: var(--color-neutral-lighter);
-  color: var(--color-neutral-base);
+  background-color: var(--color-surface-muted);
+  color: var(--color-text-muted);
 }
 
 .mega-cat__badge--sub {
-  background-color: color-mix(in srgb, var(--color-brand-accent) 35%, var(--color-neutral-white));
-  color: var(--color-brand-accent);
+  background-color: var(--color-brand-lighter);
+  color: var(--color-brand-darker);
 }
 
 .mega-cat__badge--mix {
-  background-color: var(--color-brand-lighter);
-  color: var(--color-brand-darker);
+  background-color: var(--color-brand-base);
+  color: var(--color-neutral-white);
 }
 
 .mega-cat__arrow {
@@ -1849,6 +1850,7 @@ hr {
    ========================================================================== */
 
 .site-footer {
+  margin-top: 85px;
   padding-block: var(--space-3xl);
   background-color: var(--color-surface-inverse);
   color: var(--color-brand-lighter);
@@ -3136,6 +3138,10 @@ hr {
 }
 .magazine-page__inner { width: min(var(--layout-container), 100% - var(--layout-gutter-min) * 2); margin-inline: auto; }
 .magazine-page a { color: inherit; }
+
+/* 다크 매거진 페이지 — 푸터와의 85px 간격을 매거진 배경색으로 (밝은 띠 방지) */
+.magazine-page { padding-bottom: 85px; }
+.magazine-page + .site-footer { margin-top: 0; }
 
 /* ---------- 톱바 ---------- */
 .mag-topbar {
