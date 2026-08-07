@@ -9079,3 +9079,81 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .cstat-bar__val { width: auto; }
   .cstat-calc__op { transform: rotate(90deg); }
 }
+
+/* ==========================================================================
+   크리에이터 커리큘럼 편집 (creator-curriculum-edit.html)
+   ========================================================================== */
+/* 편집/보기 버튼 노출 토글 */
+.cedit .cedit-only--edit { display: none; }
+.cedit.is-editing .cedit-only--view { display: none; }
+.cedit.is-editing .cedit-only--edit { display: inline-flex; }
+
+.cedit-summary { font-size: var(--text-body-sm-size); color: var(--color-neutral-base); }
+.cedit-summary__bonus { color: var(--color-neutral-light); }
+
+/* 챕터 섹션 간 간격 */
+.cedit-list { display: flex; flex-direction: column; gap: 20px; }
+
+/* 공용 입력 — 보기(readonly)=텍스트처럼, 편집=테두리 */
+.cedit-in {
+  font-family: inherit; color: var(--color-neutral-darker);
+  background-color: transparent; border: 1px solid transparent; border-radius: var(--radius-sm);
+  padding: 6px 8px; min-width: 0;
+}
+.cedit-in:read-only { cursor: default; }
+.cedit.is-editing .cedit-in { background-color: var(--color-neutral-white); border-color: var(--color-neutral-lighter); }
+.cedit.is-editing .cedit-in:focus { outline: none; border-color: var(--color-brand-base); }
+
+/* 챕터 카드 */
+.cedit-ch { padding: 22px 24px; background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md); box-shadow: 0 0 5px rgb(0 0 0 / 0.04); }
+.cedit-ch__bar { display: flex; align-items: center; gap: 12px; }
+.cedit-ch__no { flex-shrink: 0; width: 58px; font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 13px; letter-spacing: 0.06em; color: var(--color-brand-base); }
+.cedit-ch__title { flex: 1 1 auto; font-size: var(--text-h5-size); font-weight: var(--font-weight-bold); }
+.cedit-ch__meta { flex-shrink: 0; font-size: var(--text-body-sm-size); color: var(--color-neutral-light); }
+.cedit-ch__desc { display: block; width: 100%; margin-top: 4px; font-size: var(--text-body-size); color: var(--color-neutral-base); }
+
+/* 강의 리스트 */
+.cedit-lessons { margin-top: 14px; display: flex; flex-direction: column; }
+.cedit-lesson { display: flex; align-items: center; gap: 12px; padding: 6px 0; border-top: 1px solid var(--color-neutral-lighter); }
+.cedit-lesson:first-child { border-top: 0; }
+.cedit-lesson__no { flex-shrink: 0; width: 28px; text-align: center; font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-light); }
+.cedit-lesson__title { flex: 1 1 auto; font-size: var(--text-body-size); font-weight: var(--font-weight-bold); }
+.cedit-lesson__time { flex-shrink: 0; width: 84px; text-align: center; font-size: var(--text-body-sm-size); color: var(--color-neutral-base); }
+
+/* 배지 */
+.cedit-badge { flex-shrink: 0; padding: 2px 9px; border-radius: var(--radius-pill); font-size: 11px; font-weight: var(--font-weight-bold); }
+.cedit-badge--tag { background-color: color-mix(in srgb, var(--color-brand-accent) 35%, var(--color-neutral-white)); color: var(--color-brand-accent); }
+.cedit-badge--free { background-color: var(--color-neutral-lighter); color: var(--color-neutral-base); }
+
+@media (max-width: 767px) {
+  .cedit-lesson { flex-wrap: wrap; }
+  .cedit-lesson__time { width: auto; }
+}
+
+/* 커리큘럼 편집 — 편집 전용 컨트롤 (보기 모드 숨김) */
+.cedit .cedit-lesson__del,
+.cedit .cedit-add,
+.cedit .cedit-file { display: none; }
+.cedit.is-editing .cedit-lesson__del { display: inline-flex; }
+.cedit.is-editing .cedit-add { display: inline-flex; }
+.cedit.is-editing .cedit-file { display: inline-flex; }
+
+/* 삭제(−) */
+.cedit-lesson__del { flex-shrink: 0; width: 22px; height: 22px; align-items: center; justify-content: center; border-radius: var(--radius-circle); border: 1px solid var(--color-neutral-lighter); background-color: var(--color-neutral-white); color: var(--color-neutral-base); font-weight: var(--font-weight-bold); line-height: 1; cursor: pointer; }
+.cedit-lesson__del:hover { border-color: var(--color-danger-base); color: var(--color-danger-base); }
+
+/* 강의 추가(+) */
+.cedit-add { margin-top: 12px; align-items: center; gap: 6px; padding: 9px 16px; border-radius: var(--radius-pill); border: 1px dashed var(--color-neutral-light); background-color: transparent; color: var(--color-neutral-base); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); cursor: pointer; }
+.cedit-add:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+
+/* 영상 첨부 */
+.cedit-file { position: relative; align-items: center; gap: 6px; flex-shrink: 0; cursor: pointer; }
+.cedit-file__input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.cedit-file__btn { display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: var(--radius-pill); border: 1px solid var(--color-neutral-lighter); background-color: var(--color-neutral-lightest); color: var(--color-neutral-base); font-size: 13px; font-weight: var(--font-weight-bold); white-space: nowrap; --icon-size: 14px; }
+.cedit-file:hover .cedit-file__btn { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+.cedit-file__name { max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; font-weight: var(--font-weight-bold); color: var(--color-brand-base); }
+
+/* 미리보기 체크박스 */
+.cedit-preview { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); white-space: nowrap; cursor: pointer; }
+.cedit-preview__cb { width: 16px; height: 16px; accent-color: var(--color-brand-base); cursor: pointer; }
+.cedit-preview__cb:disabled { cursor: default; opacity: 0.55; }

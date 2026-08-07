@@ -19,6 +19,8 @@
   <script src="js/carousel.js" defer></script>
   <script src="js/cm-tabs.js" defer></script>
   <script src="js/toggle.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/cm-sale.js" defer></script>
 </head>
 <body>
 
@@ -319,9 +321,9 @@
             <p class="cm-row__meta">88강 · 18시간 · 165,000원 (40% 할인 적용 중) · 오픈 2025.09.16</p>
           </div>
           <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">커리큘럼 편집</button>
-            <button class="cm-btn cm-btn--ghost" type="button">가격 · 할인</button>
-            <button class="cm-btn cm-btn--ghost-muted" type="button">판매 중지</button>
+            <a class="cm-btn cm-btn--dark" href="creator-curriculum-edit.html">커리큘럼 편집</a>
+            <a class="cm-btn cm-btn--ghost" href="creator-class-stats.html">통계</a>
+            <button class="cm-btn cm-btn--ghost-muted" type="button" data-cm-sale>판매 중지</button>
           </div>
         </article>
         <article class="cm-row" data-tabs="all live">
@@ -342,9 +344,9 @@
             <p class="cm-row__meta">52강 · 11시간 · 110,000원 (30% 할인 적용 중) · 오픈 2024.01.01</p>
           </div>
           <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">커리큘럼 편집</button>
-            <button class="cm-btn cm-btn--ghost" type="button">가격 · 할인</button>
-            <button class="cm-btn cm-btn--ghost-muted" type="button">판매 중지</button>
+            <a class="cm-btn cm-btn--dark" href="creator-curriculum-edit.html">커리큘럼 편집</a>
+            <a class="cm-btn cm-btn--ghost" href="creator-class-stats.html">통계</a>
+            <button class="cm-btn cm-btn--ghost-muted" type="button" data-cm-sale>판매 중지</button>
           </div>
         </article>
         <article class="cm-row" data-tabs="all live">
@@ -364,9 +366,9 @@
             <p class="cm-row__meta">72강 · 15시간 · 132,000원 (35% 할인 적용 중) · 오픈 2024.08.09</p>
           </div>
           <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">커리큘럼 편집</button>
-            <button class="cm-btn cm-btn--ghost" type="button">가격 · 할인</button>
-            <button class="cm-btn cm-btn--ghost-muted" type="button">판매 중지</button>
+            <a class="cm-btn cm-btn--dark" href="creator-curriculum-edit.html">커리큘럼 편집</a>
+            <a class="cm-btn cm-btn--ghost" href="creator-class-stats.html">통계</a>
+            <button class="cm-btn cm-btn--ghost-muted" type="button" data-cm-sale>판매 중지</button>
           </div>
         </article>
         <article class="cm-row" data-tabs="all live">
@@ -386,9 +388,9 @@
             <p class="cm-row__meta">60강 · 12시간 30분 · 77,000원 (20% 할인 적용 중) · 오픈 2024.11.22</p>
           </div>
           <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">커리큘럼 편집</button>
-            <button class="cm-btn cm-btn--ghost" type="button">가격 · 할인</button>
-            <button class="cm-btn cm-btn--ghost-muted" type="button">판매 중지</button>
+            <a class="cm-btn cm-btn--dark" href="creator-curriculum-edit.html">커리큘럼 편집</a>
+            <a class="cm-btn cm-btn--ghost" href="creator-class-stats.html">통계</a>
+            <button class="cm-btn cm-btn--ghost-muted" type="button" data-cm-sale>판매 중지</button>
           </div>
         </article>
         <article class="cm-row" data-tabs="all live">
@@ -407,9 +409,9 @@
             <p class="cm-row__meta">44강 · 8시간 30분 · 99,000원 (40% 할인 적용 중) · 오픈 2026.03.15</p>
           </div>
           <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">커리큘럼 편집</button>
-            <button class="cm-btn cm-btn--ghost" type="button">가격 · 할인</button>
-            <button class="cm-btn cm-btn--ghost-muted" type="button">판매 중지</button>
+            <a class="cm-btn cm-btn--dark" href="creator-curriculum-edit.html">커리큘럼 편집</a>
+            <a class="cm-btn cm-btn--ghost" href="creator-class-stats.html">통계</a>
+            <button class="cm-btn cm-btn--ghost-muted" type="button" data-cm-sale>판매 중지</button>
           </div>
         </article>
         <article class="cm-row" data-tabs="all live">
@@ -428,9 +430,9 @@
             <p class="cm-row__meta">56강 · 12시간 · 143,000원 (30% 할인 적용 중) · 오픈 2024.05.23</p>
           </div>
           <div class="cm-row__actions">
-            <button class="cm-btn cm-btn--dark" type="button">커리큘럼 편집</button>
-            <button class="cm-btn cm-btn--ghost" type="button">가격 · 할인</button>
-            <button class="cm-btn cm-btn--ghost-muted" type="button">판매 중지</button>
+            <a class="cm-btn cm-btn--dark" href="creator-curriculum-edit.html">커리큘럼 편집</a>
+            <a class="cm-btn cm-btn--ghost" href="creator-class-stats.html">통계</a>
+            <button class="cm-btn cm-btn--ghost-muted" type="button" data-cm-sale>판매 중지</button>
           </div>
         </article>
         <article class="cm-row" data-tabs="all review">
@@ -589,6 +591,66 @@
 
   </div>
 </footer>
+
+<!-- ===== 판매 중지 확인 모달 ===== -->
+<div class="modal" id="cm-sale-confirm" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="cm-sale-confirm-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="cm-sale-confirm-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 이 클래스의 판매를 중지하시겠습니까?</h2>
+    </div>
+    <div class="ca-modal-actions">
+      <button class="btn btn--outline" type="button" data-modal-close>취소</button>
+      <button class="btn btn--solid" type="button" data-cm-sale-confirm>확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 판매 중지 완료 모달 ===== -->
+<div class="modal" id="cm-sale-done" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="cm-sale-done-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="cm-sale-done-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 클래스 판매가 중지되었습니다</h2>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 판매 재개 확인 모달 ===== -->
+<div class="modal" id="cm-resume-confirm" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="cm-resume-confirm-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="cm-resume-confirm-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 판매를 다시 시작할까요?</h2>
+    </div>
+    <div class="ca-modal-actions">
+      <button class="btn btn--outline" type="button" data-modal-close>취소</button>
+      <button class="btn btn--solid" type="button" data-cm-resume-confirm>확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 판매 재개 완료 모달 ===== -->
+<div class="modal" id="cm-resume-done" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="cm-resume-done-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="cm-resume-done-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 판매가 다시 시작되었습니다</h2>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
