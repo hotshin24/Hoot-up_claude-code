@@ -17,6 +17,8 @@
   <script src="js/common.js" defer></script>
   <script src="js/carousel.js" defer></script>
   <script src="js/order-tabs.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/subscribe-modal.js" defer></script>
 </head>
 <body>
 
@@ -314,7 +316,7 @@
             <span class="order-cell__no">H26-072001</span>
             <span class="order-cell__amount">19,900원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
           <div class="order-row" data-cat="single">
             <span class="order-cell__date">2026.07.16</span>
@@ -322,7 +324,7 @@
             <span class="order-cell__no">H26-071601</span>
             <span class="order-cell__amount">107,800원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
           <div class="order-row" data-cat="single">
             <span class="order-cell__date">2026.07.02</span>
@@ -330,7 +332,7 @@
             <span class="order-cell__no">H26-070201</span>
             <span class="order-cell__amount">72,600원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
           <div class="order-row" data-cat="single">
             <span class="order-cell__date">2026.06.28</span>
@@ -338,7 +340,7 @@
             <span class="order-cell__no">H26-062801</span>
             <span class="order-cell__amount">100,100원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
           <div class="order-row" data-cat="subscription">
             <span class="order-cell__date">2026.06.20</span>
@@ -346,7 +348,7 @@
             <span class="order-cell__no">H26-062001</span>
             <span class="order-cell__amount">19,900원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
           <div class="order-row" data-cat="single">
             <span class="order-cell__date">2026.06.05</span>
@@ -354,7 +356,7 @@
             <span class="order-cell__no">H26-060501</span>
             <span class="order-cell__amount">85,800원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
           <div class="order-row" data-cat="subscription">
             <span class="order-cell__date">2026.05.20</span>
@@ -362,7 +364,7 @@
             <span class="order-cell__no">H26-052001</span>
             <span class="order-cell__amount">19,900원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
           <div class="order-row" data-cat="single">
             <span class="order-cell__date">2026.05.12</span>
@@ -370,7 +372,7 @@
             <span class="order-cell__no">H26-051201</span>
             <span class="order-cell__amount">99,000원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
           <div class="order-row" data-cat="subscription">
             <span class="order-cell__date">2026.04.20</span>
@@ -378,7 +380,7 @@
             <span class="order-cell__no">H26-042001</span>
             <span class="order-cell__amount">15,920원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
           <div class="order-row" data-cat="single">
             <span class="order-cell__date">2026.04.15</span>
@@ -386,7 +388,7 @@
             <span class="order-cell__no">H26-041501</span>
             <span class="order-cell__amount">85,800원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
           <div class="order-row" data-cat="refund">
             <span class="order-cell__date">2026.03.15</span>
@@ -394,7 +396,7 @@
             <span class="order-cell__no">H26-031502</span>
             <span class="order-cell__amount">77,000원</span>
             <span class="order-cell__status order-cell__status--refund">환불 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
           <div class="order-row" data-cat="refund">
             <span class="order-cell__date">2026.02.24</span>
@@ -402,7 +404,7 @@
             <span class="order-cell__no">H26-022401</span>
             <span class="order-cell__amount">69,300원</span>
             <span class="order-cell__status order-cell__status--refund">환불 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
           <div class="order-row" data-cat="single">
             <span class="order-cell__date">2026.01.10</span>
@@ -410,7 +412,7 @@
             <span class="order-cell__no">H26-011001</span>
             <span class="order-cell__amount">96,800원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
-            <a class="order-cell__receipt" href="#">영수증</a>
+            <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
           </div>
         </div>
         <p class="order-empty" data-order-empty hidden>해당 조건의 결제 내역이 없어요.</p>
@@ -427,7 +429,7 @@
             </div>
             <span class="order-pay__badge">기본</span>
           </div>
-          <a class="order-pay__add" href="#">+ 결제수단 추가</a>
+          <a class="order-pay__add" href="#" data-open-subscribe aria-haspopup="dialog" aria-controls="payment-modal">+ 결제수단 추가</a>
         </section>
 
         <section class="order-refund">
@@ -564,6 +566,69 @@
 
   </div>
 </footer>
+
+<!-- ===== 결제수단 추가 모달 ===== -->
+<div class="modal" id="payment-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="payment-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="payment-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 결제수단 추가</h2>
+    </div>
+    <form class="signup__form" data-subscribe-form>
+      <div class="signup__fields">
+        <input class="signup__input" type="text" name="card-number" placeholder="카드번호 16자리" inputmode="numeric" autocomplete="cc-number" maxlength="16" pattern="[0-9]{16}" required>
+        <input class="signup__input" type="text" name="card-expiry" placeholder="유효기간 4자리 (MMYY)" inputmode="numeric" autocomplete="cc-exp" maxlength="4" pattern="[0-9]{4}" required>
+        <input class="signup__input" type="text" name="card-cvc" placeholder="CVC 3자리" inputmode="numeric" autocomplete="cc-csc" maxlength="3" pattern="[0-9]{3}" required>
+        <input class="signup__input" type="text" name="card-name" placeholder="영문 이름 (예: GILDONG HONG)" autocomplete="cc-name" required>
+      </div>
+      <button class="signup__submit" type="submit">변경하기</button>
+    </form>
+    <p class="subscribe-done" role="status" hidden>결제수단이 변경되었습니다.</p>
+  </div>
+</div>
+
+<!-- ===== 영수증 모달 ===== -->
+<div class="modal" id="receipt-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog modal__dialog--receipt" role="dialog" aria-modal="true" aria-labelledby="receipt-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="receipt-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 신용·체크카드 매출전표</h2>
+    </div>
+    <div class="receipt">
+      <dl class="receipt__group">
+        <div class="receipt__row"><dt>주문번호</dt><dd>0716-0106-3977905-0</dd></div>
+        <div class="receipt__row"><dt>구매자</dt><dd>밤샘러 지우</dd></div>
+        <div class="receipt__row"><dt>구매상품</dt><dd>개발 생산성 10배 올리는 클로드 코드 마스터 과정 - by 새벽코딩 제이든</dd></div>
+      </dl>
+      <dl class="receipt__group">
+        <div class="receipt__row"><dt>카드종류</dt><dd>BC</dd></div>
+        <div class="receipt__row"><dt>카드번호</dt><dd>92000301****339*</dd></div>
+        <div class="receipt__row"><dt>할부</dt><dd>일시불</dd></div>
+        <div class="receipt__row"><dt>결제상태</dt><dd>완료</dd></div>
+        <div class="receipt__row"><dt>승인번호</dt><dd>30647969</dd></div>
+        <div class="receipt__row"><dt>결제일시</dt><dd>2026-07-16 10:24:18</dd></div>
+      </dl>
+      <dl class="receipt__group">
+        <div class="receipt__row"><dt>공급가액</dt><dd>98,000 원</dd></div>
+        <div class="receipt__row"><dt>면세가액</dt><dd>0 원</dd></div>
+        <div class="receipt__row"><dt>부가세</dt><dd>9,800 원</dd></div>
+        <div class="receipt__row"><dt>과세제외액</dt><dd>0 원</dd></div>
+        <div class="receipt__row receipt__row--total"><dt>합계</dt><dd>107,800 원</dd></div>
+      </dl>
+      <div class="receipt__biz">
+        <p><strong>이용상점</strong><br>(주)훗업 컴퍼니 · 대표자명 신호진 · 사업자등록번호 123-45-67890 · 통신판매신고 제2026-서울서초-1234호 · 전화 02-1234-5678 · (06621) 서울특별시 서초구 강남대로 373, 10층</p>
+        <p><strong>결제서비스업체</strong><br>토스페이먼츠(주) · 대표자명 임한욱 · 사업자등록번호 411-86-01799 · 전화 1544-7772 · 서울특별시 강남구 테헤란로 131, 14층</p>
+      </div>
+      <p class="receipt__note">＊금액: 합계 107,800원 = 공급가액 98,000원 + 부가세 9,800원(10%). 시안용 가상 매출전표입니다.</p>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
