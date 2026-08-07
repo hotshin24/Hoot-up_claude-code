@@ -7482,7 +7482,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 /* 버튼 */
 .creator-btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: var(--radius-pill); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); white-space: nowrap; transition: background-color .15s ease, border-color .15s ease, color .15s ease, opacity .15s ease; }
 .creator-btn--primary { background-color: var(--color-brand-darker); color: var(--color-neutral-white); }
-.creator-btn--primary:hover { opacity: 0.9; }
 .creator-btn--ghost { background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-darker); }
 .creator-btn--ghost:hover { border-color: var(--color-brand-darker); color: var(--color-brand-darker); }
 .creator-btn--sm { padding: 9px 16px; font-size: 13px; }
@@ -9032,4 +9031,51 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .cert__name { font-size: var(--text-h3-size); }
   .cert__foot { flex-direction: column; align-items: center; gap: var(--space-xl); text-align: center; }
   .cert__sign { text-align: center; }
+}
+
+/* ==========================================================================
+   크리에이터 클래스 통계 (creator-class-stats.html)
+   ========================================================================== */
+/* 통계 페이지는 헤더에 액션이 없어 제목/설명만 세로로 */
+.creator-cstat-page .pp-head { display: block; }
+.cstat-sub { font-size: var(--text-body-sm-size); font-weight: var(--font-weight-regular); color: var(--color-neutral-light); }
+
+/* 이번 달 판매 계산 */
+.cstat-calc { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: stretch; gap: 12px; }
+.cstat-calc__cell { flex: 1 1 0; min-width: 130px; display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md); }
+.cstat-calc__cell--total { background-color: var(--color-brand-lighter); border-color: var(--color-brand-lighter); }
+.cstat-calc__k { font-size: var(--text-caption-size); color: var(--color-neutral-light); }
+.cstat-calc__cell--total .cstat-calc__k { color: var(--color-brand-darker); }
+.cstat-calc__v { font-size: var(--text-h5-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.cstat-calc__cell--total .cstat-calc__v { color: var(--color-brand-darker); }
+.cstat-calc__op { align-self: center; font-size: var(--text-h5-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-light); }
+.cstat-note { margin-top: 14px; font-size: 13px; line-height: 20px; color: var(--color-neutral-light); }
+
+/* 막대 (월별 매출 · 평점 분포 공용 track/fill) */
+.cstat-bars { margin-top: 18px; display: flex; flex-direction: column; gap: 14px; }
+.cstat-bar { display: flex; align-items: center; gap: var(--space-md); }
+.cstat-bar__label { flex-shrink: 0; width: 40px; font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
+.cstat-bar__track { flex: 1 1 0; min-width: 0; height: 10px; background-color: var(--color-neutral-lighter); border-radius: var(--radius-pill); overflow: hidden; }
+.cstat-bar__fill { display: block; height: 100%; background-color: var(--color-brand-base); border-radius: var(--radius-pill); }
+.cstat-bar--now .cstat-bar__fill { background-color: var(--color-brand-accent); }
+.cstat-bar__val { flex-shrink: 0; width: 158px; text-align: right; font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.cstat-bar__val em { margin-left: 6px; font-style: normal; font-weight: var(--font-weight-regular); color: var(--color-neutral-light); }
+
+/* 평점 분포 (track/fill 재사용) */
+.cstat-rating { margin-top: 18px; display: flex; flex-direction: column; gap: 12px; }
+.cstat-rating__row { display: flex; align-items: center; gap: var(--space-md); }
+.cstat-rating__star { flex-shrink: 0; width: 40px; font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
+.cstat-rating__count { flex-shrink: 0; width: 48px; text-align: right; font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+
+/* 클래스 정보 */
+.cstat-info { margin-top: 18px; display: flex; flex-direction: column; }
+.cstat-info__row { display: flex; justify-content: space-between; gap: var(--space-md); padding: 14px 0; border-top: 1px solid var(--color-neutral-lighter); }
+.cstat-info__row:first-child { border-top: 0; padding-top: 0; }
+.cstat-info__row dt { flex-shrink: 0; font-size: var(--text-body-sm-size); color: var(--color-neutral-light); }
+.cstat-info__row dd { text-align: right; font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.cstat-info__sub { margin-left: 8px; font-weight: var(--font-weight-regular); color: var(--color-neutral-light); }
+
+@media (max-width: 767px) {
+  .cstat-bar__val { width: auto; }
+  .cstat-calc__op { transform: rotate(90deg); }
 }

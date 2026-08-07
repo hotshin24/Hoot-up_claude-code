@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>크리에이터 계정 — HOOT UP</title>
-  <meta name="description" content="HOOT UP 크리에이터 계정 — 클래스 운영과 수익·정산, 수강생·리뷰를 한 곳에서 관리하세요.">
+  <title>클래스 통계 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 크리에이터 클래스 통계 — 수강생·평점·완주율과 이번 달 매출, 월별 추이를 확인하세요.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -246,14 +246,13 @@
   <div class="mega-backdrop" hidden></div>
 </header>
 
-<main id="main" class="creator" data-screen-label="크리에이터 계정">
+<main id="main" class="creator creator-cstat-page" data-screen-label="클래스 통계">
 
-  <!-- 히어로 -->
   <section class="creator-hero">
     <div class="l-container">
       <p class="creator-hero__eyebrow">CREATOR STUDIO</p>
       <h1 class="creator-hero__title">크리에이터 계정</h1>
-      <p class="creator-hero__desc">클래스 운영과 수익·정산을 한 곳에서 관리하세요.</p>
+      <p class="creator-hero__desc">클래스별 성과를 데이터로 확인하세요.</p>
     </div>
   </section>
 
@@ -261,9 +260,9 @@
     <aside class="account-nav creator-nav" aria-label="크리에이터 메뉴">
         <p class="account-nav__label">STUDIO</p>
         <ul class="account-nav__list">
-          <li><a class="account-nav__link is-active" href="creator.html" aria-current="page">크리에이터 홈</a></li>
+          <li><a class="account-nav__link" href="creator.html">크리에이터 홈</a></li>
           <li><a class="account-nav__link" href="creator-profile.html">공개 프로필</a></li>
-          <li><a class="account-nav__link" href="creator-classes.html">내 클래스 관리</a></li>
+          <li><a class="account-nav__link is-active" href="creator-classes.html" aria-current="page">내 클래스 관리</a></li>
           <li><a class="account-nav__link" href="creator-reviews.html">수강생 · 리뷰</a></li>
           <li><a class="account-nav__link" href="creator-questions.html">질문 관리</a></li>
         </ul>
@@ -280,191 +279,73 @@
 
     <div class="account-content creator-content">
 
-      <!-- 프로필 -->
-      <section class="creator-card creator-profile">
-        <div class="creator-profile__head">
-          <img class="creator-profile__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="코드랩 현우 프로필">
-          <div class="creator-profile__meta">
-            <div class="creator-profile__nameline">
-              <h2 class="creator-profile__name">코드랩 현우</h2>
-              <span class="creator-profile__badge">시그니처 크리에이터</span>
-            </div>
-            <p class="creator-profile__sub">개발 &amp; IT · 팔로워 12,480명 · 누적 수강생 22,522명</p>
-          </div>
-          <div class="creator-profile__actions">
-            <a class="creator-btn creator-btn--ghost" href="creator-profile.html">공개 프로필</a>
-            <a class="creator-btn creator-btn--primary" href="creator-classes.html">새 클래스 개설</a>
-          </div>
-        </div>
-        <div class="creator-stats">
-          <div class="creator-stat">
-            <p class="creator-stat__label">이번 달 수익</p>
-            <p class="creator-stat__value">8,420,000<span>원</span></p>
-            <p class="creator-stat__sub creator-stat__sub--up">▲ 18.2% 전월 대비</p>
-          </div>
-          <div class="creator-stat">
-            <p class="creator-stat__label">구독 정산분</p>
-            <p class="creator-stat__value">2,300,000<span>원</span></p>
-            <p class="creator-stat__sub">학습량 기반 · 확정 대기</p>
-          </div>
-          <div class="creator-stat">
-            <p class="creator-stat__label">이번 달 판매</p>
-            <p class="creator-stat__value">312<span>건</span></p>
-            <p class="creator-stat__sub creator-stat__sub--up">▲ 24건 전월 대비</p>
-          </div>
-          <div class="creator-stat">
-            <p class="creator-stat__label">평균 평점</p>
-            <p class="creator-stat__value">4.8<span>/ 5</span></p>
-            <p class="creator-stat__sub">신규 리뷰 24건</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 수익 추이 -->
-      <section class="creator-card creator-revenue">
-        <div class="creator-card__head">
-          <h3 class="creator-card__title">수익 추이 <span class="creator-card__sub">최근 6개월</span></h3>
-          <a class="creator-more" href="creator-revenue.html">정산 상세 보기</a>
-        </div>
-        <div class="creator-chart">
-          <div class="creator-chart__bars">
-            <div class="creator-bar">
-              <span class="creator-bar__val">512만</span>
-              <span class="creator-bar__fill" style="height:106px;"></span>
-            </div>
-            <div class="creator-bar">
-              <span class="creator-bar__val">468만</span>
-              <span class="creator-bar__fill" style="height:96px;"></span>
-            </div>
-            <div class="creator-bar">
-              <span class="creator-bar__val">604만</span>
-              <span class="creator-bar__fill" style="height:124px;"></span>
-            </div>
-            <div class="creator-bar">
-              <span class="creator-bar__val">588만</span>
-              <span class="creator-bar__fill" style="height:120px;"></span>
-            </div>
-            <div class="creator-bar">
-              <span class="creator-bar__val">712만</span>
-              <span class="creator-bar__fill creator-bar__fill--mid" style="height:146px;"></span>
-            </div>
-            <div class="creator-bar">
-              <span class="creator-bar__val creator-bar__val--top">842만</span>
-              <span class="creator-bar__fill creator-bar__fill--top" style="height:172px;"></span>
-            </div>
-          </div>
-          <div class="creator-chart__months">
-              <span class="creator-bar__month">2월</span>
-              <span class="creator-bar__month">3월</span>
-              <span class="creator-bar__month">4월</span>
-              <span class="creator-bar__month">5월</span>
-              <span class="creator-bar__month">6월</span>
-              <span class="creator-bar__month">7월</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- 내 클래스 -->
-      <section class="creator-card creator-classes">
-        <div class="creator-card__head">
-          <h3 class="creator-card__title">내 클래스 <span class="creator-card__count">4</span></h3>
-          <a class="creator-more" href="creator-classes.html">클래스 관리</a>
-        </div>
-        <div class="creator-classes__list">
-          <div class="creator-class">
-            <span class="creator-class__thumb"><img src="assets/course/cat-dev-react.png" alt="" loading="lazy"></span>
-            <div class="creator-class__info">
-              <p class="creator-class__tags"><span class="creator-tag">운영 중</span><span class="creator-tag">SIGNATURE</span></p>
-              <p class="creator-class__title">포트폴리오까지 끝내는 React 프론트엔드 실전 프로젝트</p>
-              <p class="creator-class__meta">수강생 2,604명 · 평점 4.8 · 이번 달 매출 3,180,000원</p>
-            </div>
-            <a class="creator-btn creator-btn--ghost creator-class__btn" href="creator-class-stats.html">통계</a>
-          </div>
-          <div class="creator-class">
-            <span class="creator-class__thumb"><img src="assets/course/cat-dev-responsive-publishing.png" alt="" loading="lazy"></span>
-            <div class="creator-class__info">
-              <p class="creator-class__tags"><span class="creator-tag">운영 중</span><span class="creator-tag">BEST</span></p>
-              <p class="creator-class__title">제로부터 완성하는 반응형 웹 퍼블리싱 마스터 클래스</p>
-              <p class="creator-class__meta">수강생 4,128명 · 평점 4.9 · 이번 달 매출 2,926,000원</p>
-            </div>
-            <a class="creator-btn creator-btn--ghost creator-class__btn" href="creator-class-stats.html">통계</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- 답변 대기 + 최근 리뷰 -->
-      <div class="creator-grid">
-        <section class="creator-card creator-panel">
-          <div class="creator-card__head">
-            <h3 class="creator-card__title">답변 대기 <span class="creator-card__count">7</span></h3>
-            <a class="creator-more" href="creator-questions.html">전체 보기</a>
-          </div>
-          <ul class="creator-q__list">
-            <li class="creator-q">
-              <p class="creator-q__title">useEffect 의존성 배열 질문이요</p>
-              <p class="creator-q__meta">React 실전 프로젝트 · 14강 · 2시간 전</p>
-            </li>
-            <li class="creator-q">
-              <p class="creator-q__title">그리드 레이아웃이 사파리에서 깨져요</p>
-              <p class="creator-q__meta">반응형 웹 퍼블리싱 · 22강 · 5시간 전</p>
-            </li>
-            <li class="creator-q">
-              <p class="creator-q__title">포트폴리오 배포는 어디로 하나요?</p>
-              <p class="creator-q__meta">React 실전 프로젝트 · 40강 · 어제</p>
-            </li>
-          </ul>
-        </section>
-        <section class="creator-card creator-panel">
-          <div class="creator-card__head">
-            <h3 class="creator-card__title">최근 리뷰</h3>
-            <a class="creator-more" href="creator-reviews.html">전체 보기</a>
-          </div>
-          <ul class="creator-review__list">
-            <li class="creator-review">
-              <img class="creator-review__stars" src="assets/brand/stars-48.svg" width="70" height="14" alt="평점 5점 만점에 4.8">
-              <p class="creator-review__text">실무에서 바로 쓸 구조를 알려줘서 좋았어요. 폴더 설계 파트 최고.</p>
-              <p class="creator-review__who">밤샘러 지우 · 3일 전</p>
-            </li>
-            <li class="creator-review">
-              <img class="creator-review__stars" src="assets/brand/stars-48.svg" width="70" height="14" alt="평점 5점 만점에 4.8">
-              <p class="creator-review__text">설명은 훌륭한데 후반부 진행 속도가 조금 빨랐습니다.</p>
-              <p class="creator-review__who">퍼블리싱 준비생 · 5일 전</p>
-            </li>
-            <li class="creator-review">
-              <img class="creator-review__stars" src="assets/brand/stars-49.svg" width="70" height="14" alt="평점 5점 만점에 4.9">
-              <p class="creator-review__text">비전공자인데 끝까지 따라갔습니다. 과제 피드백이 큰 도움이 됐어요.</p>
-              <p class="creator-review__who">주경야독 민 · 1주 전</p>
-            </li>
-          </ul>
-        </section>
+      <!-- 헤더 -->
+      <div class="pp-head">
+        <h2 class="pp-head__title">클래스 통계</h2>
+        <p class="pp-head__desc">제로부터 완성하는 반응형 웹 퍼블리싱 마스터 클래스</p>
       </div>
 
-      <!-- 정산 · 계정 설정 -->
-      <section class="creator-card creator-set">
-        <h3 class="creator-card__title">정산 · 계정 설정</h3>
-        <ul class="creator-set__list">
-          <li class="creator-set__row">
-            <div class="creator-set__text">
-              <p class="creator-set__label">정산 계좌</p>
-              <p class="creator-set__desc">국민은행 ****-**-4821 · 예금주 신현우 · 실명 인증 완료</p>
-            </div>
-            <a class="creator-btn creator-btn--ghost creator-btn--sm" href="creator-tax.html">변경</a>
-          </li>
-          <li class="creator-set__row">
-            <div class="creator-set__text">
-              <p class="creator-set__label">사업자 · 세금 정보</p>
-              <p class="creator-set__desc">개인 구분 · 신분증·사업자등록증 미제출</p>
-            </div>
-            <a class="creator-btn creator-btn--primary creator-btn--sm" href="creator-tax.html">등록하기</a>
-          </li>
-          <li class="creator-set__row">
-            <div class="creator-set__text">
-              <p class="creator-set__label">스튜디오 예약</p>
-              <p class="creator-set__desc">강의 촬영 스튜디오 · 2026.08.06 반일(14:00–18:00) 예약됨</p>
-            </div>
-            <a class="creator-btn creator-btn--ghost creator-btn--sm" href="creator-studio-booking.html">예약 관리</a>
-          </li>
+      <!-- KPI 요약 밴드 -->
+      <section class="rev-summary">
+        <h3 class="a11y-hidden">클래스 요약</h3>
+        <div class="rev-summary__main">
+          <p class="rev-summary__label">이번 달 매출 · 2026년 7월</p>
+          <p class="rev-summary__total">2,926,000<span>원</span></p>
+        </div>
+        <div class="rev-summary__stats">
+          <div class="rev-summary__stat"><p class="rev-summary__k">누적 수강생</p><p class="rev-summary__v">4,128명</p></div>
+          <div class="rev-summary__stat"><p class="rev-summary__k">평점</p><p class="rev-summary__v rev-summary__v--accent">4.9</p></div>
+          <div class="rev-summary__stat"><p class="rev-summary__k">완주율</p><p class="rev-summary__v">71%</p></div>
+        </div>
+      </section>
+
+      <!-- 이번 달 판매 (검증 가능한 계산) -->
+      <section class="creator-card cstat-card">
+        <h3 class="creator-card__title">이번 달 판매</h3>
+        <div class="cstat-calc">
+          <div class="cstat-calc__cell"><p class="cstat-calc__k">신규 수강생</p><p class="cstat-calc__v">38명</p></div>
+          <span class="cstat-calc__op" aria-hidden="true">×</span>
+          <div class="cstat-calc__cell"><p class="cstat-calc__k">판매가</p><p class="cstat-calc__v">77,000원</p></div>
+          <span class="cstat-calc__op" aria-hidden="true">=</span>
+          <div class="cstat-calc__cell cstat-calc__cell--total"><p class="cstat-calc__k">이번 달 매출</p><p class="cstat-calc__v">2,926,000원</p></div>
+        </div>
+        <p class="cstat-note">＊정가 110,000원 · 30% 할인 적용가 77,000원 기준 — 38건 × 77,000원 = 2,926,000원.</p>
+      </section>
+
+      <!-- 월별 매출 추이 -->
+      <section class="creator-card cstat-card">
+        <h3 class="creator-card__title">월별 매출 추이 <span class="cstat-sub">최근 6개월 · 판매가 77,000원</span></h3>
+        <ul class="cstat-bars">
+          <li class="cstat-bar"><span class="cstat-bar__label">2월</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:72.7%;"></span></span><span class="cstat-bar__val">2,464,000원 <em>32건</em></span></li>
+          <li class="cstat-bar"><span class="cstat-bar__label">3월</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:65.9%;"></span></span><span class="cstat-bar__val">2,233,000원 <em>29건</em></span></li>
+          <li class="cstat-bar"><span class="cstat-bar__label">4월</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:79.5%;"></span></span><span class="cstat-bar__val">2,695,000원 <em>35건</em></span></li>
+          <li class="cstat-bar"><span class="cstat-bar__label">5월</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:93.2%;"></span></span><span class="cstat-bar__val">3,157,000원 <em>41건</em></span></li>
+          <li class="cstat-bar"><span class="cstat-bar__label">6월</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:100%;"></span></span><span class="cstat-bar__val">3,388,000원 <em>44건</em></span></li>
+          <li class="cstat-bar cstat-bar--now"><span class="cstat-bar__label">7월</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:86.4%;"></span></span><span class="cstat-bar__val">2,926,000원 <em>38건</em></span></li>
         </ul>
+      </section>
+
+      <!-- 평점 분포 -->
+      <section class="creator-card cstat-card">
+        <h3 class="creator-card__title">평점 분포 <span class="cstat-sub">리뷰 1,000건 · 평균 4.9</span></h3>
+        <ul class="cstat-rating">
+          <li class="cstat-rating__row"><span class="cstat-rating__star">5점</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:91%;"></span></span><span class="cstat-rating__count">910</span></li>
+          <li class="cstat-rating__row"><span class="cstat-rating__star">4점</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:8%;"></span></span><span class="cstat-rating__count">80</span></li>
+          <li class="cstat-rating__row"><span class="cstat-rating__star">3점</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:0.8%;"></span></span><span class="cstat-rating__count">8</span></li>
+          <li class="cstat-rating__row"><span class="cstat-rating__star">2점</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:0.1%;"></span></span><span class="cstat-rating__count">1</span></li>
+          <li class="cstat-rating__row"><span class="cstat-rating__star">1점</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:0.1%;"></span></span><span class="cstat-rating__count">1</span></li>
+        </ul>
+      </section>
+
+      <!-- 클래스 정보 -->
+      <section class="creator-card cstat-card">
+        <h3 class="creator-card__title">클래스 정보</h3>
+        <dl class="cstat-info">
+          <div class="cstat-info__row"><dt>구성</dt><dd>52강 · 약 11시간</dd></div>
+          <div class="cstat-info__row"><dt>판매가</dt><dd>77,000원 <span class="cstat-info__sub">정가 110,000원 · 30% 할인</span></dd></div>
+          <div class="cstat-info__row"><dt>완주 수강생</dt><dd>2,931명 <span class="cstat-info__sub">완주율 71%</span></dd></div>
+          <div class="cstat-info__row"><dt>오픈일</dt><dd>2024. 01. 01</dd></div>
+        </dl>
       </section>
 
     </div>
