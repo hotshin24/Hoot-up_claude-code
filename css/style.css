@@ -6922,8 +6922,13 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   flex-shrink: 0; padding: 11px 20px; border-radius: var(--radius-pill);
   background-color: var(--color-neutral-darker); color: var(--color-neutral-white);
   font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); white-space: nowrap;
+  cursor: pointer;
 }
-.wish-item__btn:hover { opacity: 0.88; }
+/* 체크 해제 시 비활성 */
+.wish-item__btn.is-disabled {
+  background-color: var(--color-neutral-lighter); color: var(--color-neutral-light);
+  cursor: not-allowed;
+}
 
 /* 프로모 배너 */
 .wish-promo {
@@ -6939,7 +6944,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   background-color: var(--color-brand-darker); color: var(--color-neutral-white);
   font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold);
 }
-.wish-promo__btn:hover { opacity: 0.92; }
 
 /* 반응형 */
 
