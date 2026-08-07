@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>클래스 통계 — HOOT UP</title>
-  <meta name="description" content="HOOT UP 크리에이터 클래스 통계 — 수강생·평점·완주율과 이번 달 매출, 월별 추이를 확인하세요.">
+  <title>블로그 관리 — HOOT UP</title>
+  <meta name="description" content="HOOT UP 크리에이터 블로그 관리 — 작성한 글을 관리하고 새 글을 작성하세요.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +18,7 @@
   <script src="js/common.js" defer></script>
   <script src="js/carousel.js" defer></script>
   <script src="js/toggle.js" defer></script>
+  <script src="js/creator-blog.js" defer></script>
 </head>
 <body>
 
@@ -246,13 +247,13 @@
   <div class="mega-backdrop" hidden></div>
 </header>
 
-<main id="main" class="creator creator-cstat-page" data-screen-label="클래스 통계">
+<main id="main" class="creator creator-blog-page" data-screen-label="블로그 관리">
 
   <section class="creator-hero">
     <div class="l-container">
       <p class="creator-hero__eyebrow">CREATOR STUDIO</p>
       <h1 class="creator-hero__title">크리에이터 계정</h1>
-      <p class="creator-hero__desc">클래스별 성과를 데이터로 확인하세요.</p>
+      <p class="creator-hero__desc">지식 공유자 블로그 글을 관리하세요.</p>
     </div>
   </section>
 
@@ -262,10 +263,10 @@
         <ul class="account-nav__list">
           <li><a class="account-nav__link" href="creator.html">크리에이터 홈</a></li>
           <li><a class="account-nav__link" href="creator-profile.html">공개 프로필</a></li>
-          <li><a class="account-nav__link is-active" href="creator-classes.html" aria-current="page">내 클래스 관리</a></li>
+          <li><a class="account-nav__link" href="creator-classes.html">내 클래스 관리</a></li>
           <li><a class="account-nav__link" href="creator-reviews.html">수강생 · 리뷰</a></li>
           <li><a class="account-nav__link" href="creator-questions.html">질문 관리</a></li>
-          <li><a class="account-nav__link" href="creator-blog.html">블로그 관리</a></li>
+          <li><a class="account-nav__link is-active" href="creator-blog.html" aria-current="page">블로그 관리</a></li>
         </ul>
         <p class="account-nav__label">REVENUE</p>
         <ul class="account-nav__list">
@@ -280,74 +281,139 @@
 
     <div class="account-content creator-content">
 
-      <!-- 헤더 -->
       <div class="pp-head">
-        <p class="cedit-back"><a href="creator-classes.html"><span class="icon icon--chevron-left" aria-hidden="true"></span> 내 클래스 관리</a></p>
-        <h2 class="pp-head__title">클래스 통계</h2>
-        <p class="pp-head__desc">제로부터 완성하는 반응형 웹 퍼블리싱 마스터 클래스</p>
+        <div class="pp-head__intro">
+          <h2 class="pp-head__title">블로그 관리</h2>
+          <p class="pp-head__desc">코드랩 현우 · 지식 공유자 블로그</p>
+        </div>
       </div>
 
-      <!-- KPI 요약 밴드 -->
-      <section class="rev-summary">
-        <h3 class="a11y-hidden">클래스 요약</h3>
-        <div class="rev-summary__main">
-          <p class="rev-summary__label">이번 달 매출 · 2026년 7월</p>
-          <p class="rev-summary__total">2,926,000<span>원</span></p>
-        </div>
-        <div class="rev-summary__stats">
-          <div class="rev-summary__stat"><p class="rev-summary__k">누적 수강생</p><p class="rev-summary__v">4,128명</p></div>
-          <div class="rev-summary__stat"><p class="rev-summary__k">평점</p><p class="rev-summary__v rev-summary__v--accent">4.9</p></div>
-          <div class="rev-summary__stat"><p class="rev-summary__k">완주율</p><p class="rev-summary__v">71%</p></div>
-        </div>
-      </section>
-
-      <!-- 이번 달 판매 (검증 가능한 계산) -->
-      <section class="creator-card cstat-card">
-        <h3 class="creator-card__title">이번 달 판매</h3>
-        <div class="cstat-calc">
-          <div class="cstat-calc__cell"><p class="cstat-calc__k">신규 수강생</p><p class="cstat-calc__v">38명</p></div>
-          <span class="cstat-calc__op" aria-hidden="true">×</span>
-          <div class="cstat-calc__cell"><p class="cstat-calc__k">판매가</p><p class="cstat-calc__v">77,000원</p></div>
-          <span class="cstat-calc__op" aria-hidden="true">=</span>
-          <div class="cstat-calc__cell cstat-calc__cell--total"><p class="cstat-calc__k">이번 달 매출</p><p class="cstat-calc__v">2,926,000원</p></div>
-        </div>
-        <p class="cstat-note">＊정가 110,000원 · 30% 할인 적용가 77,000원 기준 — 38건 × 77,000원 = 2,926,000원.</p>
-      </section>
-
-      <!-- 월별 매출 추이 -->
-      <section class="creator-card cstat-card">
-        <h3 class="creator-card__title">월별 매출 추이 <span class="cstat-sub">최근 6개월 · 판매가 77,000원</span></h3>
-        <ul class="cstat-bars">
-          <li class="cstat-bar"><span class="cstat-bar__label">2월</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:72.7%;"></span></span><span class="cstat-bar__val">2,464,000원 <em>32건</em></span></li>
-          <li class="cstat-bar"><span class="cstat-bar__label">3월</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:65.9%;"></span></span><span class="cstat-bar__val">2,233,000원 <em>29건</em></span></li>
-          <li class="cstat-bar"><span class="cstat-bar__label">4월</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:79.5%;"></span></span><span class="cstat-bar__val">2,695,000원 <em>35건</em></span></li>
-          <li class="cstat-bar"><span class="cstat-bar__label">5월</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:93.2%;"></span></span><span class="cstat-bar__val">3,157,000원 <em>41건</em></span></li>
-          <li class="cstat-bar"><span class="cstat-bar__label">6월</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:100%;"></span></span><span class="cstat-bar__val">3,388,000원 <em>44건</em></span></li>
-          <li class="cstat-bar cstat-bar--now"><span class="cstat-bar__label">7월</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:86.4%;"></span></span><span class="cstat-bar__val">2,926,000원 <em>38건</em></span></li>
+      <!-- 1. 작성한 글 목록 -->
+      <section class="creator-card">
+        <h3 class="creator-card__title">작성한 글 <span class="blog-count" data-blog-count>8</span></h3>
+        <ul class="blog-list" data-blog-list>
+            <li class="blog-post">
+              <div class="blog-post__body">
+                <p class="blog-post__cat">DEVELOPMENT &amp; IT</p>
+                <p class="blog-post__title">클로드 코드로 퍼블리싱 속도 2배 만들기</p>
+                <p class="blog-post__meta">July 20 · 댓글 30</p>
+              </div>
+              <div class="blog-post__actions">
+                <button class="blog-btn" type="button" data-blog-edit>수정</button>
+                <button class="blog-btn blog-btn--danger" type="button" data-blog-del>삭제</button>
+              </div>
+            </li>
+            <li class="blog-post">
+              <div class="blog-post__body">
+                <p class="blog-post__cat">DEVELOPMENT &amp; IT</p>
+                <p class="blog-post__title">독학 개발, 왜 자꾸 중간에 멈출까</p>
+                <p class="blog-post__meta">July 14 · 댓글 22</p>
+              </div>
+              <div class="blog-post__actions">
+                <button class="blog-btn" type="button" data-blog-edit>수정</button>
+                <button class="blog-btn blog-btn--danger" type="button" data-blog-del>삭제</button>
+              </div>
+            </li>
+            <li class="blog-post">
+              <div class="blog-post__body">
+                <p class="blog-post__cat">DEVELOPMENT &amp; IT</p>
+                <p class="blog-post__title">퍼블리셔에서 프론트엔드로, 넘어가는 타이밍</p>
+                <p class="blog-post__meta">July 07 · 댓글 18</p>
+              </div>
+              <div class="blog-post__actions">
+                <button class="blog-btn" type="button" data-blog-edit>수정</button>
+                <button class="blog-btn blog-btn--danger" type="button" data-blog-del>삭제</button>
+              </div>
+            </li>
+            <li class="blog-post">
+              <div class="blog-post__body">
+                <p class="blog-post__cat">DEVELOPMENT &amp; IT<span class="blog-post__badge">가장 많이 읽힌 글</span></p>
+                <p class="blog-post__title">사이트 다섯 개보다 잘 만든 한 페이지</p>
+                <p class="blog-post__meta">June 30 · 댓글 31</p>
+              </div>
+              <div class="blog-post__actions">
+                <button class="blog-btn" type="button" data-blog-edit>수정</button>
+                <button class="blog-btn blog-btn--danger" type="button" data-blog-del>삭제</button>
+              </div>
+            </li>
+            <li class="blog-post">
+              <div class="blog-post__body">
+                <p class="blog-post__cat">DEVELOPMENT &amp; IT</p>
+                <p class="blog-post__title">비전공자가 6개월 만에 웹 퍼블리셔로 취업한 진짜 순서</p>
+                <p class="blog-post__meta">June 13 · 댓글 19</p>
+              </div>
+              <div class="blog-post__actions">
+                <button class="blog-btn" type="button" data-blog-edit>수정</button>
+                <button class="blog-btn blog-btn--danger" type="button" data-blog-del>삭제</button>
+              </div>
+            </li>
+            <li class="blog-post">
+              <div class="blog-post__body">
+                <p class="blog-post__cat">DEVELOPMENT &amp; IT</p>
+                <p class="blog-post__title">반응형이 자꾸 깨진다면, 이 3가지부터</p>
+                <p class="blog-post__meta">June 05 · 댓글 26</p>
+              </div>
+              <div class="blog-post__actions">
+                <button class="blog-btn" type="button" data-blog-edit>수정</button>
+                <button class="blog-btn blog-btn--danger" type="button" data-blog-del>삭제</button>
+              </div>
+            </li>
+            <li class="blog-post">
+              <div class="blog-post__body">
+                <p class="blog-post__cat">DEVELOPMENT &amp; IT</p>
+                <p class="blog-post__title">Flexbox와 Grid, 아직도 헷갈린다면</p>
+                <p class="blog-post__meta">May 28 · 댓글 15</p>
+              </div>
+              <div class="blog-post__actions">
+                <button class="blog-btn" type="button" data-blog-edit>수정</button>
+                <button class="blog-btn blog-btn--danger" type="button" data-blog-del>삭제</button>
+              </div>
+            </li>
+            <li class="blog-post">
+              <div class="blog-post__body">
+                <p class="blog-post__cat">DEVELOPMENT &amp; IT</p>
+                <p class="blog-post__title">시맨틱 마크업, 면접에서 반드시 나오는 이유</p>
+                <p class="blog-post__meta">May 15 · 댓글 13</p>
+              </div>
+              <div class="blog-post__actions">
+                <button class="blog-btn" type="button" data-blog-edit>수정</button>
+                <button class="blog-btn blog-btn--danger" type="button" data-blog-del>삭제</button>
+              </div>
+            </li>
         </ul>
+        <nav class="pager" aria-label="작성한 글 페이지" data-blog-pager hidden></nav>
       </section>
 
-      <!-- 평점 분포 -->
-      <section class="creator-card cstat-card">
-        <h3 class="creator-card__title">평점 분포 <span class="cstat-sub">리뷰 1,000건 · 평균 4.9</span></h3>
-        <ul class="cstat-rating">
-          <li class="cstat-rating__row"><span class="cstat-rating__star">5점</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:91%;"></span></span><span class="cstat-rating__count">910</span></li>
-          <li class="cstat-rating__row"><span class="cstat-rating__star">4점</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:8%;"></span></span><span class="cstat-rating__count">80</span></li>
-          <li class="cstat-rating__row"><span class="cstat-rating__star">3점</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:0.8%;"></span></span><span class="cstat-rating__count">8</span></li>
-          <li class="cstat-rating__row"><span class="cstat-rating__star">2점</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:0.1%;"></span></span><span class="cstat-rating__count">1</span></li>
-          <li class="cstat-rating__row"><span class="cstat-rating__star">1점</span><span class="cstat-bar__track"><span class="cstat-bar__fill" style="width:0.1%;"></span></span><span class="cstat-rating__count">1</span></li>
-        </ul>
-      </section>
-
-      <!-- 클래스 정보 -->
-      <section class="creator-card cstat-card">
-        <h3 class="creator-card__title">클래스 정보</h3>
-        <dl class="cstat-info">
-          <div class="cstat-info__row"><dt>구성</dt><dd>52강 · 약 11시간</dd></div>
-          <div class="cstat-info__row"><dt>판매가</dt><dd>77,000원 <span class="cstat-info__sub">정가 110,000원 · 30% 할인</span></dd></div>
-          <div class="cstat-info__row"><dt>완주 수강생</dt><dd>2,931명 <span class="cstat-info__sub">완주율 71%</span></dd></div>
-          <div class="cstat-info__row"><dt>오픈일</dt><dd>2024. 01. 01</dd></div>
-        </dl>
+      <!-- 2. 새 글 작성 -->
+      <section class="creator-card">
+        <h3 class="creator-card__title">새 글 작성</h3>
+        <div class="blog-form">
+          <div class="blog-field">
+            <label class="blog-field__label" for="blog-title">제목</label>
+            <input class="blog-input" id="blog-title" type="text" placeholder="글 제목을 입력하세요">
+          </div>
+          <div class="blog-field">
+            <label class="blog-field__label" for="blog-cat">카테고리</label>
+            <select class="blog-input blog-input--select" id="blog-cat">
+              <option>DEVELOPMENT &amp; IT</option>
+              <option>CAREER &amp; MONEY</option>
+              <option>DESIGN &amp; CREATIVE</option>
+              <option>PHOTO &amp; VIDEO</option>
+              <option>DRAWING &amp; ILLUSTRATION</option>
+              <option>FITNESS &amp; MINDFULNESS</option>
+              <option>CRAFT &amp; HANDMADE</option>
+              <option>COOKING &amp; BAKING</option>
+            </select>
+          </div>
+          <div class="blog-field">
+            <label class="blog-field__label" for="blog-content">내용</label>
+            <textarea class="blog-input blog-input--area" id="blog-content" rows="8" placeholder="내용을 작성하세요"></textarea>
+          </div>
+          <div class="blog-form__actions">
+            <button class="creator-btn creator-btn--ghost" type="button" data-blog-reset>지우기</button>
+            <button class="creator-btn creator-btn--primary" type="button" data-blog-publish>발행하기</button>
+          </div>
+        </div>
       </section>
 
     </div>

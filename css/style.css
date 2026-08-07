@@ -7602,7 +7602,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .pp-field--full { margin-top: var(--space-md); }
 .pp-field__label { font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
 .pp-field__hint { font-weight: var(--font-weight-regular); color: var(--color-neutral-light); }
-.pp-field__input { height: 48px; padding: 0 19px; background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md); font-size: 15px; color: var(--color-neutral-darker); }
+.pp-field__input { height: 48px; padding: 0 19px; background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-sm); font-size: 15px; color: var(--color-neutral-darker); }
 .pp-field__input::placeholder { color: var(--color-text-placeholder); }
 .pp-field__input:focus { outline: none; border-color: var(--color-brand-darker); }
 .pp-field .pp-count { margin-top: 8px; text-align: right; }
@@ -9173,3 +9173,36 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cedit-field__input { width: 100%; }
 .cedit-field__input--area { min-height: 84px; line-height: 1.7; resize: vertical; }
 .cedit-section-title { font-weight: var(--font-weight-bold); font-size: var(--text-h5-size); line-height: 26px; color: var(--color-neutral-darker); }
+
+/* ==========================================================================
+   크리에이터 블로그 관리 (creator-blog.html)
+   ========================================================================== */
+/* 작성한 글 목록 */
+.blog-list { margin-top: 18px; display: flex; flex-direction: column; }
+.blog-post { display: flex; align-items: center; gap: var(--space-md); padding: 18px 0; border-top: 1px solid var(--color-neutral-lighter); }
+.blog-post:first-child { border-top: 0; padding-top: 0; }
+.blog-post--first { border-top: 0; padding-top: 0; }
+.blog-post__body { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.blog-post__cat { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 11px; letter-spacing: 0.06em; color: var(--color-brand-base); }
+.blog-post__badge { padding: 2px 8px; border-radius: var(--radius-pill); background-color: var(--color-brand-lighter); color: var(--color-brand-darker); font-family: var(--font-body); letter-spacing: 0; }
+.blog-post__title { font-size: var(--text-body-size); font-weight: var(--font-weight-bold); line-height: 24px; color: var(--color-neutral-darker); }
+.blog-post__meta { font-size: var(--text-body-sm-size); color: var(--color-neutral-light); }
+.blog-post__actions { flex-shrink: 0; display: flex; gap: 8px; }
+.blog-btn { padding: 8px 16px; border-radius: var(--radius-pill); border: 1px solid var(--color-neutral-lighter); background-color: var(--color-neutral-white); color: var(--color-neutral-base); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); cursor: pointer; }
+.blog-btn:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+.blog-btn--danger:hover { border-color: var(--color-danger-base); color: var(--color-danger-base); }
+
+/* 새 글 작성 폼 */
+.blog-form { margin-top: 18px; display: flex; flex-direction: column; gap: var(--space-md); }
+.blog-field { display: flex; flex-direction: column; gap: 6px; }
+.blog-field__label { font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
+.blog-input { width: 100%; padding: 11px 14px; border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-sm); background-color: var(--color-neutral-white); font-family: inherit; font-size: var(--text-body-size); color: var(--color-neutral-darker); }
+.blog-input::placeholder { color: var(--color-text-placeholder); }
+.blog-input:focus { outline: none; border-color: var(--color-brand-base); }
+.blog-input--area { min-height: 180px; line-height: 1.7; resize: vertical; }
+.blog-input--select { cursor: pointer; appearance: auto; }
+.blog-form__actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+@media (max-width: 767px) {
+  .blog-post { flex-wrap: wrap; }
+}
