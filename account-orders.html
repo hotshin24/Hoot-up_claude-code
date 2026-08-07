@@ -291,16 +291,17 @@
           <h2 class="order-head__title">주문 · 결제 내역</h2>
           <p class="order-head__summary">최근 12개월 · 총 13건 · 결제 금액 723,520원</p>
         </div>
-        <div class="order-head__filter" role="tablist">
-          <button class="myclass-chip is-active" type="button" role="tab" aria-selected="true" data-tab="all">전체</button>
-          <button class="myclass-chip" type="button" role="tab" aria-selected="false" data-tab="single">단건 결제</button>
-          <button class="myclass-chip" type="button" role="tab" aria-selected="false" data-tab="subscription">구독</button>
-          <button class="myclass-chip" type="button" role="tab" aria-selected="false" data-tab="refund">환불</button>
+        <div class="order-head__filter" role="group" aria-label="주문 상태 필터">
+          <button class="myclass-chip is-active" type="button" aria-pressed="true" data-tab="all">전체</button>
+          <button class="myclass-chip" type="button" aria-pressed="false" data-tab="single">단건 결제</button>
+          <button class="myclass-chip" type="button" aria-pressed="false" data-tab="subscription">구독</button>
+          <button class="myclass-chip" type="button" aria-pressed="false" data-tab="refund">환불</button>
         </div>
       </div>
 
       <!-- 주문 테이블 -->
       <section class="order-card">
+        <h3 class="a11y-hidden">주문 내역</h3>
         <div class="order-table">
           <div class="order-row order-row--head">
             <span>주문일</span>
@@ -579,9 +580,9 @@
     </div>
     <form class="signup__form" data-subscribe-form>
       <div class="signup__fields">
-        <input class="signup__input" type="text" name="card-number" placeholder="카드번호 16자리" inputmode="numeric" autocomplete="cc-number" maxlength="16" pattern="[0-9]{16}" required>
-        <input class="signup__input" type="text" name="card-expiry" placeholder="유효기간 4자리 (MMYY)" inputmode="numeric" autocomplete="cc-exp" maxlength="4" pattern="[0-9]{4}" required>
-        <input class="signup__input" type="text" name="card-cvc" placeholder="CVC 3자리" inputmode="numeric" autocomplete="cc-csc" maxlength="3" pattern="[0-9]{3}" required>
+        <input class="signup__input" type="text" name="card-number" placeholder="카드번호 16자리" autocomplete="cc-number" maxlength="16" pattern="[0-9]{16}" title="숫자 16자리를 입력하세요" required>
+        <input class="signup__input" type="text" name="card-expiry" placeholder="유효기간 4자리 (MMYY)" autocomplete="cc-exp" maxlength="4" pattern="[0-9]{4}" title="MMYY 형식의 숫자 4자리를 입력하세요" required>
+        <input class="signup__input" type="text" name="card-cvc" placeholder="CVC 3자리" autocomplete="cc-csc" maxlength="3" pattern="[0-9]{3}" title="숫자 3자리를 입력하세요" required>
         <input class="signup__input" type="text" name="card-name" placeholder="영문 이름 (예: GILDONG HONG)" autocomplete="cc-name" required>
       </div>
       <button class="signup__submit" type="submit">변경하기</button>

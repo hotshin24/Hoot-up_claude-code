@@ -28,7 +28,7 @@
     chips.forEach(function (c) {
       var on = c === chip;
       c.classList.toggle('is-active', on);
-      c.setAttribute('aria-selected', on ? 'true' : 'false');
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
     apply(chip.getAttribute('data-tab'));
   });

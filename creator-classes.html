@@ -291,15 +291,16 @@
       </div>
 
       <!-- 필터 칩 -->
-      <div class="myclass-chips" role="tablist" aria-label="클래스 상태 필터">
-        <button class="myclass-chip is-active" type="button" role="tab" aria-selected="true" data-tab="all">전체 8</button>
-        <button class="myclass-chip" type="button" role="tab" aria-selected="false" data-tab="live">운영 중 6</button>
-        <button class="myclass-chip" type="button" role="tab" aria-selected="false" data-tab="review">심사 중 1</button>
-        <button class="myclass-chip" type="button" role="tab" aria-selected="false" data-tab="draft">초안 1</button>
+      <div class="myclass-chips" role="group" aria-label="클래스 상태 필터">
+        <button class="myclass-chip is-active" type="button" aria-pressed="true" data-tab="all">전체 8</button>
+        <button class="myclass-chip" type="button" aria-pressed="false" data-tab="live">운영 중 6</button>
+        <button class="myclass-chip" type="button" aria-pressed="false" data-tab="review">심사 중 1</button>
+        <button class="myclass-chip" type="button" aria-pressed="false" data-tab="draft">초안 1</button>
       </div>
 
       <!-- 클래스 목록 -->
       <section class="creator-card cm-list">
+        <h3 class="a11y-hidden">클래스 목록</h3>
         <article class="cm-row" data-tabs="all live">
           <span class="cm-thumb"><img src="assets/course/cat-dev-react.png" alt="" loading="lazy"></span>
           <div class="cm-row__info">

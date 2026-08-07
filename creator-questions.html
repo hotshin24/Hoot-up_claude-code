@@ -284,15 +284,16 @@
           <h2 class="pp-head__title">질문 관리</h2>
           <p class="pp-head__desc">답변 대기 7건 · 평균 응답 시간 6시간 · 이번 달 답변 42건</p>
         </div>
-        <div class="qa-tabs" role="tablist" aria-label="질문 상태 필터">
-          <button class="qa-tab is-active" type="button" role="tab" aria-selected="true">답변 대기 7</button>
-          <button class="qa-tab" type="button" role="tab" aria-selected="false">답변 완료</button>
-          <button class="qa-tab" type="button" role="tab" aria-selected="false">전체</button>
+        <div class="qa-tabs" role="group" aria-label="질문 상태 필터">
+          <button class="qa-tab is-active" type="button" aria-pressed="true">답변 대기 7</button>
+          <button class="qa-tab" type="button" aria-pressed="false">답변 완료</button>
+          <button class="qa-tab" type="button" aria-pressed="false">전체</button>
         </div>
       </div>
 
       <!-- 질문 목록 -->
       <section class="creator-card qa-list">
+        <h3 class="a11y-hidden">질문 목록</h3>
         <article class="qa-card qa-card--open">
           <div class="qa-metarow">
             <span class="qa-badge qa-badge--wait">답변 대기</span>

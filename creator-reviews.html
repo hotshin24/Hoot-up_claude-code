@@ -288,6 +288,7 @@
 
       <!-- 평점 요약 -->
       <section class="creator-card rv-summary">
+        <h3 class="a11y-hidden">평점 요약</h3>
         <div class="rv-score">
           <p class="rv-score__num">4.8</p>
           <img class="rv-score__stars" src="assets/brand/stars-48.svg" width="90" height="18" alt="평점 5점 만점에 4.8">
@@ -346,10 +347,10 @@
       <section class="creator-card rv-manage">
         <div class="creator-card__head rv-manage__head">
           <h3 class="creator-card__title">리뷰 관리</h3>
-          <div class="rv-filter" role="tablist" aria-label="리뷰 필터">
-            <button class="rv-chip is-active" type="button" role="tab" aria-selected="true">전체</button>
-            <button class="rv-chip" type="button" role="tab" aria-selected="false">답글 미작성</button>
-            <button class="rv-chip" type="button" role="tab" aria-selected="false">낮은 평점</button>
+          <div class="rv-filter" role="group" aria-label="리뷰 필터">
+            <button class="rv-chip is-active" type="button" aria-pressed="true">전체</button>
+            <button class="rv-chip" type="button" aria-pressed="false">답글 미작성</button>
+            <button class="rv-chip" type="button" aria-pressed="false">낮은 평점</button>
           </div>
         </div>
         <div class="rv-list">
@@ -357,7 +358,7 @@
           <img class="rv-item__avatar" src="assets/avatar/user.jpg" alt="밤샘러 지우 프로필" loading="lazy">
           <div class="rv-item__body">
             <div class="rv-item__head">
-              <span class="rv-item__name">밤샘러 지우</span>
+              <h4 class="rv-item__name">밤샘러 지우</h4>
               <img class="rv-item__stars" src="assets/brand/stars-49.svg" width="70" height="14" alt="평점 5점 만점에 4.9">
               <span class="rv-item__meta">3일 전 · React 실전 프로젝트</span>
             </div>
@@ -372,7 +373,7 @@
           <img class="rv-item__avatar" src="assets/avatar/markup-sea.png" alt="퍼블리싱 준비생 프로필" loading="lazy">
           <div class="rv-item__body">
             <div class="rv-item__head">
-              <span class="rv-item__name">퍼블리싱 준비생</span>
+              <h4 class="rv-item__name">퍼블리싱 준비생</h4>
               <img class="rv-item__stars" src="assets/brand/stars-48.svg" width="70" height="14" alt="평점 5점 만점에 4.8">
               <span class="rv-item__meta">5일 전 · 반응형 웹 퍼블리싱</span>
               <span class="rv-badge">답글 대기</span>
@@ -388,7 +389,7 @@
           <img class="rv-item__avatar" src="assets/avatar/sidelab-min.png" alt="주경야독 민 프로필" loading="lazy">
           <div class="rv-item__body">
             <div class="rv-item__head">
-              <span class="rv-item__name">주경야독 민</span>
+              <h4 class="rv-item__name">주경야독 민</h4>
               <img class="rv-item__stars" src="assets/brand/stars-49.svg" width="70" height="14" alt="평점 5점 만점에 4.9">
               <span class="rv-item__meta">1주 전 · React 실전 프로젝트</span>
               <span class="rv-badge">답글 대기</span>
