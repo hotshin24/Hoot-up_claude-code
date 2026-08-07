@@ -16,6 +16,8 @@
 
   <script src="js/common.js" defer></script>
   <script src="js/carousel.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/pass-modals.js" defer></script>
 </head>
 <body>
 
@@ -306,9 +308,8 @@
           </div>
         </div>
         <div class="pass-sub__actions">
-          <a class="pass-btn pass-btn--ghost" href="#">결제수단 변경</a>
-          <a class="pass-btn pass-btn--ghost" href="#">결제일 변경</a>
-          <a class="pass-btn pass-btn--cancel" href="#">구독 해지</a>
+          <a class="pass-btn pass-btn--ghost" href="account-orders.html">결제수단 변경</a>
+          <a class="pass-btn pass-btn--cancel" data-open-modal aria-haspopup="dialog" aria-controls="passcancel-confirm-modal">구독 해지</a>
         </div>
       </section>
 
@@ -362,7 +363,7 @@
           <h3 class="pass-cta__title">연간 결제로 바꾸면 2개월 무료</h3>
           <p class="pass-cta__desc">월 19,900원 → 연 199,000원 (월 16,583원)</p>
         </div>
-        <a class="pass-cta__btn" href="#">연간 결제로 전환</a>
+        <a class="pass-cta__btn" data-open-modal aria-haspopup="dialog" aria-controls="annual-confirm-modal">연간 결제로 전환</a>
       </section>
 
     </div>
@@ -483,6 +484,68 @@
 
   </div>
 </footer>
+
+<!-- ===== 구독 해지 확인 모달 ===== -->
+<div class="modal" id="passcancel-confirm-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="passcancel-confirm-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="passcancel-confirm-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 구독을 해지하시겠습니까?</h2>
+    </div>
+    <div class="ca-modal-actions">
+      <button class="btn btn--outline" type="button" data-modal-close>계속하기</button>
+      <button class="btn btn--solid" type="button" data-confirm-advance data-done-modal="passcancel-done-modal">해지하기</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 구독 해지 완료 모달 ===== -->
+<div class="modal" id="passcancel-done-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="passcancel-done-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="passcancel-done-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 구독이 해지되었습니다</h2>
+      <p class="signup__result">다음 결제일부터 결제가 되지 않습니다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 연간 결제 전환 확인 모달 ===== -->
+<div class="modal" id="annual-confirm-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="annual-confirm-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="annual-confirm-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 연간 결제로 전환하시겠습니까?</h2>
+    </div>
+    <div class="ca-modal-actions">
+      <button class="btn btn--outline" type="button" data-modal-close>취소</button>
+      <button class="btn btn--solid" type="button" data-confirm-advance data-done-modal="annual-done-modal">확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 연간 결제 전환 완료 모달 ===== -->
+<div class="modal" id="annual-done-modal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="annual-done-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="annual-done-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 연간 결제로 변경되었습니다</h2>
+      <p class="signup__result">다음 결제일부터 연간 결제가 적용됩니다.</p>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
