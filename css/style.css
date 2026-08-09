@@ -9234,6 +9234,17 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   }
   .mega-sub__list { grid-template-columns: 1fr; }
 
+  /* 푸터 메뉴: 태블릿에서 2×2 배열 */
+  .site-footer__nav { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl) var(--space-2xl); }
+  .link-group { width: auto; }
+
+  /* 약관·정책 링크: 태블릿부터 2열로 하나씩 배치 */
+  .policy__list { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xs) var(--space-md); justify-items: start; }
+  .policy__link { padding-inline: 0; }
+
+  /* 문의 메일: 태블릿에서 3×1 배열(세로 스택) */
+  .contact-mail { display: grid; grid-template-columns: 1fr; gap: var(--space-md); align-items: start; }
+
   .course-grid {
     grid-template-columns: 1fr;
   }
@@ -9472,6 +9483,11 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
   .contract-doc { padding: 36px 22px; }
   .contract-parties { grid-template-columns: 1fr; }
+
+  /* 푸터 메뉴: 모바일에서는 1열 스택 */
+  .site-footer__nav { grid-template-columns: 1fr; }
+  /* 문의 메일: 모바일에서는 1열 스택 */
+  .contact-mail { grid-template-columns: 1fr; gap: var(--space-md); }
 
   /* 로고: 480 미만부터 폭에 맞춰 축소 (480에서 138 → 유지되며 부드럽게 감소, 로그인·회원가입 줄바꿈 방지) */
   .site-header__logo img { width: clamp(104px, 29vw, 138px); height: auto; }
