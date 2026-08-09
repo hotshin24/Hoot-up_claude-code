@@ -85,9 +85,36 @@
     return li;
   }
 
+  // 대표 이미지 첨부 (프런트 전용 미리보기, 업로드 없음)
+  var imgBtn = document.querySelector('[data-blog-image-btn]');
+  var imgInput = document.querySelector('[data-blog-image-input]');
+  var imgPreview = document.querySelector('[data-blog-image-preview]');
+  var imgThumb = document.querySelector('[data-blog-image-thumb]');
+  var imgRemove = document.querySelector('[data-blog-image-remove]');
+
+  function clearImage() {
+    if (imgInput) imgInput.value = '';
+    if (imgThumb && imgThumb.src) { try { URL.revokeObjectURL(imgThumb.src); } catch (e) {} imgThumb.removeAttribute('src'); }
+    if (imgPreview) imgPreview.hidden = true;
+    if (imgBtn) imgBtn.hidden = false;
+  }
+
+  if (imgBtn && imgInput) {
+    imgBtn.addEventListener('click', function () { imgInput.click(); });
+    imgInput.addEventListener('change', function () {
+      var f = imgInput.files && imgInput.files[0];
+      if (!f) return;
+      if (imgThumb) imgThumb.src = URL.createObjectURL(f);
+      if (imgPreview) imgPreview.hidden = false;
+      imgBtn.hidden = true;                 // 첨부 후 버튼 숨김 (삭제 시 복귀)
+    });
+  }
+  if (imgRemove) imgRemove.addEventListener('click', clearImage);
+
   function clearForm() {
     if (titleIn) titleIn.value = '';
     if (bodyIn) bodyIn.value = '';
+    clearImage();
   }
 
   // 발행하기

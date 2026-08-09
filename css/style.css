@@ -166,6 +166,7 @@ hr {
 .icon--chevron-left  { --icon-image: url("../svg/chevron-left.svg"); }
 .icon--download      { --icon-image: url("../svg/download.svg"); }
 .icon--chevron-right { --icon-image: url("../svg/chevron-right.svg"); }
+.icon--chevron-down  { --icon-image: url("../svg/chevron-down.svg"); }
 .icon--comment       { --icon-image: url("../svg/chat-left-quote.svg"); }
 .icon--caret-down     { --icon-image: url("../svg/caret-down-fill.svg"); }
 .icon--check          { --icon-image: url("../svg/check2-circle.svg"); }
@@ -9220,8 +9221,42 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .blog-input::placeholder { color: var(--color-text-placeholder); }
 .blog-input:focus { outline: none; border-color: var(--color-brand-base); }
 .blog-input--area { min-height: 180px; line-height: 1.7; resize: vertical; }
-.blog-input--select { cursor: pointer; appearance: auto; }
+/* 카테고리 셀렉트 — 기본 화살표 제거 후 페이저와 같은 chevron(아래 방향) 적용 */
+.blog-input--select {
+  cursor: pointer;
+  appearance: none; -webkit-appearance: none;
+  padding-right: 42px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%230f172a' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px 16px;
+}
 .blog-form__actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+/* 대표 이미지 첨부 (프런트 전용 미리보기, 업로드 없음) */
+.blog-image { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.blog-image__btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 16px; border: 1px solid var(--color-neutral-base); border-radius: var(--radius-pill);
+  background-color: transparent; color: var(--color-neutral-base);
+  font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); cursor: pointer;
+  transition: border-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard);
+}
+.blog-image__btn:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+.blog-image__btn[hidden] { display: none; }
+.blog-image__btn .icon { width: 18px; height: 18px; }
+.blog-image__preview { position: relative; }
+.blog-image__thumb {
+  display: block; width: 96px; height: 96px; object-fit: cover;
+  border-radius: var(--radius-sm); border: 1px solid var(--color-neutral-lighter);
+}
+.blog-image__remove {
+  position: absolute; top: -8px; right: -8px; width: 22px; height: 22px;
+  border: 0; border-radius: var(--radius-circle); cursor: pointer;
+  background-color: var(--color-neutral-darker); color: var(--color-neutral-white);
+  font-size: 15px; line-height: 1; display: flex; align-items: center; justify-content: center;
+}
 
 @media (max-width: 767px) {
   .blog-post { flex-wrap: wrap; }

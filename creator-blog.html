@@ -409,6 +409,20 @@
             <label class="blog-field__label" for="blog-content">내용</label>
             <textarea class="blog-input blog-input--area" id="blog-content" rows="8" placeholder="내용을 작성하세요"></textarea>
           </div>
+          <div class="blog-field">
+            <label class="blog-field__label" for="blog-image">대표 이미지</label>
+            <div class="blog-image">
+              <input class="blog-image__input" id="blog-image" type="file" accept="image/*" hidden data-blog-image-input>
+              <button class="blog-image__btn" type="button" data-blog-image-btn>
+                <span class="icon icon--camera" aria-hidden="true"></span>
+                이미지 첨부
+              </button>
+              <div class="blog-image__preview" hidden data-blog-image-preview>
+                <img class="blog-image__thumb" src="" alt="첨부한 이미지 미리보기" data-blog-image-thumb>
+                <button class="blog-image__remove" type="button" aria-label="이미지 삭제" data-blog-image-remove>×</button>
+              </div>
+            </div>
+          </div>
           <div class="blog-form__actions">
             <button class="creator-btn creator-btn--ghost" type="button" data-blog-reset>지우기</button>
             <button class="creator-btn creator-btn--primary" type="button" data-blog-publish>발행하기</button>
