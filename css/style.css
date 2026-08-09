@@ -9242,3 +9242,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* 공개 프로필 헤더 — 액션 없이 제목/설명만 세로로 */
 .creator-profile-page .pp-head { display: block; }
+
+/* 강의 상세 멘토 카드 자리에 프로필 미리보기 카드 배치 */
+.mentor-profile__preview { flex: 1 1 300px; align-self: stretch; }
+.pp-preview__blog { margin-top: calc(var(--space-md) - var(--space-3xs)); width: 100%; } /* body gap(4px)+margin=20px */
