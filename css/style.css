@@ -9486,6 +9486,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
   /* 푸터 메뉴: 모바일에서는 1열 스택 */
   .site-footer__nav { grid-template-columns: 1fr; }
+
+  /* 사업자 정보: 모바일에서 항목마다 1열·동일 간격(15px) */
+  .company { gap: 15px; }
+  .company__line { flex-direction: column; gap: 15px; }
   /* 문의 메일: 모바일에서는 1열 스택 */
   .contact-mail { grid-template-columns: 1fr; gap: var(--space-md); }
 
