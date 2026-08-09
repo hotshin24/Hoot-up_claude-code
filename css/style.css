@@ -9507,6 +9507,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .company { gap: 15px; }
   .company__line { flex-direction: column; gap: 15px; }
 
+  /* 카테고리 바로가기: 모바일에서 2열 × 3행 + 라벨 폰트 유연 */
+  .category__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .category__label { font-size: clamp(15px, 4.3vw, 18px); }
+
   /* 히어로: 모바일에서 폰트를 화면 폭에 맞게 축소 */
   .hero__title { font-size: clamp(38px, 14vw, 62px); }
   .hero__rocket { width: 30px; height: auto; }
