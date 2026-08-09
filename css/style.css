@@ -1547,8 +1547,9 @@ hr {
 */
 .countdown__card::before {
   content: "";
-  grid-area: 1 / 1 / 2 / 4;
+  grid-area: 1 / 1 / 2 / 4;   /* 3개 열(암시적 포함) 전체를 덮는다 */
   align-self: stretch;
+  justify-self: stretch;   /* ≤1280 의 justify-items:center 로 패널이 0폭이 되는 것 방지 */
   margin: calc(var(--space-4xl) * -1);
   border-radius: inherit;
   background-color: color-mix(in srgb, var(--color-neutral-lighter) 90%, transparent);
@@ -9240,11 +9241,40 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 /* 훗업 차트: 769~1060 구간은 2열(2×3). (1061~1280은 3열 유지) */
 @media (max-width: 1060px) {
   .chart__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* 카운트다운 시계: 폭에 따라 계속 축소(clamp/vw) → 한 줄 유지 */
+  .countdown__clock { gap: clamp(8px, 2.5vw, 24px); }
+  .countdown__digits { gap: clamp(4px, 1.5vw, 10px); }
+  .countdown__unit { gap: clamp(8px, 2vw, 14px); }
+  .countdown__digit {
+    width: clamp(22px, 8vw, 60px);
+    height: clamp(30px, 11vw, 82px);
+    font-size: clamp(17px, 5.6vw, 44px);
+    background-size: 3px 40%, 3px 40%, 87% 2px;
+  }
+  .countdown__label { font-size: clamp(10px, 2vw, 16px); }
+
+  /* 1행: copy(전체폭) · 2행: rate(왼쪽) + package(오른쪽) */
+  .countdown__card { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+  .countdown__copy { grid-area: 1 / 1 / 2 / 3; }
+  .countdown__rate { grid-area: 2 / 1 / 3 / 2; }
+  .countdown__package { grid-area: 2 / 2 / 3 / 3; }
+  .countdown__card::before { grid-area: 1 / 1 / 3 / 3; }   /* 2행 전체 덮기 */
 }
 
 @media (max-width: 768px) {
   /* 훗업 차트: 768 이하는 다시 1열 */
   .chart__list { grid-template-columns: 1fr; }
+
+  /* 카운트다운 카드: 768 이하 폰트·이미지 유동 축소 (상한=기본값이라 768 경계 매끄러움) */
+  .countdown__title { font-size: clamp(30px, 6.5vw, 48px); gap: clamp(12px, 3.5vw, 39px); }
+  .countdown__rocket { width: clamp(24px, 5.2vw, 40px); height: auto; }
+  .countdown__lead { font-size: clamp(18px, 3.7vw, 28px); }
+  .countdown__description { margin-top: clamp(20px, 5vw, 58px); font-size: clamp(13px, 2.1vw, 16px); }
+  .countdown__rate { font-size: clamp(52px, 12.5vw, 96px); }
+  .countdown__rate-label { font-size: clamp(16px, 3.2vw, 24px); }
+  .countdown__illust { width: clamp(110px, 26vw, 200px); height: auto; }
+  .countdown__package-text { font-size: clamp(15px, 2.6vw, 20px); }
 
   /* 태블릿: 좌측 대분류 1열 · 우측 세부 1열 (나란히 배치) */
   .mega__inner {
@@ -9515,6 +9545,13 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* 사업자 정보: 모바일에서 항목마다 1열·동일 간격(15px) */
   .company { gap: 15px; }
   .company__line { flex-direction: column; gap: 15px; }
+
+  /* 카운트다운 카드: 1열 3행 (copy / rate / package) */
+  .countdown__card { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
+  .countdown__copy { grid-area: 1 / 1; }
+  .countdown__rate { grid-area: 2 / 1; }
+  .countdown__package { grid-area: 3 / 1; }
+  .countdown__card::before { grid-area: 1 / 1 / 4 / 2; }
 
   /* 카테고리 바로가기: 모바일에서 2열 × 3행 + 라벨 폰트 유연 */
   .category__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
