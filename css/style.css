@@ -820,6 +820,41 @@ hr {
   color: var(--color-brand-base);
 }
 
+/* --- 모바일 아코디언 (JS 가 ≤480 에서 .is-accordion 부여) --- */
+.mega.is-accordion .mega__inner {
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding-block: var(--space-2xs);
+  max-height: 76vh;
+  overflow-y: auto;
+}
+.mega.is-accordion .mega__subs { display: none; }   /* 패널은 대분류 아래로 이동됨 */
+.mega.is-accordion .mega__cats {
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  border: 0;
+}
+.mega.is-accordion .mega-cat {
+  width: 100%;
+  border-radius: 0;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.mega.is-accordion .mega-cat__arrow {
+  display: inline-flex;
+  opacity: 1;
+  transition: transform var(--duration-fast) var(--easing-standard);
+}
+.mega.is-accordion .mega-cat.is-active .mega-cat__arrow { transform: rotate(90deg); }
+.mega.is-accordion .mega-sub {
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+  background-color: var(--color-neutral-lightest);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.mega.is-accordion .mega-sub__title { margin-bottom: var(--space-sm); font-size: var(--text-body-size); }
+.mega.is-accordion .mega-sub__list { grid-template-columns: 1fr; }
+
 /* --- 배경 딤(백드롭) --- */
 .mega-backdrop {
   position: fixed;
@@ -9190,33 +9225,14 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 @media (max-width: 768px) {
+  /* 태블릿: 좌측 대분류 1열 · 우측 세부 1열 (나란히 배치) */
   .mega__inner {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
+    grid-template-columns: minmax(150px, 34%) minmax(0, 1fr);
+    gap: var(--space-lg);
     max-height: 70vh;
     overflow-y: auto;
   }
-
-  .mega__cats {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-right: 0;
-    padding-bottom: var(--space-md);
-    border-right: 0;
-    border-bottom: 1px solid var(--color-border-subtle);
-  }
-
-  .mega-cat {
-    width: auto;
-  }
-
-  .mega-cat__name {
-    margin-right: var(--space-2xs);
-  }
-
-  .mega-cat__arrow {
-    display: none;
-  }
+  .mega-sub__list { grid-template-columns: 1fr; }
 
   .course-grid {
     grid-template-columns: 1fr;

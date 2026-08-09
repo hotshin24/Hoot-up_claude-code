@@ -60,6 +60,44 @@
     });
   }
 
+  /* --- 모바일 아코디언 모드 (≤480): 세부 패널을 대분류 바로 아래로 펼침 --- */
+  var subsWrap = mega.querySelector(".mega__subs");
+  var accordion = false;
+
+  function collapseAll() {
+    tabs.forEach(function (t) {
+      t.classList.remove("is-active");
+      t.setAttribute("aria-selected", "false");
+      t.setAttribute("aria-expanded", "false");
+      var p = document.getElementById(t.getAttribute("aria-controls"));
+      if (p) { p.hidden = true; p.classList.remove("is-active"); }
+    });
+  }
+  function toAccordion() {
+    if (accordion) return;
+    tabs.forEach(function (t) {                // 각 패널을 해당 대분류 바로 뒤로 이동
+      var p = document.getElementById(t.getAttribute("aria-controls"));
+      if (p) t.insertAdjacentElement("afterend", p);
+    });
+    collapseAll();                            // 시작은 모두 접힘
+    mega.classList.add("is-accordion");
+    accordion = true;
+  }
+  function toColumns() {
+    if (!accordion) return;                   // 이미 컬럼(데스크톱/태블릿) 모드
+    tabs.forEach(function (t) {               // 패널을 원래 컨테이너로 복귀
+      var p = document.getElementById(t.getAttribute("aria-controls"));
+      if (p) { subsWrap.appendChild(p); t.removeAttribute("aria-expanded"); }
+    });
+    mega.classList.remove("is-accordion");
+    accordion = false;
+    activate(tabs[0]);
+  }
+  var mqMobile = window.matchMedia("(max-width: 480px)");
+  function applyMenuMode() { if (mqMobile.matches) toAccordion(); else toColumns(); }
+  if (mqMobile.addEventListener) mqMobile.addEventListener("change", applyMenuMode);
+  else if (mqMobile.addListener) mqMobile.addListener(applyMenuMode);
+
   /* --- 트리거(햄버거 · 전체 카테고리) --- */
   toggles.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
@@ -71,9 +109,17 @@
 
   /* --- 탭 상호작용: hover · focus · click · 방향키 --- */
   tabs.forEach(function (tab, i) {
-    tab.addEventListener("mouseenter", function () { activate(tab); });
-    tab.addEventListener("focus", function () { activate(tab); });
-    tab.addEventListener("click", function () { activate(tab); });
+    tab.addEventListener("mouseenter", function () { if (!accordion) activate(tab); });
+    tab.addEventListener("focus", function () { if (!accordion) activate(tab); });
+    tab.addEventListener("click", function () {
+      if (accordion) {                        // 모바일: 클릭 시 토글(같은 항목 다시 누르면 접힘)
+        var wasActive = tab.classList.contains("is-active");
+        collapseAll();
+        if (!wasActive) { activate(tab); tab.setAttribute("aria-expanded", "true"); }
+      } else {
+        activate(tab);
+      }
+    });
     tab.addEventListener("keydown", function (e) {
       var next = null;
       if (e.key === "ArrowDown") next = (i + 1) % tabs.length;
@@ -97,6 +143,8 @@
   mega.addEventListener("click", function (e) {
     if (e.target.closest("a")) closeMega(false); // 실제 페이지 이동 시 닫힘
   });
+
+  applyMenuMode();   // 초기 진입 시 화면 폭에 맞는 모드 적용
 })();
 
 
