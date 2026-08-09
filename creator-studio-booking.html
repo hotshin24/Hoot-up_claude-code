@@ -18,6 +18,8 @@
   <script src="js/common.js" defer></script>
   <script src="js/carousel.js" defer></script>
   <script src="js/toggle.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/creator-studio-booking.js" defer></script>
 </head>
 <body>
 
@@ -286,86 +288,49 @@
           <h2 class="pp-head__title">스튜디오 예약</h2>
           <p class="pp-head__desc">촬영이 부담되면 스튜디오와 장비를 이용하세요. 현장 스태프가 함께합니다.</p>
         </div>
-        <div class="pp-head__save">
-          <span class="stu-status">예약 1건 진행 중</span>
-        </div>
+        <button class="stu-guide__btn" type="button" data-stu-open aria-haspopup="true" aria-controls="stu-calendar" aria-expanded="false">예약 신청</button>
       </div>
 
       <!-- 다가오는 예약 -->
       <section class="stu-card stu-upcoming">
         <h3 class="creator-card__title">다가오는 예약</h3>
-        <div class="stu-booking">
+        <div class="stu-booking" data-stu-booking>
           <div class="stu-booking__date">
             <p class="stu-booking__month">8월</p>
             <p class="stu-booking__day">06</p>
             <p class="stu-booking__dow">목요일</p>
           </div>
           <div class="stu-booking__info">
-            <p class="stu-booking__title">강의 촬영 스튜디오 · 반일 (14:00 – 18:00)</p>
+            <p class="stu-booking__title" data-stu-booking-title>강의 촬영 스튜디오 · 14:00 – 18:00 (4시간)</p>
             <p class="stu-booking__desc">카메라 · 소프트박스 조명 · 핀 마이크 대여 · 현장 스태프 지원 포함</p>
           </div>
           <div class="stu-booking__actions">
-            <button class="stu-booking__btn stu-booking__btn--edit" type="button">일정 변경</button>
-            <button class="stu-booking__btn stu-booking__btn--cancel" type="button">예약 취소</button>
+            <button class="stu-booking__btn stu-booking__btn--edit" type="button" data-stu-edit aria-expanded="false" aria-controls="stu-calendar">일정 변경</button>
+            <button class="stu-booking__btn stu-booking__btn--cancel" type="button" data-open-modal aria-haspopup="dialog" aria-controls="stu-cancel-confirm">예약 취소</button>
           </div>
         </div>
-      </section>
+        <p class="stu-empty" data-stu-empty hidden>다가오는 예약이 없습니다.</p>
 
-      <!-- 공간 -->
-      <section class="stu-card stu-spaces">
-        <h3 class="creator-card__title">이런 공간이 준비돼 있어요</h3>
-        <div class="stu-spaces__grid">
-          <div class="stu-space stu-space--active">
-            <span class="stu-space__thumb"><img src="assets/studio/studio-lecture.jpg" alt="강의 촬영 스튜디오" loading="lazy"></span>
-            <div class="stu-space__body">
-              <p class="stu-space__title">강의 촬영 스튜디오</p>
-              <p class="stu-space__desc">화이트/우드 배경, 조명 세팅 완비</p>
+        <!-- 일정 변경 패널 (일정 변경 클릭 시 예약 박스 아래로 펼쳐짐) -->
+        <div class="stu-schedule" id="stu-calendar" data-stu-calendar hidden>
+          <div class="stu-calendar__head">
+            <h4 class="stu-schedule__title">날짜 선택 · 2026년 8월</h4>
+            <div class="stu-legend">
+              <span class="stu-legend__item"><span class="stu-legend__dot stu-legend__dot--avail"></span>예약 가능</span>
+              <span class="stu-legend__item"><span class="stu-legend__dot stu-legend__dot--mine"></span>내 예약</span>
+              <span class="stu-legend__item"><span class="stu-legend__dot stu-legend__dot--closed"></span>마감</span>
             </div>
           </div>
-          <div class="stu-space">
-            <span class="stu-space__thumb"><img src="assets/studio/studio-handson.jpg" alt="핸즈온 촬영대" loading="lazy"></span>
-            <div class="stu-space__body">
-              <p class="stu-space__title">핸즈온 촬영대</p>
-              <p class="stu-space__desc">요리·공예·드로잉 등 손 작업 탑뷰 촬영</p>
-            </div>
+          <div class="stu-cal__weekdays">
+            <span class="stu-cal__wd stu-cal__wd--sun">일</span>
+            <span class="stu-cal__wd">월</span>
+            <span class="stu-cal__wd">화</span>
+            <span class="stu-cal__wd">수</span>
+            <span class="stu-cal__wd">목</span>
+            <span class="stu-cal__wd">금</span>
+            <span class="stu-cal__wd stu-cal__wd--sat">토</span>
           </div>
-          <div class="stu-space">
-            <span class="stu-space__thumb"><img src="assets/studio/studio-voice.jpg" alt="보이스 부스" loading="lazy"></span>
-            <div class="stu-space__body">
-              <p class="stu-space__title">보이스 부스</p>
-              <p class="stu-space__desc">조용한 녹음 환경(내레이션·더빙)</p>
-            </div>
-          </div>
-          <div class="stu-space">
-            <span class="stu-space__thumb"><img src="assets/studio/studio-edit.jpg" alt="편집실" loading="lazy"></span>
-            <div class="stu-space__body">
-              <p class="stu-space__title">편집실</p>
-              <p class="stu-space__desc">고사양 편집 장비와 작업 공간</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 캘린더 -->
-      <section class="stu-card stu-calendar">
-        <div class="stu-calendar__head">
-          <h3 class="creator-card__title">2026년 8월</h3>
-          <div class="stu-legend">
-            <span class="stu-legend__item"><span class="stu-legend__dot stu-legend__dot--avail"></span>예약 가능</span>
-            <span class="stu-legend__item"><span class="stu-legend__dot stu-legend__dot--mine"></span>내 예약</span>
-            <span class="stu-legend__item"><span class="stu-legend__dot stu-legend__dot--closed"></span>마감</span>
-          </div>
-        </div>
-        <div class="stu-cal__weekdays">
-          <span class="stu-cal__wd stu-cal__wd--sun">일</span>
-          <span class="stu-cal__wd">월</span>
-          <span class="stu-cal__wd">화</span>
-          <span class="stu-cal__wd">수</span>
-          <span class="stu-cal__wd">목</span>
-          <span class="stu-cal__wd">금</span>
-          <span class="stu-cal__wd stu-cal__wd--sat">토</span>
-        </div>
-        <div class="stu-cal__grid">
+          <div class="stu-cal__grid">
             <span class="stu-cal__pad" aria-hidden="true"></span>
             <span class="stu-cal__pad" aria-hidden="true"></span>
             <span class="stu-cal__pad" aria-hidden="true"></span>
@@ -403,6 +368,30 @@
             <span class="stu-cal__day stu-cal__day--avail">29</span>
             <span class="stu-cal__day stu-cal__day--closed">30</span>
             <span class="stu-cal__day stu-cal__day--avail">31</span>
+          </div>
+
+          <!-- 시간 선택 (날짜 선택 후 표시) · 1시간 단위 -->
+          <div class="stu-times" data-stu-times hidden>
+            <p class="stu-times__label"><strong data-stu-times-date>8월 6일</strong> 예약할 시간을 선택하세요 <span class="stu-times__hint">1시간 단위 · 여러 시간대 선택 가능</span></p>
+            <div class="stu-times__grid" data-stu-times-grid>
+              <button class="stu-slot" type="button" data-start="9">09:00 – 10:00</button>
+              <button class="stu-slot" type="button" data-start="10">10:00 – 11:00</button>
+              <button class="stu-slot" type="button" data-start="11">11:00 – 12:00</button>
+              <button class="stu-slot" type="button" data-start="12">12:00 – 13:00</button>
+              <button class="stu-slot" type="button" data-start="13">13:00 – 14:00</button>
+              <button class="stu-slot" type="button" data-start="14">14:00 – 15:00</button>
+              <button class="stu-slot" type="button" data-start="15">15:00 – 16:00</button>
+              <button class="stu-slot" type="button" data-start="16">16:00 – 17:00</button>
+              <button class="stu-slot" type="button" data-start="17">17:00 – 18:00</button>
+              <button class="stu-slot" type="button" data-start="18">18:00 – 19:00</button>
+              <button class="stu-slot" type="button" data-start="19">19:00 – 20:00</button>
+              <button class="stu-slot" type="button" data-start="20">20:00 – 21:00</button>
+            </div>
+            <div class="stu-times__foot">
+              <p class="stu-times__summary" data-stu-times-summary>선택한 시간이 없습니다</p>
+              <button class="stu-times__btn" type="button" data-stu-times-confirm disabled>이 시간으로 변경</button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -462,7 +451,7 @@
           </div>
           <div class="stu-guide__row">
             <span class="stu-guide__k">예약 단위</span>
-            <span class="stu-guide__v">반일 / 종일 (공간별 상이)</span>
+            <span class="stu-guide__v">1시간 단위 · 원하는 시간대 선택</span>
           </div>
           <div class="stu-guide__row">
             <span class="stu-guide__k">비용</span>
@@ -474,7 +463,7 @@
           </div>
         </div>
         <div class="stu-guide__foot">
-          <button class="stu-guide__btn" type="button">예약 신청</button>
+          <button class="stu-guide__btn" type="button" data-stu-open aria-haspopup="true" aria-controls="stu-calendar" aria-expanded="false">예약 신청</button>
         </div>
       </section>
 
@@ -596,6 +585,36 @@
 
   </div>
 </footer>
+
+<!-- ===== 예약 취소 확인 모달 ===== -->
+<div class="modal" id="stu-cancel-confirm" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="stu-cancel-confirm-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="stu-cancel-confirm-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 예약을 취소하시겠습니까?</h2>
+    </div>
+    <div class="ca-modal-actions">
+      <button class="btn btn--outline" type="button" data-modal-close>닫기</button>
+      <button class="btn btn--solid" type="button" data-stu-cancel-confirm>예약 취소하기</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 예약 취소 완료 모달 ===== -->
+<div class="modal" id="stu-cancel-done" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="stu-cancel-done-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="stu-cancel-done-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 예약이 취소되었습니다</h2>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

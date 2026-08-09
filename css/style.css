@@ -8222,6 +8222,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   display: flex; align-items: center; gap: 22px;
   background-color: var(--color-brand-lighter); border-radius: var(--radius-md); padding: 22px;
 }
+.stu-booking[hidden] { display: none; }
+.stu-empty { padding: 28px 22px; text-align: center; color: var(--color-neutral-light); font-size: var(--text-body-sm-size); }
 .stu-booking__date {
   flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 2px;
   padding-right: 23px; border-right: 1px solid rgba(7,3,171,0.2);
@@ -8249,28 +8251,75 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .stu-space__title { font-size: var(--text-body-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
 .stu-space__desc { font-size: 13px; line-height: 20px; color: var(--color-neutral-base); }
 
-/* 캘린더 */
-.stu-calendar__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); }
-.stu-legend { display: flex; gap: 16px; }
+/* 캘린더 — 미니멀 원형 날짜 */
+.stu-calendar__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; }
+.stu-legend { display: flex; gap: 14px; }
 .stu-legend__item { display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-caption-size); color: var(--color-neutral-base); }
-.stu-legend__dot { width: 10px; height: 10px; border-radius: 3px; }
-.stu-legend__dot--avail { background-color: var(--color-brand-lighter); }
-.stu-legend__dot--mine { background-color: var(--color-brand-darker); }
-.stu-legend__dot--closed { background-color: var(--color-neutral-lighter); }
-.stu-cal__weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; padding-top: var(--space-xs); }
-.stu-cal__wd { text-align: center; font-size: var(--text-caption-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-light); }
+.stu-legend__dot { width: 8px; height: 8px; border-radius: 50%; }
+.stu-legend__dot--avail { background-color: var(--color-brand-base); }
+.stu-legend__dot--mine { background-color: var(--color-brand-base); box-shadow: 0 0 0 3px var(--color-brand-lighter); }
+.stu-legend__dot--closed { background-color: var(--color-neutral-light); }
+
+.stu-cal__weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-top: 8px; padding-bottom: 12px; border-bottom: 1px solid var(--color-neutral-lighter); }
+.stu-cal__wd { text-align: center; font-size: 12px; font-weight: var(--font-weight-bold); color: var(--color-neutral-light); }
 .stu-cal__wd--sun { color: var(--color-danger-base); }
 .stu-cal__wd--sat { color: var(--color-brand-base); }
-.stu-cal__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
-.stu-cal__pad { height: 56px; }
+
+.stu-cal__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px 4px; margin-top: 10px; }
+.stu-cal__pad { height: 46px; }
 .stu-cal__day {
-  height: 56px; display: flex; align-items: center; justify-content: center;
-  border-radius: var(--radius-md); font-size: 15px; font-weight: var(--font-weight-bold);
+  position: relative; width: 46px; height: 46px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 1px solid transparent;
+  font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker);
+  transition: background-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard),
+              border-color var(--duration-fast) var(--easing-standard);
 }
-.stu-cal__day--avail { background-color: var(--color-brand-lighter); color: var(--color-brand-darker); cursor: pointer; }
-.stu-cal__day--avail:hover { background-color: var(--color-brand-lighter); }
-.stu-cal__day--mine { background-color: var(--color-brand-darker); color: var(--color-neutral-white); }
-.stu-cal__day--closed { background-color: var(--color-neutral-lighter); color: var(--color-neutral-light); }
+/* 상태 표시 점 */
+.stu-cal__day--avail::after,
+.stu-cal__day--mine::after {
+  content: ""; position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+  width: 5px; height: 5px; border-radius: 50%;
+}
+/* 예약 가능 */
+.stu-cal__day--avail { cursor: pointer; }
+.stu-cal__day--avail::after { background-color: var(--color-brand-base); }
+.stu-cal__day--avail:hover { background-color: var(--color-brand-lighter); color: var(--color-brand-darker); border-color: var(--color-brand-base); }
+/* 내 예약(선택) */
+.stu-cal__day--mine { background-color: var(--color-brand-base); color: var(--color-neutral-white); }
+.stu-cal__day--mine::after { background-color: var(--color-neutral-white); }
+/* 마감 */
+.stu-cal__day--closed { color: var(--color-neutral-light); cursor: not-allowed; }
+/* 선택 중(날짜 클릭) — 시간 선택 대기 */
+.stu-cal__day.is-picked { background-color: var(--color-brand-lighter); color: var(--color-brand-darker); border-color: var(--color-brand-base); }
+
+/* 일정 변경 인라인 패널 (예약 박스 아래로 펼침) */
+.stu-schedule { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--color-neutral-lighter); }
+.stu-schedule__title { font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+
+/* 시간 선택 (1시간 단위) */
+.stu-times { margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--color-neutral-lighter); }
+.stu-times__label { font-size: var(--text-body-sm-size); color: var(--color-neutral-base); }
+.stu-times__label strong { color: var(--color-brand-darker); font-weight: var(--font-weight-bold); }
+.stu-times__hint { margin-left: 6px; font-size: 12px; color: var(--color-neutral-light); }
+.stu-times__grid { margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
+.stu-slot {
+  padding: 10px 12px; border-radius: var(--radius-sm);
+  background-color: transparent; border: 1px solid var(--color-neutral-lighter);
+  color: var(--color-neutral-base); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold);
+  cursor: pointer; transition: border-color var(--duration-fast) var(--easing-standard), background-color var(--duration-fast) var(--easing-standard), color var(--duration-fast) var(--easing-standard);
+}
+.stu-slot:hover { border-color: var(--color-brand-base); }
+.stu-slot.is-selected { background-color: var(--color-brand-base); border-color: var(--color-brand-base); color: var(--color-text-inverse); }
+.stu-times__foot { margin-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; }
+.stu-times__summary { font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
+.stu-times__btn {
+  padding: 12px 24px; border-radius: var(--radius-pill); border: 0;
+  background-color: var(--color-brand-darker); color: var(--color-neutral-white);
+  font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); cursor: pointer; transition: opacity .15s ease;
+}
+.stu-times__btn:disabled { background-color: var(--color-neutral-lighter); color: var(--color-neutral-light); cursor: not-allowed; }
 
 /* 대여 장비 칩 */
 .stu-gear__desc { font-size: var(--text-body-sm-size); line-height: 22px; color: var(--color-neutral-base); }
@@ -8296,7 +8345,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   background-color: var(--color-brand-darker); color: var(--color-neutral-white);
   font-size: 15px; font-weight: var(--font-weight-bold); cursor: pointer; transition: opacity .15s ease;
 }
-.stu-guide__btn:hover { opacity: 0.9; }
 
 /* ============================================================
    반응형 통합 — 태블릿 이하 (≤1279px)
@@ -8695,8 +8743,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .stu-booking { flex-direction: column; align-items: stretch; gap: 16px; }
   .stu-booking__date { flex-direction: row; gap: var(--space-xs); padding-right: 0; border-right: 0; border-bottom: 1px solid rgba(7,3,171,0.2); padding-bottom: 12px; align-items: baseline; }
   .stu-booking__actions { justify-content: flex-end; }
-  .stu-calendar { overflow-x: auto; }
-  .stu-cal__grid, .stu-cal__weekdays { min-width: 460px; }
+  .stu-schedule { overflow-x: auto; }
+  .stu-cal__grid, .stu-cal__weekdays { min-width: 300px; }
   .stu-guide__row { flex-wrap: wrap; gap: var(--space-3xs); }
   .stu-guide__v { text-align: left; }
 }
