@@ -9457,8 +9457,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .contract-doc { padding: 36px 22px; }
   .contract-parties { grid-template-columns: 1fr; }
 
-  /* 모바일: 유저메뉴 간격 축소 (2줄 레이아웃·검색 전체폭은 ≤768 에서 이미 적용) */
-  .user-menu { gap: var(--space-2xs); }
   /* 로고: 480 미만부터 폭에 맞춰 축소 (480에서 138 → 유지되며 부드럽게 감소, 로그인·회원가입 줄바꿈 방지) */
   .site-header__logo img { width: clamp(104px, 29vw, 138px); height: auto; }
   /* 로그인·회원가입: 아이콘 버튼으로 전환 (로그인=사람, 회원가입=사람+ 파란 원) */
