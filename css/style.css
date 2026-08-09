@@ -176,6 +176,8 @@ hr {
 .icon--facebook       { --icon-image: url("../svg/facebook.svg"); }
 .icon--apple          { --icon-image: url("../svg/apple.svg"); }
 .icon--envelope       { --icon-image: url("../svg/envelope.svg"); }
+.icon--globe          { --icon-image: url("../svg/globe.svg"); }
+.icon--github         { --icon-image: url("../svg/github.svg"); }
 .icon--briefcase      { --icon-image: url("../svg/briefcase.svg"); }
 .icon--pencil         { --icon-image: url("../svg/pencil.svg"); }
 .icon--journal-code   { --icon-image: url("../svg/journal-code.svg"); }
@@ -7608,13 +7610,28 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .pp-field .pp-count { margin-top: 8px; text-align: right; }
 
 /* 전문 분야 칩 */
-.pp-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.pp-chip { padding: 10px 17px; border-radius: var(--radius-pill); background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-base); font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); cursor: pointer; transition: border-color .15s ease, color .15s ease; }
-.pp-chip:hover { border-color: var(--color-brand-darker); color: var(--color-brand-darker); }
-.pp-chip.is-active { padding: 9px 16px; border: 0; background-color: var(--color-brand-darker); color: var(--color-neutral-white); }
+.pp-chips { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-xs); }
+/* 대분류 카테고리 버튼(.class-filter__btn·.myclass-chip)과 동일 디자인 — 체크박스 라벨 */
+.pp-chip {
+  display: inline-flex; align-items: center;
+  padding: 8px 17px; border-radius: var(--radius-pill);
+  background-color: transparent; border: 1px solid var(--color-neutral-base);
+  color: var(--color-neutral-base); font-size: var(--text-body-sm-size); line-height: var(--text-body-leading);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard),
+              border-color var(--duration-fast) var(--easing-standard);
+}
+.pp-chip__cb { position: absolute; width: 1px; height: 1px; opacity: 0; margin: 0; }
+.pp-chip:hover { border-color: var(--color-brand-base); }
+.pp-chip:has(.pp-chip__cb:focus-visible) { outline: 2px solid var(--color-brand-base); outline-offset: 2px; }
+.pp-chip:has(.pp-chip__cb:checked) {
+  background-color: var(--color-brand-base); border-color: var(--color-brand-base);
+  color: var(--color-text-inverse); font-weight: var(--font-weight-bold);
+}
 
 /* 소개글 */
-.pp-textarea { width: 100%; min-height: 158px; padding: 15px 19px; background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md); font-family: inherit; font-size: 15px; line-height: 24px; color: var(--color-neutral-darker); resize: vertical; }
+.pp-textarea { width: 100%; min-height: 158px; padding: 15px 19px; background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-sm); font-family: inherit; font-size: 15px; line-height: 24px; color: var(--color-neutral-darker); resize: vertical; }
 .pp-textarea:focus { outline: none; border-color: var(--color-brand-darker); }
 
 /* 경력 · 이력 */
@@ -9206,3 +9223,22 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 @media (max-width: 767px) {
   .blog-post { flex-wrap: wrap; }
 }
+
+/* 공개 프로필 미리보기 — 링크 아이콘 (네임라인, 시그니처 배지 옆 우측 정렬) */
+.pp-preview__links { display: flex; gap: 6px; margin-left: auto; }
+.pp-preview__link { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: var(--radius-circle); border: 1px solid var(--color-neutral-lighter); background-color: var(--color-neutral-white); color: var(--color-neutral-base); --icon-size: 14px; transition: border-color var(--duration-fast) var(--easing-standard), color var(--duration-fast) var(--easing-standard); }
+.pp-preview__link:hover { border-color: var(--color-brand-base); color: var(--color-brand-base); }
+
+/* 공개 프로필 — 공개 저장(보기) 모드: 편집 컨트롤 숨김 + 필드 톤 다운 */
+.pp-form.is-readonly .pp-career__remove,
+.pp-form.is-readonly .pp-add,
+.pp-form.is-readonly .pp-cover__edit,
+.pp-form.is-readonly .pp-photo__actions { display: none; }
+.pp-form.is-readonly .pp-field__input,
+.pp-form.is-readonly .pp-textarea,
+.pp-form.is-readonly .pp-career__year,
+.pp-form.is-readonly .pp-career__desc { background-color: var(--color-neutral-lightest); color: var(--color-neutral-base); }
+.pp-form.is-readonly .pp-chip { pointer-events: none; }
+
+/* 공개 프로필 헤더 — 액션 없이 제목/설명만 세로로 */
+.creator-profile-page .pp-head { display: block; }

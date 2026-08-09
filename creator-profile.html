@@ -18,6 +18,12 @@
   <script src="js/common.js" defer></script>
   <script src="js/carousel.js" defer></script>
   <script src="js/toggle.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/pp-photo.js" defer></script>
+  <script src="js/pp-chips.js" defer></script>
+  <script src="js/pp-career.js" defer></script>
+  <script src="js/pp-preview.js" defer></script>
+  <script src="js/pp-savemode.js" defer></script>
 </head>
 <body>
 
@@ -282,14 +288,8 @@
 
       <!-- 헤더 -->
       <div class="pp-head">
-        <div class="pp-head__intro">
-          <h2 class="pp-head__title">공개 프로필 작성</h2>
-          <p class="pp-head__desc">수강생이 클래스 상세와 크리에이터 페이지에서 보게 될 정보예요.</p>
-        </div>
-        <div class="pp-head__save">
-          <span class="pp-head__saved">임시 저장됨 · 2분 전</span>
-          <button class="creator-btn creator-btn--primary" type="button">공개 저장</button>
-        </div>
+        <h2 class="pp-head__title">공개 프로필 작성</h2>
+        <p class="pp-head__desc">수강생이 클래스 상세와 크리에이터 페이지에서 보게 될 정보예요.</p>
       </div>
 
       <div class="pp-layout">
@@ -299,7 +299,8 @@
           <section class="pp-header-card">
             <h3 class="a11y-hidden">커버 및 프로필 사진</h3>
             <div class="pp-cover">
-              <button class="pp-cover__edit" type="button">커버 이미지 변경</button>
+              <button class="pp-cover__edit" type="button" data-pp-cover-btn>커버 이미지 변경</button>
+              <input class="a11y-hidden" type="file" id="pp-cover-file" accept="image/*" tabindex="-1" aria-hidden="true" data-pp-cover-input>
             </div>
             <div class="pp-photo">
               <img class="pp-photo__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="코드랩 현우 프로필 사진">
@@ -308,8 +309,9 @@
                 <p class="pp-photo__hint">JPG, PNG · 5MB 이하 · 정사각형 권장 (최소 400×400)</p>
               </div>
               <div class="pp-photo__actions">
-                <button class="pp-photo__btn" type="button">이미지 변경</button>
-                <button class="pp-photo__btn pp-photo__btn--text" type="button">삭제</button>
+                <button class="pp-photo__btn" type="button" data-pp-photo-change>이미지 변경</button>
+                <button class="pp-photo__btn pp-photo__btn--text" type="button" data-open-modal aria-haspopup="dialog" aria-controls="pp-photo-del-confirm">삭제</button>
+                <input class="a11y-hidden" type="file" id="pp-photo-file" accept="image/*" tabindex="-1" aria-hidden="true" data-pp-photo-input>
               </div>
             </div>
           </section>
@@ -334,14 +336,14 @@
             </div>
             <div class="pp-field pp-field--full">
               <label class="pp-field__label">전문 분야 <span class="pp-field__hint">최대 3개</span></label>
-              <div class="pp-chips">
-              <button class="pp-chip is-active" type="button">프론트엔드</button>
-              <button class="pp-chip is-active" type="button">웹 퍼블리싱</button>
-              <button class="pp-chip is-active" type="button">AI 개발 도구</button>
-              <button class="pp-chip" type="button">백엔드 &amp; 서버</button>
-              <button class="pp-chip" type="button">데이터 &amp; AI</button>
-              <button class="pp-chip" type="button">모바일 &amp; 앱 개발</button>
-              <button class="pp-chip" type="button">노코드 &amp; 자동화</button>
+              <div class="pp-chips" data-pp-chips data-pp-max="3">
+              <label class="pp-chip"><input class="pp-chip__cb" type="checkbox" checked> 프론트엔드</label>
+              <label class="pp-chip"><input class="pp-chip__cb" type="checkbox" checked> 웹 퍼블리싱</label>
+              <label class="pp-chip"><input class="pp-chip__cb" type="checkbox" checked> AI 개발 도구</label>
+              <label class="pp-chip"><input class="pp-chip__cb" type="checkbox"> 백엔드 &amp; 서버</label>
+              <label class="pp-chip"><input class="pp-chip__cb" type="checkbox"> 데이터 &amp; AI</label>
+              <label class="pp-chip"><input class="pp-chip__cb" type="checkbox"> 모바일 &amp; 앱 개발</label>
+              <label class="pp-chip"><input class="pp-chip__cb" type="checkbox"> 노코드 &amp; 자동화</label>
               </div>
             </div>
           </section>
@@ -389,11 +391,11 @@
             <div class="pp-links">
             <div class="pp-field">
               <label class="pp-field__label" for="pp-web">웹사이트 · 포트폴리오</label>
-              <input class="pp-field__input" id="pp-web" type="text" value="https://codelab.kr">
+              <input class="pp-field__input" id="pp-web" type="text" value="https://codelab.kr" placeholder="웹사이트 · 포트폴리오를 입력하세요">
             </div>
             <div class="pp-field">
               <label class="pp-field__label" for="pp-git">GitHub</label>
-              <input class="pp-field__input" id="pp-git" type="text" value="github.com/codelab-hyunwoo">
+              <input class="pp-field__input" id="pp-git" type="text" value="github.com/codelab-hyunwoo" placeholder="GitHub 계정을 입력하세요">
             </div>
             <div class="pp-field">
               <label class="pp-field__label" for="pp-yt">유튜브</label>
@@ -401,7 +403,7 @@
             </div>
             <div class="pp-field">
               <label class="pp-field__label" for="pp-mail">문의 이메일</label>
-              <input class="pp-field__input" id="pp-mail" type="text" value="hyunwoo@codelab.kr">
+              <input class="pp-field__input" id="pp-mail" type="text" value="hyunwoo@codelab.kr" placeholder="이메일 주소를 입력하세요">
             </div>
             </div>
           </section>
@@ -445,8 +447,8 @@
           <div class="pp-savebar">
             <p class="pp-savebar__text">공개 저장하면 클래스 상세 페이지의 지식 공유자 영역에 즉시 반영됩니다.</p>
             <div class="pp-savebar__actions">
-              <button class="pp-savebar__btn pp-savebar__btn--ghost" type="button">임시 저장</button>
-              <button class="pp-savebar__btn pp-savebar__btn--save" type="button">공개 저장</button>
+              <button class="pp-savebar__btn pp-savebar__btn--ghost" type="button" data-open-modal aria-haspopup="dialog" aria-controls="pp-tempsave-done">임시 저장</button>
+              <button class="pp-savebar__btn pp-savebar__btn--save" type="button" data-pp-savetoggle>공개 저장</button>
             </div>
           </div>
 
@@ -462,6 +464,11 @@
               <div class="pp-preview__nameline">
                 <p class="pp-preview__name">코드랩 현우</p>
                 <span class="pp-preview__badge">시그니처</span>
+                <div class="pp-preview__links" data-pp-preview-links>
+                  <a class="pp-preview__link" data-pp-link="web" href="https://codelab.kr" target="_blank" rel="noopener" aria-label="웹사이트"><span class="icon icon--globe" aria-hidden="true"></span></a>
+                  <a class="pp-preview__link" data-pp-link="git" href="https://github.com/codelab-hyunwoo" target="_blank" rel="noopener" aria-label="GitHub"><span class="icon icon--github" aria-hidden="true"></span></a>
+                  <a class="pp-preview__link" data-pp-link="mail" href="mailto:hyunwoo@codelab.kr" aria-label="이메일"><span class="icon icon--envelope" aria-hidden="true"></span></a>
+                </div>
               </div>
               <p class="pp-preview__role">프론트엔드 개발자 · 코드랩</p>
               <p class="pp-preview__oneline">비전공자도 끝까지 완주하는 실전 웹 개발을 가르칩니다.</p>
@@ -476,14 +483,6 @@
                 <div class="pp-preview__stat"><p class="pp-preview__stat-k">클래스</p><p class="pp-preview__stat-v">2</p></div>
               </div>
             </div>
-          </div>
-          <div class="pp-progress">
-            <p class="pp-progress__title">작성 완성도</p>
-            <div class="pp-progress__bar">
-              <span class="pp-progress__track"><span class="pp-progress__fill" style="width:80%;"></span></span>
-              <span class="pp-progress__pct">80%</span>
-            </div>
-            <p class="pp-progress__note">커버 이미지와 유튜브 링크를 채우면 완성돼요.</p>
           </div>
         </aside>
 
@@ -606,6 +605,56 @@
 
   </div>
 </footer>
+
+<!-- ===== 임시 저장 완료 모달 ===== -->
+<div class="modal" id="pp-tempsave-done" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="pp-tempsave-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="pp-tempsave-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 임시 저장되었습니다</h2>
+    </div>
+    <div class="ca-modal-actions ca-modal-actions--single">
+      <button class="btn btn--solid" type="button" data-modal-close>확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 공개 저장 완료 모달 ===== -->
+<div class="modal" id="pp-publish-done" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="pp-publish-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="pp-publish-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 프로필이 공개 저장되었습니다</h2>
+      <p class="signup__result">클래스 상세 페이지의 지식 공유자 영역에 즉시 반영됩니다.</p>
+    </div>
+    <div class="ca-modal-actions ca-modal-actions--single">
+      <button class="btn btn--solid" type="button" data-modal-close>확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 프로필 사진 삭제 확인 모달 ===== -->
+<div class="modal" id="pp-photo-del-confirm" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="pp-photo-del-title">
+    <button class="modal__close" type="button" data-modal-close aria-label="닫기">
+      <span class="icon icon--x-circle"></span>
+    </button>
+    <div class="signup__welcome">
+      <h2 class="signup__title" id="pp-photo-del-title"><img class="signup__logo" src="assets/brand/logo-primary.svg" alt="HOOT UP"> 정말 삭제하시겠습니까?</h2>
+    </div>
+    <div class="ca-modal-actions">
+      <button class="btn btn--outline" type="button" data-modal-close>취소</button>
+      <button class="btn btn--solid" type="button" data-modal-close data-pp-photo-del-confirm>확인</button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
