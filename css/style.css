@@ -1659,6 +1659,11 @@ hr {
   gap: var(--space-magazine-gap);
 }
 
+/* 매거진 캐러셀 래퍼 (데스크톱은 그리드, 화살표 숨김) */
+.magazine__carousel { display: flex; align-items: center; gap: var(--space-xs); }
+.magazine__carousel > .magazine__list { flex: 1; min-width: 0; }
+.magazine__carousel > .carousel-btn { display: none; }
+
 .blog-card {
   display: flex;
   flex-direction: column;
@@ -9105,10 +9110,28 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .magazine__list,
   .desk__list {
     grid-template-columns: 1fr;
   }
+
+  /* 매거진: 1280 이하부터 가로 스크롤 캐러셀(스와이프) + 카드 양 끝 화살표 */
+  .magazine__list {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: var(--space-2xs);
+  }
+  .magazine__list::-webkit-scrollbar { display: none; }
+  .magazine__item {
+    flex: 0 0 calc((100% - var(--space-magazine-gap)) / 2);
+    scroll-snap-align: start;
+  }
+  .magazine__carousel > .carousel-btn { display: flex; }   /* 양 끝 화살표 표시 */
+
   /* 훗업 차트: 769~1280 구간은 3열(3×2) */
   .chart__list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
@@ -9546,6 +9569,12 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .company { gap: 15px; }
   .company__line { flex-direction: column; gap: 15px; }
 
+  /* 매거진 캐러셀: 모바일은 카드 1개 + 다음 카드 살짝 보이게, 화살표는 카드 아래로 */
+  .magazine__item { flex-basis: 82%; }
+  .magazine__carousel { flex-wrap: wrap; justify-content: center; gap: var(--space-md) var(--space-2xl); }
+  .magazine__carousel > .magazine__list { order: 0; flex-basis: 100%; }
+  .magazine__carousel > .carousel-btn { order: 1; }
+
   /* 카운트다운 카드: 1열 3행 (copy / rate / package) */
   .countdown__card { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
   .countdown__copy { grid-area: 1 / 1; }
@@ -9609,6 +9638,14 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .promo__title { font-size: var(--text-h4-size); }
   .promo__offer { flex-wrap: wrap; }
   .promo__cta { margin-top: var(--space-xl); }
+
+  /* 매거진 더보기 버튼: 초소형(≤375)에서 한 줄 고정 + 좌우 패딩·폰트 반응형 축소 */
+  .magazine__more .btn--outline {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding-inline: clamp(16px, 12vw, 45px);
+    font-size: clamp(12px, 4.27vw, 16px);
+  }
 
   /* 훗업 차트 카드: 썸네일 위 · 정보 아래로 세로 스택 */
   .course-card--horizontal { flex-direction: column; }

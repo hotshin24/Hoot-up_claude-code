@@ -1,15 +1,15 @@
-/* 컬렉션 캐러셀 슬라이더 (.course-list--slider)
-   - 좌우 화살표(.carousel-btn--prev/next)로 한 카드씩 가로 스크롤(CSS scroll-behavior: smooth)
-   - 양 끝에서 화살표 비활성 처리 (클릭 직후 목표 위치 기준으로 즉시 반영 + 수동 스크롤 동기화) */
+/* 캐러셀 슬라이더 (네이티브 가로 스크롤 + 좌우 화살표)
+   - 대상: .course-list--slider(컬렉션) · .magazine__list(매거진)
+   - 화살표(.carousel-btn--prev/next)로 한 카드씩 스크롤(CSS scroll-behavior: smooth)
+   - 양 끝에서 화살표 비활성(수동 스크롤과 동기화) */
 (function () {
-  document.querySelectorAll('.course-list--slider').forEach(function (list) {
-    var carousel = list.closest('.collection__carousel');
+  function init(list, carousel, itemSelector) {
     if (!carousel) return;
     var prev = carousel.querySelector('.carousel-btn--prev');
     var next = carousel.querySelector('.carousel-btn--next');
 
     function step() {
-      var item = list.querySelector('.course-list__item');
+      var item = list.querySelector(itemSelector);
       if (!item) return list.clientWidth;
       var s = getComputedStyle(list);
       var gap = parseFloat(s.columnGap || s.gap || '0') || 0;
@@ -42,5 +42,12 @@
     list.addEventListener('scroll', function () { reflect(list.scrollLeft); }, { passive: true });
     window.addEventListener('resize', function () { reflect(list.scrollLeft); });
     reflect(0);
+  }
+
+  document.querySelectorAll('.course-list--slider').forEach(function (list) {
+    init(list, list.closest('.collection__carousel'), '.course-list__item');
+  });
+  document.querySelectorAll('.magazine__list').forEach(function (list) {
+    init(list, list.closest('.magazine__carousel'), '.magazine__item');
   });
 })();
