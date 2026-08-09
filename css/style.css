@@ -8095,7 +8095,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); white-space: nowrap;
   text-decoration: none; transition: opacity .15s ease;
 }
-.tax-alert__btn:hover { opacity: 0.9; }
 
 /* 카드 공통 */
 .tax-card {
@@ -8113,7 +8112,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .tax-field__control {
   width: 100%; height: 48px; padding: 0 19px;
   background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter);
-  border-radius: var(--radius-md); font-family: inherit; font-size: 15px; color: var(--color-neutral-darker);
+  border-radius: var(--radius-sm); font-family: inherit; font-size: 15px; color: var(--color-neutral-darker);
 }
 .tax-field__control:focus { outline: none; border-color: var(--color-brand-darker); }
 .tax-select { position: relative; }
@@ -8138,7 +8137,18 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .tax-btn--cancel { padding: 14px 25px; background-color: var(--color-neutral-white); border-color: var(--color-neutral-lighter); color: var(--color-neutral-base); }
 .tax-btn--cancel:hover { border-color: var(--color-neutral-light); }
 .tax-btn--save { padding: 14px 28px; background-color: var(--color-brand-darker); color: var(--color-neutral-white); }
-.tax-btn--save:hover { opacity: 0.9; }
+.tax-btn--edit { padding: 14px 28px; background-color: var(--color-brand-darker); color: var(--color-neutral-white); }
+
+/* 보기(readonly) 모드 — input 을 값 텍스트처럼, 버튼은 '계좌 정보 수정'만 */
+.tax-account:not(.is-readonly) .tax-btn--edit { display: none; }
+.tax-account.is-readonly .tax-btn--cancel,
+.tax-account.is-readonly .tax-btn--save { display: none; }
+.tax-account.is-readonly .tax-field__control {
+  border-color: transparent; background-color: transparent; padding-left: 0;
+  color: var(--color-neutral-darker); font-weight: var(--font-weight-bold);
+}
+.tax-account.is-readonly .tax-select__arrow { display: none; }
+.tax-account.is-readonly .tax-field__control--select { padding-right: 0; }
 
 /* 사업자 구분 */
 .tax-business__desc { font-size: var(--text-body-sm-size); line-height: 22px; color: var(--color-neutral-base); }
@@ -8165,10 +8175,11 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .tax-doc__sub { font-size: 13px; color: var(--color-neutral-base); }
 .tax-doc__sub--danger { color: var(--color-danger-base); }
 .tax-doc__btn {
-  flex-shrink: 0; padding: 10px 17px; border-radius: var(--radius-pill);
+  flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 17px; border-radius: var(--radius-pill);
   background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
   font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-darker);
-  cursor: pointer; transition: border-color .15s ease, color .15s ease;
+  text-decoration: none; cursor: pointer; transition: border-color .15s ease, color .15s ease;
 }
 .tax-doc__btn:hover { border-color: var(--color-brand-darker); color: var(--color-brand-darker); }
 
@@ -9284,3 +9295,62 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 /* 강의 상세 멘토 카드 자리에 프로필 미리보기 카드 배치 */
 .mentor-profile__preview { flex: 1 1 300px; align-self: stretch; }
 .pp-preview__blog { margin-top: calc(var(--space-md) - var(--space-3xs)); width: 100%; } /* body gap(4px)+margin=20px */
+
+/* ============================================================
+   크리에이터 계약서 문서 (creator-contract.html)
+   — 수료증(cert-*)과 같은 미니멀 셸: 사이트 헤더·히어로 없이 문서만
+   ============================================================ */
+.contract-doc {
+  width: 100%; max-width: 820px;
+  background: var(--color-neutral-white);
+  border: 1px solid var(--color-neutral-lighter);
+  border-radius: var(--radius-md);
+  padding: 56px clamp(24px, 6vw, 64px);
+}
+
+/* 문서 헤더 */
+.contract-doc__head { padding-bottom: 26px; border-bottom: 2px solid var(--color-neutral-darker); }
+.contract-doc__eyebrow { font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 12px; letter-spacing: 1.6px; color: var(--color-brand-base); }
+.contract-doc__title { margin-top: 12px; font-size: var(--text-h3-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); line-height: 1.3; }
+.contract-doc__sub { margin-top: 10px; color: var(--color-neutral-base); font-size: var(--text-body-size); }
+.contract-doc__status { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; color: var(--color-neutral-base); font-size: var(--text-body-sm-size); }
+.contract-status__badge { padding: 5px 12px; border-radius: var(--radius-pill); background: var(--color-brand-accent); color: var(--color-brand-darker); font-size: 12px; font-weight: var(--font-weight-bold); }
+.contract-doc__intro { margin-top: 28px; color: var(--color-neutral-base); font-size: var(--text-body-size); line-height: 28px; }
+
+/* 조항 블록 */
+.contract-block { margin-top: 40px; }
+.contract-h2 { display: flex; align-items: baseline; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid var(--color-neutral-lighter); font-size: var(--text-h4-size); font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); line-height: 1.35; }
+.contract-h2__no { flex-shrink: 0; color: var(--color-brand-base); font-family: var(--font-display); font-weight: var(--font-weight-extrabold); font-size: 17px; }
+.contract-p { margin-top: 14px; color: var(--color-neutral-base); font-size: var(--text-body-size); line-height: 28px; }
+
+/* 표 */
+.contract-table-wrap { margin-top: 16px; overflow-x: auto; }
+.contract-table { width: 100%; border-collapse: collapse; font-size: var(--text-body-sm-size); line-height: 22px; }
+.contract-table th,
+.contract-table td { padding: 12px 16px; border: 1px solid var(--color-neutral-lighter); text-align: left; vertical-align: top; color: var(--color-neutral-darker); }
+.contract-table thead th { background: var(--color-neutral-lightest); font-weight: var(--font-weight-bold); white-space: nowrap; }
+.contract-table tbody th { background: var(--color-neutral-lightest); font-weight: var(--font-weight-bold); color: var(--color-neutral-base); white-space: nowrap; width: 150px; }
+.contract-table strong { color: var(--color-brand-base); font-weight: var(--font-weight-extrabold); }
+
+/* 계약 당사자 */
+.contract-parties { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.contract-party { padding: 20px 22px; background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md); }
+.contract-party__role { font-weight: var(--font-weight-bold); color: var(--color-brand-base); font-size: var(--text-body-sm-size); }
+.contract-party__list { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; color: var(--color-neutral-base); font-size: var(--text-body-sm-size); line-height: 22px; }
+
+/* 리스트 */
+.contract-list { margin-top: 14px; padding-left: 22px; color: var(--color-neutral-base); font-size: var(--text-body-size); line-height: 27px; }
+.contract-list li { list-style: disc; }
+.contract-list li + li { margin-top: 9px; }
+.contract-list--ol li { list-style: decimal; }
+.contract-list strong { color: var(--color-neutral-darker); font-weight: var(--font-weight-bold); }
+
+/* 서명 완료 · 해시 · 고지 */
+.contract-check { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: var(--radius-pill); background: var(--color-brand-accent); color: var(--color-brand-darker); font-size: 12px; font-weight: var(--font-weight-bold); white-space: nowrap; }
+.contract-hash { padding: 2px 8px; border-radius: var(--radius-sm); background: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); font-family: var(--font-display); font-size: 13px; color: var(--color-neutral-darker); }
+.contract-disclaimer { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--color-neutral-lighter); color: var(--color-neutral-light); font-size: 13px; line-height: 22px; }
+
+@media (max-width: 640px) {
+  .contract-doc { padding: 36px 22px; }
+  .contract-parties { grid-template-columns: 1fr; }
+}
