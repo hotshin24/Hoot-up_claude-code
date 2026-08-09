@@ -13,11 +13,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&display=swap">
   <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
   <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/import.css">
+  <link rel="stylesheet" href="css/import.css?v=1">
 
   <script src="js/common.js" defer></script>
   <script src="js/carousel.js" defer></script>
   <script src="js/toggle.js" defer></script>
+  <script src="js/creator-questions.js" defer></script>
 </head>
 <body>
 
@@ -284,71 +285,637 @@
       <div class="pp-head">
         <div class="pp-head__intro">
           <h2 class="pp-head__title">질문 관리</h2>
-          <p class="pp-head__desc">답변 대기 7건 · 평균 응답 시간 6시간 · 이번 달 답변 42건</p>
-        </div>
-        <div class="qa-tabs" role="group" aria-label="질문 상태 필터">
-          <button class="qa-tab is-active" type="button" aria-pressed="true">답변 대기 7</button>
-          <button class="qa-tab" type="button" aria-pressed="false">답변 완료</button>
-          <button class="qa-tab" type="button" aria-pressed="false">전체</button>
+          <p class="pp-head__desc">총 질문 42건 · 답변 완료 35건 · 답변 대기 7건 · 평균 응답 6시간</p>
         </div>
       </div>
 
-      <!-- 질문 목록 -->
-      <section class="creator-card qa-list">
-        <h3 class="a11y-hidden">질문 목록</h3>
-        <article class="qa-card qa-card--open">
-          <div class="qa-metarow">
-            <span class="qa-badge qa-badge--wait">답변 대기</span>
-            <span class="qa-src">React 실전 프로젝트 · 14강 「상태 관리 훅 만들기」 · 2시간 전</span>
+      <!-- 통계 -->
+      <div class="rv-stats">
+        <div class="rv-stat">
+          <p class="rv-stat__label">총 질문</p>
+          <p class="rv-stat__value">42건</p>
+        </div>
+        <div class="rv-stat">
+          <p class="rv-stat__label">답변 완료</p>
+          <p class="rv-stat__value">35건</p>
+        </div>
+        <div class="rv-stat">
+          <p class="rv-stat__label">답변 대기</p>
+          <p class="rv-stat__value rv-stat__value--danger">7건</p>
+        </div>
+        <div class="rv-stat">
+          <p class="rv-stat__label">평균 응답 시간</p>
+          <p class="rv-stat__value">6시간</p>
+        </div>
+      </div>
+
+      <!-- 질문 관리 -->
+      <section class="creator-card rv-manage">
+        <div class="creator-card__head rv-manage__head">
+          <h3 class="creator-card__title">질문 목록</h3>
+          <div class="rv-filter" role="group" aria-label="질문 필터" data-rv-filter>
+            <button class="rv-chip is-active" type="button" aria-pressed="true" data-rv-filter-btn="all">전체</button>
+            <button class="rv-chip" type="button" aria-pressed="false" data-rv-filter-btn="wait">답변 대기</button>
           </div>
-          <h3 class="qa-title qa-title--lg">useEffect 의존성 배열 질문이요</h3>
-          <p class="qa-body qa-body--lg">강의에서 의존성 배열에 객체를 넣지 말라고 하셨는데, 그럼 API 응답 객체를 감시해야 할 때는 어떻게 해야 하나요? useMemo로 감싸는 게 맞을까요?</p>
-          <div class="qa-asker">
-            <img class="qa-asker__avatar" src="assets/avatar/user.jpg" alt="밤샘러 지우 프로필" loading="lazy">
-            <span class="qa-asker__meta">밤샘러 지우 · 수강률 62%</span>
-          </div>
-          <textarea class="qa-textarea" rows="3" placeholder="답변을 입력하세요" aria-label="답변 입력"></textarea>
-          <div class="qa-tools">
-            <div class="qa-chiprow">
-              <button class="qa-chip" type="button">자주 쓰는 답변</button>
-              <button class="qa-chip" type="button">코드 첨부</button>
+        </div>
+        <div class="rv-list" data-rv-list>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/wl-yunseo.png" alt="첫코드설렘 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">첫코드설렘</h4>
+              <span class="rv-item__meta">2026.06.12 · HTML/CSS 기초</span>
+              <span class="rv-badge">답변 대기</span>
             </div>
-            <button class="qa-submit" type="button">답변 등록</button>
+            <p class="rv-item__text">VS Code 추천 확장 프로그램이 있을까요?</p>
+            <div class="rv-answer">
+              <input class="rv-answer__input" type="text" placeholder="답변을 입력하세요" aria-label="첫코드설렘 질문에 답변 작성">
+              <button class="rv-answer__btn" type="button">답변 등록</button>
+            </div>
           </div>
         </article>
-        <article class="qa-card qa-card--compact">
-          <div class="qa-compact__main">
-            <div class="qa-metarow">
-              <span class="qa-badge qa-badge--wait">답변 대기</span>
-              <span class="qa-src">반응형 웹 퍼블리싱 · 22강 · 5시간 전</span>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/apple-geo.png" alt="비전공프론트 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">비전공프론트</h4>
+              <span class="rv-item__meta">2026.06.11 · React 실전 프로젝트</span>
+              <span class="rv-badge">답변 대기</span>
             </div>
-            <h3 class="qa-title">그리드 레이아웃이 사파리에서 깨져요</h3>
-            <p class="qa-body">크롬에서는 정상인데 사파리에서만 3열이 2열로 나옵니다. minmax 값 문제일까요?</p>
-          </div>
-          <button class="qa-btn qa-btn--dark" type="button">답변하기</button>
-        </article>
-        <article class="qa-card qa-card--compact">
-          <div class="qa-compact__main">
-            <div class="qa-metarow">
-              <span class="qa-badge qa-badge--wait">답변 대기</span>
-              <span class="qa-src">React 실전 프로젝트 · 40강 · 어제</span>
+            <p class="rv-item__text">커스텀 훅은 언제부터 만들어 쓰는 게 좋을까요? 아직 감이 안 와요.</p>
+            <div class="rv-answer">
+              <input class="rv-answer__input" type="text" placeholder="답변을 입력하세요" aria-label="비전공프론트 질문에 답변 작성">
+              <button class="rv-answer__btn" type="button">답변 등록</button>
             </div>
-            <h3 class="qa-title">포트폴리오 배포는 어디로 하나요?</h3>
-            <p class="qa-body">강의에서는 Vercel을 쓰셨는데 무료 플랜으로도 충분한지 궁금합니다.</p>
           </div>
-          <button class="qa-btn qa-btn--dark" type="button">답변하기</button>
         </article>
-        <article class="qa-card qa-card--compact qa-card--done">
-          <div class="qa-compact__main">
-            <div class="qa-metarow">
-              <span class="qa-badge qa-badge--done">답변 완료</span>
-              <span class="qa-src">반응형 웹 퍼블리싱 · 8강 · 2일 전</span>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/wl-han.png" alt="이벤트헷갈림 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">이벤트헷갈림</h4>
+              <span class="rv-item__meta">2026.06.10 · 자바스크립트 핵심</span>
+              <span class="rv-badge">답변 대기</span>
             </div>
-            <h3 class="qa-title">flex-basis와 width 차이가 헷갈려요</h3>
-            <p class="qa-body">답변 완료 · 도움이 됐어요 12</p>
+            <p class="rv-item__text">이벤트 버블링과 캡처링 차이가 실무에서 중요한가요?</p>
+            <div class="rv-answer">
+              <input class="rv-answer__input" type="text" placeholder="답변을 입력하세요" aria-label="이벤트헷갈림 질문에 답변 작성">
+              <button class="rv-answer__btn" type="button">답변 등록</button>
+            </div>
           </div>
-          <button class="qa-btn qa-btn--ghost" type="button">답변 보기</button>
         </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/prompt-ria.png" alt="클론코딩러 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">클론코딩러</h4>
+              <span class="rv-item__meta">2026.06.09 · 반응형 웹 퍼블리싱</span>
+              <span class="rv-badge">답변 대기</span>
+            </div>
+            <p class="rv-item__text">클론한 사이트를 포트폴리오에 올려도 될까요? 저작권이 걱정돼요.</p>
+            <div class="rv-answer">
+              <input class="rv-answer__input" type="text" placeholder="답변을 입력하세요" aria-label="클론코딩러 질문에 답변 작성">
+              <button class="rv-answer__btn" type="button">답변 등록</button>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/markup-sea.png" alt="완전초보 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">완전초보</h4>
+              <span class="rv-item__meta">2026.06.08 · HTML/CSS 기초</span>
+            </div>
+            <p class="rv-item__text">section이랑 div, 아무거나 써도 되나요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">의미가 있으면 section, 단순 묶음이면 div예요. 제목이 있는 독립 영역이면 section, 스타일용 껍데기면 div로 생각하세요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/wl-kang.png" alt="이벤트버블 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">이벤트버블</h4>
+              <span class="rv-item__meta">2026.06.07 · 인터랙티브 웹</span>
+              <span class="rv-badge">답변 대기</span>
+            </div>
+            <p class="rv-item__text">stopPropagation을 남발하면 안 된다던데 왜 그런가요?</p>
+            <div class="rv-answer">
+              <input class="rv-answer__input" type="text" placeholder="답변을 입력하세요" aria-label="이벤트버블 질문에 답변 작성">
+              <button class="rv-answer__btn" type="button">답변 등록</button>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/wl-mio.png" alt="센터딜레마 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">센터딜레마</h4>
+              <span class="rv-item__meta">2026.06.06 · Flex &amp; Grid 레이아웃</span>
+              <span class="rv-badge">답변 대기</span>
+            </div>
+            <p class="rv-item__text">요소를 화면 정중앙에 두는 가장 쉬운 방법이 뭔가요?</p>
+            <div class="rv-answer">
+              <input class="rv-answer__input" type="text" placeholder="답변을 입력하세요" aria-label="센터딜레마 질문에 답변 작성">
+              <button class="rv-answer__btn" type="button">답변 등록</button>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/wl-jung.png" alt="콜백러 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">콜백러</h4>
+              <span class="rv-item__meta">2026.06.05 · 자바스크립트 핵심</span>
+              <span class="rv-badge">답변 대기</span>
+            </div>
+            <p class="rv-item__text">Promise.all은 언제 쓰는 게 맞나요? 예제가 더 있으면 좋겠어요.</p>
+            <div class="rv-answer">
+              <input class="rv-answer__input" type="text" placeholder="답변을 입력하세요" aria-label="콜백러 질문에 답변 작성">
+              <button class="rv-answer__btn" type="button">답변 등록</button>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/sidelab-min.png" alt="퍼블리셔지망 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">퍼블리셔지망</h4>
+              <span class="rv-item__meta">2026.06.01 · 반응형 웹 퍼블리싱</span>
+            </div>
+            <p class="rv-item__text">모바일에서만 레이아웃이 깨지는데 원인을 못 찾겠어요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">십중팔구 고정 px 너비 때문이에요. 모바일 뷰로 보며 width 고정 요소를 max-width나 %로 바꿔보세요. 3장 체크리스트를 순서대로 보시면 좋아요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/typesafe-luke.png" alt="JS먼저파 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">JS먼저파</h4>
+              <span class="rv-item__meta">2026.05.26 · 자바스크립트 핵심</span>
+            </div>
+            <p class="rv-item__text">addEventListener를 반복문에서 걸었더니 마지막 값만 나와요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">var 대신 let으로 바꿔보세요. var는 스코프가 함수라 반복이 끝난 값을 참조해요. 4장 클로저·스코프 편에서 다룬 함정이에요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/vibecoder-k.png" alt="인터랙션러 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">인터랙션러</h4>
+              <span class="rv-item__meta">2026.05.25 · 인터랙티브 웹</span>
+            </div>
+            <p class="rv-item__text">슬라이더 만들 때 transform이랑 left 중 뭐가 나아요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">성능은 transform이 유리해요. left는 레이아웃을 다시 계산하지만 transform은 그렇지 않아 애니메이션이 부드러워요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/pairup-dohyun.png" alt="리액트막차 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">리액트막차</h4>
+              <span class="rv-item__meta">2026.05.20 · React 실전 프로젝트</span>
+            </div>
+            <p class="rv-item__text">props로 넘긴 값이 자꾸 undefined로 찍혀요. 어디를 봐야 할까요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">부모에서 값이 실제로 내려오는지 먼저 확인해보세요. 부모의 state를 콘솔에 찍고, 자식 props 이름 철자를 대조하면 대부분 잡혀요. 5-3강 디버깅 파트도 참고해보세요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/design-serin.png" alt="레이아웃지옥 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">레이아웃지옥</h4>
+              <span class="rv-item__meta">2026.05.18 · Flex &amp; Grid 레이아웃</span>
+            </div>
+            <p class="rv-item__text">Flex랑 Grid, 실무에선 뭘 더 많이 쓰나요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">한 방향 정렬은 Flex, 이차원 레이아웃은 Grid예요. 큰 틀은 Grid, 내부 정렬은 Flex로 섞어 쓰는 경우가 많아요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/cr-yun.png" alt="미디어쿼리 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">미디어쿼리</h4>
+              <span class="rv-item__meta">2026.05.15 · 반응형 웹 퍼블리싱</span>
+            </div>
+            <p class="rv-item__text">브레이크포인트는 몇 개나 잡는 게 적당한가요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">숫자보다 ‘콘텐츠가 깨지는 지점’이 기준이에요. 보통 모바일·태블릿·데스크톱 3단계로 시작하고 필요할 때만 추가하면 충분합니다.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/devops-ryo.png" alt="상태관리헬 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">상태관리헬</h4>
+              <span class="rv-item__meta">2026.05.12 · React 실전 프로젝트</span>
+            </div>
+            <p class="rv-item__text">useState랑 useReducer는 언제 나눠 쓰나요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">상태가 단순하면 useState, 여러 값이 서로 얽혀 함께 바뀌면 useReducer가 편해요. 폼처럼 필드가 많고 규칙이 있으면 6장 reducer 패턴을 추천합니다.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/server-gangwoo.png" alt="비동기지옥 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">비동기지옥</h4>
+              <span class="rv-item__meta">2026.05.09 · 자바스크립트 핵심</span>
+            </div>
+            <p class="rv-item__text">fetch가 데이터를 못 받아오는데 에러도 안 떠요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">await를 빠뜨렸거나 .then 체인이 끊겼을 수 있어요. try/catch로 감싸 에러를 먼저 드러내 보세요. 5-2강 참고하세요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/builder-taeo.png" alt="태그헷갈림 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">태그헷갈림</h4>
+              <span class="rv-item__meta">2026.05.06 · HTML/CSS 기초</span>
+            </div>
+            <p class="rv-item__text">이미지에 alt는 꼭 넣어야 하나요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">네, 접근성의 기본이에요. 의미 있는 이미지엔 설명을, 장식용이면 alt=""(빈 값)로 두면 됩니다.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/automation-rin.png" alt="손코딩입문 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">손코딩입문</h4>
+              <span class="rv-item__meta">2026.05.03 · 반응형 웹 퍼블리싱</span>
+            </div>
+            <p class="rv-item__text">rem이랑 em 차이가 헷갈려요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">em은 부모 기준, rem은 root 기준이에요. 폰트·간격은 rem으로 통일하면 예측이 쉬워요. 2-4강 단위 편을 다시 보세요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/wl-dohun.png" alt="포폴완성러 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">포폴완성러</h4>
+              <span class="rv-item__meta">2026.04.28 · React 실전 프로젝트</span>
+            </div>
+            <p class="rv-item__text">프로젝트 배포는 어디로 하는 게 좋나요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">입문 단계에선 Vercel이 가장 간단해요. 4-6강 배포 실습 순서대로면 5분이면 올라갑니다. 커스텀 도메인은 나중에 붙여도 돼요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/data-sua.png" alt="실무투입 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">실무투입</h4>
+              <span class="rv-item__meta">2026.04.22 · 자바스크립트 핵심</span>
+            </div>
+            <p class="rv-item__text">이벤트 위임이 정확히 뭔가요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">자식마다 걸지 않고 부모 하나에 걸어 event.target으로 판별하는 방식이에요. 요소가 많거나 동적으로 추가될 때 강력해요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/app-mireu.png" alt="모달만들기 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">모달만들기</h4>
+              <span class="rv-item__meta">2026.04.20 · 인터랙티브 웹</span>
+            </div>
+            <p class="rv-item__text">모달 바깥을 클릭하면 닫히게 하고 싶어요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">오버레이에 클릭 이벤트를 걸고 event.target이 오버레이 자신일 때만 닫으면 돼요. 내부 클릭까지 닫히지 않게 하는 게 포인트예요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/query-dan.png" alt="정렬못함 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">정렬못함</h4>
+              <span class="rv-item__meta">2026.04.11 · Flex &amp; Grid 레이아웃</span>
+            </div>
+            <p class="rv-item__text">justify-content랑 align-items가 반대로 먹어요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">main축·cross축 때문이에요. row면 justify=가로/align=세로, column이면 반대가 돼요. 2장 축 개념 그림을 다시 보세요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/dawn-jayden.png" alt="주니어개발 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">주니어개발</h4>
+              <span class="rv-item__meta">2026.04.10 · React 실전 프로젝트</span>
+            </div>
+            <p class="rv-item__text">커밋은 어느 단위로 하는 게 맞을까요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">‘하나의 의미 있는 변화’ 단위로 쪼개세요. 기능 하나, 버그 하나처럼요. 메시지는 무엇을 왜 바꿨는지 한 줄로. 리뷰가 훨씬 수월해져요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/nocode-jei.png" alt="독학3년 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">독학3년</h4>
+              <span class="rv-item__meta">2026.04.06 · 반응형 웹 퍼블리싱</span>
+            </div>
+            <p class="rv-item__text">이미지가 화면을 넘칠 때 어떻게 막나요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">img에 max-width:100%; height:auto; 를 기본으로 걸어두세요. 반응형 이미지 깨짐의 90%가 이걸로 해결돼요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/spring-hojae.png" alt="퇴근후코딩 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">퇴근후코딩</h4>
+              <span class="rv-item__meta">2026.04.02 · HTML/CSS 기초</span>
+            </div>
+            <p class="rv-item__text">class랑 id는 어떻게 구분하나요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">여러 번 재사용하면 class, 페이지에 딱 하나면 id예요. 스타일은 class 중심으로 쓰는 걸 권해요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/modeling-oz.png" alt="전공복습 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">전공복습</h4>
+              <span class="rv-item__meta">2026.03.30 · 자바스크립트 핵심</span>
+            </div>
+            <p class="rv-item__text">map이랑 forEach는 언제 구분하나요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">새 배열이 필요하면 map, 단순 반복이면 forEach예요. 반환값을 쓸지로 나누면 헷갈리지 않아요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/viewpoint-daon.png" alt="퍼블에서프론트 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">퍼블에서프론트</h4>
+              <span class="rv-item__meta">2026.03.27 · 인터랙티브 웹</span>
+            </div>
+            <p class="rv-item__text">DOM 요소를 여러 개 한 번에 다루려면요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">querySelectorAll로 가져와 forEach로 순회하세요. NodeList라 일부 배열 메서드가 제한되니 필요하면 [...els]로 배열화하세요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/career-copy-yunseul.png" alt="첫사이트 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">첫사이트</h4>
+              <span class="rv-item__meta">2026.03.24 · 반응형 웹 퍼블리싱</span>
+            </div>
+            <p class="rv-item__text">flex로 정렬한 요소가 세로로 쌓여요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">flex-direction이 column이거나 부모에 display:flex가 빠졌을 가능성이 높아요. 부모에 flex가 걸렸는지부터 확인해보세요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/mobile-han.png" alt="국비예습 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">국비예습</h4>
+              <span class="rv-item__meta">2026.03.21 · HTML/CSS 기초</span>
+            </div>
+            <p class="rv-item__text">padding이랑 margin이 헷갈려요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">padding은 테두리 안쪽 여백, margin은 바깥쪽 여백이에요. 개발자도구에서 요소를 클릭하면 색으로 구분돼요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/tooldeok-bin.png" alt="그리드입문 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">그리드입문</h4>
+              <span class="rv-item__meta">2026.03.15 · Flex &amp; Grid 레이아웃</span>
+            </div>
+            <p class="rv-item__text">grid-template-columns의 fr이 뭔가요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">남은 공간을 비율로 나누는 단위예요. 1fr 1fr이면 반반, 2fr 1fr이면 2:1이에요. px와 섞어 쓸 수도 있어요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/career-pm-doyun.png" alt="useEffect무한 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">useEffect무한</h4>
+              <span class="rv-item__meta">2026.03.05 · React 실전 프로젝트</span>
+            </div>
+            <p class="rv-item__text">useEffect가 무한으로 도는데 왜 그럴까요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">의존성 배열에 매 렌더마다 새로 만들어지는 값(객체·함수)이 들어갔을 가능성이 커요. useCallback/useMemo로 고정하거나 배열을 점검해보세요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/career-worker-bona.png" alt="엄마개발자 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">엄마개발자</h4>
+              <span class="rv-item__meta">2026.02.28 · HTML/CSS 기초</span>
+            </div>
+            <p class="rv-item__text">글자 가운데 정렬이 안 돼요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">텍스트는 text-align:center, 박스 자체는 margin:0 auto(너비 필요)예요. 둘을 구분하면 해결됩니다.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/career-growth-jin.png" alt="뷰포트 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">뷰포트</h4>
+              <span class="rv-item__meta">2026.02.26 · 반응형 웹 퍼블리싱</span>
+            </div>
+            <p class="rv-item__text">vw 단위를 썼더니 가로 스크롤이 생겨요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">100vw는 스크롤바 폭을 포함해서 넘칠 수 있어요. width는 100%를 쓰고, overflow-x를 점검해보세요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/design-dain.png" alt="갭조절 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">갭조절</h4>
+              <span class="rv-item__meta">2026.02.20 · Flex &amp; Grid 레이아웃</span>
+            </div>
+            <p class="rv-item__text">요소 사이 간격은 margin으로 줘야 하나요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">Flex·Grid에선 gap이 훨씬 깔끔해요. margin은 끝 요소 여백까지 신경 써야 하지만 gap은 사이 간격만 딱 줍니다.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/cr-dowon.png" alt="구조분해 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">구조분해</h4>
+              <span class="rv-item__meta">2026.02.18 · 자바스크립트 핵심</span>
+            </div>
+            <p class="rv-item__text">구조분해 할당이 아직 어색해요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">자주 쓰는 값만 꺼내 쓰는 문법이라 익으면 코드가 훨씬 짧아져요. 함수 매개변수에 바로 적용하는 예제를 3장에서 보세요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/design-kei.png" alt="디바운스 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">디바운스</h4>
+              <span class="rv-item__meta">2026.02.15 · 인터랙티브 웹</span>
+            </div>
+            <p class="rv-item__text">입력할 때마다 함수가 너무 자주 실행돼요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">디바운스를 걸어보세요. 마지막 입력 후 일정 시간 뒤에만 실행되게 하는 기법이에요. 5장 성능 편 예제를 참고하세요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/career-growth-jin.png" alt="키경고 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">키경고</h4>
+              <span class="rv-item__meta">2026.02.14 · React 실전 프로젝트</span>
+            </div>
+            <p class="rv-item__text">리스트 렌더링에서 key 경고가 떠요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">map으로 만든 요소에 고유한 key를 넣어야 해요. 배열 index보다 데이터의 id를 쓰는 게 안전합니다. 3-4강에서 이유를 다뤘어요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/cr-moru.png" alt="박스모델 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">박스모델</h4>
+              <span class="rv-item__meta">2026.02.10 · HTML/CSS 기초</span>
+            </div>
+            <p class="rv-item__text">width를 줬는데 실제 크기가 더 커요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">padding·border가 더해져서 그래요. box-sizing:border-box를 걸면 지정한 width 안에 포함돼 계산이 쉬워져요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/cr-hari.png" alt="폰트크기 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">폰트크기</h4>
+              <span class="rv-item__meta">2026.02.05 · 반응형 웹 퍼블리싱</span>
+            </div>
+            <p class="rv-item__text">글자 크기를 반응형으로 주고 싶어요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">clamp()를 쓰면 최소·기본·최대 크기를 한 줄로 지정할 수 있어요. 미디어쿼리 없이도 부드럽게 줄고 늘어요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/design-noa.png" alt="자동배치 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">자동배치</h4>
+              <span class="rv-item__meta">2026.01.30 · Flex &amp; Grid 레이아웃</span>
+            </div>
+            <p class="rv-item__text">Grid에서 아이템이 자동으로 다음 줄로 안 넘어가요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">grid-template-columns로 열 수를 정하면 자동으로 줄바꿈돼요. repeat(auto-fill, minmax())를 쓰면 반응형으로 채워집니다.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/cr-sera.png" alt="링크색상 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">링크색상</h4>
+              <span class="rv-item__meta">2026.01.22 · HTML/CSS 기초</span>
+            </div>
+            <p class="rv-item__text">방문한 링크 색을 바꾸고 싶어요.</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">a:visited 가상 클래스로 지정할 수 있어요. 다만 보안상 바꿀 수 있는 속성이 제한되니 색 정도로 활용하세요.</p>
+            </div>
+          </div>
+        </article>
+        <article class="rv-item">
+          <img class="rv-item__avatar" src="assets/avatar/design-yu.png" alt="토글버튼 프로필" loading="lazy">
+          <div class="rv-item__body">
+            <div class="rv-item__head">
+              <h4 class="rv-item__name">토글버튼</h4>
+              <span class="rv-item__meta">2026.01.18 · 인터랙티브 웹</span>
+            </div>
+            <p class="rv-item__text">클래스를 껐다 켰다 하려면요?</p>
+            <div class="rv-reply">
+              <p class="rv-reply__label">내 답변</p>
+              <p class="rv-reply__text">classList.toggle('active') 한 줄이면 돼요. 조건문 없이 상태를 전환할 수 있어 자주 씁니다.</p>
+            </div>
+          </div>
+        </article>
+        </div>
+        <nav class="pager" aria-label="질문 목록 페이지" data-rv-pager hidden></nav>
       </section>
 
     </div>

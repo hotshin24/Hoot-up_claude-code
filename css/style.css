@@ -7826,18 +7826,22 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* 리뷰 관리 */
 .rv-manage__head { margin-bottom: 0; }
-.rv-filter { display: flex; gap: 6px; flex-shrink: 0; }
+.rv-filter { display: flex; gap: 8px; flex-shrink: 0; }
+/* 리뷰 필터 칩 — 대분류 카테고리 필터(member-chip) 디자인 규칙 적용 */
 .rv-chip {
-  padding: 9px 17px; border-radius: var(--radius-pill);
-  background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter);
-  font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base);
-  cursor: pointer; transition: border-color .15s ease, color .15s ease;
+  padding: 8px 17px; border-radius: var(--radius-pill);
+  background-color: transparent; border: 1px solid var(--color-neutral-base);
+  color: var(--color-neutral-base); font-size: var(--text-body-sm-size); line-height: var(--text-body-leading); cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard),
+              border-color var(--duration-fast) var(--easing-standard);
 }
-.rv-chip:hover { border-color: var(--color-brand-darker); color: var(--color-brand-darker); }
+.rv-chip:hover { border-color: var(--color-brand-base); }
 .rv-chip.is-active {
-  padding: 8px 16px; border: 0;
-  background-color: var(--color-brand-darker); color: var(--color-neutral-white);
+  border-color: var(--color-brand-base);
+  background-color: var(--color-brand-base); color: var(--color-text-inverse); font-weight: var(--font-weight-bold);
 }
+.rv-chip.is-active:hover { border-color: var(--color-brand-base); }
 
 .rv-list { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
 .rv-item {
@@ -7864,7 +7868,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 /* 내 답글 (작성됨) */
 .rv-reply {
   background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
-  border-radius: var(--radius-md); padding: 21px 19px 15px;
+  border-radius: var(--radius-sm); padding: 21px 19px 15px;
   display: flex; flex-direction: column; gap: var(--space-3xs);
 }
 .rv-reply__label { font-size: var(--text-caption-size); font-weight: var(--font-weight-bold); color: var(--color-brand-darker); }
@@ -7875,7 +7879,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .rv-answer__input {
   flex: 1 1 0; min-width: 0; height: 44px;
   background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
-  border-radius: var(--radius-md); padding: 0 19px;
+  border-radius: var(--radius-sm); padding: 0 19px;
   font-size: var(--text-body-sm-size); color: var(--color-neutral-darker);
 }
 .rv-answer__input::placeholder { color: var(--color-text-placeholder); }
@@ -7886,7 +7890,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   font-size: var(--text-body-sm-size); font-weight: var(--font-weight-bold); cursor: pointer;
   transition: opacity .15s ease;
 }
-.rv-answer__btn:hover { opacity: 0.9; }
 
 /* ============================================================
    크리에이터 · 질문 관리 (creator-questions.html)
