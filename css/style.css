@@ -9110,9 +9110,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .desk__list {
-    grid-template-columns: 1fr;
-  }
+  /* .desk__list: 769~1280 구간은 기본 2열(2×3) 유지 → 1열 전환은 ≤768로 이관 */
 
   /* 매거진: 1280 이하부터 가로 스크롤 캐러셀(스와이프) + 카드 양 끝 화살표 */
   .magazine__list {
@@ -9288,6 +9286,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 @media (max-width: 768px) {
   /* 훗업 차트: 768 이하는 다시 1열 */
   .chart__list { grid-template-columns: 1fr; }
+
+  /* 데스크 리스트: 768 이하는 1열(태블릿 2×3 → 모바일 1열) */
+  .desk__list { grid-template-columns: 1fr; }
 
   /* 카운트다운 카드: 768 이하 폰트·이미지 유동 축소 (상한=기본값이라 768 경계 매끄러움) */
   .countdown__title { font-size: clamp(30px, 6.5vw, 48px); gap: clamp(12px, 3.5vw, 39px); }
@@ -9639,8 +9640,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .promo__offer { flex-wrap: wrap; }
   .promo__cta { margin-top: var(--space-xl); }
 
-  /* 매거진 더보기 버튼: 초소형(≤375)에서 한 줄 고정 + 좌우 패딩·폰트 반응형 축소 */
-  .magazine__more .btn--outline {
+  /* 매거진·데스크 더보기 버튼: 초소형(≤375)에서 한 줄 고정 + 좌우 패딩·폰트 반응형 축소 */
+  .magazine__more .btn--outline,
+  .desk__more .btn--outline {
     flex-shrink: 0;
     white-space: nowrap;
     padding-inline: clamp(16px, 12vw, 45px);
@@ -9651,4 +9653,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .course-card--horizontal { flex-direction: column; }
   .course-card--horizontal .course-card__thumb { width: 100%; }
   .course-card--horizontal .course-card__image { height: 180px; }
+
+  /* 데스크 뉴스 카드: 코스카드처럼 썸네일 위 · 정보 아래로 세로 스택
+     (DOM 순서가 info→thumb라 order로 썸네일을 위로 끌어올림) */
+  .news-card { flex-direction: column; }
+  .news-card__thumb { order: -1; width: 100%; height: 180px; }
 }
