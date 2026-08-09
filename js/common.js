@@ -343,3 +343,48 @@
     }
   });
 })();
+
+/* ===== gnb 퀵링크 가로 스크롤 chevron (태블릿·모바일 ≤768) ===== */
+(function () {
+  "use strict";
+  var gnb = document.querySelector(".gnb");
+  var list = gnb && gnb.querySelector(".gnb__list");
+  if (!gnb || !list) return;
+
+  // 리스트를 스크롤러로 감싸고 양 끝에 chevron 버튼 삽입
+  var scroller = document.createElement("div");
+  scroller.className = "gnb__scroller";
+  list.parentNode.insertBefore(scroller, list);
+  scroller.appendChild(list);
+
+  function makeChev(dir) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "gnb__chev gnb__chev--" + dir;
+    b.setAttribute("aria-label", dir === "prev" ? "이전 메뉴 보기" : "다음 메뉴 보기");
+    b.tabIndex = -1;
+    var s = document.createElement("span");
+    s.className = "icon icon--chevron-" + (dir === "prev" ? "left" : "right");
+    s.setAttribute("aria-hidden", "true");
+    b.appendChild(s);
+    return b;
+  }
+  var prev = makeChev("prev");
+  var next = makeChev("next");
+  scroller.appendChild(prev);
+  scroller.appendChild(next);
+
+  function update() {
+    var max = list.scrollWidth - list.clientWidth;
+    prev.classList.toggle("is-shown", list.scrollLeft > 4);
+    next.classList.toggle("is-shown", list.scrollLeft < max - 4);
+  }
+  function step(sign) {
+    list.scrollBy({ left: sign * Math.max(120, Math.round(list.clientWidth * 0.6)), behavior: "smooth" });
+  }
+  prev.addEventListener("click", function () { step(-1); });
+  next.addEventListener("click", function () { step(1); });
+  list.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+})();
