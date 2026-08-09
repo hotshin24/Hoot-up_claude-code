@@ -172,6 +172,8 @@ hr {
 .icon--download      { --icon-image: url("../svg/download.svg"); }
 .icon--chevron-right { --icon-image: url("../svg/chevron-right.svg"); }
 .icon--chevron-down  { --icon-image: url("../svg/chevron-down.svg"); }
+.icon--person        { --icon-image: url("../svg/person.svg"); }
+.icon--person-plus   { --icon-image: url("../svg/person-plus.svg"); }
 .icon--comment       { --icon-image: url("../svg/chat-left-quote.svg"); }
 .icon--caret-down     { --icon-image: url("../svg/caret-down-fill.svg"); }
 .icon--check          { --icon-image: url("../svg/check2-circle.svg"); }
@@ -587,6 +589,8 @@ hr {
 .user-menu__auth:hover {
   color: var(--color-brand-base);
 }
+/* 아이콘은 모바일(≤480)에서만 노출, 기본은 텍스트 라벨 */
+.user-menu__auth-icon { display: none; --icon-size: 22px; }
 .user-menu__auth--signup {
   background-color: var(--color-brand-base);
   color: var(--color-text-inverse);
@@ -9453,6 +9457,17 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .contract-doc { padding: 36px 22px; }
   .contract-parties { grid-template-columns: 1fr; }
 
-  /* 모바일: 유저메뉴 간격만 축소 (2줄 레이아웃·검색 전체폭은 ≤768 에서 이미 적용) */
+  /* 모바일: 유저메뉴 간격 축소 (2줄 레이아웃·검색 전체폭은 ≤768 에서 이미 적용) */
   .user-menu { gap: var(--space-2xs); }
+  /* 로고: 480 미만부터 폭에 맞춰 축소 (480에서 138 → 유지되며 부드럽게 감소, 로그인·회원가입 줄바꿈 방지) */
+  .site-header__logo img { width: clamp(104px, 29vw, 138px); height: auto; }
+  /* 로그인·회원가입: 아이콘 버튼으로 전환 (로그인=사람, 회원가입=사람+ 파란 원) */
+  /* 라벨은 시각적으로만 숨겨 스크린리더는 계속 읽도록 */
+  .user-menu__auth-label {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  .user-menu__auth-icon { display: inline-flex; }
+  .user-menu__auth { width: 38px; height: 38px; padding: 0; justify-content: center; }
+  .user-menu__auth--signup { border-radius: var(--radius-circle); }
 }
