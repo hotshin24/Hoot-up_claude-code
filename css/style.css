@@ -918,7 +918,7 @@ hr {
 .hero__title {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 0.28em;   /* LEVEL UP ↔ WEEK (기존 텍스트 공백 수준) */
   font-family: var(--font-display);
   font-size: var(--text-display-size);
   font-weight: var(--font-weight-extrabold);
@@ -927,6 +927,13 @@ hr {
 
 .hero__title-text {
   white-space: nowrap;
+}
+
+/* WEEK + 로켓 묶음 (WEEK ↔ 로켓 간격 유지) */
+.hero__title-tail {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .hero__title-accent {
@@ -9055,14 +9062,19 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
     margin-inline: 0;
   }
 
+  /* 히어로: offer 를 아래로 내리고 섹션 콘텐츠 가운데 정렬 */
   .hero__inner {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: var(--space-2xl);
   }
-
-  .hero__offer {
-    flex-basis: auto;
-  }
+  .hero__copy { flex-basis: auto; align-items: center; }
+  .hero__eyebrow { justify-content: center; flex-wrap: wrap; }
+  .hero__title { justify-content: center; }
+  .hero__offer { flex: 0 0 auto; align-items: center; }
+  .hero__discount { justify-content: center; }
+  .hero__discount-label { text-align: center; }
 
   .chart__body {
     grid-template-columns: 1fr;
@@ -9241,6 +9253,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* 약관·정책 링크: 태블릿부터 2열로 하나씩 배치 */
   .policy__list { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xs) var(--space-md); justify-items: start; }
   .policy__link { padding-inline: 0; }
+
+  /* 히어로 타이틀: WEEK + 로켓을 아랫줄로 (LEVEL UP / WEEK 🚀) */
+  .hero__title { flex-wrap: wrap; justify-content: center; }
+  .hero__title-tail { flex-basis: 100%; justify-content: center; }
 
   /* 문의 메일: 태블릿에서 3×1 배열(세로 스택) */
   .contact-mail { display: grid; grid-template-columns: 1fr; gap: var(--space-md); align-items: start; }
@@ -9490,6 +9506,16 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* 사업자 정보: 모바일에서 항목마다 1열·동일 간격(15px) */
   .company { gap: 15px; }
   .company__line { flex-direction: column; gap: 15px; }
+
+  /* 히어로: 모바일에서 폰트를 화면 폭에 맞게 축소 */
+  .hero__title { font-size: clamp(38px, 14vw, 62px); }
+  .hero__rocket { width: 30px; height: auto; }
+  .hero__subtitle { font-size: clamp(20px, 6vw, 26px); }
+  .hero__discount-rate { font-size: clamp(64px, 25vw, 104px); line-height: 1; }
+  .hero__discount-unit { font-size: 22px; }
+  .hero__discount-label { font-size: 15px; }
+  /* 패키지 버튼: 고정폭 → 내용에 맞춰(넘치지 않게) 폰트도 유연하게 */
+  .hero__package { width: auto; max-width: 100%; height: auto; padding: 10px 18px; font-size: clamp(14px, 4vw, 17px); }
   /* 문의 메일: 모바일에서는 1열 스택 */
   .contact-mail { grid-template-columns: 1fr; gap: var(--space-md); }
 
