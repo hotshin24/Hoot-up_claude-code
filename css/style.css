@@ -9105,10 +9105,11 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   }
 
   .magazine__list,
-  .desk__list,
-  .chart__list {
+  .desk__list {
     grid-template-columns: 1fr;
   }
+  /* 훗업 차트: 769~1280 구간은 3열(3×2) */
+  .chart__list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
   .countdown__clock {
     flex-wrap: wrap;
@@ -9236,7 +9237,15 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .pp-preview { position: static; }
 }
 
+/* 훗업 차트: 769~1060 구간은 2열(2×3). (1061~1280은 3열 유지) */
+@media (max-width: 1060px) {
+  .chart__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 @media (max-width: 768px) {
+  /* 훗업 차트: 768 이하는 다시 1열 */
+  .chart__list { grid-template-columns: 1fr; }
+
   /* 태블릿: 좌측 대분류 1열 · 우측 세부 1열 (나란히 배치) */
   .mega__inner {
     grid-template-columns: minmax(150px, 34%) minmax(0, 1fr);
@@ -9548,4 +9557,24 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .user-menu__auth-icon { display: inline-flex; }
   .user-menu__auth { width: 38px; height: 38px; padding: 0; justify-content: center; }
   .user-menu__auth--signup { border-radius: var(--radius-circle); }
+}
+
+/* ============================================================
+   초소형 모바일 (≤375) — 프로모 배너 반응형 · 차트 카드 세로 스택
+   ============================================================ */
+@media (max-width: 375px) {
+  /* 프로모 배너: 전체 폭에 맞게 — 배경 일러스트 축소·재배치, 여백·타이틀 축소 */
+  .promo {
+    padding: var(--space-xl);
+    background-size: 92px 92px, cover;
+    background-position: right 14px top 14px, center;
+  }
+  .promo__title { font-size: var(--text-h4-size); }
+  .promo__offer { flex-wrap: wrap; }
+  .promo__cta { margin-top: var(--space-xl); }
+
+  /* 훗업 차트 카드: 썸네일 위 · 정보 아래로 세로 스택 */
+  .course-card--horizontal { flex-direction: column; }
+  .course-card--horizontal .course-card__thumb { width: 100%; }
+  .course-card--horizontal .course-card__image { height: 180px; }
 }
