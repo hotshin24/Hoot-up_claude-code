@@ -9145,7 +9145,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .desk-catwrap { grid-template-columns: 1fr; gap: 32px; }
   .desk-filter { flex-direction: row; flex-wrap: wrap; gap: 24px 40px; }
   .course-list--slider .course-list__item {
-    flex-basis: calc((100% - var(--space-card-gap)) / 2);  /* 2개 노출 */
+    flex-basis: calc((100% - 2 * var(--space-card-gap)) / 3);  /* 3개 노출 (769~1280) */
   }
   .b2b .lp-hero-grid-wide { grid-template-columns: 1fr; }
   .b2b .b2b__pain-grid,
@@ -9313,7 +9313,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .best-rank__top, .best-rank__rest { grid-template-columns: 1fr; }
   .best-rank__head { flex-direction: column; align-items: flex-start; gap: 6px; }
   .course-list--slider .course-list__item {
-    flex-basis: calc((100% - var(--space-card-gap)) / 1.2); /* 약 1.2개 */
+    flex-basis: calc((100% - var(--space-card-gap)) / 2); /* 2개 노출 (481~768) */
   }
   .b2b__pad { padding-block: 72px; }
   .b2b .b2b__pain-list,
@@ -9510,6 +9510,20 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* 카테고리 바로가기: 모바일에서 2열 × 3행 + 라벨 폰트 유연 */
   .category__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .category__label { font-size: clamp(15px, 4.3vw, 18px); }
+
+  /* 슬라이더: 모바일은 다음 카드가 살짝 보이게 약 1.2개 노출 */
+  .course-list--slider .course-list__item {
+    flex-basis: calc((100% - var(--space-card-gap)) / 1.2);
+  }
+
+  /* 섹션 헤더: 제목 윗줄 · 더보기 링크 아랫줄(오른쪽 정렬 유지) */
+  .section-head { flex-direction: column; align-items: stretch; gap: var(--space-2xs); }
+  .section-head__more { align-self: flex-end; }
+
+  /* 캐러셀: chevron 을 카드 아래로, 카드 목록은 전체폭 차지 */
+  .collection__carousel { flex-wrap: wrap; justify-content: center; gap: var(--space-md) var(--space-2xl); }
+  .collection__carousel .course-list { order: 0; flex-basis: 100%; }
+  .collection__carousel .carousel-btn { order: 1; }
 
   /* 히어로: 모바일에서 폰트를 화면 폭에 맞게 축소 */
   .hero__title { font-size: clamp(38px, 14vw, 62px); }
