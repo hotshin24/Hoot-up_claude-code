@@ -392,49 +392,56 @@
   });
 })();
 
-/* ===== gnb 퀵링크 가로 스크롤 chevron (태블릿·모바일 ≤768) ===== */
+/* ===== 가로 스크롤 nav 양 끝 chevron (gnb 퀵링크 · course-nav, ≤768) ===== */
 (function () {
   "use strict";
+
+  function initScrollChev(list, prefix) {
+    if (!list) return;
+
+    // 리스트를 스크롤러로 감싸고 양 끝에 chevron 버튼 삽입
+    var scroller = document.createElement("div");
+    scroller.className = prefix + "__scroller";
+    list.parentNode.insertBefore(scroller, list);
+    scroller.appendChild(list);
+
+    function makeChev(dir) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = prefix + "__chev " + prefix + "__chev--" + dir;
+      b.setAttribute("aria-label", dir === "prev" ? "이전으로 스크롤" : "다음으로 스크롤");
+      b.tabIndex = -1;
+      var s = document.createElement("span");
+      s.className = "icon icon--chevron-" + (dir === "prev" ? "left" : "right");
+      s.setAttribute("aria-hidden", "true");
+      b.appendChild(s);
+      return b;
+    }
+    var prev = makeChev("prev");
+    var next = makeChev("next");
+    scroller.appendChild(prev);
+    scroller.appendChild(next);
+
+    function update() {
+      var max = list.scrollWidth - list.clientWidth;
+      prev.classList.toggle("is-shown", list.scrollLeft > 4);
+      next.classList.toggle("is-shown", list.scrollLeft < max - 4);
+    }
+    function step(sign) {
+      list.scrollBy({ left: sign * Math.max(120, Math.round(list.clientWidth * 0.6)), behavior: "smooth" });
+    }
+    prev.addEventListener("click", function () { step(-1); });
+    next.addEventListener("click", function () { step(1); });
+    list.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+
   var gnb = document.querySelector(".gnb");
-  var list = gnb && gnb.querySelector(".gnb__list");
-  if (!gnb || !list) return;
+  initScrollChev(gnb && gnb.querySelector(".gnb__list"), "gnb");
 
-  // 리스트를 스크롤러로 감싸고 양 끝에 chevron 버튼 삽입
-  var scroller = document.createElement("div");
-  scroller.className = "gnb__scroller";
-  list.parentNode.insertBefore(scroller, list);
-  scroller.appendChild(list);
-
-  function makeChev(dir) {
-    var b = document.createElement("button");
-    b.type = "button";
-    b.className = "gnb__chev gnb__chev--" + dir;
-    b.setAttribute("aria-label", dir === "prev" ? "이전 메뉴 보기" : "다음 메뉴 보기");
-    b.tabIndex = -1;
-    var s = document.createElement("span");
-    s.className = "icon icon--chevron-" + (dir === "prev" ? "left" : "right");
-    s.setAttribute("aria-hidden", "true");
-    b.appendChild(s);
-    return b;
-  }
-  var prev = makeChev("prev");
-  var next = makeChev("next");
-  scroller.appendChild(prev);
-  scroller.appendChild(next);
-
-  function update() {
-    var max = list.scrollWidth - list.clientWidth;
-    prev.classList.toggle("is-shown", list.scrollLeft > 4);
-    next.classList.toggle("is-shown", list.scrollLeft < max - 4);
-  }
-  function step(sign) {
-    list.scrollBy({ left: sign * Math.max(120, Math.round(list.clientWidth * 0.6)), behavior: "smooth" });
-  }
-  prev.addEventListener("click", function () { step(-1); });
-  next.addEventListener("click", function () { step(1); });
-  list.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
-  update();
+  var cnav = document.querySelector(".course-nav");
+  initScrollChev(cnav && cnav.querySelector(".course-nav__list"), "course-nav");
 })();
 
 /* ===== 카테고리 버튼 접기 (≤1280: 첫 행만 노출, 우측 원형 chevron 으로 펼침)
@@ -543,4 +550,59 @@
     });
   });
   if (!found) return;
+})();
+
+/* ===== 강의 상세 nav 스크롤스파이 (클릭·스크롤에 따라 is-current 이동, 데스크톱~모바일 공통) ===== */
+(function () {
+  "use strict";
+
+  var nav = document.querySelector(".course-nav");
+  if (!nav) return;
+  var links = Array.prototype.slice.call(nav.querySelectorAll(".course-nav__link"));
+  var sections = [];
+  links.forEach(function (l) {
+    var href = l.getAttribute("href") || "";
+    if (href.charAt(0) !== "#") return;
+    var sec = document.getElementById(href.slice(1));
+    if (sec) sections.push(sec);
+  });
+  if (!sections.length) return;
+
+  function setCurrent(id) {
+    links.forEach(function (l) {
+      l.classList.toggle("is-current", (l.getAttribute("href") || "") === "#" + id);
+    });
+  }
+
+  // 감지선: 섹션이 스티키 nav 아래(scroll-margin-top 위치)에 닿는 지점
+  function detectLine() {
+    var smt = parseFloat(getComputedStyle(sections[0]).scrollMarginTop) || 70;
+    return smt + 6;
+  }
+
+  var current = null;
+  function onScroll() {
+    var line = detectLine();
+    var pick = sections[0].id;
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].getBoundingClientRect().top <= line) pick = sections[i].id;
+      else break;
+    }
+    if (pick !== current) { current = pick; setCurrent(pick); }
+  }
+
+  // 클릭 즉시 반영 (스크롤 완료 전에도 표시가 해당 탭으로 이동)
+  nav.addEventListener("click", function (e) {
+    var l = e.target.closest ? e.target.closest(".course-nav__link") : null;
+    if (!l) return;
+    var href = l.getAttribute("href") || "";
+    if (href.charAt(0) === "#" && document.getElementById(href.slice(1))) {
+      current = href.slice(1);
+      setCurrent(current);
+    }
+  });
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
 })();

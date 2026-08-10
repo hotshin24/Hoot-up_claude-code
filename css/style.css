@@ -2493,6 +2493,18 @@ main:has(> .lp-cta:last-child) { margin-bottom: 0; }
   color: var(--color-neutral-darker);
   border-bottom-color: var(--color-neutral-darker);
 }
+/* 가로 스크롤러 + 양 끝 chevron (JS 주입, ≤768 에서만 노출) */
+.course-nav__scroller { position: relative; }
+.course-nav__chev {
+  display: none; position: absolute; top: 0; bottom: 0; z-index: 2;
+  width: 42px; padding: 0; border: 0; cursor: pointer;
+  align-items: center; color: var(--color-neutral-darker); --icon-size: 16px;
+}
+.course-nav__chev--prev { left: 0; justify-content: flex-start;
+  background: linear-gradient(to right, var(--color-surface-page) 58%, transparent); }
+.course-nav__chev--next { right: 0; justify-content: flex-end;
+  background: linear-gradient(to left, var(--color-surface-page) 58%, transparent); }
+.course-nav__chev:hover { color: var(--color-brand-base); }
 
 /* ---------- 섹션 공통 ---------- */
 .course-section {
@@ -9136,7 +9148,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .course-aside > * { flex: 1 1 320px; }
   .course-hero__inner { align-items: center; }
   .course-hero__illust { width: 300px; height: 300px; }
-  .mentor-courses__list { grid-template-columns: repeat(2, 1fr); }
+  .mentor-courses__list { grid-template-columns: repeat(3, 1fr); }
   .mag-cover { grid-template-columns: 1fr; gap: 28px; }
   .mag-picks { grid-template-columns: 1fr; }
   .mag-classes__list { grid-template-columns: 1fr; }
@@ -9320,17 +9332,27 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .course-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .course-hero__inner { flex-direction: column; align-items: flex-start; }
+  .course-hero__inner { flex-direction: column; align-items: center; }
   .course-hero__illust { align-self: center; }
-  .course-nav__list { overflow-x: auto; }
+  /* 인트로 콘텐츠(브랜드·타이틀·태그·CTA) 가운데 정렬 */
+  .course-hero__intro { align-items: center; text-align: center; }
+  .course-hero__titles { align-items: center; }
+  .course-hero__tags { justify-content: center; }
+  .course-hero__cta { align-self: center; }
+  .course-nav__list { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .course-nav__list::-webkit-scrollbar { display: none; }
   .course-nav__link { white-space: nowrap; }
   .benefit__item, .benefit__item--reverse,
   .practice__item { grid-template-columns: 1fr; }
   .benefit__item--reverse .benefit__media,
   .practice__item--reverse .practice__body { order: 0; }
-  .worry__bubbles, .beforeafter__cols,
-  .review-group__list, .mentor-courses__list { grid-template-columns: 1fr; }
+  .worry__bubbles,
+  .review-group__list { grid-template-columns: 1fr; }
+  /* 멘토의 다른 강의: 481~768 은 2열 (≤480 은 1열) */
+  .mentor-courses__list { grid-template-columns: repeat(2, 1fr); }
   .mentor-profile { flex-direction: column; }
+  /* 세로 배치에선 미리보기 카드를 300px 고정 대신 콘텐츠 높이로 — stats·블로그 버튼 잘림 방지 */
+  .mentor-profile__preview { flex: none; }
   .section-band { padding: var(--space-md); }
   .practice-block { padding: var(--space-2xl) var(--space-md); }
   .mag-classes { padding: 24px 20px; }
@@ -9544,11 +9566,25 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .gnb__link { white-space: nowrap; flex-shrink: 0; padding-inline: var(--space-3xs); }
   /* 스크롤 가능 방향에만 chevron 노출 (is-shown 은 JS 가 토글) */
   .gnb__chev.is-shown { display: flex; }
+  .course-nav__chev.is-shown { display: flex; }
 }
 
 @media (max-width: 480px) {
   /* 카테고리 강의 목록: 모바일은 1열 (481~768=2열, 769~1280=3열) */
   .course-grid { grid-template-columns: 1fr; }
+
+  /* 강의 소개 체크리스트: 모바일 1열 */
+  .checklist { grid-template-columns: 1fr; }
+
+  /* Before & After: 모바일은 세로 1열 (수강 전 위 · 수강 후 아래) */
+  .beforeafter__cols { flex-direction: column; }
+
+  /* 커리큘럼: 모바일에선 챕터 메타(강수·시간)·강의 재생시간 숨김 */
+  .curriculum__chapter-meta,
+  .curriculum__lesson-time { display: none; }
+
+  /* 멘토의 다른 강의: 모바일 1열 */
+  .mentor-courses__list { grid-template-columns: 1fr; }
 
   /* 카드 썸네일 높이: 고정 160px이 초소형에서 안 줄던 문제 → 반응형 축소
      (46.5vw는 344px에서 정확히 160px라 그 위로는 그대로, 344 이하부터 비례 축소) */
