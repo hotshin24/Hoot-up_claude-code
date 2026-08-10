@@ -10,7 +10,7 @@
   var grid = document.querySelector('.course-grid');
   if (!grid) return;
   var items = Array.prototype.slice.call(grid.querySelectorAll('.course-grid__item'));
-  var buttons = Array.prototype.slice.call(nav.querySelectorAll('.class-filter__btn'));
+  var buttons = Array.prototype.slice.call(nav.querySelectorAll('.chip'));
 
   var pager = document.querySelector('[data-client-pager]');
   var PAGE_SIZE = pager ? (parseInt(pager.getAttribute('data-page-size'), 10) || 16) : Infinity;
@@ -79,14 +79,14 @@
 
   // 카테고리 필터
   nav.addEventListener('click', function (e) {
-    var btn = e.target.closest ? e.target.closest('.class-filter__btn') : null;
+    var btn = e.target.closest ? e.target.closest('.chip') : null;
     if (!btn) return;
     filter = btn.getAttribute('data-filter');
     page = 1;
     shown = INITIAL;
     buttons.forEach(function (b) {
       var on = b === btn;
-      b.classList.toggle('is-active', on);
+      b.classList.toggle('chip--active', on);
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
     render();

@@ -436,3 +436,111 @@
   window.addEventListener("resize", update);
   update();
 })();
+
+/* ===== 카테고리 버튼 접기 (≤1280: 첫 행만 노출, 우측 원형 chevron 으로 펼침)
+   세부 카테고리(.subcat .chip-list) · 대분류 필터(.class-filter__list) 공용 ===== */
+(function () {
+  "use strict";
+
+  // [호스트(=position 기준·토글 삽입 위치), 리스트, 버튼 안 항목, aria 라벨]
+  var TARGETS = [
+    { host: ".subcat nav", list: ".chip-list", item: ".chip", label: "세부 카테고리 모두 보기" },
+    { host: ".class-filter", list: ".class-filter__list", item: ".chip", label: "카테고리 모두 보기" }
+  ];
+  var mq = window.matchMedia("(max-width: 1280px)");
+
+  function initHost(host, cfg) {
+    var list = host.querySelector(cfg.list);
+    if (!list) return;
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "chipfilter-toggle";
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-label", cfg.label);
+    var ic = document.createElement("span");
+    ic.className = "icon icon--chevron-down";
+    ic.setAttribute("aria-hidden", "true");
+    btn.appendChild(ic);
+    host.appendChild(btn);
+
+    var expanded = false;
+
+    function items() { return list.querySelectorAll(cfg.item); }
+    function firstRowBottom() {
+      var it = items();
+      if (!it.length) return 0;
+      return Math.round(it[0].getBoundingClientRect().bottom - list.getBoundingClientRect().top);
+    }
+    function isMultiRow() {
+      var it = items();
+      if (it.length < 2) return false;
+      var top0 = it[0].getBoundingClientRect().top;
+      for (var i = 1; i < it.length; i++) {
+        if (it[i].getBoundingClientRect().top > top0 + 4) return true;
+      }
+      return false;
+    }
+    function placeToggle() {
+      // chevron 을 첫 행 중앙에 정렬 (호스트별 상단 패딩 차이를 자동 보정)
+      var it = items();
+      if (!it.length) return;
+      var r = it[0].getBoundingClientRect();
+      var hostTop = host.getBoundingClientRect().top;
+      btn.style.top = Math.round((r.top - hostTop) + (r.height - 38) / 2) + "px";
+    }
+    function apply() {
+      // 자연 상태로 되돌려 행 수/첫 행 높이를 측정
+      list.style.maxHeight = "";
+      list.style.overflow = "";
+      list.style.marginBottom = "";
+      if (!mq.matches || !isMultiRow()) {
+        host.classList.remove("is-chipfilter-collapsible", "is-chipfilter-expanded");
+        btn.setAttribute("aria-expanded", "false");
+        return;
+      }
+      host.classList.add("is-chipfilter-collapsible");
+      placeToggle();
+      if (expanded) {
+        host.classList.add("is-chipfilter-expanded");
+        btn.setAttribute("aria-expanded", "true");
+        // 펼침: 높이 제한 없음 (자연 높이)
+      } else {
+        host.classList.remove("is-chipfilter-expanded");
+        btn.setAttribute("aria-expanded", "false");
+        // 첫 행에서 클립하되, 리스트 자체의 하단 패딩만큼 margin 으로 보정해
+        // 아래 경계선과의 간격을 접힘 상태에서도 유지 (호스트에 패딩이 있으면 0 → 보정 불필요)
+        var padBottom = parseFloat(getComputedStyle(list).paddingBottom) || 0;
+        list.style.maxHeight = firstRowBottom() + "px";
+        list.style.overflow = "hidden";
+        list.style.marginBottom = padBottom + "px";
+      }
+    }
+
+    btn.addEventListener("click", function () {
+      expanded = !expanded;
+      apply();
+    });
+    var t;
+    window.addEventListener("resize", function () {
+      clearTimeout(t);
+      t = setTimeout(apply, 120);
+    });
+    window.addEventListener("load", apply);
+    if (mq.addEventListener) {
+      mq.addEventListener("change", function () { expanded = false; apply(); });
+    } else if (mq.addListener) {
+      mq.addListener(function () { expanded = false; apply(); });
+    }
+    apply();
+  }
+
+  var found = false;
+  TARGETS.forEach(function (cfg) {
+    Array.prototype.forEach.call(document.querySelectorAll(cfg.host), function (host) {
+      found = true;
+      initHost(host, cfg);
+    });
+  });
+  if (!found) return;
+})();
