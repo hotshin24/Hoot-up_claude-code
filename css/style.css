@@ -2271,11 +2271,8 @@ main:has(> .lp-cta:last-child) { margin-bottom: 0; }
 .is-chipfilter-expanded > .chipfilter-toggle .icon { transform: rotate(180deg); }
 
 /* --- 필터바 --- */
-.filter-bar {
-  display: flex;
-  align-items: center;
-  gap: 19px;
-}
+/* 목록 상단 할인 필터 칩(얼리버드/이벤트): 사각에 가까운 라운드 */
+.filter-bar__chips .chip { border-radius: var(--radius-sm); }
 
 /* --- 강의 그리드 --- */
 .course-grid {
