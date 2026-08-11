@@ -2306,6 +2306,8 @@ main:has(> .lp-cta:last-child) { margin-bottom: 0; }
   padding-inline: var(--space-xs);
   line-height: var(--text-body-leading);
 }
+/* hidden 속성이 display:inline-flex 를 이기도록 (모바일 페이저 5개 노출 JS 용) */
+.pager__num[hidden] { display: none; }
 
 .pager__num:hover {
   background-color: var(--color-neutral-dark);
@@ -9203,7 +9205,17 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .desk-article { max-width: none; }
   .desk-mostread__grid { grid-template-columns: repeat(2, 1fr); }
   .desk-catwrap { grid-template-columns: 1fr; gap: 32px; }
-  .desk-filter { flex-direction: row; flex-wrap: wrap; gap: 24px 40px; }
+  /* 필터가 전체폭으로 오는 구간: 섹션은 왼쪽, 기간(위)·기자(아래)를 오른쪽에 세로로 */
+  .desk-filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 40px;
+    align-items: start;
+  }
+  .desk-filter__group:nth-child(1) { grid-row: 1 / 3; }   /* 섹션: 왼쪽 두 행 span → 기간/기자가 오른쪽 위·아래 */
+  /* 기자 목록: 2×2 배치 (아래 행 구분선 제거) */
+  .desk-filter__group:nth-child(3) ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; }
+  .desk-filter__group:nth-child(3) li:nth-last-child(2) .desk-filter__reporter { border-bottom: 0; }
   .course-list--slider .course-list__item {
     flex-basis: calc((100% - 2 * var(--space-card-gap)) / 3);  /* 3개 노출 (769~1280) */
   }
@@ -9331,6 +9343,13 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
   /* 데스크 aside: 모바일은 브리핑 블록도 다시 1열 */
   .desk-side { grid-template-columns: minmax(0, 1fr); }
+
+  /* 기사 필터: 모바일은 세 그룹 모두 1열 세로 스택 */
+  .desk-filter { grid-template-columns: 1fr; }
+  .desk-filter__group:nth-child(1) { grid-row: auto; }
+  /* 기자 목록도 1열 복귀 + 구분선 복원 */
+  .desk-filter__group:nth-child(3) ul { grid-template-columns: 1fr; }
+  .desk-filter__group:nth-child(3) li:nth-last-child(2) .desk-filter__reporter { border-bottom: 1px solid rgb(0 0 0 / 0.08); }
 
   /* 데스크 카테고리 nav: 줄바꿈 대신 가로 스크롤 + 양 끝 chevron */
   .desk-nav__list { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }

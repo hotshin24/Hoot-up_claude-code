@@ -609,3 +609,36 @@
   window.addEventListener("resize", onScroll);
   onScroll();
 })();
+
+/* ===== 데스크 목록 페이저: 모바일(≤768)은 활성 페이지 중심 5개만 노출 ===== */
+(function () {
+  "use strict";
+
+  var pager = document.querySelector(".desk-page .pager");
+  if (!pager) return;
+  var nums = Array.prototype.slice.call(pager.querySelectorAll(".pager__num"));
+  if (nums.length <= 5) return;
+
+  var mq = window.matchMedia("(max-width: 768px)");
+  var WINDOW = 5, HALF = 2;
+
+  var activeIdx = 0;
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i].classList.contains("pager__num--active")) { activeIdx = i; break; }
+  }
+
+  function apply() {
+    if (!mq.matches) {
+      nums.forEach(function (n) { n.hidden = false; });
+      return;
+    }
+    // 활성 중심 5개 창(양 끝에서 클램프)
+    var start = Math.max(0, Math.min(activeIdx - HALF, nums.length - WINDOW));
+    nums.forEach(function (n, idx) { n.hidden = !(idx >= start && idx < start + WINDOW); });
+  }
+
+  if (mq.addEventListener) mq.addEventListener("change", apply);
+  else if (mq.addListener) mq.addListener(apply);
+  window.addEventListener("resize", apply);
+  apply();
+})();
