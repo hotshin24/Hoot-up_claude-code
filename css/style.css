@@ -9638,6 +9638,11 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 @media (max-width: 480px) {
+  /* 공지 카테고리 필터: 480 이하 chevron 접기 — 우측에 chevron 자리 확보(칩 접기 공용).
+     접힘 시 리스트를 첫 행에서 클립하므로 하단 패딩+경계선을 host 로 옮겨(대분류 .class-filter 와 동일 구조)
+     버튼/첫 행 아래 간격을 접힘 상태에서도 유지 (faq 의 hfaq__filter 와 동일 처리) */
+  .notice .notice__filter { padding-bottom: 23px; border-bottom: 1px solid var(--color-neutral-lighter); }
+  .notice .notice__filter-list { padding-right: 50px; padding-bottom: 0; border-bottom: none; }
   /* 크리에이터 지원: 카드·스텝·FAQ 는 480 이하 1열 (481~768 은 2열) */
   .creator-apply .creator-apply__cards,
   .creator-apply .creator-apply__steps { grid-template-columns: minmax(0, 1fr); }

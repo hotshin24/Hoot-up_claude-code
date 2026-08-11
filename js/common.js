@@ -457,7 +457,8 @@
     { host: ".subcat nav", list: ".chip-list", item: ".chip", label: "세부 카테고리 모두 보기" },
     { host: ".class-filter", list: ".class-filter__list", item: ".chip", label: "카테고리 모두 보기" },
     { host: ".mag-cats", list: ".mag-cats__list", item: ".mag-chip", label: "매거진 카테고리 모두 보기" },
-    { host: ".hfaq__filter", list: ".hfaq__filter-list", item: ".hfaq__tab", label: "FAQ 카테고리 모두 보기", mq: "(max-width: 768px)" }
+    { host: ".hfaq__filter", list: ".hfaq__filter-list", item: ".hfaq__tab", label: "FAQ 카테고리 모두 보기", mq: "(max-width: 768px)" },
+    { host: ".notice__filter", list: ".notice__filter-list", item: ".notice__filter-btn", label: "공지 카테고리 모두 보기", mq: "(max-width: 480px)" }
   ];
   var defaultMq = window.matchMedia("(max-width: 1280px)");
 
