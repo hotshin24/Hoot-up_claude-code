@@ -17,21 +17,7 @@
 
   <script src="js/common.js?v=1" defer></script>
   <script src="js/subscribe-modal.js" defer></script>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var form = document.querySelector('.desk-morning__form');
-    if (!form) return;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault(); // 백엔드 없음 → 전송 대신 데모 피드백
-      var input = form.querySelector('.desk-morning__input');
-      var btn = form.querySelector('.desk-morning__btn');
-      var done = form.querySelector('.desk-morning__done');
-      if (input) input.style.display = 'none';
-      if (btn) btn.style.display = 'none';
-      if (done) done.hidden = false;
-    });
-  });
-  </script>
+  <script src="js/desk-morning.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">본문 바로가기</a>
@@ -330,7 +316,7 @@
         </section>
         <section class="desk-morning">
           <p class="desk-morning__eyebrow">MORNING BRIEF</p>
-          <p class="desk-morning__title">매일 아침 6시, 밤에 배우는 사람을 위한 다섯 줄</p>
+          <h2 class="desk-morning__title">매일 아침 6시, 밤에 배우는 사람을 위한 다섯 줄</h2>
           <form class="desk-morning__form" action="#">
             <label class="a11y-hidden" for="desk-email">이메일 주소</label>
             <input class="desk-morning__input" id="desk-email" type="email" name="email" placeholder="이메일 주소" autocomplete="email" required>

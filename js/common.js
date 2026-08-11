@@ -442,6 +442,9 @@
 
   var cnav = document.querySelector(".course-nav");
   initScrollChev(cnav && cnav.querySelector(".course-nav__list"), "course-nav");
+
+  var dnav = document.querySelector(".desk-nav");
+  initScrollChev(dnav && dnav.querySelector(".desk-nav__list"), "desk-nav");
 })();
 
 /* ===== 카테고리 버튼 접기 (≤1280: 첫 행만 노출, 우측 원형 chevron 으로 펼침)

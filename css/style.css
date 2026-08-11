@@ -4040,6 +4040,18 @@ main:has(> .lp-cta:last-child) { margin-bottom: 0; }
 .desk-nav__link:hover { color: var(--desk-ink); }
 .desk-nav__link.is-active { color: var(--desk-ink); font-weight: var(--font-weight-bold); }
 .desk-nav__count { flex-shrink: 0; font-size: 12.5px; color: var(--desk-muted); }
+/* 가로 스크롤러 + 양 끝 chevron (JS 주입, ≤768 노출) */
+.desk-nav__scroller { position: relative; flex: 1; min-width: 0; display: flex; }
+.desk-nav__chev {
+  display: none; position: absolute; top: 0; bottom: 0; z-index: 2;
+  width: 42px; padding: 0; border: 0; cursor: pointer;
+  align-items: center; color: var(--desk-ink); --icon-size: 16px; background: transparent;
+}
+.desk-nav__chev--prev { left: 0; justify-content: flex-start;
+  background: linear-gradient(to right, #fff 58%, transparent); }
+.desk-nav__chev--next { right: 0; justify-content: flex-end;
+  background: linear-gradient(to left, #fff 58%, transparent); }
+.desk-nav__chev:hover { color: var(--color-brand-base); }
 
 /* ---------- 상단 2단 (피처 + 사이드) ---------- */
 .desk-top {
@@ -9176,9 +9188,16 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .mentor-featured__media { width: 100%; }
   .mentor-featured__title { font-size: 26px; }
   .mentor-posts__grid { grid-template-columns: repeat(2, 1fr); }
-  .desk-top { grid-template-columns: 1fr; }
+  /* minmax(0,1fr): 뉴스레터 폼 등 넓은 min-content 가 단일 컬럼을 밀어 우측 패딩을 먹던 문제 방지 */
+  .desk-top { grid-template-columns: minmax(0, 1fr); }
   .desk-feature { border-right: 0; padding-right: 0; }
-  .desk-side { padding-left: 0; border-top: 1px solid var(--desk-line); }
+  /* aside 가 전체폭으로 내려오는 구간: 브리핑 2블록을 좌·우 2열, 모닝 브리핑은 전체폭 */
+  .desk-side {
+    padding-left: 0; border-top: 1px solid var(--desk-line);
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 32px; align-items: start;
+  }
+  .desk-side__block { min-width: 0; }
+  .desk-morning { grid-column: 1 / -1; }
   .desk-feature__body { columns: 2; }
   .desk-artwrap { grid-template-columns: 1fr; gap: var(--space-2xl); }
   .desk-article { max-width: none; }
@@ -9309,6 +9328,16 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 @media (max-width: 768px) {
   /* 훗업 차트: 768 이하는 다시 1열 */
   .chart__list { grid-template-columns: 1fr; }
+
+  /* 데스크 aside: 모바일은 브리핑 블록도 다시 1열 */
+  .desk-side { grid-template-columns: minmax(0, 1fr); }
+
+  /* 데스크 카테고리 nav: 줄바꿈 대신 가로 스크롤 + 양 끝 chevron */
+  .desk-nav__list { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .desk-nav__list::-webkit-scrollbar { display: none; }
+  .desk-nav__list > li { flex-shrink: 0; }
+  .desk-nav__link { white-space: nowrap; }
+  .desk-nav__chev.is-shown { display: flex; }
 
   /* 브랜드 히어로: 모바일에선 업비 마스코트 숨기고 텍스트 단독(1열) */
   .brand-story .brand-hero__grid-2 { display: none; }
@@ -9631,6 +9660,14 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
   /* 브랜드 마스코트 카드: 초소형은 1열 */
   .brand-story .brand-mascot__list { grid-template-columns: 1fr; }
+
+  /* 데스크 카테고리 nav: 업데이트 건수를 리스트 아래 행으로 · 오른쪽 정렬 */
+  .desk-nav { flex-wrap: wrap; }
+  .desk-nav__count { flex-basis: 100%; text-align: right; }
+
+  /* 작은 피처 카드: 가로(텍스트·이미지) → 세로 스택(이미지 위 · 텍스트 아래) */
+  .desk-feature-sm { flex-direction: column; gap: 12px; align-items: stretch; }
+  .desk-feature-sm__thumb { order: -1; width: 100%; height: 180px; }
 
   /* 브랜드 네임(이름 유래 2열) → 모바일 1열 */
   .brand-story .brand-name__grid { grid-template-columns: 1fr; }
