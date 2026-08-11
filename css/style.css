@@ -9205,11 +9205,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .subscribe .subscribe__summary { grid-template-columns: 1fr; }
   .subscribe .subscribe__plan-perks { grid-template-columns: 1fr; }
   /* FAQ(lp-faq-list) ≤1280: 2열 페이지 / 1열 페이지 (여러 페이지 공유) */
-  .subscribe .lp-faq-list,
-  .creator-apply .lp-faq-list,
-  .creator-studio .lp-faq-list,
-  .settlement .lp-faq-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .mentor .lp-faq-list { grid-template-columns: minmax(0, 1fr); }
+  /* FAQ(lp-faq-list) ≤1280: 사용 페이지 모두 2열 (하위 구간은 페이지별로 1열) */
+  .lp-faq-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .creator-apply .creator-apply__before-head { grid-template-columns: 1fr; gap: var(--space-md); align-items: start; }
   .creator-apply .creator-apply__cards,
   .creator-apply .creator-apply__steps { grid-template-columns: repeat(2, 1fr); }
@@ -9506,9 +9503,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .settlement__pad { padding-block: 72px; }
   .settlement .settlement__stream { padding: 32px 24px; }
   .mentor__pad { padding-block: 72px; }
-  .mentor .mentor__prog-list,
-  .mentor .mentor__steps,
-  .mentor .mentor__foryou-list { grid-template-columns: 1fr; }
   .notice .notice__item-head { flex-wrap: wrap; gap: 8px 16px; }
   .notice .notice__item-title { flex-basis: 100%; order: 3; }
   .hfaq__pad { padding-block: 56px 72px; }
@@ -9641,14 +9635,19 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* 크리에이터 지원: 카드·스텝·FAQ 는 480 이하 1열 (481~768 은 2열) */
   .creator-apply .creator-apply__cards,
   .creator-apply .creator-apply__steps { grid-template-columns: minmax(0, 1fr); }
-  /* FAQ ≤480: 1열 (creator-apply·creator-studio·settlement 공유) */
+  /* FAQ ≤480: 1열 (creator-apply·creator-studio·settlement·mentor 공유) */
   .creator-apply .lp-faq-list,
   .creator-studio .lp-faq-list,
-  .settlement .lp-faq-list { grid-template-columns: minmax(0, 1fr); }
+  .settlement .lp-faq-list,
+  .mentor .lp-faq-list { grid-template-columns: minmax(0, 1fr); }
   /* 정산: 스트림·대시·스텝 목록은 480 이하 1열 (481~768 은 2열) */
   .settlement .settlement__stream-list,
   .settlement .settlement__dash-list,
   .settlement .settlement__steps { grid-template-columns: 1fr; }
+  /* 멘토: 프로그램·스텝·포유 목록은 480 이하 1열 (481~768 은 2열) */
+  .mentor .mentor__prog-list,
+  .mentor .mentor__steps,
+  .mentor .mentor__foryou-list { grid-template-columns: 1fr; }
   /* 크리에이터 스튜디오: 공간·스텝·정보 목록은 480 이하 1열 (481~768 은 2열) */
   .creator-studio .creator-studio__space-list,
   .creator-studio .creator-studio__steps,
