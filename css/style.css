@@ -4903,7 +4903,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .best-rank__rest {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));   /* 카드 min-content 아래로도 축소 (768까지 반응형) */
   gap: var(--space-lg);
   counter-reset: none;
 }
@@ -9038,6 +9038,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
    · 480px 이하 : 모바일
    ============================================================ */
 @media (max-width: 1280px) {
+  /* 베스트 랭킹 컴팩트 카드: 2열 유지 구간에서 썸네일을 줄여 body(가격 행)가 들어가도록 */
+  .rank-mini__thumb { width: 110px; }
   /* 사이트맵 그리드: 4열 → 2열 (≤480 에서 1열) */
   .sitemap-grid { grid-template-columns: repeat(2, 1fr); }
   /* 카드 넓어진 769~1280 구간: 하위 링크 목록을 2열로 (≤768 에서 1열 복귀) */
@@ -9660,6 +9662,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 @media (max-width: 480px) {
+  /* 베스트 랭킹 컴팩트 카드: 모바일은 위 이미지 / 아래 본문 (세로 배치)
+     → body 가 전체 폭을 써서 오른쪽 패딩 침범 없이 정상 배치 */
+  .rank-mini { flex-direction: column; }
+  .rank-mini__thumb { width: 100%; }
   /* 사이트맵 그리드: 모바일은 1열 */
   .sitemap-grid { grid-template-columns: 1fr; }
   /* 카테고리 강의 목록: 모바일은 1열 (481~768=2열, 769~1280=3열) */
