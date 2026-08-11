@@ -9231,7 +9231,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .terms .terms__layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .terms .terms__toc { position: static; }
   .terms .terms__title { font-size: 38px; }
-  .refund__steps { grid-template-columns: 1fr; }
+  /* .refund__steps 는 769~1280 에서 3열 유지 (base repeat(3,1fr) 상속) → ≤768 에서 1열 (아래 768 블록) */
   .business__contacts { grid-template-columns: 1fr 1fr; }
   .business__notices { grid-template-columns: 1fr; }
   .account-body { grid-template-columns: 1fr; }
@@ -9515,6 +9515,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .terms .terms__contact { padding: 28px; }
   .terms .terms__h2-title { font-size: 21px; }
   /* .refund__terms 는 481~768 에서 2열 유지 (base 2열 상속) → ≤480 에서만 1열 (아래 480 블록) */
+  /* 환불 신청 방법(refund__steps) ≤768 1열 (769~1280 은 base 3열) */
+  .refund__steps { grid-template-columns: minmax(0, 1fr); }
   .business__contacts { grid-template-columns: 1fr; }
   .business__row { grid-template-columns: 1fr; }
   .business__row dt { padding: 20px 24px 0; }
