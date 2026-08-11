@@ -9226,8 +9226,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .mentor .mentor__grow-head { grid-template-columns: 1fr; gap: var(--space-md); align-items: start; }
   .mentor .mentor__steps { grid-template-columns: repeat(2, 1fr); }
   .mentor .mentor__foryou-grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
-  .notice .notice__hero-grid { grid-template-columns: 1fr; }
-  .notice .notice__hero-mascot { justify-self: start; }
   .notice .notice__pinned-inner { flex-direction: column; align-items: flex-start; }
   .hfaq .hfaq__hero-grid { grid-template-columns: 1fr; }
   .hfaq .hfaq__hero-mascot { justify-self: start; }
@@ -9503,6 +9501,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .settlement__pad { padding-block: 72px; }
   .settlement .settlement__stream { padding: 32px 24px; }
   .mentor__pad { padding-block: 72px; }
+  /* 공지 히어로: brand-story 와 통일 — 768 이하는 1열 스택 + 마스코트 숨김 */
+  .notice .notice__hero-grid { grid-template-columns: 1fr; }
+  .notice .notice__hero-mascot { display: none; }
   .notice .notice__item-head { flex-wrap: wrap; gap: 8px 16px; }
   .notice .notice__item-title { flex-basis: 100%; order: 3; }
   .hfaq__pad { padding-block: 56px 72px; }
