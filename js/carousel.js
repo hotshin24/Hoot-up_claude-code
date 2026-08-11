@@ -41,6 +41,8 @@
     if (next) next.addEventListener('click', function () { go(1); });
     list.addEventListener('scroll', function () { reflect(list.scrollLeft); }, { passive: true });
     window.addEventListener('resize', function () { reflect(list.scrollLeft); });
+    // 이미지 로드 후 실제 폭이 확정되면 화살표 활성/비활성 상태를 다시 동기화
+    window.addEventListener('load', function () { reflect(list.scrollLeft); });
     reflect(0);
   }
 
@@ -49,5 +51,8 @@
   });
   document.querySelectorAll('.magazine__list').forEach(function (list) {
     init(list, list.closest('.magazine__carousel'), '.magazine__item');
+  });
+  document.querySelectorAll('.mag-classes__list').forEach(function (list) {
+    init(list, list.closest('.mag-classes__carousel'), 'li');
   });
 })();

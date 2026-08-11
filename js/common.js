@@ -455,7 +455,8 @@
   // [호스트(=position 기준·토글 삽입 위치), 리스트, 버튼 안 항목, aria 라벨]
   var TARGETS = [
     { host: ".subcat nav", list: ".chip-list", item: ".chip", label: "세부 카테고리 모두 보기" },
-    { host: ".class-filter", list: ".class-filter__list", item: ".chip", label: "카테고리 모두 보기" }
+    { host: ".class-filter", list: ".class-filter__list", item: ".chip", label: "카테고리 모두 보기" },
+    { host: ".mag-cats", list: ".mag-cats__list", item: ".mag-chip", label: "매거진 카테고리 모두 보기" }
   ];
   var mq = window.matchMedia("(max-width: 1280px)");
 

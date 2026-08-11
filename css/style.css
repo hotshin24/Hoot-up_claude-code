@@ -3258,7 +3258,7 @@ main:has(> .lp-cta:last-child) { margin-bottom: 0; }
 }
 .mag-topbar__meta { display: flex; align-items: center; gap: 12px; letter-spacing: 0.06em; }
 .mag-topbar__sep { color: var(--mag-line-3); }
-.mag-topbar__links { display: flex; gap: 26px; }
+.mag-topbar__links { display: flex; gap: 26px; font-weight: var(--font-weight-bold); }
 .mag-topbar__links a:hover { color: var(--color-brand-accent); }
 
 /* ---------- 마스트헤드 ---------- */
@@ -3325,6 +3325,9 @@ main:has(> .lp-cta:last-child) { margin-bottom: 0; }
   font-weight: var(--font-weight-bold);
 }
 .mag-chip--active:hover { color: var(--mag-bg); }
+/* 접기 chevron: 매거진 칩과 동일 톤(다크 배경 + 민트) */
+.mag-cats .chipfilter-toggle { border-color: var(--mag-line-2); color: var(--mag-text); }
+.mag-cats .chipfilter-toggle:hover { border-color: var(--color-brand-accent); color: var(--color-brand-accent); }
 
 /* ---------- 커버 스토리 ---------- */
 .mag-cover {
@@ -3385,7 +3388,10 @@ main:has(> .lp-cta:last-child) { margin-bottom: 0; }
 }
 .mag-cover__avatar { width: 40px; height: 40px; border-radius: 999px; object-fit: cover; }
 .mag-cover__more {
-  margin-left: auto;
+  display: block;
+  width: fit-content;
+  margin-top: var(--space-md);
+  margin-left: auto;   /* 오른쪽 정렬(자연 폭 유지) */
   color: var(--color-brand-accent);
   font-weight: var(--font-weight-bold);
   font-size: var(--text-body-sm-size);
@@ -3459,6 +3465,11 @@ main:has(> .lp-cta:last-child) { margin-bottom: 0; }
 .mag-classes__all:hover { color: var(--color-brand-accent); }
 .mag-classes__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); border-radius: var(--radius-md); }
 .mag-classes__list > li { border-radius: var(--radius-md); overflow: hidden; }
+/* 캐러셀 래퍼: 데스크톱은 화살표 숨김(그리드 3열 유지), ≤1280 에서 슬라이더로 전환 */
+.mag-classes__carousel { display: flex; align-items: center; gap: var(--space-xs); }
+.mag-classes__carousel > .mag-classes__list { flex: 1; min-width: 0; }
+.mag-classes__carousel > .carousel-btn { display: none; color: var(--mag-text); }
+.mag-classes__carousel > .carousel-btn:hover:not(:disabled) { color: var(--color-brand-accent); }
 /* 매거진 추천 클래스: 표준 course-card를 다크 패널 위 화이트 카드로 표시 */
 .mag-classes__list .course-card {
   background-color: var(--color-magazine-card);
@@ -9168,19 +9179,37 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   }
 
   /* 카테고리 버튼 접기: chevron 토글 기준(position)·첫 행 우측에 chevron 자리 확보
-     (세부 카테고리 .subcat nav · 대분류 필터 .class-filter 공용) */
+     (세부 카테고리 .subcat nav · 대분류 필터 .class-filter · 매거진 .mag-cats 공용) */
   .subcat nav,
-  .class-filter { position: relative; }
+  .class-filter,
+  .mag-cats { position: relative; }
   .subcat .chip-list,
-  .class-filter__list { padding-right: 50px; }
+  .class-filter__list,
+  .mag-cats__list { padding-right: 50px; }
   .course-aside { position: static; flex-direction: row; flex-wrap: wrap; }
   .course-aside > * { flex: 1 1 320px; }
   .course-hero__inner { align-items: center; }
   .course-hero__illust { width: 300px; height: 300px; }
   .mentor-courses__list { grid-template-columns: repeat(3, 1fr); }
-  .mag-cover { grid-template-columns: 1fr; gap: 28px; }
-  .mag-picks { grid-template-columns: 1fr; }
-  .mag-classes__list { grid-template-columns: 1fr; }
+  /* 커버 스토리: 769~1280 은 2×1(2열) 유지, gap 만 축소 */
+  .mag-cover { gap: 28px; }
+  .mag-classes__list {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: var(--space-2xs);
+    contain: paint;   /* 스크롤 오버플로우가 페이지(body) 가로스크롤로 새는 것 차단 */
+  }
+  .mag-classes__list::-webkit-scrollbar { display: none; }
+  .mag-classes__list > li {
+    flex: 0 0 calc((100% - var(--space-md)) / 2);   /* 반응형 2개 노출(매거진 태블릿과 동일) */
+    scroll-snap-align: start;
+  }
+  .mag-classes__carousel > .carousel-btn { display: flex; }
   .mag-grid { grid-template-columns: repeat(2, 1fr); }
   .mag-grid--cat { grid-template-columns: repeat(2, 1fr); }
   .mentor-classes__list { grid-template-columns: repeat(2, 1fr); }
@@ -9341,6 +9370,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* 훗업 차트: 768 이하는 다시 1열 */
   .chart__list { grid-template-columns: 1fr; }
 
+  /* 이번 호 픽: 768 이하는 1열 (769~1280 은 2열 유지) */
+  .mag-picks { grid-template-columns: 1fr; }
+
   /* 데스크 aside: 모바일은 브리핑 블록도 다시 1열 */
   .desk-side { grid-template-columns: minmax(0, 1fr); }
 
@@ -9350,6 +9382,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* 기자 목록도 1열 복귀 + 구분선 복원 */
   .desk-filter__group:nth-child(3) ul { grid-template-columns: 1fr; }
   .desk-filter__group:nth-child(3) li:nth-last-child(2) .desk-filter__reporter { border-bottom: 1px solid rgb(0 0 0 / 0.08); }
+
+  /* 매거진 커버 스토리: 모바일은 1열 */
+  .mag-cover { grid-template-columns: 1fr; }
 
   /* 데스크 카테고리 nav: 줄바꿈 대신 가로 스크롤 + 양 끝 chevron */
   .desk-nav__list { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
@@ -9738,6 +9773,21 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .magazine__carousel { flex-wrap: wrap; justify-content: center; gap: var(--space-md) var(--space-2xl); }
   .magazine__carousel > .magazine__list { order: 0; flex-basis: 100%; }
   .magazine__carousel > .carousel-btn { order: 1; }
+
+  /* 클래스 슬라이더: 화살표를 리스트 아래로 내림(매거진 모바일과 동일) */
+  .mag-classes__carousel { flex-wrap: wrap; justify-content: center; gap: var(--space-md) var(--space-2xl); }
+  .mag-classes__carousel > .mag-classes__list { order: 0; flex-basis: 100%; }
+  .mag-classes__carousel > .carousel-btn { order: 1; }
+  .mag-classes__list > li { flex-basis: 100%; }   /* 모바일: 카드 1개 노출 */
+  /* 헤더: 제목 위 / 전체보기 링크 아래로 세로 배치 */
+  .mag-classes__head { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .mag-classes__head .mag-classes__all { align-self: flex-end; }   /* 전체보기 링크는 오른쪽 정렬 */
+
+  /* 섹션 헤더: 제목 위 / 부제 아래로 세로 배치 */
+  .mag-head { flex-direction: column; align-items: flex-start; gap: 6px; }
+
+  /* 상단바 보조 메뉴: 3개 항목을 화면 전체 폭에 균등 배치 */
+  .mag-topbar__links { width: 100%; justify-content: space-between; gap: var(--space-xs); }
 
   /* 카운트다운 카드: 1열 3행 (copy / rate / package) */
   /* 좌우 패딩을 반응형으로 축소 — 고정 60px가 초소형에서 콘텐츠를 짜부라뜨리던 문제 해결
