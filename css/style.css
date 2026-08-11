@@ -21,8 +21,10 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  /* 루트 스크롤러: 넘치는 콘텐츠로 인한 가로 스크롤 방지 (세로 스크롤·sticky 영향 없음) */
-  overflow-x: hidden;
+  /* 넘치는 콘텐츠로 인한 가로 스크롤 방지.
+     hidden 은 루트를 스크롤 컨테이너로 만들어 모바일에서 링크 첫 탭이 삼켜지는(두 번 눌러야 이동)
+     문제를 유발하므로, 스크롤 컨테이너를 만들지 않는 clip 을 사용(body 와 동일 방식). */
+  overflow-x: clip;
 }
 
 body {
@@ -4686,7 +4688,7 @@ main:has(> .lp-cta:last-child) { margin-bottom: 0; }
 /* 카테고리/그룹 그리드 */
 .sitemap-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, 1fr);   /* 4열 · ≤1280 2열 · ≤480 1열 (표준 브레이크포인트 정렬) */
   gap: var(--space-md);
 }
 
@@ -9036,6 +9038,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
    · 480px 이하 : 모바일
    ============================================================ */
 @media (max-width: 1280px) {
+  /* 사이트맵 그리드: 4열 → 2열 (≤480 에서 1열) */
+  .sitemap-grid { grid-template-columns: repeat(2, 1fr); }
+  /* 카드 넓어진 769~1280 구간: 하위 링크 목록을 2열로 (≤768 에서 1열 복귀) */
+  .sitemap-cat__list { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--space-md); }
   /* 메가 세부 카테고리: 태블릿 가로(769~1280)부터 3열 → 2열 */
   .mega-sub__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   /* 컨테이너 밖으로 나가던 캐러셀 버튼을 안쪽으로 들인다 */
@@ -9313,6 +9319,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 @media (max-width: 768px) {
+  /* 사이트맵 하위 링크 목록: 768 이하는 다시 1열 */
+  .sitemap-cat__list { grid-template-columns: 1fr; }
   /* 훗업 차트: 768 이하는 다시 1열 */
   .chart__list { grid-template-columns: 1fr; }
 
@@ -9471,7 +9479,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .desk-mostread__grid { grid-template-columns: 1fr; }
   .desk-newsfeat { flex-direction: column-reverse; }
   .desk-newsfeat__thumb { width: 100%; height: 200px; }
-  .sitemap-grid { grid-template-columns: 1fr; }
   .best-rank__top, .best-rank__rest { grid-template-columns: 1fr; }
   .best-rank__head { flex-direction: column; align-items: flex-start; gap: 6px; }
   .course-list--slider .course-list__item {
@@ -9643,7 +9650,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
     gap: var(--space-sm);
     min-width: 0;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
   .gnb__list::-webkit-scrollbar { display: none; }
@@ -9654,6 +9660,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 @media (max-width: 480px) {
+  /* 사이트맵 그리드: 모바일은 1열 */
+  .sitemap-grid { grid-template-columns: 1fr; }
   /* 카테고리 강의 목록: 모바일은 1열 (481~768=2열, 769~1280=3열) */
   .course-grid { grid-template-columns: 1fr; }
 
