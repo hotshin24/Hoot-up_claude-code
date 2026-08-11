@@ -5509,8 +5509,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .subscribe .subscribe__plan-name { font-weight: var(--font-weight-bold); font-size: var(--text-h5-size); line-height: 22px; }
 .subscribe .subscribe__plan--monthly .subscribe__plan-name { color: var(--color-neutral-white); }
 .subscribe .subscribe__plan--annual .subscribe__plan-name { color: var(--color-neutral-darker); }
-.subscribe .subscribe__plan-price { display: flex; align-items: baseline; gap: 8px; }
-.subscribe .subscribe__plan-price strong { font-weight: var(--font-weight-bold); font-size: 40px; line-height: 40px; }
+.subscribe .subscribe__plan-price { display: flex; align-items: baseline; gap: 8px; white-space: nowrap; }
+.subscribe .subscribe__plan-price strong { font-weight: var(--font-weight-bold); font-size: clamp(26px, 9vw, 40px); line-height: 1.1; }
 .subscribe .subscribe__plan--monthly .subscribe__plan-price strong { color: var(--color-neutral-white); }
 .subscribe .subscribe__plan--annual .subscribe__plan-price strong { color: var(--color-neutral-darker); }
 .subscribe .subscribe__plan-unit { font-weight: var(--font-weight-regular); font-size: var(--text-body-size); line-height: 22px; }
@@ -9202,9 +9202,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .roadmap .roadmap__cat-head { grid-template-columns: 1fr; gap: var(--space-md); align-items: start; }
   .roadmap .roadmap__next-steps { grid-template-columns: 1fr; gap: 0; }
   .roadmap .roadmap__next-step { padding-top: 16px; padding-bottom: 14px; }
-  .subscribe .subscribe__summary,
-  .subscribe .subscribe__plans,
-  .subscribe .subscribe__forme-grid { grid-template-columns: 1fr; }
+  .subscribe .subscribe__summary { grid-template-columns: 1fr; }
   .subscribe .subscribe__plan-perks { grid-template-columns: 1fr; }
   .subscribe .lp-faq-list { grid-template-columns: 1fr 1fr; }
   .creator-apply .creator-apply__before-head { grid-template-columns: 1fr; gap: var(--space-md); align-items: start; }
@@ -9487,6 +9485,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .roadmap .roadmap__step-row { flex-wrap: wrap; gap: 4px 20px; }
   .roadmap .roadmap__step-note { width: 100%; text-align: left; padding-left: 94px; }
   .subscribe__pad { padding-block: 72px; }
+  /* 구독 플랜·포미 그리드: 768 이하는 1열 (769~1280 은 2열) */
+  .subscribe .subscribe__plans,
+  .subscribe .subscribe__forme-grid { grid-template-columns: 1fr; }
   .subscribe .lp-faq-list { grid-template-columns: 1fr; }
   .subscribe .subscribe__compare-head,
   .subscribe .subscribe__compare-row { flex-wrap: wrap; gap: 4px 16px; }
@@ -9652,6 +9653,14 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .roadmap .roadmap__step-note { padding-left: 0; }
   /* 로드맵 가격: 480 이하는 할인율(위) / 로드맵가(아래) 세로 배치 */
   .roadmap .roadmap__price-deal { flex-direction: column; align-items: flex-start; gap: 2px; }
+
+  /* 구독 플랜: 480 이하는 콘텐츠 가운데 정렬 + 카드가 컨테이너를 넘지 않게(패딩 축소·minmax) */
+  .subscribe .subscribe__plans { grid-template-columns: minmax(0, 1fr); }
+  .subscribe .subscribe__plan--monthly,
+  .subscribe .subscribe__plan--annual { padding: var(--space-xl) var(--space-md); }
+  .subscribe .subscribe__plan { text-align: center; align-items: center; }
+  .subscribe .subscribe__plan-price { justify-content: center; }
+  .subscribe .subscribe__plan .lp-btn { align-self: center; }
   /* 페스타 히어로: 좁은 폭에서 큰 좌우 패딩(60px)이 콘텐츠를 오른쪽 패딩으로 밀어내므로 축소 */
   .festa-hero__inner { padding: var(--space-2xl) var(--space-xl); }
   /* eyebrow(HOOT UP FESTA…) 가 안 줄어들어 오른쪽으로 넘치므로 줄바꿈 + 가운데 허용 */
