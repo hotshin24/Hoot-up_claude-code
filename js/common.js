@@ -456,13 +456,15 @@
   var TARGETS = [
     { host: ".subcat nav", list: ".chip-list", item: ".chip", label: "세부 카테고리 모두 보기" },
     { host: ".class-filter", list: ".class-filter__list", item: ".chip", label: "카테고리 모두 보기" },
-    { host: ".mag-cats", list: ".mag-cats__list", item: ".mag-chip", label: "매거진 카테고리 모두 보기" }
+    { host: ".mag-cats", list: ".mag-cats__list", item: ".mag-chip", label: "매거진 카테고리 모두 보기" },
+    { host: ".hfaq__filter", list: ".hfaq__filter-list", item: ".hfaq__tab", label: "FAQ 카테고리 모두 보기", mq: "(max-width: 768px)" }
   ];
-  var mq = window.matchMedia("(max-width: 1280px)");
+  var defaultMq = window.matchMedia("(max-width: 1280px)");
 
   function initHost(host, cfg) {
     var list = host.querySelector(cfg.list);
     if (!list) return;
+    var mq = cfg.mq ? window.matchMedia(cfg.mq) : defaultMq;
 
     var btn = document.createElement("button");
     btn.type = "button";
@@ -497,8 +499,11 @@
       var it = items();
       if (!it.length) return;
       var r = it[0].getBoundingClientRect();
-      var hostTop = host.getBoundingClientRect().top;
-      btn.style.top = Math.round((r.top - hostTop) + (r.height - 38) / 2) + "px";
+      var hr = host.getBoundingClientRect();
+      btn.style.top = Math.round((r.top - hr.top) + (r.height - 38) / 2) + "px";
+      // 리스트가 호스트보다 좁을 때(예: 풀폭 sticky nav 안의 l-container 리스트)
+      // chevron 을 리스트 우측 끝에 맞춤 (같은 폭이면 0)
+      btn.style.right = Math.round(hr.right - list.getBoundingClientRect().right) + "px";
     }
     function apply() {
       // 자연 상태로 되돌려 행 수/첫 행 높이를 측정

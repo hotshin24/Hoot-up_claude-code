@@ -5863,7 +5863,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .hfaq .hfaq__hero-content { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; }
 .hfaq .hfaq__hero-desc { max-width: 520px; color: var(--color-brand-light); font-size: 17px; line-height: 30px; }
 .hfaq .hfaq__search { display: flex; align-items: center; gap: 12px; width: min(520px, 100%); height: 56px; padding: 0 25px; background: rgb(255 255 255 / 0.1); border: 1px solid rgb(255 255 255 / 0.2); border-radius: var(--radius-pill); }
-.hfaq .hfaq__search-input { flex: 1 1 auto; min-width: 0; background: none; border: 0; outline: none; color: var(--color-neutral-white); font-family: inherit; font-size: 17px; }
+.hfaq .hfaq__search-input { flex: 1 1 0; min-width: 0; width: 0; background: none; border: 0; outline: none; color: var(--color-neutral-white); font-family: inherit; font-size: 17px; }
 .hfaq .hfaq__search-input::placeholder { color: var(--color-neutral-light); }
 .hfaq .hfaq__search-input { -webkit-appearance: none; appearance: none; }
 .hfaq .hfaq__search-input::-webkit-search-cancel-button,
@@ -9227,8 +9227,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .mentor .mentor__steps { grid-template-columns: repeat(2, 1fr); }
   .mentor .mentor__foryou-grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
   .notice .notice__pinned-inner { flex-direction: column; align-items: flex-start; }
-  .hfaq .hfaq__hero-grid { grid-template-columns: 1fr; }
-  .hfaq .hfaq__hero-mascot { justify-self: start; }
   .hfaq .hfaq__group { grid-template-columns: 1fr; gap: var(--space-md); }
   .terms .terms__layout { grid-template-columns: 1fr; gap: 32px; }
   .terms .terms__toc { position: static; }
@@ -9501,11 +9499,18 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .settlement__pad { padding-block: 72px; }
   .settlement .settlement__stream { padding: 32px 24px; }
   .mentor__pad { padding-block: 72px; }
-  /* 공지 히어로: brand-story 와 통일 — 768 이하는 1열 스택 + 마스코트 숨김 */
-  .notice .notice__hero-grid { grid-template-columns: 1fr; }
-  .notice .notice__hero-mascot { display: none; }
+  /* 공지·FAQ 히어로: brand-story 와 통일 — 768 이하는 1열 스택 + 마스코트 숨김 */
+  .notice .notice__hero-grid,
+  .hfaq .hfaq__hero-grid { grid-template-columns: 1fr; }
+  .notice .notice__hero-mascot,
+  .hfaq .hfaq__hero-mascot { display: none; }
   .notice .notice__item-head { flex-wrap: wrap; gap: 8px 16px; }
   .notice .notice__item-title { flex-basis: 100%; order: 3; }
+  /* FAQ 카테고리 필터: 768 이하 chevron 접기 — 우측에 chevron 자리 확보(칩 접기 공용).
+     접힘 시 리스트를 첫 행에서 클립하므로 하단 패딩+경계선을 host 로 옮겨(대분류 .class-filter 와 동일 구조)
+     버튼/첫 행 아래 간격을 접힘 상태에서도 유지 */
+  .hfaq .hfaq__filter { padding-bottom: 23px; border-bottom: 1px solid var(--color-neutral-lighter); }
+  .hfaq .hfaq__filter-list { padding-right: 50px; padding-bottom: 0; border-bottom: none; }
   .hfaq__pad { padding-block: 56px 72px; }
   .hfaq .hfaq__q-text span:last-child { font-size: var(--text-body-size); }
   .terms .terms__contact { padding: 28px; }
