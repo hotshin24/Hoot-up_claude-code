@@ -9228,10 +9228,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .mentor .mentor__foryou-grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
   .notice .notice__pinned-inner { flex-direction: column; align-items: flex-start; }
   .hfaq .hfaq__group { grid-template-columns: 1fr; gap: var(--space-md); }
-  .terms .terms__layout { grid-template-columns: 1fr; gap: 32px; }
+  .terms .terms__layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .terms .terms__toc { position: static; }
   .terms .terms__title { font-size: 38px; }
-  .refund__terms { grid-template-columns: 1fr 1fr; }
   .refund__steps { grid-template-columns: 1fr; }
   .business__contacts { grid-template-columns: 1fr 1fr; }
   .business__notices { grid-template-columns: 1fr; }
@@ -9515,7 +9514,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .hfaq .hfaq__q-text span:last-child { font-size: var(--text-body-size); }
   .terms .terms__contact { padding: 28px; }
   .terms .terms__h2-title { font-size: 21px; }
-  .refund__terms { grid-template-columns: 1fr; }
+  /* .refund__terms 는 481~768 에서 2열 유지 (base 2열 상속) → ≤480 에서만 1열 (아래 480 블록) */
   .business__contacts { grid-template-columns: 1fr; }
   .business__row { grid-template-columns: 1fr; }
   .business__row dt { padding: 20px 24px 0; }
@@ -9643,6 +9642,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
      버튼/첫 행 아래 간격을 접힘 상태에서도 유지 (faq 의 hfaq__filter 와 동일 처리) */
   .notice .notice__filter { padding-bottom: 23px; border-bottom: 1px solid var(--color-neutral-lighter); }
   .notice .notice__filter-list { padding-right: 50px; padding-bottom: 0; border-bottom: none; }
+  /* 환불 용어 안내: ≤480 1열 (481~768 은 2열) */
+  .refund__terms { grid-template-columns: minmax(0, 1fr); }
   /* 크리에이터 지원: 카드·스텝·FAQ 는 480 이하 1열 (481~768 은 2열) */
   .creator-apply .creator-apply__cards,
   .creator-apply .creator-apply__steps { grid-template-columns: minmax(0, 1fr); }
