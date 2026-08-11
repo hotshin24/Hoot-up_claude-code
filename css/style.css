@@ -4997,8 +4997,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .festa-hero__badge--outline { background: rgb(255 255 255 / 0.14); border: 1px solid rgb(255 255 255 / 0.28); }
 .festa-hero__cta { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-xs); }
 .festa-hero__btn { display: inline-flex; align-items: center; gap: var(--space-xs); padding: 17px var(--space-xl); border-radius: var(--radius-pill); font-size: var(--text-body-size); font-weight: var(--font-weight-bold); }
-.festa-hero__btn--solid { background: var(--color-neutral-white); color: var(--color-neutral-darker); box-shadow: var(--shadow-button); transition: transform var(--duration-base) var(--easing-standard); }
-.festa-hero__btn--solid:hover {color: var(--color-brand-base); }
 .festa-hero__btn--ghost { border: 1px solid rgb(255 255 255 / 0.5); color: var(--color-neutral-white); transition: background var(--duration-base) var(--easing-standard); }
 .festa-hero__btn--ghost:hover { background: rgb(255 255 255 / 0.14); color: var(--color-neutral-white); }
 .festa-hero__note { margin: var(--space-xs) 0 0; font-size: var(--text-body-sm-size); line-height: var(--text-body-sm-leading); color: rgb(255 255 255 / 0.6); }
@@ -5038,7 +5036,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .festa-cta__desc { margin: 0; font-size: var(--text-body-size); line-height: var(--text-body-leading); color: rgb(255 255 255 / 0.7); }
 .festa-cta__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm); margin-top: var(--space-xs); }
 .festa-cta__btn { display: inline-flex; align-items: center; gap: var(--space-xs); padding: 17px var(--space-xl); border-radius: var(--radius-pill); font-size: var(--text-body-size); font-weight: var(--font-weight-bold); transition: background var(--duration-base) var(--easing-standard); }
-.festa-cta__btn--solid { background: var(--color-brand-base); color: var(--color-neutral-white); }
 .festa-cta__btn--ghost { border: 1px solid rgb(255 255 255 / 0.4); color: var(--color-neutral-white); }
 .festa-cta__btn--ghost:hover { background: rgb(255 255 255 / 0.12); color: var(--color-neutral-white); }
 
