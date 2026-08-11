@@ -5189,7 +5189,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .lp-faq-item { background: var(--color-neutral-white); border-radius: var(--radius-md); border: 1px solid var(--color-neutral-lighter); padding: 33px 31px; }
 .lp-faq-q { color: var(--color-neutral-darker); display: flex; font-size: 19px; font-weight: var(--font-weight-bold); gap: var(--space-xs); line-height: 28px; }
 .lp-faq-a { color: var(--color-neutral-base); font-size: var(--text-body-size); line-height: 28px; margin-top: 14px; }
-.lp-faq-list { display: grid; align-items: stretch; grid-auto-rows: 1fr; gap: var(--space-md); grid-template-columns: repeat(3, 1fr); }
+.lp-faq-list { display: grid; align-items: stretch; grid-auto-rows: 1fr; gap: var(--space-md); grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .lp-faq-list-2 { display: grid; align-items: stretch; grid-auto-rows: 1fr; gap: var(--space-md); grid-template-columns: 1fr 1fr; }
 .lp-head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px; }
 .lp-title { color: var(--color-neutral-darker); font-family: var(--font-body); font-size: var(--text-h2-size); font-weight: var(--font-weight-bold); letter-spacing: -0.36px; line-height: 46.8px; }
@@ -9208,7 +9208,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .creator-apply .creator-apply__before-head { grid-template-columns: 1fr; gap: var(--space-md); align-items: start; }
   .creator-apply .creator-apply__cards,
   .creator-apply .creator-apply__steps { grid-template-columns: repeat(2, 1fr); }
-  .creator-apply .lp-faq-list { grid-template-columns: 1fr; }
+  .creator-apply .lp-faq-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .creator-apply .creator-apply__field-row { grid-template-columns: 1fr; }
   .creator-guide .creator-guide__step-grid { grid-template-columns: 1fr; gap: var(--space-xl); }
   .creator-guide .creator-guide__step-label { position: static; }
@@ -9496,8 +9496,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .subscribe .subscribe__cat-row { flex-wrap: wrap; gap: 4px 16px; }
   .subscribe .subscribe__cat-name { flex-basis: 100%; }
   .creator-apply__pad { padding-block: 72px; }
-  .creator-apply .creator-apply__cards,
-  .creator-apply .creator-apply__steps { grid-template-columns: 1fr; }
   .creator-apply .creator-apply__form { padding: 28px 22px; }
   .creator-apply .creator-apply__form-foot { justify-content: stretch; }
   .creator-apply .creator-apply__submit { width: 100%; }
@@ -9645,6 +9643,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 @media (max-width: 480px) {
+  /* 크리에이터 지원: 카드·스텝·FAQ 는 480 이하 1열 (481~768 은 2열) */
+  .creator-apply .creator-apply__cards,
+  .creator-apply .creator-apply__steps,
+  .creator-apply .lp-faq-list { grid-template-columns: minmax(0, 1fr); }
   /* 로드맵 how-list·cats·benefit-list: 480 이하는 1열 (481~1280 은 2열) */
   .roadmap .roadmap__how-list,
   .roadmap .roadmap__cats,
