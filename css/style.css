@@ -5031,30 +5031,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .festa-card__desc { margin: 0; font-size: var(--text-body-sm-size); line-height: var(--text-body-sm-leading); color: var(--color-neutral-base); }
 .festa-card__detail { margin: auto 0 0; padding-top: var(--space-sm); font-size: var(--text-body-sm-size); line-height: var(--text-body-sm-leading); font-weight: var(--font-weight-bold); color: var(--color-brand-base); }
 
-/* ===== 훗업 페스타 · 혜택(STACKED BENEFITS) + 참여방법(HOW TO JOIN) ===== */
-.festa-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); align-items: stretch; }
-.festa-col-title { margin: 0; font-size: var(--text-h3-size); line-height: var(--text-h3-leading); font-weight: var(--font-weight-extrabold); letter-spacing: -0.01em; }
-
-.festa-benefits__stack { display: flex; flex-direction: column; gap: var(--space-lg); padding: var(--space-2xl); border-radius: var(--radius-md); background: var(--color-brand-lighter); }
-.festa-benefits__eyebrow { font-family: var(--font-display); font-weight: var(--font-weight-black); font-size: 13px; letter-spacing: 0.14em; color: var(--color-brand-darker); }
-.festa-benefits__list { display: flex; flex-direction: column; gap: var(--space-sm); margin: 0; padding: 0; list-style: none; }
-.festa-benefit { display: grid; grid-template-columns: 32px 1fr; gap: var(--space-sm); align-items: start; padding: var(--space-sm) var(--space-md); border-radius: 15px; background: rgb(255 255 255 / 0.72); }
-.festa-benefit__num { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: var(--radius-circle); background: var(--color-brand-darker); color: var(--color-neutral-white); font-family: var(--font-display); font-weight: var(--font-weight-black); font-size: 15px; }
-.festa-benefit__body { display: flex; flex-direction: column; gap: var(--space-3xs); }
-.festa-benefit__title { font-size: var(--text-body-size); line-height: var(--text-body-leading); font-weight: var(--font-weight-bold); }
-.festa-benefit__desc { font-size: var(--text-body-sm-size); line-height: var(--text-body-sm-leading); color: var(--color-neutral-base); }
-.festa-benefits__foot { margin: auto 0 0; font-size: var(--text-body-sm-size); line-height: var(--text-body-sm-leading); font-weight: var(--font-weight-bold); color: var(--color-brand-darker); }
-
-.festa-join { display: flex; flex-direction: column; gap: var(--space-lg); padding: var(--space-2xl); border-radius: var(--radius-md); border: 1px solid var(--color-neutral-lighter); }
-.festa-join__eyebrow { font-family: var(--font-display); font-weight: var(--font-weight-black); font-size: 13px; letter-spacing: 0.14em; color: var(--color-brand-base); }
-.festa-join__steps { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
-.festa-join__step { display: grid; grid-template-columns: 60px 1fr; gap: var(--space-sm); align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--color-neutral-lighter); }
-.festa-join__num { font-family: var(--font-display); font-weight: var(--font-weight-black); font-size: 22px; color: var(--color-neutral-light); }
-.festa-join__text { font-size: var(--text-body-size); line-height: var(--text-body-leading); text-wrap: pretty; }
-.festa-join__notice { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
-.festa-join__notice-title { margin: 0; font-size: var(--text-caption-size); line-height: var(--text-caption-leading); font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
-.festa-join__notice-list { display: flex; flex-direction: column; gap: 6px; margin: 0; padding-left: 16px; font-size: var(--text-caption-size); line-height: var(--text-caption-leading); color: var(--color-neutral-light); }
-
 /* ===== 훗업 페스타 · 다크 CTA ===== */
 .festa-cta { display: flex; flex-direction: column; align-items: center; gap: var(--space-md); padding: var(--space-4xl) var(--space-2xl); border-radius: var(--radius-md); background: var(--color-neutral-darker); color: var(--color-neutral-white); text-align: center; }
 .festa-cta__eyebrow { font-family: var(--font-display); font-weight: var(--font-weight-black); font-size: 13px; letter-spacing: 0.16em; color: var(--color-brand-accent); }
@@ -9330,9 +9306,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 @media (max-width: 768px) {
-  /* 페스타 라인업: 481~768 은 2열 (≤480 에서 1열) · 페스타 혜택: 481 이하 1열 */
+  /* 페스타 라인업: 481~768 은 2열 (≤480 에서 1열) */
   .festa-lineup__grid { grid-template-columns: repeat(2, 1fr); }
-  .festa-benefits { grid-template-columns: 1fr; }
   /* 사이트맵 하위 링크 목록: 768 이하는 다시 1열 */
   .sitemap-cat__list { grid-template-columns: 1fr; }
   /* 훗업 차트: 768 이하는 다시 1열 */
@@ -9684,9 +9659,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .festa-hero__timer-num { font-size: clamp(22px, 8.5vw, 36px); }
   /* 페스타 라인업: 480 이하는 1열 */
   .festa-lineup__grid { grid-template-columns: 1fr; }
-  /* 페스타 혜택·참여 스텝: 480 이하는 숫자 위 / 텍스트 아래로 세로 스택 */
-  .festa-benefit,
-  .festa-join__step { grid-template-columns: 1fr; }
+  /* 라인업 헤더: 480 이하는 제목(div) 위 / 부제(p) 아래로 세로 배치 */
+  .festa-lineup__head { flex-direction: column; align-items: flex-start; gap: 8px; }
   /* 베스트 랭킹 컴팩트 카드: 모바일은 위 이미지 / 아래 본문 (세로 배치)
      → body 가 전체 폭을 써서 오른쪽 패딩 침범 없이 정상 배치 */
   .rank-mini { flex-direction: column; }
