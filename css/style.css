@@ -9559,7 +9559,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .pass-cta { flex-direction: column; align-items: flex-start; }
   .wish-head { flex-direction: column; align-items: stretch; gap: 16px; }
   .wish-head__actions { flex-wrap: wrap; }
-  .wish-item { flex-wrap: wrap; }
+  /* 위시 아이템: ≤768 썸네일(위·전폭) / info·가격·버튼(아래) */
+  .wish-item { flex-wrap: wrap; align-items: flex-start; }
+  .wish-item__thumb { order: -1; flex-basis: 100%; width: 100%; height: auto; aspect-ratio: 120 / 72; }
   .wish-item__price { width: auto; align-items: flex-start; }
   .wish-promo { flex-direction: column; align-items: flex-start; }
   .order-head { flex-direction: column; align-items: stretch; gap: 16px; }
@@ -9699,6 +9701,14 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .pass-sub__actions { flex-direction: column; align-items: stretch; }
   /* 연간 전환 CTA 버튼: ≤480 전폭 */
   .pass-cta__btn { width: 100%; text-align: center; }
+  /* 위시 아이템: ≤480 price+담기 버튼을 info 아래 행으로 (info 가 체크와 함께 첫 행을 채워 price/버튼이 래핑) + 그 행 우측 정렬 */
+  .wish-item__info { flex-basis: calc(100% - 40px); }
+  .wish-item__price { margin-left: auto; }
+  /* 담기 버튼: ≤480 price 아래 자기 행으로 + 전폭 */
+  .wish-item__btn { flex-basis: 100%; text-align: center; }
+  /* 위시 헤드/프로모 버튼: ≤480 전폭 */
+  .wish-head__btn { width: 100%; }
+  .wish-promo__btn { width: 100%; text-align: center; }
   /* 계정 설정: ≤480 수정·변경(--sm) 버튼만 텍스트 아래 행으로 전폭 (토글·탈퇴는 그대로) */
   .account-settings__row:has(> .account-btn--sm) { flex-wrap: wrap; }
   .account-settings__row > .account-btn--sm { flex-basis: 100%; }
