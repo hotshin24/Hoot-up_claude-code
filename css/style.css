@@ -6709,7 +6709,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .myclass-head__summary { margin-top: 6px; font-size: 15px; color: var(--color-neutral-base); }
 
 /* 필터 칩 */
-.myclass-filter { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-xs); margin: 20px 0; }
+.myclass-filter { margin: 20px 0; }
+.myclass-filter__list { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-xs); }
 .myclass-chip {
   padding: 10px 19px; border-radius: var(--radius-pill);
   background-color: var(--color-neutral-white);
@@ -8455,10 +8456,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cw__back { color: var(--color-neutral-white); --icon-size: 20px; flex-shrink: 0; display: inline-flex; }
 .cw__lesson-title { flex: 1 1 auto; min-width: 0; color: var(--color-neutral-white); font-size: 15px; font-weight: var(--font-weight-bold); line-height: 22px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .cw__lesson-tag { color: var(--color-brand-light); font-weight: var(--font-weight-bold); margin-right: 8px; }
-.cw__topbar-actions { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
-.cw__review { color: var(--color-neutral-white); font-size: 14px; font-weight: var(--font-weight-bold); display: inline-flex; align-items: center; gap: 6px; }
-.cw__star { color: var(--color-brand-secondary); }
-.cw__share { color: var(--color-neutral-light); --icon-size: 18px; background: none; cursor: pointer; }
 
 .cw__video { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; background: #000; }
 .cw__video-inner { display: flex; flex-direction: column; align-items: center; gap: 18px; }
@@ -8472,10 +8469,13 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .cw__ctrl--done { background: var(--color-brand-base); border-color: var(--color-brand-base); }
 
 /* 우: 커리큘럼 */
+/* 커리큘럼 닫힘: 사이드 숨김 → 스테이지가 자동으로 확장 (재오픈은 우측 레일 '커리큘럼' 항목) */
+.cw__layout.is-side-closed .cw__side { display: none; }
+
 .cw__side { width: 384px; flex-shrink: 0; background: var(--color-neutral-white); display: flex; flex-direction: column; overflow: hidden; }
 .cw__side-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid var(--color-neutral-lighter); flex-shrink: 0; }
 .cw__side-title { font-size: 18px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
-.cw__side-close { color: var(--color-neutral-light); --icon-size: 20px; display: inline-flex; }
+.cw__side-close { color: var(--color-neutral-light); --icon-size: 20px; display: inline-flex; background: none; border: 0; padding: 0; cursor: pointer; }
 .cw__course { padding: 20px 22px; border-bottom: 8px solid var(--color-neutral-lightest); flex-shrink: 0; }
 .cw__course-name { font-size: 17px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); line-height: 24px; }
 .cw__course-term { margin-top: 6px; color: var(--color-neutral-light); font-size: 13px; }
@@ -9237,7 +9237,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* minmax(0,1fr): auto 최소값이 자식 min-content 로 커져 컨테이너를 넘어 우측 패딩을 먹는 것 방지(≤480 콘텐츠 열 이탈) */
   .account-body { grid-template-columns: minmax(0, 1fr); }
   .account-nav { position: static; }
-  .myclass-grid { grid-template-columns: repeat(2, 1fr); }
+  /* .myclass-grid 는 769~1280 에서 3열 유지 (base repeat(3,1fr) 상속) → ≤768 2열 · ≤480 1열 (아래 블록) */
   .pass-sub__top { flex-direction: column; }
   .pass-sub__next { width: 100%; }
   .order-card { overflow-x: auto; }
@@ -9553,7 +9553,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .account-orders__product,
   .account-orders__status { text-align: right; }
   .account-orders__row .account-btn { grid-column: 1 / -1; }
-  .myclass-grid { grid-template-columns: 1fr; }
+  .myclass-grid { grid-template-columns: repeat(2, 1fr); }
   .pass-sub__actions { flex-wrap: wrap; }
   .pass-btn--cancel { margin-left: 0; }
   .pass-grid { grid-template-columns: 1fr; }
@@ -9624,10 +9624,12 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .stu-guide__row { flex-wrap: wrap; gap: var(--space-3xs); }
   .stu-guide__v { text-align: left; }
 
-  .cw__layout { flex-direction: column; height: auto; overflow: visible; }
+  .cw__layout { flex-direction: column; height: auto; overflow: visible; padding-bottom: 68px; }
   .cw__stage { height: 60vh; }
   .cw__side { width: 100%; }
-  .cw__rail { display: none; }
+  /* 도구 레일: ≤768 화면 하단 고정 가로 바(모바일 탭바) — 세로 레일 대신 */
+  .cw__rail { flex-direction: row; position: fixed; inset: auto 0 0 0; width: auto; z-index: 40; padding: 4px 0; border-left: none; border-top: 1px solid var(--color-neutral-lighter); box-shadow: 0 -2px 12px rgb(0 0 0 / 0.06); }
+  .cw__rail-item { flex: 1; padding: 6px 0; }
 
   .cstat-bar__val { width: auto; }
   .cstat-calc__op { transform: rotate(90deg); }
@@ -9682,6 +9684,11 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* 프로필 통계: ≤480 1열 (base 4열 · ≤768 2열) + 텍스트 가운데 정렬 */
   .account-stats { grid-template-columns: minmax(0, 1fr); }
   .account-stat { text-align: center; }
+  /* 내 클래스: ≤480 1열 (481~768 은 2열) */
+  .myclass-grid { grid-template-columns: minmax(0, 1fr); }
+  /* 클래스 필터: ≤480 chevron 접기 — host 기준 position + 우측 chevron 자리(대분류 카테고리 공용) */
+  .myclass-filter { position: relative; }
+  .myclass-filter__list { padding-right: 50px; }
   /* 올나잇 패스 액션: ≤480 세로 1열 + 각 버튼 전폭 */
   .account-pass__actions { flex-direction: column; width: 100%; }
   /* 계정 설정: ≤480 수정·변경(--sm) 버튼만 텍스트 아래 행으로 전폭 (토글·탈퇴는 그대로) */
@@ -9690,6 +9697,11 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* 회원 탈퇴: ≤480 탈퇴하기 버튼을 텍스트 아래로 + 가운데 정렬(자연 너비) */
   .account-settings__row--danger { flex-direction: column; align-items: stretch; }
   .account-settings__row--danger > .account-btn--danger { align-self: center; }
+  /* 강의 컨트롤: ≤480 — 1행 이전·다음(2열) / 2행 봤어요(전폭) / 3행 자료 다운로드(전폭) */
+  .cw__controls { flex-wrap: wrap; height: auto; padding: 12px; }
+  .cw__controls .cw__ctrl { flex: 1 1 calc(50% - 5px); justify-content: center; }
+  .cw__controls .cw__ctrl--done,
+  .cw__controls a.cw__ctrl { flex-basis: 100%; }
   /* 공지 카테고리 필터: 480 이하 chevron 접기 — 우측에 chevron 자리 확보(칩 접기 공용).
      접힘 시 리스트를 첫 행에서 클립하므로 하단 패딩+경계선을 host 로 옮겨(대분류 .class-filter 와 동일 구조)
      버튼/첫 행 아래 간격을 접힘 상태에서도 유지 (faq 의 hfaq__filter 와 동일 처리) */

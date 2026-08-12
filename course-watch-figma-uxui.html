@@ -27,10 +27,6 @@
     <header class="cw__topbar">
       <a class="cw__back" href="account-classes.html" aria-label="내 강의로 돌아가기"><span class="icon icon--chevron-left" aria-hidden="true"></span></a>
       <h1 class="cw__lesson-title"><span class="cw__lesson-tag">CH03 · 01</span>사용성 원리와 휴리스틱</h1>
-      <div class="cw__topbar-actions">
-        <a class="cw__review" href="#"><span class="cw__star" aria-hidden="true">★</span> 수강평 작성하기</a>
-        <button class="cw__share" type="button" aria-label="공유"><span class="icon icon--chevron-right" aria-hidden="true"></span></button>
-      </div>
     </header>
 
     <div class="cw__video">
@@ -49,10 +45,10 @@
   </main>
 
   <!-- 우: 커리큘럼 -->
-  <aside class="cw__side" aria-label="커리큘럼">
+  <aside class="cw__side" id="cw-side" aria-label="커리큘럼">
     <div class="cw__side-head">
       <h2 class="cw__side-title">커리큘럼</h2>
-      <a class="cw__side-close" href="account-classes.html" aria-label="닫기"><span class="icon icon--x-circle" aria-hidden="true"></span></a>
+      <button class="cw__side-close" type="button" data-cw-side-close aria-controls="cw-side" aria-label="커리큘럼 닫기"><span class="icon icon--x-circle" aria-hidden="true"></span></button>
     </div>
 
     <div class="cw__course">
@@ -70,7 +66,7 @@
     </div>
 
     <div class="cw__sections">
-      <section class="cw-sec">
+      <div class="cw-sec">
         <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-0">
           <span class="cw-sec__no">SECTION 01</span>
           <span class="cw-sec__title">오리엔테이션 <span class="cw-sec__free">무료</span></span>
@@ -114,8 +110,8 @@
             </button>
           </li>
         </ul>
-      </section>
-      <section class="cw-sec">
+      </div>
+      <div class="cw-sec">
         <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-1">
           <span class="cw-sec__no">SECTION 02</span>
           <span class="cw-sec__title">피그마 기본기</span>
@@ -180,8 +176,8 @@
             </button>
           </li>
         </ul>
-      </section>
-      <section class="cw-sec">
+      </div>
+      <div class="cw-sec">
         <button class="cw-sec__head" type="button" aria-expanded="true" aria-controls="cw-sec-2">
           <span class="cw-sec__no">SECTION 03</span>
           <span class="cw-sec__title">UX 기본</span>
@@ -239,8 +235,8 @@
             </button>
           </li>
         </ul>
-      </section>
-      <section class="cw-sec">
+      </div>
+      <div class="cw-sec">
         <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-3">
           <span class="cw-sec__no">SECTION 04</span>
           <span class="cw-sec__title">UI 디자인 기본</span>
@@ -298,8 +294,8 @@
             </button>
           </li>
         </ul>
-      </section>
-      <section class="cw-sec">
+      </div>
+      <div class="cw-sec">
         <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-4">
           <span class="cw-sec__no">SECTION 05</span>
           <span class="cw-sec__title">디자인 시스템</span>
@@ -350,8 +346,8 @@
             </button>
           </li>
         </ul>
-      </section>
-      <section class="cw-sec">
+      </div>
+      <div class="cw-sec">
         <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-5">
           <span class="cw-sec__no">SECTION 06</span>
           <span class="cw-sec__title">프로토타입</span>
@@ -395,8 +391,8 @@
             </button>
           </li>
         </ul>
-      </section>
-      <section class="cw-sec">
+      </div>
+      <div class="cw-sec">
         <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-6">
           <span class="cw-sec__no">SECTION 07</span>
           <span class="cw-sec__title">실전 프로젝트</span>
@@ -461,8 +457,8 @@
             </button>
           </li>
         </ul>
-      </section>
-      <section class="cw-sec">
+      </div>
+      <div class="cw-sec">
         <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-7">
           <span class="cw-sec__no">SECTION BONUS</span>
           <span class="cw-sec__title">보너스 · AI로 디자인 속도 2배</span>
@@ -478,13 +474,13 @@
             </button>
           </li>
         </ul>
-      </section>
+      </div>
     </div>
   </aside>
 
   <!-- 우측 아이콘 레일 -->
   <nav class="cw__rail" aria-label="강의 도구">
-    <a class="cw__rail-item is-active" href="#"><span class="cw__rail-ic">☰</span><span class="cw__rail-label">커리큘럼</span></a>
+    <a class="cw__rail-item is-active" href="#" data-cw-side-toggle aria-controls="cw-side" aria-expanded="true"><span class="cw__rail-ic">☰</span><span class="cw__rail-label">커리큘럼</span></a>
     <a class="cw__rail-item" href="#"><span class="cw__rail-ic">?</span><span class="cw__rail-label">Q&amp;A</span></a>
     <a class="cw__rail-item" href="#"><span class="cw__rail-ic">✎</span><span class="cw__rail-label">노트</span></a>
     <a class="cw__rail-item" href="#"><span class="cw__rail-ic">💬</span><span class="cw__rail-label">채팅</span></a>
