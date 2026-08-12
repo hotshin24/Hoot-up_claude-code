@@ -257,12 +257,16 @@
     </div>
   </section>
 
+  <!-- 섹션 타이틀 (박스 밖) -->
+  <div class="cart-head l-container">
+    <h2 class="cart-list__title">담은 둥지<span class="gown-sub">(장바구니)</span></h2>
+  </div>
+
   <!-- 본문 -->
   <div class="cart-body l-container">
 
     <!-- 담은 목록 -->
     <section class="cart-list">
-      <h2 class="cart-list__title">담은 둥지<span class="gown-sub">(장바구니)</span></h2>
       <div class="cart-list__bar">
         <label class="cart-list__all">
           <input class="wish-check cart-all" type="checkbox" checked>
@@ -270,8 +274,8 @@
         </label>
         <button class="cart-list__clear" type="button">전체 삭제</button>
       </div>
-      <div class="cart-list__items">
-          <div class="cart-item" data-original="154000" data-final="100100">
+      <ul class="cart-list__items">
+          <li class="cart-item" data-original="154000" data-final="100100">
             <input class="wish-check cart-item__check" type="checkbox" checked aria-label="나만의 감성을 담은 브랜드를 만드는 로고 디자인 선택">
             <span class="cart-item__thumb"><img src="assets/course/design-logo.png" alt="" loading="lazy"></span>
             <div class="cart-item__info">
@@ -284,8 +288,8 @@
               <p class="cart-item__was">154,000원</p>
               <p class="cart-item__now"><span class="cart-item__off">35%</span><span class="cart-item__final">100,100원</span></p>
             </div>
-          </div>
-          <div class="cart-item" data-original="198000" data-final="108900">
+          </li>
+          <li class="cart-item" data-original="198000" data-final="108900">
             <input class="wish-check cart-item__check" type="checkbox" checked aria-label="Next.js로 완성하는 풀스택 웹앱 프로젝트 마스터 과정 선택">
             <span class="cart-item__thumb"><img src="assets/course/cat-dev-p2-nextjs.png" alt="" loading="lazy"></span>
             <div class="cart-item__info">
@@ -298,8 +302,8 @@
               <p class="cart-item__was">198,000원</p>
               <p class="cart-item__now"><span class="cart-item__off">45%</span><span class="cart-item__final">108,900원</span></p>
             </div>
-          </div>
-          <div class="cart-item" data-original="165000" data-final="107250">
+          </li>
+          <li class="cart-item" data-original="165000" data-final="107250">
             <input class="wish-check cart-item__check" type="checkbox" checked aria-label="비전공자를 위한 서비스 기획·PM 입문 선택">
             <span class="cart-item__thumb"><img src="assets/course/career-service-pm.png" alt="" loading="lazy"></span>
             <div class="cart-item__info">
@@ -312,8 +316,8 @@
               <p class="cart-item__was">165,000원</p>
               <p class="cart-item__now"><span class="cart-item__off">35%</span><span class="cart-item__final">107,250원</span></p>
             </div>
-          </div>
-      </div>
+          </li>
+      </ul>
       <div class="cart-promo">
         <span class="cart-promo__icon" aria-hidden="true">🦉</span>
         <p class="cart-promo__text">LEVEL UP WEEK 종료까지 6일 13시간 남았어요. 지금 결제하면 <b>200,750원</b>을 아낍니다.</p>
@@ -339,38 +343,33 @@
       </form>
 
       <h3 class="cart-pay__sub">결제 수단</h3>
-      <div class="cart-methods">
-            <label class="cart-method is-selected">
-              <input class="cart-radio" type="radio" name="pay" checked>
-              <span class="cart-method__name">카드 전자결제</span>
-              <span class="cart-method__tag">무이자 할부</span>
-            </label>
-            <label class="cart-method">
-              <input class="cart-radio" type="radio" name="pay">
-              <span class="cart-method__name">휴대폰 결제</span>
-              
-            </label>
-            <label class="cart-method">
-              <input class="cart-radio" type="radio" name="pay">
-              <span class="cart-method__name">계좌이체</span>
-              
-            </label>
-            <label class="cart-method">
-              <input class="cart-radio" type="radio" name="pay">
-              <span class="cart-method__name">네이버페이</span>
-              
-            </label>
-            <label class="cart-method">
-              <input class="cart-radio" type="radio" name="pay">
-              <span class="cart-method__name">카카오페이</span>
-              
-            </label>
-            <label class="cart-method">
-              <input class="cart-radio" type="radio" name="pay">
-              <span class="cart-method__name">토스페이</span>
-              
-            </label>
-      </div>
+      <ul class="cart-methods">
+        <li><label class="cart-method is-selected">
+          <input class="cart-radio" type="radio" name="pay" checked>
+          <span class="cart-method__name">카드 전자결제</span>
+          <span class="cart-method__tag">무이자 할부</span>
+        </label></li>
+        <li><label class="cart-method">
+          <input class="cart-radio" type="radio" name="pay">
+          <span class="cart-method__name">휴대폰 결제</span>
+        </label></li>
+        <li><label class="cart-method">
+          <input class="cart-radio" type="radio" name="pay">
+          <span class="cart-method__name">계좌이체</span>
+        </label></li>
+        <li><label class="cart-method">
+          <input class="cart-radio" type="radio" name="pay">
+          <span class="cart-method__name">네이버페이</span>
+        </label></li>
+        <li><label class="cart-method">
+          <input class="cart-radio" type="radio" name="pay">
+          <span class="cart-method__name">카카오페이</span>
+        </label></li>
+        <li><label class="cart-method">
+          <input class="cart-radio" type="radio" name="pay">
+          <span class="cart-method__name">토스페이</span>
+        </label></li>
+      </ul>
 
       <button class="cart-pay__submit" type="button"><span data-pay-btn>316,250원 결제하기</span></button>    </aside>
 
