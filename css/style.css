@@ -9234,7 +9234,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* .refund__steps 는 769~1280 에서 3열 유지 (base repeat(3,1fr) 상속) → ≤768 에서 1열 (아래 768 블록) */
   .business__contacts { grid-template-columns: 1fr 1fr; }
   .business__notices { grid-template-columns: 1fr; }
-  .account-body { grid-template-columns: 1fr; }
+  /* minmax(0,1fr): auto 최소값이 자식 min-content 로 커져 컨테이너를 넘어 우측 패딩을 먹는 것 방지(≤480 콘텐츠 열 이탈) */
+  .account-body { grid-template-columns: minmax(0, 1fr); }
   .account-nav { position: static; }
   .myclass-grid { grid-template-columns: repeat(2, 1fr); }
   .pass-sub__top { flex-direction: column; }
@@ -9258,6 +9259,25 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 /* 브랜드 마스코트 카드: 유동 그리드가 3+1 로 어색하게 떨어지는 지점(≈854) 부터 2×2 로 고정 */
 @media (max-width: 854px) {
   .brand-story .brand-mascot__list { grid-template-columns: 1fr 1fr; }
+}
+
+/* 계정 사이드바(account-nav): 769~1280 은 풀폭 stacked 상태 → 2열로
+   (LEARNING 좌 / PAYMENT·SETTINGS 우). flat 구조(label+ul ×3)라 명시적 그리드 배치,
+   LEARNING 목록은 우측 2그룹 높이만큼 rows 2~4 를 span. ≤768 은 기본 flex 1열 유지. */
+@media (min-width: 769px) and (max-width: 1280px) {
+  .account-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    column-gap: 24px;
+    row-gap: 12px;
+  }
+  .account-nav__label:nth-child(1) { grid-column: 1; grid-row: 1; }                 /* LEARNING 라벨 */
+  .account-nav__list:nth-child(2)  { grid-column: 1; grid-row: 2 / span 3; align-self: start; } /* LEARNING 목록 */
+  .account-nav__label:nth-child(3) { grid-column: 2; grid-row: 1; padding-top: 0; } /* PAYMENT 라벨(우측 최상단) */
+  .account-nav__list:nth-child(4)  { grid-column: 2; grid-row: 2; }                 /* PAYMENT 목록 */
+  .account-nav__label:nth-child(5) { grid-column: 2; grid-row: 3; }                 /* SETTINGS 라벨 */
+  .account-nav__list:nth-child(6)  { grid-column: 2; grid-row: 4; }                 /* SETTINGS 목록 */
 }
 
 @media (max-width: 1060px) {
@@ -9522,11 +9542,17 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .business__row dt { padding: 20px 24px 0; }
   .business__row dd { padding: 6px 24px 20px; }
   .business__cta-btn { flex: 1 1 100%; }
+  /* 프로필 액션(편집·이어서 학습): ≤768 head 아래 행으로 내리고 우측 정렬 */
   .account-profile__head { flex-wrap: wrap; }
+  .account-profile__actions { flex-basis: 100%; justify-content: flex-end; }
   .account-stats { grid-template-columns: 1fr 1fr; }
   .account-pass { flex-direction: column; align-items: flex-start; }
   .account-benefit { grid-template-columns: 1fr; }
+  /* 주문 내역: ≤768 우측 열(상품·상태)·영수증 버튼을 행 우측 끝으로 정렬 */
   .account-orders__row { grid-template-columns: 1fr auto; }
+  .account-orders__product,
+  .account-orders__status { text-align: right; }
+  .account-orders__row .account-btn { grid-column: 1 / -1; }
   .myclass-grid { grid-template-columns: 1fr; }
   .pass-sub__actions { flex-wrap: wrap; }
   .pass-btn--cancel { margin-left: 0; }
@@ -9639,6 +9665,31 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 @media (max-width: 480px) {
+  /* 프로필 헤드: ≤480 아바타(위·가운데) / 메타(아래·가운데) 세로 스택.
+     head 는 ≤768 에서 flex-wrap:wrap 유지(actions 전폭 아래) → 메타를 전폭 행으로 내려 가운데 정렬 */
+  .account-profile__head { justify-content: center; }
+  .account-profile__meta { flex-basis: 100%; text-align: center; }
+  /* 프로필 이름줄: ≤480 이름(위) / 레벨(아래) 세로 스택 + 가운데 정렬 */
+  .account-profile__nameline { flex-direction: column; align-items: center; gap: 4px; }
+  /* 프로필 액션: ≤480 가운데 정렬 (≤768 전폭 행 유지) */
+  .account-profile__actions { justify-content: center; }
+  /* 카드 헤더: ≤480 제목(위) / 더보기 링크(아래·우측 정렬) */
+  .account-card__head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .account-card__more { align-self: flex-end; }
+  /* 이어서 학습 항목: ≤480 세로 스택 — 썸네일(위·전폭) / 본문 / 이어보기 버튼(아래) */
+  .account-learn__item { flex-direction: column; align-items: stretch; gap: 14px; }
+  .account-learn__thumb { width: 100%; height: auto; aspect-ratio: 132 / 78; }
+  /* 프로필 통계: ≤480 1열 (base 4열 · ≤768 2열) + 텍스트 가운데 정렬 */
+  .account-stats { grid-template-columns: minmax(0, 1fr); }
+  .account-stat { text-align: center; }
+  /* 올나잇 패스 액션: ≤480 세로 1열 + 각 버튼 전폭 */
+  .account-pass__actions { flex-direction: column; width: 100%; }
+  /* 계정 설정: ≤480 수정·변경(--sm) 버튼만 텍스트 아래 행으로 전폭 (토글·탈퇴는 그대로) */
+  .account-settings__row:has(> .account-btn--sm) { flex-wrap: wrap; }
+  .account-settings__row > .account-btn--sm { flex-basis: 100%; }
+  /* 회원 탈퇴: ≤480 탈퇴하기 버튼을 텍스트 아래로 + 가운데 정렬(자연 너비) */
+  .account-settings__row--danger { flex-direction: column; align-items: stretch; }
+  .account-settings__row--danger > .account-btn--danger { align-self: center; }
   /* 공지 카테고리 필터: 480 이하 chevron 접기 — 우측에 chevron 자리 확보(칩 접기 공용).
      접힘 시 리스트를 첫 행에서 클립하므로 하단 패딩+경계선을 host 로 옮겨(대분류 .class-filter 와 동일 구조)
      버튼/첫 행 아래 간격을 접힘 상태에서도 유지 (faq 의 hfaq__filter 와 동일 처리) */
