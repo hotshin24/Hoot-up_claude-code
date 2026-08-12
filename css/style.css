@@ -9248,7 +9248,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .cp-summary__stats { padding-left: 0; border-left: 0; padding-top: 24px; border-top: 1px solid rgb(255 255 255 / 0.1); }
   .cert-summary { flex-direction: column; align-items: stretch; gap: 24px; }
   .cert-summary__stats { padding-left: 0; border-left: 0; padding-top: 24px; border-top: 1px solid rgb(255 255 255 / 0.2); }
-  .cert-got__grid { grid-template-columns: repeat(2, 1fr); }
+  /* .cert-got__grid 는 769~1280 에서 3열 유지 (base repeat(3,1fr) 상속) → ≤768 1열 (아래 768 블록) */
   /* minmax(0,1fr): auto 최소값이 자식 min-content 로 커져 cart-list 박스가 우측 패딩을 먹는 것 방지(≈386px 이하) */
   .cart-body { grid-template-columns: minmax(0, 1fr); }
   .cart-pay { position: static; }
@@ -9582,8 +9582,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .dnd__body { flex-direction: column; align-items: flex-start; gap: 16px; }
   .notify-actions { flex-wrap: wrap; }
   .cert-pending__item { flex-wrap: wrap; }
-  .cert-summary__stats { flex-direction: column; }
-  .cert-got__grid { grid-template-columns: 1fr; }
+  /* .cert-summary__stats 는 481~768 에서 3열(flex row) 유지 → ≤480 에서 세로 (아래 480 블록) */
+  .cert-got__grid { grid-template-columns: repeat(2, 1fr); }
   /* 장바구니 아이템: ≤768 썸네일(위·전폭) / info·price(아래) */
   .cart-item { flex-wrap: wrap; align-items: flex-start; }
   .cart-item__thumb { order: -1; flex-basis: 100%; width: 100%; height: auto; aspect-ratio: 130 / 88; }
@@ -9675,6 +9675,19 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 @media (max-width: 480px) {
+  /* 발급 대기 헤더: ≤480 제목(위) / 안내(아래) 세로 */
+  .cert-pending__head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  /* 발급 대기 항목: ≤480 썸네일(위·전폭) / 본문(아래) / aside(그 아래·버튼 전폭) */
+  .cert-pending__item { align-items: flex-start; }
+  .cert-pending__thumb { order: -1; flex-basis: 100%; width: 100%; height: auto; aspect-ratio: 120 / 72; }
+  .cert-pending__body { flex-basis: 100%; }
+  .cert-pending__aside { flex-basis: 100%; align-items: stretch; }
+  .cert-pending__left { text-align: right; }
+  .cert-pending__btn { text-align: center; }
+  /* 졸업모 그리드: ≤480 1열 (481~768 은 2열) */
+  .cert-got__grid { grid-template-columns: 1fr; }
+  /* 수료증 요약 통계: ≤480 세로 (481~768 은 3열 flex row) */
+  .cert-summary__stats { flex-direction: column; }
   /* 프로필 헤드: ≤480 아바타(위·가운데) / 메타(아래·가운데) 세로 스택.
      head 는 ≤768 에서 flex-wrap:wrap 유지(actions 전폭 아래) → 메타를 전폭 행으로 내려 가운데 정렬 */
   .account-profile__head { justify-content: center; }
