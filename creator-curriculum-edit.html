@@ -17,6 +17,7 @@
 
   <script src="js/common.js?v=1" defer></script>
   <script src="js/carousel.js?v=1" defer></script>
+  <script src="js/account-nav.js" defer></script>
   <script src="js/toggle.js" defer></script>
   <script src="js/modal.js" defer></script>
   <script src="js/cm-curriculum.js" defer></script>
@@ -260,25 +261,44 @@
 
   <div class="account-body l-container">
     <aside class="account-nav creator-nav" aria-label="크리에이터 메뉴">
-        <p class="account-nav__label">STUDIO</p>
-        <ul class="account-nav__list">
-          <li><a class="account-nav__link" href="creator.html">크리에이터 홈</a></li>
-          <li><a class="account-nav__link" href="creator-profile.html">공개 프로필</a></li>
-          <li><a class="account-nav__link is-active" href="creator-classes.html" aria-current="page">내 클래스 관리</a></li>
-          <li><a class="account-nav__link" href="creator-reviews.html">수강생 리뷰</a></li>
-          <li><a class="account-nav__link" href="creator-questions.html">질문 관리</a></li>
-          <li><a class="account-nav__link" href="creator-blog.html">블로그 관리</a></li>
-        </ul>
-        <p class="account-nav__label">REVENUE</p>
-        <ul class="account-nav__list">
-          <li><a class="account-nav__link" href="creator-revenue.html">수익 · 정산</a></li>
-          <li><a class="account-nav__link" href="creator-tax.html">정산 계좌 · 세금</a></li>
-        </ul>
-        <p class="account-nav__label">SUPPORT</p>
-        <ul class="account-nav__list">
-          <li><a class="account-nav__link" href="creator-studio-booking.html">스튜디오 예약</a></li>
-        </ul>
-    </aside>
+        <div class="account-nav__group is-open">
+          <button class="account-nav__label" type="button" aria-expanded="true" data-acc-trigger>STUDIO<span class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
+          <div class="account-nav__panel">
+            <ul class="account-nav__list">
+              <li><a class="account-nav__link" href="creator.html">크리에이터 홈</a></li>
+              <li><a class="account-nav__link" href="creator-profile.html">공개 프로필</a></li>
+              <li><a class="account-nav__link is-active" href="creator-classes.html" aria-current="page">내 클래스 관리</a></li>
+              <li><a class="account-nav__link" href="creator-blog.html">블로그 관리</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="account-nav__group">
+          <button class="account-nav__label" type="button" aria-expanded="false" data-acc-trigger>COMMUNITY<span class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
+          <div class="account-nav__panel">
+            <ul class="account-nav__list">
+              <li><a class="account-nav__link" href="creator-reviews.html">수강생 리뷰</a></li>
+              <li><a class="account-nav__link" href="creator-questions.html">질문 관리</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="account-nav__group">
+          <button class="account-nav__label" type="button" aria-expanded="false" data-acc-trigger>REVENUE<span class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
+          <div class="account-nav__panel">
+            <ul class="account-nav__list">
+              <li><a class="account-nav__link" href="creator-revenue.html">수익 · 정산</a></li>
+              <li><a class="account-nav__link" href="creator-tax.html">정산 계좌 · 세금</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="account-nav__group">
+          <button class="account-nav__label" type="button" aria-expanded="false" data-acc-trigger>SUPPORT<span class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
+          <div class="account-nav__panel">
+            <ul class="account-nav__list">
+              <li><a class="account-nav__link" href="creator-studio-booking.html">스튜디오 예약</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
 
     <div class="account-content creator-content cedit">
 
