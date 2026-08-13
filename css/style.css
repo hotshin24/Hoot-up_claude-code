@@ -7900,12 +7900,13 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .rv-chip.is-active:hover { border-color: var(--color-brand-base); }
 
-.rv-list { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+.rv-list { display: flex; flex-direction: column; margin-top: 12px; }
 .rv-item {
   display: flex; gap: 14px; align-items: flex-start;
-  background-color: var(--color-neutral-lightest); border-radius: var(--radius-md);
-  padding: 22px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--color-neutral-lighter);
 }
+.rv-item:last-child { border-bottom: 0; }
 .rv-item__avatar {
   flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-md);
   object-fit: cover; background-color: var(--color-brand-lighter);
@@ -7924,7 +7925,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* 내 답글 (작성됨) */
 .rv-reply {
-  background-color: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
+  background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter);
   border-radius: var(--radius-sm); padding: 21px 19px 15px;
   display: flex; flex-direction: column; gap: var(--space-3xs);
 }
@@ -9711,6 +9712,20 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .cstat-calc { flex-direction: column; flex-wrap: nowrap; }
   /* 블로그 글 액션(수정·삭제): ≤480 본문 아래 행으로 */
   .blog-post__actions { flex-basis: 100%; }
+
+  /* 리뷰/질문 항목: ≤480 아바타+이름+별점은 상단 행 유지, meta·본문·답글은 전폭으로 채움.
+     body·head 를 display:contents 로 평탄화해 자식들을 rv-item 그리드에 직접 배치 */
+  .rv-item { display: grid; grid-template-columns: auto auto 1fr; column-gap: 8px; row-gap: 8px; align-items: center; }
+  .rv-item__body, .rv-item__head { display: contents; }
+  .rv-item__avatar { grid-column: 1; grid-row: 1; }
+  .rv-item__name { grid-column: 2; grid-row: 1; }
+  .rv-item__stars { grid-column: 3; grid-row: 1; justify-self: start; }
+  .rv-item__meta, .rv-badge, .rv-item__text, .rv-reply, .rv-answer { grid-column: 1 / -1; }
+  .rv-badge { justify-self: start; }
+  /* 답글 입력: ≤480 등록 버튼을 input 아래로 (세로 스택) */
+  .rv-answer { flex-direction: column; }
+  /* column 에서 flex:1 1 0 의 basis:0 이 높이를 덮어써 input 이 줄어드는 것 방지 → height 44px 유지 */
+  .rv-answer__input { flex: none; }
   /* 로그인·회원가입 모달: 내용이 화면보다 길면 다이얼로그 내부 세로 스크롤
      (align-items:center 로 상단이 잘려 접근 불가해지는 문제 방지) */
   .modal__dialog { max-height: calc(100vh - 2 * var(--space-md)); max-height: calc(100dvh - 2 * var(--space-md)); overflow-y: auto; }
