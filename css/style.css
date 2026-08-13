@@ -7657,12 +7657,12 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .pp-count { font-size: 13px; color: var(--color-neutral-light); }
 
 /* 입력 필드 */
-.pp-fields { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.pp-fields { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-md); }
 .pp-field { display: flex; flex-direction: column; gap: 8px; }
 .pp-field--full { margin-top: var(--space-md); }
 .pp-field__label { font-size: 13px; font-weight: var(--font-weight-bold); color: var(--color-neutral-base); }
 .pp-field__hint { font-weight: var(--font-weight-regular); color: var(--color-neutral-light); }
-.pp-field__input { height: 48px; padding: 0 19px; background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-sm); font-size: 15px; color: var(--color-neutral-darker); }
+.pp-field__input { width: 100%; min-width: 0; height: 48px; padding: 0 19px; background-color: var(--color-neutral-lightest); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-sm); font-size: 15px; color: var(--color-neutral-darker); }
 .pp-field__input::placeholder { color: var(--color-text-placeholder); }
 .pp-field__input:focus { outline: none; border-color: var(--color-brand-darker); }
 .pp-field .pp-count { margin-top: 8px; text-align: right; }
@@ -9285,8 +9285,12 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
      트랙이 컨테이너를 넘어 모든 박스가 우측으로 이탈하는 것 방지(≤480) */
   .account-body:has(.creator-nav) { grid-template-columns: minmax(0, 1fr); }
   .creator-stats { grid-template-columns: 1fr 1fr; }
-  .pp-layout { grid-template-columns: 1fr; }
+  /* minmax(0,1fr): auto 최소값이 폼 입력 min-content 로 커져 카드가 컨테이너를 넘는 것 방지(≤280) */
+  .pp-layout { grid-template-columns: minmax(0, 1fr); }
   .pp-preview { position: static; }
+  /* 프로필 사진 행: ≤1280 부터 액션(이미지 변경·삭제)을 아바타+정보 아래 행으로·우측 정렬 */
+  .pp-photo { flex-wrap: wrap; }
+  .pp-photo__actions { flex-basis: 100%; justify-content: flex-end; }
 }
 
 /* 훗업 차트: 769~1060 구간은 2열(2×3). (1061~1280은 3열 유지) */
@@ -9297,6 +9301,13 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 
 /* creator-nav 도 account-nav 와 동일하게 모든 구간 아코디언(.account-nav__group).
    패널 링크 2열(481~1280)은 공용 .account-nav__panel .account-nav__list 규칙에서 함께 처리 */
+
+/* 공개 프로필 편집 폼: 769~1280 은 pp-layout 이 1열(풀폭)이라 폼 카드를 2열로.
+   savebar 는 전폭 span 유지 */
+@media (min-width: 769px) and (max-width: 1280px) {
+  .pp-form { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+  .pp-form > .pp-savebar { grid-column: 1 / -1; }
+}
 
 @media (max-width: 1060px) {
   /* 페스타 히어로: 1060 이하는 main(위) / aside·타이머(아래) 세로 스택 + 가운데 정렬
@@ -9611,8 +9622,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .creator-chart__bars { gap: 8px; }
   .creator-chart__months { gap: 8px; }
   .pp-head { flex-direction: column; align-items: stretch; gap: 16px; }
-  .pp-fields { grid-template-columns: 1fr; }
-  .pp-photo { flex-wrap: wrap; }
+  /* .pp-fields 는 base 에서 1열(활동명 위 / 직함 아래)로 통일 → ≤768 별도 규칙 불필요 */
+  /* .pp-photo flex-wrap + actions 아래 행은 ≤1280 블록에서 처리(1280>부터) */
   .pp-savebar { flex-direction: column; align-items: flex-start; }
   .pp-career { flex-wrap: wrap; }
   .pp-career__year { width: 100%; }
@@ -9748,6 +9759,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* 정산·계정 설정 행: ≤480 텍스트(위) / 버튼(아래·전폭) 세로 스택 */
   .creator-set__row { flex-direction: column; align-items: stretch; gap: 12px; }
   .creator-set__row .creator-btn { width: 100%; }
+
+  /* 프로필 사진: ≤480 정보(info)를 아바타 아래 행으로 (아바타 위 / info 아래 / 액션 그 아래) */
+  .pp-photo__info { flex-basis: 100%; }
   /* 이어서 학습 항목: ≤480 세로 스택 — 썸네일(위·전폭) / 본문 / 이어보기 버튼(아래) */
   .account-learn__item { flex-direction: column; align-items: stretch; gap: 14px; }
   .account-learn__thumb { width: 100%; height: auto; aspect-ratio: 132 / 78; }
