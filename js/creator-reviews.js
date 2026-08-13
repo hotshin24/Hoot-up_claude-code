@@ -5,6 +5,7 @@
    defer 로 로드되어 DOM 파싱 후 실행되므로 DOMContentLoaded 래퍼 불필요 */
 (function () {
   var PAGE_SIZE = 5;
+  var WINDOW_MQ = window.matchMedia('(max-width: 480px)');   // ≤480: 페이지 번호 5개만 노출
 
   var list = document.querySelector('[data-rv-list]');
   var pager = document.querySelector('[data-rv-pager]');
@@ -41,7 +42,12 @@
     if (totalPages <= 1) { pager.hidden = true; return; }
     pager.hidden = false;
     pager.appendChild(arrow('prev', page > 1, page - 1));
-    for (var p = 1; p <= totalPages; p++) {
+    var from = 1, to = totalPages;
+    if (WINDOW_MQ.matches && totalPages > 5) {   // ≤480: 현재 페이지 중심 5개 윈도우
+      from = Math.max(1, Math.min(page - 2, totalPages - 4));
+      to = Math.min(totalPages, from + 4);
+    }
+    for (var p = from; p <= to; p++) {
       var a = document.createElement('a');
       a.className = 'pager__num' + (p === page ? ' pager__num--active' : '');
       a.href = '#';
@@ -125,6 +131,10 @@
       list.scrollIntoView({ block: 'nearest' });
     });
   }
+
+  // 뷰포트가 480 경계를 넘으면 pager 윈도우 갱신
+  if (WINDOW_MQ.addEventListener) WINDOW_MQ.addEventListener('change', render);
+  else if (WINDOW_MQ.addListener) WINDOW_MQ.addListener(render);
 
   render();
 })();
