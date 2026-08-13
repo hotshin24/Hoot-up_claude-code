@@ -9675,6 +9675,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 @media (max-width: 480px) {
+  /* 로그인·회원가입 모달: 내용이 화면보다 길면 다이얼로그 내부 세로 스크롤
+     (align-items:center 로 상단이 잘려 접근 불가해지는 문제 방지) */
+  .modal__dialog { max-height: calc(100vh - 2 * var(--space-md)); max-height: calc(100dvh - 2 * var(--space-md)); overflow-y: auto; }
+
   /* 주문 상태 필터: ≤480 chevron 접기 — host 기준 position + 우측 chevron 자리(대분류 카테고리 공용) */
   .order-head__filter { position: relative; }
   .order-head__filter-list { padding-right: 50px; }
