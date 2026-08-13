@@ -7582,8 +7582,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .creator-bar__month { flex: 1; min-width: 0; text-align: center; font-size: var(--text-caption-size); color: var(--color-neutral-light); }
 
 /* 내 클래스 */
-.creator-classes__list { display: flex; flex-direction: column; gap: 14px; }
-.creator-class { display: flex; align-items: center; gap: 18px; padding: var(--space-sm); border: 1px solid var(--color-neutral-lighter); border-radius: var(--radius-md); }
+.creator-classes__list { display: flex; flex-direction: column; }
+.creator-class { display: flex; align-items: center; gap: 18px; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-neutral-lighter); }
+.creator-class:last-child { border-bottom: 0; }
 .creator-class__thumb { flex-shrink: 0; width: 132px; height: 78px; border-radius: var(--radius-sm); overflow: hidden; }
 .creator-class__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .creator-class__info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--space-2xs); }
@@ -9280,7 +9281,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   /* minmax(0,1fr): auto 최소값이 자식 min-content 로 커져 cart-list 박스가 우측 패딩을 먹는 것 방지(≈386px 이하) */
   .cart-body { grid-template-columns: minmax(0, 1fr); }
   .cart-pay { position: static; }
-  .account-body:has(.creator-nav) { grid-template-columns: 1fr; }
+  /* minmax(0,1fr): 1fr(=minmax(auto,1fr))의 auto 최소값이 아코디언 nav min-content 로 커져
+     트랙이 컨테이너를 넘어 모든 박스가 우측으로 이탈하는 것 방지(≤480) */
+  .account-body:has(.creator-nav) { grid-template-columns: minmax(0, 1fr); }
   .creator-stats { grid-template-columns: 1fr 1fr; }
   .pp-layout { grid-template-columns: 1fr; }
   .pp-preview { position: static; }
@@ -9600,7 +9603,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .cart-item__thumb { order: -1; flex-basis: 100%; width: 100%; height: auto; aspect-ratio: 130 / 88; }
   .cart-item__price { width: auto; align-items: flex-start; }
   .creator-profile__head { flex-wrap: wrap; }
-  .creator-profile__actions { flex-wrap: wrap; }
+  /* 프로필 액션: ≤768 head 아래 전폭 행으로(= p 아래), 우측 정렬 (account-profile 컨벤션 통일) */
+  .creator-profile__actions { flex-basis: 100%; justify-content: flex-end; flex-wrap: wrap; }
   .creator-stats { grid-template-columns: 1fr 1fr; }
   .creator-grid { grid-template-columns: 1fr; }
   .creator-class { flex-wrap: wrap; }
@@ -9720,15 +9724,38 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .account-profile__nameline { flex-direction: column; align-items: center; gap: 4px; }
   /* 프로필 액션: ≤480 가운데 정렬 (≤768 전폭 행 유지) */
   .account-profile__actions { justify-content: center; }
+
+  /* 크리에이터 프로필 헤드: ≤480 아바타(위·가운데) / 메타(아래·전폭 가운데) 세로 스택.
+     head 는 ≤768 flex-wrap:wrap 유지 → 메타·액션을 전폭 행(flex-basis:100%)으로 내려 1열 배치 */
+  .creator-profile__head { justify-content: center; }
+  .creator-profile__meta { flex-basis: 100%; text-align: center; align-items: center; }
+  .creator-profile__nameline { flex-direction: column; align-items: center; gap: 4px; }
+  /* 액션: ≤480 세로 1열 · 각 버튼 100% 폭 */
+  .creator-profile__actions { flex-direction: column; }
+  .creator-profile__actions .creator-btn { width: 100%; }
+
   /* 카드 헤더: ≤480 제목(위) / 더보기 링크(아래·우측 정렬) */
   .account-card__head { flex-direction: column; align-items: flex-start; gap: 6px; }
   .account-card__more { align-self: flex-end; }
+  /* 크리에이터 카드 헤더: ≤480 제목(위) / 더보기 링크(아래·우측 정렬) — 공용 패턴 통일 */
+  .creator-card__head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .creator-card__head .creator-more { align-self: flex-end; }
+  /* 클래스 항목: ≤480 세로 1열 — 썸네일(위·전폭) / info / 통계 버튼(아래·전폭) */
+  .creator-class { flex-direction: column; align-items: stretch; }
+  .creator-class__thumb { width: 100%; height: auto; aspect-ratio: 132 / 78; }
+  .creator-class__btn { width: 100%; }
+
+  /* 정산·계정 설정 행: ≤480 텍스트(위) / 버튼(아래·전폭) 세로 스택 */
+  .creator-set__row { flex-direction: column; align-items: stretch; gap: 12px; }
+  .creator-set__row .creator-btn { width: 100%; }
   /* 이어서 학습 항목: ≤480 세로 스택 — 썸네일(위·전폭) / 본문 / 이어보기 버튼(아래) */
   .account-learn__item { flex-direction: column; align-items: stretch; gap: 14px; }
   .account-learn__thumb { width: 100%; height: auto; aspect-ratio: 132 / 78; }
   /* 프로필 통계: ≤480 1열 (base 4열 · ≤768 2열) + 텍스트 가운데 정렬 */
   .account-stats { grid-template-columns: minmax(0, 1fr); }
   .account-stat { text-align: center; }
+  /* 크리에이터 통계: ≤480 1열(minmax(0,1fr))로 — 2열 1fr 의 auto-min 블로우아웃(큰 금액) 우측 이탈 방지 */
+  .creator-stats { grid-template-columns: minmax(0, 1fr); }
   /* 내 클래스: ≤480 1열 (481~768 은 2열) */
   .myclass-grid { grid-template-columns: minmax(0, 1fr); }
   /* 클래스 필터: ≤480 chevron 접기 — host 기준 position + 우측 chevron 자리(대분류 카테고리 공용) */
