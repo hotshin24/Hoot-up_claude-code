@@ -9647,6 +9647,34 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .rev-summary { flex-direction: column; align-items: stretch; gap: 24px; }
   .rev-summary__stats { padding-left: 0; border-left: 0; flex-wrap: wrap; gap: 16px; }
   .rev-cards { grid-template-columns: 1fr; }
+  /* 정산 내역 표: ≤768 가로 스크롤바를 항상 보이게(오버레이 대신 클래식 스타일).
+     ::-webkit-scrollbar 커스터마이즈 시 WebKit/Blink 는 상시 노출 (단, iOS Safari 는 미지원) */
+  .rev-table__scroll { padding-bottom: 6px; scrollbar-width: thin; scrollbar-color: var(--color-neutral-light) var(--color-neutral-lightest); }
+  .rev-table__scroll::-webkit-scrollbar { height: 8px; }
+  .rev-table__scroll::-webkit-scrollbar-track { background: var(--color-neutral-lightest); border-radius: 999px; }
+  .rev-table__scroll::-webkit-scrollbar-thumb { background: var(--color-neutral-light); border-radius: 999px; }
+  .rev-table__scroll::-webkit-scrollbar-thumb:hover { background: var(--color-neutral-base); }
+  /* 우측 스크롤 힌트 chevron: iOS(스크롤바 미노출)에서도 '더 있음'을 알림.
+     원형 배경(::before) + chevron(::after). JS 가 끝까지 스크롤 시 숨김 */
+  .rev-table { position: relative; }
+  .rev-table::before {
+    content: ""; position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--color-neutral-white); border: 1px solid var(--color-neutral-lighter);
+    box-shadow: 0 2px 6px rgb(15 23 42 / 0.14);
+    pointer-events: none;
+  }
+  .rev-table::after {
+    content: ""; position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    width: 14px; height: 14px;
+    -webkit-mask: url("../svg/chevron-right.svg") no-repeat center / contain;
+    mask: url("../svg/chevron-right.svg") no-repeat center / contain;
+    background-color: var(--color-neutral-base);
+    pointer-events: none;
+  }
+  /* 끝까지 스크롤(또는 넘칠 것 없음) 시 chevron 숨김 */
+  .rev-table.is-scroll-end::before,
+  .rev-table.is-scroll-end::after { display: none; }
   .rev-flow__steps { grid-template-columns: repeat(2, 1fr); }
   .rev-flow__note { white-space: normal; }
   .tax-alert, .tax-note { flex-direction: column; align-items: stretch; gap: 16px; }
