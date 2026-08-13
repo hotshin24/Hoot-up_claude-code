@@ -1811,8 +1811,28 @@ padding-inline: clamp(10px, 4.58vw, 22px)
 카드 하나당 링크가 2건씩 걸립니다. 썸네일과 제목 양쪽이 각각 상세로 이동합니다.
 (`course-card__thumb-link` — 07-30에 도입한 패턴)
 
-카드 904개 × 2건 = 1,808, 랭킹 컴포넌트(`rank-card` / `rank-mini`) 썸네일 50건.
-합계 1,858건입니다.
+링크의 출처를 `<a>`의 클래스별로 전수 분해했습니다.
+
+```
+904   a.course-card__thumb-link     카드 썸네일
+904   a.course-card__link           카드 제목
+ 17   (class 없음)
+  8   a.roadmap__step-link
+  6   a.rank-mini__thumb
+  5   a.mentor-course__thumb
+  4   a.rank-card__thumb
+  3   a.desk-class
+  3   a.roadmap__next-link
+  2   a.desk-promo__thumb / __btn
+  2   a.article-course__thumb / __btn
+─────
+1,858
+```
+
+카드 904개 × 2건 = 1,808이 본류이고, 나머지 50건은 랭킹 · 로드맵 · 매거진 ·
+데스크 프로모 등 **카드가 아닌 컴포넌트 6종**에서 나옵니다.
+종전 표기 "랭킹 컴포넌트 썸네일 63건"은 랭킹 하나로 뭉뚱그린 값이었고,
+실제 랭킹(`rank-card` · `rank-mini`) 몫은 10건입니다.
 
 ```
 categories.html         카드 152 → 링크 304
@@ -2080,13 +2100,20 @@ NEW · BEST · SIGNATURE 세 종을 공통 컴포넌트 `.course-card__flags`로
 강의 고유 속성으로 부착해 어느 페이지에 노출되든 동일하게 따라붙고,
 겹치는 강의는 세로 스택으로 다중 표시됩니다.
 
-| 배지 | 색상 | 부착 수 (08-13) |
-|---|---|---|
-| NEW | 브랜드 블루 | 190 |
-| BEST | 골드 (`--color-flag-best`) | 170 |
-| SIGNATURE | 바이올렛 (`--color-flag-signature`) | 183 |
+| 배지 | 색상 | 08-03 | 08-13 |
+|---|---|---|---|
+| NEW | 브랜드 블루 | 190 | 190 |
+| BEST | 골드 (`--color-flag-best`) | 166 | 170 |
+| SIGNATURE | 바이올렛 (`--color-flag-signature`) | 180 | 183 |
 
-`course-card__flag--new|best|signature` 전수 집계이며, 배지 컨테이너는 417개입니다.
+**집계 기준은 `course-card__flag--{new|best|signature}` 마크업 인스턴스 전수**이며,
+배지 컨테이너(`course-card__flags`)는 417개입니다. 한 카드에 배지가 겹치면
+세로 스택으로 다중 표시되므로 배지 수(543)가 컨테이너 수보다 많습니다.
+
+종전 표기 122 · 134 · 136은 이 기준으로 재현되지 않습니다.
+같은 방법으로 08-03 커밋을 되짚으면 190 · 166 · 180이 나오므로,
+차이는 페이지 증가분이 아니라 **집계 기준의 차이**입니다.
+당시 어떤 기준으로 셌는지 기록이 남아 있지 않아, 위 표는 기준을 명시한 값으로 대체합니다.
 
 상태색(경고·오류)과 등급색(BEST·SIGNATURE)은 **서로 다른 토큰 그룹**으로 관리합니다.
 두 종류의 정보가 같은 색을 공유하면 의미가 혼선되기 때문입니다.
