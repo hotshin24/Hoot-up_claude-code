@@ -39,6 +39,15 @@
   // '일정 변경' · '예약 신청' → 일정 패널 열기
   openers.forEach(function (btn) { btn.addEventListener('click', openCalendar); });
 
+  // 달력 닫기(X) 버튼
+  function closeCalendar() {
+    calendar.hidden = true;
+    setExpanded(false);
+    if (times) times.hidden = true;
+  }
+  var closeBtn = calendar.querySelector('[data-stu-close]');
+  if (closeBtn) closeBtn.addEventListener('click', closeCalendar);
+
   // 날짜(예약 가능) 선택 → 시간 선택 패널 표시
   grid.addEventListener('click', function (e) {
     var day = e.target.closest('.stu-cal__day--avail');

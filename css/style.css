@@ -8336,7 +8336,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 /* 상태 표시 점 */
 .stu-cal__day--avail::after,
 .stu-cal__day--mine::after {
-  content: ""; position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+  content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 10px);
   width: 5px; height: 5px; border-radius: 50%;
 }
 /* 예약 가능 */
@@ -8352,7 +8352,22 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .stu-cal__day.is-picked { background-color: var(--color-brand-lighter); color: var(--color-brand-darker); border-color: var(--color-brand-base); }
 
 /* 일정 변경 인라인 패널 (예약 박스 아래로 펼침) */
-.stu-schedule { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--color-neutral-lighter); }
+.stu-schedule { position: relative; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--color-neutral-lighter); }
+/* 달력 닫기(X) 버튼: 우측 상단 (모든 구간) */
+.stu-calendar__close {
+  position: absolute; top: 18px; right: 0; display: inline-flex; padding: 0;
+  background: none; border: 0; cursor: pointer; color: var(--color-neutral-light);
+  --icon-size: 22px; transition: color .15s ease;
+}
+.stu-calendar__close:hover { color: var(--color-neutral-base); }
+/* X 버튼 자리 확보 — 범례가 겹치지 않게 */
+.stu-calendar__head { padding-right: 32px; }
+/* >480: 범례(마감)와 같은 행이라 옆에 붙어 보임 → 달력 상단에 헤더 공간을 두고
+   border(위) → X → 제목·범례 순으로 배치(X 가 border-top 과 겹치지 않게) */
+@media (min-width: 481px) {
+  .stu-schedule { padding-top: 40px; }
+  .stu-calendar__close { top: 9px; }
+}
 .stu-schedule__title { font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-darker); }
 
 /* 시간 선택 (1시간 단위) */
@@ -8396,7 +8411,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .stu-guide__row:last-child { border-bottom: 0; }
 .stu-guide__k { flex-shrink: 0; font-size: 15px; font-weight: var(--font-weight-bold); color: var(--color-neutral-light); }
 .stu-guide__v { text-align: right; font-size: var(--text-body-size); line-height: 24px; color: var(--color-neutral-base); }
-.stu-guide__foot { display: flex; justify-content: flex-end; padding-top: 2px; }
+/* 예약 신청 버튼: .stu-guide(flex column) 직계 → 우측 정렬 (foot 래퍼 제거) */
+.stu-guide > .stu-guide__btn { align-self: flex-end; }
 .stu-guide__btn {
   padding: 13px 28px; border-radius: var(--radius-pill); border: 0;
   background-color: var(--color-brand-darker); color: var(--color-neutral-white);
@@ -9734,6 +9750,10 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 @media (max-width: 480px) {
+  /* 정산/예약 절차 스텝: ≤480 1열 (base 4열 · ≤768 2열) */
+  .rev-flow__steps { grid-template-columns: minmax(0, 1fr); }
+  /* 예약 신청 버튼: ≤480 전폭 (우측 정렬 → 전폭 stretch) */
+  .stu-guide > .stu-guide__btn { align-self: stretch; }
   /* 수익/통계 요약 지표: ≤480 세로 1열 스택 (≤768 은 flex-wrap 유지).
      flex-wrap:nowrap 필수 — column + wrap 조합은 iOS Safari 에서 높이 기준으로
      항목을 여러 열로 감싸(=3열로 보임) 버리므로 nowrap 으로 단일 열 강제 */
@@ -9755,6 +9775,14 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .tax-actions .tax-btn { width: 100%; }
   /* 서류 행 버튼(파일 업로드·계약서 보기·변경): ≤480 info 아래 전폭 행으로 */
   .tax-doc__btn { flex-basis: 100%; }
+  /* 스튜디오 예약 액션(일정 변경·예약 취소): ≤480 세로 1열 */
+  .stu-booking__actions { flex-direction: column; }
+  /* 일정 변경 달력: ≤480 컨테이너 100% 폭에 맞춰 축소 → 가로 스크롤 제거.
+     day 고정 46px → 셀에 맞춰 반응형(원형 유지: aspect-ratio 1) */
+  .stu-schedule { overflow-x: visible; }
+  .stu-cal__grid, .stu-cal__weekdays { min-width: 0; }
+  .stu-cal__day { width: 100%; max-width: 46px; height: auto; aspect-ratio: 1; }
+  .stu-cal__pad { height: auto; aspect-ratio: 1; }
 
   /* 리뷰/질문 항목: ≤480 아바타+이름+별점은 상단 행 유지, meta·본문·답글은 전폭으로 채움.
      body·head 를 display:contents 로 평탄화해 자식들을 rv-item 그리드에 직접 배치 */

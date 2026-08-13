@@ -333,6 +333,9 @@
 
         <!-- 일정 변경 패널 (일정 변경 클릭 시 예약 박스 아래로 펼쳐짐) -->
         <div class="stu-schedule" id="stu-calendar" data-stu-calendar hidden>
+          <button class="stu-calendar__close" type="button" data-stu-close aria-label="달력 닫기">
+            <span class="icon icon--x-circle" aria-hidden="true"></span>
+          </button>
           <div class="stu-calendar__head">
             <h4 class="stu-schedule__title">날짜 선택 · 2026년 8월</h4>
             <div class="stu-legend">
@@ -437,28 +440,28 @@
       <!-- 이용 방법 -->
       <section class="stu-card stu-flow">
         <h3 class="creator-card__title">이용 방법</h3>
-        <div class="rev-flow__steps">
-          <div class="rev-step">
+        <ul class="rev-flow__steps">
+          <li class="rev-step">
             <p class="rev-step__no">STEP 01</p>
             <h4 class="rev-step__title">예약 신청</h4>
             <p class="rev-step__desc">원하는 날짜·공간·장비 선택</p>
-          </div>
-          <div class="rev-step">
+          </li>
+          <li class="rev-step">
             <p class="rev-step__no">STEP 02</p>
             <h4 class="rev-step__title">사전 안내</h4>
             <p class="rev-step__desc">촬영 구성 상담 및 세팅 확인</p>
-          </div>
-          <div class="rev-step">
+          </li>
+          <li class="rev-step">
             <p class="rev-step__no">STEP 03</p>
             <h4 class="rev-step__title">촬영 진행</h4>
             <p class="rev-step__desc">현장 지원 스태프의 도움</p>
-          </div>
-          <div class="rev-step rev-step--accent">
+          </li>
+          <li class="rev-step rev-step--accent">
             <p class="rev-step__no">STEP 04</p>
             <h4 class="rev-step__title">데이터 전달</h4>
             <p class="rev-step__desc">촬영본 정리 후 편집 단계로</p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </section>
 
       <!-- 이용 안내 -->
@@ -482,9 +485,7 @@
             <span class="stu-guide__v">(06621) 서울 서초구 강남대로 373, 10층</span>
           </div>
         </div>
-        <div class="stu-guide__foot">
-          <button class="stu-guide__btn" type="button" data-stu-open aria-haspopup="true" aria-controls="stu-calendar" aria-expanded="false">예약 신청</button>
-        </div>
+        <button class="stu-guide__btn" type="button" data-stu-open aria-haspopup="true" aria-controls="stu-calendar" aria-expanded="false">예약 신청</button>
       </section>
 
     </div>
