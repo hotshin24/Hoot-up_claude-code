@@ -9574,9 +9574,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .order-bottom { grid-template-columns: 1fr; }
   .cp-coupons__head { flex-direction: column; align-items: stretch; }
   .cp-coupons__form { width: 100%; }
-  .cp-coupons__input { flex: 1; width: auto; }
+  .cp-coupons__input { flex: 1 1 0; width: 0; min-width: 0; }
   .cp-coupons__grid { grid-template-columns: 1fr; }
-  .cp-summary__stats { flex-direction: column; }
+  /* .cp-summary__stats 는 481~768 에서 3열(flex row) 유지 → ≤480 에서 세로 (아래 480 블록) */
   .member-fields { grid-template-columns: 1fr; }
   .member-actions { flex-wrap: wrap; }
   .dnd__body { flex-direction: column; align-items: flex-start; gap: 16px; }
@@ -9689,6 +9689,12 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .cert-pending__btn { text-align: center; }
   /* 졸업모 그리드: ≤480 1열 (481~768 은 2열) */
   .cert-got__grid { grid-template-columns: 1fr; }
+  /* 쿠폰·도토리 요약 통계: ≤480 세로 (481~768 은 3열 flex row) */
+  .cp-summary__stats { flex-direction: column; }
+  /* 쿠폰 카드: ≤480 값(위) / 정보(아래) 세로 */
+  .cp-coupon { flex-direction: column; align-items: flex-start; gap: 8px; }
+  /* 포인트 내역: ≤480 정보(라벨·날짜, 위) / 증감(아래) 세로 */
+  .cp-history__row { flex-direction: column; align-items: flex-start; gap: 6px; }
   /* 수료증 요약 통계: ≤480 세로 (481~768 은 3열 flex row) */
   .cert-summary__stats { flex-direction: column; }
   /* 프로필 헤드: ≤480 아바타(위·가운데) / 메타(아래·가운데) 세로 스택.

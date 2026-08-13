@@ -296,20 +296,20 @@
           <p class="cp-summary__label">사용 가능 도토리</p>
           <p class="cp-summary__total">4,800<span>P</span></p>
         </div>
-        <div class="cp-summary__stats">
-          <div class="cp-summary__stat">
+        <ul class="cp-summary__stats">
+          <li class="cp-summary__stat">
             <p class="cp-summary__stat-label">이번 달 적립</p>
             <p class="cp-summary__stat-val cp-summary__stat-val--plus">+800P</p>
-          </div>
-          <div class="cp-summary__stat">
+          </li>
+          <li class="cp-summary__stat">
             <p class="cp-summary__stat-label">이번 달 사용</p>
             <p class="cp-summary__stat-val">-2,000P</p>
-          </div>
-          <div class="cp-summary__stat">
+          </li>
+          <li class="cp-summary__stat">
             <p class="cp-summary__stat-label">소멸 예정</p>
             <p class="cp-summary__stat-val cp-summary__stat-val--expire">1,200P</p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </section>
 
       <!-- 보유 쿠폰 -->
@@ -318,33 +318,33 @@
           <h3 class="cp-card__title">보유 쿠폰 <span class="cp-card__count">3</span></h3>
           <form class="cp-coupons__form" onsubmit="return false;">
             <label class="a11y-hidden" for="coupon-code">쿠폰 번호 입력</label>
-            <input class="cp-coupons__input" id="coupon-code" type="text" placeholder="쿠폰 번호 입력" autocomplete="off">
+            <input class="cp-coupons__input" id="coupon-code" type="text" placeholder="쿠폰 번호 입력" autocomplete="off" size="1">
             <button class="cp-coupons__submit" type="submit">등록</button>
           </form>
         </div>
-        <div class="cp-coupons__grid">
-            <div class="cp-coupon">
+        <ul class="cp-coupons__grid">
+            <li class="cp-coupon">
               <span class="cp-coupon__value">20%</span>
               <div class="cp-coupon__info">
                 <p class="cp-coupon__name">첫 결제 20% 할인</p>
                 <p class="cp-coupon__meta">2026.08.31까지 · 단건 강의 · 최대 30,000원</p>
               </div>
-            </div>
-            <div class="cp-coupon">
+            </li>
+            <li class="cp-coupon">
               <span class="cp-coupon__value">18%</span>
               <div class="cp-coupon__info">
                 <p class="cp-coupon__name">로드맵 패키지 18% 추가</p>
                 <p class="cp-coupon__meta">2026.08.09까지 · 로드맵 전용</p>
               </div>
-            </div>
-            <div class="cp-coupon cp-coupon--expiring">
+            </li>
+            <li class="cp-coupon cp-coupon--expiring">
               <span class="cp-coupon__value">10,000</span>
               <div class="cp-coupon__info">
                 <p class="cp-coupon__name">10,000원 웰컴 쿠폰</p>
                 <p class="cp-coupon__meta">3일 후 만료 · 50,000원 이상 결제</p>
               </div>
-            </div>
-        </div>
+            </li>
+        </ul>
       </section>
 
       <!-- 도토리 내역 -->
