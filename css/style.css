@@ -6509,6 +6509,33 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 .account-nav__label:not(:first-child) { padding-top: var(--space-xs); }
 .account-nav__list { display: flex; flex-direction: column; gap: 2px; }
+
+/* ── 계정 사이드바 아코디언 (LEARNING·PAYMENT·SETTINGS 상위 카테고리, 모든 구간) ──
+   creator-nav 는 flat <p> 라벨 유지 → 아코디언 스타일은 .account-nav__group/버튼 컨텍스트로 스코프 */
+.account-nav__group { display: flex; flex-direction: column; gap: 2px; }
+/* 그룹(카테고리) 사이 경계선 — nav gap(12px) 위 / padding-top(12px) 아래로 선을 가운데 배치 */
+.account-nav__group + .account-nav__group { border-top: 1px solid var(--color-neutral-lighter); padding-top: 12px; }
+.account-nav__group .account-nav__label {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  width: 100%; padding: 8px var(--space-xs);
+  background: none; border: 0; text-align: left; cursor: pointer;
+  transition: color .15s ease;
+}
+.account-nav__group .account-nav__label:hover { color: var(--color-neutral-base); }
+.account-nav__chevron { --icon-size: 14px; transition: transform .25s ease; }
+.account-nav__group.is-open .account-nav__chevron { transform: rotate(180deg); }
+/* 패널 접힘/펼침: max-height 로 열고 닫음(즉시 토글) */
+.account-nav__panel { overflow: hidden; max-height: 0; }
+.account-nav__group.is-open .account-nav__panel { max-height: none; }
+@media (prefers-reduced-motion: reduce) {
+  .account-nav__chevron { transition: none; }
+}
+/* 481~1280: nav 풀폭(≤1280 account-body 1열) 구간에서 패널 링크를 2열로.
+   creator-nav(패널 없음)는 미적용. minmax(0,1fr) 로 긴 링크 텍스트 오버플로 방지 */
+@media (min-width: 481px) and (max-width: 1280px) {
+  .account-nav__panel .account-nav__list { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2px 8px; }
+}
+
 .account-nav__link {
   display: block;
   padding: 11px 12px;
@@ -9265,23 +9292,24 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .brand-story .brand-mascot__list { grid-template-columns: 1fr 1fr; }
 }
 
-/* 계정 사이드바(account-nav): 769~1280 은 풀폭 stacked 상태 → 2열로
-   (LEARNING 좌 / PAYMENT·SETTINGS 우). flat 구조(label+ul ×3)라 명시적 그리드 배치,
-   LEARNING 목록은 우측 2그룹 높이만큼 rows 2~4 를 span. ≤768 은 기본 flex 1열 유지. */
+/* 크리에이터 사이드바(creator-nav): 769~1280 은 풀폭 stacked 상태 → 2열로
+   (STUDIO 좌 / REVENUE·SUPPORT 우). flat 구조(label+ul ×3)라 명시적 그리드 배치,
+   STUDIO 목록은 우측 2그룹 높이만큼 rows 2~4 를 span. ≤768 은 기본 flex 1열 유지.
+   ※ account-nav 는 모든 구간 아코디언(.account-nav__group)이라 이 그리드에서 제외 */
 @media (min-width: 769px) and (max-width: 1280px) {
-  .account-nav {
+  .creator-nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: start;
     column-gap: 24px;
     row-gap: 12px;
   }
-  .account-nav__label:nth-child(1) { grid-column: 1; grid-row: 1; }                 /* LEARNING 라벨 */
-  .account-nav__list:nth-child(2)  { grid-column: 1; grid-row: 2 / span 3; align-self: start; } /* LEARNING 목록 */
-  .account-nav__label:nth-child(3) { grid-column: 2; grid-row: 1; padding-top: 0; } /* PAYMENT 라벨(우측 최상단) */
-  .account-nav__list:nth-child(4)  { grid-column: 2; grid-row: 2; }                 /* PAYMENT 목록 */
-  .account-nav__label:nth-child(5) { grid-column: 2; grid-row: 3; }                 /* SETTINGS 라벨 */
-  .account-nav__list:nth-child(6)  { grid-column: 2; grid-row: 4; }                 /* SETTINGS 목록 */
+  .creator-nav .account-nav__label:nth-child(1) { grid-column: 1; grid-row: 1; }                 /* STUDIO 라벨 */
+  .creator-nav .account-nav__list:nth-child(2)  { grid-column: 1; grid-row: 2 / span 3; align-self: start; } /* STUDIO 목록 */
+  .creator-nav .account-nav__label:nth-child(3) { grid-column: 2; grid-row: 1; padding-top: 0; } /* REVENUE 라벨(우측 최상단) */
+  .creator-nav .account-nav__list:nth-child(4)  { grid-column: 2; grid-row: 2; }                 /* REVENUE 목록 */
+  .creator-nav .account-nav__label:nth-child(5) { grid-column: 2; grid-row: 3; }                 /* SUPPORT 라벨 */
+  .creator-nav .account-nav__list:nth-child(6)  { grid-column: 2; grid-row: 4; }                 /* SUPPORT 목록 */
 }
 
 @media (max-width: 1060px) {

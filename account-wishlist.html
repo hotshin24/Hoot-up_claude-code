@@ -17,6 +17,7 @@
 
   <script src="js/common.js?v=1" defer></script>
   <script src="js/carousel.js?v=1" defer></script>
+  <script src="js/account-nav.js" defer></script>
   <script src="js/wishlist.js" defer></script>
 </head>
 <body>
@@ -262,25 +263,37 @@
 
     <!-- 사이드 내비 -->
     <aside class="account-nav" aria-label="계정 메뉴">
-        <p class="account-nav__label">LEARNING</p>
-        <ul class="account-nav__list">
-          <li><a class="account-nav__link" href="account.html">대시보드</a></li>
-          <li><a class="account-nav__link" href="account-classes.html">내 클래스</a></li>
-          <li><a class="account-nav__link" href="account-pass.html">올나잇 패스</a></li>
-          <li><a class="account-nav__link is-active" href="account-wishlist.html" aria-current="page">찜한 둥지<span class="gown-sub">(위시리스트)</span></a></li>
-          <li><a class="account-nav__link" href="account-certificates.html">졸업모<span class="gown-sub">(수료증)</span></a></li>
-        </ul>
-        <p class="account-nav__label">PAYMENT</p>
-        <ul class="account-nav__list">
-          <li><a class="account-nav__link" href="account-orders.html">주문·결제 내역</a></li>
-          <li><a class="account-nav__link" href="account-coupons.html">쿠폰·도토리</a></li>
-        </ul>
-        <p class="account-nav__label">SETTINGS</p>
-        <ul class="account-nav__list">
-          <li><a class="account-nav__link" href="account-member.html">회원정보</a></li>
-          <li><a class="account-nav__link" href="account-notifications.html">알림 설정</a></li>
-        </ul>
-    </aside>
+        <div class="account-nav__group is-open">
+          <button class="account-nav__label" type="button" aria-expanded="true" data-acc-trigger>LEARNING<span class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
+          <div class="account-nav__panel">
+            <ul class="account-nav__list">
+              <li><a class="account-nav__link" href="account.html">대시보드</a></li>
+              <li><a class="account-nav__link" href="account-classes.html">내 클래스</a></li>
+              <li><a class="account-nav__link" href="account-pass.html">올나잇 패스</a></li>
+              <li><a class="account-nav__link is-active" href="account-wishlist.html" aria-current="page">찜한 둥지<span class="gown-sub">(위시리스트)</span></a></li>
+              <li><a class="account-nav__link" href="account-certificates.html">졸업모<span class="gown-sub">(수료증)</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="account-nav__group">
+          <button class="account-nav__label" type="button" aria-expanded="false" data-acc-trigger>PAYMENT<span class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
+          <div class="account-nav__panel">
+            <ul class="account-nav__list">
+              <li><a class="account-nav__link" href="account-orders.html">주문·결제 내역</a></li>
+              <li><a class="account-nav__link" href="account-coupons.html">쿠폰·도토리</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="account-nav__group">
+          <button class="account-nav__label" type="button" aria-expanded="false" data-acc-trigger>SETTINGS<span class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
+          <div class="account-nav__panel">
+            <ul class="account-nav__list">
+              <li><a class="account-nav__link" href="account-member.html">회원정보</a></li>
+              <li><a class="account-nav__link" href="account-notifications.html">알림 설정</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
 
     <div class="account-content account-wishlist">
 
