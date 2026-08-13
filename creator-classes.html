@@ -310,23 +310,22 @@
           <h2 class="pp-head__title">내 클래스 관리</h2>
           <p class="pp-head__desc">운영 중 6 · 심사 중 1 · 초안 1 · 누적 수강생 22,522명</p>
         </div>
-        <div class="pp-head__save">
-          <a class="creator-btn creator-btn--primary" href="creator-curriculum-new.html">+ 새 클래스 초안 작성</a>
-        </div>
+        <a class="creator-btn creator-btn--primary" href="creator-curriculum-new.html">+ 새 클래스 초안 작성</a>
       </div>
 
       <!-- 필터 칩 -->
       <div class="myclass-chips" role="group" aria-label="클래스 상태 필터">
-        <button class="myclass-chip is-active" type="button" aria-pressed="true" data-tab="all">전체 8</button>
-        <button class="myclass-chip" type="button" aria-pressed="false" data-tab="live">운영 중 6</button>
-        <button class="myclass-chip" type="button" aria-pressed="false" data-tab="review">심사 중 1</button>
-        <button class="myclass-chip" type="button" aria-pressed="false" data-tab="draft">초안 1</button>
+        <div class="myclass-chips__list">
+          <button class="myclass-chip is-active" type="button" aria-pressed="true" data-tab="all">전체 8</button>
+          <button class="myclass-chip" type="button" aria-pressed="false" data-tab="live">운영 중 6</button>
+          <button class="myclass-chip" type="button" aria-pressed="false" data-tab="review">심사 중 1</button>
+          <button class="myclass-chip" type="button" aria-pressed="false" data-tab="draft">초안 1</button>
+        </div>
       </div>
 
       <!-- 클래스 목록 -->
-      <section class="creator-card cm-list">
-        <h3 class="a11y-hidden">클래스 목록</h3>
-        <article class="cm-row" data-tabs="all live">
+      <ul class="creator-card cm-list" aria-label="클래스 목록">
+        <li class="cm-row" data-tabs="all live">
           <span class="cm-thumb"><img src="assets/course/cat-dev-react.png" alt="" loading="lazy"></span>
           <div class="cm-row__info">
             <div class="cm-row__badges">
@@ -347,8 +346,8 @@
             <a class="cm-btn cm-btn--ghost" href="creator-class-stats.html">통계</a>
             <button class="cm-btn cm-btn--ghost-muted" type="button" data-cm-sale>판매 중지</button>
           </div>
-        </article>
-        <article class="cm-row" data-tabs="all live">
+        </li>
+        <li class="cm-row" data-tabs="all live">
           <span class="cm-thumb"><img src="assets/course/cat-dev-responsive-publishing.png" alt="" loading="lazy"></span>
           <div class="cm-row__info">
             <div class="cm-row__badges">
@@ -370,8 +369,8 @@
             <a class="cm-btn cm-btn--ghost" href="creator-class-stats.html">통계</a>
             <button class="cm-btn cm-btn--ghost-muted" type="button" data-cm-sale>판매 중지</button>
           </div>
-        </article>
-        <article class="cm-row" data-tabs="all live">
+        </li>
+        <li class="cm-row" data-tabs="all live">
           <span class="cm-thumb"><img src="assets/course/cat-dev-js-core.png" alt="" loading="lazy"></span>
           <div class="cm-row__info">
             <div class="cm-row__badges">
@@ -392,8 +391,8 @@
             <a class="cm-btn cm-btn--ghost" href="creator-class-stats.html">통계</a>
             <button class="cm-btn cm-btn--ghost-muted" type="button" data-cm-sale>판매 중지</button>
           </div>
-        </article>
-        <article class="cm-row" data-tabs="all live">
+        </li>
+        <li class="cm-row" data-tabs="all live">
           <span class="cm-thumb"><img src="assets/course/cat-dev-htmlcss.png" alt="" loading="lazy"></span>
           <div class="cm-row__info">
             <div class="cm-row__badges">
@@ -414,8 +413,8 @@
             <a class="cm-btn cm-btn--ghost" href="creator-class-stats.html">통계</a>
             <button class="cm-btn cm-btn--ghost-muted" type="button" data-cm-sale>판매 중지</button>
           </div>
-        </article>
-        <article class="cm-row" data-tabs="all live">
+        </li>
+        <li class="cm-row" data-tabs="all live">
           <span class="cm-thumb"><img src="assets/course/cat-dev-css.png" alt="" loading="lazy"></span>
           <div class="cm-row__info">
             <div class="cm-row__badges">
@@ -435,8 +434,8 @@
             <a class="cm-btn cm-btn--ghost" href="creator-class-stats.html">통계</a>
             <button class="cm-btn cm-btn--ghost-muted" type="button" data-cm-sale>판매 중지</button>
           </div>
-        </article>
-        <article class="cm-row" data-tabs="all live">
+        </li>
+        <li class="cm-row" data-tabs="all live">
           <span class="cm-thumb"><img src="assets/course/cat-dev-vanilla-js.png" alt="" loading="lazy"></span>
           <div class="cm-row__info">
             <div class="cm-row__badges">
@@ -456,8 +455,8 @@
             <a class="cm-btn cm-btn--ghost" href="creator-class-stats.html">통계</a>
             <button class="cm-btn cm-btn--ghost-muted" type="button" data-cm-sale>판매 중지</button>
           </div>
-        </article>
-        <article class="cm-row" data-tabs="all review">
+        </li>
+        <li class="cm-row" data-tabs="all review">
           <span class="cm-thumb"><img src="assets/course/cat-dev-vibe.png" alt="" loading="lazy"></span>
           <div class="cm-row__info">
             <div class="cm-row__badges">
@@ -473,8 +472,8 @@
           <div class="cm-row__actions">
             <button class="cm-btn cm-btn--dark" type="button" data-open-modal aria-haspopup="dialog" aria-controls="cm-review-modal">진행 상황</button>
           </div>
-        </article>
-        <article class="cm-row cm-row--last" data-tabs="all draft">
+        </li>
+        <li class="cm-row cm-row--last" data-tabs="all draft">
           <span class="cm-thumb cm-thumb--empty" aria-hidden="true"></span>
           <div class="cm-row__info">
             <div class="cm-row__badges">
@@ -491,8 +490,8 @@
             <a class="cm-btn cm-btn--primary" href="creator-curriculum-new.html">이어서 작성</a>
             <button class="cm-btn cm-btn--danger" type="button" data-cm-draft-del>초안 삭제</button>
           </div>
-        </article>
-      </section>
+        </li>
+      </ul>
 
     </div>
   </div>
