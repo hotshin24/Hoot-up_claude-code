@@ -1,5 +1,5 @@
 /* 주문·결제 내역 (account-orders.html)
-   - .order-head__filter .myclass-chip[data-tab] 로 .order-row[data-cat] 필터
+   - .order-head__filter .chip[data-tab] 로 .order-row[data-cat] 필터
    - 필터된 내역을 5개씩 페이지네이션 (.pager 디자인 재사용)
    - 헤더 행(.order-row--head)은 항상 표시
    defer 로 로드되어 DOM 파싱 후 실행되므로 DOMContentLoaded 래퍼 불필요 */
@@ -11,7 +11,7 @@
   if (!filter || !table) return;
 
   var rows = Array.prototype.slice.call(table.querySelectorAll('.order-row[data-cat]'));
-  var chips = Array.prototype.slice.call(filter.querySelectorAll('.myclass-chip'));
+  var chips = Array.prototype.slice.call(filter.querySelectorAll('.chip'));
   var empty = document.querySelector('[data-order-empty]');
   var pager = document.querySelector('[data-order-pager]');
 
@@ -74,11 +74,11 @@
 
   // 카테고리 필터
   filter.addEventListener('click', function (e) {
-    var chip = e.target.closest ? e.target.closest('.myclass-chip') : null;
+    var chip = e.target.closest ? e.target.closest('.chip') : null;
     if (!chip) return;
     chips.forEach(function (c) {
       var on = c === chip;
-      c.classList.toggle('is-active', on);
+      c.classList.toggle('chip--active', on);
       c.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
     cat = chip.getAttribute('data-tab');

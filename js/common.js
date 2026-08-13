@@ -459,7 +459,8 @@
     { host: ".mag-cats", list: ".mag-cats__list", item: ".mag-chip", label: "매거진 카테고리 모두 보기" },
     { host: ".hfaq__filter", list: ".hfaq__filter-list", item: ".hfaq__tab", label: "FAQ 카테고리 모두 보기", mq: "(max-width: 768px)" },
     { host: ".notice__filter", list: ".notice__filter-list", item: ".notice__filter-btn", label: "공지 카테고리 모두 보기", mq: "(max-width: 480px)" },
-    { host: ".myclass-filter", list: ".myclass-filter__list", item: ".myclass-chip", label: "클래스 필터 모두 보기", mq: "(max-width: 480px)" }
+    { host: ".myclass-filter", list: ".myclass-filter__list", item: ".myclass-chip", label: "클래스 필터 모두 보기", mq: "(max-width: 480px)" },
+    { host: ".order-head__filter", list: ".order-head__filter-list", item: ".chip", label: "주문 상태 모두 보기", mq: "(max-width: 480px)" }
   ];
   var defaultMq = window.matchMedia("(max-width: 1280px)");
 

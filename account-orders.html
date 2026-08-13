@@ -293,130 +293,132 @@
           <p class="order-head__summary">최근 12개월 · 총 13건 · 결제 금액 723,520원</p>
         </div>
         <div class="order-head__filter" role="group" aria-label="주문 상태 필터">
-          <button class="myclass-chip is-active" type="button" aria-pressed="true" data-tab="all">전체</button>
-          <button class="myclass-chip" type="button" aria-pressed="false" data-tab="single">단건 결제</button>
-          <button class="myclass-chip" type="button" aria-pressed="false" data-tab="subscription">구독</button>
-          <button class="myclass-chip" type="button" aria-pressed="false" data-tab="refund">환불</button>
+          <ul class="order-head__filter-list">
+            <li><button class="chip chip--active" type="button" data-tab="all" aria-pressed="true">전체</button></li>
+            <li><button class="chip" type="button" data-tab="single" aria-pressed="false">단건 결제</button></li>
+            <li><button class="chip" type="button" data-tab="subscription" aria-pressed="false">구독</button></li>
+            <li><button class="chip" type="button" data-tab="refund" aria-pressed="false">환불</button></li>
+          </ul>
         </div>
       </div>
 
       <!-- 주문 테이블 -->
       <section class="order-card">
         <h3 class="a11y-hidden">주문 내역</h3>
-        <div class="order-table">
-          <div class="order-row order-row--head">
+        <ul class="order-table">
+          <li class="order-row order-row--head">
             <span>주문일</span>
             <span>상품</span>
             <span>주문번호</span>
             <span>결제 금액</span>
             <span>상태</span>
             <span></span>
-          </div>
-          <div class="order-row" data-cat="subscription">
+          </li>
+          <li class="order-row" data-cat="subscription">
             <span class="order-cell__date">2026.07.20</span>
             <span class="order-cell__product">올나잇 패스 월 구독</span>
             <span class="order-cell__no">H26-072001</span>
             <span class="order-cell__amount">19,900원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-          <div class="order-row" data-cat="single">
+          </li>
+          <li class="order-row" data-cat="single">
             <span class="order-cell__date">2026.07.16</span>
             <span class="order-cell__product">개발 생산성 10배 올리는 클로드 코드 마스터 과정</span>
             <span class="order-cell__no">H26-071601</span>
             <span class="order-cell__amount">107,800원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-          <div class="order-row" data-cat="single">
+          </li>
+          <li class="order-row" data-cat="single">
             <span class="order-cell__date">2026.07.02</span>
             <span class="order-cell__product">데이터로 인사이트를 캐는 파이썬 데이터 분석 입문</span>
             <span class="order-cell__no">H26-070201</span>
             <span class="order-cell__amount">72,600원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-          <div class="order-row" data-cat="single">
+          </li>
+          <li class="order-row" data-cat="single">
             <span class="order-cell__date">2026.06.28</span>
             <span class="order-cell__product">바닐라 자바 스크립트로 만드는 인터랙티브 웹</span>
             <span class="order-cell__no">H26-062801</span>
             <span class="order-cell__amount">100,100원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-          <div class="order-row" data-cat="subscription">
+          </li>
+          <li class="order-row" data-cat="subscription">
             <span class="order-cell__date">2026.06.20</span>
             <span class="order-cell__product">올나잇 패스 월 구독</span>
             <span class="order-cell__no">H26-062001</span>
             <span class="order-cell__amount">19,900원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-          <div class="order-row" data-cat="single">
+          </li>
+          <li class="order-row" data-cat="single">
             <span class="order-cell__date">2026.06.05</span>
             <span class="order-cell__product">피그마로 완성하는 UX/UI 디자인 입문</span>
             <span class="order-cell__no">H26-060501</span>
             <span class="order-cell__amount">85,800원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-          <div class="order-row" data-cat="subscription">
+          </li>
+          <li class="order-row" data-cat="subscription">
             <span class="order-cell__date">2026.05.20</span>
             <span class="order-cell__product">올나잇 패스 월 구독</span>
             <span class="order-cell__no">H26-052001</span>
             <span class="order-cell__amount">19,900원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-          <div class="order-row" data-cat="single">
+          </li>
+          <li class="order-row" data-cat="single">
             <span class="order-cell__date">2026.05.12</span>
             <span class="order-cell__product">포트폴리오까지 끝내는 React 프론트엔드 실전 프로젝트</span>
             <span class="order-cell__no">H26-051201</span>
             <span class="order-cell__amount">99,000원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-          <div class="order-row" data-cat="subscription">
+          </li>
+          <li class="order-row" data-cat="subscription">
             <span class="order-cell__date">2026.04.20</span>
             <span class="order-cell__product">올나잇 패스 월 구독</span>
             <span class="order-cell__no">H26-042001</span>
             <span class="order-cell__amount">15,920원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-          <div class="order-row" data-cat="single">
+          </li>
+          <li class="order-row" data-cat="single">
             <span class="order-cell__date">2026.04.15</span>
             <span class="order-cell__product">직장인 사이드프로젝트로 N잡 만드는 법</span>
             <span class="order-cell__no">H26-041501</span>
             <span class="order-cell__amount">85,800원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-          <div class="order-row" data-cat="refund">
+          </li>
+          <li class="order-row" data-cat="refund">
             <span class="order-cell__date">2026.03.15</span>
             <span class="order-cell__product">일러스트레이터로 시작하는 벡터 그래픽</span>
             <span class="order-cell__no">H26-031502</span>
             <span class="order-cell__amount">77,000원</span>
             <span class="order-cell__status order-cell__status--refund">환불 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-          <div class="order-row" data-cat="refund">
+          </li>
+          <li class="order-row" data-cat="refund">
             <span class="order-cell__date">2026.02.24</span>
             <span class="order-cell__product">왕초보를 위한 주식·ETF 기초 이해하기 입문 과정</span>
             <span class="order-cell__no">H26-022401</span>
             <span class="order-cell__amount">69,300원</span>
             <span class="order-cell__status order-cell__status--refund">환불 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-          <div class="order-row" data-cat="single">
+          </li>
+          <li class="order-row" data-cat="single">
             <span class="order-cell__date">2026.01.10</span>
             <span class="order-cell__product">무드보드부터 컬러까지, 브랜드 아이덴티티 설계</span>
             <span class="order-cell__no">H26-011001</span>
             <span class="order-cell__amount">96,800원</span>
             <span class="order-cell__status order-cell__status--paid">결제 완료</span>
             <a class="order-cell__receipt" href="#" data-open-modal aria-haspopup="dialog" aria-controls="receipt-modal">영수증</a>
-          </div>
-        </div>
+          </li>
+        </ul>
         <nav class="pager" aria-label="주문 내역 페이지" data-order-pager hidden></nav>
         <p class="order-empty" data-order-empty hidden>해당 조건의 결제 내역이 없어요.</p>
       </section>

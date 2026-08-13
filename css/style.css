@@ -7003,7 +7003,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .order-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
 .order-head__title { font-weight: var(--font-weight-bold); font-size: var(--text-h3-size); line-height: 36px; color: var(--color-neutral-darker); }
 .order-head__summary { margin-top: 6px; font-size: 15px; color: var(--color-neutral-base); }
-.order-head__filter { display: flex; gap: 6px; flex-shrink: 0; }
+.order-head__filter { flex-shrink: 0; }
+.order-head__filter-list { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-xs); }
 
 /* 주문 테이블 카드 */
 .order-card {
@@ -7013,7 +7014,7 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 .order-table { display: flex; flex-direction: column; }
 .order-row {
   display: grid;
-  grid-template-columns: 100px 204px 118px 110px 84px 1fr;
+  grid-template-columns: 100px minmax(0, 1fr) 118px 110px 84px auto;
   gap: 16px; align-items: center;
   padding: 16px 6px 17px;
   border-bottom: 1px solid var(--color-neutral-lighter);
@@ -9570,7 +9571,6 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .wish-item__price { width: auto; align-items: flex-start; }
   .wish-promo { flex-direction: column; align-items: flex-start; }
   .order-head { flex-direction: column; align-items: stretch; gap: 16px; }
-  .order-head__filter { flex-wrap: wrap; }
   .order-bottom { grid-template-columns: 1fr; }
   .cp-coupons__head { flex-direction: column; align-items: stretch; }
   .cp-coupons__form { width: 100%; }
@@ -9675,6 +9675,9 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
 }
 
 @media (max-width: 480px) {
+  /* 주문 상태 필터: ≤480 chevron 접기 — host 기준 position + 우측 chevron 자리(대분류 카테고리 공용) */
+  .order-head__filter { position: relative; }
+  .order-head__filter-list { padding-right: 50px; }
   /* 발급 대기 헤더: ≤480 제목(위) / 안내(아래) 세로 */
   .cert-pending__head { flex-direction: column; align-items: flex-start; gap: 6px; }
   /* 발급 대기 항목: ≤480 썸네일(위·전폭) / 본문(아래) / aside(그 아래·버튼 전폭) */
