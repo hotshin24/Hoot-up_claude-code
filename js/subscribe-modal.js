@@ -35,6 +35,17 @@
       el.addEventListener("click", function (e) { e.preventDefault(); close(modal); });
     });
 
+    // 카드번호·유효기간·CVC: 숫자만 입력 허용 (문자 입력 즉시 제거)
+    ["card-number", "card-expiry", "card-cvc"].forEach(function (name) {
+      var field = form.querySelector('[name="' + name + '"]');
+      if (!field) return;
+      field.setAttribute("inputmode", "numeric");
+      field.addEventListener("input", function () {
+        var digits = field.value.replace(/[^0-9]/g, "");
+        if (field.value !== digits) field.value = digits;
+      });
+    });
+
     // required + type=email → 유효할 때만 submit 이벤트 발생
     form.addEventListener("submit", function (e) {
       e.preventDefault();
