@@ -9678,6 +9678,8 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .rev-flow__steps { grid-template-columns: repeat(2, 1fr); }
   .rev-flow__note { white-space: normal; }
   .tax-alert, .tax-note { flex-direction: column; align-items: stretch; gap: 16px; }
+  /* 문의 버튼: 세로 스택 시 전폭 대신 가운데 정렬 */
+  .tax-alert__btn, .tax-note__btn { align-self: center; }
   .tax-form, .tax-types { grid-template-columns: 1fr; }
   .tax-doc { flex-wrap: wrap; }
   .stu-spaces__grid { grid-template-columns: repeat(2, 1fr); }
@@ -9740,6 +9742,19 @@ a.sitemap-cat__head:hover .sitemap-cat__name {
   .cstat-calc { flex-direction: column; flex-wrap: nowrap; }
   /* 블로그 글 액션(수정·삭제): ≤480 본문 아래 행으로 */
   .blog-post__actions { flex-basis: 100%; }
+
+  /* 세금 문의 버튼: ≤480 전폭 (≤768 가운데 정렬 → 전폭으로 확장) */
+  .tax-alert__btn, .tax-note__btn { align-self: stretch; text-align: center; }
+  /* 이메일 버튼: 한 줄 유지 + 반응형 — 좌우 패딩을 clamp 로 축소해 ≤280 에서도 이메일이 한 줄로.
+     4.58vw 는 480px 에서 정확히 22px(base) 가 되어 481px↑ 와 이음새 없음 */
+  .tax-note__btn { padding-inline: clamp(10px, 4.58vw, 22px); }
+  /* 계좌 인증 상태: ≤480 뱃지(위) / 안내 텍스트(아래) 세로 스택 */
+  .tax-verify { flex-direction: column; align-items: flex-start; gap: 8px; }
+  /* 계좌 액션 버튼: ≤480 세로 1열 · 각 버튼 100% 폭 */
+  .tax-actions { flex-direction: column; }
+  .tax-actions .tax-btn { width: 100%; }
+  /* 서류 행 버튼(파일 업로드·계약서 보기·변경): ≤480 info 아래 전폭 행으로 */
+  .tax-doc__btn { flex-basis: 100%; }
 
   /* 리뷰/질문 항목: ≤480 아바타+이름+별점은 상단 행 유지, meta·본문·답글은 전폭으로 채움.
      body·head 를 display:contents 로 평탄화해 자식들을 rv-item 그리드에 직접 배치 */
