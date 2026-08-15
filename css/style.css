@@ -1265,7 +1265,7 @@ hr {
   padding-inline: var(--space-2xs);
   border-start-start-radius: var(--radius-sm);
   border-end-start-radius: var(--radius-sm);
-  background-color: var(--color-danger-base);
+  background-color: var(--color-danger-dark); /* a11y: 흰 글자 대비 5.75:1 (danger-base #ed2040=4.30 미달). 배지는 항상 라이트 카드 위 */
   color: var(--color-text-inverse);
   font-size: var(--text-body-sm-size);
   line-height: var(--text-body-sm-leading);
@@ -1359,7 +1359,7 @@ hr {
 }
 
 .course-card__rate {
-  color: var(--color-danger-base);
+  color: var(--color-danger-dark); /* a11y: 흰 배경 대비 5.75:1 (danger-base 4.30 미달) */
 }
 
 .course-card__price-before,
@@ -3163,7 +3163,7 @@ main:has(> .lp-cta:last-child) { padding-bottom: 0; }
   position: absolute;
   right: 0;
   bottom: var(--space-md);
-  background-color: var(--color-danger-base);
+  background-color: var(--color-danger-dark); /* a11y: 흰 글자 대비 5.75:1 (course-card__badge 와 동일 할인 배지) */
   color: var(--color-text-inverse);
   font-size: var(--text-body-sm-size);
   padding: 1px var(--space-2xs);
