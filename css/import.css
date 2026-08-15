@@ -5,5 +5,5 @@
    ============================================================ */
 
 /* 디자인 토큰 · 전역 스타일 */
-@import url('tokens.css?v=1');
-@import url('style.css?v=1');
+@import url('tokens.css');
+@import url('style.css');
