@@ -4,7 +4,7 @@
 2026년 7월 29일부터 8월 13일까지 16일, 지적 359건, 커밋 353건.
 
 만든 과정보다 확인한 과정 쪽을 적었습니다.
-상세 로그는 [README 전문](README.md)에 있습니다.
+상세 로그는 [README 전문](README_전문.md)에 있습니다.
 
 라이브 · `hotshin24.github.io/Hoot-up_claude-code`
 
