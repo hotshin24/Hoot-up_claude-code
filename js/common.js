@@ -4,6 +4,26 @@
    각 기능은 독립 IIFE, 대상 요소 없으면 자동으로 no-op
    ============================================================ */
 
+/* ===== 전역 스크린리더 알림(aria-live) =====
+   리로드 없이 바뀌는 내용(검색 결과·필터·페이지네이션·더보기 등)을
+   스크린리더에 알린다. window.announce(문구) 로 호출. */
+(function () {
+  "use strict";
+  var live = document.createElement("div");
+  live.id = "a11y-live";
+  live.className = "a11y-hidden";
+  live.setAttribute("aria-live", "polite");
+  live.setAttribute("aria-atomic", "true");
+  if (document.body) document.body.appendChild(live);
+  var t;
+  window.announce = function (msg) {
+    if (!live.isConnected && document.body) document.body.appendChild(live);
+    live.textContent = "";               // 같은 문구 반복도 다시 읽히도록 초기화
+    clearTimeout(t);
+    t = setTimeout(function () { live.textContent = msg; }, 60);
+  };
+})();
+
 /* ===== nav ===== */
 /* ==========================================================================
    HOOT UP — 전체 카테고리 메가 메뉴
@@ -234,6 +254,7 @@
     if (!current.length) {
       box.innerHTML = '<p class="search__empty"><b>' + esc(input.value.trim()) + '</b> 검색 결과가 없어요</p>';
       box.hidden = false;
+      if (window.announce) window.announce("‘" + input.value.trim() + "’ 검색 결과 없음");
       return;
     }
 
@@ -251,6 +272,7 @@
              '</a>';
     }).join("");
     box.hidden = false;
+    if (window.announce) window.announce(current.length + "개 검색 결과");
   }
 
   function setActive(n) {
@@ -388,6 +410,7 @@
       read = unread.concat(read);
       unread = [];
       render();
+      if (window.announce) window.announce("모든 알림을 읽음 처리했습니다");
     }
   });
 })();

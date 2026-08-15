@@ -20,6 +20,7 @@
     btn.addEventListener('click', function () {
       shown += step;
       render();
+      if (window.announce) window.announce('글 ' + Math.min(shown, items.length) + '개 표시 중');
     });
   }
 

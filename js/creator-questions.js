@@ -88,6 +88,7 @@
         b.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
       render();
+      if (window.announce) window.announce(btn.textContent.trim() + ', 질문 ' + items().filter(matches).length + '개');
     });
   }
 
@@ -117,6 +118,7 @@
     var item = reply.closest('.rv-item');
     var badge = item && item.querySelector('.rv-badge');
     if (badge) badge.remove();
+    if (window.announce) window.announce('답변이 등록되었습니다');
   });
 
   // 페이지 이동
@@ -129,6 +131,7 @@
       if (!next || next === page) return;
       page = next;
       render();
+      if (window.announce) window.announce(page + '페이지');
       list.scrollIntoView({ block: 'nearest' });
     });
   }

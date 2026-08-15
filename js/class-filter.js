@@ -90,6 +90,7 @@
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
     render();
+    if (window.announce) window.announce(btn.textContent.trim() + ', 강의 ' + filtered().length + '개');
   });
 
   // 클래스 더보기 버튼
@@ -97,6 +98,7 @@
     moreBtn.addEventListener('click', function () {
       shown += STEP;
       render();
+      if (window.announce) window.announce('강의 ' + Math.min(shown, filtered().length) + '개 표시 중');
     });
   }
 
@@ -113,6 +115,7 @@
       else if (val === 'next') page = Math.min(total, page + 1);
       else page = parseInt(val, 10) || 1;
       render();
+      if (window.announce) window.announce(page + '페이지');
       var top = grid.getBoundingClientRect().top + window.pageYOffset - 100;
       window.scrollTo({ top: top, behavior: 'smooth' });
     });

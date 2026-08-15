@@ -46,7 +46,7 @@
      ---------------------------------------------------------------------- */
   --color-text-strong: var(--color-neutral-darker);
   --color-text-base: var(--color-neutral-base);
-  --color-text-muted: var(--color-neutral-light);
+  --color-text-muted: #667286; /* a11y: 흰 배경 4.87:1 (neutral-light #93a2b7=2.59 은 작은 텍스트 대비 부족). 장식용 밝은 회색은 --color-neutral-light 유지 */
   --color-text-inverse: var(--color-neutral-white);
   --color-surface-page: var(--color-neutral-white);
   --color-surface-subtle: var(--color-neutral-lightest);
