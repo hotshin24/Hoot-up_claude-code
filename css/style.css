@@ -1937,6 +1937,41 @@ main:has(> .lp-cta:last-child) { padding-bottom: 0; }
   color: var(--color-brand-lighter);
 }
 
+/* 다크 배경 컨테이너에서는 muted 텍스트를 밝은 회색(#93a2b7=6.88:1)으로 재정의.
+   전역 --color-text-muted(#667286)는 라이트 배경 기준(4.87:1)이라 다크에선 대비 부족(3.67:1).
+   단일 값으로 라이트·다크 동시 충족 불가 → 다크 컨테이너 스코프에서 토큰 오버라이드. */
+.site-footer,
+.terms .terms__contact,
+.terms .terms__hero,
+.subscribe .subscribe__compare-head,
+.subscribe .subscribe__forme-card--else,
+.subscribe .subscribe__summary-card--yes,
+.settlement .settlement__dashboard,
+.settlement .settlement__stream-note,
+.roadmap .roadmap__next,
+.brand-story .brand-hero__section,
+.brand-story .brand-lexicon__section,
+.b2b .b2b__outcomes,
+.careers .careers__share,
+.creator-guide .creator-guide__checklist,
+.creator-studio .creator-studio__info,
+.mentor .mentor__foryou,
+.notice .notice__hero,
+.hfaq .hfaq__hero,
+.lp-hero,
+.category-banner,
+.cp-summary,
+.account-points,
+.festa-cta,
+.pass-cta,
+.business__cta,
+.business__notice--dark,
+.refund__note--dark,
+.rev-flow__note,
+.tax-note {
+  --color-text-muted: var(--color-neutral-light);
+}
+
 .site-footer__inner {
   display: flex;
   flex-direction: column;
