@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,247 +22,258 @@
   <script src="js/toggle.js" defer></script>
   <script src="js/creator-reviews.js" defer></script>
 </head>
+
 <body>
 
-<a class="skip-link" href="#main">본문 바로가기</a>
+  <a class="skip-link" href="#main">본문 바로가기</a>
 
-<!-- ======================================================================
+  <!-- ======================================================================
      헤더
      ====================================================================== -->
-<header class="site-header">
-  <div class="site-header__inner l-container">
+  <header class="site-header">
+    <div class="site-header__inner l-container">
 
-    <div class="site-header__utility">
-      <a class="site-header__logo" href="index.html">
-        <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
-      </a>
+      <div class="site-header__utility">
+        <a class="site-header__logo" href="index.html">
+          <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
+        </a>
 
-      <form class="search" action="categories.html" method="get" role="search">
-        <label class="a11y-hidden" for="search-keyword">강의 검색</label>
-        <input class="search__input" id="search-keyword" type="search" name="keyword" placeholder="어떤 강의를 찾으시나요?" autocomplete="off">
-        <button class="search__submit" type="submit" aria-label="검색">
-          <span class="icon icon--search"></span>
-        </button>
-      </form>
-
-      <ul class="user-menu">
-        <li class="user-menu__item">
-          <a class="user-menu__link" href="cart.html">
-            <span class="icon icon--cart"></span>
-            <span class="a11y-hidden">장바구니</span>
-            <span class="user-menu__badge">3<span class="a11y-hidden">개 담김</span></span>
-          </a>
-        </li>
-        <li class="user-menu__item">
-          <button class="user-menu__link" type="button" data-notif-toggle aria-haspopup="dialog" aria-expanded="false">
-            <span class="icon icon--bell"></span>
-            <span class="a11y-hidden">알림</span>
-            <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
+        <form class="search" action="categories.html" method="get" role="search">
+          <label class="a11y-hidden" for="search-keyword">강의 검색</label>
+          <input class="search__input" id="search-keyword" type="search" name="keyword" placeholder="어떤 강의를 찾으시나요?"
+            autocomplete="off">
+          <button class="search__submit" type="submit" aria-label="검색">
+            <span class="icon icon--search"></span>
           </button>
-        </li>
-        <li class="user-menu__item">
-          <a class="user-menu__profile" href="account.html">
-            <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
-          </a>
-        </li>
-      </ul>
+        </form>
+
+        <ul class="user-menu">
+          <li class="user-menu__item">
+            <a class="user-menu__link" href="cart.html">
+              <span class="icon icon--cart"></span>
+              <span class="a11y-hidden">장바구니</span>
+              <span class="user-menu__badge">3<span class="a11y-hidden">개 담김</span></span>
+            </a>
+          </li>
+          <li class="user-menu__item">
+            <button class="user-menu__link" type="button" data-notif-toggle aria-haspopup="dialog"
+              aria-expanded="false">
+              <span class="icon icon--bell"></span>
+              <span class="a11y-hidden">알림</span>
+              <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
+            </button>
+          </li>
+          <li class="user-menu__item">
+            <a class="user-menu__profile" href="account.html">
+              <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <nav class="gnb" aria-label="주요 메뉴">
+        <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega"
+          aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
+          <span class="icon icon--list"></span>
+        </button>
+        <ul class="gnb__list" id="gnb-list">
+          <li class="gnb__item"><a class="gnb__link" href="categories.html">전체 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="best.html">베스트 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="event-1.html">이벤트 할인</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="new.html">새로운 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="earlybird-1.html">얼리버드 할인</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="signature.html">시그니쳐 클래스</a></li>
+        </ul>
+      </nav>
+
     </div>
 
-    <nav class="gnb" aria-label="주요 메뉴">
-      <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega" aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
-        <span class="icon icon--list"></span>
-      </button>
-      <ul class="gnb__list" id="gnb-list">
-        <li class="gnb__item"><a class="gnb__link" href="categories.html">전체 클래스</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="best.html">베스트 클래스</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="event-1.html">이벤트 할인</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="new.html">새로운 클래스</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="earlybird-1.html">얼리버드 할인</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="signature.html">시그니쳐 클래스</a></li>
-      </ul>
-    </nav>
-
-  </div>
-
-  <!-- ====================================================================
+    <!-- ====================================================================
        전체 카테고리 메가 메뉴 (햄버거 · '전체 카테고리' 트리거로 펼침)
        ==================================================================== -->
-  <div class="mega" id="category-mega" aria-hidden="true">
-    <div class="mega__inner l-container">
-      <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
-        <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it"
-                aria-selected="true" aria-controls="megapanel-dev-it" tabindex="0">
-          <span class="mega-cat__name">개발 &amp; IT</span>
-          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-career-money"
-                aria-selected="false" aria-controls="megapanel-career-money" tabindex="-1">
-          <span class="mega-cat__name">커리어 &amp; 머니</span>
-          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-design-creative"
-                aria-selected="false" aria-controls="megapanel-design-creative" tabindex="-1">
-          <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
-          <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-photo-video"
-                aria-selected="false" aria-controls="megapanel-photo-video" tabindex="-1">
-          <span class="mega-cat__name">사진 &amp; 영상</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust"
-                aria-selected="false" aria-controls="megapanel-drawing-illust" tabindex="-1">
-          <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness"
-                aria-selected="false" aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
-          <span class="mega-cat__name">운동 &amp; 마음챙김</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade"
-                aria-selected="false" aria-controls="megapanel-craft-handmade" tabindex="-1">
-          <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking"
-                aria-selected="false" aria-controls="megapanel-cooking-baking" tabindex="-1">
-          <span class="mega-cat__name">요리 &amp; 베이킹</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="mega__subs">
-        <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
-          <a class="mega-sub__title" href="category-dev-it-1.html">
-            개발 &amp; IT 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-dev-it-web-publishing.html">웹 퍼블리싱</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-frontend.html">프론트엔드</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-backend.html">백엔드 &amp; 서버</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-mobile.html">모바일 &amp; 앱 개발</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-data-ai.html">데이터 &amp; AI</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-ai-tools.html">AI 개발 도구</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-nocode.html">노코드 &amp; 자동화</a></li>
-          </ul>
+    <div class="mega" id="category-mega" aria-hidden="true">
+      <div class="mega__inner l-container">
+        <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
+          <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it" aria-selected="true"
+            aria-controls="megapanel-dev-it" tabindex="0">
+            <span class="mega-cat__name">개발 &amp; IT</span>
+            <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-career-money" aria-selected="false"
+            aria-controls="megapanel-career-money" tabindex="-1">
+            <span class="mega-cat__name">커리어 &amp; 머니</span>
+            <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-design-creative" aria-selected="false"
+            aria-controls="megapanel-design-creative" tabindex="-1">
+            <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
+            <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-photo-video" aria-selected="false"
+            aria-controls="megapanel-photo-video" tabindex="-1">
+            <span class="mega-cat__name">사진 &amp; 영상</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust" aria-selected="false"
+            aria-controls="megapanel-drawing-illust" tabindex="-1">
+            <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness" aria-selected="false"
+            aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
+            <span class="mega-cat__name">운동 &amp; 마음챙김</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade" aria-selected="false"
+            aria-controls="megapanel-craft-handmade" tabindex="-1">
+            <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking" aria-selected="false"
+            aria-controls="megapanel-cooking-baking" tabindex="-1">
+            <span class="mega-cat__name">요리 &amp; 베이킹</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
         </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money" hidden>
-          <a class="mega-sub__title" href="category-career-money-1.html">
-            커리어 &amp; 머니 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-career-money-job-skills.html">직무 역량 &amp; 일잘러</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-job-search.html">취업 &amp; 이직</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-marketing.html">마케팅 &amp; 브랜딩</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-sideproject.html">사이드프로젝트 &amp; N잡</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-investing.html">재테크 &amp; 투자</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-tax.html">절세 &amp; 머니 관리</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative" hidden>
-          <a class="mega-sub__title" href="category-design-creative-1.html">
-            디자인 &amp; 크리에이티브 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-design-creative-uxui.html">UX/UI 디자인</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-graphic.html">그래픽 디자인</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-branding.html">브랜딩 &amp; 로고</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-3d-motion.html">3D &amp; 모션 디자인</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-illust.html">일러스트 &amp; 디지털아트</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-intro.html">크리에이티브 입문</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
-          <a class="mega-sub__title" href="category-photo-video-1.html">
-            사진 &amp; 영상 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-photo-video-photography.html">사진 촬영</a></li>
-            <li><a class="mega-sub__link" href="category-photo-video-videography.html">영상 촬영</a></li>
-            <li><a class="mega-sub__link" href="category-photo-video-editing.html">편집 &amp; 후보정</a></li>
-            <li><a class="mega-sub__link" href="category-photo-video-motion.html">모션 &amp; 크리에이티브</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust" hidden>
-          <a class="mega-sub__title" href="category-drawing-illust-1.html">
-            드로잉 &amp; 일러스트 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-drawing-illust-digital.html">디지털 드로잉</a></li>
-            <li><a class="mega-sub__link" href="category-drawing-illust-handdrawing.html">손그림 &amp; 회화</a></li>
-            <li><a class="mega-sub__link" href="category-drawing-illust-character.html">캐릭터 &amp; 웹툰</a></li>
-            <li><a class="mega-sub__link" href="category-drawing-illust-calligraphy.html">캘리그라피 &amp; 레터링</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness" aria-labelledby="megacat-fitness-mindfulness" hidden>
-          <a class="mega-sub__title" href="category-fitness-mindfulness-1.html">
-            운동 &amp; 마음챙김 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-hometraining.html">홈트 &amp; 근력</a></li>
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-yoga.html">요가 &amp; 필라테스</a></li>
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-running.html">러닝 &amp; 유산소</a></li>
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-meditation.html">명상 &amp; 마음챙김</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade" hidden>
-          <a class="mega-sub__title" href="category-craft-handmade-1.html">
-            공예 &amp; 핸드메이드 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
-            <li><a class="mega-sub__link" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
-            <li><a class="mega-sub__link" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
-            <li><a class="mega-sub__link" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking" hidden>
-          <a class="mega-sub__title" href="category-cooking-baking-1.html">
-            요리 &amp; 베이킹 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
-            <li><a class="mega-sub__link" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
-            <li><a class="mega-sub__link" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
-            <li><a class="mega-sub__link" href="category-cooking-baking-world.html">세계요리 &amp; 비건</a></li>
-          </ul>
+        <div class="mega__subs">
+          <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
+            <a class="mega-sub__title" href="category-dev-it-1.html">
+              개발 &amp; IT 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-dev-it-web-publishing.html">웹 퍼블리싱</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-frontend.html">프론트엔드</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-backend.html">백엔드 &amp; 서버</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-mobile.html">모바일 &amp; 앱 개발</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-data-ai.html">데이터 &amp; AI</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-ai-tools.html">AI 개발 도구</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-nocode.html">노코드 &amp; 자동화</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money"
+            hidden>
+            <a class="mega-sub__title" href="category-career-money-1.html">
+              커리어 &amp; 머니 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-career-money-job-skills.html">직무 역량 &amp; 일잘러</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-job-search.html">취업 &amp; 이직</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-marketing.html">마케팅 &amp; 브랜딩</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-sideproject.html">사이드프로젝트 &amp; N잡</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-investing.html">재테크 &amp; 투자</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-tax.html">절세 &amp; 머니 관리</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative"
+            hidden>
+            <a class="mega-sub__title" href="category-design-creative-1.html">
+              디자인 &amp; 크리에이티브 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-design-creative-uxui.html">UX/UI 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-graphic.html">그래픽 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-branding.html">브랜딩 &amp; 로고</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-3d-motion.html">3D &amp; 모션 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-illust.html">일러스트 &amp; 디지털아트</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-intro.html">크리에이티브 입문</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
+            <a class="mega-sub__title" href="category-photo-video-1.html">
+              사진 &amp; 영상 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-photo-video-photography.html">사진 촬영</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-videography.html">영상 촬영</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-editing.html">편집 &amp; 후보정</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-motion.html">모션 &amp; 크리에이티브</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust"
+            hidden>
+            <a class="mega-sub__title" href="category-drawing-illust-1.html">
+              드로잉 &amp; 일러스트 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-drawing-illust-digital.html">디지털 드로잉</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-handdrawing.html">손그림 &amp; 회화</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-character.html">캐릭터 &amp; 웹툰</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-calligraphy.html">캘리그라피 &amp; 레터링</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness"
+            aria-labelledby="megacat-fitness-mindfulness" hidden>
+            <a class="mega-sub__title" href="category-fitness-mindfulness-1.html">
+              운동 &amp; 마음챙김 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-hometraining.html">홈트 &amp; 근력</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-yoga.html">요가 &amp; 필라테스</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-running.html">러닝 &amp; 유산소</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-meditation.html">명상 &amp; 마음챙김</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade"
+            hidden>
+            <a class="mega-sub__title" href="category-craft-handmade-1.html">
+              공예 &amp; 핸드메이드 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking"
+            hidden>
+            <a class="mega-sub__title" href="category-cooking-baking-1.html">
+              요리 &amp; 베이킹 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-world.html">세계요리 &amp; 비건</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="mega-backdrop" hidden></div>
-</header>
+    <div class="mega-backdrop" hidden></div>
+  </header>
 
-<main id="main" class="creator creator-reviews-page" data-screen-label="수강생 리뷰">
+  <main id="main" class="creator creator-reviews-page" data-screen-label="수강생 리뷰">
 
-  <section class="creator-hero">
-    <div class="l-container">
-      <p class="creator-hero__eyebrow">CREATOR STUDIO</p>
-      <h1 class="creator-hero__title">크리에이터 계정</h1>
-      <p class="creator-hero__desc">클래스 운영과 수익·정산을 한 곳에서 관리하세요.</p>
-    </div>
-  </section>
+    <section class="creator-hero">
+      <div class="l-container">
+        <p class="creator-hero__eyebrow">CREATOR STUDIO</p>
+        <h1 class="creator-hero__title">크리에이터 계정</h1>
+        <p class="creator-hero__desc">클래스 운영과 수익·정산을 한 곳에서 관리하세요.</p>
+      </div>
+    </section>
 
-  <div class="account-body l-container">
-    <aside class="account-nav creator-nav" aria-label="크리에이터 메뉴">
+    <div class="account-body l-container">
+      <aside class="account-nav creator-nav" aria-label="크리에이터 메뉴">
         <div class="account-nav__group">
-          <button class="account-nav__label" type="button" aria-expanded="false" data-acc-trigger>STUDIO<span class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
+          <button class="account-nav__label" type="button" aria-expanded="false" data-acc-trigger>STUDIO<span
+              class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
           <div class="account-nav__panel">
             <ul class="account-nav__list">
               <li><a class="account-nav__link" href="creator.html">크리에이터 홈</a></li>
@@ -272,7 +284,8 @@
           </div>
         </div>
         <div class="account-nav__group is-open">
-          <button class="account-nav__label" type="button" aria-expanded="true" data-acc-trigger>COMMUNITY<span class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
+          <button class="account-nav__label" type="button" aria-expanded="true" data-acc-trigger>COMMUNITY<span
+              class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
           <div class="account-nav__panel">
             <ul class="account-nav__list">
               <li><a class="account-nav__link is-active" href="creator-reviews.html" aria-current="page">수강생 리뷰</a></li>
@@ -281,7 +294,8 @@
           </div>
         </div>
         <div class="account-nav__group">
-          <button class="account-nav__label" type="button" aria-expanded="false" data-acc-trigger>REVENUE<span class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
+          <button class="account-nav__label" type="button" aria-expanded="false" data-acc-trigger>REVENUE<span
+              class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
           <div class="account-nav__panel">
             <ul class="account-nav__list">
               <li><a class="account-nav__link" href="creator-revenue.html">수익 · 정산</a></li>
@@ -290,7 +304,8 @@
           </div>
         </div>
         <div class="account-nav__group">
-          <button class="account-nav__label" type="button" aria-expanded="false" data-acc-trigger>SUPPORT<span class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
+          <button class="account-nav__label" type="button" aria-expanded="false" data-acc-trigger>SUPPORT<span
+              class="account-nav__chevron icon icon--chevron-down" aria-hidden="true"></span></button>
           <div class="account-nav__panel">
             <ul class="account-nav__list">
               <li><a class="account-nav__link" href="creator-studio-booking.html">스튜디오 예약</a></li>
@@ -299,585 +314,618 @@
         </div>
       </aside>
 
-    <div class="account-content creator-content">
+      <div class="account-content creator-content">
 
-      <!-- 헤더 -->
-      <div class="pp-head">
-        <div class="pp-head__intro">
-          <h2 class="pp-head__title">수강생 리뷰</h2>
-          <p class="pp-head__desc">누적 수강생 22,522명 · 리뷰 1,842건 · 평균 평점 4.8</p>
+        <!-- 헤더 -->
+        <div class="pp-head">
+          <div class="pp-head__intro">
+            <h2 class="pp-head__title">수강생 리뷰</h2>
+            <p class="pp-head__desc">누적 수강생 22,522명 · 리뷰 1,842건 · 평균 평점 4.8</p>
+          </div>
         </div>
-      </div>
 
-      <!-- 평점 요약 -->
-      <section class="creator-card rv-summary">
-        <h3 class="a11y-hidden">평점 요약</h3>
-        <div class="rv-score">
-          <p class="rv-score__num">4.8</p>
-          <img class="rv-score__stars" src="assets/brand/stars-48.svg" width="90" height="18" alt="평점 5점 만점에 4.8">
-          <p class="rv-score__count">리뷰 1,842건</p>
-        </div>
-        <div class="rv-dist">
+        <!-- 평점 요약 -->
+        <section class="creator-card rv-summary">
+          <h3 class="a11y-hidden">평점 요약</h3>
+          <div class="rv-score">
+            <p class="rv-score__num">4.8</p>
+            <img class="rv-score__stars" src="assets/brand/stars-48.svg" width="90" height="18" alt="평점 5점 만점에 4.8">
+            <p class="rv-score__count">리뷰 1,842건</p>
+          </div>
+          <div class="rv-dist">
             <div class="rv-dist__row">
               <span class="rv-dist__label">5점</span>
-              <span class="rv-dist__track"><span class="rv-dist__fill rv-dist__fill--5" style="width:87.4%;"></span></span>
+              <span class="rv-dist__track"><span class="rv-dist__fill rv-dist__fill--5"
+                  style="width:87.4%;"></span></span>
               <span class="rv-dist__count">1,610</span>
             </div>
             <div class="rv-dist__row">
               <span class="rv-dist__label">4점</span>
-              <span class="rv-dist__track"><span class="rv-dist__fill rv-dist__fill--4" style="width:8.1%;"></span></span>
+              <span class="rv-dist__track"><span class="rv-dist__fill rv-dist__fill--4"
+                  style="width:8.1%;"></span></span>
               <span class="rv-dist__count">150</span>
             </div>
             <div class="rv-dist__row">
               <span class="rv-dist__label">3점</span>
-              <span class="rv-dist__track"><span class="rv-dist__fill rv-dist__fill--3" style="width:2.6%;"></span></span>
+              <span class="rv-dist__track"><span class="rv-dist__fill rv-dist__fill--3"
+                  style="width:2.6%;"></span></span>
               <span class="rv-dist__count">48</span>
             </div>
             <div class="rv-dist__row">
               <span class="rv-dist__label">2점</span>
-              <span class="rv-dist__track"><span class="rv-dist__fill rv-dist__fill--2" style="width:1.1%;"></span></span>
+              <span class="rv-dist__track"><span class="rv-dist__fill rv-dist__fill--2"
+                  style="width:1.1%;"></span></span>
               <span class="rv-dist__count">20</span>
             </div>
             <div class="rv-dist__row">
               <span class="rv-dist__label">1점</span>
-              <span class="rv-dist__track"><span class="rv-dist__fill rv-dist__fill--1" style="width:0.8%;"></span></span>
+              <span class="rv-dist__track"><span class="rv-dist__fill rv-dist__fill--1"
+                  style="width:0.8%;"></span></span>
               <span class="rv-dist__count">14</span>
             </div>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <!-- 통계 -->
-      <div class="rv-stats">
-        <div class="rv-stat">
-          <p class="rv-stat__label">이번 달 신규 수강생</p>
-          <p class="rv-stat__value">312명</p>
+        <!-- 통계 -->
+        <div class="rv-stats">
+          <div class="rv-stat">
+            <p class="rv-stat__label">이번 달 신규 수강생</p>
+            <p class="rv-stat__value">312명</p>
+          </div>
+          <div class="rv-stat">
+            <p class="rv-stat__label">평균 완주율</p>
+            <p class="rv-stat__value">66%</p>
+          </div>
+          <div class="rv-stat">
+            <p class="rv-stat__label">신규 리뷰</p>
+            <p class="rv-stat__value">25건</p>
+          </div>
+          <div class="rv-stat">
+            <p class="rv-stat__label">답글 미작성</p>
+            <p class="rv-stat__value rv-stat__value--danger">5건</p>
+          </div>
         </div>
-        <div class="rv-stat">
-          <p class="rv-stat__label">평균 완주율</p>
-          <p class="rv-stat__value">66%</p>
+
+        <!-- 리뷰 관리 -->
+        <section class="creator-card rv-manage">
+          <div class="creator-card__head rv-manage__head">
+            <h3 class="creator-card__title">리뷰 관리</h3>
+            <div class="rv-filter" role="group" aria-label="리뷰 필터" data-rv-filter>
+              <button class="rv-chip is-active" type="button" aria-pressed="true" data-rv-filter-btn="all">전체</button>
+              <button class="rv-chip" type="button" aria-pressed="false" data-rv-filter-btn="noreply">답글 미작성</button>
+            </div>
+          </div>
+          <ul class="rv-list" data-rv-list>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/markup-sea.png" alt="완전초보 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">완전초보</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.06.10 · HTML/CSS 기초</span>
+                </div>
+                <p class="rv-item__text">HTML도 모르던 직장인이었는데, 첫 줄부터 손에 익혀주셔서 끝까지 왔어요. 인생 첫 코드!</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">첫 코드의 설렘, 오래 기억하세요. 여기서 시작해 반응형·JS까지 차근차근 가면 됩니다. 다시 후트라이 ↑</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/sidelab-min.png" alt="퍼블리셔지망 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">퍼블리셔지망</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.06.02 · 반응형 웹 퍼블리싱</span>
+                </div>
+                <p class="rv-item__text">국비 끝나고 붕 떠 있었는데 이 강의로 방향을 잡았어요. 반응형 무너지던 화면이 이제 안 깨져요!</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">국비 이후의 그 공백, 저도 잘 알아요. 화면이 안 깨진다는 건 기본기가 잡혔다는 신호예요. 잘하고 계세요.</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/typesafe-luke.png" alt="JS먼저파 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">JS먼저파</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.05.28 · 자바스크립트 핵심</span>
+                </div>
+                <p class="rv-item__text">문법만 알던 JS를 ‘실무에서 어떻게 쓰는지’ 관점으로 다시 배웠어요. 이벤트·비동기 파트가 특히 실용적입니다.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">문법과 실무 사이의 간극을 메우는 게 이 강의의 목표였어요. 정확히 그 지점을 얻어가셨네요!</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/vibecoder-k.png" alt="인터랙션러 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">인터랙션러</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.05.25 · 인터랙티브 웹</span>
+                </div>
+                <p class="rv-item__text">라이브러리 없이 슬라이더·모달을 직접 만드니 원리가 확 이해돼요. DOM 조작이 재밌어졌습니다.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">원리를 알고 쓰면 어떤 라이브러리를 만나도 응용이 돼요. 바닐라의 힘, 제대로 느끼셨네요!</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/pairup-dohyun.png" alt="리액트막차 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">리액트막차</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.05.22 · React 실전 프로젝트</span>
+                </div>
+                <p class="rv-item__text">퍼블리셔로 일하다 프론트엔드로 넘어가려고 들었어요. 강의 따라 만든 프로젝트를 그대로 포트폴리오에 올렸더니 서류 통과율이 확 올랐습니다.
+                  컴포넌트 쪼개는 기준이 특히 명확했어요.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">퍼블리셔에서 프론트로 넘어가는 그 지점이 제일 막막하죠. 포트폴리오가 통했다니 저도 뿌듯하네요. 다음 단계도 응원할게요. 다시 후트라이
+                    ↑</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/design-serin.png" alt="레이아웃지옥 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">레이아웃지옥</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.05.19 · Flex &amp; Grid 레이아웃</span>
+                </div>
+                <p class="rv-item__text">Flex랑 Grid 언제 뭘 써야 할지 늘 헷갈렸는데, 이 강의로 기준이 딱 섰어요. 실무 8할이 해결됩니다.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">‘한 방향은 Flex, 이차원은 Grid’ — 이 감만 잡으면 레이아웃이 두렵지 않아요. 정확히 가고 계세요!</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/cr-yun.png" alt="미디어쿼리 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">미디어쿼리</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.05.14 · 반응형 웹 퍼블리싱</span>
+                </div>
+                <p class="rv-item__text">모바일에서 계속 깨지던 이유를 이제 알겠어요. 브레이크포인트 잡는 기준이 명확해졌습니다.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">브레이크포인트는 ‘기기’가 아니라 ‘콘텐츠가 깨지는 지점’ 기준이라는 것, 그거 하나면 충분해요!</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/builder-taeo.png" alt="태그헷갈림 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">태그헷갈림</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.05.06 · HTML/CSS 기초</span>
+                </div>
+                <p class="rv-item__text">시맨틱 태그를 왜 써야 하는지 이제 이해했어요. 그냥 div만 쓰던 저를 반성합니다.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">div만 쓰던 시절 다들 지나와요(웃음). 의미를 담는 마크업, 접근성에서도 큰 차이를 만들어요.</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/devops-ryo.png" alt="상태관리헬 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">상태관리헬</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.04.30 · React 실전 프로젝트</span>
+                </div>
+                <p class="rv-item__text">상태관리가 늘 뒤죽박죽이었는데, ‘왜 이 상태가 여기 있어야 하는지’부터 잡아주셔서 구조가 보이기 시작했어요.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">상태는 ‘어디에 두느냐’가 8할이에요. 그 감을 잡으셨다니 이제 훨씬 수월해질 거예요.</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/app-mireu.png" alt="모달만들기 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">모달만들기</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.04.20 · 인터랙티브 웹</span>
+                </div>
+                <p class="rv-item__text">이벤트 위임을 이 강의에서 처음 제대로 배웠어요. 코드가 훨씬 깔끔해졌습니다.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">이벤트 위임 하나로 코드가 절반이 되죠. 그 감각, 실무에서 계속 빛을 발할 거예요.</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/server-gangwoo.png" alt="비동기지옥 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">비동기지옥</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.04.16 · 자바스크립트 핵심</span>
+                </div>
+                <p class="rv-item__text">Promise랑 async/await가 드디어 정리됐어요. 콜백 지옥에서 탈출했습니다 ㅠㅠ</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">비동기는 한 번 그림으로 잡으면 안 잊혀요. 이제 어떤 API 붙여도 두렵지 않을 거예요.</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/query-dan.png" alt="정렬못함 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">정렬못함</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.04.11 · Flex &amp; Grid 레이아웃</span>
+                </div>
+                <p class="rv-item__text">가운데 정렬 하나로 30분씩 헤매던 제가… 이제 3초면 됩니다. 진작 들을걸요.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">그 30분, 이제 다른 데 쓰시면 돼요(웃음). 정렬은 원리만 알면 정말 순식간이죠.</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/nocode-jei.png" alt="독학3년 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">독학3년</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-40.svg" width="70" height="14"
+                    alt="평점 5점 만점에 4.0">
+                  <span class="rv-item__meta">2026.04.08 · 반응형 웹 퍼블리싱</span>
+                </div>
+                <p class="rv-item__text">강의 100개 보다 이 한 강좌가 나았어요. 다만 실습 파일이 조금 더 있으면 좋겠어요.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">실습 자료 요청 감사해요. 추가 예제를 수업 자료에 올려두었으니 받아보세요. 완성하는 공부, 계속 가봅시다!</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/spring-hojae.png" alt="퇴근후코딩 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">퇴근후코딩</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.04.02 · HTML/CSS 기초</span>
+                </div>
+                <p class="rv-item__text">퇴근 후 하루 한 강씩, 짧아서 완주했어요. 부담 없는 분량이 진짜 장점이에요.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">‘짧아서 끝냈다’가 제일 듣고 싶은 말이에요. 그 리듬 그대로 다음 단계도 이어가봐요.</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/viewpoint-daon.png" alt="퍼블에서프론트 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">퍼블에서프론트</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.03.27 · 인터랙티브 웹</span>
+                  <span class="rv-badge">답글 대기</span>
+                </div>
+                <p class="rv-item__text">퍼블리셔에서 인터랙션까지 넣을 수 있게 되니 할 수 있는 일이 넓어졌어요. 포트폴리오가 풍성해졌습니다.</p>
+                <div class="rv-answer">
+                  <input class="rv-answer__input" type="text" placeholder="답글을 입력하세요" aria-label="퍼블에서프론트 리뷰에 답글 작성">
+                  <button class="rv-answer__btn" type="button">답글 등록</button>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/mobile-han.png" alt="국비예습 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">국비예습</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-40.svg" width="70" height="14"
+                    alt="평점 5점 만점에 4.0">
+                  <span class="rv-item__meta">2026.03.21 · HTML/CSS 기초</span>
+                </div>
+                <p class="rv-item__text">국비 들어가기 전에 예습용으로 들었는데 기초가 탄탄히 잡혔어요. 진도가 살짝 빠른 구간이 있었어요.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">예습으로 딱 좋게 들으셨네요! 빠른 구간은 반복 시청 추천해요. 국비에서 훨씬 수월하실 거예요.</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/dawn-jayden.png" alt="주니어개발 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">주니어개발</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-40.svg" width="70" height="14"
+                    alt="평점 5점 만점에 4.0">
+                  <span class="rv-item__meta">2026.03.18 · React 실전 프로젝트</span>
+                </div>
+                <p class="rv-item__text">실전 프로젝트라 좋았는데 후반 배포 파트가 조금 빨라서 두 번 돌려봤어요. 그래도 전체 흐름은 최고입니다.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">배포 파트 속도 피드백 감사해요. 보충 자료에 단계별 캡처를 추가해두었으니 참고해보세요!</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/tooldeok-bin.png" alt="그리드입문 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">그리드입문</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-40.svg" width="70" height="14"
+                    alt="평점 5점 만점에 4.0">
+                  <span class="rv-item__meta">2026.03.15 · Flex &amp; Grid 레이아웃</span>
+                </div>
+                <p class="rv-item__text">Grid 파트가 특히 좋았어요. 실전 예제가 조금 더 많았으면 완벽했을 듯.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">Grid의 매력에 빠지셨군요! 추가 레이아웃 예제를 자료에 넣어두었으니 연습해보세요.</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/data-sua.png" alt="실무투입 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">실무투입</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-40.svg" width="70" height="14"
+                    alt="평점 5점 만점에 4.0">
+                  <span class="rv-item__meta">2026.03.09 · 자바스크립트 핵심</span>
+                </div>
+                <p class="rv-item__text">회사에서 바로 써먹었어요. 다만 예제가 조금 더 다양했으면 하는 아쉬움은 있어요.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">현업 적용 후기 최고예요. 도메인별 예제를 보강해나가고 있으니 업데이트도 확인해주세요!</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/automation-rin.png" alt="손코딩입문 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">손코딩입문</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.03.02 · 반응형 웹 퍼블리싱</span>
+                </div>
+                <p class="rv-item__text">따라 치기만 했는데 결과물이 손에 남으니 자신감이 붙어요. 첫 반응형 사이트 완성했습니다.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">첫 완성 축하해요! 그 성취감이 다음 강의를 끝까지 가게 하는 힘이 됩니다.</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/modeling-oz.png" alt="전공복습 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">전공복습</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.02.24 · 자바스크립트 핵심</span>
+                  <span class="rv-badge">답글 대기</span>
+                </div>
+                <p class="rv-item__text">전공자인데도 놓쳤던 부분이 많더라고요. 기초를 실무 기준으로 재정비하기 딱 좋아요.</p>
+                <div class="rv-answer">
+                  <input class="rv-answer__input" type="text" placeholder="답글을 입력하세요" aria-label="전공복습 리뷰에 답글 작성">
+                  <button class="rv-answer__btn" type="button">답글 등록</button>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/prompt-ria.png" alt="클론코딩러 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">클론코딩러</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.02.19 · 반응형 웹 퍼블리싱</span>
+                  <span class="rv-badge">답글 대기</span>
+                </div>
+                <p class="rv-item__text">좋아하는 쇼핑몰 메인을 그대로 따라 만들어봤어요. 실무 감각이 확 올라온 느낌이에요.</p>
+                <div class="rv-answer">
+                  <input class="rv-answer__input" type="text" placeholder="답글을 입력하세요" aria-label="클론코딩러 리뷰에 답글 작성">
+                  <button class="rv-answer__btn" type="button">답글 등록</button>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/apple-geo.png" alt="비전공프론트 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">비전공프론트</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.02.11 · React 실전 프로젝트</span>
+                </div>
+                <p class="rv-item__text">비전공인데 이 강의 하나로 SPA 흐름이 잡혔어요. Props/State가 드디어 이해됩니다.</p>
+                <div class="rv-reply">
+                  <p class="rv-reply__label">내 답글</p>
+                  <p class="rv-reply__text">‘드디어 이해된다’는 말이 제일 반가워요. 손으로 계속 만들어보면 완전히 내 것이 됩니다.</p>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/career-worker-bona.png" alt="엄마개발자 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">엄마개발자</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.02.08 · HTML/CSS 기초</span>
+                  <span class="rv-badge">답글 대기</span>
+                </div>
+                <p class="rv-item__text">애 재우고 새벽에 조금씩 했어요. 왕초보도 따라갈 수 있게 정말 친절합니다.</p>
+                <div class="rv-answer">
+                  <input class="rv-answer__input" type="text" placeholder="답글을 입력하세요" aria-label="엄마개발자 리뷰에 답글 작성">
+                  <button class="rv-answer__btn" type="button">답글 등록</button>
+                </div>
+              </div>
+            </li>
+            <li class="rv-item">
+              <img class="rv-item__avatar" src="assets/avatar/wl-dohun.png" alt="포폴완성러 프로필" loading="lazy">
+              <div class="rv-item__body">
+                <div class="rv-item__head">
+                  <h4 class="rv-item__name">포폴완성러</h4>
+                  <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14"
+                    alt="평점 5점 만점에 5.0">
+                  <span class="rv-item__meta">2026.01.20 · React 실전 프로젝트</span>
+                  <span class="rv-badge">답글 대기</span>
+                </div>
+                <p class="rv-item__text">강의명 그대로 포트폴리오까지 진짜 끝냈습니다. 막연하던 React가 이제 무기가 됐어요.</p>
+                <div class="rv-answer">
+                  <input class="rv-answer__input" type="text" placeholder="답글을 입력하세요" aria-label="포폴완성러 리뷰에 답글 작성">
+                  <button class="rv-answer__btn" type="button">답글 등록</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <nav class="pager" aria-label="리뷰 목록 페이지" data-rv-pager hidden></nav>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner l-container">
+
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <img class="site-footer__logo" src="assets/brand/logo-white.svg" alt="HOOT UP" loading="lazy">
+          <p class="site-footer__slogan">밤에도 깨어 배우는 사람들의 아지트</p>
         </div>
-        <div class="rv-stat">
-          <p class="rv-stat__label">신규 리뷰</p>
-          <p class="rv-stat__value">25건</p>
-        </div>
-        <div class="rv-stat">
-          <p class="rv-stat__label">답글 미작성</p>
-          <p class="rv-stat__value rv-stat__value--danger">5건</p>
-        </div>
+
+        <nav class="site-footer__nav" aria-label="푸터 메뉴">
+          <div class="link-group">
+            <h2 class="link-group__title">HOOT UP</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="brand-story.html">브랜드 스토리</a></li>
+              <li><a class="link-group__link" href="desk.html">훗업 데스크(뉴스)</a></li>
+              <li><a class="link-group__link" href="magazine.html">훗업 매거진(블로그)</a></li>
+              <li><a class="link-group__link" href="b2b.html">단체 교육 (B2B)</a></li>
+              <li><a class="link-group__link" href="careers.html">채용 안내</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h2 class="link-group__title">둘러보기</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="sitemap.html">전체 카테고리</a></li>
+              <li><a class="link-group__link" href="best.html">훗업 차트(베스트)</a></li>
+              <li><a class="link-group__link" href="new.html">갓 부화한 클래스(새로운)</a></li>
+              <li><a class="link-group__link" href="event-1.html">훗업 페스타(이벤트 할인)</a></li>
+              <li><a class="link-group__link" href="roadmap.html">레벨업 로드맵</a></li>
+              <li><a class="link-group__link" href="subscribe.html">올나잇 패스(구독)</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h2 class="link-group__title">크리에이터 지원</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="creator-apply.html">클래스 개설 문의하기</a></li>
+              <li><a class="link-group__link" href="creator-guide.html">크리에이터 가이드</a></li>
+              <li><a class="link-group__link" href="creator-studio.html">스튜디오 대여</a></li>
+              <li><a class="link-group__link" href="creator-settlement.html">정산・수익 안내</a></li>
+              <li><a class="link-group__link" href="creator-mentor.html">멘토 교육 지원</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h2 class="link-group__title">고객센터</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="notice.html">후트 알림(공지사항)</a></li>
+              <li><a class="link-group__link" href="faq.html">자주 묻는 질문(FAQ)</a></li>
+              <li><a class="link-group__link" href="terms.html">이용약관</a></li>
+              <li><a class="link-group__link" href="privacy.html">개인정보처리방침</a></li>
+              <li><a class="link-group__link" href="refund.html">환불 규정</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
 
-      <!-- 리뷰 관리 -->
-      <section class="creator-card rv-manage">
-        <div class="creator-card__head rv-manage__head">
-          <h3 class="creator-card__title">리뷰 관리</h3>
-          <div class="rv-filter" role="group" aria-label="리뷰 필터" data-rv-filter>
-            <button class="rv-chip is-active" type="button" aria-pressed="true" data-rv-filter-btn="all">전체</button>
-            <button class="rv-chip" type="button" aria-pressed="false" data-rv-filter-btn="noreply">답글 미작성</button>
-          </div>
-        </div>
-        <ul class="rv-list" data-rv-list>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/markup-sea.png" alt="완전초보 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">완전초보</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.06.10 · HTML/CSS 기초</span>
-            </div>
-            <p class="rv-item__text">HTML도 모르던 직장인이었는데, 첫 줄부터 손에 익혀주셔서 끝까지 왔어요. 인생 첫 코드!</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">첫 코드의 설렘, 오래 기억하세요. 여기서 시작해 반응형·JS까지 차근차근 가면 됩니다. 다시 후트라이 ↑</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/sidelab-min.png" alt="퍼블리셔지망 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">퍼블리셔지망</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.06.02 · 반응형 웹 퍼블리싱</span>
-            </div>
-            <p class="rv-item__text">국비 끝나고 붕 떠 있었는데 이 강의로 방향을 잡았어요. 반응형 무너지던 화면이 이제 안 깨져요!</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">국비 이후의 그 공백, 저도 잘 알아요. 화면이 안 깨진다는 건 기본기가 잡혔다는 신호예요. 잘하고 계세요.</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/typesafe-luke.png" alt="JS먼저파 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">JS먼저파</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.05.28 · 자바스크립트 핵심</span>
-            </div>
-            <p class="rv-item__text">문법만 알던 JS를 ‘실무에서 어떻게 쓰는지’ 관점으로 다시 배웠어요. 이벤트·비동기 파트가 특히 실용적입니다.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">문법과 실무 사이의 간극을 메우는 게 이 강의의 목표였어요. 정확히 그 지점을 얻어가셨네요!</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/vibecoder-k.png" alt="인터랙션러 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">인터랙션러</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.05.25 · 인터랙티브 웹</span>
-            </div>
-            <p class="rv-item__text">라이브러리 없이 슬라이더·모달을 직접 만드니 원리가 확 이해돼요. DOM 조작이 재밌어졌습니다.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">원리를 알고 쓰면 어떤 라이브러리를 만나도 응용이 돼요. 바닐라의 힘, 제대로 느끼셨네요!</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/pairup-dohyun.png" alt="리액트막차 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">리액트막차</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.05.22 · React 실전 프로젝트</span>
-            </div>
-            <p class="rv-item__text">퍼블리셔로 일하다 프론트엔드로 넘어가려고 들었어요. 강의 따라 만든 프로젝트를 그대로 포트폴리오에 올렸더니 서류 통과율이 확 올랐습니다. 컴포넌트 쪼개는 기준이 특히 명확했어요.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">퍼블리셔에서 프론트로 넘어가는 그 지점이 제일 막막하죠. 포트폴리오가 통했다니 저도 뿌듯하네요. 다음 단계도 응원할게요. 다시 후트라이 ↑</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/design-serin.png" alt="레이아웃지옥 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">레이아웃지옥</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.05.19 · Flex &amp; Grid 레이아웃</span>
-            </div>
-            <p class="rv-item__text">Flex랑 Grid 언제 뭘 써야 할지 늘 헷갈렸는데, 이 강의로 기준이 딱 섰어요. 실무 8할이 해결됩니다.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">‘한 방향은 Flex, 이차원은 Grid’ — 이 감만 잡으면 레이아웃이 두렵지 않아요. 정확히 가고 계세요!</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/cr-yun.png" alt="미디어쿼리 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">미디어쿼리</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.05.14 · 반응형 웹 퍼블리싱</span>
-            </div>
-            <p class="rv-item__text">모바일에서 계속 깨지던 이유를 이제 알겠어요. 브레이크포인트 잡는 기준이 명확해졌습니다.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">브레이크포인트는 ‘기기’가 아니라 ‘콘텐츠가 깨지는 지점’ 기준이라는 것, 그거 하나면 충분해요!</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/builder-taeo.png" alt="태그헷갈림 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">태그헷갈림</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.05.06 · HTML/CSS 기초</span>
-            </div>
-            <p class="rv-item__text">시맨틱 태그를 왜 써야 하는지 이제 이해했어요. 그냥 div만 쓰던 저를 반성합니다.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">div만 쓰던 시절 다들 지나와요(웃음). 의미를 담는 마크업, 접근성에서도 큰 차이를 만들어요.</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/devops-ryo.png" alt="상태관리헬 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">상태관리헬</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.04.30 · React 실전 프로젝트</span>
-            </div>
-            <p class="rv-item__text">상태관리가 늘 뒤죽박죽이었는데, ‘왜 이 상태가 여기 있어야 하는지’부터 잡아주셔서 구조가 보이기 시작했어요.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">상태는 ‘어디에 두느냐’가 8할이에요. 그 감을 잡으셨다니 이제 훨씬 수월해질 거예요.</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/app-mireu.png" alt="모달만들기 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">모달만들기</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.04.20 · 인터랙티브 웹</span>
-            </div>
-            <p class="rv-item__text">이벤트 위임을 이 강의에서 처음 제대로 배웠어요. 코드가 훨씬 깔끔해졌습니다.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">이벤트 위임 하나로 코드가 절반이 되죠. 그 감각, 실무에서 계속 빛을 발할 거예요.</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/server-gangwoo.png" alt="비동기지옥 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">비동기지옥</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.04.16 · 자바스크립트 핵심</span>
-            </div>
-            <p class="rv-item__text">Promise랑 async/await가 드디어 정리됐어요. 콜백 지옥에서 탈출했습니다 ㅠㅠ</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">비동기는 한 번 그림으로 잡으면 안 잊혀요. 이제 어떤 API 붙여도 두렵지 않을 거예요.</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/query-dan.png" alt="정렬못함 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">정렬못함</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.04.11 · Flex &amp; Grid 레이아웃</span>
-            </div>
-            <p class="rv-item__text">가운데 정렬 하나로 30분씩 헤매던 제가… 이제 3초면 됩니다. 진작 들을걸요.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">그 30분, 이제 다른 데 쓰시면 돼요(웃음). 정렬은 원리만 알면 정말 순식간이죠.</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/nocode-jei.png" alt="독학3년 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">독학3년</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-40.svg" width="70" height="14" alt="평점 5점 만점에 4.0">
-              <span class="rv-item__meta">2026.04.08 · 반응형 웹 퍼블리싱</span>
-            </div>
-            <p class="rv-item__text">강의 100개 보다 이 한 강좌가 나았어요. 다만 실습 파일이 조금 더 있으면 좋겠어요.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">실습 자료 요청 감사해요. 추가 예제를 수업 자료에 올려두었으니 받아보세요. 완성하는 공부, 계속 가봅시다!</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/spring-hojae.png" alt="퇴근후코딩 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">퇴근후코딩</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.04.02 · HTML/CSS 기초</span>
-            </div>
-            <p class="rv-item__text">퇴근 후 하루 한 강씩, 짧아서 완주했어요. 부담 없는 분량이 진짜 장점이에요.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">‘짧아서 끝냈다’가 제일 듣고 싶은 말이에요. 그 리듬 그대로 다음 단계도 이어가봐요.</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/viewpoint-daon.png" alt="퍼블에서프론트 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">퍼블에서프론트</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.03.27 · 인터랙티브 웹</span>
-              <span class="rv-badge">답글 대기</span>
-            </div>
-            <p class="rv-item__text">퍼블리셔에서 인터랙션까지 넣을 수 있게 되니 할 수 있는 일이 넓어졌어요. 포트폴리오가 풍성해졌습니다.</p>
-            <div class="rv-answer">
-              <input class="rv-answer__input" type="text" placeholder="답글을 입력하세요" aria-label="퍼블에서프론트 리뷰에 답글 작성">
-              <button class="rv-answer__btn" type="button">답글 등록</button>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/mobile-han.png" alt="국비예습 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">국비예습</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-40.svg" width="70" height="14" alt="평점 5점 만점에 4.0">
-              <span class="rv-item__meta">2026.03.21 · HTML/CSS 기초</span>
-            </div>
-            <p class="rv-item__text">국비 들어가기 전에 예습용으로 들었는데 기초가 탄탄히 잡혔어요. 진도가 살짝 빠른 구간이 있었어요.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">예습으로 딱 좋게 들으셨네요! 빠른 구간은 반복 시청 추천해요. 국비에서 훨씬 수월하실 거예요.</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/dawn-jayden.png" alt="주니어개발 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">주니어개발</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-40.svg" width="70" height="14" alt="평점 5점 만점에 4.0">
-              <span class="rv-item__meta">2026.03.18 · React 실전 프로젝트</span>
-            </div>
-            <p class="rv-item__text">실전 프로젝트라 좋았는데 후반 배포 파트가 조금 빨라서 두 번 돌려봤어요. 그래도 전체 흐름은 최고입니다.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">배포 파트 속도 피드백 감사해요. 보충 자료에 단계별 캡처를 추가해두었으니 참고해보세요!</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/tooldeok-bin.png" alt="그리드입문 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">그리드입문</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-40.svg" width="70" height="14" alt="평점 5점 만점에 4.0">
-              <span class="rv-item__meta">2026.03.15 · Flex &amp; Grid 레이아웃</span>
-            </div>
-            <p class="rv-item__text">Grid 파트가 특히 좋았어요. 실전 예제가 조금 더 많았으면 완벽했을 듯.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">Grid의 매력에 빠지셨군요! 추가 레이아웃 예제를 자료에 넣어두었으니 연습해보세요.</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/data-sua.png" alt="실무투입 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">실무투입</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-40.svg" width="70" height="14" alt="평점 5점 만점에 4.0">
-              <span class="rv-item__meta">2026.03.09 · 자바스크립트 핵심</span>
-            </div>
-            <p class="rv-item__text">회사에서 바로 써먹었어요. 다만 예제가 조금 더 다양했으면 하는 아쉬움은 있어요.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">현업 적용 후기 최고예요. 도메인별 예제를 보강해나가고 있으니 업데이트도 확인해주세요!</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/automation-rin.png" alt="손코딩입문 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">손코딩입문</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.03.02 · 반응형 웹 퍼블리싱</span>
-            </div>
-            <p class="rv-item__text">따라 치기만 했는데 결과물이 손에 남으니 자신감이 붙어요. 첫 반응형 사이트 완성했습니다.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">첫 완성 축하해요! 그 성취감이 다음 강의를 끝까지 가게 하는 힘이 됩니다.</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/modeling-oz.png" alt="전공복습 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">전공복습</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.02.24 · 자바스크립트 핵심</span>
-              <span class="rv-badge">답글 대기</span>
-            </div>
-            <p class="rv-item__text">전공자인데도 놓쳤던 부분이 많더라고요. 기초를 실무 기준으로 재정비하기 딱 좋아요.</p>
-            <div class="rv-answer">
-              <input class="rv-answer__input" type="text" placeholder="답글을 입력하세요" aria-label="전공복습 리뷰에 답글 작성">
-              <button class="rv-answer__btn" type="button">답글 등록</button>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/prompt-ria.png" alt="클론코딩러 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">클론코딩러</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.02.19 · 반응형 웹 퍼블리싱</span>
-              <span class="rv-badge">답글 대기</span>
-            </div>
-            <p class="rv-item__text">좋아하는 쇼핑몰 메인을 그대로 따라 만들어봤어요. 실무 감각이 확 올라온 느낌이에요.</p>
-            <div class="rv-answer">
-              <input class="rv-answer__input" type="text" placeholder="답글을 입력하세요" aria-label="클론코딩러 리뷰에 답글 작성">
-              <button class="rv-answer__btn" type="button">답글 등록</button>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/apple-geo.png" alt="비전공프론트 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">비전공프론트</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.02.11 · React 실전 프로젝트</span>
-            </div>
-            <p class="rv-item__text">비전공인데 이 강의 하나로 SPA 흐름이 잡혔어요. Props/State가 드디어 이해됩니다.</p>
-            <div class="rv-reply">
-              <p class="rv-reply__label">내 답글</p>
-              <p class="rv-reply__text">‘드디어 이해된다’는 말이 제일 반가워요. 손으로 계속 만들어보면 완전히 내 것이 됩니다.</p>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/career-worker-bona.png" alt="엄마개발자 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">엄마개발자</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.02.08 · HTML/CSS 기초</span>
-              <span class="rv-badge">답글 대기</span>
-            </div>
-            <p class="rv-item__text">애 재우고 새벽에 조금씩 했어요. 왕초보도 따라갈 수 있게 정말 친절합니다.</p>
-            <div class="rv-answer">
-              <input class="rv-answer__input" type="text" placeholder="답글을 입력하세요" aria-label="엄마개발자 리뷰에 답글 작성">
-              <button class="rv-answer__btn" type="button">답글 등록</button>
-            </div>
-          </div>
-        </li>
-        <li class="rv-item">
-          <img class="rv-item__avatar" src="assets/avatar/wl-dohun.png" alt="포폴완성러 프로필" loading="lazy">
-          <div class="rv-item__body">
-            <div class="rv-item__head">
-              <h4 class="rv-item__name">포폴완성러</h4>
-              <img class="rv-item__stars" src="assets/brand/stars-50.svg" width="70" height="14" alt="평점 5점 만점에 5.0">
-              <span class="rv-item__meta">2026.01.20 · React 실전 프로젝트</span>
-              <span class="rv-badge">답글 대기</span>
-            </div>
-            <p class="rv-item__text">강의명 그대로 포트폴리오까지 진짜 끝냈습니다. 막연하던 React가 이제 무기가 됐어요.</p>
-            <div class="rv-answer">
-              <input class="rv-answer__input" type="text" placeholder="답글을 입력하세요" aria-label="포폴완성러 리뷰에 답글 작성">
-              <button class="rv-answer__btn" type="button">답글 등록</button>
-            </div>
-          </div>
-        </li>
-        </ul>
-        <nav class="pager" aria-label="리뷰 목록 페이지" data-rv-pager hidden></nav>
-      </section>
+      <hr class="site-footer__rule">
 
-    </div>
-  </div>
+      <div class="site-footer__contact">
+        <section class="contact-desk">
+          <h2 class="contact-desk__title">고객센터</h2>
+          <p class="contact-desk__tel"><a href="tel:0212345678">02-1234-5678</a></p>
+          <p class="contact-desk__hours">주중 10:00–18:00 / 주말·공휴일 휴무</p>
+        </section>
 
-</main>
-
-<footer class="site-footer">
-  <div class="site-footer__inner l-container">
-
-    <div class="site-footer__top">
-      <div class="site-footer__brand">
-        <img class="site-footer__logo" src="assets/brand/logo-white.svg" alt="HOOT UP" loading="lazy">
-        <p class="site-footer__slogan">밤에도 깨어 배우는 사람들의 아지트</p>
+        <dl class="contact-mail">
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">환불 문의</dt>
+            <dd class="contact-mail__value"><a href="mailto:refund@hootup.co.kr">refund@hootup.co.kr</a></dd>
+          </div>
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">기타 문의</dt>
+            <dd class="contact-mail__value"><a href="mailto:help@hootup.co.kr">help@hootup.co.kr</a></dd>
+          </div>
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">크리에이터 지원</dt>
+            <dd class="contact-mail__value"><a href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a></dd>
+          </div>
+        </dl>
       </div>
 
-      <nav class="site-footer__nav" aria-label="푸터 메뉴">
-        <div class="link-group">
-          <h2 class="link-group__title">HOOT UP</h2>
-          <ul class="link-group__list">
-            <li><a class="link-group__link" href="brand-story.html">브랜드 스토리</a></li>
-            <li><a class="link-group__link" href="desk.html">훗업 데스크(뉴스)</a></li>
-            <li><a class="link-group__link" href="magazine.html">훗업 매거진(블로그)</a></li>
-            <li><a class="link-group__link" href="b2b.html">단체 교육 (B2B)</a></li>
-            <li><a class="link-group__link" href="careers.html">채용 안내</a></li>
-          </ul>
-        </div>
+      <hr class="site-footer__rule">
 
-        <div class="link-group">
-          <h2 class="link-group__title">둘러보기</h2>
-          <ul class="link-group__list">
-            <li><a class="link-group__link" href="sitemap.html">전체 카테고리</a></li>
-            <li><a class="link-group__link" href="best.html">훗업 차트(베스트)</a></li>
-            <li><a class="link-group__link" href="new.html">갓 부화한 클래스(새로운)</a></li>
-            <li><a class="link-group__link" href="event-1.html">훗업 페스타(이벤트 할인)</a></li>
-            <li><a class="link-group__link" href="roadmap.html">레벨업 로드맵</a></li>
-            <li><a class="link-group__link" href="subscribe.html">올나잇 패스(구독)</a></li>
+      <div class="site-footer__legal">
+        <nav class="policy" aria-label="약관 및 정책">
+          <ul class="policy__list">
+            <li><a class="policy__link" href="terms.html">이용약관</a></li>
+            <li><a class="policy__link" href="privacy.html">개인정보처리방침</a></li>
+            <li><a class="policy__link" href="youth.html">청소년 보호정책</a></li>
+            <li><a class="policy__link" href="refund.html">환불 규정</a></li>
+            <li><a class="policy__link" href="business.html">사업자정보 확인</a></li>
           </ul>
-        </div>
+        </nav>
 
-        <div class="link-group">
-          <h2 class="link-group__title">크리에이터 지원</h2>
-          <ul class="link-group__list">
-            <li><a class="link-group__link" href="creator-apply.html">클래스 개설 문의하기</a></li>
-            <li><a class="link-group__link" href="creator-guide.html">크리에이터 가이드</a></li>
-            <li><a class="link-group__link" href="creator-studio.html">스튜디오 대여</a></li>
-            <li><a class="link-group__link" href="creator-settlement.html">정산・수익 안내</a></li>
-            <li><a class="link-group__link" href="creator-mentor.html">멘토 교육 지원</a></li>
-          </ul>
-        </div>
+        <address class="company">
+          <p class="company__line">
+            <span>(주)훗업 컴퍼니</span>
+            <span>대표자 : 신호진</span>
+            <span>사업자등록번호 : 123-45-67890</span>
+            <span>개인정보책임관리자 : 신호진</span>
+          </p>
+          <p class="company__line">
+            <span>통신판매신고 : 제 2026-서울서초-1234호</span>
+            <span>(06621) 서울 서초구 강남대로 373, 10층</span>
+          </p>
+        </address>
 
-        <div class="link-group">
-          <h2 class="link-group__title">고객센터</h2>
-          <ul class="link-group__list">
-            <li><a class="link-group__link" href="notice.html">후트 알림(공지사항)</a></li>
-            <li><a class="link-group__link" href="faq.html">자주 묻는 질문(FAQ)</a></li>
-            <li><a class="link-group__link" href="terms.html">이용약관</a></li>
-            <li><a class="link-group__link" href="privacy.html">개인정보처리방침</a></li>
-            <li><a class="link-group__link" href="refund.html">환불 규정</a></li>
-          </ul>
-        </div>
-      </nav>
+        <p class="site-footer__copyright"><small>Copyright © HOOT UP. All rights reserved.</small></p>
+      </div>
+
     </div>
-
-    <hr class="site-footer__rule">
-
-    <div class="site-footer__contact">
-      <section class="contact-desk">
-        <h2 class="contact-desk__title">고객센터</h2>
-        <p class="contact-desk__tel"><a href="tel:0212345678">02-1234-5678</a></p>
-        <p class="contact-desk__hours">주중 10:00–18:00 / 주말·공휴일 휴무</p>
-      </section>
-
-      <dl class="contact-mail">
-        <div class="contact-mail__group">
-          <dt class="contact-mail__label">환불 문의</dt>
-          <dd class="contact-mail__value"><a href="mailto:refund@hootup.co.kr">refund@hootup.co.kr</a></dd>
-        </div>
-        <div class="contact-mail__group">
-          <dt class="contact-mail__label">기타 문의</dt>
-          <dd class="contact-mail__value"><a href="mailto:help@hootup.co.kr">help@hootup.co.kr</a></dd>
-        </div>
-        <div class="contact-mail__group">
-          <dt class="contact-mail__label">크리에이터 지원</dt>
-          <dd class="contact-mail__value"><a href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a></dd>
-        </div>
-      </dl>
-    </div>
-
-    <hr class="site-footer__rule">
-
-    <div class="site-footer__legal">
-      <nav class="policy" aria-label="약관 및 정책">
-        <ul class="policy__list">
-          <li><a class="policy__link" href="terms.html">이용약관</a></li>
-          <li><a class="policy__link" href="privacy.html">개인정보처리방침</a></li>
-          <li><a class="policy__link" href="youth.html">청소년 보호정책</a></li>
-          <li><a class="policy__link" href="refund.html">환불 규정</a></li>
-          <li><a class="policy__link" href="business.html">사업자정보 확인</a></li>
-        </ul>
-      </nav>
-
-      <address class="company">
-        <p class="company__line">
-          <span>(주)훗업 컴퍼니</span>
-          <span>대표자 : 신호진</span>
-          <span>사업자등록번호 : 123-45-67890</span>
-          <span>개인정보책임관리자 : 신호진</span>
-        </p>
-        <p class="company__line">
-          <span>통신판매신고 : 제 2026-서울서초-1234호</span>
-          <span>(06621) 서울 서초구 강남대로 373, 10층</span>
-        </p>
-      </address>
-
-      <p class="site-footer__copyright"><small>Copyright © HOOT UP. All rights reserved.</small></p>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
 </body>
+
 </html>

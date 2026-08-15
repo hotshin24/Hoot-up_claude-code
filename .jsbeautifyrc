@@ -1,0 +1,9 @@
+{
+  "indent_size": 2,
+  "wrap_line_length": 120,
+  "wrap_attributes": "auto",
+  "preserve_newlines": true,
+  "max_preserve_newlines": 2,
+  "indent_inner_html": false,
+  "end_with_newline": false
+}

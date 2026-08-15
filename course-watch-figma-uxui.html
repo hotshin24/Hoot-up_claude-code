@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,479 +17,489 @@
 
   <script src="js/course-watch.js" defer></script>
 </head>
+
 <body class="cw">
 
-<a class="skip-link" href="#cw-main">본문 바로가기</a>
+  <a class="skip-link" href="#cw-main">본문 바로가기</a>
 
-<div class="cw__layout">
+  <div class="cw__layout">
 
-  <!-- 좌: 플레이어 -->
-  <main class="cw__stage" id="cw-main">
-    <header class="cw__topbar">
-      <a class="cw__back" href="account-classes.html" aria-label="내 강의로 돌아가기"><span class="icon icon--chevron-left" aria-hidden="true"></span></a>
-      <h1 class="cw__lesson-title"><span class="cw__lesson-tag">CH03 · 01</span>사용성 원리와 휴리스틱</h1>
-    </header>
+    <!-- 좌: 플레이어 -->
+    <main class="cw__stage" id="cw-main">
+      <header class="cw__topbar">
+        <a class="cw__back" href="account-classes.html" aria-label="내 강의로 돌아가기"><span class="icon icon--chevron-left"
+            aria-hidden="true"></span></a>
+        <h1 class="cw__lesson-title"><span class="cw__lesson-tag">CH03 · 01</span>사용성 원리와 휴리스틱</h1>
+      </header>
 
-    <div class="cw__video">
-      <div class="cw__video-inner">
-        <button class="cw__play" type="button" aria-label="재생"><span class="cw__play-tri" aria-hidden="true"></span></button>
-        <p class="cw__video-cap">사용성 원리와 휴리스틱</p>
+      <div class="cw__video">
+        <div class="cw__video-inner">
+          <button class="cw__play" type="button" aria-label="재생"><span class="cw__play-tri"
+              aria-hidden="true"></span></button>
+          <p class="cw__video-cap">사용성 원리와 휴리스틱</p>
+        </div>
       </div>
-    </div>
 
-    <footer class="cw__controls">
-      <button class="cw__ctrl" type="button"><span class="icon icon--chevron-left" aria-hidden="true"></span> 이전</button>
-      <button class="cw__ctrl" type="button">다음 <span class="icon icon--chevron-right" aria-hidden="true"></span></button>
-      <button class="cw__ctrl cw__ctrl--done" type="button" data-cw-seen>봤어요</button>
-      <a class="cw__ctrl" href="#">자료 다운로드</a>
-    </footer>
-  </main>
+      <footer class="cw__controls">
+        <button class="cw__ctrl" type="button"><span class="icon icon--chevron-left" aria-hidden="true"></span>
+          이전</button>
+        <button class="cw__ctrl" type="button">다음 <span class="icon icon--chevron-right"
+            aria-hidden="true"></span></button>
+        <button class="cw__ctrl cw__ctrl--done" type="button" data-cw-seen>봤어요</button>
+        <a class="cw__ctrl" href="#">자료 다운로드</a>
+      </footer>
+    </main>
 
-  <!-- 우: 커리큘럼 -->
-  <aside class="cw__side" id="cw-side" aria-label="커리큘럼">
-    <div class="cw__side-head">
-      <h2 class="cw__side-title">커리큘럼</h2>
-      <button class="cw__side-close" type="button" data-cw-side-close aria-controls="cw-side" aria-label="커리큘럼 닫기"><span class="icon icon--x-circle" aria-hidden="true"></span></button>
-    </div>
+    <!-- 우: 커리큘럼 -->
+    <aside class="cw__side" id="cw-side" aria-label="커리큘럼">
+      <div class="cw__side-head">
+        <h2 class="cw__side-title">커리큘럼</h2>
+        <button class="cw__side-close" type="button" data-cw-side-close aria-controls="cw-side"
+          aria-label="커리큘럼 닫기"><span class="icon icon--x-circle" aria-hidden="true"></span></button>
+      </div>
 
-    <div class="cw__course">
-      <p class="cw__course-name">피그마로 완성하는 UX/UI 디자인 입문<br>with Figma</p>
-      <p class="cw__course-term">수강 기한 무제한</p>
-      <div class="cw__stat">
-        <span class="cw__stat-label">진도율 <strong>13</strong>/46</span>
-        <span class="cw__stat-pct">28%</span>
+      <div class="cw__course">
+        <p class="cw__course-name">피그마로 완성하는 UX/UI 디자인 입문<br>with Figma</p>
+        <p class="cw__course-term">수강 기한 무제한</p>
+        <div class="cw__stat">
+          <span class="cw__stat-label">진도율 <strong>13</strong>/46</span>
+          <span class="cw__stat-pct">28%</span>
+        </div>
+        <div class="cw__bar"><span class="cw__bar-fill" style="width:28%"></span></div>
+        <div class="cw__stat cw__stat--quiz">
+          <span class="cw__stat-label">퀴즈 <strong>0</strong>/7</span>
+        </div>
+        <div class="cw__bar cw__bar--muted"><span class="cw__bar-fill cw__bar-fill--muted" style="width:0%"></span>
+        </div>
       </div>
-      <div class="cw__bar"><span class="cw__bar-fill" style="width:28%"></span></div>
-      <div class="cw__stat cw__stat--quiz">
-        <span class="cw__stat-label">퀴즈 <strong>0</strong>/7</span>
-      </div>
-      <div class="cw__bar cw__bar--muted"><span class="cw__bar-fill cw__bar-fill--muted" style="width:0%"></span></div>
-    </div>
 
-    <div class="cw__sections">
-      <div class="cw-sec">
-        <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-0">
-          <span class="cw-sec__no">SECTION 01</span>
-          <span class="cw-sec__title">오리엔테이션 <span class="cw-sec__free">무료</span></span>
-          <span class="cw-sec__meta">5강 · 약 42분</span>
-          <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
-        </button>
-        <ul class="cw-sec__list" id="cw-sec-0" hidden>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">01. UX/UI 디자이너는 무슨 일을 하나요</span>
-              <span class="cw-lesson__time">09:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">02. 피그마 화면 구조 익히기</span>
-              <span class="cw-lesson__time">10:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">03. 이 강의로 만들 결과물 미리보기</span>
-              <span class="cw-lesson__time">08:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">04. 계정·플러그인 세팅</span>
-              <span class="cw-lesson__time">07:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">05. 이 강의 200% 활용법</span>
-              <span class="cw-lesson__time">08:00</span>
-            </button>
-          </li>
-        </ul>
+      <div class="cw__sections">
+        <div class="cw-sec">
+          <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-0">
+            <span class="cw-sec__no">SECTION 01</span>
+            <span class="cw-sec__title">오리엔테이션 <span class="cw-sec__free">무료</span></span>
+            <span class="cw-sec__meta">5강 · 약 42분</span>
+            <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
+          </button>
+          <ul class="cw-sec__list" id="cw-sec-0" hidden>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">01. UX/UI 디자이너는 무슨 일을 하나요</span>
+                <span class="cw-lesson__time">09:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">02. 피그마 화면 구조 익히기</span>
+                <span class="cw-lesson__time">10:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">03. 이 강의로 만들 결과물 미리보기</span>
+                <span class="cw-lesson__time">08:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">04. 계정·플러그인 세팅</span>
+                <span class="cw-lesson__time">07:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">05. 이 강의 200% 활용법</span>
+                <span class="cw-lesson__time">08:00</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="cw-sec">
+          <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-1">
+            <span class="cw-sec__no">SECTION 02</span>
+            <span class="cw-sec__title">피그마 기본기</span>
+            <span class="cw-sec__meta">8강 · 약 1시간 45분</span>
+            <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
+          </button>
+          <ul class="cw-sec__list" id="cw-sec-1" hidden>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">06. 프레임과 그리드</span>
+                <span class="cw-lesson__time">12:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">07. 정렬·간격·오토레이아웃</span>
+                <span class="cw-lesson__time">15:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">08. 컴포넌트와 인스턴스</span>
+                <span class="cw-lesson__time">14:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">09. 베리언트로 상태 만들기</span>
+                <span class="cw-lesson__time">14:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">10. 스타일(색·텍스트) 정의</span>
+                <span class="cw-lesson__time">12:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">11. 이미지·아이콘 다루기</span>
+                <span class="cw-lesson__time">11:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">12. 자주 쓰는 단축키·플러그인</span>
+                <span class="cw-lesson__time">10:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson is-done">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
+                <span class="cw-lesson__title">13. [실습] 버튼·인풋 컴포넌트</span>
+                <span class="cw-lesson__time">17:00</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="cw-sec">
+          <button class="cw-sec__head" type="button" aria-expanded="true" aria-controls="cw-sec-2">
+            <span class="cw-sec__no">SECTION 03</span>
+            <span class="cw-sec__title">UX 기본</span>
+            <span class="cw-sec__meta">7강 · 약 1시간 30분</span>
+            <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
+          </button>
+          <ul class="cw-sec__list" id="cw-sec-2">
+            <li class="cw-lesson is-current">
+              <button class="cw-lesson__btn" type="button" aria-current="true">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">14. 사용성 원리와 휴리스틱</span>
+                <span class="cw-lesson__time">13:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">15. 유저 리서치 훑기</span>
+                <span class="cw-lesson__time">12:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">16. 정보구조(IA) 설계</span>
+                <span class="cw-lesson__time">13:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">17. 유저 플로우 그리기</span>
+                <span class="cw-lesson__time">13:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">18. 와이어프레임 기초</span>
+                <span class="cw-lesson__time">12:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">19. 접근성 기본</span>
+                <span class="cw-lesson__time">11:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">20. [실습] 핵심 플로우 와이어프레임</span>
+                <span class="cw-lesson__time">16:00</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="cw-sec">
+          <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-3">
+            <span class="cw-sec__no">SECTION 04</span>
+            <span class="cw-sec__title">UI 디자인 기본</span>
+            <span class="cw-sec__meta">7강 · 약 1시간 35분</span>
+            <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
+          </button>
+          <ul class="cw-sec__list" id="cw-sec-3" hidden>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">21. 그리드와 레이아웃</span>
+                <span class="cw-lesson__time">13:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">22. 색과 대비</span>
+                <span class="cw-lesson__time">14:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">23. 타이포그래피</span>
+                <span class="cw-lesson__time">14:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">24. 간격과 리듬</span>
+                <span class="cw-lesson__time">12:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">25. 아이콘과 이미지</span>
+                <span class="cw-lesson__time">11:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">26. 상태·피드백 디자인</span>
+                <span class="cw-lesson__time">12:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">27. [실습] 카드 &amp; 리스트 UI</span>
+                <span class="cw-lesson__time">17:00</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="cw-sec">
+          <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-4">
+            <span class="cw-sec__no">SECTION 05</span>
+            <span class="cw-sec__title">디자인 시스템</span>
+            <span class="cw-sec__meta">6강 · 약 1시간 20분</span>
+            <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
+          </button>
+          <ul class="cw-sec__list" id="cw-sec-4" hidden>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">28. 디자인 토큰의 개념</span>
+                <span class="cw-lesson__time">12:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">29. 색·타이포 스타일 시스템</span>
+                <span class="cw-lesson__time">14:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">30. 컴포넌트 라이브러리 만들기</span>
+                <span class="cw-lesson__time">15:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">31. 반응형 컴포넌트</span>
+                <span class="cw-lesson__time">13:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">32. 문서화와 핸드오프</span>
+                <span class="cw-lesson__time">12:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">33. [실습] 미니 디자인 시스템</span>
+                <span class="cw-lesson__time">14:00</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="cw-sec">
+          <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-5">
+            <span class="cw-sec__no">SECTION 06</span>
+            <span class="cw-sec__title">프로토타입</span>
+            <span class="cw-sec__meta">5강 · 약 1시간 8분</span>
+            <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
+          </button>
+          <ul class="cw-sec__list" id="cw-sec-5" hidden>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">34. 화면 연결과 트랜지션</span>
+                <span class="cw-lesson__time">13:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">35. 인터랙션·마이크로 애니메이션</span>
+                <span class="cw-lesson__time">14:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">36. 조건·변수 프로토타입</span>
+                <span class="cw-lesson__time">13:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">37. 사용성 점검하기</span>
+                <span class="cw-lesson__time">12:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">38. [실습] 프로토타입 완성</span>
+                <span class="cw-lesson__time">16:00</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="cw-sec">
+          <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-6">
+            <span class="cw-sec__no">SECTION 07</span>
+            <span class="cw-sec__title">실전 프로젝트</span>
+            <span class="cw-sec__meta">8강 · 약 2시간</span>
+            <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
+          </button>
+          <ul class="cw-sec__list" id="cw-sec-6" hidden>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">39. [프로젝트] 서비스·화면 정의</span>
+                <span class="cw-lesson__time">13:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">40. [프로젝트] IA·플로우</span>
+                <span class="cw-lesson__time">14:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">41. [프로젝트] 와이어프레임</span>
+                <span class="cw-lesson__time">15:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">42. [프로젝트] 홈·상세 UI</span>
+                <span class="cw-lesson__time">16:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">43. [프로젝트] 마이페이지 UI</span>
+                <span class="cw-lesson__time">15:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">44. [프로젝트] 디자인 시스템 정리</span>
+                <span class="cw-lesson__time">15:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">45. [프로젝트] 프로토타입 &amp; 발표</span>
+                <span class="cw-lesson__time">16:00</span>
+              </button>
+            </li>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">46. 포트폴리오로 다듬기 + 멘토 리뷰</span>
+                <span class="cw-lesson__time">22:00</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="cw-sec">
+          <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-7">
+            <span class="cw-sec__no">SECTION BONUS</span>
+            <span class="cw-sec__title">보너스 · AI로 디자인 속도 2배</span>
+            <span class="cw-sec__meta">1강 · 27:00</span>
+            <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
+          </button>
+          <ul class="cw-sec__list" id="cw-sec-7" hidden>
+            <li class="cw-lesson ">
+              <button class="cw-lesson__btn" type="button">
+                <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
+                <span class="cw-lesson__title">47. AI로 디자인 속도 2배</span>
+                <span class="cw-lesson__time">27:00</span>
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="cw-sec">
-        <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-1">
-          <span class="cw-sec__no">SECTION 02</span>
-          <span class="cw-sec__title">피그마 기본기</span>
-          <span class="cw-sec__meta">8강 · 약 1시간 45분</span>
-          <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
-        </button>
-        <ul class="cw-sec__list" id="cw-sec-1" hidden>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">06. 프레임과 그리드</span>
-              <span class="cw-lesson__time">12:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">07. 정렬·간격·오토레이아웃</span>
-              <span class="cw-lesson__time">15:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">08. 컴포넌트와 인스턴스</span>
-              <span class="cw-lesson__time">14:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">09. 베리언트로 상태 만들기</span>
-              <span class="cw-lesson__time">14:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">10. 스타일(색·텍스트) 정의</span>
-              <span class="cw-lesson__time">12:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">11. 이미지·아이콘 다루기</span>
-              <span class="cw-lesson__time">11:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">12. 자주 쓰는 단축키·플러그인</span>
-              <span class="cw-lesson__time">10:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson is-done">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--check" aria-hidden="true"></span>
-              <span class="cw-lesson__title">13. [실습] 버튼·인풋 컴포넌트</span>
-              <span class="cw-lesson__time">17:00</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div class="cw-sec">
-        <button class="cw-sec__head" type="button" aria-expanded="true" aria-controls="cw-sec-2">
-          <span class="cw-sec__no">SECTION 03</span>
-          <span class="cw-sec__title">UX 기본</span>
-          <span class="cw-sec__meta">7강 · 약 1시간 30분</span>
-          <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
-        </button>
-        <ul class="cw-sec__list" id="cw-sec-2">
-          <li class="cw-lesson is-current">
-            <button class="cw-lesson__btn" type="button" aria-current="true">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">14. 사용성 원리와 휴리스틱</span>
-              <span class="cw-lesson__time">13:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">15. 유저 리서치 훑기</span>
-              <span class="cw-lesson__time">12:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">16. 정보구조(IA) 설계</span>
-              <span class="cw-lesson__time">13:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">17. 유저 플로우 그리기</span>
-              <span class="cw-lesson__time">13:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">18. 와이어프레임 기초</span>
-              <span class="cw-lesson__time">12:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">19. 접근성 기본</span>
-              <span class="cw-lesson__time">11:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">20. [실습] 핵심 플로우 와이어프레임</span>
-              <span class="cw-lesson__time">16:00</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div class="cw-sec">
-        <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-3">
-          <span class="cw-sec__no">SECTION 04</span>
-          <span class="cw-sec__title">UI 디자인 기본</span>
-          <span class="cw-sec__meta">7강 · 약 1시간 35분</span>
-          <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
-        </button>
-        <ul class="cw-sec__list" id="cw-sec-3" hidden>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">21. 그리드와 레이아웃</span>
-              <span class="cw-lesson__time">13:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">22. 색과 대비</span>
-              <span class="cw-lesson__time">14:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">23. 타이포그래피</span>
-              <span class="cw-lesson__time">14:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">24. 간격과 리듬</span>
-              <span class="cw-lesson__time">12:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">25. 아이콘과 이미지</span>
-              <span class="cw-lesson__time">11:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">26. 상태·피드백 디자인</span>
-              <span class="cw-lesson__time">12:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">27. [실습] 카드 &amp; 리스트 UI</span>
-              <span class="cw-lesson__time">17:00</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div class="cw-sec">
-        <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-4">
-          <span class="cw-sec__no">SECTION 05</span>
-          <span class="cw-sec__title">디자인 시스템</span>
-          <span class="cw-sec__meta">6강 · 약 1시간 20분</span>
-          <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
-        </button>
-        <ul class="cw-sec__list" id="cw-sec-4" hidden>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">28. 디자인 토큰의 개념</span>
-              <span class="cw-lesson__time">12:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">29. 색·타이포 스타일 시스템</span>
-              <span class="cw-lesson__time">14:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">30. 컴포넌트 라이브러리 만들기</span>
-              <span class="cw-lesson__time">15:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">31. 반응형 컴포넌트</span>
-              <span class="cw-lesson__time">13:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">32. 문서화와 핸드오프</span>
-              <span class="cw-lesson__time">12:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">33. [실습] 미니 디자인 시스템</span>
-              <span class="cw-lesson__time">14:00</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div class="cw-sec">
-        <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-5">
-          <span class="cw-sec__no">SECTION 06</span>
-          <span class="cw-sec__title">프로토타입</span>
-          <span class="cw-sec__meta">5강 · 약 1시간 8분</span>
-          <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
-        </button>
-        <ul class="cw-sec__list" id="cw-sec-5" hidden>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">34. 화면 연결과 트랜지션</span>
-              <span class="cw-lesson__time">13:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">35. 인터랙션·마이크로 애니메이션</span>
-              <span class="cw-lesson__time">14:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">36. 조건·변수 프로토타입</span>
-              <span class="cw-lesson__time">13:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">37. 사용성 점검하기</span>
-              <span class="cw-lesson__time">12:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">38. [실습] 프로토타입 완성</span>
-              <span class="cw-lesson__time">16:00</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div class="cw-sec">
-        <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-6">
-          <span class="cw-sec__no">SECTION 07</span>
-          <span class="cw-sec__title">실전 프로젝트</span>
-          <span class="cw-sec__meta">8강 · 약 2시간</span>
-          <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
-        </button>
-        <ul class="cw-sec__list" id="cw-sec-6" hidden>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">39. [프로젝트] 서비스·화면 정의</span>
-              <span class="cw-lesson__time">13:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">40. [프로젝트] IA·플로우</span>
-              <span class="cw-lesson__time">14:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">41. [프로젝트] 와이어프레임</span>
-              <span class="cw-lesson__time">15:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">42. [프로젝트] 홈·상세 UI</span>
-              <span class="cw-lesson__time">16:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">43. [프로젝트] 마이페이지 UI</span>
-              <span class="cw-lesson__time">15:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">44. [프로젝트] 디자인 시스템 정리</span>
-              <span class="cw-lesson__time">15:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">45. [프로젝트] 프로토타입 &amp; 발표</span>
-              <span class="cw-lesson__time">16:00</span>
-            </button>
-          </li>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">46. 포트폴리오로 다듬기 + 멘토 리뷰</span>
-              <span class="cw-lesson__time">22:00</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div class="cw-sec">
-        <button class="cw-sec__head" type="button" aria-expanded="false" aria-controls="cw-sec-7">
-          <span class="cw-sec__no">SECTION BONUS</span>
-          <span class="cw-sec__title">보너스 · AI로 디자인 속도 2배</span>
-          <span class="cw-sec__meta">1강 · 27:00</span>
-          <span class="cw-sec__chev icon icon--chevron-right" aria-hidden="true"></span>
-        </button>
-        <ul class="cw-sec__list" id="cw-sec-7" hidden>
-          <li class="cw-lesson ">
-            <button class="cw-lesson__btn" type="button">
-              <span class="cw-lesson__ic cw-lesson__ic--play" aria-hidden="true"></span>
-              <span class="cw-lesson__title">47. AI로 디자인 속도 2배</span>
-              <span class="cw-lesson__time">27:00</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </aside>
+    </aside>
 
-  <!-- 우측 아이콘 레일 -->
-  <nav class="cw__rail" aria-label="강의 도구">
-    <a class="cw__rail-item is-active" href="#" data-cw-side-toggle aria-controls="cw-side" aria-expanded="true"><span class="cw__rail-ic">☰</span><span class="cw__rail-label">커리큘럼</span></a>
-    <a class="cw__rail-item" href="#"><span class="cw__rail-ic">?</span><span class="cw__rail-label">Q&amp;A</span></a>
-    <a class="cw__rail-item" href="#"><span class="cw__rail-ic">✎</span><span class="cw__rail-label">노트</span></a>
-    <a class="cw__rail-item" href="#"><span class="cw__rail-ic">💬</span><span class="cw__rail-label">채팅</span></a>
-    <a class="cw__rail-item" href="#"><span class="cw__rail-ic">CC</span><span class="cw__rail-label">스크립트</span></a>
-    <a class="cw__rail-item" href="#"><span class="cw__rail-ic">✦</span><span class="cw__rail-label">에이전트</span></a>
-  </nav>
+    <!-- 우측 아이콘 레일 -->
+    <nav class="cw__rail" aria-label="강의 도구">
+      <a class="cw__rail-item is-active" href="#" data-cw-side-toggle aria-controls="cw-side" aria-expanded="true"><span
+          class="cw__rail-ic">☰</span><span class="cw__rail-label">커리큘럼</span></a>
+      <a class="cw__rail-item" href="#"><span class="cw__rail-ic">?</span><span
+          class="cw__rail-label">Q&amp;A</span></a>
+      <a class="cw__rail-item" href="#"><span class="cw__rail-ic">✎</span><span class="cw__rail-label">노트</span></a>
+      <a class="cw__rail-item" href="#"><span class="cw__rail-ic">💬</span><span class="cw__rail-label">채팅</span></a>
+      <a class="cw__rail-item" href="#"><span class="cw__rail-ic">CC</span><span class="cw__rail-label">스크립트</span></a>
+      <a class="cw__rail-item" href="#"><span class="cw__rail-ic">✦</span><span class="cw__rail-label">에이전트</span></a>
+    </nav>
 
-</div>
+  </div>
 
 </body>
+
 </html>

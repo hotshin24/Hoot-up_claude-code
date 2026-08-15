@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,627 +19,853 @@
   <script src="js/common.js?v=1" defer></script>
   <script src="js/carousel.js?v=1" defer></script>
 </head>
+
 <body>
 
-<a class="skip-link" href="#main">본문 바로가기</a>
+  <a class="skip-link" href="#main">본문 바로가기</a>
 
-<!-- ======================================================================
+  <!-- ======================================================================
      헤더
      ====================================================================== -->
-<header class="site-header">
-  <div class="site-header__inner l-container">
+  <header class="site-header">
+    <div class="site-header__inner l-container">
 
-    <div class="site-header__utility">
-      <a class="site-header__logo" href="index.html">
-        <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
-      </a>
+      <div class="site-header__utility">
+        <a class="site-header__logo" href="index.html">
+          <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
+        </a>
 
-      <form class="search" action="categories.html" method="get" role="search">
-        <label class="a11y-hidden" for="search-keyword">강의 검색</label>
-        <input class="search__input" id="search-keyword" type="search" name="keyword" placeholder="어떤 강의를 찾으시나요?" autocomplete="off">
-        <button class="search__submit" type="submit" aria-label="검색">
-          <span class="icon icon--search"></span>
-        </button>
-      </form>
-
-      <ul class="user-menu">
-        <li class="user-menu__item">
-          <a class="user-menu__link" href="cart.html">
-            <span class="icon icon--cart"></span>
-            <span class="a11y-hidden">장바구니</span>
-            <span class="user-menu__badge">3<span class="a11y-hidden">개 담김</span></span>
-          </a>
-        </li>
-        <li class="user-menu__item">
-          <button class="user-menu__link" type="button" data-notif-toggle aria-haspopup="dialog" aria-expanded="false">
-            <span class="icon icon--bell"></span>
-            <span class="a11y-hidden">알림</span>
-            <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
+        <form class="search" action="categories.html" method="get" role="search">
+          <label class="a11y-hidden" for="search-keyword">강의 검색</label>
+          <input class="search__input" id="search-keyword" type="search" name="keyword" placeholder="어떤 강의를 찾으시나요?"
+            autocomplete="off">
+          <button class="search__submit" type="submit" aria-label="검색">
+            <span class="icon icon--search"></span>
           </button>
-        </li>
-        <li class="user-menu__item">
-          <a class="user-menu__profile" href="account.html">
-            <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
-          </a>
-        </li>
-      </ul>
+        </form>
+
+        <ul class="user-menu">
+          <li class="user-menu__item">
+            <a class="user-menu__link" href="cart.html">
+              <span class="icon icon--cart"></span>
+              <span class="a11y-hidden">장바구니</span>
+              <span class="user-menu__badge">3<span class="a11y-hidden">개 담김</span></span>
+            </a>
+          </li>
+          <li class="user-menu__item">
+            <button class="user-menu__link" type="button" data-notif-toggle aria-haspopup="dialog"
+              aria-expanded="false">
+              <span class="icon icon--bell"></span>
+              <span class="a11y-hidden">알림</span>
+              <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
+            </button>
+          </li>
+          <li class="user-menu__item">
+            <a class="user-menu__profile" href="account.html">
+              <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <nav class="gnb" aria-label="주요 메뉴">
+        <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega"
+          aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
+          <span class="icon icon--list"></span>
+        </button>
+        <ul class="gnb__list" id="gnb-list">
+          <li class="gnb__item"><a class="gnb__link" href="categories.html">전체 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="best.html">베스트 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="event-1.html">이벤트 할인</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="new.html">새로운 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="earlybird-1.html">얼리버드 할인</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="signature.html">시그니쳐 클래스</a></li>
+        </ul>
+      </nav>
+
     </div>
 
-    <nav class="gnb" aria-label="주요 메뉴">
-      <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega" aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
-        <span class="icon icon--list"></span>
-      </button>
-      <ul class="gnb__list" id="gnb-list">
-        <li class="gnb__item"><a class="gnb__link" href="categories.html">전체 클래스</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="best.html">베스트 클래스</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="event-1.html">이벤트 할인</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="new.html">새로운 클래스</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="earlybird-1.html">얼리버드 할인</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="signature.html">시그니쳐 클래스</a></li>
-      </ul>
-    </nav>
-
-  </div>
-
-  <!-- ====================================================================
+    <!-- ====================================================================
        전체 카테고리 메가 메뉴 (햄버거 · '전체 카테고리' 트리거로 펼침)
        ==================================================================== -->
-  <div class="mega" id="category-mega" aria-hidden="true">
-    <div class="mega__inner l-container">
-      <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
-        <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it"
-                aria-selected="true" aria-controls="megapanel-dev-it" tabindex="0">
-          <span class="mega-cat__name">개발 &amp; IT</span>
-          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-career-money"
-                aria-selected="false" aria-controls="megapanel-career-money" tabindex="-1">
-          <span class="mega-cat__name">커리어 &amp; 머니</span>
-          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-design-creative"
-                aria-selected="false" aria-controls="megapanel-design-creative" tabindex="-1">
-          <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
-          <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-photo-video"
-                aria-selected="false" aria-controls="megapanel-photo-video" tabindex="-1">
-          <span class="mega-cat__name">사진 &amp; 영상</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust"
-                aria-selected="false" aria-controls="megapanel-drawing-illust" tabindex="-1">
-          <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness"
-                aria-selected="false" aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
-          <span class="mega-cat__name">운동 &amp; 마음챙김</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade"
-                aria-selected="false" aria-controls="megapanel-craft-handmade" tabindex="-1">
-          <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking"
-                aria-selected="false" aria-controls="megapanel-cooking-baking" tabindex="-1">
-          <span class="mega-cat__name">요리 &amp; 베이킹</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
+    <div class="mega" id="category-mega" aria-hidden="true">
+      <div class="mega__inner l-container">
+        <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
+          <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it" aria-selected="true"
+            aria-controls="megapanel-dev-it" tabindex="0">
+            <span class="mega-cat__name">개발 &amp; IT</span>
+            <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-career-money" aria-selected="false"
+            aria-controls="megapanel-career-money" tabindex="-1">
+            <span class="mega-cat__name">커리어 &amp; 머니</span>
+            <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-design-creative" aria-selected="false"
+            aria-controls="megapanel-design-creative" tabindex="-1">
+            <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
+            <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-photo-video" aria-selected="false"
+            aria-controls="megapanel-photo-video" tabindex="-1">
+            <span class="mega-cat__name">사진 &amp; 영상</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust" aria-selected="false"
+            aria-controls="megapanel-drawing-illust" tabindex="-1">
+            <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness" aria-selected="false"
+            aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
+            <span class="mega-cat__name">운동 &amp; 마음챙김</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade" aria-selected="false"
+            aria-controls="megapanel-craft-handmade" tabindex="-1">
+            <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking" aria-selected="false"
+            aria-controls="megapanel-cooking-baking" tabindex="-1">
+            <span class="mega-cat__name">요리 &amp; 베이킹</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="mega__subs">
+          <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
+            <a class="mega-sub__title" href="category-dev-it-1.html">
+              개발 &amp; IT 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-dev-it-web-publishing.html">웹 퍼블리싱</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-frontend.html">프론트엔드</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-backend.html">백엔드 &amp; 서버</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-mobile.html">모바일 &amp; 앱 개발</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-data-ai.html">데이터 &amp; AI</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-ai-tools.html">AI 개발 도구</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-nocode.html">노코드 &amp; 자동화</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money"
+            hidden>
+            <a class="mega-sub__title" href="category-career-money-1.html">
+              커리어 &amp; 머니 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-career-money-job-skills.html">직무 역량 &amp; 일잘러</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-job-search.html">취업 &amp; 이직</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-marketing.html">마케팅 &amp; 브랜딩</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-sideproject.html">사이드프로젝트 &amp; N잡</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-investing.html">재테크 &amp; 투자</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-tax.html">절세 &amp; 머니 관리</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative"
+            hidden>
+            <a class="mega-sub__title" href="category-design-creative-1.html">
+              디자인 &amp; 크리에이티브 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-design-creative-uxui.html">UX/UI 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-graphic.html">그래픽 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-branding.html">브랜딩 &amp; 로고</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-3d-motion.html">3D &amp; 모션 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-illust.html">일러스트 &amp; 디지털아트</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-intro.html">크리에이티브 입문</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
+            <a class="mega-sub__title" href="category-photo-video-1.html">
+              사진 &amp; 영상 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-photo-video-photography.html">사진 촬영</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-videography.html">영상 촬영</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-editing.html">편집 &amp; 후보정</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-motion.html">모션 &amp; 크리에이티브</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust"
+            hidden>
+            <a class="mega-sub__title" href="category-drawing-illust-1.html">
+              드로잉 &amp; 일러스트 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-drawing-illust-digital.html">디지털 드로잉</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-handdrawing.html">손그림 &amp; 회화</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-character.html">캐릭터 &amp; 웹툰</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-calligraphy.html">캘리그라피 &amp; 레터링</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness"
+            aria-labelledby="megacat-fitness-mindfulness" hidden>
+            <a class="mega-sub__title" href="category-fitness-mindfulness-1.html">
+              운동 &amp; 마음챙김 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-hometraining.html">홈트 &amp; 근력</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-yoga.html">요가 &amp; 필라테스</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-running.html">러닝 &amp; 유산소</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-meditation.html">명상 &amp; 마음챙김</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade"
+            hidden>
+            <a class="mega-sub__title" href="category-craft-handmade-1.html">
+              공예 &amp; 핸드메이드 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking"
+            hidden>
+            <a class="mega-sub__title" href="category-cooking-baking-1.html">
+              요리 &amp; 베이킹 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-world.html">세계요리 &amp; 비건</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="mega__subs">
-        <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
-          <a class="mega-sub__title" href="category-dev-it-1.html">
-            개발 &amp; IT 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-dev-it-web-publishing.html">웹 퍼블리싱</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-frontend.html">프론트엔드</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-backend.html">백엔드 &amp; 서버</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-mobile.html">모바일 &amp; 앱 개발</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-data-ai.html">데이터 &amp; AI</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-ai-tools.html">AI 개발 도구</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-nocode.html">노코드 &amp; 자동화</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money" hidden>
-          <a class="mega-sub__title" href="category-career-money-1.html">
-            커리어 &amp; 머니 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-career-money-job-skills.html">직무 역량 &amp; 일잘러</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-job-search.html">취업 &amp; 이직</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-marketing.html">마케팅 &amp; 브랜딩</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-sideproject.html">사이드프로젝트 &amp; N잡</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-investing.html">재테크 &amp; 투자</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-tax.html">절세 &amp; 머니 관리</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative" hidden>
-          <a class="mega-sub__title" href="category-design-creative-1.html">
-            디자인 &amp; 크리에이티브 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-design-creative-uxui.html">UX/UI 디자인</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-graphic.html">그래픽 디자인</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-branding.html">브랜딩 &amp; 로고</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-3d-motion.html">3D &amp; 모션 디자인</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-illust.html">일러스트 &amp; 디지털아트</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-intro.html">크리에이티브 입문</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
-          <a class="mega-sub__title" href="category-photo-video-1.html">
-            사진 &amp; 영상 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-photo-video-photography.html">사진 촬영</a></li>
-            <li><a class="mega-sub__link" href="category-photo-video-videography.html">영상 촬영</a></li>
-            <li><a class="mega-sub__link" href="category-photo-video-editing.html">편집 &amp; 후보정</a></li>
-            <li><a class="mega-sub__link" href="category-photo-video-motion.html">모션 &amp; 크리에이티브</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust" hidden>
-          <a class="mega-sub__title" href="category-drawing-illust-1.html">
-            드로잉 &amp; 일러스트 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-drawing-illust-digital.html">디지털 드로잉</a></li>
-            <li><a class="mega-sub__link" href="category-drawing-illust-handdrawing.html">손그림 &amp; 회화</a></li>
-            <li><a class="mega-sub__link" href="category-drawing-illust-character.html">캐릭터 &amp; 웹툰</a></li>
-            <li><a class="mega-sub__link" href="category-drawing-illust-calligraphy.html">캘리그라피 &amp; 레터링</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness" aria-labelledby="megacat-fitness-mindfulness" hidden>
-          <a class="mega-sub__title" href="category-fitness-mindfulness-1.html">
-            운동 &amp; 마음챙김 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-hometraining.html">홈트 &amp; 근력</a></li>
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-yoga.html">요가 &amp; 필라테스</a></li>
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-running.html">러닝 &amp; 유산소</a></li>
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-meditation.html">명상 &amp; 마음챙김</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade" hidden>
-          <a class="mega-sub__title" href="category-craft-handmade-1.html">
-            공예 &amp; 핸드메이드 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
-            <li><a class="mega-sub__link" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
-            <li><a class="mega-sub__link" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
-            <li><a class="mega-sub__link" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking" hidden>
-          <a class="mega-sub__title" href="category-cooking-baking-1.html">
-            요리 &amp; 베이킹 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
-            <li><a class="mega-sub__link" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
-            <li><a class="mega-sub__link" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
-            <li><a class="mega-sub__link" href="category-cooking-baking-world.html">세계요리 &amp; 비건</a></li>
-          </ul>
-        </div>
+    </div>
+    <div class="mega-backdrop" hidden></div>
+  </header>
+
+  <main id="main" class="terms privacy" data-screen-label="개인정보처리방침">
+
+    <!-- ===== 히어로 ===== -->
+    <section class="terms__hero">
+      <div class="terms__container">
+        <p class="terms__eyebrow">PRIVACY POLICY</p>
+        <h1 class="terms__title">개인정보 처리방침</h1>
+        <p class="terms__lead">(주)훗업 컴퍼니(이하 &ldquo;회사&rdquo;)는 &lsquo;개인정보 보호법&rsquo; 등 관련 법령을 준수하며, 이용자의 개인정보를 어떤 목적으로
+          어떻게 처리하고 보호하는지 아래와 같이 안내합니다.</p>
+        <p class="terms__effective"><span class="terms__effective-label">시행일</span><span
+            class="terms__effective-value">2026. 06. 04</span></p>
       </div>
-    </div>
-  </div>
-  <div class="mega-backdrop" hidden></div>
-</header>
-
-<main id="main" class="terms privacy" data-screen-label="개인정보처리방침">
-
-  <!-- ===== 히어로 ===== -->
-  <section class="terms__hero">
-    <div class="terms__container">
-      <p class="terms__eyebrow">PRIVACY POLICY</p>
-      <h1 class="terms__title">개인정보 처리방침</h1>
-      <p class="terms__lead">(주)훗업 컴퍼니(이하 &ldquo;회사&rdquo;)는 &lsquo;개인정보 보호법&rsquo; 등 관련 법령을 준수하며, 이용자의 개인정보를 어떤 목적으로 어떻게 처리하고 보호하는지 아래와 같이 안내합니다.</p>
-      <p class="terms__effective"><span class="terms__effective-label">시행일</span><span class="terms__effective-value">2026. 06. 04</span></p>
-    </div>
-  </section>
-
-  <!-- ===== 본문 ===== -->
-  <section class="terms__body">
-    <div class="terms__container terms__layout">
-
-      <!-- 목차 -->
-      <aside class="terms__toc" aria-label="목차">
-        <p class="terms__toc-label">CONTENTS</p>
-        <ul class="terms__toc-list">
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s1"><span class="terms__toc-no">1</span><span>개인정보의 처리 목적</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s2"><span class="terms__toc-no">2</span><span>처리하는 개인정보의 항목, 보유 및 이용 기간</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s3"><span class="terms__toc-no">3</span><span>개인정보의 처리 및 보유기간</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s4"><span class="terms__toc-no">4</span><span>개인정보의 제3자 제공</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s5"><span class="terms__toc-no">5</span><span>개인정보처리의 위탁</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s6"><span class="terms__toc-no">6</span><span>개인정보의 국외 이전</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s7"><span class="terms__toc-no">7</span><span>개인정보의 파기절차 및 방법</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s8"><span class="terms__toc-no">8</span><span>이용자와 법정대리인의 권리ㆍ의무 및 행사방법</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s9"><span class="terms__toc-no">9</span><span>개인정보의 안전성 확보조치</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s10"><span class="terms__toc-no">10</span><span>개인정보 자동 수집 장치의 설치ㆍ운영 및 거부에 관한 사항</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s11"><span class="terms__toc-no">11</span><span>행태정보의 수집ㆍ이용 및 거부 등에 관한 사항</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s12"><span class="terms__toc-no">12</span><span>개인정보 보호책임부서 및 개인정보 열람청구 접수ㆍ처리 부서</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s13"><span class="terms__toc-no">13</span><span>링크 사이트</span></a></li>
-            <li class="terms__toc-item"><a class="terms__toc-link" href="#s14"><span class="terms__toc-no">14</span><span>개인정보 처리방침의 변경</span></a></li>
-        </ul>
-      </aside>
-
-      <!-- 본문 -->
-      <article class="terms__article">
-    <section class="terms__section" id="s1">
-      <h2 class="terms__h2"><span class="terms__h2-no">1</span><span class="terms__h2-title">개인정보의 처리 목적</span></h2>
-        <p class="terms__p">회사는 다음의 목적을 위하여 개인정보를 처리합니다.</p>
-        <h3 class="terms__h3">〈일반 회원〉</h3>
-        <p class="terms__p">① 회원 가입 및 관리 — 회원제 서비스 이용에 따른 본인 식별, 회원자격 유지ㆍ관리, 서비스 부정이용 방지와 비인가 사용방지, 각종 고지ㆍ통지, 불만처리 및 고객상담 등 민원 처리, 분쟁 조정을 위한 기록보존</p>
-        <p class="terms__p">② 재화 또는 서비스 제공 — 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산, 콘텐츠 제공, 구매 및 요금 결제, 환불, 물품배송, 본인인증, 요금추심</p>
-        <p class="terms__p">③ 서비스 개선 및 마케팅 활용 — 신규 서비스 개발, 이용 기록과 접속 빈도 분석, 맞춤형 서비스 제공, 이벤트 및 광고성 정보 제공</p>
-        <p class="terms__p">④ 채용 전형 진행 및 지원 — 채용 지원 현황 확인, 채용 지원 관리, 관심공고 저장, 입사전형 진행, 입사 지원서 수정, 자격요건의 확인, 합격여부 확인, 입사 지원자와의 원활한 의사소통과 장애인고용촉진 및 직업재활법에 따른 채용 우대자 관리</p>
-        <p class="terms__p">⑤ 지식재산권 침해신고 — 회사에서 판매되는 클래스로 인하여 귀하의 지식재산권이 침해되는 경우 아래 절차에 따라 필요 서류를 구비하여 회사에 지식재산권 침해 신고</p>
-        <h3 class="terms__h3">〈크리에이터〉</h3>
-        <p class="terms__p">① 회원 가입 및 관리 — 크리에이터 회원제 서비스 이용에 따른 본인 식별, 회원자격 유지ㆍ관리, 서비스 부정이용 방지와 비인가 사용방지, 각종 고지ㆍ통지, 불만처리 및 고객상담 등 민원 처리, 분쟁 조정을 위한 기록보존</p>
-        <p class="terms__p">② 재화 또는 서비스 제공</p>
-        <ul class="terms__bullets">
-          <li>클래스 개설·운영에 필요한 계약 이행 및 정산 처리</li>
-          <li>정산금 지급, 세무신고 및 관련 법령에 따른 의무 이행</li>
-          <li>크리에이터 센터를 통한 서비스 지원, 공지사항 및 안내 메시지 발송</li>
-          <li>본인 인증 및 자격 검증</li>
-          <li>교재·키트 등 물품 배송 및 기타 서비스 제공</li>
-        </ul>
-        <p class="terms__p">③ 서비스 개선 및 마케팅 활용 — 크리에이터 대상 프로그램 안내, 클래스 운영 지표 분석 및 개선</p>
-        <p class="terms__p">④ 평생교육 통계조사 협조 — 「평생교육법」의 평생교육 통계조사 협조 의무 이행을 위해 크리에이터의 개인정보 (성명, 성별, 생년월일, 최종학력, 국적)를 전수 수집, 제공 필요</p>
-        <p class="terms__p">※ 회사는 원칙적으로 만 14세 미만 아동의 개인정보를 수집하지 않습니다. 단, 만 14세 미만 아동의 개인정보를 처리하기 위하여 개인정보 보호법에 따른 동의를 받아야 할 때는 그 법정대리인에게 동의를 받고, 개인정보 사용이 끝나면 해당 정보를 바로 삭제하며, 개인정보가 사용되는 동안 개인정보를 안전하게 관리합니다.</p>
     </section>
-    <section class="terms__section" id="s2">
-      <h2 class="terms__h2"><span class="terms__h2-no">2</span><span class="terms__h2-title">처리하는 개인정보의 항목, 보유 및 이용 기간</span></h2>
-        <h3 class="terms__h3">(1) 정보주체의 동의를 받지 않고 처리하는 개인정보 항목 [필수 처리 항목]</h3>
-        <p class="terms__p">회사는 다음의 개인정보 항목을 정보주체의 동의 없이 처리하고 있습니다. 법적 근거: 「개인정보 보호법」 제15조제1항제4호(‘계약 체결·이행’)</p>
-        <div class="terms__table-wrap">
-          <table class="terms__table">
-            <thead><tr><th scope="col">구분</th><th scope="col">수집ㆍ이용 항목</th><th scope="col">보유 및 이용 기간</th></tr></thead>
-            <tbody>
-              <tr><td>회원가입 시</td><td>이메일 주소, 비밀번호, 닉네임</td><td>[회원 탈퇴 후 15일까지]</td></tr>
-              <tr><td>휴대폰 본인 인증 시</td><td>이름, 휴대폰 번호, 생년월일, 성별, 중복가입확인정보(DI), 연계정보(CI), 내·외국인정보</td><td>[회원 탈퇴 후 15일까지]</td></tr>
-              <tr><td>고객센터 문의 시</td><td>이메일 주소, 휴대폰 번호</td><td>[3년 (소비자 불만 또는 분쟁처리에 관한 기록)]</td></tr>
-              <tr><td>학생 할인 플랜 가입 시</td><td>학교 이름, 학교 이메일 주소, 졸업연월</td><td>[5년 (계약 또는 청약철회, 대금결제, 재화 등의 공급기록)]</td></tr>
-              <tr><td>유료 서비스 결제 시</td><td>결제 정보(카드사명, 카드번호 일부), 결제 기록</td><td>[5년 (대금결제 및 재화 등의 공급에 관한 기록)]</td></tr>
-              <tr><td>크리에이터 멤버십 구매 시</td><td>닉네임, 프로필 사진, 이메일, 결제 정보, 이용 기록, 그 외 멤버십을 구성하는 상품 전달에 필요한 추가 정보</td><td>[회원 탈퇴 시 즉시 파기]</td></tr>
-              <tr><td>물품 주문 시</td><td>구매자정보(닉네임, 이름, 휴대폰번호, 이메일), 수령인정보 (이름, 휴대폰번호, 주소)</td><td>[5년 (재화 등의 공급기록)]</td></tr>
-              <tr><td>크리에이터 등록 시</td><td>이름, 성별, 생년월일, 최종학력, 국적, 주소, 휴대폰 번호, 이메일 주소, 주민등록번호, 은행명, 예금주, 계좌번호, SNS 계정 및 URL</td><td>[수집 및 이용 목적 달성 시까지 보유하며, 목적 달성 후 지체 없이 파기]</td></tr>
-              <tr><td>서비스 이용 시 자동 수집</td><td>접속 IP, 쿠키, 서비스 이용 기록, 기기 정보, 브라우저 정보</td><td>웹사이트 방문 기록 : [3개월 (통신비밀보호법)]</td></tr>
-            </tbody>
-          </table>
+
+    <!-- ===== 본문 ===== -->
+    <section class="terms__body">
+      <div class="terms__container terms__layout">
+
+        <!-- 목차 -->
+        <aside class="terms__toc" aria-label="목차">
+          <p class="terms__toc-label">CONTENTS</p>
+          <ul class="terms__toc-list">
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s1"><span
+                  class="terms__toc-no">1</span><span>개인정보의 처리 목적</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s2"><span
+                  class="terms__toc-no">2</span><span>처리하는 개인정보의 항목, 보유 및 이용 기간</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s3"><span
+                  class="terms__toc-no">3</span><span>개인정보의 처리 및 보유기간</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s4"><span
+                  class="terms__toc-no">4</span><span>개인정보의 제3자 제공</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s5"><span
+                  class="terms__toc-no">5</span><span>개인정보처리의 위탁</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s6"><span
+                  class="terms__toc-no">6</span><span>개인정보의 국외 이전</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s7"><span
+                  class="terms__toc-no">7</span><span>개인정보의 파기절차 및 방법</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s8"><span
+                  class="terms__toc-no">8</span><span>이용자와 법정대리인의 권리ㆍ의무 및 행사방법</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s9"><span
+                  class="terms__toc-no">9</span><span>개인정보의 안전성 확보조치</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s10"><span
+                  class="terms__toc-no">10</span><span>개인정보 자동 수집 장치의 설치ㆍ운영 및 거부에 관한 사항</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s11"><span
+                  class="terms__toc-no">11</span><span>행태정보의 수집ㆍ이용 및 거부 등에 관한 사항</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s12"><span
+                  class="terms__toc-no">12</span><span>개인정보 보호책임부서 및 개인정보 열람청구 접수ㆍ처리 부서</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s13"><span
+                  class="terms__toc-no">13</span><span>링크 사이트</span></a></li>
+            <li class="terms__toc-item"><a class="terms__toc-link" href="#s14"><span
+                  class="terms__toc-no">14</span><span>개인정보 처리방침의 변경</span></a></li>
+          </ul>
+        </aside>
+
+        <!-- 본문 -->
+        <article class="terms__article">
+          <section class="terms__section" id="s1">
+            <h2 class="terms__h2"><span class="terms__h2-no">1</span><span class="terms__h2-title">개인정보의 처리 목적</span>
+            </h2>
+            <p class="terms__p">회사는 다음의 목적을 위하여 개인정보를 처리합니다.</p>
+            <h3 class="terms__h3">〈일반 회원〉</h3>
+            <p class="terms__p">① 회원 가입 및 관리 — 회원제 서비스 이용에 따른 본인 식별, 회원자격 유지ㆍ관리, 서비스 부정이용 방지와 비인가 사용방지, 각종 고지ㆍ통지, 불만처리 및
+              고객상담 등 민원 처리, 분쟁 조정을 위한 기록보존</p>
+            <p class="terms__p">② 재화 또는 서비스 제공 — 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산, 콘텐츠 제공, 구매 및 요금 결제, 환불, 물품배송, 본인인증,
+              요금추심</p>
+            <p class="terms__p">③ 서비스 개선 및 마케팅 활용 — 신규 서비스 개발, 이용 기록과 접속 빈도 분석, 맞춤형 서비스 제공, 이벤트 및 광고성 정보 제공</p>
+            <p class="terms__p">④ 채용 전형 진행 및 지원 — 채용 지원 현황 확인, 채용 지원 관리, 관심공고 저장, 입사전형 진행, 입사 지원서 수정, 자격요건의 확인, 합격여부 확인,
+              입사 지원자와의 원활한 의사소통과 장애인고용촉진 및 직업재활법에 따른 채용 우대자 관리</p>
+            <p class="terms__p">⑤ 지식재산권 침해신고 — 회사에서 판매되는 클래스로 인하여 귀하의 지식재산권이 침해되는 경우 아래 절차에 따라 필요 서류를 구비하여 회사에 지식재산권 침해
+              신고</p>
+            <h3 class="terms__h3">〈크리에이터〉</h3>
+            <p class="terms__p">① 회원 가입 및 관리 — 크리에이터 회원제 서비스 이용에 따른 본인 식별, 회원자격 유지ㆍ관리, 서비스 부정이용 방지와 비인가 사용방지, 각종 고지ㆍ통지,
+              불만처리 및 고객상담 등 민원 처리, 분쟁 조정을 위한 기록보존</p>
+            <p class="terms__p">② 재화 또는 서비스 제공</p>
+            <ul class="terms__bullets">
+              <li>클래스 개설·운영에 필요한 계약 이행 및 정산 처리</li>
+              <li>정산금 지급, 세무신고 및 관련 법령에 따른 의무 이행</li>
+              <li>크리에이터 센터를 통한 서비스 지원, 공지사항 및 안내 메시지 발송</li>
+              <li>본인 인증 및 자격 검증</li>
+              <li>교재·키트 등 물품 배송 및 기타 서비스 제공</li>
+            </ul>
+            <p class="terms__p">③ 서비스 개선 및 마케팅 활용 — 크리에이터 대상 프로그램 안내, 클래스 운영 지표 분석 및 개선</p>
+            <p class="terms__p">④ 평생교육 통계조사 협조 — 「평생교육법」의 평생교육 통계조사 협조 의무 이행을 위해 크리에이터의 개인정보 (성명, 성별, 생년월일, 최종학력, 국적)를
+              전수 수집, 제공 필요</p>
+            <p class="terms__p">※ 회사는 원칙적으로 만 14세 미만 아동의 개인정보를 수집하지 않습니다. 단, 만 14세 미만 아동의 개인정보를 처리하기 위하여 개인정보 보호법에 따른
+              동의를 받아야 할 때는 그 법정대리인에게 동의를 받고, 개인정보 사용이 끝나면 해당 정보를 바로 삭제하며, 개인정보가 사용되는 동안 개인정보를 안전하게 관리합니다.</p>
+          </section>
+          <section class="terms__section" id="s2">
+            <h2 class="terms__h2"><span class="terms__h2-no">2</span><span class="terms__h2-title">처리하는 개인정보의 항목, 보유 및
+                이용 기간</span></h2>
+            <h3 class="terms__h3">(1) 정보주체의 동의를 받지 않고 처리하는 개인정보 항목 [필수 처리 항목]</h3>
+            <p class="terms__p">회사는 다음의 개인정보 항목을 정보주체의 동의 없이 처리하고 있습니다. 법적 근거: 「개인정보 보호법」 제15조제1항제4호(‘계약 체결·이행’)</p>
+            <div class="terms__table-wrap">
+              <table class="terms__table">
+                <thead>
+                  <tr>
+                    <th scope="col">구분</th>
+                    <th scope="col">수집ㆍ이용 항목</th>
+                    <th scope="col">보유 및 이용 기간</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>회원가입 시</td>
+                    <td>이메일 주소, 비밀번호, 닉네임</td>
+                    <td>[회원 탈퇴 후 15일까지]</td>
+                  </tr>
+                  <tr>
+                    <td>휴대폰 본인 인증 시</td>
+                    <td>이름, 휴대폰 번호, 생년월일, 성별, 중복가입확인정보(DI), 연계정보(CI), 내·외국인정보</td>
+                    <td>[회원 탈퇴 후 15일까지]</td>
+                  </tr>
+                  <tr>
+                    <td>고객센터 문의 시</td>
+                    <td>이메일 주소, 휴대폰 번호</td>
+                    <td>[3년 (소비자 불만 또는 분쟁처리에 관한 기록)]</td>
+                  </tr>
+                  <tr>
+                    <td>학생 할인 플랜 가입 시</td>
+                    <td>학교 이름, 학교 이메일 주소, 졸업연월</td>
+                    <td>[5년 (계약 또는 청약철회, 대금결제, 재화 등의 공급기록)]</td>
+                  </tr>
+                  <tr>
+                    <td>유료 서비스 결제 시</td>
+                    <td>결제 정보(카드사명, 카드번호 일부), 결제 기록</td>
+                    <td>[5년 (대금결제 및 재화 등의 공급에 관한 기록)]</td>
+                  </tr>
+                  <tr>
+                    <td>크리에이터 멤버십 구매 시</td>
+                    <td>닉네임, 프로필 사진, 이메일, 결제 정보, 이용 기록, 그 외 멤버십을 구성하는 상품 전달에 필요한 추가 정보</td>
+                    <td>[회원 탈퇴 시 즉시 파기]</td>
+                  </tr>
+                  <tr>
+                    <td>물품 주문 시</td>
+                    <td>구매자정보(닉네임, 이름, 휴대폰번호, 이메일), 수령인정보 (이름, 휴대폰번호, 주소)</td>
+                    <td>[5년 (재화 등의 공급기록)]</td>
+                  </tr>
+                  <tr>
+                    <td>크리에이터 등록 시</td>
+                    <td>이름, 성별, 생년월일, 최종학력, 국적, 주소, 휴대폰 번호, 이메일 주소, 주민등록번호, 은행명, 예금주, 계좌번호, SNS 계정 및 URL</td>
+                    <td>[수집 및 이용 목적 달성 시까지 보유하며, 목적 달성 후 지체 없이 파기]</td>
+                  </tr>
+                  <tr>
+                    <td>서비스 이용 시 자동 수집</td>
+                    <td>접속 IP, 쿠키, 서비스 이용 기록, 기기 정보, 브라우저 정보</td>
+                    <td>웹사이트 방문 기록 : [3개월 (통신비밀보호법)]</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h3 class="terms__h3">(2) 정보주체의 동의를 받아 처리하는 개인정보 항목 [선택 처리 항목]</h3>
+            <p class="terms__p">선택 항목은 동의하지 않아도 서비스 이용이 가능하며, 마케팅 정보 수신 등 부가 서비스 제공에 한하여 처리됩니다.</p>
+            <div class="terms__table-wrap">
+              <table class="terms__table">
+                <thead>
+                  <tr>
+                    <th scope="col">목적</th>
+                    <th scope="col">수집 항목</th>
+                    <th scope="col">보유 및 이용기간</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>광고성 정보 전송 및 이벤트 안내</td>
+                    <td>이름, 휴대폰 번호, 이메일 주소</td>
+                    <td>[동의 철회 시까지]</td>
+                  </tr>
+                  <tr>
+                    <td>경품 발송 및 배송</td>
+                    <td>이름, 휴대폰 번호, 주소</td>
+                    <td>[목적 달성 후 지체 없이 파기]</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section class="terms__section" id="s3">
+            <h2 class="terms__h2"><span class="terms__h2-no">3</span><span class="terms__h2-title">개인정보의 처리 및
+                보유기간</span></h2>
+            <p class="terms__p">회사는 원칙적으로 『2. 처리하는 개인정보의 항목, 보유 및 이용 기간』에 따른 개인정보 보유기간이 경과하거나 처리 목적이 달성된 경우에는 해당 정보를
+              지체없이 파기합니다. 다만, 관계법령의 규정에 의하여 보존할 필요가 있는 경우, 회사는 아래와 같이 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다.</p>
+            <ul class="terms__bullets">
+              <li>① 계약 또는 청약철회 등에 관한 기록: 5년(전자상거래 등에서의 소비자보호에 관한 법률)</li>
+              <li>② 대금결제 및 재화 등의 공급에 관한 기록: 5년(전자상거래 등에서의 소비자보호에 관한 법률)</li>
+              <li>③ 소비자의 불만 또는 분쟁처리에 관한 기록: 3년(전자상거래 등에서의 소비자보호에 관한 법률)</li>
+              <li>④ 표시/광고에 관한 기록: 6개월(전자상거래 등에서의 소비자보호에 관한 법률)</li>
+              <li>⑤ 「통신비밀보호법」에 따른 통신사실확인자료 보관: 3개월</li>
+              <li>⑥ 부가가치세의 과세표준과 세액의 신고에 관한 기록: 5년(부가가치세법)</li>
+              <li>⑦ 제세공과금 대납 및 원천세 신고에 관한 기록: 5년(소득세법, 국세기본법)</li>
+            </ul>
+            <p class="terms__p">또한, 아래 각 경우에는 해당 사유 종료 시까지 처리 및 보유합니다.</p>
+            <ul class="terms__bullets">
+              <li>① 관계 법령 위반에 따른 수사·조사 등이 진행 중인 경우: 해당 수사·조사 종료 시까지</li>
+              <li>② 홈페이지 이용에 따른 채권·채무관계 잔존 시: 해당 채권·채무관계 정산 시까지</li>
+            </ul>
+          </section>
+          <section class="terms__section" id="s4">
+            <h2 class="terms__h2"><span class="terms__h2-no">4</span><span class="terms__h2-title">개인정보의 제3자 제공</span>
+            </h2>
+            <p class="terms__p">회사는 원활한 서비스 제공을 위해 다음의 제3자에게 개인정보를 제공할 수 있으며, 이 경우 이용자의 동의를 얻어 필요 최소한의 범위로만 제공합니다.</p>
+            <p class="terms__p">다만, 「소득세법」 등 다른 법률에 특별한 규정이 있는 경우에는 이용자의 동의 없이 법률에 따라 관계기관에 개인정보를 제공할 수 있습니다.</p>
+            <div class="terms__table-wrap">
+              <table class="terms__table terms__table--wide">
+                <thead>
+                  <tr>
+                    <th scope="col">제공받는 자</th>
+                    <th scope="col">제공목적</th>
+                    <th scope="col">제공항목</th>
+                    <th scope="col">보유 및 이용기간</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>크리에이터</td>
+                    <td>크리에이터 멤버십 및 클래스 운영</td>
+                    <td>1. 구매/수강자가 크리에이터 멤버십 구매 시: 닉네임, 프로필 사진, 이메일, 결제 정보, 이용 기록, 그 외 멤버십을 구성하는 상품 전달에 필요한 추가 정보 2.
+                      구매/수강자 대상 경품, 선물 등의 제공 시 — 배송 상품: 이름, 주소, 휴대폰 번호, 결제정보 / 모바일 상품: 이름, 휴대폰 번호</td>
+                    <td>구매확정 후 1개월</td>
+                  </tr>
+                  <tr>
+                    <td>배송업체</td>
+                    <td>주문상품의 배송, 고객상담 및 불만처리</td>
+                    <td>수취인 정보(이름, 휴대폰번호, 주소)</td>
+                    <td>구매확정 후 1개월</td>
+                  </tr>
+                  <tr>
+                    <td>한국교육개발원 (국가평생교육통계센터)</td>
+                    <td>평생교육 통계조사 협조</td>
+                    <td>크리에이터 정보(성명, 성별, 생년월일, 최종학력, 국적)</td>
+                    <td>이용 목적 달성 시까지</td>
+                  </tr>
+                  <tr>
+                    <td>국세청</td>
+                    <td>제세공과금 처리</td>
+                    <td>이름, 주민등록번호</td>
+                    <td>이용 목적 달성 시까지</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section class="terms__section" id="s5">
+            <h2 class="terms__h2"><span class="terms__h2-no">5</span><span class="terms__h2-title">개인정보처리의 위탁</span>
+            </h2>
+            <p class="terms__p">① 회사는 원활한 개인정보 업무처리를 위하여 아래와 같이 업무를 위탁하고 있으며 관계법령에 따라 위탁 처리되는 개인정보가 안전하게 관리될 수 있도록 필요한
+              조치를 취하고 있습니다. 또한 위탁 처리하는 개인정보는 서비스 제공에 필요한 최소한의 범위에 국한됩니다.</p>
+            <div class="terms__table-wrap">
+              <table class="terms__table">
+                <thead>
+                  <tr>
+                    <th scope="col">수탁업체</th>
+                    <th scope="col">위탁업무</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>(주)다날</td>
+                    <td>본인확인</td>
+                  </tr>
+                  <tr>
+                    <td>(주)커넥트웨이브</td>
+                    <td>주문상품의 보관 및 배송, 배송추적</td>
+                  </tr>
+                  <tr>
+                    <td>(주)트랜스코스모스코리아</td>
+                    <td>고객상담</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="terms__p">② 개인정보 처리 업무를 국외에 위탁하는 경우는 『6. 개인정보의 국외 이전』을 참고하여 주시기 바랍니다.</p>
+          </section>
+          <section class="terms__section" id="s6">
+            <h2 class="terms__h2"><span class="terms__h2-no">6</span><span class="terms__h2-title">개인정보의 국외 이전</span>
+            </h2>
+            <p class="terms__p">① 회사는 원활한 개인정보 업무처리를 위하여 아래 업무를 국외에 위탁하고 있습니다.</p>
+            <div class="terms__table-wrap">
+              <table class="terms__table terms__table--wide">
+                <thead>
+                  <tr>
+                    <th scope="col">이전 받는 자</th>
+                    <th scope="col">이전되는 국가</th>
+                    <th scope="col">이전 시기 및 방법</th>
+                    <th scope="col">정보관리책임자 연락처</th>
+                    <th scope="col">이전되는 개인정보 항목</th>
+                    <th scope="col">이용목적 및 처리기간</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Google LLC</td>
+                    <td>미국, 칠레, 아일랜드, 네덜란드, 덴마크, 핀란드, 벨기에, 대만, 싱가포르</td>
+                    <td>서비스 이용 시 네트워크를 통해 수시로 이전</td>
+                    <td>googlekrsupport@google.com</td>
+                    <td>브라우저 정보, 디바이스 정보</td>
+                    <td>목적: 보안 및 부정이용 방지</td>
+                  </tr>
+                  <tr>
+                    <td>Twilio Inc.</td>
+                    <td>미국, EU·영국 등 수탁사·그룹사 소재국</td>
+                    <td>서비스 이용 시 네트워크를 통해 수시로 이전</td>
+                    <td>privacy@twilio.com</td>
+                    <td>연락처·계정·결제·본인확인 (KYC) 정보, 통신 내용·메타데이터(문자·음성·이메일 등), 기기·IP·쿠키·로그 등 서비스 제공에 필요한 항목 (제품·설정에 따라 달라짐)
+                    </td>
+                    <td>목적: 서비스 제공·운영·보안·부정 이용 방지·분석·법적 의무 이행 등 / 기간: 처리 목적에 필요한 기간, Twilio 기록 보관 정책 및 고객 계약·DPA에 따름
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zendesk, Inc.</td>
+                    <td>미국</td>
+                    <td>서비스 이용 시 네트워크를 통해 수시로 이전</td>
+                    <td>privacy@zendesk.com</td>
+                    <td>이메일 주소, 문의 내용</td>
+                    <td>목적: 고객 상담</td>
+                  </tr>
+                  <tr>
+                    <td>Tally BV</td>
+                    <td>벨기에</td>
+                    <td>서비스 이용 시 네트워크를 통해 수시로 이전</td>
+                    <td>hello@tally.so</td>
+                    <td>이메일 주소, 문의 내용</td>
+                    <td>목적: 고객 상담</td>
+                  </tr>
+                  <tr>
+                    <td>Stripe, LLC</td>
+                    <td>미국</td>
+                    <td>서비스 이용 시 네트워크를 통해 수시로 이전</td>
+                    <td>privacy@stripe.com</td>
+                    <td>결제 정보, 청구지 정보</td>
+                    <td>목적: 유료서비스 이용에 따른 결제처리 및 요금정산</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="terms__p">② 이용자는 회사의 개인정보 보호책임자 및 개인정보 열람청구 접수ㆍ처리 부서를 통해 개인정보의 국외 이전을 거부할 수 있습니다. 이용자가 개인정보의 국외
+              이전을 거부하는 경우 회사는 해당 이용자의 개인정보를 국외 이전 대상에서 제외합니다. 다만, 이 경우 회사의 서비스 중 개인정보 국외 이전이 필수적으로 수반되는 서비스의 이용이 제한될 수
+              있습니다.</p>
+          </section>
+          <section class="terms__section" id="s7">
+            <h2 class="terms__h2"><span class="terms__h2-no">7</span><span class="terms__h2-title">개인정보의 파기절차 및
+                방법</span></h2>
+            <p class="terms__p">① 파기절차 및 기한 : 회사는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체없이 해당 개인정보를 파기합니다. 다만,
+              『3. 개인정보의 처리 및 보유기간』에서 명시한 다른 법령에 따라 개인정보를 계속 보존하여야 하는 경우에는, 해당 개인정보를 별도의 데이터베이스(DB)로 옮기거나 보관장소를 달리하여
+              보존합니다.</p>
+            <p class="terms__p">② 파기방법</p>
+            <ul class="terms__bullets">
+              <li>전자적 파일 형태의 정보는 복구 및 재생이 불가능한 기술적 방법을 사용하여 삭제합니다.</li>
+              <li>종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.</li>
+            </ul>
+          </section>
+          <section class="terms__section" id="s8">
+            <h2 class="terms__h2"><span class="terms__h2-no">8</span><span class="terms__h2-title">이용자와 법정대리인의 권리ㆍ의무 및
+                행사방법</span></h2>
+            <p class="terms__p">① 이용자는 회사에 대해 언제든지 개인정보 열람, 정정, 삭제, 동의 철회, 처리 정지를 요구할 수 있습니다. 이용자는 서비스 내 “마이 둥지” 메뉴에서 직접
+              개인정보를 조회 및 수정, 회원 탈퇴(동의 철회)가 가능합니다. 또한, 관련된 상담 및 문의 처리를 위해 고객센터 또는 개인정보 보호책임자에게 서면, 전화 또는 이메일로 연락하실 수
+              있습니다.</p>
+            <p class="terms__p">② 이용자가 개인정보의 오류에 대한 정정을 요청하신 경우, 완료하기 전까지 개인정보를 이용 또는 제공하지 않습니다. 또한 잘못된 개인정보를 제3자에게 이미
+              제공한 경우에는 정정 처리결과를 제3자에게 지체없이 통지하여 정정이 이루어지도록 하겠습니다.</p>
+            <p class="terms__p">③ 권리 행사는 이용자의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수도 있습니다. 이 경우 별도 서식에 따른 위임장을 제출하셔야 합니다.</p>
+            <p class="terms__p">④ 개인정보의 정정 및 삭제 요구는 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.</p>
+            <p class="terms__p">⑤ 회사는 이용자 권리에 따른 열람의 요구, 정정ㆍ삭제의 요구 시 열람 등 요구를 한 자가 본인이거나 정당한 대리인인지를 확인합니다.</p>
+          </section>
+          <section class="terms__section" id="s9">
+            <h2 class="terms__h2"><span class="terms__h2-no">9</span><span class="terms__h2-title">개인정보의 안전성 확보조치</span>
+            </h2>
+            <p class="terms__p">회사는 이용자의 개인정보를 처리함에 있어 개인정보가 분실, 도난, 유출, 변조 또는 훼손되지 않도록 안전성 확보를 위하여 관련 법령에 따라 다음과 같은
+              관리적ㆍ기술적 조치를 취하고 있습니다.</p>
+            <ul class="terms__bullets">
+              <li>① 관리적 조치 : 내부관리계획 수립ㆍ시행, 전담조직 운영, 정기적 직원 교육</li>
+              <li>② 기술적 조치 : 개인정보처리시스템 등의 접근권한 관리, 접근통제시스템 설치, 개인정보의 암호화, 보안프로그램 설치 및 갱신</li>
+            </ul>
+          </section>
+          <section class="terms__section" id="s10">
+            <h2 class="terms__h2"><span class="terms__h2-no">10</span><span class="terms__h2-title">개인정보 자동 수집 장치의 설치ㆍ운영
+                및 거부에 관한 사항</span></h2>
+            <p class="terms__p">회사는 이용자 맞춤서비스 등을 제공하기 위하여 쿠키(Cookie)를 설치 및 운영합니다. 쿠키의 사용 목적과 거부에 관한 사항은 다음과 같습니다.</p>
+            <p class="terms__p">① 쿠키란 : 쿠키는 웹사이트를 운영하는데 이용되는 서버가 이용자의 컴퓨터 브라우저에 보내는 소량의 정보이며 이용자의 컴퓨터에 저장됩니다.</p>
+            <p class="terms__p">② 쿠키의 사용 목적 : 이용자의 접속 빈도나 방문 시간 등의 분석, 이용 형태 및 관심분야 파악, 자취 추적, 각종 이벤트 참여 정도, 방문 횟수 등을
+              파악하여 타겟 마케팅 등 개인별 맞춤 서비스를 제공하기 위해 쿠키를 사용합니다.</p>
+            <p class="terms__p">③ 쿠키의 설치·운영 및 거부 : 이용자는 쿠키 설치에 대한 선택권을 가지고 있으며, 웹브라우저별 옵션 선택을 통해 모든 쿠키를 허용 또는 거부하거나, 쿠키가
+              저장될 때마다 확인을 거치도록 할 수 있습니다.</p>
+            <h3 class="terms__h3">▶ 웹 브라우저에서 쿠키 허용/차단</h3>
+            <ul class="terms__bullets">
+              <li>크롬(Chrome) : 웹브라우저 오른쪽 상단 ‘ ⁝ ’ 표시 선택 &gt; 새 시크릿 창 (단축키 : Ctrl+Shift+N)</li>
+              <li>엣지(Edge) : 웹 브라우저 오른쪽 상단 ‘…’ 표시 선택 &gt; 새 InPrivate 창 (단축키 : Ctrl+Shift+N)</li>
+            </ul>
+            <h3 class="terms__h3">▶ 모바일 브라우저에서 쿠키 허용/차단</h3>
+            <ul class="terms__bullets">
+              <li>크롬(Chrome) : 모바일 브라우저 오른쪽 상단 ‘ ⁝ ’ 표시 선택 &gt; 새 시크릿 탭</li>
+              <li>사파리(Safari) : 모바일 기기 설정 &gt; 사파리(Safari) &gt; 고급 &gt; 모든 쿠키 차단</li>
+              <li>삼성 인터넷 : 모바일 브라우저 아래쪽 ‘탭’ 아이콘 선택 &gt; 비밀 모드 켜기 &gt; 시작</li>
+            </ul>
+            <p class="terms__p">단, 쿠키의 저장을 거부하였을 경우에는 로그인이 필요한 서비스 등 일부 서비스 이용에 어려움이 있을 수 있습니다.</p>
+          </section>
+          <section class="terms__section" id="s11">
+            <h2 class="terms__h2"><span class="terms__h2-no">11</span><span class="terms__h2-title">행태정보의 수집ㆍ이용 및 거부 등에
+                관한 사항</span></h2>
+            <p class="terms__p">회사는 서비스 이용과정에서 이용자에게 최적화된 맞춤형 서비스 및 혜택, 온라인 맞춤형 광고 등을 제공하기 위하여 행태정보를 수집ㆍ이용하고 있습니다.</p>
+            <p class="terms__p">① 회사는 다음과 같이 행태정보를 수집합니다.</p>
+            <div class="terms__table-wrap">
+              <table class="terms__table terms__table--wide">
+                <thead>
+                  <tr>
+                    <th scope="col">수집하는 행태정보의 항목</th>
+                    <th scope="col">행태정보 수집 방법</th>
+                    <th scope="col">행태정보 수집 목적</th>
+                    <th scope="col">보유ㆍ이용 기간 및 이후 정보처리 방법</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>서비스 이용 기록(이용자의 웹사이트/앱서비스 방문이력, 탐색이력, 구매이력)</td>
+                    <td>이용자의 웹사이트/앱 서비스 방문/실행 시 자동 수집</td>
+                    <td>이용자의 관심, 성향에 기반한 개인 맞춤형 상품/혜택 추천 서비스(광고 포함)를 제공</td>
+                    <td>수집일로부터 최대 1년간 보관 후 파기</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="terms__p">② 회사는 다음과 같이 제3자의 행태정보 수집을 허용하고 있습니다.</p>
+            <ul class="terms__bullets">
+              <li>행태정보 수집 방법 : 이용자가 당사 웹사이트를 방문하거나 앱을 실행할 때 자동 수집 및 전송</li>
+              <li>수집ㆍ처리되는 행태정보 항목 : 서비스 이용 기록(이용자의 웹/앱 방문이력, 검색이력, 구매이력)</li>
+              <li>보유ㆍ이용기간 : 1년</li>
+            </ul>
+            <p class="terms__p">③ 회사는 온라인 맞춤형 광고 등에 필요한 최소한의 행태정보만을 수집하며, 사상, 신념, 가족 및 친인척관계, 학력ㆍ병력, 기타 사회활동 경력 등 개인의
+              권리ㆍ이익이나 사생활을 뚜렷하게 침해할 우려가 있는 민감한 행태정보를 수집하지 않습니다.</p>
+            <p class="terms__p">④ 회사는 모바일 앱에서 온라인 맞춤형 광고를 위하여 광고식별자를 수집ㆍ이용합니다. 이용자는 모바일 단말기의 설정 변경을 통해 앱의 맞춤형 광고를 차단ㆍ허용할
+              수 있습니다.</p>
+            <h3 class="terms__h3">스마트폰의 광고식별자 차단/허용</h3>
+            <ul class="terms__bullets">
+              <li>(안드로이드) 설정 &gt; 개인정보보호 &gt; 광고 &gt; 광고ID 재설정 또는 광고ID 삭제</li>
+              <li>(아이폰) 설정 &gt; 개인정보보호 &gt; 추적 &gt; 앱이 추적을 요청하도록 허용 끔</li>
+              <li>※ 모바일 OS 버전에 따라 메뉴 및 방법이 다소 상이할 수 있습니다.</li>
+            </ul>
+            <p class="terms__p">⑤ 이용자는 웹브라우저의 쿠키 설정 변경 등을 통해 온라인 맞춤형 광고를 일괄적으로 차단ㆍ허용할 수 있습니다. 다만, 쿠키 설정 변경은 일부 서비스의 이용에
+              영향을 미칠 수 있습니다.</p>
+            <h3 class="terms__h3">웹브라우저를 통한 맞춤형 광고 차단/허용</h3>
+            <ul class="terms__bullets">
+              <li>Microsoft Edge : 설정 &gt; 개인정보, 검색 및 서비스 &gt; 추적방지 섹션에서 추적방지 여부 및 수준 선택 &gt; ‘InPrivate를 검색할 때 항상 “엄격”
+                추적 방지 사용’ 여부 선택 &gt; 아래 개인정보 섹션에서 ‘추적 안함 요청 보내기’ 여부 선택</li>
+              <li>Chrome : 설정 &gt; 고급 설정 표시 &gt; 개인정보 섹션에서 콘텐츠 설정 클릭 &gt; 쿠키 섹션에서 ‘타사 쿠키 및 사이트 데이터 차단’의 체크박스 선택</li>
+            </ul>
+            <p class="terms__p">⑥ 이용자는 아래의 연락처로 행태정보와 관련하여 궁금한 사항과 거부권 행사, 피해 신고 접수 등을 문의할 수 있습니다. — 개인정보팀
+              privacy@hootup.co.kr</p>
+          </section>
+          <section class="terms__section" id="s12">
+            <h2 class="terms__h2"><span class="terms__h2-no">12</span><span class="terms__h2-title">개인정보 보호책임부서 및 개인정보
+                열람청구 접수ㆍ처리 부서</span></h2>
+            <p class="terms__p">① 이용자는 회사의 서비스를 이용하시면서 발생한 모든 개인정보보호 관련 문의, 불만처리, 열람 청구 등에 관한 사항을 아래의 개인정보 보호책임부서 및 개인정보
+              열람청구 접수ㆍ처리부서로 문의할 수 있습니다. 회사는 이용자의 문의에 대해 지체없이 답변 및 처리해드릴 것입니다.</p>
+            <h3 class="terms__h3">개인정보 보호 책임부서</h3>
+            <ul class="terms__bullets">
+              <li>부서명 : 개인정보팀</li>
+              <li>연락처 : privacy@hootup.co.kr</li>
+            </ul>
+            <h3 class="terms__h3">개인정보의 열람청구 접수ㆍ처리부서</h3>
+            <ul class="terms__bullets">
+              <li>부서명 : CX팀</li>
+              <li>연락처 : help@hootup.co.kr</li>
+            </ul>
+            <p class="terms__p">② 이용자는 개인정보침해로 인한 구제를 받기 위하여 개인정보분쟁조정위원회, 한국인터넷진흥원 개인정보침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수
+              있습니다. 이 밖에 기타 개인정보침해의 신고, 상담에 대하여는 아래의 기관에 문의하시기 바랍니다.</p>
+            <ul class="terms__bullets">
+              <li>개인정보분쟁조정위원회 : https://www.kopico.go.kr / (국번없이) 1833-6972</li>
+              <li>개인정보침해신고센터 : https://privacy.kisa.or.kr / (국번없이) 118</li>
+              <li>대검찰청 사이버범죄수사단 : https://www.spo.go.kr / (국번없이) 1301</li>
+              <li>경찰청 사이버안전국 : https://ecrm.cyber.go.kr / (국번없이) 182</li>
+            </ul>
+          </section>
+          <section class="terms__section" id="s13">
+            <h2 class="terms__h2"><span class="terms__h2-no">13</span><span class="terms__h2-title">링크 사이트</span></h2>
+            <p class="terms__p">회사는 이용자에게 다른 회사의 웹사이트 또는 자료에 대한 링크를 제공할 수 있습니다. 이 경우 회사는 제3자의 사이트 및 자료에 대한 아무런 통제권이 없으므로
+              본 개인정보 처리방침은 적용되지 않으며, 그로부터 제공받는 서비스나 자료의 유용성에 대해 책임질 수 없으며 보증할 수 없습니다. 회사가 포함하고 있는 링크를 클릭하여 타 사이트로 이동하는
+              경우 해당 사이트의 개인정보 처리방침을 확인하시기 바랍니다.</p>
+          </section>
+          <section class="terms__section" id="s14">
+            <h2 class="terms__h2"><span class="terms__h2-no">14</span><span class="terms__h2-title">개인정보 처리방침의 변경</span>
+            </h2>
+            <p class="terms__p">① 이 개인정보 처리방침은 2026. 06. 04부터 적용됩니다.</p>
+            <p class="terms__p">② 회사는 법령ㆍ정책 또는 보안기술의 변경에 따라 내용의 추가ㆍ삭제 및 수정이 있을 경우에는 변경되는 개인정보 처리방침을 시행하기 최소 7일 전에 서비스 내
+              공지사항을 통하여 고지할 것입니다.</p>
+            <p class="terms__p">＊이전 개인정보 처리방침은 서비스 내 공지사항에서 확인할 수 있습니다.</p>
+          </section>
+          <section class="terms__contact">
+            <h2 class="terms__contact-title">개인정보 관련 문의</h2>
+            <p class="terms__contact-p">개인정보팀 <a href="mailto:privacy@hootup.co.kr">privacy@hootup.co.kr</a> &middot;
+              고객센터 <a href="tel:0212345678">02-1234-5678</a> (주중 10:00&ndash;18:00 KST)</p>
+          </section>
+          <p class="terms__disclaimer">&#42;본 문서는 포트폴리오용 가상 콘텐츠이며, 실제 법적 효력이 없습니다.</p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner l-container">
+
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <img class="site-footer__logo" src="assets/brand/logo-white.svg" alt="HOOT UP" loading="lazy">
+          <p class="site-footer__slogan">밤에도 깨어 배우는 사람들의 아지트</p>
         </div>
-        <h3 class="terms__h3">(2) 정보주체의 동의를 받아 처리하는 개인정보 항목 [선택 처리 항목]</h3>
-        <p class="terms__p">선택 항목은 동의하지 않아도 서비스 이용이 가능하며, 마케팅 정보 수신 등 부가 서비스 제공에 한하여 처리됩니다.</p>
-        <div class="terms__table-wrap">
-          <table class="terms__table">
-            <thead><tr><th scope="col">목적</th><th scope="col">수집 항목</th><th scope="col">보유 및 이용기간</th></tr></thead>
-            <tbody>
-              <tr><td>광고성 정보 전송 및 이벤트 안내</td><td>이름, 휴대폰 번호, 이메일 주소</td><td>[동의 철회 시까지]</td></tr>
-              <tr><td>경품 발송 및 배송</td><td>이름, 휴대폰 번호, 주소</td><td>[목적 달성 후 지체 없이 파기]</td></tr>
-            </tbody>
-          </table>
-        </div>
-    </section>
-    <section class="terms__section" id="s3">
-      <h2 class="terms__h2"><span class="terms__h2-no">3</span><span class="terms__h2-title">개인정보의 처리 및 보유기간</span></h2>
-        <p class="terms__p">회사는 원칙적으로 『2. 처리하는 개인정보의 항목, 보유 및 이용 기간』에 따른 개인정보 보유기간이 경과하거나 처리 목적이 달성된 경우에는 해당 정보를 지체없이 파기합니다. 다만, 관계법령의 규정에 의하여 보존할 필요가 있는 경우, 회사는 아래와 같이 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다.</p>
-        <ul class="terms__bullets">
-          <li>① 계약 또는 청약철회 등에 관한 기록: 5년(전자상거래 등에서의 소비자보호에 관한 법률)</li>
-          <li>② 대금결제 및 재화 등의 공급에 관한 기록: 5년(전자상거래 등에서의 소비자보호에 관한 법률)</li>
-          <li>③ 소비자의 불만 또는 분쟁처리에 관한 기록: 3년(전자상거래 등에서의 소비자보호에 관한 법률)</li>
-          <li>④ 표시/광고에 관한 기록: 6개월(전자상거래 등에서의 소비자보호에 관한 법률)</li>
-          <li>⑤ 「통신비밀보호법」에 따른 통신사실확인자료 보관: 3개월</li>
-          <li>⑥ 부가가치세의 과세표준과 세액의 신고에 관한 기록: 5년(부가가치세법)</li>
-          <li>⑦ 제세공과금 대납 및 원천세 신고에 관한 기록: 5년(소득세법, 국세기본법)</li>
-        </ul>
-        <p class="terms__p">또한, 아래 각 경우에는 해당 사유 종료 시까지 처리 및 보유합니다.</p>
-        <ul class="terms__bullets">
-          <li>① 관계 법령 위반에 따른 수사·조사 등이 진행 중인 경우: 해당 수사·조사 종료 시까지</li>
-          <li>② 홈페이지 이용에 따른 채권·채무관계 잔존 시: 해당 채권·채무관계 정산 시까지</li>
-        </ul>
-    </section>
-    <section class="terms__section" id="s4">
-      <h2 class="terms__h2"><span class="terms__h2-no">4</span><span class="terms__h2-title">개인정보의 제3자 제공</span></h2>
-        <p class="terms__p">회사는 원활한 서비스 제공을 위해 다음의 제3자에게 개인정보를 제공할 수 있으며, 이 경우 이용자의 동의를 얻어 필요 최소한의 범위로만 제공합니다.</p>
-        <p class="terms__p">다만, 「소득세법」 등 다른 법률에 특별한 규정이 있는 경우에는 이용자의 동의 없이 법률에 따라 관계기관에 개인정보를 제공할 수 있습니다.</p>
-        <div class="terms__table-wrap">
-          <table class="terms__table terms__table--wide">
-            <thead><tr><th scope="col">제공받는 자</th><th scope="col">제공목적</th><th scope="col">제공항목</th><th scope="col">보유 및 이용기간</th></tr></thead>
-            <tbody>
-              <tr><td>크리에이터</td><td>크리에이터 멤버십 및 클래스 운영</td><td>1. 구매/수강자가 크리에이터 멤버십 구매 시: 닉네임, 프로필 사진, 이메일, 결제 정보, 이용 기록, 그 외 멤버십을 구성하는 상품 전달에 필요한 추가 정보 2. 구매/수강자 대상 경품, 선물 등의 제공 시 — 배송 상품: 이름, 주소, 휴대폰 번호, 결제정보 / 모바일 상품: 이름, 휴대폰 번호</td><td>구매확정 후 1개월</td></tr>
-              <tr><td>배송업체</td><td>주문상품의 배송, 고객상담 및 불만처리</td><td>수취인 정보(이름, 휴대폰번호, 주소)</td><td>구매확정 후 1개월</td></tr>
-              <tr><td>한국교육개발원 (국가평생교육통계센터)</td><td>평생교육 통계조사 협조</td><td>크리에이터 정보(성명, 성별, 생년월일, 최종학력, 국적)</td><td>이용 목적 달성 시까지</td></tr>
-              <tr><td>국세청</td><td>제세공과금 처리</td><td>이름, 주민등록번호</td><td>이용 목적 달성 시까지</td></tr>
-            </tbody>
-          </table>
-        </div>
-    </section>
-    <section class="terms__section" id="s5">
-      <h2 class="terms__h2"><span class="terms__h2-no">5</span><span class="terms__h2-title">개인정보처리의 위탁</span></h2>
-        <p class="terms__p">① 회사는 원활한 개인정보 업무처리를 위하여 아래와 같이 업무를 위탁하고 있으며 관계법령에 따라 위탁 처리되는 개인정보가 안전하게 관리될 수 있도록 필요한 조치를 취하고 있습니다. 또한 위탁 처리하는 개인정보는 서비스 제공에 필요한 최소한의 범위에 국한됩니다.</p>
-        <div class="terms__table-wrap">
-          <table class="terms__table">
-            <thead><tr><th scope="col">수탁업체</th><th scope="col">위탁업무</th></tr></thead>
-            <tbody>
-              <tr><td>(주)다날</td><td>본인확인</td></tr>
-              <tr><td>(주)커넥트웨이브</td><td>주문상품의 보관 및 배송, 배송추적</td></tr>
-              <tr><td>(주)트랜스코스모스코리아</td><td>고객상담</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="terms__p">② 개인정보 처리 업무를 국외에 위탁하는 경우는 『6. 개인정보의 국외 이전』을 참고하여 주시기 바랍니다.</p>
-    </section>
-    <section class="terms__section" id="s6">
-      <h2 class="terms__h2"><span class="terms__h2-no">6</span><span class="terms__h2-title">개인정보의 국외 이전</span></h2>
-        <p class="terms__p">① 회사는 원활한 개인정보 업무처리를 위하여 아래 업무를 국외에 위탁하고 있습니다.</p>
-        <div class="terms__table-wrap">
-          <table class="terms__table terms__table--wide">
-            <thead><tr><th scope="col">이전 받는 자</th><th scope="col">이전되는 국가</th><th scope="col">이전 시기 및 방법</th><th scope="col">정보관리책임자 연락처</th><th scope="col">이전되는 개인정보 항목</th><th scope="col">이용목적 및 처리기간</th></tr></thead>
-            <tbody>
-              <tr><td>Google LLC</td><td>미국, 칠레, 아일랜드, 네덜란드, 덴마크, 핀란드, 벨기에, 대만, 싱가포르</td><td>서비스 이용 시 네트워크를 통해 수시로 이전</td><td>googlekrsupport@google.com</td><td>브라우저 정보, 디바이스 정보</td><td>목적: 보안 및 부정이용 방지</td></tr>
-              <tr><td>Twilio Inc.</td><td>미국, EU·영국 등 수탁사·그룹사 소재국</td><td>서비스 이용 시 네트워크를 통해 수시로 이전</td><td>privacy@twilio.com</td><td>연락처·계정·결제·본인확인 (KYC) 정보, 통신 내용·메타데이터(문자·음성·이메일 등), 기기·IP·쿠키·로그 등 서비스 제공에 필요한 항목 (제품·설정에 따라 달라짐)</td><td>목적: 서비스 제공·운영·보안·부정 이용 방지·분석·법적 의무 이행 등 / 기간: 처리 목적에 필요한 기간, Twilio 기록 보관 정책 및 고객 계약·DPA에 따름</td></tr>
-              <tr><td>Zendesk, Inc.</td><td>미국</td><td>서비스 이용 시 네트워크를 통해 수시로 이전</td><td>privacy@zendesk.com</td><td>이메일 주소, 문의 내용</td><td>목적: 고객 상담</td></tr>
-              <tr><td>Tally BV</td><td>벨기에</td><td>서비스 이용 시 네트워크를 통해 수시로 이전</td><td>hello@tally.so</td><td>이메일 주소, 문의 내용</td><td>목적: 고객 상담</td></tr>
-              <tr><td>Stripe, LLC</td><td>미국</td><td>서비스 이용 시 네트워크를 통해 수시로 이전</td><td>privacy@stripe.com</td><td>결제 정보, 청구지 정보</td><td>목적: 유료서비스 이용에 따른 결제처리 및 요금정산</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="terms__p">② 이용자는 회사의 개인정보 보호책임자 및 개인정보 열람청구 접수ㆍ처리 부서를 통해 개인정보의 국외 이전을 거부할 수 있습니다. 이용자가 개인정보의 국외 이전을 거부하는 경우 회사는 해당 이용자의 개인정보를 국외 이전 대상에서 제외합니다. 다만, 이 경우 회사의 서비스 중 개인정보 국외 이전이 필수적으로 수반되는 서비스의 이용이 제한될 수 있습니다.</p>
-    </section>
-    <section class="terms__section" id="s7">
-      <h2 class="terms__h2"><span class="terms__h2-no">7</span><span class="terms__h2-title">개인정보의 파기절차 및 방법</span></h2>
-        <p class="terms__p">① 파기절차 및 기한 : 회사는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체없이 해당 개인정보를 파기합니다. 다만, 『3. 개인정보의 처리 및 보유기간』에서 명시한 다른 법령에 따라 개인정보를 계속 보존하여야 하는 경우에는, 해당 개인정보를 별도의 데이터베이스(DB)로 옮기거나 보관장소를 달리하여 보존합니다.</p>
-        <p class="terms__p">② 파기방법</p>
-        <ul class="terms__bullets">
-          <li>전자적 파일 형태의 정보는 복구 및 재생이 불가능한 기술적 방법을 사용하여 삭제합니다.</li>
-          <li>종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.</li>
-        </ul>
-    </section>
-    <section class="terms__section" id="s8">
-      <h2 class="terms__h2"><span class="terms__h2-no">8</span><span class="terms__h2-title">이용자와 법정대리인의 권리ㆍ의무 및 행사방법</span></h2>
-        <p class="terms__p">① 이용자는 회사에 대해 언제든지 개인정보 열람, 정정, 삭제, 동의 철회, 처리 정지를 요구할 수 있습니다. 이용자는 서비스 내 “마이 둥지” 메뉴에서 직접 개인정보를 조회 및 수정, 회원 탈퇴(동의 철회)가 가능합니다. 또한, 관련된 상담 및 문의 처리를 위해 고객센터 또는 개인정보 보호책임자에게 서면, 전화 또는 이메일로 연락하실 수 있습니다.</p>
-        <p class="terms__p">② 이용자가 개인정보의 오류에 대한 정정을 요청하신 경우, 완료하기 전까지 개인정보를 이용 또는 제공하지 않습니다. 또한 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체없이 통지하여 정정이 이루어지도록 하겠습니다.</p>
-        <p class="terms__p">③ 권리 행사는 이용자의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수도 있습니다. 이 경우 별도 서식에 따른 위임장을 제출하셔야 합니다.</p>
-        <p class="terms__p">④ 개인정보의 정정 및 삭제 요구는 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.</p>
-        <p class="terms__p">⑤ 회사는 이용자 권리에 따른 열람의 요구, 정정ㆍ삭제의 요구 시 열람 등 요구를 한 자가 본인이거나 정당한 대리인인지를 확인합니다.</p>
-    </section>
-    <section class="terms__section" id="s9">
-      <h2 class="terms__h2"><span class="terms__h2-no">9</span><span class="terms__h2-title">개인정보의 안전성 확보조치</span></h2>
-        <p class="terms__p">회사는 이용자의 개인정보를 처리함에 있어 개인정보가 분실, 도난, 유출, 변조 또는 훼손되지 않도록 안전성 확보를 위하여 관련 법령에 따라 다음과 같은 관리적ㆍ기술적 조치를 취하고 있습니다.</p>
-        <ul class="terms__bullets">
-          <li>① 관리적 조치 : 내부관리계획 수립ㆍ시행, 전담조직 운영, 정기적 직원 교육</li>
-          <li>② 기술적 조치 : 개인정보처리시스템 등의 접근권한 관리, 접근통제시스템 설치, 개인정보의 암호화, 보안프로그램 설치 및 갱신</li>
-        </ul>
-    </section>
-    <section class="terms__section" id="s10">
-      <h2 class="terms__h2"><span class="terms__h2-no">10</span><span class="terms__h2-title">개인정보 자동 수집 장치의 설치ㆍ운영 및 거부에 관한 사항</span></h2>
-        <p class="terms__p">회사는 이용자 맞춤서비스 등을 제공하기 위하여 쿠키(Cookie)를 설치 및 운영합니다. 쿠키의 사용 목적과 거부에 관한 사항은 다음과 같습니다.</p>
-        <p class="terms__p">① 쿠키란 : 쿠키는 웹사이트를 운영하는데 이용되는 서버가 이용자의 컴퓨터 브라우저에 보내는 소량의 정보이며 이용자의 컴퓨터에 저장됩니다.</p>
-        <p class="terms__p">② 쿠키의 사용 목적 : 이용자의 접속 빈도나 방문 시간 등의 분석, 이용 형태 및 관심분야 파악, 자취 추적, 각종 이벤트 참여 정도, 방문 횟수 등을 파악하여 타겟 마케팅 등 개인별 맞춤 서비스를 제공하기 위해 쿠키를 사용합니다.</p>
-        <p class="terms__p">③ 쿠키의 설치·운영 및 거부 : 이용자는 쿠키 설치에 대한 선택권을 가지고 있으며, 웹브라우저별 옵션 선택을 통해 모든 쿠키를 허용 또는 거부하거나, 쿠키가 저장될 때마다 확인을 거치도록 할 수 있습니다.</p>
-        <h3 class="terms__h3">▶ 웹 브라우저에서 쿠키 허용/차단</h3>
-        <ul class="terms__bullets">
-          <li>크롬(Chrome) : 웹브라우저 오른쪽 상단 ‘ ⁝ ’ 표시 선택 &gt; 새 시크릿 창 (단축키 : Ctrl+Shift+N)</li>
-          <li>엣지(Edge) : 웹 브라우저 오른쪽 상단 ‘…’ 표시 선택 &gt; 새 InPrivate 창 (단축키 : Ctrl+Shift+N)</li>
-        </ul>
-        <h3 class="terms__h3">▶ 모바일 브라우저에서 쿠키 허용/차단</h3>
-        <ul class="terms__bullets">
-          <li>크롬(Chrome) : 모바일 브라우저 오른쪽 상단 ‘ ⁝ ’ 표시 선택 &gt; 새 시크릿 탭</li>
-          <li>사파리(Safari) : 모바일 기기 설정 &gt; 사파리(Safari) &gt; 고급 &gt; 모든 쿠키 차단</li>
-          <li>삼성 인터넷 : 모바일 브라우저 아래쪽 ‘탭’ 아이콘 선택 &gt; 비밀 모드 켜기 &gt; 시작</li>
-        </ul>
-        <p class="terms__p">단, 쿠키의 저장을 거부하였을 경우에는 로그인이 필요한 서비스 등 일부 서비스 이용에 어려움이 있을 수 있습니다.</p>
-    </section>
-    <section class="terms__section" id="s11">
-      <h2 class="terms__h2"><span class="terms__h2-no">11</span><span class="terms__h2-title">행태정보의 수집ㆍ이용 및 거부 등에 관한 사항</span></h2>
-        <p class="terms__p">회사는 서비스 이용과정에서 이용자에게 최적화된 맞춤형 서비스 및 혜택, 온라인 맞춤형 광고 등을 제공하기 위하여 행태정보를 수집ㆍ이용하고 있습니다.</p>
-        <p class="terms__p">① 회사는 다음과 같이 행태정보를 수집합니다.</p>
-        <div class="terms__table-wrap">
-          <table class="terms__table terms__table--wide">
-            <thead><tr><th scope="col">수집하는 행태정보의 항목</th><th scope="col">행태정보 수집 방법</th><th scope="col">행태정보 수집 목적</th><th scope="col">보유ㆍ이용 기간 및 이후 정보처리 방법</th></tr></thead>
-            <tbody>
-              <tr><td>서비스 이용 기록(이용자의 웹사이트/앱서비스 방문이력, 탐색이력, 구매이력)</td><td>이용자의 웹사이트/앱 서비스 방문/실행 시 자동 수집</td><td>이용자의 관심, 성향에 기반한 개인 맞춤형 상품/혜택 추천 서비스(광고 포함)를 제공</td><td>수집일로부터 최대 1년간 보관 후 파기</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="terms__p">② 회사는 다음과 같이 제3자의 행태정보 수집을 허용하고 있습니다.</p>
-        <ul class="terms__bullets">
-          <li>행태정보 수집 방법 : 이용자가 당사 웹사이트를 방문하거나 앱을 실행할 때 자동 수집 및 전송</li>
-          <li>수집ㆍ처리되는 행태정보 항목 : 서비스 이용 기록(이용자의 웹/앱 방문이력, 검색이력, 구매이력)</li>
-          <li>보유ㆍ이용기간 : 1년</li>
-        </ul>
-        <p class="terms__p">③ 회사는 온라인 맞춤형 광고 등에 필요한 최소한의 행태정보만을 수집하며, 사상, 신념, 가족 및 친인척관계, 학력ㆍ병력, 기타 사회활동 경력 등 개인의 권리ㆍ이익이나 사생활을 뚜렷하게 침해할 우려가 있는 민감한 행태정보를 수집하지 않습니다.</p>
-        <p class="terms__p">④ 회사는 모바일 앱에서 온라인 맞춤형 광고를 위하여 광고식별자를 수집ㆍ이용합니다. 이용자는 모바일 단말기의 설정 변경을 통해 앱의 맞춤형 광고를 차단ㆍ허용할 수 있습니다.</p>
-        <h3 class="terms__h3">스마트폰의 광고식별자 차단/허용</h3>
-        <ul class="terms__bullets">
-          <li>(안드로이드) 설정 &gt; 개인정보보호 &gt; 광고 &gt; 광고ID 재설정 또는 광고ID 삭제</li>
-          <li>(아이폰) 설정 &gt; 개인정보보호 &gt; 추적 &gt; 앱이 추적을 요청하도록 허용 끔</li>
-          <li>※ 모바일 OS 버전에 따라 메뉴 및 방법이 다소 상이할 수 있습니다.</li>
-        </ul>
-        <p class="terms__p">⑤ 이용자는 웹브라우저의 쿠키 설정 변경 등을 통해 온라인 맞춤형 광고를 일괄적으로 차단ㆍ허용할 수 있습니다. 다만, 쿠키 설정 변경은 일부 서비스의 이용에 영향을 미칠 수 있습니다.</p>
-        <h3 class="terms__h3">웹브라우저를 통한 맞춤형 광고 차단/허용</h3>
-        <ul class="terms__bullets">
-          <li>Microsoft Edge : 설정 &gt; 개인정보, 검색 및 서비스 &gt; 추적방지 섹션에서 추적방지 여부 및 수준 선택 &gt; ‘InPrivate를 검색할 때 항상 “엄격” 추적 방지 사용’ 여부 선택 &gt; 아래 개인정보 섹션에서 ‘추적 안함 요청 보내기’ 여부 선택</li>
-          <li>Chrome : 설정 &gt; 고급 설정 표시 &gt; 개인정보 섹션에서 콘텐츠 설정 클릭 &gt; 쿠키 섹션에서 ‘타사 쿠키 및 사이트 데이터 차단’의 체크박스 선택</li>
-        </ul>
-        <p class="terms__p">⑥ 이용자는 아래의 연락처로 행태정보와 관련하여 궁금한 사항과 거부권 행사, 피해 신고 접수 등을 문의할 수 있습니다. — 개인정보팀 privacy@hootup.co.kr</p>
-    </section>
-    <section class="terms__section" id="s12">
-      <h2 class="terms__h2"><span class="terms__h2-no">12</span><span class="terms__h2-title">개인정보 보호책임부서 및 개인정보 열람청구 접수ㆍ처리 부서</span></h2>
-        <p class="terms__p">① 이용자는 회사의 서비스를 이용하시면서 발생한 모든 개인정보보호 관련 문의, 불만처리, 열람 청구 등에 관한 사항을 아래의 개인정보 보호책임부서 및 개인정보 열람청구 접수ㆍ처리부서로 문의할 수 있습니다. 회사는 이용자의 문의에 대해 지체없이 답변 및 처리해드릴 것입니다.</p>
-        <h3 class="terms__h3">개인정보 보호 책임부서</h3>
-        <ul class="terms__bullets">
-          <li>부서명 : 개인정보팀</li>
-          <li>연락처 : privacy@hootup.co.kr</li>
-        </ul>
-        <h3 class="terms__h3">개인정보의 열람청구 접수ㆍ처리부서</h3>
-        <ul class="terms__bullets">
-          <li>부서명 : CX팀</li>
-          <li>연락처 : help@hootup.co.kr</li>
-        </ul>
-        <p class="terms__p">② 이용자는 개인정보침해로 인한 구제를 받기 위하여 개인정보분쟁조정위원회, 한국인터넷진흥원 개인정보침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수 있습니다. 이 밖에 기타 개인정보침해의 신고, 상담에 대하여는 아래의 기관에 문의하시기 바랍니다.</p>
-        <ul class="terms__bullets">
-          <li>개인정보분쟁조정위원회 : https://www.kopico.go.kr / (국번없이) 1833-6972</li>
-          <li>개인정보침해신고센터 : https://privacy.kisa.or.kr / (국번없이) 118</li>
-          <li>대검찰청 사이버범죄수사단 : https://www.spo.go.kr / (국번없이) 1301</li>
-          <li>경찰청 사이버안전국 : https://ecrm.cyber.go.kr / (국번없이) 182</li>
-        </ul>
-    </section>
-    <section class="terms__section" id="s13">
-      <h2 class="terms__h2"><span class="terms__h2-no">13</span><span class="terms__h2-title">링크 사이트</span></h2>
-        <p class="terms__p">회사는 이용자에게 다른 회사의 웹사이트 또는 자료에 대한 링크를 제공할 수 있습니다. 이 경우 회사는 제3자의 사이트 및 자료에 대한 아무런 통제권이 없으므로 본 개인정보 처리방침은 적용되지 않으며, 그로부터 제공받는 서비스나 자료의 유용성에 대해 책임질 수 없으며 보증할 수 없습니다. 회사가 포함하고 있는 링크를 클릭하여 타 사이트로 이동하는 경우 해당 사이트의 개인정보 처리방침을 확인하시기 바랍니다.</p>
-    </section>
-    <section class="terms__section" id="s14">
-      <h2 class="terms__h2"><span class="terms__h2-no">14</span><span class="terms__h2-title">개인정보 처리방침의 변경</span></h2>
-        <p class="terms__p">① 이 개인정보 처리방침은 2026. 06. 04부터 적용됩니다.</p>
-        <p class="terms__p">② 회사는 법령ㆍ정책 또는 보안기술의 변경에 따라 내용의 추가ㆍ삭제 및 수정이 있을 경우에는 변경되는 개인정보 처리방침을 시행하기 최소 7일 전에 서비스 내 공지사항을 통하여 고지할 것입니다.</p>
-        <p class="terms__p">＊이전 개인정보 처리방침은 서비스 내 공지사항에서 확인할 수 있습니다.</p>
-    </section>
-    <section class="terms__contact">
-      <h2 class="terms__contact-title">개인정보 관련 문의</h2>
-      <p class="terms__contact-p">개인정보팀 <a href="mailto:privacy@hootup.co.kr">privacy@hootup.co.kr</a> &middot; 고객센터 <a href="tel:0212345678">02-1234-5678</a> (주중 10:00&ndash;18:00 KST)</p>
-    </section>
-    <p class="terms__disclaimer">&#42;본 문서는 포트폴리오용 가상 콘텐츠이며, 실제 법적 효력이 없습니다.</p>
-      </article>
 
-    </div>
-  </section>
+        <nav class="site-footer__nav" aria-label="푸터 메뉴">
+          <div class="link-group">
+            <h2 class="link-group__title">HOOT UP</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="brand-story.html">브랜드 스토리</a></li>
+              <li><a class="link-group__link" href="desk.html">훗업 데스크(뉴스)</a></li>
+              <li><a class="link-group__link" href="magazine.html">훗업 매거진(블로그)</a></li>
+              <li><a class="link-group__link" href="b2b.html">단체 교육 (B2B)</a></li>
+              <li><a class="link-group__link" href="careers.html">채용 안내</a></li>
+            </ul>
+          </div>
 
-</main>
+          <div class="link-group">
+            <h2 class="link-group__title">둘러보기</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="sitemap.html">전체 카테고리</a></li>
+              <li><a class="link-group__link" href="best.html">훗업 차트(베스트)</a></li>
+              <li><a class="link-group__link" href="new.html">갓 부화한 클래스(새로운)</a></li>
+              <li><a class="link-group__link" href="event-1.html">훗업 페스타(이벤트 할인)</a></li>
+              <li><a class="link-group__link" href="roadmap.html">레벨업 로드맵</a></li>
+              <li><a class="link-group__link" href="subscribe.html">올나잇 패스(구독)</a></li>
+            </ul>
+          </div>
 
-<footer class="site-footer">
-  <div class="site-footer__inner l-container">
+          <div class="link-group">
+            <h2 class="link-group__title">크리에이터 지원</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="creator-apply.html">클래스 개설 문의하기</a></li>
+              <li><a class="link-group__link" href="creator-guide.html">크리에이터 가이드</a></li>
+              <li><a class="link-group__link" href="creator-studio.html">스튜디오 대여</a></li>
+              <li><a class="link-group__link" href="creator-settlement.html">정산・수익 안내</a></li>
+              <li><a class="link-group__link" href="creator-mentor.html">멘토 교육 지원</a></li>
+            </ul>
+          </div>
 
-    <div class="site-footer__top">
-      <div class="site-footer__brand">
-        <img class="site-footer__logo" src="assets/brand/logo-white.svg" alt="HOOT UP" loading="lazy">
-        <p class="site-footer__slogan">밤에도 깨어 배우는 사람들의 아지트</p>
+          <div class="link-group">
+            <h2 class="link-group__title">고객센터</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="notice.html">후트 알림(공지사항)</a></li>
+              <li><a class="link-group__link" href="faq.html">자주 묻는 질문(FAQ)</a></li>
+              <li><a class="link-group__link" href="terms.html">이용약관</a></li>
+              <li><a class="link-group__link" href="privacy.html">개인정보처리방침</a></li>
+              <li><a class="link-group__link" href="refund.html">환불 규정</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
 
-      <nav class="site-footer__nav" aria-label="푸터 메뉴">
-        <div class="link-group">
-          <h2 class="link-group__title">HOOT UP</h2>
-          <ul class="link-group__list">
-            <li><a class="link-group__link" href="brand-story.html">브랜드 스토리</a></li>
-            <li><a class="link-group__link" href="desk.html">훗업 데스크(뉴스)</a></li>
-            <li><a class="link-group__link" href="magazine.html">훗업 매거진(블로그)</a></li>
-            <li><a class="link-group__link" href="b2b.html">단체 교육 (B2B)</a></li>
-            <li><a class="link-group__link" href="careers.html">채용 안내</a></li>
-          </ul>
-        </div>
+      <hr class="site-footer__rule">
 
-        <div class="link-group">
-          <h2 class="link-group__title">둘러보기</h2>
-          <ul class="link-group__list">
-            <li><a class="link-group__link" href="sitemap.html">전체 카테고리</a></li>
-            <li><a class="link-group__link" href="best.html">훗업 차트(베스트)</a></li>
-            <li><a class="link-group__link" href="new.html">갓 부화한 클래스(새로운)</a></li>
-            <li><a class="link-group__link" href="event-1.html">훗업 페스타(이벤트 할인)</a></li>
-            <li><a class="link-group__link" href="roadmap.html">레벨업 로드맵</a></li>
-            <li><a class="link-group__link" href="subscribe.html">올나잇 패스(구독)</a></li>
-          </ul>
-        </div>
+      <div class="site-footer__contact">
+        <section class="contact-desk">
+          <h2 class="contact-desk__title">고객센터</h2>
+          <p class="contact-desk__tel"><a href="tel:0212345678">02-1234-5678</a></p>
+          <p class="contact-desk__hours">주중 10:00–18:00 / 주말·공휴일 휴무</p>
+        </section>
 
-        <div class="link-group">
-          <h2 class="link-group__title">크리에이터 지원</h2>
-          <ul class="link-group__list">
-            <li><a class="link-group__link" href="creator-apply.html">클래스 개설 문의하기</a></li>
-            <li><a class="link-group__link" href="creator-guide.html">크리에이터 가이드</a></li>
-            <li><a class="link-group__link" href="creator-studio.html">스튜디오 대여</a></li>
-            <li><a class="link-group__link" href="creator-settlement.html">정산・수익 안내</a></li>
-            <li><a class="link-group__link" href="creator-mentor.html">멘토 교육 지원</a></li>
-          </ul>
-        </div>
+        <dl class="contact-mail">
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">환불 문의</dt>
+            <dd class="contact-mail__value"><a href="mailto:refund@hootup.co.kr">refund@hootup.co.kr</a></dd>
+          </div>
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">기타 문의</dt>
+            <dd class="contact-mail__value"><a href="mailto:help@hootup.co.kr">help@hootup.co.kr</a></dd>
+          </div>
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">크리에이터 지원</dt>
+            <dd class="contact-mail__value"><a href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a></dd>
+          </div>
+        </dl>
+      </div>
 
-        <div class="link-group">
-          <h2 class="link-group__title">고객센터</h2>
-          <ul class="link-group__list">
-            <li><a class="link-group__link" href="notice.html">후트 알림(공지사항)</a></li>
-            <li><a class="link-group__link" href="faq.html">자주 묻는 질문(FAQ)</a></li>
-            <li><a class="link-group__link" href="terms.html">이용약관</a></li>
-            <li><a class="link-group__link" href="privacy.html">개인정보처리방침</a></li>
-            <li><a class="link-group__link" href="refund.html">환불 규정</a></li>
+      <hr class="site-footer__rule">
+
+      <div class="site-footer__legal">
+        <nav class="policy" aria-label="약관 및 정책">
+          <ul class="policy__list">
+            <li><a class="policy__link" href="terms.html">이용약관</a></li>
+            <li><a class="policy__link" href="privacy.html">개인정보처리방침</a></li>
+            <li><a class="policy__link" href="youth.html">청소년 보호정책</a></li>
+            <li><a class="policy__link" href="refund.html">환불 규정</a></li>
+            <li><a class="policy__link" href="business.html">사업자정보 확인</a></li>
           </ul>
-        </div>
-      </nav>
+        </nav>
+
+        <address class="company">
+          <p class="company__line">
+            <span>(주)훗업 컴퍼니</span>
+            <span>대표자 : 신호진</span>
+            <span>사업자등록번호 : 123-45-67890</span>
+            <span>개인정보책임관리자 : 신호진</span>
+          </p>
+          <p class="company__line">
+            <span>통신판매신고 : 제 2026-서울서초-1234호</span>
+            <span>(06621) 서울 서초구 강남대로 373, 10층</span>
+          </p>
+        </address>
+
+        <p class="site-footer__copyright"><small>Copyright © HOOT UP. All rights reserved.</small></p>
+      </div>
+
     </div>
-
-    <hr class="site-footer__rule">
-
-    <div class="site-footer__contact">
-      <section class="contact-desk">
-        <h2 class="contact-desk__title">고객센터</h2>
-        <p class="contact-desk__tel"><a href="tel:0212345678">02-1234-5678</a></p>
-        <p class="contact-desk__hours">주중 10:00–18:00 / 주말·공휴일 휴무</p>
-      </section>
-
-      <dl class="contact-mail">
-        <div class="contact-mail__group">
-          <dt class="contact-mail__label">환불 문의</dt>
-          <dd class="contact-mail__value"><a href="mailto:refund@hootup.co.kr">refund@hootup.co.kr</a></dd>
-        </div>
-        <div class="contact-mail__group">
-          <dt class="contact-mail__label">기타 문의</dt>
-          <dd class="contact-mail__value"><a href="mailto:help@hootup.co.kr">help@hootup.co.kr</a></dd>
-        </div>
-        <div class="contact-mail__group">
-          <dt class="contact-mail__label">크리에이터 지원</dt>
-          <dd class="contact-mail__value"><a href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a></dd>
-        </div>
-      </dl>
-    </div>
-
-    <hr class="site-footer__rule">
-
-    <div class="site-footer__legal">
-      <nav class="policy" aria-label="약관 및 정책">
-        <ul class="policy__list">
-          <li><a class="policy__link" href="terms.html">이용약관</a></li>
-          <li><a class="policy__link" href="privacy.html">개인정보처리방침</a></li>
-          <li><a class="policy__link" href="youth.html">청소년 보호정책</a></li>
-          <li><a class="policy__link" href="refund.html">환불 규정</a></li>
-          <li><a class="policy__link" href="business.html">사업자정보 확인</a></li>
-        </ul>
-      </nav>
-
-      <address class="company">
-        <p class="company__line">
-          <span>(주)훗업 컴퍼니</span>
-          <span>대표자 : 신호진</span>
-          <span>사업자등록번호 : 123-45-67890</span>
-          <span>개인정보책임관리자 : 신호진</span>
-        </p>
-        <p class="company__line">
-          <span>통신판매신고 : 제 2026-서울서초-1234호</span>
-          <span>(06621) 서울 서초구 강남대로 373, 10층</span>
-        </p>
-      </address>
-
-      <p class="site-footer__copyright"><small>Copyright © HOOT UP. All rights reserved.</small></p>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,403 +20,420 @@
   <script src="js/class-filter.js" defer></script>
   <script src="js/festa-timer.js" defer></script>
 </head>
+
 <body>
 
-<a class="skip-link" href="#main">본문 바로가기</a>
+  <a class="skip-link" href="#main">본문 바로가기</a>
 
-<header class="site-header">
-  <div class="site-header__inner l-container">
+  <header class="site-header">
+    <div class="site-header__inner l-container">
 
-    <div class="site-header__utility">
-      <a class="site-header__logo" href="index.html">
-        <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
-      </a>
+      <div class="site-header__utility">
+        <a class="site-header__logo" href="index.html">
+          <img src="assets/brand/logo-primary.svg" alt="HOOT UP 홈으로">
+        </a>
 
-      <form class="search" action="categories.html" method="get" role="search">
-        <label class="a11y-hidden" for="search-keyword">강의 검색</label>
-        <input class="search__input" id="search-keyword" type="search" name="keyword" placeholder="어떤 강의를 찾으시나요?" autocomplete="off">
-        <button class="search__submit" type="submit" aria-label="검색">
-          <span class="icon icon--search"></span>
-        </button>
-      </form>
-
-      <ul class="user-menu">
-        <li class="user-menu__item">
-          <a class="user-menu__link" href="cart.html">
-            <span class="icon icon--cart"></span>
-            <span class="a11y-hidden">장바구니</span>
-            <span class="user-menu__badge">3<span class="a11y-hidden">개 담김</span></span>
-          </a>
-        </li>
-        <li class="user-menu__item">
-          <button class="user-menu__link" type="button" data-notif-toggle aria-haspopup="dialog" aria-expanded="false">
-            <span class="icon icon--bell"></span>
-            <span class="a11y-hidden">알림</span>
-            <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
+        <form class="search" action="categories.html" method="get" role="search">
+          <label class="a11y-hidden" for="search-keyword">강의 검색</label>
+          <input class="search__input" id="search-keyword" type="search" name="keyword" placeholder="어떤 강의를 찾으시나요?"
+            autocomplete="off">
+          <button class="search__submit" type="submit" aria-label="검색">
+            <span class="icon icon--search"></span>
           </button>
-        </li>
-        <li class="user-menu__item">
-          <a class="user-menu__profile" href="account.html">
-            <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
-          </a>
-        </li>
-      </ul>
+        </form>
+
+        <ul class="user-menu">
+          <li class="user-menu__item">
+            <a class="user-menu__link" href="cart.html">
+              <span class="icon icon--cart"></span>
+              <span class="a11y-hidden">장바구니</span>
+              <span class="user-menu__badge">3<span class="a11y-hidden">개 담김</span></span>
+            </a>
+          </li>
+          <li class="user-menu__item">
+            <button class="user-menu__link" type="button" data-notif-toggle aria-haspopup="dialog"
+              aria-expanded="false">
+              <span class="icon icon--bell"></span>
+              <span class="a11y-hidden">알림</span>
+              <span class="user-menu__badge">2<span class="a11y-hidden">건 읽지 않음</span></span>
+            </button>
+          </li>
+          <li class="user-menu__item">
+            <a class="user-menu__profile" href="account.html">
+              <img src="assets/avatar/user.jpg" alt="내 프로필" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <nav class="gnb" aria-label="주요 메뉴">
+        <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega"
+          aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
+          <span class="icon icon--list"></span>
+        </button>
+        <ul class="gnb__list" id="gnb-list">
+          <li class="gnb__item"><a class="gnb__link" href="categories.html">전체 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="best.html">베스트 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="event-1.html">이벤트 할인</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="new.html">새로운 클래스</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="earlybird-1.html">얼리버드 할인</a></li>
+          <li class="gnb__item"><a class="gnb__link" href="signature.html">시그니쳐 클래스</a></li>
+        </ul>
+      </nav>
+
     </div>
 
-    <nav class="gnb" aria-label="주요 메뉴">
-      <button class="gnb__toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="category-mega" aria-haspopup="true" aria-label="전체 카테고리 메뉴 열기">
-        <span class="icon icon--list"></span>
-      </button>
-      <ul class="gnb__list" id="gnb-list">
-        <li class="gnb__item"><a class="gnb__link" href="categories.html">전체 클래스</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="best.html">베스트 클래스</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="event-1.html">이벤트 할인</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="new.html">새로운 클래스</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="earlybird-1.html">얼리버드 할인</a></li>
-        <li class="gnb__item"><a class="gnb__link" href="signature.html">시그니쳐 클래스</a></li>
+    <!-- ====================================================================
+       전체 카테고리 메가 메뉴 (햄버거 · '전체 카테고리' 트리거로 펼침)
+       ==================================================================== -->
+    <div class="mega" id="category-mega" aria-hidden="true">
+      <div class="mega__inner l-container">
+        <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
+          <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it" aria-selected="true"
+            aria-controls="megapanel-dev-it" tabindex="0">
+            <span class="mega-cat__name">개발 &amp; IT</span>
+            <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-career-money" aria-selected="false"
+            aria-controls="megapanel-career-money" tabindex="-1">
+            <span class="mega-cat__name">커리어 &amp; 머니</span>
+            <span class="mega-cat__badge mega-cat__badge--single">단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-design-creative" aria-selected="false"
+            aria-controls="megapanel-design-creative" tabindex="-1">
+            <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
+            <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-photo-video" aria-selected="false"
+            aria-controls="megapanel-photo-video" tabindex="-1">
+            <span class="mega-cat__name">사진 &amp; 영상</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust" aria-selected="false"
+            aria-controls="megapanel-drawing-illust" tabindex="-1">
+            <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness" aria-selected="false"
+            aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
+            <span class="mega-cat__name">운동 &amp; 마음챙김</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade" aria-selected="false"
+            aria-controls="megapanel-craft-handmade" tabindex="-1">
+            <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+          <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking" aria-selected="false"
+            aria-controls="megapanel-cooking-baking" tabindex="-1">
+            <span class="mega-cat__name">요리 &amp; 베이킹</span>
+            <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
+            <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="mega__subs">
+          <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
+            <a class="mega-sub__title" href="category-dev-it-1.html">
+              개발 &amp; IT 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-dev-it-web-publishing.html">웹 퍼블리싱</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-frontend.html">프론트엔드</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-backend.html">백엔드 &amp; 서버</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-mobile.html">모바일 &amp; 앱 개발</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-data-ai.html">데이터 &amp; AI</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-ai-tools.html">AI 개발 도구</a></li>
+              <li><a class="mega-sub__link" href="category-dev-it-nocode.html">노코드 &amp; 자동화</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money"
+            hidden>
+            <a class="mega-sub__title" href="category-career-money-1.html">
+              커리어 &amp; 머니 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-career-money-job-skills.html">직무 역량 &amp; 일잘러</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-job-search.html">취업 &amp; 이직</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-marketing.html">마케팅 &amp; 브랜딩</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-sideproject.html">사이드프로젝트 &amp; N잡</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-investing.html">재테크 &amp; 투자</a></li>
+              <li><a class="mega-sub__link" href="category-career-money-tax.html">절세 &amp; 머니 관리</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative"
+            hidden>
+            <a class="mega-sub__title" href="category-design-creative-1.html">
+              디자인 &amp; 크리에이티브 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-design-creative-uxui.html">UX/UI 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-graphic.html">그래픽 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-branding.html">브랜딩 &amp; 로고</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-3d-motion.html">3D &amp; 모션 디자인</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-illust.html">일러스트 &amp; 디지털아트</a></li>
+              <li><a class="mega-sub__link" href="category-design-creative-intro.html">크리에이티브 입문</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
+            <a class="mega-sub__title" href="category-photo-video-1.html">
+              사진 &amp; 영상 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-photo-video-photography.html">사진 촬영</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-videography.html">영상 촬영</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-editing.html">편집 &amp; 후보정</a></li>
+              <li><a class="mega-sub__link" href="category-photo-video-motion.html">모션 &amp; 크리에이티브</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust"
+            hidden>
+            <a class="mega-sub__title" href="category-drawing-illust-1.html">
+              드로잉 &amp; 일러스트 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-drawing-illust-digital.html">디지털 드로잉</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-handdrawing.html">손그림 &amp; 회화</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-character.html">캐릭터 &amp; 웹툰</a></li>
+              <li><a class="mega-sub__link" href="category-drawing-illust-calligraphy.html">캘리그라피 &amp; 레터링</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness"
+            aria-labelledby="megacat-fitness-mindfulness" hidden>
+            <a class="mega-sub__title" href="category-fitness-mindfulness-1.html">
+              운동 &amp; 마음챙김 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-hometraining.html">홈트 &amp; 근력</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-yoga.html">요가 &amp; 필라테스</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-running.html">러닝 &amp; 유산소</a></li>
+              <li><a class="mega-sub__link" href="category-fitness-mindfulness-meditation.html">명상 &amp; 마음챙김</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade"
+            hidden>
+            <a class="mega-sub__title" href="category-craft-handmade-1.html">
+              공예 &amp; 핸드메이드 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
+              <li><a class="mega-sub__link" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
+            </ul>
+          </div>
+          <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking"
+            hidden>
+            <a class="mega-sub__title" href="category-cooking-baking-1.html">
+              요리 &amp; 베이킹 전체 보기
+              <span class="icon icon--chevron-right" aria-hidden="true"></span>
+            </a>
+            <ul class="mega-sub__list">
+              <li><a class="mega-sub__link" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
+              <li><a class="mega-sub__link" href="category-cooking-baking-world.html">세계요리 &amp; 비건</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mega-backdrop" hidden></div>
+  </header>
+
+  <main id="main" class="category-page l-container category-page__inner">
+
+    <div class="category-banner category-banner--festa">
+      <h1 class="category-banner__title">훗업 페스타<span class="category-banner__title-sub">(이벤트 할인)</span></h1>
+    </div>
+
+    <div class="festa-event">
+
+      <section class="festa-hero">
+        <div class="festa-hero__glow"></div>
+        <div class="festa-hero__inner">
+          <div class="festa-hero__main">
+            <span class="festa-hero__eyebrow">
+              <span class="festa-hero__eyebrow-line"></span>HOOT UP FESTA · LEVEL UP WEEK
+            </span>
+            <h2 class="festa-hero__title">
+              밤이 깊을수록,<br>할인은 <span class="festa-hero__title-em">커진다</span>
+            </h2>
+            <p class="festa-hero__lead">
+              1년 중 가장 뜨거운 배움의 밤. 이벤트 할인 클래스 최대 <strong class="festa-hero__lead-em">40%</strong> 할인.<br>지금 담으면 평생 소장, 놓치면
+              다음 페스타까지.
+            </p>
+            <ul class="festa-hero__badges">
+              <li class="festa-hero__badge festa-hero__badge--accent">마감까지 D-3</li>
+              <li class="festa-hero__badge festa-hero__badge--outline">이벤트가 최대 40%</li>
+              <li class="festa-hero__badge festa-hero__badge--outline">레벨업 로드맵 추가 18%</li>
+            </ul>
+            <div class="festa-hero__cta">
+              <a class="festa-hero__btn festa-hero__btn--ghost" href="subscribe.html">올나잇 패스 구독하기</a>
+            </div>
+            <p class="festa-hero__note">불안하게 몰아세우지 않아요. 다만 이 조건은 지금만이에요 — 다음 기회는 약속할게요.</p>
+          </div>
+
+          <div class="festa-hero__aside">
+            <p class="festa-hero__owl-label">OWL TIME · 자정 특가까지</p>
+            <div class="festa-hero__timer">
+              <div class="festa-hero__timer-cell">
+                <p class="festa-hero__timer-num">08</p>
+                <p class="festa-hero__timer-unit">HOUR</p>
+              </div>
+              <div class="festa-hero__timer-cell">
+                <p class="festa-hero__timer-num">31</p>
+                <p class="festa-hero__timer-unit">MIN</p>
+              </div>
+              <div class="festa-hero__timer-cell">
+                <p class="festa-hero__timer-num festa-hero__timer-num--accent">55</p>
+                <p class="festa-hero__timer-unit">SEC</p>
+              </div>
+            </div>
+            <p class="festa-hero__aside-note">매일 밤 12시, 올빼미 타임 한정 특가가<br> 새로 열려요.</p>
+            <div class="festa-hero__divider"></div>
+            <p class="festa-hero__stat">
+              <span class="festa-hero__stat-num">73</span>
+              <span class="festa-hero__stat-text">개 클래스가 이벤트가로 열려 있어요</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="festa-lineup">
+        <header class="festa-lineup__head">
+          <div class="festa-lineup__heading">
+            <span class="festa-lineup__eyebrow">FESTA LINEUP</span>
+            <h3 class="festa-lineup__title">진행 중인 페스타</h3>
+          </div>
+          <p class="festa-lineup__sub">이번 달 메인은 레벨업 위크예요.</p>
+        </header>
+        <ul class="festa-lineup__grid">
+          <li class="festa-card">
+            <p class="festa-card__head">
+              <span class="festa-card__name">레벨업 위크</span>
+              <span class="festa-card__tag">MAIN</span>
+            </p>
+            <p class="festa-card__desc">1년 중 가장 큰 할인 주간</p>
+            <p class="festa-card__detail">이벤트 할인 최대 40% + 로드맵 18%</p>
+          </li>
+          <li class="festa-card">
+            <p class="festa-card__head">
+              <span class="festa-card__name">올빼미 타임</span>
+            </p>
+            <p class="festa-card__desc">자정에 열리는 심야 특가</p>
+            <p class="festa-card__detail">매일 밤 12시 카운트다운 특가</p>
+          </li>
+          <li class="festa-card">
+            <p class="festa-card__head">
+              <span class="festa-card__name">첫 둥지 트는 밤</span>
+            </p>
+            <p class="festa-card__desc">신규가입 환영 페스타</p>
+            <p class="festa-card__detail">7일 무료 + 20% 쿠폰</p>
+          </li>
+          <li class="festa-card">
+            <p class="festa-card__head">
+              <span class="festa-card__name">21일 밤샘 챌린지</span>
+            </p>
+            <p class="festa-card__desc">연속 학습 완주 도전</p>
+            <p class="festa-card__detail">완주 시 도토리 대량 적립</p>
+          </li>
+          <li class="festa-card">
+            <p class="festa-card__head">
+              <span class="festa-card__name">한여름 밤의 클래스</span>
+            </p>
+            <p class="festa-card__desc">여름 시즌 기획전</p>
+            <p class="festa-card__detail">취미·힐링 클래스 모음 특가</p>
+          </li>
+          <li class="festa-card">
+            <p class="festa-card__head">
+              <span class="festa-card__name">친구야 같이 밤새우자</span>
+            </p>
+            <p class="festa-card__desc">친구 초대 이벤트</p>
+            <p class="festa-card__detail">초대·가입 시 양쪽 도토리</p>
+          </li>
+          <li class="festa-card">
+            <p class="festa-card__head">
+              <span class="festa-card__name">후기 쓰고 도토리 받기</span>
+            </p>
+            <p class="festa-card__desc">수강 후기 리워드</p>
+            <p class="festa-card__detail">후기 작성 시 도토리 지급</p>
+          </li>
+          <li class="festa-card">
+            <p class="festa-card__head">
+              <span class="festa-card__name">마이그레이션 페스타</span>
+            </p>
+            <p class="festa-card__desc">다른 곳에서 배우다 온 당신을 위한 환영전</p>
+            <p class="festa-card__detail">타 플랫폼 수강 인증 시 웰컴 쿠폰 + 첫 소장 클래스 20% 할인</p>
+          </li>
+          <li class="festa-card">
+            <p class="festa-card__head">
+              <span class="festa-card__name">졸업 부엉이 페스타</span>
+            </p>
+            <p class="festa-card__desc">끝까지 완강한 당신에게 주는 보상의 밤</p>
+            <p class="festa-card__detail">완강(졸업모 획득) 시 도토리 2배 + 다음 로드맵 STEP 추가 할인</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="festa-cta">
+        <span class="festa-cta__eyebrow">TONIGHT ONLY</span>
+        <h3 class="festa-cta__title">오늘 밤, 가장 크게 담는 시간</h3>
+        <p class="festa-cta__desc">놓치면 다음 페스타까지. 지금 이 밤이 가장 좋은 조건이에요.</p>
+        <div class="festa-cta__actions">
+          <a class="festa-cta__btn festa-cta__btn--ghost" href="subscribe.html">올나잇 패스 구독하기</a>
+        </div>
+      </section>
+
+    </div>
+
+    <nav id="festa-classes" class="class-filter" aria-label="카테고리 필터">
+      <ul class="class-filter__list">
+        <li><button class="chip chip--active" type="button" data-filter="all" aria-pressed="true">전체</button></li>
+        <li><button class="chip" type="button" data-filter="dev-it" aria-pressed="false">개발 &amp; IT</button></li>
+        <li><button class="chip" type="button" data-filter="career-money" aria-pressed="false">커리어 &amp; 머니</button>
+        </li>
+        <li><button class="chip" type="button" data-filter="design-creative" aria-pressed="false">디자인 &amp;
+            크리에이티브</button></li>
+        <li><button class="chip" type="button" data-filter="photo-video" aria-pressed="false">사진 &amp; 영상</button></li>
+        <li><button class="chip" type="button" data-filter="drawing-illust" aria-pressed="false">드로잉 &amp; 일러스트</button>
+        </li>
+        <li><button class="chip" type="button" data-filter="fitness-mindfulness" aria-pressed="false">운동 &amp;
+            마음챙김</button></li>
+        <li><button class="chip" type="button" data-filter="craft-handmade" aria-pressed="false">공예 &amp; 핸드메이드</button>
+        </li>
+        <li><button class="chip" type="button" data-filter="cooking-baking" aria-pressed="false">요리 &amp; 베이킹</button>
+        </li>
       </ul>
     </nav>
 
-  </div>
-
-  <!-- ====================================================================
-       전체 카테고리 메가 메뉴 (햄버거 · '전체 카테고리' 트리거로 펼침)
-       ==================================================================== -->
-  <div class="mega" id="category-mega" aria-hidden="true">
-    <div class="mega__inner l-container">
-      <div class="mega__cats" role="tablist" aria-label="전체 카테고리" aria-orientation="vertical">
-        <button class="mega-cat is-active" type="button" role="tab" id="megacat-dev-it"
-                aria-selected="true" aria-controls="megapanel-dev-it" tabindex="0">
-          <span class="mega-cat__name">개발 &amp; IT</span>
-          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-career-money"
-                aria-selected="false" aria-controls="megapanel-career-money" tabindex="-1">
-          <span class="mega-cat__name">커리어 &amp; 머니</span>
-          <span class="mega-cat__badge mega-cat__badge--single">단건</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-design-creative"
-                aria-selected="false" aria-controls="megapanel-design-creative" tabindex="-1">
-          <span class="mega-cat__name">디자인 &amp; 크리에이티브</span>
-          <span class="mega-cat__badge mega-cat__badge--mix">구독+단건</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-photo-video"
-                aria-selected="false" aria-controls="megapanel-photo-video" tabindex="-1">
-          <span class="mega-cat__name">사진 &amp; 영상</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-drawing-illust"
-                aria-selected="false" aria-controls="megapanel-drawing-illust" tabindex="-1">
-          <span class="mega-cat__name">드로잉 &amp; 일러스트</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-fitness-mindfulness"
-                aria-selected="false" aria-controls="megapanel-fitness-mindfulness" tabindex="-1">
-          <span class="mega-cat__name">운동 &amp; 마음챙김</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-craft-handmade"
-                aria-selected="false" aria-controls="megapanel-craft-handmade" tabindex="-1">
-          <span class="mega-cat__name">공예 &amp; 핸드메이드</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-        <button class="mega-cat" type="button" role="tab" id="megacat-cooking-baking"
-                aria-selected="false" aria-controls="megapanel-cooking-baking" tabindex="-1">
-          <span class="mega-cat__name">요리 &amp; 베이킹</span>
-          <span class="mega-cat__badge mega-cat__badge--sub">구독</span>
-          <span class="icon icon--chevron-right mega-cat__arrow" aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="mega__subs">
-        <div class="mega-sub is-active" role="tabpanel" id="megapanel-dev-it" aria-labelledby="megacat-dev-it">
-          <a class="mega-sub__title" href="category-dev-it-1.html">
-            개발 &amp; IT 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-dev-it-web-publishing.html">웹 퍼블리싱</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-frontend.html">프론트엔드</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-backend.html">백엔드 &amp; 서버</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-mobile.html">모바일 &amp; 앱 개발</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-data-ai.html">데이터 &amp; AI</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-ai-tools.html">AI 개발 도구</a></li>
-            <li><a class="mega-sub__link" href="category-dev-it-nocode.html">노코드 &amp; 자동화</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-career-money" aria-labelledby="megacat-career-money" hidden>
-          <a class="mega-sub__title" href="category-career-money-1.html">
-            커리어 &amp; 머니 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-career-money-job-skills.html">직무 역량 &amp; 일잘러</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-job-search.html">취업 &amp; 이직</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-marketing.html">마케팅 &amp; 브랜딩</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-sideproject.html">사이드프로젝트 &amp; N잡</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-investing.html">재테크 &amp; 투자</a></li>
-            <li><a class="mega-sub__link" href="category-career-money-tax.html">절세 &amp; 머니 관리</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-design-creative" aria-labelledby="megacat-design-creative" hidden>
-          <a class="mega-sub__title" href="category-design-creative-1.html">
-            디자인 &amp; 크리에이티브 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-design-creative-uxui.html">UX/UI 디자인</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-graphic.html">그래픽 디자인</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-branding.html">브랜딩 &amp; 로고</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-3d-motion.html">3D &amp; 모션 디자인</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-illust.html">일러스트 &amp; 디지털아트</a></li>
-            <li><a class="mega-sub__link" href="category-design-creative-intro.html">크리에이티브 입문</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-photo-video" aria-labelledby="megacat-photo-video" hidden>
-          <a class="mega-sub__title" href="category-photo-video-1.html">
-            사진 &amp; 영상 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-photo-video-photography.html">사진 촬영</a></li>
-            <li><a class="mega-sub__link" href="category-photo-video-videography.html">영상 촬영</a></li>
-            <li><a class="mega-sub__link" href="category-photo-video-editing.html">편집 &amp; 후보정</a></li>
-            <li><a class="mega-sub__link" href="category-photo-video-motion.html">모션 &amp; 크리에이티브</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-drawing-illust" aria-labelledby="megacat-drawing-illust" hidden>
-          <a class="mega-sub__title" href="category-drawing-illust-1.html">
-            드로잉 &amp; 일러스트 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-drawing-illust-digital.html">디지털 드로잉</a></li>
-            <li><a class="mega-sub__link" href="category-drawing-illust-handdrawing.html">손그림 &amp; 회화</a></li>
-            <li><a class="mega-sub__link" href="category-drawing-illust-character.html">캐릭터 &amp; 웹툰</a></li>
-            <li><a class="mega-sub__link" href="category-drawing-illust-calligraphy.html">캘리그라피 &amp; 레터링</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-fitness-mindfulness" aria-labelledby="megacat-fitness-mindfulness" hidden>
-          <a class="mega-sub__title" href="category-fitness-mindfulness-1.html">
-            운동 &amp; 마음챙김 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-hometraining.html">홈트 &amp; 근력</a></li>
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-yoga.html">요가 &amp; 필라테스</a></li>
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-running.html">러닝 &amp; 유산소</a></li>
-            <li><a class="mega-sub__link" href="category-fitness-mindfulness-meditation.html">명상 &amp; 마음챙김</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-craft-handmade" aria-labelledby="megacat-craft-handmade" hidden>
-          <a class="mega-sub__title" href="category-craft-handmade-1.html">
-            공예 &amp; 핸드메이드 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-craft-handmade-leather.html">가죽 &amp; 패브릭 공예</a></li>
-            <li><a class="mega-sub__link" href="category-craft-handmade-pottery.html">도예 &amp; 점토</a></li>
-            <li><a class="mega-sub__link" href="category-craft-handmade-candle.html">캔들 &amp; 플라워</a></li>
-            <li><a class="mega-sub__link" href="category-craft-handmade-jewelry.html">주얼리 &amp; 데코 소품</a></li>
-          </ul>
-        </div>
-        <div class="mega-sub" role="tabpanel" id="megapanel-cooking-baking" aria-labelledby="megacat-cooking-baking" hidden>
-          <a class="mega-sub__title" href="category-cooking-baking-1.html">
-            요리 &amp; 베이킹 전체 보기
-            <span class="icon icon--chevron-right" aria-hidden="true"></span>
-          </a>
-          <ul class="mega-sub__list">
-            <li><a class="mega-sub__link" href="category-cooking-baking-homemeal.html">집밥 &amp; 한 끼 요리</a></li>
-            <li><a class="mega-sub__link" href="category-cooking-baking-baking.html">베이킹 &amp; 디저트</a></li>
-            <li><a class="mega-sub__link" href="category-cooking-baking-cafe.html">홈카페 &amp; 음료</a></li>
-            <li><a class="mega-sub__link" href="category-cooking-baking-world.html">세계요리 &amp; 비건</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="mega-backdrop" hidden></div>
-</header>
-
-<main id="main" class="category-page l-container category-page__inner">
-
-  <div class="category-banner category-banner--festa">
-    <h1 class="category-banner__title">훗업 페스타<span class="category-banner__title-sub">(이벤트 할인)</span></h1>
-  </div>
-
-  <div class="festa-event">
-
-    <section class="festa-hero">
-      <div class="festa-hero__glow"></div>
-      <div class="festa-hero__inner">
-        <div class="festa-hero__main">
-          <span class="festa-hero__eyebrow">
-            <span class="festa-hero__eyebrow-line"></span>HOOT UP FESTA · LEVEL UP WEEK
-          </span>
-          <h2 class="festa-hero__title">
-            밤이 깊을수록,<br>할인은 <span class="festa-hero__title-em">커진다</span>
-          </h2>
-          <p class="festa-hero__lead">
-            1년 중 가장 뜨거운 배움의 밤. 이벤트 할인 클래스 최대 <strong class="festa-hero__lead-em">40%</strong> 할인.<br>지금 담으면 평생 소장, 놓치면 다음 페스타까지.
-          </p>
-          <ul class="festa-hero__badges">
-            <li class="festa-hero__badge festa-hero__badge--accent">마감까지 D-3</li>
-            <li class="festa-hero__badge festa-hero__badge--outline">이벤트가 최대 40%</li>
-            <li class="festa-hero__badge festa-hero__badge--outline">레벨업 로드맵 추가 18%</li>
-          </ul>
-          <div class="festa-hero__cta">
-            <a class="festa-hero__btn festa-hero__btn--ghost" href="subscribe.html">올나잇 패스 구독하기</a>
-          </div>
-          <p class="festa-hero__note">불안하게 몰아세우지 않아요. 다만 이 조건은 지금만이에요 — 다음 기회는 약속할게요.</p>
-        </div>
-
-        <div class="festa-hero__aside">
-          <p class="festa-hero__owl-label">OWL TIME · 자정 특가까지</p>
-          <div class="festa-hero__timer">
-            <div class="festa-hero__timer-cell">
-              <p class="festa-hero__timer-num">08</p>
-              <p class="festa-hero__timer-unit">HOUR</p>
-            </div>
-            <div class="festa-hero__timer-cell">
-              <p class="festa-hero__timer-num">31</p>
-              <p class="festa-hero__timer-unit">MIN</p>
-            </div>
-            <div class="festa-hero__timer-cell">
-              <p class="festa-hero__timer-num festa-hero__timer-num--accent">55</p>
-              <p class="festa-hero__timer-unit">SEC</p>
-            </div>
-          </div>
-          <p class="festa-hero__aside-note">매일 밤 12시, 올빼미 타임 한정 특가가<br> 새로 열려요.</p>
-          <div class="festa-hero__divider"></div>
-          <p class="festa-hero__stat">
-            <span class="festa-hero__stat-num">73</span>
-            <span class="festa-hero__stat-text">개 클래스가 이벤트가로 열려 있어요</span>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="festa-lineup">
-      <header class="festa-lineup__head">
-        <div class="festa-lineup__heading">
-          <span class="festa-lineup__eyebrow">FESTA LINEUP</span>
-          <h3 class="festa-lineup__title">진행 중인 페스타</h3>
-        </div>
-        <p class="festa-lineup__sub">이번 달 메인은 레벨업 위크예요.</p>
-      </header>
-      <ul class="festa-lineup__grid">
-        <li class="festa-card">
-          <p class="festa-card__head">
-            <span class="festa-card__name">레벨업 위크</span>
-            <span class="festa-card__tag">MAIN</span>
-          </p>
-          <p class="festa-card__desc">1년 중 가장 큰 할인 주간</p>
-          <p class="festa-card__detail">이벤트 할인 최대 40% + 로드맵 18%</p>
-        </li>
-        <li class="festa-card">
-          <p class="festa-card__head">
-            <span class="festa-card__name">올빼미 타임</span>
-          </p>
-          <p class="festa-card__desc">자정에 열리는 심야 특가</p>
-          <p class="festa-card__detail">매일 밤 12시 카운트다운 특가</p>
-        </li>
-        <li class="festa-card">
-          <p class="festa-card__head">
-            <span class="festa-card__name">첫 둥지 트는 밤</span>
-          </p>
-          <p class="festa-card__desc">신규가입 환영 페스타</p>
-          <p class="festa-card__detail">7일 무료 + 20% 쿠폰</p>
-        </li>
-        <li class="festa-card">
-          <p class="festa-card__head">
-            <span class="festa-card__name">21일 밤샘 챌린지</span>
-          </p>
-          <p class="festa-card__desc">연속 학습 완주 도전</p>
-          <p class="festa-card__detail">완주 시 도토리 대량 적립</p>
-        </li>
-        <li class="festa-card">
-          <p class="festa-card__head">
-            <span class="festa-card__name">한여름 밤의 클래스</span>
-          </p>
-          <p class="festa-card__desc">여름 시즌 기획전</p>
-          <p class="festa-card__detail">취미·힐링 클래스 모음 특가</p>
-        </li>
-        <li class="festa-card">
-          <p class="festa-card__head">
-            <span class="festa-card__name">친구야 같이 밤새우자</span>
-          </p>
-          <p class="festa-card__desc">친구 초대 이벤트</p>
-          <p class="festa-card__detail">초대·가입 시 양쪽 도토리</p>
-        </li>
-        <li class="festa-card">
-          <p class="festa-card__head">
-            <span class="festa-card__name">후기 쓰고 도토리 받기</span>
-          </p>
-          <p class="festa-card__desc">수강 후기 리워드</p>
-          <p class="festa-card__detail">후기 작성 시 도토리 지급</p>
-        </li>
-        <li class="festa-card">
-          <p class="festa-card__head">
-            <span class="festa-card__name">마이그레이션 페스타</span>
-          </p>
-          <p class="festa-card__desc">다른 곳에서 배우다 온 당신을 위한 환영전</p>
-          <p class="festa-card__detail">타 플랫폼 수강 인증 시 웰컴 쿠폰 + 첫 소장 클래스 20% 할인</p>
-        </li>
-        <li class="festa-card">
-          <p class="festa-card__head">
-            <span class="festa-card__name">졸업 부엉이 페스타</span>
-          </p>
-          <p class="festa-card__desc">끝까지 완강한 당신에게 주는 보상의 밤</p>
-          <p class="festa-card__detail">완강(졸업모 획득) 시 도토리 2배 + 다음 로드맵 STEP 추가 할인</p>
-        </li>
-      </ul>
-    </section>
-
-    <section class="festa-cta">
-      <span class="festa-cta__eyebrow">TONIGHT ONLY</span>
-      <h3 class="festa-cta__title">오늘 밤, 가장 크게 담는 시간</h3>
-      <p class="festa-cta__desc">놓치면 다음 페스타까지. 지금 이 밤이 가장 좋은 조건이에요.</p>
-      <div class="festa-cta__actions">
-        <a class="festa-cta__btn festa-cta__btn--ghost" href="subscribe.html">올나잇 패스 구독하기</a>
-      </div>
-    </section>
-
-  </div>
-
-  <nav id="festa-classes" class="class-filter" aria-label="카테고리 필터">
-    <ul class="class-filter__list">
-      <li><button class="chip chip--active" type="button" data-filter="all" aria-pressed="true">전체</button></li>
-      <li><button class="chip" type="button" data-filter="dev-it" aria-pressed="false">개발 &amp; IT</button></li>
-      <li><button class="chip" type="button" data-filter="career-money" aria-pressed="false">커리어 &amp; 머니</button></li>
-      <li><button class="chip" type="button" data-filter="design-creative" aria-pressed="false">디자인 &amp; 크리에이티브</button></li>
-      <li><button class="chip" type="button" data-filter="photo-video" aria-pressed="false">사진 &amp; 영상</button></li>
-      <li><button class="chip" type="button" data-filter="drawing-illust" aria-pressed="false">드로잉 &amp; 일러스트</button></li>
-      <li><button class="chip" type="button" data-filter="fitness-mindfulness" aria-pressed="false">운동 &amp; 마음챙김</button></li>
-      <li><button class="chip" type="button" data-filter="craft-handmade" aria-pressed="false">공예 &amp; 핸드메이드</button></li>
-      <li><button class="chip" type="button" data-filter="cooking-baking" aria-pressed="false">요리 &amp; 베이킹</button></li>
-    </ul>
-  </nav>
-
-<ul class="course-grid">
+    <ul class="course-grid">
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-p2-semantic.png"
-                 alt="시맨틱 HTML 마크업 코드가 표시된 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-p2-semantic.png" alt="시맨틱 HTML 마크업 코드가 표시된 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/markup-sea.png"
-                 alt="지식 공유자 마크업장인 세아" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/markup-sea.png" alt="지식 공유자 마크업장인 세아" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">시맨틱 마크업과 웹 접근성 실전 예제 프로젝트</a>
@@ -440,16 +458,17 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-report-writing.png"
-                 alt="실무 보고서와 기획서 문서 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-report-writing.png" alt="실무 보고서와 기획서 문서 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-doc-hangyeol.png"
-                 alt="지식 공유자 문서장인 한결" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-doc-hangyeol.png" alt="지식 공유자 문서장인 한결"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">한 번에 통과되는 실무 보고서·기획서 작성법</a>
@@ -474,16 +493,16 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-uxui-system.png"
-                 alt="디자인 시스템과 프로토타입 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-uxui-system.png" alt="디자인 시스템과 프로토타입 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">40% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-serin.png"
-                 alt="지식 공유자 디자이너 서린" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-serin.png" alt="지식 공유자 디자이너 서린" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">실무로 가는 UX/UI: 디자인 시스템과 프로토타이핑</a>
@@ -508,16 +527,16 @@
       <li class="course-grid__item" data-category="photo-video">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/pv-camera-basic.png"
-                 alt="카메라 조작을 배우는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/pv-camera-basic.png" alt="카메라 조작을 배우는 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/pv-noeul.png"
-                 alt="지식 공유자 사진가 노을" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/pv-noeul.png" alt="지식 공유자 사진가 노을" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">카메라 입문: 조리개부터 셔터까지 한 번에</a>
@@ -542,8 +561,9 @@
       <li class="course-grid__item" data-category="drawing-illust">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/dr-ipad-character.png"
-                 alt="아이패드로 캐릭터를 그리는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/dr-ipad-character.png" alt="아이패드로 캐릭터를 그리는 이미지"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
               <span class="course-card__flag course-card__flag--best">BEST</span>
@@ -554,8 +574,7 @@
             <span class="course-card__badge">35% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/dr-mooji.png"
-                 alt="지식 공유자 무지(MOOZI)" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/dr-mooji.png" alt="지식 공유자 무지(MOOZI)" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">아이패드로 시작하는 감성 캐릭터 드로잉</a>
@@ -580,16 +599,16 @@
       <li class="course-grid__item" data-category="fitness-mindfulness">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/wl-bodyweight-strength.png"
-                 alt="맨몸 근력 운동을 하는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/wl-bodyweight-strength.png" alt="맨몸 근력 운동을 하는 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/wl-dohun.png"
-                 alt="지식 공유자 바디코치 도훈" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/wl-dohun.png" alt="지식 공유자 바디코치 도훈" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">맨몸으로 시작하는 전신 근력 루틴 숙련자 클래스</a>
@@ -614,8 +633,9 @@
       <li class="course-grid__item" data-category="craft-handmade">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cr-leather-wallet.png"
-                 alt="가죽 카드지갑을 만드는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cr-leather-wallet.png" alt="가죽 카드지갑을 만드는 이미지"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
               <span class="course-card__flag course-card__flag--best">BEST</span>
@@ -626,8 +646,7 @@
             <span class="course-card__badge">35% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/cr-moru.png"
-                 alt="지식 공유자 레더공방 모루" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/cr-moru.png" alt="지식 공유자 레더공방 모루" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">손끝에서 완성되는 첫 가죽 카드지갑 만들기</a>
@@ -652,16 +671,15 @@
       <li class="course-grid__item" data-category="cooking-baking">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/ck-banchan.png"
-                 alt="엄마표 밑반찬을 차린 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/ck-banchan.png" alt="엄마표 밑반찬을 차린 이미지" loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/ck-moa.png"
-                 alt="지식 공유자 반찬연구소 모아" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/ck-moa.png" alt="지식 공유자 반찬연구소 모아" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">일주일이 편해지는 전라도 엄마표 밑반찬 마스터</a>
@@ -686,8 +704,9 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-htmlcss.png"
-                 alt="HTML·CSS 기초를 실습하는 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-htmlcss.png" alt="HTML·CSS 기초를 실습하는 화면"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--best">BEST</span>
             </div>
@@ -697,8 +716,7 @@
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/codelab-hyunwoo.png"
-                 alt="지식 공유자 코드랩 현우" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="지식 공유자 코드랩 현우" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">손에 익히는 HTML/CSS 기초 부트캠프</a>
@@ -723,16 +741,17 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-productivity.png"
-                 alt="협업 도구로 업무를 정리하는 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-productivity.png" alt="협업 도구로 업무를 정리하는 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">40% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-worker-bona.png"
-                 alt="지식 공유자 일잘러 보나" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-worker-bona.png" alt="지식 공유자 일잘러 보나"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">칼퇴를 부르는 업무 생산성 &amp; 협업 도구</a>
@@ -757,8 +776,9 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-p2-mobile-ui.png"
-                 alt="모바일 앱 UI 디자인 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-p2-mobile-ui.png" alt="모바일 앱 UI 디자인 화면"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--new">NEW</span>
             </div>
@@ -768,8 +788,7 @@
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-dan.png"
-                 alt="지식 공유자 프로덕트 한별" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-dan.png" alt="지식 공유자 프로덕트 한별" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">모바일 앱 UI 디자인 실전 예제 프로젝트</a>
@@ -794,8 +813,9 @@
       <li class="course-grid__item" data-category="photo-video">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/pv-portrait-natural.png"
-                 alt="자연광 인물 사진 촬영 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/pv-portrait-natural.png" alt="자연광 인물 사진 촬영 이미지"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--new">NEW</span>
             </div>
@@ -805,8 +825,7 @@
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/pv-harin.png"
-                 alt="지식 공유자 포트레이트 하린" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/pv-harin.png" alt="지식 공유자 포트레이트 하린" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">자연광으로 찍는 인물 사진의 기술 입문 과정</a>
@@ -831,16 +850,16 @@
       <li class="course-grid__item" data-category="drawing-illust">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/dr-clipstudio-illust.png"
-                 alt="클립스튜디오 디지털 일러스트 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/dr-clipstudio-illust.png" alt="클립스튜디오 디지털 일러스트 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-bori.png"
-                 alt="지식 공유자 그림창고 보리" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-bori.png" alt="지식 공유자 그림창고 보리" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">클립스튜디오로 그리는 디지털 일러스트</a>
@@ -865,8 +884,9 @@
       <li class="course-grid__item" data-category="fitness-mindfulness">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/wl-morning-yoga.png"
-                 alt="모닝 요가 자세를 취한 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/wl-morning-yoga.png" alt="모닝 요가 자세를 취한 이미지"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
               <span class="course-card__flag course-card__flag--best">BEST</span>
@@ -877,8 +897,7 @@
             <span class="course-card__badge">35% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/wl-mio.png"
-                 alt="지식 공유자 요가하는 미오" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/wl-mio.png" alt="지식 공유자 요가하는 미오" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">뻣뻣한 몸이 풀리는 14일 모닝 요가 루틴</a>
@@ -903,16 +922,15 @@
       <li class="course-grid__item" data-category="craft-handmade">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cr-embroidery.png"
-                 alt="전통 자수를 놓는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cr-embroidery.png" alt="전통 자수를 놓는 이미지" loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/cr-linen.png"
-                 alt="지식 공유자 자수공방 린넨" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/cr-linen.png" alt="지식 공유자 자수공방 린넨" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">전통 기법으로 한 땀 한 땀, 일상 자수 입문</a>
@@ -937,8 +955,9 @@
       <li class="course-grid__item" data-category="cooking-baking">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/ck-homebaking.png"
-                 alt="아이와 홈베이킹을 하는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/ck-homebaking.png" alt="아이와 홈베이킹을 하는 이미지"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
               <span class="course-card__flag course-card__flag--best">BEST</span>
@@ -949,8 +968,7 @@
             <span class="course-card__badge">35% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/ck-oven.png"
-                 alt="지식 공유자 베이커리 오븐" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/ck-oven.png" alt="지식 공유자 베이커리 오븐" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">아이들과 함께하는 실패 없는 홈베이킹 기초반</a>
@@ -976,8 +994,9 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-js-core.png"
-                 alt="자바스크립트 코드가 표시된 개발 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-js-core.png" alt="자바스크립트 코드가 표시된 개발 화면"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--best">BEST</span>
             </div>
@@ -987,8 +1006,7 @@
             <span class="course-card__badge">35% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/codelab-hyunwoo.png"
-                 alt="지식 공유자 코드랩 현우" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="지식 공유자 코드랩 현우" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">실무에서 바로 쓰는 자바스크립트 핵심 완전 정복</a>
@@ -1013,16 +1031,17 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-p2-business-writing.png"
-                 alt="비즈니스 문서를 작성하는 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-p2-business-writing.png" alt="비즈니스 문서를 작성하는 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-doc-hangyeol.png"
-                 alt="지식 공유자 문서장인 한결" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-doc-hangyeol.png" alt="지식 공유자 문서장인 한결"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">설득되는 보고를 만드는 비즈니스 글쓰기</a>
@@ -1047,16 +1066,16 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-p2-portfolio-job.png"
-                 alt="UX/UI 취업 포트폴리오 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-p2-portfolio-job.png" alt="UX/UI 취업 포트폴리오 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">40% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-serin.png"
-                 alt="지식 공유자 디자이너 서린" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-serin.png" alt="지식 공유자 디자이너 서린" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">디자인 포트폴리오로 UX/UI 취업하기</a>
@@ -1081,16 +1100,16 @@
       <li class="course-grid__item" data-category="photo-video">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/pv-cinematic-smartphone.png"
-                 alt="스마트폰 시네마틱 영상 촬영 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/pv-cinematic-smartphone.png" alt="스마트폰 시네마틱 영상 촬영 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/pv-dojin.png"
-                 alt="지식 공유자 무빙메이커 도진" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/pv-dojin.png" alt="지식 공유자 무빙메이커 도진" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">스마트폰으로 시네마틱 영상 찍기 기초 과정</a>
@@ -1115,16 +1134,17 @@
       <li class="course-grid__item" data-category="drawing-illust">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/dr-pen-urban.png"
-                 alt="펜드로잉과 어반스케치 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/dr-pen-urban.png" alt="펜드로잉과 어반스케치 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/dr-night-mooji.png"
-                 alt="지식 공유자 끄적이는 밤 무지" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/dr-night-mooji.png" alt="지식 공유자 끄적이는 밤 무지"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">하루 한 장 펜드로잉 &amp; 어반스케치 클래스</a>
@@ -1149,8 +1169,8 @@
       <li class="course-grid__item" data-category="fitness-mindfulness">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/wl-pilates.png"
-                 alt="매트 필라테스를 하는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/wl-pilates.png" alt="매트 필라테스를 하는 이미지" loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--new">NEW</span>
             </div>
@@ -1160,8 +1180,7 @@
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/wl-yunseo.png"
-                 alt="지식 공유자 필라테스 윤서" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/wl-yunseo.png" alt="지식 공유자 필라테스 윤서" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">코어가 단단해지는 매트 필라테스 입문자 코스</a>
@@ -1186,16 +1205,15 @@
       <li class="course-grid__item" data-category="craft-handmade">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cr-clay.png"
-                 alt="점토 공예 소품을 만드는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cr-clay.png" alt="점토 공예 소품을 만드는 이미지" loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/cr-sera.png"
-                 alt="지식 공유자 조물조물 새라" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/cr-sera.png" alt="지식 공유자 조물조물 새라" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">집에서 시작하는 점토 공예 소품 만들기 클래스</a>
@@ -1220,19 +1238,20 @@
       <li class="course-grid__item" data-category="cooking-baking">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/ck-baked-cookies.png"
-                 alt="구움과자와 쿠키를 만드는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/ck-baked-cookies.png" alt="구움과자와 쿠키를 만드는 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/ck-oven.png"
-                 alt="지식 공유자 베이커리 오븐" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/ck-oven.png" alt="지식 공유자 베이커리 오븐" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
-                <a class="course-card__link" href="course-responsive-publishing.html">사랑하는 연인에게 선물하고 싶은 구움과자 &amp; 쿠키</a>
+                <a class="course-card__link" href="course-responsive-publishing.html">사랑하는 연인에게 선물하고 싶은 구움과자 &amp;
+                  쿠키</a>
               </h3>
               <p class="course-card__meta">베이커리 오븐・32강・6시간 30분</p>
               <p class="course-card__price">
@@ -1254,16 +1273,16 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-vanilla-js.png"
-                 alt="자바스크립트로 만든 인터랙티브 웹 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-vanilla-js.png" alt="자바스크립트로 만든 인터랙티브 웹 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/codelab-hyunwoo.png"
-                 alt="지식 공유자 코드랩 현우" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/codelab-hyunwoo.png" alt="지식 공유자 코드랩 현우" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">바닐라 자바 스크립트로 만드는 인터랙티브 웹</a>
@@ -1288,16 +1307,17 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-p2-interview.png"
-                 alt="면접을 준비하는 지원자 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-p2-interview.png" alt="면접을 준비하는 지원자 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-coach-dan.png"
-                 alt="지식 공유자 커리어코치 단" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-coach-dan.png" alt="지식 공유자 커리어코치 단"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">면접관의 마음을 여는 실전 면접 클래스</a>
@@ -1322,16 +1342,16 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-illustrator-vector.png"
-                 alt="일러스트레이터 벡터 그래픽 작업" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-illustrator-vector.png" alt="일러스트레이터 벡터 그래픽 작업"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-dan.png"
-                 alt="지식 공유자 벡터공방 단" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-dan.png" alt="지식 공유자 벡터공방 단" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">일러스트레이터로 시작하는 벡터 그래픽</a>
@@ -1356,8 +1376,9 @@
       <li class="course-grid__item" data-category="photo-video">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/pv-premiere-vlog.png"
-                 alt="프리미어 프로 영상 편집 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/pv-premiere-vlog.png" alt="프리미어 프로 영상 편집 화면"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
               <span class="course-card__flag course-card__flag--best">BEST</span>
@@ -1368,8 +1389,7 @@
             <span class="course-card__badge">40% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/pv-hansae.png"
-                 alt="지식 공유자 에디터 한새" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/pv-hansae.png" alt="지식 공유자 에디터 한새" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">어도비 프리미어 프로 브이로그 편집 A to Z</a>
@@ -1394,8 +1414,9 @@
       <li class="course-grid__item" data-category="drawing-illust">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/dr-webtoon-advanced.png"
-                 alt="클립스튜디오 웹툰 작화 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/dr-webtoon-advanced.png" alt="클립스튜디오 웹툰 작화 화면"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
             </div>
@@ -1405,8 +1426,7 @@
             <span class="course-card__badge">35% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/dr-dodam.png"
-                 alt="지식 공유자 작가 도담" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/dr-dodam.png" alt="지식 공유자 작가 도담" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">클립스튜디오 웹툰 작화 클래스 고급반</a>
@@ -1431,19 +1451,20 @@
       <li class="course-grid__item" data-category="fitness-mindfulness">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/wl-home-cardio.png"
-                 alt="집에서 홈 유산소 운동을 하는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/wl-home-cardio.png" alt="집에서 홈 유산소 운동을 하는 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/wl-dohun.png"
-                 alt="지식 공유자 바디코치 도훈" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/wl-dohun.png" alt="지식 공유자 바디코치 도훈" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
-                <a class="course-card__link" href="course-responsive-publishing.html">국가대표 코치와 함께하는 집에서 땀 빼는 홈 유산소 루틴</a>
+                <a class="course-card__link" href="course-responsive-publishing.html">국가대표 코치와 함께하는 집에서 땀 빼는 홈 유산소
+                  루틴</a>
               </h3>
               <p class="course-card__meta">바디코치 도훈・32강・6시간</p>
               <p class="course-card__price">
@@ -1465,8 +1486,9 @@
       <li class="course-grid__item" data-category="craft-handmade">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cr-candle.png"
-                 alt="소이캔들과 디퓨저를 만드는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cr-candle.png" alt="소이캔들과 디퓨저를 만드는 이미지"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
               <span class="course-card__flag course-card__flag--best">BEST</span>
@@ -1477,8 +1499,7 @@
             <span class="course-card__badge">35% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/cr-scentlab.png"
-                 alt="지식 공유자 센트랩" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/cr-scentlab.png" alt="지식 공유자 센트랩" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">향으로 채우는 소이캔들 &amp; 디퓨저 만들기 클래스</a>
@@ -1503,8 +1524,8 @@
       <li class="course-grid__item" data-category="cooking-baking">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/ck-coffee.png"
-                 alt="핸드드립 커피를 내리는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/ck-coffee.png" alt="핸드드립 커피를 내리는 이미지" loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
             </div>
@@ -1514,8 +1535,7 @@
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/ck-raon.png"
-                 alt="지식 공유자 바리스타 라온" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/ck-raon.png" alt="지식 공유자 바리스타 라온" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">핸드드립부터 라떼아트까지, 커피의 기본</a>
@@ -1541,16 +1561,16 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-p2-typescript.png"
-                 alt="타입스크립트 코드가 표시된 편집기 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-p2-typescript.png" alt="타입스크립트 코드가 표시된 편집기 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/typesafe-luke.png"
-                 alt="지식 공유자 타입세이프 루크" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/typesafe-luke.png" alt="지식 공유자 타입세이프 루크" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">TypeScript로 더 단단한 프론트엔드</a>
@@ -1575,8 +1595,9 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-p2-it-job.png"
-                 alt="IT 직무 취업 전략을 상담하는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-p2-it-job.png" alt="IT 직무 취업 전략을 상담하는 이미지"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--new">NEW</span>
             </div>
@@ -1586,8 +1607,8 @@
             <span class="course-card__badge">40% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-navi-yun.png"
-                 alt="지식 공유자 커리어내비 윤" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-navi-yun.png" alt="지식 공유자 커리어내비 윤"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">비전공자의 IT 직무 취업 전략 컨설팅</a>
@@ -1612,16 +1633,16 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-p2-indesign-editorial.png"
-                 alt="인디자인 편집 디자인 작업 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-p2-indesign-editorial.png" alt="인디자인 편집 디자인 작업 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-jei.png"
-                 alt="지식 공유자 레이아웃 제이" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-jei.png" alt="지식 공유자 레이아웃 제이" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">인디자인으로 만드는 편집 디자인 포트폴리오 완성반</a>
@@ -1646,16 +1667,16 @@
       <li class="course-grid__item" data-category="photo-video">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/pv-lightroom-retouch.png"
-                 alt="라이트룸 사진 보정 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/pv-lightroom-retouch.png" alt="라이트룸 사진 보정 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/pv-mio.png"
-                 alt="지식 공유자 보정공방 미오" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/pv-mio.png" alt="지식 공유자 보정공방 미오" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">라이트룸으로 완성하는 감성 사진 보정</a>
@@ -1680,8 +1701,9 @@
       <li class="course-grid__item" data-category="drawing-illust">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/dr-webtoon-conti.png"
-                 alt="웹툰 콘티와 연출 작업 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/dr-webtoon-conti.png" alt="웹툰 콘티와 연출 작업 이미지"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--new">NEW</span>
             </div>
@@ -1691,8 +1713,7 @@
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/dr-dodam.png"
-                 alt="지식 공유자 작가 도담" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/dr-dodam.png" alt="지식 공유자 작가 도담" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">웹툰 작가 도담이 알려주는 웹툰 콘티와 연출의 기본기</a>
@@ -1717,8 +1738,9 @@
       <li class="course-grid__item" data-category="fitness-mindfulness">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/wl-sleep-meditation.png"
-                 alt="수면 명상을 하는 편안한 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/wl-sleep-meditation.png" alt="수면 명상을 하는 편안한 이미지"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
               <span class="course-card__flag course-card__flag--best">BEST</span>
@@ -1729,8 +1751,7 @@
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/wl-jung.png"
-                 alt="지식 공유자 마인드풀 정" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/wl-jung.png" alt="지식 공유자 마인드풀 정" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">자기 전 5분, 잠이 깊어지는 수면 명상</a>
@@ -1755,16 +1776,16 @@
       <li class="course-grid__item" data-category="craft-handmade">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cr-freshflower.png"
-                 alt="아이와 생화 플라워를 만드는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cr-freshflower.png" alt="아이와 생화 플라워를 만드는 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/cr-hari.png"
-                 alt="지식 공유자 플로리스트 하리" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/cr-hari.png" alt="지식 공유자 플로리스트 하리" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">아이들과 집에서 만드는 생화 플라워 클래스</a>
@@ -1789,16 +1810,16 @@
       <li class="course-grid__item" data-category="cooking-baking">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/ck-world-cuisine.png"
-                 alt="세계 가정식 요리 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/ck-world-cuisine.png" alt="세계 가정식 요리 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/ck-yuna.png"
-                 alt="지식 공유자 글로벌키친 유나" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/ck-yuna.png" alt="지식 공유자 글로벌키친 유나" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">집에서 만드는 세계 가정식 미식 여행</a>
@@ -1823,16 +1844,16 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-nodejs.png"
-                 alt="HTML·자바스크립트 코드가 띄워진 모니터" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-nodejs.png" alt="HTML·자바스크립트 코드가 띄워진 모니터"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">35% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/server-gangwoo.png"
-                 alt="지식 공유자 서버지기 강우" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/server-gangwoo.png" alt="지식 공유자 서버지기 강우" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">Node.js &amp; Express 서버 개발 입문</a>
@@ -1857,8 +1878,9 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-insta-marketing.png"
-                 alt="스마트폰으로 인스타그램 콘텐츠를 기획하는 모습" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-insta-marketing.png"
+                alt="스마트폰으로 인스타그램 콘텐츠를 기획하는 모습" loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--best">BEST</span>
             </div>
@@ -1868,8 +1890,8 @@
             <span class="course-card__badge">35% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-marketer-haru.png"
-                 alt="지식 공유자 마케터 하루" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-marketer-haru.png" alt="지식 공유자 마케터 하루"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">0원으로 시작하는 인스타 콘텐츠 마케팅</a>
@@ -1894,16 +1916,16 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-p2-photoshop-retouch.png"
-                 alt="포토샵 감성 보정과 합성 아트 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-p2-photoshop-retouch.png"
+                alt="포토샵 감성 보정과 합성 아트 이미지" loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-o.png"
-                 alt="지식 공유자 리터처 오" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-o.png" alt="지식 공유자 리터처 오" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">팔로워를 부르는 포토샵 감성 보정 &amp; 합성 아트</a>
@@ -1928,8 +1950,9 @@
       <li class="course-grid__item" data-category="photo-video">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/pv-shortform.png"
-                 alt="숏폼 릴스와 쇼츠 제작 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/pv-shortform.png" alt="숏폼 릴스와 쇼츠 제작 이미지"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--new">NEW</span>
             </div>
@@ -1939,8 +1962,7 @@
             <span class="course-card__badge">40% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/pv-danbi.png"
-                 alt="지식 공유자 숏폼러 단비" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/pv-danbi.png" alt="지식 공유자 숏폼러 단비" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">클릭을 부르는 숏폼(릴스·쇼츠) 제작 클래스</a>
@@ -1965,8 +1987,9 @@
       <li class="course-grid__item" data-category="drawing-illust">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/dr-lettering.png"
-                 alt="디지털 레터링 굿즈 디자인 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/dr-lettering.png" alt="디지털 레터링 굿즈 디자인 이미지"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--new">NEW</span>
             </div>
@@ -1976,8 +1999,7 @@
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/dr-dana.png"
-                 alt="지식 공유자 글씨공방 단아" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/dr-dana.png" alt="지식 공유자 글씨공방 단아" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">굿즈로 만드는 디지털 레터링 고급 클래스</a>
@@ -2002,8 +2024,8 @@
       <li class="course-grid__item" data-category="craft-handmade">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cr-resin.png"
-                 alt="투명한 레진 공예 작품 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cr-resin.png" alt="투명한 레진 공예 작품 이미지" loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--new">NEW</span>
             </div>
@@ -2013,8 +2035,7 @@
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/cr-doi.png"
-                 alt="지식 공유자 말랑레진 도이" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/cr-doi.png" alt="지식 공유자 말랑레진 도이" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">눈부시도록 투명하게 빛나는 레진 공예 입문반</a>
@@ -2039,16 +2060,16 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-p2-restapi.png"
-                 alt="REST API와 데이터베이스 설계 다이어그램" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-p2-restapi.png" alt="REST API와 데이터베이스 설계 다이어그램"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/query-dan.png"
-                 alt="지식 공유자 쿼리마스터 단" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/query-dan.png" alt="지식 공유자 쿼리마스터 단" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">실전 REST API &amp; 데이터베이스 설계</a>
@@ -2073,8 +2094,9 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-performance-marketing.png"
-                 alt="퍼포먼스 마케팅 지표 대시보드 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-performance-marketing.png"
+                alt="퍼포먼스 마케팅 지표 대시보드 화면" loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
             </div>
@@ -2084,8 +2106,8 @@
             <span class="course-card__badge">40% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-growth-jin.png"
-                 alt="지식 공유자 그로스해커 진" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-growth-jin.png" alt="지식 공유자 그로스해커 진"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">데이터로 굴리는 퍼포먼스 마케팅 실전</a>
@@ -2111,16 +2133,16 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-brand-identity.png"
-                 alt="브랜드 아이덴티티 무드보드 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-brand-identity.png" alt="브랜드 아이덴티티 무드보드 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-gyeol.png"
-                 alt="지식 공유자 스튜디오 결" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-gyeol.png" alt="지식 공유자 스튜디오 결" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">무드보드부터 컬러까지, 브랜드 아이덴티티 설계</a>
@@ -2145,16 +2167,16 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-flutter.png"
-                 alt="모바일 앱을 개발하는 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-flutter.png" alt="모바일 앱을 개발하는 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">35% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/app-mireu.png"
-                 alt="지식 공유자 앱공방 미르" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/app-mireu.png" alt="지식 공유자 앱공방 미르" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">Flutter로 만드는 첫 크로스플랫폼 앱</a>
@@ -2179,8 +2201,9 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-p2-seo-blog.png"
-                 alt="SEO 키워드와 블로그 콘텐츠 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-p2-seo-blog.png" alt="SEO 키워드와 블로그 콘텐츠 화면"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--new">NEW</span>
             </div>
@@ -2190,8 +2213,8 @@
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-growth-jin.png"
-                 alt="지식 공유자 그로스해커 진" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-growth-jin.png" alt="지식 공유자 그로스해커 진"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">검색되는 콘텐츠를 만드는 SEO &amp; 블로그</a>
@@ -2216,16 +2239,16 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-p2-package-goods.png"
-                 alt="패키지와 굿즈 디자인 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-p2-package-goods.png" alt="패키지와 굿즈 디자인 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-gyeol.png"
-                 alt="지식 공유자 스튜디오 결" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-gyeol.png" alt="지식 공유자 스튜디오 결" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">패키지 &amp; 굿즈 디자인 실전 포트폴리오</a>
@@ -2250,16 +2273,16 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-p2-swiftui.png"
-                 alt="SwiftUI로 iOS 앱을 개발하는 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-p2-swiftui.png" alt="SwiftUI로 iOS 앱을 개발하는 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/apple-geo.png"
-                 alt="지식 공유자 사과농장 지오" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/apple-geo.png" alt="지식 공유자 사과농장 지오" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">SwiftUI로 시작하는 iOS 앱 개발 완전 정복</a>
@@ -2284,8 +2307,9 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-njob.png"
-                 alt="사이드프로젝트를 준비하는 노트북 작업 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-njob.png" alt="사이드프로젝트를 준비하는 노트북 작업 화면"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
               <span class="course-card__flag course-card__flag--best">BEST</span>
@@ -2296,8 +2320,7 @@
             <span class="course-card__badge">35% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/sidelab-min.png"
-                 alt="지식 공유자 사이드랩 민" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/sidelab-min.png" alt="지식 공유자 사이드랩 민" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">직장인 사이드프로젝트로 N잡 만드는 법</a>
@@ -2322,8 +2345,9 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-blender-3d.png"
-                 alt="블렌더로 3D 모델링하는 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-blender-3d.png" alt="블렌더로 3D 모델링하는 화면"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
             </div>
@@ -2333,8 +2357,7 @@
             <span class="course-card__badge">40% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-noa.png"
-                 alt="지식 공유자 쓰리디랩 노아" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-noa.png" alt="지식 공유자 쓰리디랩 노아" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">블렌더로 시작하는 첫 3D 모델링 마스터 클래스</a>
@@ -2359,16 +2382,16 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-pandas.png"
-                 alt="데이터 시각화 그래프가 그려진 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-pandas.png" alt="데이터 시각화 그래프가 그려진 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/data-sua.png"
-                 alt="지식 공유자 데이터한입 수아" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/data-sua.png" alt="지식 공유자 데이터한입 수아" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">판다스 &amp; 시각화로 배우는 데이터 핸들링</a>
@@ -2393,16 +2416,17 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-solo-startup.png"
-                 alt="1인 창업 로드맵을 정리하는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-solo-startup.png" alt="1인 창업 로드맵을 정리하는 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-solo-doi.png"
-                 alt="지식 공유자 솔로창업 도이" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-solo-doi.png" alt="지식 공유자 솔로창업 도이"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">혼자서도 시작하는 1인 창업 프로젝트 로드맵</a>
@@ -2427,19 +2451,20 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-3d-render.png"
-                 alt="블렌더 3D 제품 렌더링 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-3d-render.png" alt="블렌더 3D 제품 렌더링 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-noa.png"
-                 alt="지식 공유자 쓰리디랩 노아" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-noa.png" alt="지식 공유자 쓰리디랩 노아" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
-                <a class="course-card__link" href="course-responsive-publishing.html">블렌더 3D 제품 렌더링 &amp; 비주얼 포트폴리오 프로젝트</a>
+                <a class="course-card__link" href="course-responsive-publishing.html">블렌더 3D 제품 렌더링 &amp; 비주얼 포트폴리오
+                  프로젝트</a>
               </h3>
               <p class="course-card__meta">쓰리디랩 노아・44강・9시간 30분</p>
               <p class="course-card__price">
@@ -2461,16 +2486,16 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-p2-genai.png"
-                 alt="AI 챗봇 대화 인터페이스 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-p2-genai.png" alt="AI 챗봇 대화 인터페이스 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/prompt-ria.png"
-                 alt="지식 공유자 프롬프트연구소 리아" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/prompt-ria.png" alt="지식 공유자 프롬프트연구소 리아" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">생성형 AI로 나만의 챗봇 만들기 프로젝트</a>
@@ -2495,8 +2520,9 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-p2-ebook.png"
-                 alt="전자책과 디지털 상품 제작 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-p2-ebook.png" alt="전자책과 디지털 상품 제작 이미지"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--new">NEW</span>
             </div>
@@ -2506,8 +2532,8 @@
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-solo-doi.png"
-                 alt="지식 공유자 솔로창업 도이" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-solo-doi.png" alt="지식 공유자 솔로창업 도이"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">전자책·디지털 상품으로 만드는 패시브 인컴</a>
@@ -2532,8 +2558,9 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-p2-cinema4d-typo.png"
-                 alt="시네마4D 3D 타이포그래피 작업" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-p2-cinema4d-typo.png" alt="시네마4D 3D 타이포그래피 작업"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--new">NEW</span>
             </div>
@@ -2543,8 +2570,7 @@
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-noa.png"
-                 alt="지식 공유자 쓰리디랩 노아" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-noa.png" alt="지식 공유자 쓰리디랩 노아" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">시네마4D로 만드는 3D 타이포그래피</a>
@@ -2569,8 +2595,9 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-claude-code.png"
-                 alt="터미널에서 AI 코딩 도구로 작업하는 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-claude-code.png" alt="터미널에서 AI 코딩 도구로 작업하는 화면"
+                loading="lazy"></a>
             <div class="course-card__flags">
               <span class="course-card__flag course-card__flag--signature">SIGNATURE</span>
               <span class="course-card__flag course-card__flag--new">NEW</span>
@@ -2581,8 +2608,7 @@
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/dawn-jayden.png"
-                 alt="지식 공유자 새벽코딩 제이든" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/dawn-jayden.png" alt="지식 공유자 새벽코딩 제이든" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">개발 생산성 10배 올리는 클로드 코드 마스터 과정</a>
@@ -2607,16 +2633,17 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-stock-etf.png"
-                 alt="주식 차트와 투자 데이터가 표시된 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-stock-etf.png" alt="주식 차트와 투자 데이터가 표시된 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-money-jaei.png"
-                 alt="지식 공유자 머니노트 재이" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-money-jaei.png" alt="지식 공유자 머니노트 재이"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">왕초보를 위한 주식·ETF 기초 이해하기 입문 과정</a>
@@ -2641,16 +2668,16 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-bg-illust.png"
-                 alt="배경 일러스트와 라이팅 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-bg-illust.png" alt="배경 일러스트와 라이팅 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">20% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-noeul.png"
-                 alt="지식 공유자 빛담은 노을" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-noeul.png" alt="지식 공유자 빛담은 노을" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">분위기를 만드는 배경 일러스트 &amp; 라이팅</a>
@@ -2676,16 +2703,16 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-ai-pair.png"
-                 alt="두 사람이 한 화면을 보며 페어 프로그래밍하는 모습" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-ai-pair.png" alt="두 사람이 한 화면을 보며 페어 프로그래밍하는 모습"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/pairup-dohyun.png"
-                 alt="지식 공유자 페어업 도현" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/pairup-dohyun.png" alt="지식 공유자 페어업 도현" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">AI 페어 프로그래밍으로 일하는 법 마스터 클래스</a>
@@ -2710,16 +2737,17 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-p2-realestate.png"
-                 alt="부동산 시세와 자료를 살펴보는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-p2-realestate.png" alt="부동산 시세와 자료를 살펴보는 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-realestate-han.png"
-                 alt="지식 공유자 부동산노트 한" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-realestate-han.png" alt="지식 공유자 부동산노트 한"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">처음 시작하는 사회 초년생을 위한 부동산 기초 이해</a>
@@ -2744,16 +2772,16 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-p2-photoshop-illust.png"
-                 alt="포토샵 디지털 일러스트 채색 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-p2-photoshop-illust.png" alt="포토샵 디지털 일러스트 채색 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-noeul.png"
-                 alt="지식 공유자 빛담은 노을" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-noeul.png" alt="지식 공유자 빛담은 노을" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">포토샵 디지털 일러스트 채색 마스터 클래스</a>
@@ -2778,16 +2806,16 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-nocode.png"
-                 alt="노코드 빌더로 화면을 조립하는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-nocode.png" alt="노코드 빌더로 화면을 조립하는 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">40% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/builder-taeo.png"
-                 alt="지식 공유자 빌더 태오" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/builder-taeo.png" alt="지식 공유자 빌더 태오" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">노코드로 3일 만에 웹사이트 런칭 프로젝트</a>
@@ -2812,16 +2840,17 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-tax-refund.png"
-                 alt="절세·연말정산 서류와 계산 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-tax-refund.png" alt="절세·연말정산 서류와 계산 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-tax-hanul.png"
-                 alt="지식 공유자 세무지기 한울" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-tax-hanul.png" alt="지식 공유자 세무지기 한울"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">직장인이 꼭 알아야 할 절세·연말정산 가이드</a>
@@ -2846,16 +2875,16 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-basic.png"
-                 alt="디자인 기초를 배우는 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-basic.png" alt="디자인 기초를 배우는 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">25% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-yu.png"
-                 alt="지식 공유자 디자인첫걸음 유" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-yu.png" alt="지식 공유자 디자인첫걸음 유" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">비전공자를 위한 디자인 기초와 감각 키우기</a>
@@ -2880,16 +2909,16 @@
       <li class="course-grid__item" data-category="dev-it">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/cat-dev-p2-nocode-app.png"
-                 alt="노코드 앱 빌더 인터페이스 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/cat-dev-p2-nocode-app.png" alt="노코드 앱 빌더 인터페이스 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">35% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/nocode-jei.png"
-                 alt="지식 공유자 노코드연구소 제이" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/nocode-jei.png" alt="지식 공유자 노코드연구소 제이" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">노코드 앱 빌더로 만드는 나만의 서비스</a>
@@ -2914,16 +2943,17 @@
       <li class="course-grid__item" data-category="career-money">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/career-p2-freelancer-tax.png"
-                 alt="프리랜서 세금 신고 서류 이미지" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/career-p2-freelancer-tax.png" alt="프리랜서 세금 신고 서류 이미지"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/career-tax-hanul.png"
-                 alt="지식 공유자 세무지기 한울" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/career-tax-hanul.png" alt="지식 공유자 세무지기 한울"
+              loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">프리랜서·N잡러를 위한 세금 신고 가이드</a>
@@ -2948,16 +2978,16 @@
       <li class="course-grid__item" data-category="design-creative">
         <article class="course-card">
           <figure class="course-card__thumb">
-            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img class="course-card__image" src="assets/course/design-p2-ui-portfolio.png"
-                 alt="UI 디자인 포트폴리오 작업 화면" loading="lazy"></a>
+            <a class="course-card__thumb-link" href="course-responsive-publishing.html" tabindex="-1"><img
+                class="course-card__image" src="assets/course/design-p2-ui-portfolio.png" alt="UI 디자인 포트폴리오 작업 화면"
+                loading="lazy"></a>
             <button class="course-card__wish" type="button" aria-pressed="false" aria-label="찜하기">
               <span class="icon icon--heart"></span>
             </button>
             <span class="course-card__badge">30% 할인</span>
           </figure>
           <div class="course-card__body">
-            <img class="course-card__avatar" src="assets/avatar/design-yu.png"
-                 alt="지식 공유자 디자인첫걸음 유" loading="lazy">
+            <img class="course-card__avatar" src="assets/avatar/design-yu.png" alt="지식 공유자 디자인첫걸음 유" loading="lazy">
             <div class="course-card__info">
               <h3 class="course-card__title">
                 <a class="course-card__link" href="course-responsive-publishing.html">대학생들을 위한 UI 디자인 포트폴리오 처음 만들기</a>
@@ -2979,126 +3009,127 @@
           </div>
         </article>
       </li>
-</ul>
+    </ul>
 
-  <nav class="pager" aria-label="강의 목록 페이지" data-client-pager data-page-size="16"></nav>
+    <nav class="pager" aria-label="강의 목록 페이지" data-client-pager data-page-size="16"></nav>
 
-</main>
+  </main>
 
-<footer class="site-footer">
-<div class="site-footer__inner l-container">
+  <footer class="site-footer">
+    <div class="site-footer__inner l-container">
 
-  <div class="site-footer__top">
-    <div class="site-footer__brand">
-      <img class="site-footer__logo" src="assets/brand/logo-white.svg" alt="HOOT UP" loading="lazy">
-      <p class="site-footer__slogan">밤에도 깨어 배우는 사람들의 아지트</p>
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <img class="site-footer__logo" src="assets/brand/logo-white.svg" alt="HOOT UP" loading="lazy">
+          <p class="site-footer__slogan">밤에도 깨어 배우는 사람들의 아지트</p>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="푸터 메뉴">
+          <div class="link-group">
+            <h2 class="link-group__title">HOOT UP</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="brand-story.html">브랜드 스토리</a></li>
+              <li><a class="link-group__link" href="desk.html">훗업 데스크(뉴스)</a></li>
+              <li><a class="link-group__link" href="magazine.html">훗업 매거진(블로그)</a></li>
+              <li><a class="link-group__link" href="b2b.html">단체 교육 (B2B)</a></li>
+              <li><a class="link-group__link" href="careers.html">채용 안내</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h2 class="link-group__title">둘러보기</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="sitemap.html">전체 카테고리</a></li>
+              <li><a class="link-group__link" href="best.html">훗업 차트(베스트)</a></li>
+              <li><a class="link-group__link" href="new.html">갓 부화한 클래스(새로운)</a></li>
+              <li><a class="link-group__link" href="event-1.html">훗업 페스타(이벤트 할인)</a></li>
+              <li><a class="link-group__link" href="roadmap.html">레벨업 로드맵</a></li>
+              <li><a class="link-group__link" href="subscribe.html">올나잇 패스(구독)</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h2 class="link-group__title">크리에이터 지원</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="creator-apply.html">클래스 개설 문의하기</a></li>
+              <li><a class="link-group__link" href="creator-guide.html">크리에이터 가이드</a></li>
+              <li><a class="link-group__link" href="creator-studio.html">스튜디오 대여</a></li>
+              <li><a class="link-group__link" href="creator-settlement.html">정산・수익 안내</a></li>
+              <li><a class="link-group__link" href="creator-mentor.html">멘토 교육 지원</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h2 class="link-group__title">고객센터</h2>
+            <ul class="link-group__list">
+              <li><a class="link-group__link" href="notice.html">후트 알림(공지사항)</a></li>
+              <li><a class="link-group__link" href="faq.html">자주 묻는 질문(FAQ)</a></li>
+              <li><a class="link-group__link" href="terms.html">이용약관</a></li>
+              <li><a class="link-group__link" href="privacy.html">개인정보처리방침</a></li>
+              <li><a class="link-group__link" href="refund.html">환불 규정</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <hr class="site-footer__rule">
+
+      <div class="site-footer__contact">
+        <section class="contact-desk">
+          <h2 class="contact-desk__title">고객센터</h2>
+          <p class="contact-desk__tel"><a href="tel:0212345678">02-1234-5678</a></p>
+          <p class="contact-desk__hours">주중 10:00–18:00 / 주말·공휴일 휴무</p>
+        </section>
+
+        <dl class="contact-mail">
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">환불 문의</dt>
+            <dd class="contact-mail__value"><a href="mailto:refund@hootup.co.kr">refund@hootup.co.kr</a></dd>
+          </div>
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">기타 문의</dt>
+            <dd class="contact-mail__value"><a href="mailto:help@hootup.co.kr">help@hootup.co.kr</a></dd>
+          </div>
+          <div class="contact-mail__group">
+            <dt class="contact-mail__label">크리에이터 지원</dt>
+            <dd class="contact-mail__value"><a href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a></dd>
+          </div>
+        </dl>
+      </div>
+
+      <hr class="site-footer__rule">
+
+      <div class="site-footer__legal">
+        <nav class="policy" aria-label="약관 및 정책">
+          <ul class="policy__list">
+            <li><a class="policy__link" href="terms.html">이용약관</a></li>
+            <li><a class="policy__link" href="privacy.html">개인정보처리방침</a></li>
+            <li><a class="policy__link" href="youth.html">청소년 보호정책</a></li>
+            <li><a class="policy__link" href="refund.html">환불 규정</a></li>
+            <li><a class="policy__link" href="business.html">사업자정보 확인</a></li>
+          </ul>
+        </nav>
+
+        <address class="company">
+          <p class="company__line">
+            <span>(주)훗업 컴퍼니</span>
+            <span>대표자 : 신호진</span>
+            <span>사업자등록번호 : 123-45-67890</span>
+            <span>개인정보책임관리자 : 신호진</span>
+          </p>
+          <p class="company__line">
+            <span>통신판매신고 : 제 2026-서울서초-1234호</span>
+            <span>(06621) 서울 서초구 강남대로 373, 10층</span>
+          </p>
+        </address>
+
+        <p class="site-footer__copyright"><small>Copyright © HOOT UP. All rights reserved.</small></p>
+      </div>
+
     </div>
 
-    <nav class="site-footer__nav" aria-label="푸터 메뉴">
-      <div class="link-group">
-        <h2 class="link-group__title">HOOT UP</h2>
-        <ul class="link-group__list">
-          <li><a class="link-group__link" href="brand-story.html">브랜드 스토리</a></li>
-          <li><a class="link-group__link" href="desk.html">훗업 데스크(뉴스)</a></li>
-          <li><a class="link-group__link" href="magazine.html">훗업 매거진(블로그)</a></li>
-          <li><a class="link-group__link" href="b2b.html">단체 교육 (B2B)</a></li>
-          <li><a class="link-group__link" href="careers.html">채용 안내</a></li>
-        </ul>
-      </div>
-
-      <div class="link-group">
-        <h2 class="link-group__title">둘러보기</h2>
-        <ul class="link-group__list">
-          <li><a class="link-group__link" href="sitemap.html">전체 카테고리</a></li>
-          <li><a class="link-group__link" href="best.html">훗업 차트(베스트)</a></li>
-          <li><a class="link-group__link" href="new.html">갓 부화한 클래스(새로운)</a></li>
-          <li><a class="link-group__link" href="event-1.html">훗업 페스타(이벤트 할인)</a></li>
-          <li><a class="link-group__link" href="roadmap.html">레벨업 로드맵</a></li>
-          <li><a class="link-group__link" href="subscribe.html">올나잇 패스(구독)</a></li>
-        </ul>
-      </div>
-
-      <div class="link-group">
-        <h2 class="link-group__title">크리에이터 지원</h2>
-        <ul class="link-group__list">
-          <li><a class="link-group__link" href="creator-apply.html">클래스 개설 문의하기</a></li>
-          <li><a class="link-group__link" href="creator-guide.html">크리에이터 가이드</a></li>
-          <li><a class="link-group__link" href="creator-studio.html">스튜디오 대여</a></li>
-          <li><a class="link-group__link" href="creator-settlement.html">정산・수익 안내</a></li>
-          <li><a class="link-group__link" href="creator-mentor.html">멘토 교육 지원</a></li>
-        </ul>
-      </div>
-
-      <div class="link-group">
-        <h2 class="link-group__title">고객센터</h2>
-        <ul class="link-group__list">
-          <li><a class="link-group__link" href="notice.html">후트 알림(공지사항)</a></li>
-          <li><a class="link-group__link" href="faq.html">자주 묻는 질문(FAQ)</a></li>
-          <li><a class="link-group__link" href="terms.html">이용약관</a></li>
-          <li><a class="link-group__link" href="privacy.html">개인정보처리방침</a></li>
-          <li><a class="link-group__link" href="refund.html">환불 규정</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
-  <hr class="site-footer__rule">
-
-  <div class="site-footer__contact">
-    <section class="contact-desk">
-      <h2 class="contact-desk__title">고객센터</h2>
-      <p class="contact-desk__tel"><a href="tel:0212345678">02-1234-5678</a></p>
-      <p class="contact-desk__hours">주중 10:00–18:00 / 주말·공휴일 휴무</p>
-    </section>
-
-    <dl class="contact-mail">
-      <div class="contact-mail__group">
-        <dt class="contact-mail__label">환불 문의</dt>
-        <dd class="contact-mail__value"><a href="mailto:refund@hootup.co.kr">refund@hootup.co.kr</a></dd>
-      </div>
-      <div class="contact-mail__group">
-        <dt class="contact-mail__label">기타 문의</dt>
-        <dd class="contact-mail__value"><a href="mailto:help@hootup.co.kr">help@hootup.co.kr</a></dd>
-      </div>
-      <div class="contact-mail__group">
-        <dt class="contact-mail__label">크리에이터 지원</dt>
-        <dd class="contact-mail__value"><a href="mailto:creator@hootup.co.kr">creator@hootup.co.kr</a></dd>
-      </div>
-    </dl>
-  </div>
-
-  <hr class="site-footer__rule">
-
-  <div class="site-footer__legal">
-    <nav class="policy" aria-label="약관 및 정책">
-      <ul class="policy__list">
-        <li><a class="policy__link" href="terms.html">이용약관</a></li>
-        <li><a class="policy__link" href="privacy.html">개인정보처리방침</a></li>
-        <li><a class="policy__link" href="youth.html">청소년 보호정책</a></li>
-        <li><a class="policy__link" href="refund.html">환불 규정</a></li>
-        <li><a class="policy__link" href="business.html">사업자정보 확인</a></li>
-      </ul>
-    </nav>
-
-    <address class="company">
-      <p class="company__line">
-        <span>(주)훗업 컴퍼니</span>
-        <span>대표자 : 신호진</span>
-        <span>사업자등록번호 : 123-45-67890</span>
-        <span>개인정보책임관리자 : 신호진</span>
-      </p>
-      <p class="company__line">
-        <span>통신판매신고 : 제 2026-서울서초-1234호</span>
-        <span>(06621) 서울 서초구 강남대로 373, 10층</span>
-      </p>
-    </address>
-
-    <p class="site-footer__copyright"><small>Copyright © HOOT UP. All rights reserved.</small></p>
-  </div>
-
-</div>
-
-</footer>
+  </footer>
 
 </body>
+
 </html>
